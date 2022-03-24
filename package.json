@@ -1,0 +1,39 @@
+{
+  "name": "@nethergames/api",
+  "version": "1.0.0",
+  "description": "Fully typed client for the NetherGames API.",
+  "keywords": [
+    "nethergames",
+    "api"
+  ],
+  "repository": "NetherGamesMC/api-client",
+  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "exports": "./dist/index.js",
+  "types": "./dist",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "format": "prettier --write .",
+    "generate": "openapi-typescript ../nethergames_api/openapi.yaml -o src/openapi.ts --it true -c .prettierrc.yaml",
+    "prepublishOnly": "npm run -s build"
+  },
+  "dependencies": {
+    "nanoevents": "^6.0.2",
+    "node-fetch": "^3.2.3",
+    "quick-lru": "^6.1.0",
+    "type-fest": "^2.12.1"
+  },
+  "devDependencies": {
+    "@sindresorhus/tsconfig": "^2.0.0",
+    "openapi-typescript": "^5.2.0",
+    "prettier": "^2.6.0",
+    "typescript": "^4.6.2"
+  },
+  "engines": {
+    "node": ">=14.16"
+  }
+}

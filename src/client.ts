@@ -1,0 +1,202 @@
+import {createNanoEvents, Emitter} from 'nanoevents';
+import fetch from 'node-fetch';
+import QuickLRU from 'quick-lru';
+
+import {NetherGamesError, NetherGamesRateLimitError, NetherGamesRequestError} from './errors.js';
+import {
+  AnnouncementsResource,
+  FactionsResource,
+  GuildsResource,
+  LeaderboardResource,
+  PlayersResource,
+  SearchResource,
+  ServersResource,
+  StreamResource,
+} from './resources.js';
+import type {Guild, Player, PlayerQuery} from './types.js';
+import {parseCacheHeaders, parseRateLimitHeaders, RateLimitHeaders} from './utils.js';
+
+interface MakeRequestOptions {
+  path: string;
+  method: 'GET' | 'POST';
+  body?: Record<string, any>;
+  params?: Record<string, any>;
+  rateLimitExempt?: boolean;
+}
+
+interface NetherGamesClientOptions {
+  baseUrl?: string;
+  cacheMaxSize?: number;
+  userAgent?: string;
+  userAgentAppendix?: string;
+}
+
+interface Events {
+  error: (request: Request, response: Response, error: NetherGamesError, timestamp: Date) => void;
+  request: (request: Request, timestamp: Date) => void;
+  response: (request: Request, response: Response, timestamp: Date, latencyMillis: number) => void;
+}
+
+export class NetherGamesClient {
+  readonly #apiKey: string | undefined;
+  readonly #baseUrl: string;
+  readonly #cache: QuickLRU<string, Record<string, any>>;
+  readonly #emitter: Emitter;
+  readonly #userAgent: string;
+
+  readonly announcements: AnnouncementsResource;
+  readonly factions: FactionsResource;
+  readonly guilds: GuildsResource;
+  readonly leaderboard: LeaderboardResource;
+  readonly players: PlayersResource;
+  readonly search: SearchResource;
+  readonly servers: ServersResource;
+  readonly stream: StreamResource;
+
+  lastBuildId: string | null;
+  lastRateLimit: RateLimitHeaders | null;
+
+  constructor(apiKey?: string, options: NetherGamesClientOptions = {}) {
+    this.#apiKey = apiKey;
+    this.#baseUrl = options.baseUrl ?? 'https://apiv2.nethergames.org';
+    this.#cache = new QuickLRU({maxSize: options.cacheMaxSize ?? 1000});
+    this.#userAgent = options.userAgent ?? 'NetherGames-API-Client/1.0.0';
+    this.#emitter = createNanoEvents<Events>();
+    if (options.userAgentAppendix != null) {
+      this.#userAgent += ` (${options.userAgentAppendix})`;
+    }
+    this.lastBuildId = null;
+    this.lastRateLimit = null;
+
+    this.announcements = new AnnouncementsResource(this);
+    this.factions = new FactionsResource(this);
+    this.guilds = new GuildsResource(this);
+    this.leaderboard = new LeaderboardResource(this);
+    this.players = new PlayersResource(this);
+    this.search = new SearchResource(this);
+    this.servers = new ServersResource(this);
+    this.stream = new StreamResource(this);
+  }
+
+  on<E extends keyof Events>(event: E, callback: Events[E]) {
+    return this.#emitter.on(event, callback);
+  }
+
+  async #makeRequest<T>(options: MakeRequestOptions): Promise<T> {
+    const url = new URL(options.path, this.#baseUrl);
+    for (const [key, value] of Object.entries(options.params ?? {})) {
+      if (value != null) {
+        url.searchParams.set(key, value.toString());
+      }
+    }
+    const body = options.body != null ? JSON.stringify(options.body) : undefined;
+    const cacheKey = url.toString() + (body ?? '');
+    const cached = this.#cache.get(cacheKey);
+    if (cached != null) {
+      return cached as T;
+    }
+    const start = new Date();
+    this.#emitter.emit('request', url.toString(), start);
+    const response = await fetch(url.toString(), {
+      method: options.method,
+      headers: {
+        ...(this.#apiKey != null ? {Authorization: this.#apiKey} : {}),
+        'Content-Type': 'application/json',
+        'User-Agent': this.#userAgent,
+      },
+      body,
+    });
+    const end = new Date();
+    this.#emitter.emit('response', url.toString(), end, end.getTime() - start.getTime());
+    if (!options.rateLimitExempt) {
+      this.lastRateLimit = parseRateLimitHeaders(response.headers);
+    }
+    this.lastBuildId = response.headers.get('X-Build-Id');
+    const contentType = response.headers.get('Content-Type');
+    if (contentType?.includes('application/json')) {
+      const data = (await response.json()) as Record<string, any>;
+      if (response.ok) {
+        const {remaining} = parseCacheHeaders(response.headers);
+        this.#cache.set(cacheKey + (body ?? ''), data, {maxAge: remaining});
+        return data as T;
+      } else if (!options.rateLimitExempt && response.status === 429) {
+        const error = new NetherGamesRateLimitError(data['message'], this.lastRateLimit!);
+        this.#emitter.emit('error', url.toString(), response, error, end);
+        throw error;
+      } else {
+        const error = new NetherGamesRequestError(data['message'], response.status, data['errors'] ?? []);
+        this.#emitter.emit('error', url.toString(), response, error, end);
+        throw error;
+      }
+    } else {
+      const message = await response.text();
+      const error = new NetherGamesRequestError(message, response.status);
+      this.#emitter.emit('error', url.toString(), response, error, end);
+      throw error;
+    }
+  }
+
+  async _getOne<T>(path: string, params?: Record<string, any>, rateLimitExempt?: boolean): Promise<T | null> {
+    try {
+      return this.#makeRequest<T>({path, method: 'GET', params, rateLimitExempt});
+    } catch (error) {
+      if (error instanceof NetherGamesRequestError && error.status === 404) {
+        return null;
+      }
+      throw error;
+    }
+  }
+
+  async _getMany<T>(path: string, params?: Record<string, any>): Promise<T[]> {
+    return this.#makeRequest<T[]>({path, method: 'GET', params});
+  }
+
+  async #getBulk<T extends Player | Guild>(
+    resource: 'players' | 'guilds',
+    names: string[],
+    params?: Record<string, any>,
+  ): Promise<T[]> {
+    const uniqueNames = new Set(names);
+    const results: T[] = [];
+    for (const name of uniqueNames) {
+      const url = new URL(`/v1/${resource}/${name}`, this.#baseUrl);
+      for (const [key, value] of Object.entries(params ?? {})) {
+        if (value != null) {
+          url.searchParams.set(key, value.toString());
+        }
+      }
+      const cacheKey = url.toString();
+      const cached = this.#cache.get(cacheKey.toString());
+      if (cached != null) {
+        uniqueNames.delete(name);
+        results.push(cached as T);
+      }
+    }
+    if (uniqueNames.size > 0) {
+      const remaining = await this.#makeRequest<Array<T & {_cacheTTL: number}>>({
+        path: `/v1/${resource}/batch`,
+        method: 'POST',
+        body: {names: [...uniqueNames], ...params},
+      });
+      for (const entity of remaining) {
+        const url = new URL(`/v1/${resource}/${entity.name}`, this.#baseUrl);
+        for (const [key, value] of Object.entries(params ?? {})) {
+          if (value != null) {
+            url.searchParams.set(key, value.toString());
+          }
+        }
+        this.#cache.set(url.toString(), entity, {maxAge: entity._cacheTTL * 1000});
+      }
+      results.push(...remaining);
+    }
+    return results;
+  }
+
+  async _getPlayersBulk(players: string[], params?: PlayerQuery): Promise<Player[]> {
+    return this.#getBulk<Player>('players', players, params);
+  }
+
+  async _getGuildsBulk(guilds: string[], params?: PlayerQuery): Promise<Guild[]> {
+    return this.#getBulk<Guild>('guilds', guilds, params);
+  }
+}
