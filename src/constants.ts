@@ -55,7 +55,7 @@ export const LEADERBOARD_COLUMNS = [
 ] as const;
 
 export const LEADERBOARD_COLUMNS_NESTED = {
-  total: {kills: {}, wins: {}},
+  total: {kills: {}, wins: {}, total: {kills: {}, wins: {}}},
   bh: {total: {wins: {}}},
   cq: {total: {kills: {}, wins: {}, flags_captured: {}}},
   duels: {total: {kills: {}, wins: {}}},

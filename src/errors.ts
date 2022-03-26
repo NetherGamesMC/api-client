@@ -10,14 +10,16 @@ export class NetherGamesError extends Error {
 type Errors = Array<Record<string, any>>;
 
 export class NetherGamesRequestError extends NetherGamesError {
+  readonly code: number;
   readonly status: number;
-  readonly errors: Errors;
+  readonly errors?: Errors;
 
-  constructor(message: string, status: number, errors: Errors = []) {
-    super(message);
+  constructor(options: {code: number; message: string; status: number; errors?: Errors}) {
+    super(options.message);
     this.name = 'NetherGamesRequestError';
-    this.status = status;
-    this.errors = errors;
+    this.code = options.code;
+    this.status = options.status;
+    this.errors = options.errors;
   }
 }
 

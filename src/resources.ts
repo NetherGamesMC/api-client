@@ -3,6 +3,7 @@ import {NetherGamesValidationError} from './errors.js';
 import type {
   Announcement,
   AnnouncementBoard,
+  AnnouncementDiscord,
   AnnouncementMessage,
   AnnouncementQuery,
   AnnouncementTitle,
@@ -27,10 +28,13 @@ import type {
   PlayerLeaderboard,
   PlayerQuery,
   PlayerSkin,
+  SearchFullTextQuery,
+  SearchFullTextResponse,
   SearchResponse,
   ServerMeta,
   ServerPing,
   Servers,
+  ServiceStatus,
   Stream,
 } from './types.js';
 
@@ -39,9 +43,10 @@ export class NetherGamesResource {
 }
 
 export class AnnouncementsResource extends NetherGamesResource {
-  async list(type: 'title', limit?: number): Promise<AnnouncementTitle[]>;
-  async list(type: 'message', limit?: number): Promise<AnnouncementMessage[]>;
   async list(type: 'board', limit?: number): Promise<AnnouncementBoard[]>;
+  async list(type: 'message', limit?: number): Promise<AnnouncementMessage[]>;
+  async list(type: 'title', limit?: number): Promise<AnnouncementTitle[]>;
+  async list(type: 'discord', limit?: number): Promise<AnnouncementDiscord[]>;
   async list(type: AnnouncementQuery['type'], limit = 100): Promise<Announcement[]> {
     return this._client._getMany<Announcement>('/v1/announcements', {type, limit});
   }
@@ -50,6 +55,10 @@ export class AnnouncementsResource extends NetherGamesResource {
 export class FactionsResource extends NetherGamesResource {
   async retrieve(faction: string): Promise<Faction | null> {
     return this._client._getOne<Faction>(`/v1/factions/${faction}`);
+  }
+
+  async search(factions: string[], params?: GuildQuery): Promise<Faction[]> {
+    return this._client._getBulk<Faction>('factions', factions, params);
   }
 }
 
@@ -61,7 +70,7 @@ export class GuildsResource extends NetherGamesResource {
   }
 
   async search(guilds: string[], params?: GuildQuery): Promise<Guild[]> {
-    return this._client._getGuildsBulk(guilds, params);
+    return this._client._getBulk<Guild>('guilds', guilds, params);
   }
 }
 
@@ -154,6 +163,10 @@ export class LeaderboardResource extends NetherGamesResource {
     }
     return this._client._getMany<Leaderboard>('/v1/leaderboard', {...params, type, column});
   }
+
+  async bulk(queries: LeaderboardQuery[]): Promise<Leaderboard[]> {
+    return this._client._makeRequest<Leaderboard[]>({path: '/v1/leaderboard/bulk', method: 'POST', body: queries});
+  }
 }
 
 interface PlayerParams {
@@ -162,26 +175,36 @@ interface PlayerParams {
 
 export class PlayersResource extends NetherGamesResource {
   async retrieve(player: string, params: PlayerParams = {}): Promise<Player | null> {
-    return this._client._getOne<Player>(
-      `/v1/players/${player}`,
-      params.include != null
-        ? {
-            withStats: params.include.includes('stats'),
-            withVoteStatus: params.include.includes('voteStatus'),
-            withFactionData: params.include.includes('faction'),
-            withPunishments: params.include.includes('punishments'),
-            withWarnings: params.include.includes('warnings'),
-          }
-        : undefined,
-    );
+    return this._client._getOne<Player>(`/v1/players/${player}`, this.#getQuery(params));
+  }
+
+  #getQuery(params: PlayerParams): Record<string, any> {
+    if (params.include == null) {
+      return {};
+    }
+    return {
+      withStats: params.include.includes('stats'),
+      withVoteStatus: params.include.includes('voteStatus'),
+      withFactionData: params.include.includes('faction'),
+      withPunishments: params.include.includes('punishments'),
+      withWarnings: params.include.includes('warnings'),
+    };
   }
 
   async search(players: string[], params?: PlayerQuery): Promise<Player[]> {
-    return this._client._getPlayersBulk(players, params);
+    return this._client._getBulk<Player>('players', players, params);
   }
 
   async leaderboard(player: string): Promise<PlayerLeaderboard | null> {
     return this._client._getOne<PlayerLeaderboard>(`/v1/players/${player}/leaderboard`);
+  }
+
+  async leaderboardBulk(names: string[]): Promise<PlayerLeaderboard[]> {
+    return this._client._makeRequest<PlayerLeaderboard[]>({
+      path: '/v1/players/leaderboard/bulk',
+      method: 'POST',
+      body: {names},
+    });
   }
 
   async avatar(player: string): Promise<PlayerSkin> {
@@ -193,11 +216,26 @@ export class PlayersResource extends NetherGamesResource {
     const skin = await this._client._getOne<PlayerSkin>(`/v1/players/${player}/skin`, {dataOnly: true}, true);
     return skin!;
   }
+
+  async usernamesByXuids(xuids: string[]): Promise<Record<string, string>> {
+    return this._client._makeRequest<Record<string, string>>({
+      path: '/v1/players/xuids',
+      method: 'POST',
+      body: {xuids},
+    });
+  }
 }
 
 export class SearchResource extends NetherGamesResource {
-  async search(name: string): Promise<SearchResponse[]> {
+  async simple(name: string): Promise<SearchResponse[]> {
     return this._client._getMany<SearchResponse>('/v1/search', {name});
+  }
+
+  async fulltext(
+    query: string,
+    params?: Pick<SearchFullTextQuery, 'limit' | 'type'>,
+  ): Promise<SearchFullTextResponse[]> {
+    return this._client._getMany<SearchFullTextResponse>('/v1/search-full', {query, ...params});
   }
 }
 
@@ -214,6 +252,13 @@ export class ServersResource extends NetherGamesResource {
 
   async ping(ip = 'play.nethergames.org', port = 19_132): Promise<ServerPing | null> {
     return this._client._getOne<ServerPing>('/v1/servers/ping', {ip, port});
+  }
+}
+
+export class StatusResource extends NetherGamesResource {
+  async retrieve(): Promise<ServiceStatus> {
+    const data = await this._client._getOne<ServiceStatus>('/v1/status');
+    return data!;
   }
 }
 

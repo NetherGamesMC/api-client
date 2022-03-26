@@ -1,10 +1,11 @@
 import type {components} from './openapi.js';
 
-export type Announcement = AnnouncementTitle | AnnouncementMessage | AnnouncementBoard;
+export type Announcement = AnnouncementBoard | AnnouncementDiscord | AnnouncementMessage | AnnouncementTitle;
 export type AnnouncementBoard = components['schemas']['AnnouncementsResponseBoard'];
+export type AnnouncementDiscord = components['schemas']['AnnouncementsResponseDiscord'];
 export type AnnouncementMessage = components['schemas']['AnnouncementsResponseMessage'];
-export type AnnouncementQuery = components['schemas']['AnnouncementsQuery'];
 export type AnnouncementTitle = components['schemas']['AnnouncementsResponseTitle'];
+export type AnnouncementQuery = components['schemas']['AnnouncementsQuery'];
 
 export type Faction = components['schemas']['FactionResponse'];
 
@@ -42,9 +43,12 @@ export type PlayerQuery = components['schemas']['PlayerQuery'];
 export type PlayerSkin = components['schemas']['PlayerSkinResponseData'];
 
 export type SearchResponse = components['schemas']['SearchResponse'];
+export type SearchFullTextResponse = components['schemas']['SearchFullTextResponse'];
+export type SearchFullTextQuery = components['schemas']['SearchFullTextQuery'];
 
 export type ServerMeta = components['schemas']['ServerMetaResponse'];
 export type ServerPing = components['schemas']['ServerPingResponse'];
 export type Servers = components['schemas']['ServerResponse'];
 
 export type Stream = components['schemas']['StreamResponse'];
+export type ServiceStatus = components['schemas']['ServiceStatusResponse'];
