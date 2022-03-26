@@ -115,7 +115,7 @@ Stores the last seen API rate limit object from the last request.
 
 #### .on(event, callback)
 
-Event emitter for events: `error`, `request`, `response`:
+Event emitter for `error`, `request` and `response`. Useful for debugging.
 
 ### Announcements
 
