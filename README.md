@@ -179,9 +179,9 @@ Retrieve a player avatar object.
 
 Retrieve a player skin object.
 
-#### .usernamesByXuids(xuid[]) [Docs](https://docs.nethergames.org/#operation/Get%20Usernames%20By%20XUIDs)
+#### .xuidMapping(xuidOrUsername[]) [Docs](https://docs.nethergames.org/#operation/Get%20XUID%20Mapping)
 
-Retrieve a key-value mapping of XUIDs to usernames.
+Get a key-value mapping of XUIDs to usernames or vice versa.
 
 ### Search
 
