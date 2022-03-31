@@ -71,16 +71,17 @@ export interface paths {
     readonly get: operations['Get Stream'];
   };
   readonly '/v1/players/xuids': {
-    readonly post: operations['Get Usernames By XUIDs'];
+    readonly post: operations['Get XUID Mapping'];
   };
 }
 
 export interface components {
   readonly schemas: {
-    readonly UsernamesByXuidsResponse: {readonly [key: string]: string};
-    readonly UsernamesByXuidsInput: {
+    readonly XuidMappingResponse: {readonly [key: string]: string};
+    readonly XuidMappingInput: Partial<{
       readonly xuids: readonly string[];
-    };
+    }> &
+      Partial<readonly string[]>;
     readonly StreamResponse: {
       readonly streaming: boolean;
       readonly stream: {
@@ -849,7 +850,6 @@ export interface components {
         /** @enum {string} */
         readonly type: 'guild';
         readonly data: Partial<{
-          readonly id: number;
           readonly name: string;
           readonly maxSize: number;
           readonly memberCount: number;
@@ -861,12 +861,11 @@ export interface components {
           readonly xp: number;
           readonly xpToNextLevel: number;
           readonly level: number;
-          readonly leader: string;
+          readonly leader: string | null;
           readonly officers: readonly string[];
           readonly members: readonly string[];
         }> &
           Partial<{
-            readonly id: number;
             readonly name: string;
             readonly maxSize: number;
             readonly memberCount: number;
@@ -1356,7 +1355,7 @@ export interface components {
                 readonly origin?: string;
               }[];
               readonly leaderboard?: boolean;
-            };
+            } | null;
             readonly officers: readonly {
               readonly xuid: string;
               readonly name: string;
@@ -7107,7 +7106,7 @@ export interface components {
     };
     readonly LeaderboardResponseGuilds: {
       readonly name: string;
-      readonly leader: string;
+      readonly leader: string | null;
       readonly xp: number;
       readonly xpToNextLevel: number;
       readonly level: number;
@@ -7169,7 +7168,7 @@ export interface components {
       Partial<
         readonly {
           readonly name: string;
-          readonly leader: string;
+          readonly leader: string | null;
           readonly xp: number;
           readonly xpToNextLevel: number;
           readonly level: number;
@@ -7319,7 +7318,7 @@ export interface components {
       Partial<
         readonly {
           readonly name: string;
-          readonly leader: string;
+          readonly leader: string | null;
           readonly xp: number;
           readonly xpToNextLevel: number;
           readonly level: number;
@@ -7437,7 +7436,6 @@ export interface components {
       readonly scope?: 'bestStreak' | 'kills' | 'streak';
     }[];
     readonly GuildResponseExpanded: {
-      readonly id: number;
       readonly name: string;
       readonly maxSize: number;
       readonly memberCount: number;
@@ -7927,7 +7925,7 @@ export interface components {
           readonly origin?: string;
         }[];
         readonly leaderboard?: boolean;
-      };
+      } | null;
       readonly officers: readonly {
         readonly xuid: string;
         readonly name: string;
@@ -8888,7 +8886,6 @@ export interface components {
       }[];
     };
     readonly GuildResponseDefault: {
-      readonly id: number;
       readonly name: string;
       readonly maxSize: number;
       readonly memberCount: number;
@@ -8900,12 +8897,11 @@ export interface components {
       readonly xp: number;
       readonly xpToNextLevel: number;
       readonly level: number;
-      readonly leader: string;
+      readonly leader: string | null;
       readonly officers: readonly string[];
       readonly members: readonly string[];
     };
     readonly GuildResponseBase: {
-      readonly id: number;
       readonly name: string;
       readonly maxSize: number;
       readonly memberCount: number;
@@ -8919,7 +8915,6 @@ export interface components {
       readonly level: number;
     };
     readonly GuildResponse: Partial<{
-      readonly id: number;
       readonly name: string;
       readonly maxSize: number;
       readonly memberCount: number;
@@ -8931,12 +8926,11 @@ export interface components {
       readonly xp: number;
       readonly xpToNextLevel: number;
       readonly level: number;
-      readonly leader: string;
+      readonly leader: string | null;
       readonly officers: readonly string[];
       readonly members: readonly string[];
     }> &
       Partial<{
-        readonly id: number;
         readonly name: string;
         readonly maxSize: number;
         readonly memberCount: number;
@@ -9426,7 +9420,7 @@ export interface components {
             readonly origin?: string;
           }[];
           readonly leaderboard?: boolean;
-        };
+        } | null;
         readonly officers: readonly {
           readonly xuid: string;
           readonly name: string;
@@ -10396,7 +10390,6 @@ export interface components {
     };
     readonly GuildBulkResponse: Partial<
       readonly {
-        readonly id: number;
         readonly name: string;
         readonly maxSize: number;
         readonly memberCount: number;
@@ -10408,7 +10401,7 @@ export interface components {
         readonly xp: number;
         readonly xpToNextLevel: number;
         readonly level: number;
-        readonly leader: string;
+        readonly leader: string | null;
         readonly officers: readonly string[];
         readonly members: readonly string[];
         /** @enum {string} */
@@ -10418,7 +10411,6 @@ export interface components {
     > &
       Partial<
         readonly {
-          readonly id: number;
           readonly name: string;
           readonly maxSize: number;
           readonly memberCount: number;
@@ -10908,7 +10900,7 @@ export interface components {
               readonly origin?: string;
             }[];
             readonly leaderboard?: boolean;
-          };
+          } | null;
           readonly officers: readonly {
             readonly xuid: string;
             readonly name: string;
@@ -15196,18 +15188,18 @@ export interface operations {
       };
     };
   };
-  readonly 'Get Usernames By XUIDs': {
+  readonly 'Get XUID Mapping': {
     readonly responses: {
       /** Default Response */
       readonly 200: {
         readonly content: {
-          readonly 'application/json': components['schemas']['UsernamesByXuidsResponse'];
+          readonly 'application/json': components['schemas']['XuidMappingResponse'];
         };
       };
     };
     readonly requestBody: {
       readonly content: {
-        readonly 'application/json': components['schemas']['UsernamesByXuidsInput'];
+        readonly 'application/json': components['schemas']['XuidMappingInput'];
       };
     };
   };

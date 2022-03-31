@@ -62,3 +62,8 @@ test('retrieving usernames by xuids works', async t => {
   const usernames = await client.players.usernamesByXuids(['2535418039503959']);
   t.deepEqual(usernames, {'2535418039503959': 'NetherGamesMC'});
 });
+
+test('retrieving xuid mapping works', async t => {
+  const mapping = await client.players.xuidMapping(['2535418039503959', 'NetherGamesMC']);
+  t.deepEqual(mapping, {'2535418039503959': 'NetherGamesMC', 'NetherGamesMC': '2535418039503959'});
+});

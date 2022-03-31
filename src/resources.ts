@@ -217,11 +217,22 @@ export class PlayersResource extends NetherGamesResource {
     return skin!;
   }
 
+  /**
+   * @deprecated Use `PlayersResource.xuidMapping` instead.
+   */
   async usernamesByXuids(xuids: string[]): Promise<Record<string, string>> {
     return this._client._makeRequest<Record<string, string>>({
       path: '/v1/players/xuids',
       method: 'POST',
       body: {xuids},
+    });
+  }
+
+  async xuidMapping(values: string[]): Promise<Record<string, string>> {
+    return this._client._makeRequest<Record<string, string>>({
+      path: '/v1/players/xuids',
+      method: 'POST',
+      body: values,
     });
   }
 }
