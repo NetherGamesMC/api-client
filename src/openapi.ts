@@ -850,6 +850,7 @@ export interface components {
         /** @enum {string} */
         readonly type: 'guild';
         readonly data: Partial<{
+          readonly id: number;
           readonly name: string;
           readonly maxSize: number;
           readonly memberCount: number;
@@ -861,11 +862,12 @@ export interface components {
           readonly xp: number;
           readonly xpToNextLevel: number;
           readonly level: number;
-          readonly leader: string | null;
+          readonly leader: string;
           readonly officers: readonly string[];
           readonly members: readonly string[];
         }> &
           Partial<{
+            readonly id: number;
             readonly name: string;
             readonly maxSize: number;
             readonly memberCount: number;
@@ -1355,7 +1357,7 @@ export interface components {
                 readonly origin?: string;
               }[];
               readonly leaderboard?: boolean;
-            } | null;
+            };
             readonly officers: readonly {
               readonly xuid: string;
               readonly name: string;
@@ -7106,7 +7108,7 @@ export interface components {
     };
     readonly LeaderboardResponseGuilds: {
       readonly name: string;
-      readonly leader: string | null;
+      readonly leader: string;
       readonly xp: number;
       readonly xpToNextLevel: number;
       readonly level: number;
@@ -7168,7 +7170,7 @@ export interface components {
       Partial<
         readonly {
           readonly name: string;
-          readonly leader: string | null;
+          readonly leader: string;
           readonly xp: number;
           readonly xpToNextLevel: number;
           readonly level: number;
@@ -7318,7 +7320,7 @@ export interface components {
       Partial<
         readonly {
           readonly name: string;
-          readonly leader: string | null;
+          readonly leader: string;
           readonly xp: number;
           readonly xpToNextLevel: number;
           readonly level: number;
@@ -7436,6 +7438,7 @@ export interface components {
       readonly scope?: 'bestStreak' | 'kills' | 'streak';
     }[];
     readonly GuildResponseExpanded: {
+      readonly id: number;
       readonly name: string;
       readonly maxSize: number;
       readonly memberCount: number;
@@ -7925,7 +7928,7 @@ export interface components {
           readonly origin?: string;
         }[];
         readonly leaderboard?: boolean;
-      } | null;
+      };
       readonly officers: readonly {
         readonly xuid: string;
         readonly name: string;
@@ -8886,6 +8889,7 @@ export interface components {
       }[];
     };
     readonly GuildResponseDefault: {
+      readonly id: number;
       readonly name: string;
       readonly maxSize: number;
       readonly memberCount: number;
@@ -8897,11 +8901,12 @@ export interface components {
       readonly xp: number;
       readonly xpToNextLevel: number;
       readonly level: number;
-      readonly leader: string | null;
+      readonly leader: string;
       readonly officers: readonly string[];
       readonly members: readonly string[];
     };
     readonly GuildResponseBase: {
+      readonly id: number;
       readonly name: string;
       readonly maxSize: number;
       readonly memberCount: number;
@@ -8915,6 +8920,7 @@ export interface components {
       readonly level: number;
     };
     readonly GuildResponse: Partial<{
+      readonly id: number;
       readonly name: string;
       readonly maxSize: number;
       readonly memberCount: number;
@@ -8926,11 +8932,12 @@ export interface components {
       readonly xp: number;
       readonly xpToNextLevel: number;
       readonly level: number;
-      readonly leader: string | null;
+      readonly leader: string;
       readonly officers: readonly string[];
       readonly members: readonly string[];
     }> &
       Partial<{
+        readonly id: number;
         readonly name: string;
         readonly maxSize: number;
         readonly memberCount: number;
@@ -9420,7 +9427,7 @@ export interface components {
             readonly origin?: string;
           }[];
           readonly leaderboard?: boolean;
-        } | null;
+        };
         readonly officers: readonly {
           readonly xuid: string;
           readonly name: string;
@@ -10390,6 +10397,7 @@ export interface components {
     };
     readonly GuildBulkResponse: Partial<
       readonly {
+        readonly id: number;
         readonly name: string;
         readonly maxSize: number;
         readonly memberCount: number;
@@ -10401,7 +10409,7 @@ export interface components {
         readonly xp: number;
         readonly xpToNextLevel: number;
         readonly level: number;
-        readonly leader: string | null;
+        readonly leader: string;
         readonly officers: readonly string[];
         readonly members: readonly string[];
         /** @enum {string} */
@@ -10411,6 +10419,7 @@ export interface components {
     > &
       Partial<
         readonly {
+          readonly id: number;
           readonly name: string;
           readonly maxSize: number;
           readonly memberCount: number;
@@ -10900,7 +10909,7 @@ export interface components {
               readonly origin?: string;
             }[];
             readonly leaderboard?: boolean;
-          } | null;
+          };
           readonly officers: readonly {
             readonly xuid: string;
             readonly name: string;

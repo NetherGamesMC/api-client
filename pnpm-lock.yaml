@@ -7,7 +7,7 @@ specifiers:
   nanoevents: ^6.0.2
   node-fetch: ^3.2.3
   openapi-typescript: ^5.2.0
-  prettier: ^2.6.1
+  prettier: ^2.6.2
   quick-lru: ^6.1.1
   type-fest: ^2.12.2
   typescript: ^4.6.3
@@ -23,7 +23,7 @@ devDependencies:
   '@sindresorhus/tsconfig': 2.0.0
   ava: 4.1.0_@ava+typescript@3.0.1
   openapi-typescript: 5.2.0
-  prettier: 2.6.1
+  prettier: 2.6.2
   typescript: 4.6.3
 
 packages:
@@ -180,7 +180,7 @@ packages:
       currently-unhandled: 0.4.1
       debug: 4.3.4
       del: 6.0.0
-      emittery: 0.10.1
+      emittery: 0.10.2
       figures: 4.0.1
       globby: 13.1.1
       ignore-by-default: 2.0.0
@@ -423,8 +423,8 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: true
 
-  /emittery/0.10.1:
-    resolution: {integrity: sha512-OBSS9uVXbpgqEGq2V5VnpfCu9vSnfiR9eYVJmxFYToNIcWRHkM4BAFbJe/PWjf/pQdEL7OPxd2jOW/bJiyX7gg==}
+  /emittery/0.10.2:
+    resolution: {integrity: sha512-aITqOwnLanpHLNXZJENbOgjUBeHocD+xsSJmNrjovKBW5HbSpW3d1pEls7GFQPUWXiwG9+0P4GtHfEqC/4M0Iw==}
     engines: {node: '>=12'}
     dev: true
 
@@ -903,7 +903,7 @@ packages:
     dependencies:
       js-yaml: 4.1.0
       mime: 3.0.0
-      prettier: 2.6.1
+      prettier: 2.6.2
       tiny-glob: 0.2.9
       undici: 4.16.0
       yargs-parser: 21.0.1
@@ -999,8 +999,8 @@ packages:
       irregular-plurals: 3.3.0
     dev: true
 
-  /prettier/2.6.1:
-    resolution: {integrity: sha512-8UVbTBYGwN37Bs9LERmxCPjdvPxlEowx2urIL6urHzdb3SDq4B/Z6xLFCblrSnE4iKWcS6ziJ3aOYrc1kz/E2A==}
+  /prettier/2.6.2:
+    resolution: {integrity: sha512-PkUpF+qoXTqhOeWL9fu7As8LXsIUZ1WYaJiY/a7McAQzxjk82OF0tibkFXVCDImZtWxbvojFjerkiLb0/q8mew==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
