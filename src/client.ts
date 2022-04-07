@@ -61,7 +61,7 @@ export class NetherGamesClient {
     this.#apiKey = apiKey;
     this.#baseUrl = options.baseUrl ?? 'https://apiv2.nethergames.org';
     this.#cache = new QuickLRU({maxSize: options.cacheMaxSize ?? 1000});
-    this.#userAgent = options.userAgent ?? 'NetherGames-API-Client/1.1.1';
+    this.#userAgent = options.userAgent ?? 'NetherGames-API-Client/1.1.2';
     this.#emitter = createNanoEvents<Events>();
     if (options.userAgentAppendix != null) {
       this.#userAgent += ` (${options.userAgentAppendix})`;
