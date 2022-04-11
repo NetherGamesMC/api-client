@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@ava/typescript': ^3.0.1
   '@sindresorhus/tsconfig': ^2.0.0
-  ava: ^4.1.0
+  ava: ^4.2.0
   nanoevents: ^6.0.2
   node-fetch: ^3.2.3
   openapi-typescript: ^5.2.0
@@ -21,7 +21,7 @@ dependencies:
 devDependencies:
   '@ava/typescript': 3.0.1
   '@sindresorhus/tsconfig': 2.0.0
-  ava: 4.1.0_@ava+typescript@3.0.1
+  ava: 4.2.0_@ava+typescript@3.0.1
   openapi-typescript: 5.2.0
   prettier: 2.6.2
   typescript: 4.6.3
@@ -149,8 +149,8 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /ava/4.1.0_@ava+typescript@3.0.1:
-    resolution: {integrity: sha512-QD6MBWHzagAwb9vxduXzVWx6Q77DUHLxvIebSY6+enL+Ri6KzSZYj0IBOFifA26wfpJPZnWKLUh3vwx1LyVh/g==}
+  /ava/4.2.0_@ava+typescript@3.0.1:
+    resolution: {integrity: sha512-96N/rH2ZlBjoh18CsjH3zfo/rzukkRoqNK7R/Z3MLRrqu6cRRf+i4Zwna7ZRYEIl55yF1BKh/nSPCZWqoXfPJA==}
     engines: {node: '>=12.22 <13 || >=14.17 <15 || >=16.4 <17 || >=17'}
     hasBin: true
     peerDependencies:
@@ -204,7 +204,7 @@ packages:
       supertap: 3.0.1
       temp-dir: 2.0.0
       write-file-atomic: 4.0.1
-      yargs: 17.4.0
+      yargs: 17.4.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -764,8 +764,8 @@ packages:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
     dev: true
 
-  /lru-cache/7.8.0:
-    resolution: {integrity: sha512-AmXqneQZL3KZMIgBpaPTeI6pfwh+xQ2vutMsyqOu1TBdEXFZgpG/80wuJ531w2ZN7TI0/oc8CPxzh/DKQudZqg==}
+  /lru-cache/7.8.1:
+    resolution: {integrity: sha512-E1v547OCgJvbvevfjgK9sNKIVXO96NnsTsFPBlg4ZxjhsJSODoH9lk8Bm0OxvHNm6Vm5Yqkl/1fErDxhYL8Skg==}
     engines: {node: '>=12'}
     dev: true
 
@@ -1066,7 +1066,7 @@ packages:
     engines: {node: ^10.0.0 || ^12.0.0 || ^14.0.0 || >=16.0.0}
     hasBin: true
     dependencies:
-      lru-cache: 7.8.0
+      lru-cache: 7.8.1
     dev: true
 
   /serialize-error/7.0.1:
@@ -1262,8 +1262,8 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /yargs/17.4.0:
-    resolution: {integrity: sha512-WJudfrk81yWFSOkZYpAZx4Nt7V4xp7S/uJkX0CnxovMCt1wCE8LNftPpNuF9X/u9gN5nsD7ycYtRcDf2pL3UiA==}
+  /yargs/17.4.1:
+    resolution: {integrity: sha512-WSZD9jgobAg3ZKuCQZSa3g9QOJeCCqLoLAykiWgmXnDo9EPnn4RPf5qVTtzgOx66o6/oqhcA5tHtJXpG8pMt3g==}
     engines: {node: '>=12'}
     dependencies:
       cliui: 7.0.4
