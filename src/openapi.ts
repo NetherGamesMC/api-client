@@ -358,6 +358,52 @@ export interface components {
       readonly TR: 'TNT Run';
       /** @enum {string} */
       readonly UHC: 'UHC';
+      /** @enum {string} */
+      readonly ac: 'Arcade';
+      /** @enum {string} */
+      readonly bb: 'Build Battle';
+      /** @enum {string} */
+      readonly beta: 'Beta';
+      /** @enum {string} */
+      readonly bh: 'Block Hunt';
+      /** @enum {string} */
+      readonly br: 'Battle Royale';
+      /** @enum {string} */
+      readonly bw: 'Bedwars';
+      /** @enum {string} */
+      readonly cq: 'Conquests';
+      /** @enum {string} */
+      readonly creative: 'Creative';
+      /** @enum {string} */
+      readonly ctf: 'Capture the Flag';
+      /** @enum {string} */
+      readonly duels: 'Duels';
+      /** @enum {string} */
+      readonly factions: 'Factions';
+      /** @enum {string} */
+      readonly lobby: 'Lobby';
+      /** @enum {string} */
+      readonly mm: 'Murder Mystery';
+      /** @enum {string} */
+      readonly ms: 'Momma Says';
+      /** @enum {string} */
+      readonly replay: 'Replay';
+      /** @enum {string} */
+      readonly sb: 'Skyblock';
+      /** @enum {string} */
+      readonly sc: 'Soccer';
+      /** @enum {string} */
+      readonly sg: 'Survival Games';
+      /** @enum {string} */
+      readonly sp: 'Spleef';
+      /** @enum {string} */
+      readonly sw: 'SkyWars';
+      /** @enum {string} */
+      readonly tb: 'The Bridge';
+      /** @enum {string} */
+      readonly tr: 'TNT Run';
+      /** @enum {string} */
+      readonly uhc: 'UHC';
     };
     readonly ServerGameStats: {
       readonly max: number;
