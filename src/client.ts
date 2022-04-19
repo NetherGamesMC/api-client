@@ -13,7 +13,7 @@ import {
   StatusResource,
   StreamResource,
 } from './resources.js';
-import type {Faction, Guild, Player} from './types.js';
+import type {Faction, Guild, Player, ServerMeta} from './types.js';
 import {parseCacheHeaders, parseRateLimitHeaders, RateLimitHeaders} from './utils.js';
 
 interface MakeRequestOptions {
@@ -56,18 +56,20 @@ export class NetherGamesClient {
 
   lastBuildId: string | null;
   lastRateLimit: RateLimitHeaders | null;
+  lastServerMeta: ServerMeta | null;
 
   constructor(apiKey?: string, options: NetherGamesClientOptions = {}) {
     this.#apiKey = apiKey;
     this.#baseUrl = options.baseUrl ?? 'https://apiv2.nethergames.org';
     this.#cache = new QuickLRU({maxSize: options.cacheMaxSize ?? 1000});
-    this.#userAgent = options.userAgent ?? 'NetherGames-API-Client/1.1.2';
+    this.#userAgent = options.userAgent ?? 'NetherGames-API-Client/1.1.3';
     this.#emitter = createNanoEvents<Events>();
     if (options.userAgentAppendix != null) {
       this.#userAgent += ` (${options.userAgentAppendix})`;
     }
     this.lastBuildId = null;
     this.lastRateLimit = null;
+    this.lastServerMeta = null;
 
     this.announcements = new AnnouncementsResource(this);
     this.factions = new FactionsResource(this);
