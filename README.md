@@ -113,6 +113,13 @@ Default: `null`
 
 Stores the last seen API rate limit object from the last request.
 
+#### .lastServerMeta
+
+Type: `object`\
+Default: `null`
+
+Stores the last retrieved [server metadata](#meta-docs) object. Useful for caching at startup.
+
 #### .on(event, callback)
 
 Event emitter for `error`, `request` and `response`. Useful for debugging.
