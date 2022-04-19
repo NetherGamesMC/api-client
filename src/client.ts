@@ -1,4 +1,4 @@
-import {createNanoEvents, Emitter} from 'nanoevents';
+import {createNanoEvents, Emitter, Unsubscribe} from 'nanoevents';
 import fetch from 'node-fetch';
 import QuickLRU from 'quick-lru';
 import {NetherGamesError, NetherGamesRateLimitError, NetherGamesRequestError} from './errors.js';
@@ -62,7 +62,7 @@ export class NetherGamesClient {
     this.#apiKey = apiKey;
     this.#baseUrl = options.baseUrl ?? 'https://apiv2.nethergames.org';
     this.#cache = new QuickLRU({maxSize: options.cacheMaxSize ?? 1000});
-    this.#userAgent = options.userAgent ?? 'NetherGames-API-Client/1.1.4';
+    this.#userAgent = options.userAgent ?? 'NetherGames-API-Client/1.1.5';
     this.#emitter = createNanoEvents<Events>();
     if (options.userAgentAppendix != null) {
       this.#userAgent += ` (${options.userAgentAppendix})`;
@@ -82,8 +82,12 @@ export class NetherGamesClient {
     this.stream = new StreamResource(this);
   }
 
-  on<E extends keyof Events>(event: E, callback: Events[E]) {
+  on<E extends keyof Events>(event: E, callback: Events[E]): Unsubscribe {
     return this.#emitter.on(event, callback);
+  }
+
+  async _setLastServerMeta(data: ServerMeta): Promise<void> {
+    this.lastServerMeta = data;
   }
 
   async _makeRequest<T>(options: MakeRequestOptions): Promise<T> {
