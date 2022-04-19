@@ -258,7 +258,7 @@ export class ServersResource extends NetherGamesResource {
 
   async meta(): Promise<ServerMeta> {
     const data = await this._client._getOne<ServerMeta>('/v1/servers/meta');
-    this._client._setLastServerMeta(data!);
+    this._client.lastServerMeta = data!;
     return data!;
   }
 

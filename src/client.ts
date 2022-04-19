@@ -86,10 +86,6 @@ export class NetherGamesClient {
     return this.#emitter.on(event, callback);
   }
 
-  async _setLastServerMeta(data: ServerMeta): Promise<void> {
-    this.lastServerMeta = data;
-  }
-
   async _makeRequest<T>(options: MakeRequestOptions): Promise<T> {
     const url = new URL(options.path, this.#baseUrl);
     for (const [key, value] of Object.entries(options.params ?? {})) {
