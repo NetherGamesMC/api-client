@@ -68,7 +68,7 @@ export interface paths {
     readonly get: operations['Get Service Status'];
   };
   readonly '/v1/stream': {
-    readonly get: operations['Get Stream'];
+    readonly get: operations['Get Stream Status'];
   };
   readonly '/v1/players/xuids': {
     readonly post: operations['Get XUID Mapping'];
@@ -84,62 +84,6 @@ export interface components {
       Partial<readonly string[]>;
     readonly StreamResponse: {
       readonly streaming: boolean;
-      readonly stream: {
-        readonly id: string;
-        readonly user: {
-          readonly id: string;
-          readonly name: string;
-          readonly displayName: string;
-          readonly description: string;
-          readonly type: string;
-          readonly broadcasterType: string;
-          readonly profilePictureUrl: string;
-          readonly offlinePlaceholderUrl: string;
-          readonly views: number;
-          /** Format: date-time */
-          readonly creationDate: string;
-        };
-        readonly game: {
-          readonly id: string;
-          readonly name: string;
-          readonly boxArtUrl: string;
-        };
-        readonly type: string;
-        readonly title: string;
-        readonly viewers: number;
-        /** Format: date-time */
-        readonly startDate: string;
-        readonly thumbnailUrl: string;
-        readonly tags: readonly string[];
-      } | null;
-    };
-    readonly Stream: {
-      readonly id: string;
-      readonly user: {
-        readonly id: string;
-        readonly name: string;
-        readonly displayName: string;
-        readonly description: string;
-        readonly type: string;
-        readonly broadcasterType: string;
-        readonly profilePictureUrl: string;
-        readonly offlinePlaceholderUrl: string;
-        readonly views: number;
-        /** Format: date-time */
-        readonly creationDate: string;
-      };
-      readonly game: {
-        readonly id: string;
-        readonly name: string;
-        readonly boxArtUrl: string;
-      };
-      readonly type: string;
-      readonly title: string;
-      readonly viewers: number;
-      /** Format: date-time */
-      readonly startDate: string;
-      readonly thumbnailUrl: string;
-      readonly tags: readonly string[];
     };
     readonly ServiceStatusResponse: {
       readonly title: string;
@@ -279,31 +223,25 @@ export interface components {
       };
     };
     readonly ServerPingResponse: {
-      readonly rinfo: {
-        readonly address: string;
-        readonly family: string;
-        readonly port: number;
-        readonly size: number;
+      /** @enum {string} */
+      readonly edition: 'MCPE';
+      readonly motd: {
+        readonly raw: string;
+        readonly clean: string;
       };
-      readonly advertise: string;
-      readonly serverId: {
-        readonly low: number;
-        readonly high: number;
-        readonly unsigned: boolean;
+      readonly version: {
+        readonly name: string;
+        readonly protocol: number;
       };
-      readonly pingId: {
-        readonly low: number;
-        readonly high: number;
-        readonly unsigned: boolean;
+      readonly players: {
+        readonly online: number;
+        readonly max: number;
       };
-      readonly game: string;
-      readonly version: string;
-      readonly name: string;
-      readonly cleanName: string;
-      readonly currentPlayers: string;
-      readonly maxPlayers: string;
-      readonly ackId: number;
-      readonly connected: boolean;
+      readonly serverID: string;
+      readonly gameMode: string;
+      readonly gameModeID: number;
+      readonly portIPv4: number;
+      readonly portIPv6: number;
     };
     readonly ServerPingQuery: {
       /** @default play.nethergames.org */
@@ -15260,7 +15198,7 @@ export interface operations {
       };
     };
   };
-  readonly 'Get Stream': {
+  readonly 'Get Stream Status': {
     readonly responses: {
       /** Default Response */
       readonly 200: {
