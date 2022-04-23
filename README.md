@@ -212,7 +212,7 @@ Retrieve server metadata.
 
 #### .ping(ip = 'play.nethergames.org', port = 19132) [Docs](https://docs.nethergames.org/#operation/Get%20Server%20Ping)
 
-Retrieve server ping data, or null if not found.
+Retrieve server data for any `*.nethergames.org` IP, or null if not found.
 
 ### Status
 
@@ -222,6 +222,6 @@ Retrieve service status.
 
 ### Stream
 
-#### .retrieve() [Docs](https://docs.nethergames.org/#operation/Get%20Stream)
+#### .retrieve() [Docs](https://docs.nethergames.org/#operation/Get%20Stream%20Status)
 
-Retrieve stream data.
+Retrieve YouTube streaming status.
