@@ -32,7 +32,7 @@ Type: `object`
 #### baseUrl
 
 Type: `string`\
-Default: `https://apiv2.nethergames.org`
+Default: `https://api.ngmc.co`
 
 API host to use when sending requests.
 
@@ -46,7 +46,7 @@ Maximum amount of LRU objects to hold in memory.
 #### userAgent
 
 Type: `string`\
-Default: `NetherGames-API-Client/2.0.0`
+Default: `NetherGames-API-Client/2.0.1`
 
 User agent to use when sending requests.
 
@@ -57,7 +57,7 @@ Type: `string`
 
 Append an identifier to user agent in parentheses.\
 This allows us to better identify requests in our error monitoring tools.\
-Example: `Casper's Discord Bot` => `NetherGames-API-Client/2.0.0 (Casper's Discord Bot)`
+Example: `Casper's Discord Bot` => `NetherGames-API-Client/2.0.1 (Casper's Discord Bot)`
 
 ### Instance
 
