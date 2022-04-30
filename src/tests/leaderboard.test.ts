@@ -70,5 +70,5 @@ test('retrieving multiple leaderboards works', async t => {
     {type: 'wins', limit: 10},
     {type: 'xp', limit: 10},
   ]);
-  t.is(leaderboards.length, 10);
+  t.is(leaderboards.length, 9);
 });

@@ -62,7 +62,7 @@ export class NetherGamesClient {
     this.#apiKey = apiKey;
     this.#baseUrl = options.baseUrl ?? 'https://api.ngmc.co';
     this.#cache = new QuickLRU({maxSize: options.cacheMaxSize ?? 1000});
-    this.#userAgent = options.userAgent ?? 'NetherGames-API-Client/2.0.2';
+    this.#userAgent = options.userAgent ?? 'NetherGames-API-Client/2.0.3';
     this.#emitter = createNanoEvents<Events>();
     if (options.userAgentAppendix != null) {
       this.#userAgent += ` (${options.userAgentAppendix})`;
@@ -194,22 +194,11 @@ export class NetherGamesClient {
     }
 
     if (uniqueNames.size > 0) {
-      const remaining = await this._makeRequest<Array<T & {_cacheTTL: number}>>({
+      const remaining = await this._makeRequest<T[]>({
         path: `/v1/${resource}/batch`,
         method: 'POST',
         body: {names: [...uniqueNames], ...params},
       });
-
-      for (const entity of remaining) {
-        const url = new URL(`/v1/${resource}/${entity.name}`, this.#baseUrl);
-        for (const [key, value] of Object.entries(params ?? {})) {
-          if (value != null) {
-            url.searchParams.set(key, value.toString());
-          }
-        }
-        this.#cache.set(url.toString(), entity, {maxAge: entity._cacheTTL * 1000});
-      }
-
       results.push(...remaining);
     }
 

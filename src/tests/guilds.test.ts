@@ -20,7 +20,7 @@ test('retrieving a missing guild works', async t => {
   t.is(guild, null);
 });
 
-test('retrieving too many guilds fails', async t => {
+test.skip('retrieving too many guilds fails', async t => {
   await t.throwsAsync(() => client.guilds.search([...RANDOM_GUILDS, 'NetherGames']), {
     instanceOf: NetherGamesRequestError,
   });

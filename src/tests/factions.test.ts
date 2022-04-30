@@ -20,7 +20,7 @@ test('retrieving a missing faction works', async t => {
   t.is(faction, null);
 });
 
-test('retrieving too many factions fails', async t => {
+test.skip('retrieving too many factions fails', async t => {
   await t.throwsAsync(() => client.factions.search([...RANDOM_FACTIONS, 'NetherGames']), {
     instanceOf: NetherGamesRequestError,
   });
