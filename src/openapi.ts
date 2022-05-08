@@ -360,6 +360,7 @@ export interface components {
         readonly skinVisibility: boolean;
         readonly bio: string;
         readonly staff: boolean;
+        readonly flags: number;
         readonly guild: string | null;
         readonly level: number;
         readonly online: boolean;
@@ -870,6 +871,7 @@ export interface components {
               readonly skinVisibility: boolean;
               readonly bio: string;
               readonly staff: boolean;
+              readonly flags: number;
               readonly guild: string | null;
               readonly level: number;
               readonly online: boolean;
@@ -1346,6 +1348,7 @@ export interface components {
               readonly skinVisibility: boolean;
               readonly bio: string;
               readonly staff: boolean;
+              readonly flags: number;
               readonly guild: string | null;
               readonly level: number;
               readonly online: boolean;
@@ -1822,6 +1825,7 @@ export interface components {
               readonly skinVisibility: boolean;
               readonly bio: string;
               readonly staff: boolean;
+              readonly flags: number;
               readonly guild: string | null;
               readonly level: number;
               readonly online: boolean;
@@ -2389,6 +2393,7 @@ export interface components {
       readonly skinVisibility: boolean;
       readonly bio: string;
       readonly staff: boolean;
+      readonly flags: number;
       readonly guild: string | null;
       readonly level: number;
       readonly online: boolean;
@@ -3482,6 +3487,7 @@ export interface components {
                 readonly skinVisibility: boolean;
                 readonly bio: string;
                 readonly staff: boolean;
+                readonly flags: number;
                 readonly guild: string | null;
                 readonly level: number;
                 readonly online: boolean;
@@ -3932,6 +3938,7 @@ export interface components {
                 readonly skinVisibility: boolean;
                 readonly bio: string;
                 readonly staff: boolean;
+                readonly flags: number;
                 readonly guild: string | null;
                 readonly level: number;
                 readonly online: boolean;
@@ -4382,6 +4389,7 @@ export interface components {
                 readonly skinVisibility: boolean;
                 readonly bio: string;
                 readonly staff: boolean;
+                readonly flags: number;
                 readonly guild: string | null;
                 readonly level: number;
                 readonly online: boolean;
@@ -5191,6 +5199,7 @@ export interface components {
       readonly skinVisibility: boolean;
       readonly bio: string;
       readonly staff: boolean;
+      readonly flags: number;
       readonly guild: string | null;
       readonly level: number;
       readonly online: boolean;
@@ -6050,6 +6059,7 @@ export interface components {
         readonly skinVisibility: boolean;
         readonly bio: string;
         readonly staff: boolean;
+        readonly flags: number;
         readonly guild: string | null;
         readonly level: number;
         readonly online: boolean;
@@ -6526,6 +6536,7 @@ export interface components {
         readonly skinVisibility: boolean;
         readonly bio: string;
         readonly staff: boolean;
+        readonly flags: number;
         readonly guild: string | null;
         readonly level: number;
         readonly online: boolean;
@@ -7002,6 +7013,7 @@ export interface components {
         readonly skinVisibility: boolean;
         readonly bio: string;
         readonly staff: boolean;
+        readonly flags: number;
         readonly guild: string | null;
         readonly level: number;
         readonly online: boolean;
@@ -7540,6 +7552,7 @@ export interface components {
           readonly skinVisibility: boolean;
           readonly bio: string;
           readonly staff: boolean;
+          readonly flags: number;
           readonly guild: string | null;
           readonly level: number;
           readonly online: boolean;
@@ -8016,6 +8029,7 @@ export interface components {
           readonly skinVisibility: boolean;
           readonly bio: string;
           readonly staff: boolean;
+          readonly flags: number;
           readonly guild: string | null;
           readonly level: number;
           readonly online: boolean;
@@ -8492,6 +8506,7 @@ export interface components {
           readonly skinVisibility: boolean;
           readonly bio: string;
           readonly staff: boolean;
+          readonly flags: number;
           readonly guild: string | null;
           readonly level: number;
           readonly online: boolean;
@@ -9010,6 +9025,7 @@ export interface components {
             readonly skinVisibility: boolean;
             readonly bio: string;
             readonly staff: boolean;
+            readonly flags: number;
             readonly guild: string | null;
             readonly level: number;
             readonly online: boolean;
@@ -9486,6 +9502,7 @@ export interface components {
             readonly skinVisibility: boolean;
             readonly bio: string;
             readonly staff: boolean;
+            readonly flags: number;
             readonly guild: string | null;
             readonly level: number;
             readonly online: boolean;
@@ -9962,6 +9979,7 @@ export interface components {
             readonly skinVisibility: boolean;
             readonly bio: string;
             readonly staff: boolean;
+            readonly flags: number;
             readonly guild: string | null;
             readonly level: number;
             readonly online: boolean;
@@ -10463,6 +10481,7 @@ export interface components {
           readonly skinVisibility: boolean;
           readonly bio: string;
           readonly staff: boolean;
+          readonly flags: number;
           readonly guild: string | null;
           readonly level: number;
           readonly online: boolean;
@@ -10920,6 +10939,7 @@ export interface components {
           readonly skinVisibility: boolean;
           readonly bio: string;
           readonly staff: boolean;
+          readonly flags: number;
           readonly guild: string | null;
           readonly level: number;
           readonly online: boolean;
@@ -11377,6 +11397,7 @@ export interface components {
           readonly skinVisibility: boolean;
           readonly bio: string;
           readonly staff: boolean;
+          readonly flags: number;
           readonly guild: string | null;
           readonly level: number;
           readonly online: boolean;
@@ -11852,6 +11873,7 @@ export interface components {
             readonly skinVisibility: boolean;
             readonly bio: string;
             readonly staff: boolean;
+            readonly flags: number;
             readonly guild: string | null;
             readonly level: number;
             readonly online: boolean;
@@ -12328,6 +12350,7 @@ export interface components {
             readonly skinVisibility: boolean;
             readonly bio: string;
             readonly staff: boolean;
+            readonly flags: number;
             readonly guild: string | null;
             readonly level: number;
             readonly online: boolean;
@@ -12804,6 +12827,7 @@ export interface components {
             readonly skinVisibility: boolean;
             readonly bio: string;
             readonly staff: boolean;
+            readonly flags: number;
             readonly guild: string | null;
             readonly level: number;
             readonly online: boolean;
