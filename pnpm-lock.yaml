@@ -1,4 +1,4 @@
-lockfileVersion: 5.3
+lockfileVersion: 5.4
 
 specifiers:
   '@ava/typescript': ^3.0.1
@@ -6,7 +6,7 @@ specifiers:
   ava: ^4.2.0
   nanoevents: ^6.0.2
   node-fetch: ^3.2.4
-  openapi-typescript: ^5.2.0
+  openapi-typescript: ^5.3.0
   prettier: ^2.6.2
   quick-lru: ^6.1.1
   type-fest: ^2.12.2
@@ -22,7 +22,7 @@ devDependencies:
   '@ava/typescript': 3.0.1
   '@sindresorhus/tsconfig': 2.0.0
   ava: 4.2.0_@ava+typescript@3.0.1
-  openapi-typescript: 5.2.0
+  openapi-typescript: 5.3.0
   prettier: 2.6.2
   typescript: 4.6.4
 
@@ -81,11 +81,11 @@ packages:
       indent-string: 4.0.0
     dev: true
 
-  /aggregate-error/4.0.0:
-    resolution: {integrity: sha512-8DGp7zUt1E9k0NE2q4jlXHk+V3ORErmwolEdRz9iV+LKJ40WhMHh92cxAvhqV2I+zEn/gotIoqoMs0NjF3xofg==}
+  /aggregate-error/4.0.1:
+    resolution: {integrity: sha512-0poP0T7el6Vq3rstR8Mn4V/IQrpBLO6POkUSrN7RhyY+GF/InCFShQzsQ39T25gkHhLgSLByyAz+Kjb+c2L98w==}
     engines: {node: '>=12'}
     dependencies:
-      clean-stack: 4.1.0
+      clean-stack: 4.2.0
       indent-string: 5.0.0
     dev: true
 
@@ -183,7 +183,7 @@ packages:
       emittery: 0.10.2
       figures: 4.0.1
       globby: 13.1.1
-      ignore-by-default: 2.0.0
+      ignore-by-default: 2.1.0
       indent-string: 5.0.0
       is-error: 2.2.2
       is-plain-object: 5.0.0
@@ -285,8 +285,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /clean-stack/4.1.0:
-    resolution: {integrity: sha512-dxXQYI7mfQVcaF12s6sjNFoZ6ZPDQuBBLp3QJ5156k9EvUFClUoZ11fo8HnLQO241DDVntHEug8MOuFO5PSfRg==}
+  /clean-stack/4.2.0:
+    resolution: {integrity: sha512-LYv6XPxoyODi36Dp976riBtSY27VmFo+MKqEU9QCCWyTrdEPDog+RWA7xQWHi6Vbp61j5c4cdzzX1NidnwtUWg==}
     engines: {node: '>=12'}
     dependencies:
       escape-string-regexp: 5.0.0
@@ -616,8 +616,8 @@ packages:
     engines: {node: '>=10.17.0'}
     dev: true
 
-  /ignore-by-default/2.0.0:
-    resolution: {integrity: sha512-+mQSgMRiFD3L3AOxLYOCxjIq4OnAmo5CIuC+lj5ehCJcPtV++QacEV7FdpzvYxH6DaOySWzQU6RR0lPLy37ckA==}
+  /ignore-by-default/2.1.0:
+    resolution: {integrity: sha512-yiWd4GVmJp0Q6ghmM2B/V3oZGRmjrKLXvHR3TE1nfoXsmoggllfZUQe74EN0fJdPFZu2NIvNdrMMLm3OsV7Ohw==}
     engines: {node: '>=10 <11 || >=12 <13 || >=14'}
     dev: true
 
@@ -896,8 +896,8 @@ packages:
       mimic-fn: 2.1.0
     dev: true
 
-  /openapi-typescript/5.2.0:
-    resolution: {integrity: sha512-EGoPTmxrpiN40R6An5Wqol2l74sRb773pv/KXWYCQaMCXNtMGN7Jv+y/jY4B1Bd4hsIW2j9GFmQXxqfGmOXaxA==}
+  /openapi-typescript/5.3.0:
+    resolution: {integrity: sha512-Y1QI1nWQE56nYFGXMAanS9VVHCUKzgLCfAe43vFbuciqm48N02DX9LWSarX18PGF9qKd6EWhmIlCumOXKPzAug==}
     engines: {node: '>= 14.0.0', npm: '>= 7.0.0'}
     hasBin: true
     dependencies:
@@ -905,7 +905,7 @@ packages:
       mime: 3.0.0
       prettier: 2.6.2
       tiny-glob: 0.2.9
-      undici: 4.16.0
+      undici: 5.1.1
       yargs-parser: 21.0.1
     dev: true
 
@@ -946,7 +946,7 @@ packages:
     resolution: {integrity: sha512-SRbIQFoLYNezHkqZslqeg963HYUtqOrfMCxjNrFOpJ19WTYuq26rQoOXeX8QQiMLUlLqdYV/7PuDsdYJ7hLE1w==}
     engines: {node: '>=12'}
     dependencies:
-      aggregate-error: 4.0.0
+      aggregate-error: 4.0.1
     dev: true
 
   /p-timeout/5.0.2:
@@ -1210,8 +1210,8 @@ packages:
     hasBin: true
     dev: true
 
-  /undici/4.16.0:
-    resolution: {integrity: sha512-tkZSECUYi+/T1i4u+4+lwZmQgLXd4BLGlrc7KZPcLIW7Jpq99+Xpc30ONv7nS6F5UNOxp/HBZSSL9MafUrvJbw==}
+  /undici/5.1.1:
+    resolution: {integrity: sha512-CmK9JzLSMGx+2msOao8LhkKn3J7eKo2M50v0KZQ2XbiHcGqLS1HiIj01ceIm3jbUYlspw/FTSb6nMdSNyvVyaQ==}
     engines: {node: '>=12.18'}
     dev: true
 
