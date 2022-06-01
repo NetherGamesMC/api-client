@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@ava/typescript': ^3.0.1
-  '@sindresorhus/tsconfig': ^3.0.0
+  '@sindresorhus/tsconfig': ^3.0.1
   ava: ^4.2.0
   nanoevents: ^6.0.2
   node-fetch: ^3.2.4
@@ -20,7 +20,7 @@ dependencies:
 
 devDependencies:
   '@ava/typescript': 3.0.1
-  '@sindresorhus/tsconfig': 3.0.0
+  '@sindresorhus/tsconfig': 3.0.1
   ava: 4.2.0_@ava+typescript@3.0.1
   openapi-typescript: 5.3.0
   prettier: 2.6.2
@@ -57,8 +57,8 @@ packages:
       fastq: 1.13.0
     dev: true
 
-  /@sindresorhus/tsconfig/3.0.0:
-    resolution: {integrity: sha512-sXwNYvmvVND85UbnUEv7U0c4IjkVkY9o5HElCT5CDx7wKvYFzpc9w+UVG/c6C7i1RNDH/MYF3k1QWwkk9O823w==}
+  /@sindresorhus/tsconfig/3.0.1:
+    resolution: {integrity: sha512-0/gtPNTY3++0J2BZM5nHHULg0BIMw886gqdn8vWN+Av6bgF5ZU2qIcHubAn+Z9KNvJhO8WFE+9kDOU3n6OcKtA==}
     engines: {node: '>=14'}
     dev: true
 
@@ -368,7 +368,7 @@ packages:
     dev: true
 
   /currently-unhandled/0.4.1:
-    resolution: {integrity: sha1-mI3zP+qxke95mmE2nddsF635V+o=}
+    resolution: {integrity: sha512-/fITjgjGU50vjQ4FH6eUoYu+iUoUKIXws2hL15JJpIR+BbTxaXQsMuuyjtNh2WqsSBS5nsaZHFsFecyw5CCAng==}
     engines: {node: '>=0.10.0'}
     dependencies:
       array-find-index: 1.0.2
@@ -537,7 +537,7 @@ packages:
     dev: false
 
   /fs.realpath/1.0.0:
-    resolution: {integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=}
+    resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
     dev: true
 
   /fsevents/2.3.2:
@@ -627,7 +627,7 @@ packages:
     dev: true
 
   /imurmurhash/0.1.4:
-    resolution: {integrity: sha1-khi5srkoojixPcT7a21XbyMUU+o=}
+    resolution: {integrity: sha512-JmXMZ6wuvDmLiHEml9ykzqO6lwFbof0GG4IkcGaENdCRDDmMVnny7s5HsIgHCbaq0w2MyPhDqkhTUgS2LU2PHA==}
     engines: {node: '>=0.8.19'}
     dev: true
 
@@ -642,7 +642,7 @@ packages:
     dev: true
 
   /inflight/1.0.6:
-    resolution: {integrity: sha1-Sb1jMdfQLQwJvJEKEHW6gWW1bfk=}
+    resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
     dependencies:
       once: 1.4.0
       wrappy: 1.0.2
@@ -669,7 +669,7 @@ packages:
     dev: true
 
   /is-extglob/2.1.1:
-    resolution: {integrity: sha1-qIwCU1eR8C7TfHahueqXc8gz+MI=}
+    resolution: {integrity: sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ==}
     engines: {node: '>=0.10.0'}
     dev: true
 
@@ -725,11 +725,11 @@ packages:
     dev: true
 
   /isexe/2.0.0:
-    resolution: {integrity: sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=}
+    resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
     dev: true
 
   /js-string-escape/1.0.1:
-    resolution: {integrity: sha1-4mJbrbwNZ8dTPp7cEGjFh65BN+8=}
+    resolution: {integrity: sha512-Smw4xcfIQ5LVjAOuJCvN/zIodzA/BBSsluuoSykP+lUvScIi4U6RJLfwHet5cxFnCswUjISV8oAXaqaJDY3chg==}
     engines: {node: '>= 0.8'}
     dev: true
 
@@ -884,7 +884,7 @@ packages:
     dev: true
 
   /once/1.4.0:
-    resolution: {integrity: sha1-WDsap3WWHUsROsF9nFC6753Xa9E=}
+    resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
     dependencies:
       wrappy: 1.0.2
     dev: true
@@ -905,12 +905,12 @@ packages:
       mime: 3.0.0
       prettier: 2.6.2
       tiny-glob: 0.2.9
-      undici: 5.3.0
+      undici: 5.4.0
       yargs-parser: 21.0.1
     dev: true
 
   /p-defer/1.0.0:
-    resolution: {integrity: sha1-n26xgvbJqozXQwBKfU+WsZaw+ww=}
+    resolution: {integrity: sha512-wB3wfAxZpk2AzOfUMJNL+d36xothRSyj8EXOa4f6GMqYDN9BJaaSISbsk+wS9abmnebVw95C2Kb5t85UmpCxuw==}
     engines: {node: '>=4'}
     dev: true
 
@@ -965,7 +965,7 @@ packages:
     dev: true
 
   /path-is-absolute/1.0.1:
-    resolution: {integrity: sha1-F0uSaHNVNP+8es5r9TpanhtcX18=}
+    resolution: {integrity: sha512-AVbw3UJ2e9bq64vSaS9Am0fje1Pa8pbGqTTsmXfaIiMpnr5DlDhfJOuLj9Sf95ZPVDAUerDfEk88MPmPe7UCQg==}
     engines: {node: '>=0.10.0'}
     dev: true
 
@@ -1210,8 +1210,8 @@ packages:
     hasBin: true
     dev: true
 
-  /undici/5.3.0:
-    resolution: {integrity: sha512-8LxC/xmR2GCE4q1heE1sJxVnnf5S6yQ2dObvMFBBWkB8aQlaqNuWovgRFWRMB7KUdLPGZfOTTmUeeLEJYX56iQ==}
+  /undici/5.4.0:
+    resolution: {integrity: sha512-A1SRXysDg7J+mVP46jF+9cKANw0kptqSFZ8tGyL+HBiv0K1spjxPX8Z4EGu+Eu6pjClJUBdnUPlxrOafR668/g==}
     engines: {node: '>=12.18'}
     dev: true
 
