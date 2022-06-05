@@ -3,28 +3,28 @@ lockfileVersion: 5.4
 specifiers:
   '@ava/typescript': ^3.0.1
   '@sindresorhus/tsconfig': ^3.0.1
-  ava: ^4.2.0
+  ava: ^4.3.0
   nanoevents: ^6.0.2
-  node-fetch: ^3.2.4
-  openapi-typescript: ^5.3.0
+  node-fetch: ^3.2.5
+  openapi-typescript: ^5.4.0
   prettier: ^2.6.2
   quick-lru: ^6.1.1
   type-fest: ^2.13.0
-  typescript: ^4.7.2
+  typescript: ^4.7.3
 
 dependencies:
   nanoevents: 6.0.2
-  node-fetch: 3.2.4
+  node-fetch: 3.2.5
   quick-lru: 6.1.1
   type-fest: 2.13.0
 
 devDependencies:
   '@ava/typescript': 3.0.1
   '@sindresorhus/tsconfig': 3.0.1
-  ava: 4.2.0_@ava+typescript@3.0.1
-  openapi-typescript: 5.3.0
+  ava: 4.3.0_@ava+typescript@3.0.1
+  openapi-typescript: 5.4.0
   prettier: 2.6.2
-  typescript: 4.7.2
+  typescript: 4.7.3
 
 packages:
 
@@ -149,9 +149,9 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /ava/4.2.0_@ava+typescript@3.0.1:
-    resolution: {integrity: sha512-96N/rH2ZlBjoh18CsjH3zfo/rzukkRoqNK7R/Z3MLRrqu6cRRf+i4Zwna7ZRYEIl55yF1BKh/nSPCZWqoXfPJA==}
-    engines: {node: '>=12.22 <13 || >=14.17 <15 || >=16.4 <17 || >=17'}
+  /ava/4.3.0_@ava+typescript@3.0.1:
+    resolution: {integrity: sha512-Ap0u8rp8wOBN6CxshgxrPSe191e8g52RWGoXeDB57ubo4fyZyStfI6OxQi/bl0yxIDEOYHhCiGwihbzlMNJw3Q==}
+    engines: {node: '>=12.22 <13 || >=14.17 <15 || >=16.4 <17 || >=18'}
     hasBin: true
     peerDependencies:
       '@ava/typescript': '*'
@@ -180,7 +180,7 @@ packages:
       currently-unhandled: 0.4.1
       debug: 4.3.4
       del: 6.1.1
-      emittery: 0.10.2
+      emittery: 0.11.0
       figures: 4.0.1
       globby: 13.1.1
       ignore-by-default: 2.1.0
@@ -336,7 +336,7 @@ packages:
     dev: true
 
   /concat-map/0.0.1:
-    resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
+    resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
     dev: true
 
   /concordance/5.0.4:
@@ -423,8 +423,8 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: true
 
-  /emittery/0.10.2:
-    resolution: {integrity: sha512-aITqOwnLanpHLNXZJENbOgjUBeHocD+xsSJmNrjovKBW5HbSpW3d1pEls7GFQPUWXiwG9+0P4GtHfEqC/4M0Iw==}
+  /emittery/0.11.0:
+    resolution: {integrity: sha512-S/7tzL6v5i+4iJd627Nhv9cLFIo5weAIlGccqJFpnBoDB8U1TF2k5tez4J/QNuxyyhWuFqHg1L84Kd3m7iXg6g==}
     engines: {node: '>=12'}
     dev: true
 
@@ -857,8 +857,8 @@ packages:
     engines: {node: '>=10.5.0'}
     dev: false
 
-  /node-fetch/3.2.4:
-    resolution: {integrity: sha512-WvYJRN7mMyOLurFR2YpysQGuwYrJN+qrrpHjJDuKMcSPdfFccRUla/kng2mz6HWSBxJcqPbvatS6Gb4RhOzCJw==}
+  /node-fetch/3.2.5:
+    resolution: {integrity: sha512-u7zCHdJp8JXBwF09mMfo2CL6kp37TslDl1KP3hRGTlCInBtag+UO3LGVy+NF0VzvnL3PVMpA2hXh1EtECFnyhQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       data-uri-to-buffer: 4.0.0
@@ -896,8 +896,8 @@ packages:
       mimic-fn: 2.1.0
     dev: true
 
-  /openapi-typescript/5.3.0:
-    resolution: {integrity: sha512-Y1QI1nWQE56nYFGXMAanS9VVHCUKzgLCfAe43vFbuciqm48N02DX9LWSarX18PGF9qKd6EWhmIlCumOXKPzAug==}
+  /openapi-typescript/5.4.0:
+    resolution: {integrity: sha512-YUtsWQ01igvx0xRmJvtzpHsxtvnSORrGMDTXFY1zs3znljsJDvhsUe7XrKoNP2eUmiOIwBXQMoM8M5V+nEnIrw==}
     engines: {node: '>= 14.0.0', npm: '>= 7.0.0'}
     hasBin: true
     dependencies:
@@ -1204,8 +1204,8 @@ packages:
     engines: {node: '>=12.20'}
     dev: false
 
-  /typescript/4.7.2:
-    resolution: {integrity: sha512-Mamb1iX2FDUpcTRzltPxgWMKy3fhg0TN378ylbktPGPK/99KbDtMQ4W1hwgsbPAsG3a0xKa1vmw4VKZQbkvz5A==}
+  /typescript/4.7.3:
+    resolution: {integrity: sha512-WOkT3XYvrpXx4vMMqlD+8R8R37fZkjyLGlxavMc4iB8lrl8L0DeTcHbYgw/v0N/z9wAFsgBhcsF0ruoySS22mA==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
