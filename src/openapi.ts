@@ -70,6 +70,9 @@ export interface paths {
   readonly '/v1/stream': {
     readonly get: operations['Get Stream Status'];
   };
+  readonly '/v1/updates': {
+    readonly get: operations['Get Updates'];
+  };
   readonly '/v1/players/xuids': {
     readonly post: operations['Get XUID Mapping'];
   };
@@ -82,6 +85,28 @@ export interface components {
       readonly xuids: readonly string[];
     }> &
       Partial<readonly string[]>;
+    readonly UpdatesQuery: {
+      readonly before?: number;
+      readonly after?: number;
+      /** @default 100 */
+      readonly limit?: number;
+    };
+    readonly UpdatesResponse: readonly {
+      readonly id: number;
+      readonly content: string;
+      /** Format: date-time */
+      readonly timestamp: string;
+      /** Format: date-time */
+      readonly editedTimestamp: string | null;
+    }[];
+    readonly UpdateResponse: {
+      readonly id: number;
+      readonly content: string;
+      /** Format: date-time */
+      readonly timestamp: string;
+      /** Format: date-time */
+      readonly editedTimestamp: string | null;
+    };
     readonly StreamResponse: {
       readonly streaming: boolean;
     };
@@ -16720,6 +16745,23 @@ export interface operations {
       readonly 200: {
         readonly content: {
           readonly 'application/json': components['schemas']['StreamResponse'];
+        };
+      };
+    };
+  };
+  readonly 'Get Updates': {
+    readonly parameters: {
+      readonly query: {
+        readonly before?: number;
+        readonly after?: number;
+        readonly limit?: number;
+      };
+    };
+    readonly responses: {
+      /** Default Response */
+      readonly 200: {
+        readonly content: {
+          readonly 'application/json': components['schemas']['UpdatesResponse'];
         };
       };
     };

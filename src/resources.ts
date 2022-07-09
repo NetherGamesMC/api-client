@@ -36,6 +36,8 @@ import type {
   Servers,
   ServiceStatus,
   Stream,
+  Update,
+  UpdateQuery,
 } from './types.js';
 
 export class NetherGamesResource {
@@ -278,5 +280,11 @@ export class StreamResource extends NetherGamesResource {
   async retrieve(): Promise<Stream> {
     const data = await this._client._getOne<Stream>('/v1/stream');
     return data!;
+  }
+}
+
+export class UpdateResource extends NetherGamesResource {
+  async list(params?: UpdateQuery): Promise<Update[]> {
+    return this._client._getMany<Update>('/v1/updates', {params});
   }
 }
