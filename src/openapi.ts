@@ -435,7 +435,7 @@ export interface components {
         readonly kdr: number;
         readonly wins?: number;
         readonly losses?: number;
-        readonly wlr: number;
+        readonly wlr?: number;
         readonly firstJoin: string | null;
         readonly firstJoined: number;
         readonly lastJoin: string | null;
@@ -1064,7 +1064,7 @@ export interface components {
               readonly kdr: number;
               readonly wins?: number;
               readonly losses?: number;
-              readonly wlr: number;
+              readonly wlr?: number;
               readonly firstJoin: string | null;
               readonly firstJoined: number;
               readonly lastJoin: string | null;
@@ -1659,7 +1659,7 @@ export interface components {
               readonly kdr: number;
               readonly wins?: number;
               readonly losses?: number;
-              readonly wlr: number;
+              readonly wlr?: number;
               readonly firstJoin: string | null;
               readonly firstJoined: number;
               readonly lastJoin: string | null;
@@ -2254,7 +2254,7 @@ export interface components {
               readonly kdr: number;
               readonly wins?: number;
               readonly losses?: number;
-              readonly wlr: number;
+              readonly wlr?: number;
               readonly firstJoin: string | null;
               readonly firstJoined: number;
               readonly lastJoin: string | null;
@@ -2943,7 +2943,7 @@ export interface components {
       readonly kdr: number;
       readonly wins?: number;
       readonly losses?: number;
-      readonly wlr: number;
+      readonly wlr?: number;
       readonly firstJoin: string | null;
       readonly firstJoined: number;
       readonly lastJoin: string | null;
@@ -4157,7 +4157,7 @@ export interface components {
                 readonly kdr: number;
                 readonly wins?: number;
                 readonly losses?: number;
-                readonly wlr: number;
+                readonly wlr?: number;
                 readonly firstJoin: string | null;
                 readonly firstJoined: number;
                 readonly lastJoin: string | null;
@@ -4726,7 +4726,7 @@ export interface components {
                 readonly kdr: number;
                 readonly wins?: number;
                 readonly losses?: number;
-                readonly wlr: number;
+                readonly wlr?: number;
                 readonly firstJoin: string | null;
                 readonly firstJoined: number;
                 readonly lastJoin: string | null;
@@ -5295,7 +5295,7 @@ export interface components {
                 readonly kdr: number;
                 readonly wins?: number;
                 readonly losses?: number;
-                readonly wlr: number;
+                readonly wlr?: number;
                 readonly firstJoin: string | null;
                 readonly firstJoined: number;
                 readonly lastJoin: string | null;
@@ -6336,7 +6336,7 @@ export interface components {
       readonly kdr: number;
       readonly wins?: number;
       readonly losses?: number;
-      readonly wlr: number;
+      readonly wlr?: number;
       readonly firstJoin: string | null;
       readonly firstJoined: number;
       readonly lastJoin: string | null;
@@ -7314,7 +7314,7 @@ export interface components {
         readonly kdr: number;
         readonly wins?: number;
         readonly losses?: number;
-        readonly wlr: number;
+        readonly wlr?: number;
         readonly firstJoin: string | null;
         readonly firstJoined: number;
         readonly lastJoin: string | null;
@@ -7909,7 +7909,7 @@ export interface components {
         readonly kdr: number;
         readonly wins?: number;
         readonly losses?: number;
-        readonly wlr: number;
+        readonly wlr?: number;
         readonly firstJoin: string | null;
         readonly firstJoined: number;
         readonly lastJoin: string | null;
@@ -8504,7 +8504,7 @@ export interface components {
         readonly kdr: number;
         readonly wins?: number;
         readonly losses?: number;
-        readonly wlr: number;
+        readonly wlr?: number;
         readonly firstJoin: string | null;
         readonly firstJoined: number;
         readonly lastJoin: string | null;
@@ -9161,7 +9161,7 @@ export interface components {
           readonly kdr: number;
           readonly wins?: number;
           readonly losses?: number;
-          readonly wlr: number;
+          readonly wlr?: number;
           readonly firstJoin: string | null;
           readonly firstJoined: number;
           readonly lastJoin: string | null;
@@ -9756,7 +9756,7 @@ export interface components {
           readonly kdr: number;
           readonly wins?: number;
           readonly losses?: number;
-          readonly wlr: number;
+          readonly wlr?: number;
           readonly firstJoin: string | null;
           readonly firstJoined: number;
           readonly lastJoin: string | null;
@@ -10351,7 +10351,7 @@ export interface components {
           readonly kdr: number;
           readonly wins?: number;
           readonly losses?: number;
-          readonly wlr: number;
+          readonly wlr?: number;
           readonly firstJoin: string | null;
           readonly firstJoined: number;
           readonly lastJoin: string | null;
@@ -10994,7 +10994,7 @@ export interface components {
             readonly kdr: number;
             readonly wins?: number;
             readonly losses?: number;
-            readonly wlr: number;
+            readonly wlr?: number;
             readonly firstJoin: string | null;
             readonly firstJoined: number;
             readonly lastJoin: string | null;
@@ -11589,7 +11589,7 @@ export interface components {
             readonly kdr: number;
             readonly wins?: number;
             readonly losses?: number;
-            readonly wlr: number;
+            readonly wlr?: number;
             readonly firstJoin: string | null;
             readonly firstJoined: number;
             readonly lastJoin: string | null;
@@ -12184,7 +12184,7 @@ export interface components {
             readonly kdr: number;
             readonly wins?: number;
             readonly losses?: number;
-            readonly wlr: number;
+            readonly wlr?: number;
             readonly firstJoin: string | null;
             readonly firstJoined: number;
             readonly lastJoin: string | null;
@@ -12810,7 +12810,7 @@ export interface components {
           readonly kdr: number;
           readonly wins?: number;
           readonly losses?: number;
-          readonly wlr: number;
+          readonly wlr?: number;
           readonly firstJoin: string | null;
           readonly firstJoined: number;
           readonly lastJoin: string | null;
@@ -13386,7 +13386,7 @@ export interface components {
           readonly kdr: number;
           readonly wins?: number;
           readonly losses?: number;
-          readonly wlr: number;
+          readonly wlr?: number;
           readonly firstJoin: string | null;
           readonly firstJoined: number;
           readonly lastJoin: string | null;
@@ -13962,7 +13962,7 @@ export interface components {
           readonly kdr: number;
           readonly wins?: number;
           readonly losses?: number;
-          readonly wlr: number;
+          readonly wlr?: number;
           readonly firstJoin: string | null;
           readonly firstJoined: number;
           readonly lastJoin: string | null;
@@ -14556,7 +14556,7 @@ export interface components {
             readonly kdr: number;
             readonly wins?: number;
             readonly losses?: number;
-            readonly wlr: number;
+            readonly wlr?: number;
             readonly firstJoin: string | null;
             readonly firstJoined: number;
             readonly lastJoin: string | null;
@@ -15151,7 +15151,7 @@ export interface components {
             readonly kdr: number;
             readonly wins?: number;
             readonly losses?: number;
-            readonly wlr: number;
+            readonly wlr?: number;
             readonly firstJoin: string | null;
             readonly firstJoined: number;
             readonly lastJoin: string | null;
@@ -15746,7 +15746,7 @@ export interface components {
             readonly kdr: number;
             readonly wins?: number;
             readonly losses?: number;
-            readonly wlr: number;
+            readonly wlr?: number;
             readonly firstJoin: string | null;
             readonly firstJoined: number;
             readonly lastJoin: string | null;
