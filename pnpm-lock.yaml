@@ -3,26 +3,26 @@ lockfileVersion: 5.4
 specifiers:
   '@ava/typescript': ^3.0.1
   '@sindresorhus/tsconfig': ^3.0.1
-  ava: ^4.3.0
+  ava: ^4.3.1
   nanoevents: ^7.0.1
-  node-fetch: ^3.2.6
-  openapi-typescript: ^5.4.0
+  node-fetch: ^3.2.8
+  openapi-typescript: ^5.4.1
   prettier: ^2.7.1
   quick-lru: ^6.1.1
-  type-fest: ^2.15.1
+  type-fest: ^2.16.0
   typescript: ^4.7.4
 
 dependencies:
   nanoevents: 7.0.1
-  node-fetch: 3.2.6
+  node-fetch: 3.2.8
   quick-lru: 6.1.1
-  type-fest: 2.15.1
+  type-fest: 2.16.0
 
 devDependencies:
   '@ava/typescript': 3.0.1
   '@sindresorhus/tsconfig': 3.0.1
-  ava: 4.3.0_@ava+typescript@3.0.1
-  openapi-typescript: 5.4.0
+  ava: 4.3.1_@ava+typescript@3.0.1
+  openapi-typescript: 5.4.1
   prettier: 2.7.1
   typescript: 4.7.4
 
@@ -149,8 +149,8 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /ava/4.3.0_@ava+typescript@3.0.1:
-    resolution: {integrity: sha512-Ap0u8rp8wOBN6CxshgxrPSe191e8g52RWGoXeDB57ubo4fyZyStfI6OxQi/bl0yxIDEOYHhCiGwihbzlMNJw3Q==}
+  /ava/4.3.1_@ava+typescript@3.0.1:
+    resolution: {integrity: sha512-zdSp9QxRTmN5hJeGmg+ZjUKL5yHFLMcP/0KBla8GH25XD8Xm7Uc34CDFlwqGL6JXtjNbVkJ0Zw+DqcTf4ggCCA==}
     engines: {node: '>=12.22 <13 || >=14.17 <15 || >=16.4 <17 || >=18'}
     hasBin: true
     peerDependencies:
@@ -498,8 +498,8 @@ packages:
       reusify: 1.0.4
     dev: true
 
-  /fetch-blob/3.1.5:
-    resolution: {integrity: sha512-N64ZpKqoLejlrwkIAnb9iLSA3Vx/kjgzpcDhygcqJ2KKjky8nCgUQ+dzXtbrLaWZGZNmNfQTsiQ0weZ1svglHg==}
+  /fetch-blob/3.2.0:
+    resolution: {integrity: sha512-7yAQpD2UMJzLi1Dqv7qFYnPbaPx7ZfFK6PiIxQ4PfkGPyNyl2Ugx+a/umUonmKqjhM4DnfbMvdX6otXq83soQQ==}
     engines: {node: ^12.20 || >= 14.13}
     dependencies:
       node-domexception: 1.0.0
@@ -533,7 +533,7 @@ packages:
     resolution: {integrity: sha512-buewHzMvYL29jdeQTVILecSaZKnt/RJWjoZCF5OW60Z67/GmSLBkOFM7qh1PI3zFNtJbaZL5eQu1vLfazOwj4g==}
     engines: {node: '>=12.20.0'}
     dependencies:
-      fetch-blob: 3.1.5
+      fetch-blob: 3.2.0
     dev: false
 
   /fs.realpath/1.0.0:
@@ -857,12 +857,12 @@ packages:
     engines: {node: '>=10.5.0'}
     dev: false
 
-  /node-fetch/3.2.6:
-    resolution: {integrity: sha512-LAy/HZnLADOVkVPubaxHDft29booGglPFDr2Hw0J1AercRh01UiVFm++KMDnJeH9sHgNB4hsXPii7Sgym/sTbw==}
+  /node-fetch/3.2.8:
+    resolution: {integrity: sha512-KtpD1YhGszhntMpBDyp5lyagk8KIMopC1LEb7cQUAh7zcosaX5uK8HnbNb2i3NTQK3sIawCItS0uFC3QzcLHdg==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       data-uri-to-buffer: 4.0.0
-      fetch-blob: 3.1.5
+      fetch-blob: 3.2.0
       formdata-polyfill: 4.0.10
     dev: false
 
@@ -896,16 +896,16 @@ packages:
       mimic-fn: 2.1.0
     dev: true
 
-  /openapi-typescript/5.4.0:
-    resolution: {integrity: sha512-YUtsWQ01igvx0xRmJvtzpHsxtvnSORrGMDTXFY1zs3znljsJDvhsUe7XrKoNP2eUmiOIwBXQMoM8M5V+nEnIrw==}
-    engines: {node: '>= 14.0.0', npm: '>= 7.0.0'}
+  /openapi-typescript/5.4.1:
+    resolution: {integrity: sha512-AGB2QiZPz4rE7zIwV3dRHtoUC/CWHhUjuzGXvtmMQN2AFV8xCTLKcZUHLcdPQmt/83i22nRE7+TxXOXkK+gf4Q==}
+    engines: {node: '>= 14.0.0'}
     hasBin: true
     dependencies:
       js-yaml: 4.1.0
       mime: 3.0.0
       prettier: 2.7.1
       tiny-glob: 0.2.9
-      undici: 5.6.0
+      undici: 5.7.0
       yargs-parser: 21.0.1
     dev: true
 
@@ -1199,8 +1199,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /type-fest/2.15.1:
-    resolution: {integrity: sha512-LYSjcIz3NmoQksXq/3/B7Nfad+T8mkaI628agAAnHCpXPTBRMK2ygt3eABpzII8CbZZM8dLdVQ4Gr8ousjFjMw==}
+  /type-fest/2.16.0:
+    resolution: {integrity: sha512-qpaThT2HQkFb83gMOrdKVsfCN7LKxP26Yq+smPzY1FqoHRjqmjqHXA7n5Gkxi8efirtbeEUxzfEdePthQWCuHw==}
     engines: {node: '>=12.20'}
     dev: false
 
@@ -1210,8 +1210,8 @@ packages:
     hasBin: true
     dev: true
 
-  /undici/5.6.0:
-    resolution: {integrity: sha512-mc+8SY1fXubTrdx4CXDkeFFGV8lI3Tq4I/70U1V8Z6g4iscGII0uLO7CPnDt56bXEbvaKwo2T2+VrteWbZiXiQ==}
+  /undici/5.7.0:
+    resolution: {integrity: sha512-ORgxwDkiPS+gK2VxE7iyVeR7JliVn5DqhZ4LgQqYLBXsuK+lwOEmnJ66dhvlpLM0tC3fC7eYF1Bti2frbw2eAA==}
     engines: {node: '>=12.18'}
     dev: true
 
