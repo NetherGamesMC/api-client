@@ -394,6 +394,8 @@ export interface components {
         readonly bio: string;
         readonly staff: boolean;
         readonly flags: number;
+        readonly banned?: boolean;
+        readonly muted?: boolean;
         readonly guild: string | null;
         readonly guildMaxSize: number | null;
         readonly level: number;
@@ -1023,6 +1025,8 @@ export interface components {
               readonly bio: string;
               readonly staff: boolean;
               readonly flags: number;
+              readonly banned?: boolean;
+              readonly muted?: boolean;
               readonly guild: string | null;
               readonly guildMaxSize: number | null;
               readonly level: number;
@@ -1618,6 +1622,8 @@ export interface components {
               readonly bio: string;
               readonly staff: boolean;
               readonly flags: number;
+              readonly banned?: boolean;
+              readonly muted?: boolean;
               readonly guild: string | null;
               readonly guildMaxSize: number | null;
               readonly level: number;
@@ -2213,6 +2219,8 @@ export interface components {
               readonly bio: string;
               readonly staff: boolean;
               readonly flags: number;
+              readonly banned?: boolean;
+              readonly muted?: boolean;
               readonly guild: string | null;
               readonly guildMaxSize: number | null;
               readonly level: number;
@@ -2902,6 +2910,8 @@ export interface components {
       readonly bio: string;
       readonly staff: boolean;
       readonly flags: number;
+      readonly banned?: boolean;
+      readonly muted?: boolean;
       readonly guild: string | null;
       readonly guildMaxSize: number | null;
       readonly level: number;
@@ -4116,6 +4126,8 @@ export interface components {
                 readonly bio: string;
                 readonly staff: boolean;
                 readonly flags: number;
+                readonly banned?: boolean;
+                readonly muted?: boolean;
                 readonly guild: string | null;
                 readonly guildMaxSize: number | null;
                 readonly level: number;
@@ -4685,6 +4697,8 @@ export interface components {
                 readonly bio: string;
                 readonly staff: boolean;
                 readonly flags: number;
+                readonly banned?: boolean;
+                readonly muted?: boolean;
                 readonly guild: string | null;
                 readonly guildMaxSize: number | null;
                 readonly level: number;
@@ -5254,6 +5268,8 @@ export interface components {
                 readonly bio: string;
                 readonly staff: boolean;
                 readonly flags: number;
+                readonly banned?: boolean;
+                readonly muted?: boolean;
                 readonly guild: string | null;
                 readonly guildMaxSize: number | null;
                 readonly level: number;
@@ -6295,6 +6311,8 @@ export interface components {
       readonly bio: string;
       readonly staff: boolean;
       readonly flags: number;
+      readonly banned?: boolean;
+      readonly muted?: boolean;
       readonly guild: string | null;
       readonly guildMaxSize: number | null;
       readonly level: number;
@@ -7273,6 +7291,8 @@ export interface components {
         readonly bio: string;
         readonly staff: boolean;
         readonly flags: number;
+        readonly banned?: boolean;
+        readonly muted?: boolean;
         readonly guild: string | null;
         readonly guildMaxSize: number | null;
         readonly level: number;
@@ -7868,6 +7888,8 @@ export interface components {
         readonly bio: string;
         readonly staff: boolean;
         readonly flags: number;
+        readonly banned?: boolean;
+        readonly muted?: boolean;
         readonly guild: string | null;
         readonly guildMaxSize: number | null;
         readonly level: number;
@@ -8463,6 +8485,8 @@ export interface components {
         readonly bio: string;
         readonly staff: boolean;
         readonly flags: number;
+        readonly banned?: boolean;
+        readonly muted?: boolean;
         readonly guild: string | null;
         readonly guildMaxSize: number | null;
         readonly level: number;
@@ -9120,6 +9144,8 @@ export interface components {
           readonly bio: string;
           readonly staff: boolean;
           readonly flags: number;
+          readonly banned?: boolean;
+          readonly muted?: boolean;
           readonly guild: string | null;
           readonly guildMaxSize: number | null;
           readonly level: number;
@@ -9715,6 +9741,8 @@ export interface components {
           readonly bio: string;
           readonly staff: boolean;
           readonly flags: number;
+          readonly banned?: boolean;
+          readonly muted?: boolean;
           readonly guild: string | null;
           readonly guildMaxSize: number | null;
           readonly level: number;
@@ -10310,6 +10338,8 @@ export interface components {
           readonly bio: string;
           readonly staff: boolean;
           readonly flags: number;
+          readonly banned?: boolean;
+          readonly muted?: boolean;
           readonly guild: string | null;
           readonly guildMaxSize: number | null;
           readonly level: number;
@@ -10953,6 +10983,8 @@ export interface components {
             readonly bio: string;
             readonly staff: boolean;
             readonly flags: number;
+            readonly banned?: boolean;
+            readonly muted?: boolean;
             readonly guild: string | null;
             readonly guildMaxSize: number | null;
             readonly level: number;
@@ -11548,6 +11580,8 @@ export interface components {
             readonly bio: string;
             readonly staff: boolean;
             readonly flags: number;
+            readonly banned?: boolean;
+            readonly muted?: boolean;
             readonly guild: string | null;
             readonly guildMaxSize: number | null;
             readonly level: number;
@@ -12143,6 +12177,8 @@ export interface components {
             readonly bio: string;
             readonly staff: boolean;
             readonly flags: number;
+            readonly banned?: boolean;
+            readonly muted?: boolean;
             readonly guild: string | null;
             readonly guildMaxSize: number | null;
             readonly level: number;
@@ -12769,6 +12805,8 @@ export interface components {
           readonly bio: string;
           readonly staff: boolean;
           readonly flags: number;
+          readonly banned?: boolean;
+          readonly muted?: boolean;
           readonly guild: string | null;
           readonly guildMaxSize: number | null;
           readonly level: number;
@@ -13345,6 +13383,8 @@ export interface components {
           readonly bio: string;
           readonly staff: boolean;
           readonly flags: number;
+          readonly banned?: boolean;
+          readonly muted?: boolean;
           readonly guild: string | null;
           readonly guildMaxSize: number | null;
           readonly level: number;
@@ -13921,6 +13961,8 @@ export interface components {
           readonly bio: string;
           readonly staff: boolean;
           readonly flags: number;
+          readonly banned?: boolean;
+          readonly muted?: boolean;
           readonly guild: string | null;
           readonly guildMaxSize: number | null;
           readonly level: number;
@@ -14515,6 +14557,8 @@ export interface components {
             readonly bio: string;
             readonly staff: boolean;
             readonly flags: number;
+            readonly banned?: boolean;
+            readonly muted?: boolean;
             readonly guild: string | null;
             readonly guildMaxSize: number | null;
             readonly level: number;
@@ -15110,6 +15154,8 @@ export interface components {
             readonly bio: string;
             readonly staff: boolean;
             readonly flags: number;
+            readonly banned?: boolean;
+            readonly muted?: boolean;
             readonly guild: string | null;
             readonly guildMaxSize: number | null;
             readonly level: number;
@@ -15705,6 +15751,8 @@ export interface components {
             readonly bio: string;
             readonly staff: boolean;
             readonly flags: number;
+            readonly banned?: boolean;
+            readonly muted?: boolean;
             readonly guild: string | null;
             readonly guildMaxSize: number | null;
             readonly level: number;
