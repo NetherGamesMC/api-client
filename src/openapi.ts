@@ -6916,6 +6916,10 @@ export interface components {
       readonly xpToNextLevel: number;
       readonly level: number;
     };
+    readonly LeaderboardResponseWLR: {
+      readonly player: string;
+      readonly wlr: number;
+    };
     readonly LeaderboardResponseWins: {
       readonly player: string;
       readonly wins: number;
@@ -7039,6 +7043,12 @@ export interface components {
       Partial<
         readonly {
           readonly player: string;
+          readonly wlr: number;
+        }[]
+      > &
+      Partial<
+        readonly {
+          readonly player: string;
           readonly xp: number;
           readonly xpToNextLevel: number;
           readonly level: number;
@@ -7058,6 +7068,7 @@ export interface components {
         | 'parkour'
         | 'voters'
         | 'wins'
+        | 'wlr'
         | 'xp';
       /** @enum {string} */
       readonly column?:
@@ -7189,6 +7200,12 @@ export interface components {
       Partial<
         readonly {
           readonly player: string;
+          readonly wlr: number;
+        }[]
+      > &
+      Partial<
+        readonly {
+          readonly player: string;
           readonly xp: number;
           readonly xpToNextLevel: number;
           readonly level: number;
@@ -7208,6 +7225,7 @@ export interface components {
         | 'parkour'
         | 'voters'
         | 'wins'
+        | 'wlr'
         | 'xp';
       /** @enum {string} */
       readonly column?:
@@ -16528,6 +16546,7 @@ export interface operations {
           | 'parkour'
           | 'voters'
           | 'wins'
+          | 'wlr'
           | 'xp';
         readonly column?:
           | 'bh_wins'

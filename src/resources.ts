@@ -23,6 +23,7 @@ import type {
   LeaderboardQuery,
   LeaderboardVoters,
   LeaderboardWins,
+  LeaderboardWLR,
   LeaderboardXP,
   Player,
   PlayerLeaderboard,
@@ -150,6 +151,7 @@ export class LeaderboardResource extends NetherGamesResource {
   async list<T extends LeaderboardKey>(type: 'parkour', params?: LeaderboardParams<T>): Promise<LeaderboardParkour[]>;
   async list<T extends LeaderboardKey>(type: 'voters', params?: LeaderboardParams<T>): Promise<LeaderboardVoters[]>;
   async list<T extends LeaderboardKey>(type: 'wins', params?: LeaderboardParams<T>): Promise<LeaderboardWins[]>;
+  async list<T extends LeaderboardKey>(type: 'wlr', params?: LeaderboardParams<T>): Promise<LeaderboardWLR[]>;
   async list<T extends LeaderboardKey>(type: 'xp', params?: LeaderboardParams<T>): Promise<LeaderboardXP[]>;
   async list<T extends LeaderboardKey>(
     type: LeaderboardQuery['type'],

@@ -23,6 +23,7 @@ export type LeaderboardKills = components['schemas']['LeaderboardResponseKills']
 export type LeaderboardParkour = components['schemas']['LeaderboardResponseParkour'];
 export type LeaderboardVoters = components['schemas']['LeaderboardResponseVoters'];
 export type LeaderboardWins = components['schemas']['LeaderboardResponseWins'];
+export type LeaderboardWLR = components['schemas']['LeaderboardResponseWLR'];
 export type LeaderboardXP = components['schemas']['LeaderboardResponseXP'];
 export type Leaderboard =
   | LeaderboardCredits
@@ -34,6 +35,7 @@ export type Leaderboard =
   | LeaderboardParkour
   | LeaderboardVoters
   | LeaderboardWins
+  | LeaderboardWLR
   | LeaderboardXP;
 export type LeaderboardQuery = components['schemas']['LeaderboardQuery'];
 
