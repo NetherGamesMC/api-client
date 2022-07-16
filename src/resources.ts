@@ -182,7 +182,7 @@ export class PlayersResource extends NetherGamesResource {
     return this._client._getOne<Player>(`/v1/players/${player}`, this.#getQuery(params));
   }
 
-  #getQuery(params: PlayerParams): Record<string, any> {
+  #getQuery(params: PlayerParams): PlayerQuery {
     if (params.include == null) {
       return {};
     }
