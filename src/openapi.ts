@@ -390,6 +390,14 @@ export interface components {
         readonly avatar: string;
         /** Format: uri */
         readonly skin: string;
+        readonly skinData?: {
+          readonly skin: boolean;
+          /** @enum {string} */
+          readonly skinType: 'steve' | 'alex';
+          readonly skinVisibility: boolean;
+          readonly base64: string;
+          readonly raw: string | null;
+        };
         readonly skinVisibility: boolean;
         readonly bio: string;
         readonly staff: boolean;
@@ -454,20 +462,6 @@ export interface components {
         readonly discordData: {
           readonly claim?: string;
           readonly latest?: string;
-        };
-        readonly winsData?: {
-          readonly BH: number;
-          readonly BW: number;
-          readonly CQ: number;
-          readonly Duels: number;
-          readonly MM: number;
-          readonly MS: number;
-          readonly SC: number;
-          readonly SG: number;
-          readonly SW: number;
-          readonly TB: number;
-          readonly TR: number;
-          readonly Weekly: number;
         };
         readonly extra?: {
           /** @default 0 */
@@ -934,8 +928,6 @@ export interface components {
             readonly wins: number;
           };
         };
-        /** @enum {number} */
-        readonly voteStatus?: 0 | 1 | 2;
         readonly factionData?: {
           readonly tags: number;
           readonly registerDate: string;
@@ -963,6 +955,8 @@ export interface components {
                 }>)
             | null;
         } | null;
+        /** @default false */
+        readonly leaderboard?: boolean;
         readonly punishments?: readonly {
           readonly id: number;
           readonly expires: number;
@@ -971,14 +965,28 @@ export interface components {
           /** @enum {number} */
           readonly type: 1 | 2;
         }[];
+        /** @enum {number} */
+        readonly voteStatus?: 0 | 1 | 2;
         readonly warnings?: readonly {
           readonly id: string;
           /** @default */
           readonly reason?: string;
           readonly time: number;
         }[];
-        /** @default false */
-        readonly leaderboard?: boolean;
+        readonly winsData?: {
+          readonly BH: number;
+          readonly BW: number;
+          readonly CQ: number;
+          readonly Duels: number;
+          readonly MM: number;
+          readonly MS: number;
+          readonly SC: number;
+          readonly SG: number;
+          readonly SW: number;
+          readonly TB: number;
+          readonly TR: number;
+          readonly Weekly: number;
+        };
       };
     }> &
       Partial<{
@@ -1021,6 +1029,14 @@ export interface components {
               readonly avatar: string;
               /** Format: uri */
               readonly skin: string;
+              readonly skinData?: {
+                readonly skin: boolean;
+                /** @enum {string} */
+                readonly skinType: 'steve' | 'alex';
+                readonly skinVisibility: boolean;
+                readonly base64: string;
+                readonly raw: string | null;
+              };
               readonly skinVisibility: boolean;
               readonly bio: string;
               readonly staff: boolean;
@@ -1085,20 +1101,6 @@ export interface components {
               readonly discordData: {
                 readonly claim?: string;
                 readonly latest?: string;
-              };
-              readonly winsData?: {
-                readonly BH: number;
-                readonly BW: number;
-                readonly CQ: number;
-                readonly Duels: number;
-                readonly MM: number;
-                readonly MS: number;
-                readonly SC: number;
-                readonly SG: number;
-                readonly SW: number;
-                readonly TB: number;
-                readonly TR: number;
-                readonly Weekly: number;
               };
               readonly extra?: {
                 /** @default 0 */
@@ -1565,8 +1567,6 @@ export interface components {
                   readonly wins: number;
                 };
               };
-              /** @enum {number} */
-              readonly voteStatus?: 0 | 1 | 2;
               readonly factionData?: {
                 readonly tags: number;
                 readonly registerDate: string;
@@ -1594,6 +1594,8 @@ export interface components {
                       }>)
                   | null;
               } | null;
+              /** @default false */
+              readonly leaderboard?: boolean;
               readonly punishments?: readonly {
                 readonly id: number;
                 readonly expires: number;
@@ -1602,14 +1604,28 @@ export interface components {
                 /** @enum {number} */
                 readonly type: 1 | 2;
               }[];
+              /** @enum {number} */
+              readonly voteStatus?: 0 | 1 | 2;
               readonly warnings?: readonly {
                 readonly id: string;
                 /** @default */
                 readonly reason?: string;
                 readonly time: number;
               }[];
-              /** @default false */
-              readonly leaderboard?: boolean;
+              readonly winsData?: {
+                readonly BH: number;
+                readonly BW: number;
+                readonly CQ: number;
+                readonly Duels: number;
+                readonly MM: number;
+                readonly MS: number;
+                readonly SC: number;
+                readonly SG: number;
+                readonly SW: number;
+                readonly TB: number;
+                readonly TR: number;
+                readonly Weekly: number;
+              };
             };
             readonly officers: readonly {
               readonly xuid: string;
@@ -1618,6 +1634,14 @@ export interface components {
               readonly avatar: string;
               /** Format: uri */
               readonly skin: string;
+              readonly skinData?: {
+                readonly skin: boolean;
+                /** @enum {string} */
+                readonly skinType: 'steve' | 'alex';
+                readonly skinVisibility: boolean;
+                readonly base64: string;
+                readonly raw: string | null;
+              };
               readonly skinVisibility: boolean;
               readonly bio: string;
               readonly staff: boolean;
@@ -1682,20 +1706,6 @@ export interface components {
               readonly discordData: {
                 readonly claim?: string;
                 readonly latest?: string;
-              };
-              readonly winsData?: {
-                readonly BH: number;
-                readonly BW: number;
-                readonly CQ: number;
-                readonly Duels: number;
-                readonly MM: number;
-                readonly MS: number;
-                readonly SC: number;
-                readonly SG: number;
-                readonly SW: number;
-                readonly TB: number;
-                readonly TR: number;
-                readonly Weekly: number;
               };
               readonly extra?: {
                 /** @default 0 */
@@ -2162,8 +2172,6 @@ export interface components {
                   readonly wins: number;
                 };
               };
-              /** @enum {number} */
-              readonly voteStatus?: 0 | 1 | 2;
               readonly factionData?: {
                 readonly tags: number;
                 readonly registerDate: string;
@@ -2191,6 +2199,8 @@ export interface components {
                       }>)
                   | null;
               } | null;
+              /** @default false */
+              readonly leaderboard?: boolean;
               readonly punishments?: readonly {
                 readonly id: number;
                 readonly expires: number;
@@ -2199,14 +2209,28 @@ export interface components {
                 /** @enum {number} */
                 readonly type: 1 | 2;
               }[];
+              /** @enum {number} */
+              readonly voteStatus?: 0 | 1 | 2;
               readonly warnings?: readonly {
                 readonly id: string;
                 /** @default */
                 readonly reason?: string;
                 readonly time: number;
               }[];
-              /** @default false */
-              readonly leaderboard?: boolean;
+              readonly winsData?: {
+                readonly BH: number;
+                readonly BW: number;
+                readonly CQ: number;
+                readonly Duels: number;
+                readonly MM: number;
+                readonly MS: number;
+                readonly SC: number;
+                readonly SG: number;
+                readonly SW: number;
+                readonly TB: number;
+                readonly TR: number;
+                readonly Weekly: number;
+              };
             }[];
             readonly members: readonly {
               readonly xuid: string;
@@ -2215,6 +2239,14 @@ export interface components {
               readonly avatar: string;
               /** Format: uri */
               readonly skin: string;
+              readonly skinData?: {
+                readonly skin: boolean;
+                /** @enum {string} */
+                readonly skinType: 'steve' | 'alex';
+                readonly skinVisibility: boolean;
+                readonly base64: string;
+                readonly raw: string | null;
+              };
               readonly skinVisibility: boolean;
               readonly bio: string;
               readonly staff: boolean;
@@ -2279,20 +2311,6 @@ export interface components {
               readonly discordData: {
                 readonly claim?: string;
                 readonly latest?: string;
-              };
-              readonly winsData?: {
-                readonly BH: number;
-                readonly BW: number;
-                readonly CQ: number;
-                readonly Duels: number;
-                readonly MM: number;
-                readonly MS: number;
-                readonly SC: number;
-                readonly SG: number;
-                readonly SW: number;
-                readonly TB: number;
-                readonly TR: number;
-                readonly Weekly: number;
               };
               readonly extra?: {
                 /** @default 0 */
@@ -2759,8 +2777,6 @@ export interface components {
                   readonly wins: number;
                 };
               };
-              /** @enum {number} */
-              readonly voteStatus?: 0 | 1 | 2;
               readonly factionData?: {
                 readonly tags: number;
                 readonly registerDate: string;
@@ -2788,6 +2804,8 @@ export interface components {
                       }>)
                   | null;
               } | null;
+              /** @default false */
+              readonly leaderboard?: boolean;
               readonly punishments?: readonly {
                 readonly id: number;
                 readonly expires: number;
@@ -2796,14 +2814,28 @@ export interface components {
                 /** @enum {number} */
                 readonly type: 1 | 2;
               }[];
+              /** @enum {number} */
+              readonly voteStatus?: 0 | 1 | 2;
               readonly warnings?: readonly {
                 readonly id: string;
                 /** @default */
                 readonly reason?: string;
                 readonly time: number;
               }[];
-              /** @default false */
-              readonly leaderboard?: boolean;
+              readonly winsData?: {
+                readonly BH: number;
+                readonly BW: number;
+                readonly CQ: number;
+                readonly Duels: number;
+                readonly MM: number;
+                readonly MS: number;
+                readonly SC: number;
+                readonly SG: number;
+                readonly SW: number;
+                readonly TB: number;
+                readonly TR: number;
+                readonly Weekly: number;
+              };
             }[];
           }>;
       }> &
@@ -2906,6 +2938,14 @@ export interface components {
       readonly avatar: string;
       /** Format: uri */
       readonly skin: string;
+      readonly skinData?: {
+        readonly skin: boolean;
+        /** @enum {string} */
+        readonly skinType: 'steve' | 'alex';
+        readonly skinVisibility: boolean;
+        readonly base64: string;
+        readonly raw: string | null;
+      };
       readonly skinVisibility: boolean;
       readonly bio: string;
       readonly staff: boolean;
@@ -2970,20 +3010,6 @@ export interface components {
       readonly discordData: {
         readonly claim?: string;
         readonly latest?: string;
-      };
-      readonly winsData?: {
-        readonly BH: number;
-        readonly BW: number;
-        readonly CQ: number;
-        readonly Duels: number;
-        readonly MM: number;
-        readonly MS: number;
-        readonly SC: number;
-        readonly SG: number;
-        readonly SW: number;
-        readonly TB: number;
-        readonly TR: number;
-        readonly Weekly: number;
       };
       readonly extra?: {
         /** @default 0 */
@@ -3450,8 +3476,6 @@ export interface components {
           readonly wins: number;
         };
       };
-      /** @enum {number} */
-      readonly voteStatus?: 0 | 1 | 2;
       readonly factionData?: {
         readonly tags: number;
         readonly registerDate: string;
@@ -3479,6 +3503,8 @@ export interface components {
               }>)
           | null;
       } | null;
+      /** @default false */
+      readonly leaderboard?: boolean;
       readonly punishments?: readonly {
         readonly id: number;
         readonly expires: number;
@@ -3487,24 +3513,40 @@ export interface components {
         /** @enum {number} */
         readonly type: 1 | 2;
       }[];
+      /** @enum {number} */
+      readonly voteStatus?: 0 | 1 | 2;
       readonly warnings?: readonly {
         readonly id: string;
         /** @default */
         readonly reason?: string;
         readonly time: number;
       }[];
-      /** @default false */
-      readonly leaderboard?: boolean;
+      readonly winsData?: {
+        readonly BH: number;
+        readonly BW: number;
+        readonly CQ: number;
+        readonly Duels: number;
+        readonly MM: number;
+        readonly MS: number;
+        readonly SC: number;
+        readonly SG: number;
+        readonly SW: number;
+        readonly TB: number;
+        readonly TR: number;
+        readonly Weekly: number;
+      };
     };
     readonly PlayerQuery: {
-      /** @default true */
-      readonly withStats?: boolean;
-      /** @default true */
-      readonly withVoteStatus?: boolean;
       /** @default true */
       readonly withFactionData?: boolean;
       /** @default true */
       readonly withPunishments?: boolean;
+      /** @default false */
+      readonly withSkinData?: boolean;
+      /** @default true */
+      readonly withStats?: boolean;
+      /** @default true */
+      readonly withVoteStatus?: boolean;
       /** @default true */
       readonly withWarnings?: boolean;
     };
@@ -4122,6 +4164,14 @@ export interface components {
                 readonly avatar: string;
                 /** Format: uri */
                 readonly skin: string;
+                readonly skinData?: {
+                  readonly skin: boolean;
+                  /** @enum {string} */
+                  readonly skinType: 'steve' | 'alex';
+                  readonly skinVisibility: boolean;
+                  readonly base64: string;
+                  readonly raw: string | null;
+                };
                 readonly skinVisibility: boolean;
                 readonly bio: string;
                 readonly staff: boolean;
@@ -4186,20 +4236,6 @@ export interface components {
                 readonly discordData: {
                   readonly claim?: string;
                   readonly latest?: string;
-                };
-                readonly winsData?: {
-                  readonly BH: number;
-                  readonly BW: number;
-                  readonly CQ: number;
-                  readonly Duels: number;
-                  readonly MM: number;
-                  readonly MS: number;
-                  readonly SC: number;
-                  readonly SG: number;
-                  readonly SW: number;
-                  readonly TB: number;
-                  readonly TR: number;
-                  readonly Weekly: number;
                 };
                 readonly extra?: {
                   /** @default 0 */
@@ -4666,9 +4702,9 @@ export interface components {
                     readonly wins: number;
                   };
                 };
-                /** @enum {number} */
-                readonly voteStatus?: 0 | 1 | 2;
                 readonly factionData?: unknown | null;
+                /** @default false */
+                readonly leaderboard?: boolean;
                 readonly punishments?: readonly {
                   readonly id: number;
                   readonly expires: number;
@@ -4677,14 +4713,28 @@ export interface components {
                   /** @enum {number} */
                   readonly type: 1 | 2;
                 }[];
+                /** @enum {number} */
+                readonly voteStatus?: 0 | 1 | 2;
                 readonly warnings?: readonly {
                   readonly id: string;
                   /** @default */
                   readonly reason?: string;
                   readonly time: number;
                 }[];
-                /** @default false */
-                readonly leaderboard?: boolean;
+                readonly winsData?: {
+                  readonly BH: number;
+                  readonly BW: number;
+                  readonly CQ: number;
+                  readonly Duels: number;
+                  readonly MM: number;
+                  readonly MS: number;
+                  readonly SC: number;
+                  readonly SG: number;
+                  readonly SW: number;
+                  readonly TB: number;
+                  readonly TR: number;
+                  readonly Weekly: number;
+                };
               };
               readonly officers: readonly {
                 readonly xuid: string;
@@ -4693,6 +4743,14 @@ export interface components {
                 readonly avatar: string;
                 /** Format: uri */
                 readonly skin: string;
+                readonly skinData?: {
+                  readonly skin: boolean;
+                  /** @enum {string} */
+                  readonly skinType: 'steve' | 'alex';
+                  readonly skinVisibility: boolean;
+                  readonly base64: string;
+                  readonly raw: string | null;
+                };
                 readonly skinVisibility: boolean;
                 readonly bio: string;
                 readonly staff: boolean;
@@ -4757,20 +4815,6 @@ export interface components {
                 readonly discordData: {
                   readonly claim?: string;
                   readonly latest?: string;
-                };
-                readonly winsData?: {
-                  readonly BH: number;
-                  readonly BW: number;
-                  readonly CQ: number;
-                  readonly Duels: number;
-                  readonly MM: number;
-                  readonly MS: number;
-                  readonly SC: number;
-                  readonly SG: number;
-                  readonly SW: number;
-                  readonly TB: number;
-                  readonly TR: number;
-                  readonly Weekly: number;
                 };
                 readonly extra?: {
                   /** @default 0 */
@@ -5237,9 +5281,9 @@ export interface components {
                     readonly wins: number;
                   };
                 };
-                /** @enum {number} */
-                readonly voteStatus?: 0 | 1 | 2;
                 readonly factionData?: unknown | null;
+                /** @default false */
+                readonly leaderboard?: boolean;
                 readonly punishments?: readonly {
                   readonly id: number;
                   readonly expires: number;
@@ -5248,14 +5292,28 @@ export interface components {
                   /** @enum {number} */
                   readonly type: 1 | 2;
                 }[];
+                /** @enum {number} */
+                readonly voteStatus?: 0 | 1 | 2;
                 readonly warnings?: readonly {
                   readonly id: string;
                   /** @default */
                   readonly reason?: string;
                   readonly time: number;
                 }[];
-                /** @default false */
-                readonly leaderboard?: boolean;
+                readonly winsData?: {
+                  readonly BH: number;
+                  readonly BW: number;
+                  readonly CQ: number;
+                  readonly Duels: number;
+                  readonly MM: number;
+                  readonly MS: number;
+                  readonly SC: number;
+                  readonly SG: number;
+                  readonly SW: number;
+                  readonly TB: number;
+                  readonly TR: number;
+                  readonly Weekly: number;
+                };
               }[];
               readonly members: readonly {
                 readonly xuid: string;
@@ -5264,6 +5322,14 @@ export interface components {
                 readonly avatar: string;
                 /** Format: uri */
                 readonly skin: string;
+                readonly skinData?: {
+                  readonly skin: boolean;
+                  /** @enum {string} */
+                  readonly skinType: 'steve' | 'alex';
+                  readonly skinVisibility: boolean;
+                  readonly base64: string;
+                  readonly raw: string | null;
+                };
                 readonly skinVisibility: boolean;
                 readonly bio: string;
                 readonly staff: boolean;
@@ -5328,20 +5394,6 @@ export interface components {
                 readonly discordData: {
                   readonly claim?: string;
                   readonly latest?: string;
-                };
-                readonly winsData?: {
-                  readonly BH: number;
-                  readonly BW: number;
-                  readonly CQ: number;
-                  readonly Duels: number;
-                  readonly MM: number;
-                  readonly MS: number;
-                  readonly SC: number;
-                  readonly SG: number;
-                  readonly SW: number;
-                  readonly TB: number;
-                  readonly TR: number;
-                  readonly Weekly: number;
                 };
                 readonly extra?: {
                   /** @default 0 */
@@ -5808,9 +5860,9 @@ export interface components {
                     readonly wins: number;
                   };
                 };
-                /** @enum {number} */
-                readonly voteStatus?: 0 | 1 | 2;
                 readonly factionData?: unknown | null;
+                /** @default false */
+                readonly leaderboard?: boolean;
                 readonly punishments?: readonly {
                   readonly id: number;
                   readonly expires: number;
@@ -5819,14 +5871,28 @@ export interface components {
                   /** @enum {number} */
                   readonly type: 1 | 2;
                 }[];
+                /** @enum {number} */
+                readonly voteStatus?: 0 | 1 | 2;
                 readonly warnings?: readonly {
                   readonly id: string;
                   /** @default */
                   readonly reason?: string;
                   readonly time: number;
                 }[];
-                /** @default false */
-                readonly leaderboard?: boolean;
+                readonly winsData?: {
+                  readonly BH: number;
+                  readonly BW: number;
+                  readonly CQ: number;
+                  readonly Duels: number;
+                  readonly MM: number;
+                  readonly MS: number;
+                  readonly SC: number;
+                  readonly SG: number;
+                  readonly SW: number;
+                  readonly TB: number;
+                  readonly TR: number;
+                  readonly Weekly: number;
+                };
               }[];
             }>)
         | null;
@@ -6307,6 +6373,14 @@ export interface components {
       readonly avatar: string;
       /** Format: uri */
       readonly skin: string;
+      readonly skinData?: {
+        readonly skin: boolean;
+        /** @enum {string} */
+        readonly skinType: 'steve' | 'alex';
+        readonly skinVisibility: boolean;
+        readonly base64: string;
+        readonly raw: string | null;
+      };
       readonly skinVisibility: boolean;
       readonly bio: string;
       readonly staff: boolean;
@@ -6371,20 +6445,6 @@ export interface components {
       readonly discordData: {
         readonly claim?: string;
         readonly latest?: string;
-      };
-      readonly winsData?: {
-        readonly BH: number;
-        readonly BW: number;
-        readonly CQ: number;
-        readonly Duels: number;
-        readonly MM: number;
-        readonly MS: number;
-        readonly SC: number;
-        readonly SG: number;
-        readonly SW: number;
-        readonly TB: number;
-        readonly TR: number;
-        readonly Weekly: number;
       };
       readonly extra?: {
         /** @default 0 */
@@ -6851,8 +6911,6 @@ export interface components {
           readonly wins: number;
         };
       };
-      /** @enum {number} */
-      readonly voteStatus?: 0 | 1 | 2;
       readonly factionData?: {
         readonly tags: number;
         readonly registerDate: string;
@@ -6880,6 +6938,8 @@ export interface components {
               }>)
           | null;
       } | null;
+      /** @default false */
+      readonly leaderboard?: boolean;
       readonly punishments?: readonly {
         readonly id: number;
         readonly expires: number;
@@ -6888,24 +6948,40 @@ export interface components {
         /** @enum {number} */
         readonly type: 1 | 2;
       }[];
+      /** @enum {number} */
+      readonly voteStatus?: 0 | 1 | 2;
       readonly warnings?: readonly {
         readonly id: string;
         /** @default */
         readonly reason?: string;
         readonly time: number;
       }[];
-      /** @default false */
-      readonly leaderboard?: boolean;
+      readonly winsData?: {
+        readonly BH: number;
+        readonly BW: number;
+        readonly CQ: number;
+        readonly Duels: number;
+        readonly MM: number;
+        readonly MS: number;
+        readonly SC: number;
+        readonly SG: number;
+        readonly SW: number;
+        readonly TB: number;
+        readonly TR: number;
+        readonly Weekly: number;
+      };
     }[];
     readonly PlayerBulkInput: {
-      /** @default true */
-      readonly withStats?: boolean;
-      /** @default true */
-      readonly withVoteStatus?: boolean;
       /** @default true */
       readonly withFactionData?: boolean;
       /** @default true */
       readonly withPunishments?: boolean;
+      /** @default false */
+      readonly withSkinData?: boolean;
+      /** @default true */
+      readonly withStats?: boolean;
+      /** @default true */
+      readonly withVoteStatus?: boolean;
       /** @default true */
       readonly withWarnings?: boolean;
       readonly names: readonly string[];
@@ -7305,6 +7381,14 @@ export interface components {
         readonly avatar: string;
         /** Format: uri */
         readonly skin: string;
+        readonly skinData?: {
+          readonly skin: boolean;
+          /** @enum {string} */
+          readonly skinType: 'steve' | 'alex';
+          readonly skinVisibility: boolean;
+          readonly base64: string;
+          readonly raw: string | null;
+        };
         readonly skinVisibility: boolean;
         readonly bio: string;
         readonly staff: boolean;
@@ -7369,20 +7453,6 @@ export interface components {
         readonly discordData: {
           readonly claim?: string;
           readonly latest?: string;
-        };
-        readonly winsData?: {
-          readonly BH: number;
-          readonly BW: number;
-          readonly CQ: number;
-          readonly Duels: number;
-          readonly MM: number;
-          readonly MS: number;
-          readonly SC: number;
-          readonly SG: number;
-          readonly SW: number;
-          readonly TB: number;
-          readonly TR: number;
-          readonly Weekly: number;
         };
         readonly extra?: {
           /** @default 0 */
@@ -7849,8 +7919,6 @@ export interface components {
             readonly wins: number;
           };
         };
-        /** @enum {number} */
-        readonly voteStatus?: 0 | 1 | 2;
         readonly factionData?: {
           readonly tags: number;
           readonly registerDate: string;
@@ -7878,6 +7946,8 @@ export interface components {
                 }>)
             | null;
         } | null;
+        /** @default false */
+        readonly leaderboard?: boolean;
         readonly punishments?: readonly {
           readonly id: number;
           readonly expires: number;
@@ -7886,14 +7956,28 @@ export interface components {
           /** @enum {number} */
           readonly type: 1 | 2;
         }[];
+        /** @enum {number} */
+        readonly voteStatus?: 0 | 1 | 2;
         readonly warnings?: readonly {
           readonly id: string;
           /** @default */
           readonly reason?: string;
           readonly time: number;
         }[];
-        /** @default false */
-        readonly leaderboard?: boolean;
+        readonly winsData?: {
+          readonly BH: number;
+          readonly BW: number;
+          readonly CQ: number;
+          readonly Duels: number;
+          readonly MM: number;
+          readonly MS: number;
+          readonly SC: number;
+          readonly SG: number;
+          readonly SW: number;
+          readonly TB: number;
+          readonly TR: number;
+          readonly Weekly: number;
+        };
       };
       readonly officers: readonly {
         readonly xuid: string;
@@ -7902,6 +7986,14 @@ export interface components {
         readonly avatar: string;
         /** Format: uri */
         readonly skin: string;
+        readonly skinData?: {
+          readonly skin: boolean;
+          /** @enum {string} */
+          readonly skinType: 'steve' | 'alex';
+          readonly skinVisibility: boolean;
+          readonly base64: string;
+          readonly raw: string | null;
+        };
         readonly skinVisibility: boolean;
         readonly bio: string;
         readonly staff: boolean;
@@ -7966,20 +8058,6 @@ export interface components {
         readonly discordData: {
           readonly claim?: string;
           readonly latest?: string;
-        };
-        readonly winsData?: {
-          readonly BH: number;
-          readonly BW: number;
-          readonly CQ: number;
-          readonly Duels: number;
-          readonly MM: number;
-          readonly MS: number;
-          readonly SC: number;
-          readonly SG: number;
-          readonly SW: number;
-          readonly TB: number;
-          readonly TR: number;
-          readonly Weekly: number;
         };
         readonly extra?: {
           /** @default 0 */
@@ -8446,8 +8524,6 @@ export interface components {
             readonly wins: number;
           };
         };
-        /** @enum {number} */
-        readonly voteStatus?: 0 | 1 | 2;
         readonly factionData?: {
           readonly tags: number;
           readonly registerDate: string;
@@ -8475,6 +8551,8 @@ export interface components {
                 }>)
             | null;
         } | null;
+        /** @default false */
+        readonly leaderboard?: boolean;
         readonly punishments?: readonly {
           readonly id: number;
           readonly expires: number;
@@ -8483,14 +8561,28 @@ export interface components {
           /** @enum {number} */
           readonly type: 1 | 2;
         }[];
+        /** @enum {number} */
+        readonly voteStatus?: 0 | 1 | 2;
         readonly warnings?: readonly {
           readonly id: string;
           /** @default */
           readonly reason?: string;
           readonly time: number;
         }[];
-        /** @default false */
-        readonly leaderboard?: boolean;
+        readonly winsData?: {
+          readonly BH: number;
+          readonly BW: number;
+          readonly CQ: number;
+          readonly Duels: number;
+          readonly MM: number;
+          readonly MS: number;
+          readonly SC: number;
+          readonly SG: number;
+          readonly SW: number;
+          readonly TB: number;
+          readonly TR: number;
+          readonly Weekly: number;
+        };
       }[];
       readonly members: readonly {
         readonly xuid: string;
@@ -8499,6 +8591,14 @@ export interface components {
         readonly avatar: string;
         /** Format: uri */
         readonly skin: string;
+        readonly skinData?: {
+          readonly skin: boolean;
+          /** @enum {string} */
+          readonly skinType: 'steve' | 'alex';
+          readonly skinVisibility: boolean;
+          readonly base64: string;
+          readonly raw: string | null;
+        };
         readonly skinVisibility: boolean;
         readonly bio: string;
         readonly staff: boolean;
@@ -8563,20 +8663,6 @@ export interface components {
         readonly discordData: {
           readonly claim?: string;
           readonly latest?: string;
-        };
-        readonly winsData?: {
-          readonly BH: number;
-          readonly BW: number;
-          readonly CQ: number;
-          readonly Duels: number;
-          readonly MM: number;
-          readonly MS: number;
-          readonly SC: number;
-          readonly SG: number;
-          readonly SW: number;
-          readonly TB: number;
-          readonly TR: number;
-          readonly Weekly: number;
         };
         readonly extra?: {
           /** @default 0 */
@@ -9043,8 +9129,6 @@ export interface components {
             readonly wins: number;
           };
         };
-        /** @enum {number} */
-        readonly voteStatus?: 0 | 1 | 2;
         readonly factionData?: {
           readonly tags: number;
           readonly registerDate: string;
@@ -9072,6 +9156,8 @@ export interface components {
                 }>)
             | null;
         } | null;
+        /** @default false */
+        readonly leaderboard?: boolean;
         readonly punishments?: readonly {
           readonly id: number;
           readonly expires: number;
@@ -9080,14 +9166,28 @@ export interface components {
           /** @enum {number} */
           readonly type: 1 | 2;
         }[];
+        /** @enum {number} */
+        readonly voteStatus?: 0 | 1 | 2;
         readonly warnings?: readonly {
           readonly id: string;
           /** @default */
           readonly reason?: string;
           readonly time: number;
         }[];
-        /** @default false */
-        readonly leaderboard?: boolean;
+        readonly winsData?: {
+          readonly BH: number;
+          readonly BW: number;
+          readonly CQ: number;
+          readonly Duels: number;
+          readonly MM: number;
+          readonly MS: number;
+          readonly SC: number;
+          readonly SG: number;
+          readonly SW: number;
+          readonly TB: number;
+          readonly TR: number;
+          readonly Weekly: number;
+        };
       }[];
     };
     readonly GuildResponseDefault: {
@@ -9158,6 +9258,14 @@ export interface components {
           readonly avatar: string;
           /** Format: uri */
           readonly skin: string;
+          readonly skinData?: {
+            readonly skin: boolean;
+            /** @enum {string} */
+            readonly skinType: 'steve' | 'alex';
+            readonly skinVisibility: boolean;
+            readonly base64: string;
+            readonly raw: string | null;
+          };
           readonly skinVisibility: boolean;
           readonly bio: string;
           readonly staff: boolean;
@@ -9222,20 +9330,6 @@ export interface components {
           readonly discordData: {
             readonly claim?: string;
             readonly latest?: string;
-          };
-          readonly winsData?: {
-            readonly BH: number;
-            readonly BW: number;
-            readonly CQ: number;
-            readonly Duels: number;
-            readonly MM: number;
-            readonly MS: number;
-            readonly SC: number;
-            readonly SG: number;
-            readonly SW: number;
-            readonly TB: number;
-            readonly TR: number;
-            readonly Weekly: number;
           };
           readonly extra?: {
             /** @default 0 */
@@ -9702,8 +9796,6 @@ export interface components {
               readonly wins: number;
             };
           };
-          /** @enum {number} */
-          readonly voteStatus?: 0 | 1 | 2;
           readonly factionData?: {
             readonly tags: number;
             readonly registerDate: string;
@@ -9731,6 +9823,8 @@ export interface components {
                   }>)
               | null;
           } | null;
+          /** @default false */
+          readonly leaderboard?: boolean;
           readonly punishments?: readonly {
             readonly id: number;
             readonly expires: number;
@@ -9739,14 +9833,28 @@ export interface components {
             /** @enum {number} */
             readonly type: 1 | 2;
           }[];
+          /** @enum {number} */
+          readonly voteStatus?: 0 | 1 | 2;
           readonly warnings?: readonly {
             readonly id: string;
             /** @default */
             readonly reason?: string;
             readonly time: number;
           }[];
-          /** @default false */
-          readonly leaderboard?: boolean;
+          readonly winsData?: {
+            readonly BH: number;
+            readonly BW: number;
+            readonly CQ: number;
+            readonly Duels: number;
+            readonly MM: number;
+            readonly MS: number;
+            readonly SC: number;
+            readonly SG: number;
+            readonly SW: number;
+            readonly TB: number;
+            readonly TR: number;
+            readonly Weekly: number;
+          };
         };
         readonly officers: readonly {
           readonly xuid: string;
@@ -9755,6 +9863,14 @@ export interface components {
           readonly avatar: string;
           /** Format: uri */
           readonly skin: string;
+          readonly skinData?: {
+            readonly skin: boolean;
+            /** @enum {string} */
+            readonly skinType: 'steve' | 'alex';
+            readonly skinVisibility: boolean;
+            readonly base64: string;
+            readonly raw: string | null;
+          };
           readonly skinVisibility: boolean;
           readonly bio: string;
           readonly staff: boolean;
@@ -9819,20 +9935,6 @@ export interface components {
           readonly discordData: {
             readonly claim?: string;
             readonly latest?: string;
-          };
-          readonly winsData?: {
-            readonly BH: number;
-            readonly BW: number;
-            readonly CQ: number;
-            readonly Duels: number;
-            readonly MM: number;
-            readonly MS: number;
-            readonly SC: number;
-            readonly SG: number;
-            readonly SW: number;
-            readonly TB: number;
-            readonly TR: number;
-            readonly Weekly: number;
           };
           readonly extra?: {
             /** @default 0 */
@@ -10299,8 +10401,6 @@ export interface components {
               readonly wins: number;
             };
           };
-          /** @enum {number} */
-          readonly voteStatus?: 0 | 1 | 2;
           readonly factionData?: {
             readonly tags: number;
             readonly registerDate: string;
@@ -10328,6 +10428,8 @@ export interface components {
                   }>)
               | null;
           } | null;
+          /** @default false */
+          readonly leaderboard?: boolean;
           readonly punishments?: readonly {
             readonly id: number;
             readonly expires: number;
@@ -10336,14 +10438,28 @@ export interface components {
             /** @enum {number} */
             readonly type: 1 | 2;
           }[];
+          /** @enum {number} */
+          readonly voteStatus?: 0 | 1 | 2;
           readonly warnings?: readonly {
             readonly id: string;
             /** @default */
             readonly reason?: string;
             readonly time: number;
           }[];
-          /** @default false */
-          readonly leaderboard?: boolean;
+          readonly winsData?: {
+            readonly BH: number;
+            readonly BW: number;
+            readonly CQ: number;
+            readonly Duels: number;
+            readonly MM: number;
+            readonly MS: number;
+            readonly SC: number;
+            readonly SG: number;
+            readonly SW: number;
+            readonly TB: number;
+            readonly TR: number;
+            readonly Weekly: number;
+          };
         }[];
         readonly members: readonly {
           readonly xuid: string;
@@ -10352,6 +10468,14 @@ export interface components {
           readonly avatar: string;
           /** Format: uri */
           readonly skin: string;
+          readonly skinData?: {
+            readonly skin: boolean;
+            /** @enum {string} */
+            readonly skinType: 'steve' | 'alex';
+            readonly skinVisibility: boolean;
+            readonly base64: string;
+            readonly raw: string | null;
+          };
           readonly skinVisibility: boolean;
           readonly bio: string;
           readonly staff: boolean;
@@ -10416,20 +10540,6 @@ export interface components {
           readonly discordData: {
             readonly claim?: string;
             readonly latest?: string;
-          };
-          readonly winsData?: {
-            readonly BH: number;
-            readonly BW: number;
-            readonly CQ: number;
-            readonly Duels: number;
-            readonly MM: number;
-            readonly MS: number;
-            readonly SC: number;
-            readonly SG: number;
-            readonly SW: number;
-            readonly TB: number;
-            readonly TR: number;
-            readonly Weekly: number;
           };
           readonly extra?: {
             /** @default 0 */
@@ -10896,8 +11006,6 @@ export interface components {
               readonly wins: number;
             };
           };
-          /** @enum {number} */
-          readonly voteStatus?: 0 | 1 | 2;
           readonly factionData?: {
             readonly tags: number;
             readonly registerDate: string;
@@ -10925,6 +11033,8 @@ export interface components {
                   }>)
               | null;
           } | null;
+          /** @default false */
+          readonly leaderboard?: boolean;
           readonly punishments?: readonly {
             readonly id: number;
             readonly expires: number;
@@ -10933,27 +11043,43 @@ export interface components {
             /** @enum {number} */
             readonly type: 1 | 2;
           }[];
+          /** @enum {number} */
+          readonly voteStatus?: 0 | 1 | 2;
           readonly warnings?: readonly {
             readonly id: string;
             /** @default */
             readonly reason?: string;
             readonly time: number;
           }[];
-          /** @default false */
-          readonly leaderboard?: boolean;
+          readonly winsData?: {
+            readonly BH: number;
+            readonly BW: number;
+            readonly CQ: number;
+            readonly Duels: number;
+            readonly MM: number;
+            readonly MS: number;
+            readonly SC: number;
+            readonly SG: number;
+            readonly SW: number;
+            readonly TB: number;
+            readonly TR: number;
+            readonly Weekly: number;
+          };
         }[];
       }>;
     readonly GuildQuery: {
       /** @default false */
       readonly expand?: boolean;
       /** @default false */
-      readonly withStats?: boolean;
-      /** @default false */
-      readonly withVoteStatus?: boolean;
-      /** @default false */
       readonly withFactionData?: boolean;
       /** @default false */
       readonly withPunishments?: boolean;
+      /** @default false */
+      readonly withSkinData?: boolean;
+      /** @default false */
+      readonly withStats?: boolean;
+      /** @default false */
+      readonly withVoteStatus?: boolean;
       /** @default false */
       readonly withWarnings?: boolean;
     };
@@ -10997,6 +11123,14 @@ export interface components {
             readonly avatar: string;
             /** Format: uri */
             readonly skin: string;
+            readonly skinData?: {
+              readonly skin: boolean;
+              /** @enum {string} */
+              readonly skinType: 'steve' | 'alex';
+              readonly skinVisibility: boolean;
+              readonly base64: string;
+              readonly raw: string | null;
+            };
             readonly skinVisibility: boolean;
             readonly bio: string;
             readonly staff: boolean;
@@ -11061,20 +11195,6 @@ export interface components {
             readonly discordData: {
               readonly claim?: string;
               readonly latest?: string;
-            };
-            readonly winsData?: {
-              readonly BH: number;
-              readonly BW: number;
-              readonly CQ: number;
-              readonly Duels: number;
-              readonly MM: number;
-              readonly MS: number;
-              readonly SC: number;
-              readonly SG: number;
-              readonly SW: number;
-              readonly TB: number;
-              readonly TR: number;
-              readonly Weekly: number;
             };
             readonly extra?: {
               /** @default 0 */
@@ -11541,8 +11661,6 @@ export interface components {
                 readonly wins: number;
               };
             };
-            /** @enum {number} */
-            readonly voteStatus?: 0 | 1 | 2;
             readonly factionData?: {
               readonly tags: number;
               readonly registerDate: string;
@@ -11570,6 +11688,8 @@ export interface components {
                     }>)
                 | null;
             } | null;
+            /** @default false */
+            readonly leaderboard?: boolean;
             readonly punishments?: readonly {
               readonly id: number;
               readonly expires: number;
@@ -11578,14 +11698,28 @@ export interface components {
               /** @enum {number} */
               readonly type: 1 | 2;
             }[];
+            /** @enum {number} */
+            readonly voteStatus?: 0 | 1 | 2;
             readonly warnings?: readonly {
               readonly id: string;
               /** @default */
               readonly reason?: string;
               readonly time: number;
             }[];
-            /** @default false */
-            readonly leaderboard?: boolean;
+            readonly winsData?: {
+              readonly BH: number;
+              readonly BW: number;
+              readonly CQ: number;
+              readonly Duels: number;
+              readonly MM: number;
+              readonly MS: number;
+              readonly SC: number;
+              readonly SG: number;
+              readonly SW: number;
+              readonly TB: number;
+              readonly TR: number;
+              readonly Weekly: number;
+            };
           };
           readonly officers: readonly {
             readonly xuid: string;
@@ -11594,6 +11728,14 @@ export interface components {
             readonly avatar: string;
             /** Format: uri */
             readonly skin: string;
+            readonly skinData?: {
+              readonly skin: boolean;
+              /** @enum {string} */
+              readonly skinType: 'steve' | 'alex';
+              readonly skinVisibility: boolean;
+              readonly base64: string;
+              readonly raw: string | null;
+            };
             readonly skinVisibility: boolean;
             readonly bio: string;
             readonly staff: boolean;
@@ -11658,20 +11800,6 @@ export interface components {
             readonly discordData: {
               readonly claim?: string;
               readonly latest?: string;
-            };
-            readonly winsData?: {
-              readonly BH: number;
-              readonly BW: number;
-              readonly CQ: number;
-              readonly Duels: number;
-              readonly MM: number;
-              readonly MS: number;
-              readonly SC: number;
-              readonly SG: number;
-              readonly SW: number;
-              readonly TB: number;
-              readonly TR: number;
-              readonly Weekly: number;
             };
             readonly extra?: {
               /** @default 0 */
@@ -12138,8 +12266,6 @@ export interface components {
                 readonly wins: number;
               };
             };
-            /** @enum {number} */
-            readonly voteStatus?: 0 | 1 | 2;
             readonly factionData?: {
               readonly tags: number;
               readonly registerDate: string;
@@ -12167,6 +12293,8 @@ export interface components {
                     }>)
                 | null;
             } | null;
+            /** @default false */
+            readonly leaderboard?: boolean;
             readonly punishments?: readonly {
               readonly id: number;
               readonly expires: number;
@@ -12175,14 +12303,28 @@ export interface components {
               /** @enum {number} */
               readonly type: 1 | 2;
             }[];
+            /** @enum {number} */
+            readonly voteStatus?: 0 | 1 | 2;
             readonly warnings?: readonly {
               readonly id: string;
               /** @default */
               readonly reason?: string;
               readonly time: number;
             }[];
-            /** @default false */
-            readonly leaderboard?: boolean;
+            readonly winsData?: {
+              readonly BH: number;
+              readonly BW: number;
+              readonly CQ: number;
+              readonly Duels: number;
+              readonly MM: number;
+              readonly MS: number;
+              readonly SC: number;
+              readonly SG: number;
+              readonly SW: number;
+              readonly TB: number;
+              readonly TR: number;
+              readonly Weekly: number;
+            };
           }[];
           readonly members: readonly {
             readonly xuid: string;
@@ -12191,6 +12333,14 @@ export interface components {
             readonly avatar: string;
             /** Format: uri */
             readonly skin: string;
+            readonly skinData?: {
+              readonly skin: boolean;
+              /** @enum {string} */
+              readonly skinType: 'steve' | 'alex';
+              readonly skinVisibility: boolean;
+              readonly base64: string;
+              readonly raw: string | null;
+            };
             readonly skinVisibility: boolean;
             readonly bio: string;
             readonly staff: boolean;
@@ -12255,20 +12405,6 @@ export interface components {
             readonly discordData: {
               readonly claim?: string;
               readonly latest?: string;
-            };
-            readonly winsData?: {
-              readonly BH: number;
-              readonly BW: number;
-              readonly CQ: number;
-              readonly Duels: number;
-              readonly MM: number;
-              readonly MS: number;
-              readonly SC: number;
-              readonly SG: number;
-              readonly SW: number;
-              readonly TB: number;
-              readonly TR: number;
-              readonly Weekly: number;
             };
             readonly extra?: {
               /** @default 0 */
@@ -12735,8 +12871,6 @@ export interface components {
                 readonly wins: number;
               };
             };
-            /** @enum {number} */
-            readonly voteStatus?: 0 | 1 | 2;
             readonly factionData?: {
               readonly tags: number;
               readonly registerDate: string;
@@ -12764,6 +12898,8 @@ export interface components {
                     }>)
                 | null;
             } | null;
+            /** @default false */
+            readonly leaderboard?: boolean;
             readonly punishments?: readonly {
               readonly id: number;
               readonly expires: number;
@@ -12772,14 +12908,28 @@ export interface components {
               /** @enum {number} */
               readonly type: 1 | 2;
             }[];
+            /** @enum {number} */
+            readonly voteStatus?: 0 | 1 | 2;
             readonly warnings?: readonly {
               readonly id: string;
               /** @default */
               readonly reason?: string;
               readonly time: number;
             }[];
-            /** @default false */
-            readonly leaderboard?: boolean;
+            readonly winsData?: {
+              readonly BH: number;
+              readonly BW: number;
+              readonly CQ: number;
+              readonly Duels: number;
+              readonly MM: number;
+              readonly MS: number;
+              readonly SC: number;
+              readonly SG: number;
+              readonly SW: number;
+              readonly TB: number;
+              readonly TR: number;
+              readonly Weekly: number;
+            };
           }[];
         }[]
       >;
@@ -12787,13 +12937,15 @@ export interface components {
       /** @default false */
       readonly expand?: boolean;
       /** @default false */
-      readonly withStats?: boolean;
-      /** @default false */
-      readonly withVoteStatus?: boolean;
-      /** @default false */
       readonly withFactionData?: boolean;
       /** @default false */
       readonly withPunishments?: boolean;
+      /** @default false */
+      readonly withSkinData?: boolean;
+      /** @default false */
+      readonly withStats?: boolean;
+      /** @default false */
+      readonly withVoteStatus?: boolean;
       /** @default false */
       readonly withWarnings?: boolean;
       readonly names: readonly string[];
@@ -12819,6 +12971,14 @@ export interface components {
           readonly avatar: string;
           /** Format: uri */
           readonly skin: string;
+          readonly skinData?: {
+            readonly skin: boolean;
+            /** @enum {string} */
+            readonly skinType: 'steve' | 'alex';
+            readonly skinVisibility: boolean;
+            readonly base64: string;
+            readonly raw: string | null;
+          };
           readonly skinVisibility: boolean;
           readonly bio: string;
           readonly staff: boolean;
@@ -12883,20 +13043,6 @@ export interface components {
           readonly discordData: {
             readonly claim?: string;
             readonly latest?: string;
-          };
-          readonly winsData?: {
-            readonly BH: number;
-            readonly BW: number;
-            readonly CQ: number;
-            readonly Duels: number;
-            readonly MM: number;
-            readonly MS: number;
-            readonly SC: number;
-            readonly SG: number;
-            readonly SW: number;
-            readonly TB: number;
-            readonly TR: number;
-            readonly Weekly: number;
           };
           readonly extra?: {
             /** @default 0 */
@@ -13363,8 +13509,6 @@ export interface components {
               readonly wins: number;
             };
           };
-          /** @enum {number} */
-          readonly voteStatus?: 0 | 1 | 2;
           readonly factionData?: {
             readonly tags: number;
             readonly registerDate: string;
@@ -13373,6 +13517,8 @@ export interface components {
             readonly bounty: number;
             readonly faction: unknown | null;
           } | null;
+          /** @default false */
+          readonly leaderboard?: boolean;
           readonly punishments?: readonly {
             readonly id: number;
             readonly expires: number;
@@ -13381,14 +13527,28 @@ export interface components {
             /** @enum {number} */
             readonly type: 1 | 2;
           }[];
+          /** @enum {number} */
+          readonly voteStatus?: 0 | 1 | 2;
           readonly warnings?: readonly {
             readonly id: string;
             /** @default */
             readonly reason?: string;
             readonly time: number;
           }[];
-          /** @default false */
-          readonly leaderboard?: boolean;
+          readonly winsData?: {
+            readonly BH: number;
+            readonly BW: number;
+            readonly CQ: number;
+            readonly Duels: number;
+            readonly MM: number;
+            readonly MS: number;
+            readonly SC: number;
+            readonly SG: number;
+            readonly SW: number;
+            readonly TB: number;
+            readonly TR: number;
+            readonly Weekly: number;
+          };
         };
         readonly officers: readonly {
           readonly xuid: string;
@@ -13397,6 +13557,14 @@ export interface components {
           readonly avatar: string;
           /** Format: uri */
           readonly skin: string;
+          readonly skinData?: {
+            readonly skin: boolean;
+            /** @enum {string} */
+            readonly skinType: 'steve' | 'alex';
+            readonly skinVisibility: boolean;
+            readonly base64: string;
+            readonly raw: string | null;
+          };
           readonly skinVisibility: boolean;
           readonly bio: string;
           readonly staff: boolean;
@@ -13461,20 +13629,6 @@ export interface components {
           readonly discordData: {
             readonly claim?: string;
             readonly latest?: string;
-          };
-          readonly winsData?: {
-            readonly BH: number;
-            readonly BW: number;
-            readonly CQ: number;
-            readonly Duels: number;
-            readonly MM: number;
-            readonly MS: number;
-            readonly SC: number;
-            readonly SG: number;
-            readonly SW: number;
-            readonly TB: number;
-            readonly TR: number;
-            readonly Weekly: number;
           };
           readonly extra?: {
             /** @default 0 */
@@ -13941,8 +14095,6 @@ export interface components {
               readonly wins: number;
             };
           };
-          /** @enum {number} */
-          readonly voteStatus?: 0 | 1 | 2;
           readonly factionData?: {
             readonly tags: number;
             readonly registerDate: string;
@@ -13951,6 +14103,8 @@ export interface components {
             readonly bounty: number;
             readonly faction: unknown | null;
           } | null;
+          /** @default false */
+          readonly leaderboard?: boolean;
           readonly punishments?: readonly {
             readonly id: number;
             readonly expires: number;
@@ -13959,14 +14113,28 @@ export interface components {
             /** @enum {number} */
             readonly type: 1 | 2;
           }[];
+          /** @enum {number} */
+          readonly voteStatus?: 0 | 1 | 2;
           readonly warnings?: readonly {
             readonly id: string;
             /** @default */
             readonly reason?: string;
             readonly time: number;
           }[];
-          /** @default false */
-          readonly leaderboard?: boolean;
+          readonly winsData?: {
+            readonly BH: number;
+            readonly BW: number;
+            readonly CQ: number;
+            readonly Duels: number;
+            readonly MM: number;
+            readonly MS: number;
+            readonly SC: number;
+            readonly SG: number;
+            readonly SW: number;
+            readonly TB: number;
+            readonly TR: number;
+            readonly Weekly: number;
+          };
         }[];
         readonly members: readonly {
           readonly xuid: string;
@@ -13975,6 +14143,14 @@ export interface components {
           readonly avatar: string;
           /** Format: uri */
           readonly skin: string;
+          readonly skinData?: {
+            readonly skin: boolean;
+            /** @enum {string} */
+            readonly skinType: 'steve' | 'alex';
+            readonly skinVisibility: boolean;
+            readonly base64: string;
+            readonly raw: string | null;
+          };
           readonly skinVisibility: boolean;
           readonly bio: string;
           readonly staff: boolean;
@@ -14039,20 +14215,6 @@ export interface components {
           readonly discordData: {
             readonly claim?: string;
             readonly latest?: string;
-          };
-          readonly winsData?: {
-            readonly BH: number;
-            readonly BW: number;
-            readonly CQ: number;
-            readonly Duels: number;
-            readonly MM: number;
-            readonly MS: number;
-            readonly SC: number;
-            readonly SG: number;
-            readonly SW: number;
-            readonly TB: number;
-            readonly TR: number;
-            readonly Weekly: number;
           };
           readonly extra?: {
             /** @default 0 */
@@ -14519,8 +14681,6 @@ export interface components {
               readonly wins: number;
             };
           };
-          /** @enum {number} */
-          readonly voteStatus?: 0 | 1 | 2;
           readonly factionData?: {
             readonly tags: number;
             readonly registerDate: string;
@@ -14529,6 +14689,8 @@ export interface components {
             readonly bounty: number;
             readonly faction: unknown | null;
           } | null;
+          /** @default false */
+          readonly leaderboard?: boolean;
           readonly punishments?: readonly {
             readonly id: number;
             readonly expires: number;
@@ -14537,14 +14699,28 @@ export interface components {
             /** @enum {number} */
             readonly type: 1 | 2;
           }[];
+          /** @enum {number} */
+          readonly voteStatus?: 0 | 1 | 2;
           readonly warnings?: readonly {
             readonly id: string;
             /** @default */
             readonly reason?: string;
             readonly time: number;
           }[];
-          /** @default false */
-          readonly leaderboard?: boolean;
+          readonly winsData?: {
+            readonly BH: number;
+            readonly BW: number;
+            readonly CQ: number;
+            readonly Duels: number;
+            readonly MM: number;
+            readonly MS: number;
+            readonly SC: number;
+            readonly SG: number;
+            readonly SW: number;
+            readonly TB: number;
+            readonly TR: number;
+            readonly Weekly: number;
+          };
         }[];
       }>;
     readonly FactionBulkResponse: Partial<
@@ -14571,6 +14747,14 @@ export interface components {
             readonly avatar: string;
             /** Format: uri */
             readonly skin: string;
+            readonly skinData?: {
+              readonly skin: boolean;
+              /** @enum {string} */
+              readonly skinType: 'steve' | 'alex';
+              readonly skinVisibility: boolean;
+              readonly base64: string;
+              readonly raw: string | null;
+            };
             readonly skinVisibility: boolean;
             readonly bio: string;
             readonly staff: boolean;
@@ -14635,20 +14819,6 @@ export interface components {
             readonly discordData: {
               readonly claim?: string;
               readonly latest?: string;
-            };
-            readonly winsData?: {
-              readonly BH: number;
-              readonly BW: number;
-              readonly CQ: number;
-              readonly Duels: number;
-              readonly MM: number;
-              readonly MS: number;
-              readonly SC: number;
-              readonly SG: number;
-              readonly SW: number;
-              readonly TB: number;
-              readonly TR: number;
-              readonly Weekly: number;
             };
             readonly extra?: {
               /** @default 0 */
@@ -15115,8 +15285,6 @@ export interface components {
                 readonly wins: number;
               };
             };
-            /** @enum {number} */
-            readonly voteStatus?: 0 | 1 | 2;
             readonly factionData?: {
               readonly tags: number;
               readonly registerDate: string;
@@ -15144,6 +15312,8 @@ export interface components {
                     }>)
                 | null;
             } | null;
+            /** @default false */
+            readonly leaderboard?: boolean;
             readonly punishments?: readonly {
               readonly id: number;
               readonly expires: number;
@@ -15152,14 +15322,28 @@ export interface components {
               /** @enum {number} */
               readonly type: 1 | 2;
             }[];
+            /** @enum {number} */
+            readonly voteStatus?: 0 | 1 | 2;
             readonly warnings?: readonly {
               readonly id: string;
               /** @default */
               readonly reason?: string;
               readonly time: number;
             }[];
-            /** @default false */
-            readonly leaderboard?: boolean;
+            readonly winsData?: {
+              readonly BH: number;
+              readonly BW: number;
+              readonly CQ: number;
+              readonly Duels: number;
+              readonly MM: number;
+              readonly MS: number;
+              readonly SC: number;
+              readonly SG: number;
+              readonly SW: number;
+              readonly TB: number;
+              readonly TR: number;
+              readonly Weekly: number;
+            };
           };
           readonly officers: readonly {
             readonly xuid: string;
@@ -15168,6 +15352,14 @@ export interface components {
             readonly avatar: string;
             /** Format: uri */
             readonly skin: string;
+            readonly skinData?: {
+              readonly skin: boolean;
+              /** @enum {string} */
+              readonly skinType: 'steve' | 'alex';
+              readonly skinVisibility: boolean;
+              readonly base64: string;
+              readonly raw: string | null;
+            };
             readonly skinVisibility: boolean;
             readonly bio: string;
             readonly staff: boolean;
@@ -15232,20 +15424,6 @@ export interface components {
             readonly discordData: {
               readonly claim?: string;
               readonly latest?: string;
-            };
-            readonly winsData?: {
-              readonly BH: number;
-              readonly BW: number;
-              readonly CQ: number;
-              readonly Duels: number;
-              readonly MM: number;
-              readonly MS: number;
-              readonly SC: number;
-              readonly SG: number;
-              readonly SW: number;
-              readonly TB: number;
-              readonly TR: number;
-              readonly Weekly: number;
             };
             readonly extra?: {
               /** @default 0 */
@@ -15712,8 +15890,6 @@ export interface components {
                 readonly wins: number;
               };
             };
-            /** @enum {number} */
-            readonly voteStatus?: 0 | 1 | 2;
             readonly factionData?: {
               readonly tags: number;
               readonly registerDate: string;
@@ -15741,6 +15917,8 @@ export interface components {
                     }>)
                 | null;
             } | null;
+            /** @default false */
+            readonly leaderboard?: boolean;
             readonly punishments?: readonly {
               readonly id: number;
               readonly expires: number;
@@ -15749,14 +15927,28 @@ export interface components {
               /** @enum {number} */
               readonly type: 1 | 2;
             }[];
+            /** @enum {number} */
+            readonly voteStatus?: 0 | 1 | 2;
             readonly warnings?: readonly {
               readonly id: string;
               /** @default */
               readonly reason?: string;
               readonly time: number;
             }[];
-            /** @default false */
-            readonly leaderboard?: boolean;
+            readonly winsData?: {
+              readonly BH: number;
+              readonly BW: number;
+              readonly CQ: number;
+              readonly Duels: number;
+              readonly MM: number;
+              readonly MS: number;
+              readonly SC: number;
+              readonly SG: number;
+              readonly SW: number;
+              readonly TB: number;
+              readonly TR: number;
+              readonly Weekly: number;
+            };
           }[];
           readonly members: readonly {
             readonly xuid: string;
@@ -15765,6 +15957,14 @@ export interface components {
             readonly avatar: string;
             /** Format: uri */
             readonly skin: string;
+            readonly skinData?: {
+              readonly skin: boolean;
+              /** @enum {string} */
+              readonly skinType: 'steve' | 'alex';
+              readonly skinVisibility: boolean;
+              readonly base64: string;
+              readonly raw: string | null;
+            };
             readonly skinVisibility: boolean;
             readonly bio: string;
             readonly staff: boolean;
@@ -15829,20 +16029,6 @@ export interface components {
             readonly discordData: {
               readonly claim?: string;
               readonly latest?: string;
-            };
-            readonly winsData?: {
-              readonly BH: number;
-              readonly BW: number;
-              readonly CQ: number;
-              readonly Duels: number;
-              readonly MM: number;
-              readonly MS: number;
-              readonly SC: number;
-              readonly SG: number;
-              readonly SW: number;
-              readonly TB: number;
-              readonly TR: number;
-              readonly Weekly: number;
             };
             readonly extra?: {
               /** @default 0 */
@@ -16309,8 +16495,6 @@ export interface components {
                 readonly wins: number;
               };
             };
-            /** @enum {number} */
-            readonly voteStatus?: 0 | 1 | 2;
             readonly factionData?: {
               readonly tags: number;
               readonly registerDate: string;
@@ -16338,6 +16522,8 @@ export interface components {
                     }>)
                 | null;
             } | null;
+            /** @default false */
+            readonly leaderboard?: boolean;
             readonly punishments?: readonly {
               readonly id: number;
               readonly expires: number;
@@ -16346,14 +16532,28 @@ export interface components {
               /** @enum {number} */
               readonly type: 1 | 2;
             }[];
+            /** @enum {number} */
+            readonly voteStatus?: 0 | 1 | 2;
             readonly warnings?: readonly {
               readonly id: string;
               /** @default */
               readonly reason?: string;
               readonly time: number;
             }[];
-            /** @default false */
-            readonly leaderboard?: boolean;
+            readonly winsData?: {
+              readonly BH: number;
+              readonly BW: number;
+              readonly CQ: number;
+              readonly Duels: number;
+              readonly MM: number;
+              readonly MS: number;
+              readonly SC: number;
+              readonly SG: number;
+              readonly SW: number;
+              readonly TB: number;
+              readonly TR: number;
+              readonly Weekly: number;
+            };
           }[];
         }[]
       >;
@@ -16466,10 +16666,11 @@ export interface operations {
     readonly parameters: {
       readonly query: {
         readonly expand?: boolean;
-        readonly withStats?: boolean;
-        readonly withVoteStatus?: boolean;
         readonly withFactionData?: boolean;
         readonly withPunishments?: boolean;
+        readonly withSkinData?: boolean;
+        readonly withStats?: boolean;
+        readonly withVoteStatus?: boolean;
         readonly withWarnings?: boolean;
       };
     };
@@ -16501,10 +16702,11 @@ export interface operations {
     readonly parameters: {
       readonly query: {
         readonly expand?: boolean;
-        readonly withStats?: boolean;
-        readonly withVoteStatus?: boolean;
         readonly withFactionData?: boolean;
         readonly withPunishments?: boolean;
+        readonly withSkinData?: boolean;
+        readonly withStats?: boolean;
+        readonly withVoteStatus?: boolean;
         readonly withWarnings?: boolean;
       };
     };
@@ -16632,10 +16834,11 @@ export interface operations {
   readonly 'Get Player': {
     readonly parameters: {
       readonly query: {
-        readonly withStats?: boolean;
-        readonly withVoteStatus?: boolean;
         readonly withFactionData?: boolean;
         readonly withPunishments?: boolean;
+        readonly withSkinData?: boolean;
+        readonly withStats?: boolean;
+        readonly withVoteStatus?: boolean;
         readonly withWarnings?: boolean;
       };
     };
