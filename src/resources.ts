@@ -249,7 +249,7 @@ export class SearchResource extends NetherGamesResource {
 
   async fulltext(
     query: string,
-    params?: Pick<SearchFullTextQuery, 'limit' | 'type'>,
+    params?: Pick<SearchFullTextQuery, 'limit' | 'type' | 'expand'>,
   ): Promise<SearchFullTextResponse[]> {
     return this._client._getMany<SearchFullTextResponse>('/v1/search-full', {query, ...params});
   }
