@@ -8713,13 +8713,25 @@ export interface components {
         }[]
       >;
     readonly SearchFullTextQuery: {
+      /** @default true */
+      readonly withFactionData?: boolean;
+      /** @default true */
+      readonly withPunishments?: boolean;
+      /** @default false */
+      readonly withSkinData?: boolean;
+      /** @default true */
+      readonly withStats?: boolean;
+      /** @default true */
+      readonly withVoteStatus?: boolean;
+      /** @default true */
+      readonly withWarnings?: boolean;
+      /** @default false */
+      readonly expand?: boolean;
       /** @default 100 */
       readonly limit?: number;
       readonly query: string;
       /** @enum {string} */
       readonly type?: 'faction' | 'guild' | 'player';
-      /** @default false */
-      readonly expand?: boolean;
     };
     readonly PlayerWinsData: {
       readonly BH: number;
@@ -22747,10 +22759,16 @@ export interface operations {
   readonly 'Get Full-Text Search Results': {
     readonly parameters: {
       readonly query: {
+        readonly withFactionData?: boolean;
+        readonly withPunishments?: boolean;
+        readonly withSkinData?: boolean;
+        readonly withStats?: boolean;
+        readonly withVoteStatus?: boolean;
+        readonly withWarnings?: boolean;
+        readonly expand?: boolean;
         readonly limit?: number;
         readonly query: string;
         readonly type?: 'faction' | 'guild' | 'player';
-        readonly expand?: boolean;
       };
     };
     readonly responses: {
