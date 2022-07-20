@@ -85,12 +85,6 @@ export interface components {
       readonly xuids: readonly string[];
     }> &
       Partial<readonly string[]>;
-    readonly UpdatesQuery: {
-      readonly before?: number;
-      readonly after?: number;
-      /** @default 100 */
-      readonly limit?: number;
-    };
     readonly UpdatesResponse: readonly {
       readonly id: number;
       readonly content: string;
@@ -99,6 +93,12 @@ export interface components {
       /** Format: date-time */
       readonly editedTimestamp: string | null;
     }[];
+    readonly UpdatesQuery: {
+      readonly before?: number;
+      readonly after?: number;
+      /** @default 100 */
+      readonly limit?: number;
+    };
     readonly UpdateResponse: {
       readonly id: number;
       readonly content: string;
@@ -421,6 +421,28 @@ export interface components {
             readonly guild: string | null;
             readonly guildMaxSize: number | null;
             readonly level: number;
+            readonly levelColors: readonly (
+              | '#000000'
+              | '#0000aa'
+              | '#00aa00'
+              | '#00aaaa'
+              | '#aa0000'
+              | '#aa00aa'
+              | '#ffaa00'
+              | '#aaaaaa'
+              | '#555555'
+              | '#5555ff'
+              | '#55ff55'
+              | '#55ffff'
+              | '#ff5555'
+              | '#ff55ff'
+              | '#ffff55'
+              | '#ffffff'
+              | '#ddd605'
+            )[];
+            /** @enum {string} */
+            readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+            readonly formattedLevel: string;
             readonly online: boolean;
             readonly credits: number;
             readonly statusCredits: number;
@@ -430,6 +452,7 @@ export interface components {
               | 'Owner'
               | 'Director'
               | 'Advisor'
+              | 'Community'
               | 'Admin'
               | 'Dev'
               | 'Supervisor'
@@ -1006,6 +1029,28 @@ export interface components {
             readonly guild: string | null;
             readonly guildMaxSize: number | null;
             readonly level: number;
+            readonly levelColors: readonly (
+              | '#000000'
+              | '#0000aa'
+              | '#00aa00'
+              | '#00aaaa'
+              | '#aa0000'
+              | '#aa00aa'
+              | '#ffaa00'
+              | '#aaaaaa'
+              | '#555555'
+              | '#5555ff'
+              | '#55ff55'
+              | '#55ffff'
+              | '#ff5555'
+              | '#ff55ff'
+              | '#ffff55'
+              | '#ffffff'
+              | '#ddd605'
+            )[];
+            /** @enum {string} */
+            readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+            readonly formattedLevel: string;
             readonly online: boolean;
             readonly credits: number;
             readonly statusCredits: number;
@@ -1015,6 +1060,7 @@ export interface components {
               | 'Owner'
               | 'Director'
               | 'Advisor'
+              | 'Community'
               | 'Admin'
               | 'Dev'
               | 'Supervisor'
@@ -1591,6 +1637,28 @@ export interface components {
             readonly guild: string | null;
             readonly guildMaxSize: number | null;
             readonly level: number;
+            readonly levelColors: readonly (
+              | '#000000'
+              | '#0000aa'
+              | '#00aa00'
+              | '#00aaaa'
+              | '#aa0000'
+              | '#aa00aa'
+              | '#ffaa00'
+              | '#aaaaaa'
+              | '#555555'
+              | '#5555ff'
+              | '#55ff55'
+              | '#55ffff'
+              | '#ff5555'
+              | '#ff55ff'
+              | '#ffff55'
+              | '#ffffff'
+              | '#ddd605'
+            )[];
+            /** @enum {string} */
+            readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+            readonly formattedLevel: string;
             readonly online: boolean;
             readonly credits: number;
             readonly statusCredits: number;
@@ -1600,6 +1668,7 @@ export interface components {
               | 'Owner'
               | 'Director'
               | 'Advisor'
+              | 'Community'
               | 'Admin'
               | 'Dev'
               | 'Supervisor'
@@ -2163,10 +2232,31 @@ export interface components {
           readonly maxSize: number;
           readonly memberCount: number;
           readonly motd: string;
-          readonly position: number;
+          readonly position?: number;
           readonly rawTag: string;
           readonly tag: string | null;
-          readonly tagColor: string | null;
+          /** @enum {string|null} */
+          readonly tagColor:
+            | (
+                | '#000000'
+                | '#0000aa'
+                | '#00aa00'
+                | '#00aaaa'
+                | '#aa0000'
+                | '#aa00aa'
+                | '#ffaa00'
+                | '#aaaaaa'
+                | '#555555'
+                | '#5555ff'
+                | '#55ff55'
+                | '#55ffff'
+                | '#ff5555'
+                | '#ff55ff'
+                | '#ffff55'
+                | '#ffffff'
+                | '#ddd605'
+              )
+            | null;
           readonly xp: number;
           readonly xpToNextLevel: number;
           readonly level: number;
@@ -2180,10 +2270,31 @@ export interface components {
             readonly maxSize: number;
             readonly memberCount: number;
             readonly motd: string;
-            readonly position: number;
+            readonly position?: number;
             readonly rawTag: string;
             readonly tag: string | null;
-            readonly tagColor: string | null;
+            /** @enum {string|null} */
+            readonly tagColor:
+              | (
+                  | '#000000'
+                  | '#0000aa'
+                  | '#00aa00'
+                  | '#00aaaa'
+                  | '#aa0000'
+                  | '#aa00aa'
+                  | '#ffaa00'
+                  | '#aaaaaa'
+                  | '#555555'
+                  | '#5555ff'
+                  | '#55ff55'
+                  | '#55ffff'
+                  | '#ff5555'
+                  | '#ff55ff'
+                  | '#ffff55'
+                  | '#ffffff'
+                  | '#ddd605'
+                )
+              | null;
             readonly xp: number;
             readonly xpToNextLevel: number;
             readonly level: number;
@@ -2211,6 +2322,28 @@ export interface components {
               readonly guild: string | null;
               readonly guildMaxSize: number | null;
               readonly level: number;
+              readonly levelColors: readonly (
+                | '#000000'
+                | '#0000aa'
+                | '#00aa00'
+                | '#00aaaa'
+                | '#aa0000'
+                | '#aa00aa'
+                | '#ffaa00'
+                | '#aaaaaa'
+                | '#555555'
+                | '#5555ff'
+                | '#55ff55'
+                | '#55ffff'
+                | '#ff5555'
+                | '#ff55ff'
+                | '#ffff55'
+                | '#ffffff'
+                | '#ddd605'
+              )[];
+              /** @enum {string} */
+              readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+              readonly formattedLevel: string;
               readonly online: boolean;
               readonly credits: number;
               readonly statusCredits: number;
@@ -2220,6 +2353,7 @@ export interface components {
                 | 'Owner'
                 | 'Director'
                 | 'Advisor'
+                | 'Community'
                 | 'Admin'
                 | 'Dev'
                 | 'Supervisor'
@@ -2796,6 +2930,28 @@ export interface components {
               readonly guild: string | null;
               readonly guildMaxSize: number | null;
               readonly level: number;
+              readonly levelColors: readonly (
+                | '#000000'
+                | '#0000aa'
+                | '#00aa00'
+                | '#00aaaa'
+                | '#aa0000'
+                | '#aa00aa'
+                | '#ffaa00'
+                | '#aaaaaa'
+                | '#555555'
+                | '#5555ff'
+                | '#55ff55'
+                | '#55ffff'
+                | '#ff5555'
+                | '#ff55ff'
+                | '#ffff55'
+                | '#ffffff'
+                | '#ddd605'
+              )[];
+              /** @enum {string} */
+              readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+              readonly formattedLevel: string;
               readonly online: boolean;
               readonly credits: number;
               readonly statusCredits: number;
@@ -2805,6 +2961,7 @@ export interface components {
                 | 'Owner'
                 | 'Director'
                 | 'Advisor'
+                | 'Community'
                 | 'Admin'
                 | 'Dev'
                 | 'Supervisor'
@@ -3381,6 +3538,28 @@ export interface components {
               readonly guild: string | null;
               readonly guildMaxSize: number | null;
               readonly level: number;
+              readonly levelColors: readonly (
+                | '#000000'
+                | '#0000aa'
+                | '#00aa00'
+                | '#00aaaa'
+                | '#aa0000'
+                | '#aa00aa'
+                | '#ffaa00'
+                | '#aaaaaa'
+                | '#555555'
+                | '#5555ff'
+                | '#55ff55'
+                | '#55ffff'
+                | '#ff5555'
+                | '#ff55ff'
+                | '#ffff55'
+                | '#ffffff'
+                | '#ddd605'
+              )[];
+              /** @enum {string} */
+              readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+              readonly formattedLevel: string;
               readonly online: boolean;
               readonly credits: number;
               readonly statusCredits: number;
@@ -3390,6 +3569,7 @@ export interface components {
                 | 'Owner'
                 | 'Director'
                 | 'Advisor'
+                | 'Community'
                 | 'Admin'
                 | 'Dev'
                 | 'Supervisor'
@@ -3971,6 +4151,28 @@ export interface components {
           readonly guild: string | null;
           readonly guildMaxSize: number | null;
           readonly level: number;
+          readonly levelColors: readonly (
+            | '#000000'
+            | '#0000aa'
+            | '#00aa00'
+            | '#00aaaa'
+            | '#aa0000'
+            | '#aa00aa'
+            | '#ffaa00'
+            | '#aaaaaa'
+            | '#555555'
+            | '#5555ff'
+            | '#55ff55'
+            | '#55ffff'
+            | '#ff5555'
+            | '#ff55ff'
+            | '#ffff55'
+            | '#ffffff'
+            | '#ddd605'
+          )[];
+          /** @enum {string} */
+          readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+          readonly formattedLevel: string;
           readonly online: boolean;
           readonly credits: number;
           readonly statusCredits: number;
@@ -3980,6 +4182,7 @@ export interface components {
             | 'Owner'
             | 'Director'
             | 'Advisor'
+            | 'Community'
             | 'Admin'
             | 'Dev'
             | 'Supervisor'
@@ -4582,6 +4785,28 @@ export interface components {
                       readonly guild: string | null;
                       readonly guildMaxSize: number | null;
                       readonly level: number;
+                      readonly levelColors: readonly (
+                        | '#000000'
+                        | '#0000aa'
+                        | '#00aa00'
+                        | '#00aaaa'
+                        | '#aa0000'
+                        | '#aa00aa'
+                        | '#ffaa00'
+                        | '#aaaaaa'
+                        | '#555555'
+                        | '#5555ff'
+                        | '#55ff55'
+                        | '#55ffff'
+                        | '#ff5555'
+                        | '#ff55ff'
+                        | '#ffff55'
+                        | '#ffffff'
+                        | '#ddd605'
+                      )[];
+                      /** @enum {string} */
+                      readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+                      readonly formattedLevel: string;
                       readonly online: boolean;
                       readonly credits: number;
                       readonly statusCredits: number;
@@ -4591,6 +4816,7 @@ export interface components {
                         | 'Owner'
                         | 'Director'
                         | 'Advisor'
+                        | 'Community'
                         | 'Admin'
                         | 'Dev'
                         | 'Supervisor'
@@ -5167,6 +5393,28 @@ export interface components {
                       readonly guild: string | null;
                       readonly guildMaxSize: number | null;
                       readonly level: number;
+                      readonly levelColors: readonly (
+                        | '#000000'
+                        | '#0000aa'
+                        | '#00aa00'
+                        | '#00aaaa'
+                        | '#aa0000'
+                        | '#aa00aa'
+                        | '#ffaa00'
+                        | '#aaaaaa'
+                        | '#555555'
+                        | '#5555ff'
+                        | '#55ff55'
+                        | '#55ffff'
+                        | '#ff5555'
+                        | '#ff55ff'
+                        | '#ffff55'
+                        | '#ffffff'
+                        | '#ddd605'
+                      )[];
+                      /** @enum {string} */
+                      readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+                      readonly formattedLevel: string;
                       readonly online: boolean;
                       readonly credits: number;
                       readonly statusCredits: number;
@@ -5176,6 +5424,7 @@ export interface components {
                         | 'Owner'
                         | 'Director'
                         | 'Advisor'
+                        | 'Community'
                         | 'Admin'
                         | 'Dev'
                         | 'Supervisor'
@@ -5752,6 +6001,28 @@ export interface components {
                       readonly guild: string | null;
                       readonly guildMaxSize: number | null;
                       readonly level: number;
+                      readonly levelColors: readonly (
+                        | '#000000'
+                        | '#0000aa'
+                        | '#00aa00'
+                        | '#00aaaa'
+                        | '#aa0000'
+                        | '#aa00aa'
+                        | '#ffaa00'
+                        | '#aaaaaa'
+                        | '#555555'
+                        | '#5555ff'
+                        | '#55ff55'
+                        | '#55ffff'
+                        | '#ff5555'
+                        | '#ff55ff'
+                        | '#ffff55'
+                        | '#ffffff'
+                        | '#ddd605'
+                      )[];
+                      /** @enum {string} */
+                      readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+                      readonly formattedLevel: string;
                       readonly online: boolean;
                       readonly credits: number;
                       readonly statusCredits: number;
@@ -5761,6 +6032,7 @@ export interface components {
                         | 'Owner'
                         | 'Director'
                         | 'Advisor'
+                        | 'Community'
                         | 'Admin'
                         | 'Dev'
                         | 'Supervisor'
@@ -6332,10 +6604,31 @@ export interface components {
                     readonly maxSize: number;
                     readonly memberCount: number;
                     readonly motd: string;
-                    readonly position: number;
+                    readonly position?: number;
                     readonly rawTag: string;
                     readonly tag: string | null;
-                    readonly tagColor: string | null;
+                    /** @enum {string|null} */
+                    readonly tagColor:
+                      | (
+                          | '#000000'
+                          | '#0000aa'
+                          | '#00aa00'
+                          | '#00aaaa'
+                          | '#aa0000'
+                          | '#aa00aa'
+                          | '#ffaa00'
+                          | '#aaaaaa'
+                          | '#555555'
+                          | '#5555ff'
+                          | '#55ff55'
+                          | '#55ffff'
+                          | '#ff5555'
+                          | '#ff55ff'
+                          | '#ffff55'
+                          | '#ffffff'
+                          | '#ddd605'
+                        )
+                      | null;
                     readonly xp: number;
                     readonly xpToNextLevel: number;
                     readonly level: number;
@@ -6349,10 +6642,31 @@ export interface components {
                       readonly maxSize: number;
                       readonly memberCount: number;
                       readonly motd: string;
-                      readonly position: number;
+                      readonly position?: number;
                       readonly rawTag: string;
                       readonly tag: string | null;
-                      readonly tagColor: string | null;
+                      /** @enum {string|null} */
+                      readonly tagColor:
+                        | (
+                            | '#000000'
+                            | '#0000aa'
+                            | '#00aa00'
+                            | '#00aaaa'
+                            | '#aa0000'
+                            | '#aa00aa'
+                            | '#ffaa00'
+                            | '#aaaaaa'
+                            | '#555555'
+                            | '#5555ff'
+                            | '#55ff55'
+                            | '#55ffff'
+                            | '#ff5555'
+                            | '#ff55ff'
+                            | '#ffff55'
+                            | '#ffffff'
+                            | '#ddd605'
+                          )
+                        | null;
                       readonly xp: number;
                       readonly xpToNextLevel: number;
                       readonly level: number;
@@ -6380,6 +6694,28 @@ export interface components {
                         readonly guild: string | null;
                         readonly guildMaxSize: number | null;
                         readonly level: number;
+                        readonly levelColors: readonly (
+                          | '#000000'
+                          | '#0000aa'
+                          | '#00aa00'
+                          | '#00aaaa'
+                          | '#aa0000'
+                          | '#aa00aa'
+                          | '#ffaa00'
+                          | '#aaaaaa'
+                          | '#555555'
+                          | '#5555ff'
+                          | '#55ff55'
+                          | '#55ffff'
+                          | '#ff5555'
+                          | '#ff55ff'
+                          | '#ffff55'
+                          | '#ffffff'
+                          | '#ddd605'
+                        )[];
+                        /** @enum {string} */
+                        readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+                        readonly formattedLevel: string;
                         readonly online: boolean;
                         readonly credits: number;
                         readonly statusCredits: number;
@@ -6389,6 +6725,7 @@ export interface components {
                           | 'Owner'
                           | 'Director'
                           | 'Advisor'
+                          | 'Community'
                           | 'Admin'
                           | 'Dev'
                           | 'Supervisor'
@@ -6965,6 +7302,28 @@ export interface components {
                         readonly guild: string | null;
                         readonly guildMaxSize: number | null;
                         readonly level: number;
+                        readonly levelColors: readonly (
+                          | '#000000'
+                          | '#0000aa'
+                          | '#00aa00'
+                          | '#00aaaa'
+                          | '#aa0000'
+                          | '#aa00aa'
+                          | '#ffaa00'
+                          | '#aaaaaa'
+                          | '#555555'
+                          | '#5555ff'
+                          | '#55ff55'
+                          | '#55ffff'
+                          | '#ff5555'
+                          | '#ff55ff'
+                          | '#ffff55'
+                          | '#ffffff'
+                          | '#ddd605'
+                        )[];
+                        /** @enum {string} */
+                        readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+                        readonly formattedLevel: string;
                         readonly online: boolean;
                         readonly credits: number;
                         readonly statusCredits: number;
@@ -6974,6 +7333,7 @@ export interface components {
                           | 'Owner'
                           | 'Director'
                           | 'Advisor'
+                          | 'Community'
                           | 'Admin'
                           | 'Dev'
                           | 'Supervisor'
@@ -7550,6 +7910,28 @@ export interface components {
                         readonly guild: string | null;
                         readonly guildMaxSize: number | null;
                         readonly level: number;
+                        readonly levelColors: readonly (
+                          | '#000000'
+                          | '#0000aa'
+                          | '#00aa00'
+                          | '#00aaaa'
+                          | '#aa0000'
+                          | '#aa00aa'
+                          | '#ffaa00'
+                          | '#aaaaaa'
+                          | '#555555'
+                          | '#5555ff'
+                          | '#55ff55'
+                          | '#55ffff'
+                          | '#ff5555'
+                          | '#ff55ff'
+                          | '#ffff55'
+                          | '#ffffff'
+                          | '#ddd605'
+                        )[];
+                        /** @enum {string} */
+                        readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+                        readonly formattedLevel: string;
                         readonly online: boolean;
                         readonly credits: number;
                         readonly statusCredits: number;
@@ -7559,6 +7941,7 @@ export interface components {
                           | 'Owner'
                           | 'Director'
                           | 'Advisor'
+                          | 'Community'
                           | 'Admin'
                           | 'Dev'
                           | 'Supervisor'
@@ -8148,6 +8531,28 @@ export interface components {
                   readonly guild: string | null;
                   readonly guildMaxSize: number | null;
                   readonly level: number;
+                  readonly levelColors: readonly (
+                    | '#000000'
+                    | '#0000aa'
+                    | '#00aa00'
+                    | '#00aaaa'
+                    | '#aa0000'
+                    | '#aa00aa'
+                    | '#ffaa00'
+                    | '#aaaaaa'
+                    | '#555555'
+                    | '#5555ff'
+                    | '#55ff55'
+                    | '#55ffff'
+                    | '#ff5555'
+                    | '#ff55ff'
+                    | '#ffff55'
+                    | '#ffffff'
+                    | '#ddd605'
+                  )[];
+                  /** @enum {string} */
+                  readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+                  readonly formattedLevel: string;
                   readonly online: boolean;
                   readonly credits: number;
                   readonly statusCredits: number;
@@ -8157,6 +8562,7 @@ export interface components {
                     | 'Owner'
                     | 'Director'
                     | 'Advisor'
+                    | 'Community'
                     | 'Admin'
                     | 'Dev'
                     | 'Supervisor'
@@ -8733,6 +9139,102 @@ export interface components {
       /** @enum {string} */
       readonly type?: 'faction' | 'guild' | 'player';
     };
+    readonly RelayPaginationResponse: {
+      readonly nodes: readonly unknown[];
+      readonly edges: readonly {
+        readonly cursor: string;
+        readonly node?: unknown;
+      }[];
+      readonly pageInfo: {
+        readonly hasNextPage: boolean;
+        readonly hasPreviousPage: boolean;
+        readonly startCursor?: string;
+        readonly endCursor?: string;
+      };
+      readonly totalCount: number;
+    };
+    readonly RelayPaginationQueryPlayer: {
+      /** @default true */
+      readonly withFactionData?: boolean;
+      /** @default true */
+      readonly withPunishments?: boolean;
+      /** @default false */
+      readonly withSkinData?: boolean;
+      /** @default true */
+      readonly withStats?: boolean;
+      /** @default true */
+      readonly withVoteStatus?: boolean;
+      /** @default true */
+      readonly withWarnings?: boolean;
+      readonly first?: number;
+      readonly after?: string;
+      readonly last?: number;
+      readonly before?: string;
+    };
+    readonly RelayPaginationQueryGuild: {
+      /** @default false */
+      readonly expand?: boolean;
+      /** @default false */
+      readonly withFactionData?: boolean;
+      /** @default false */
+      readonly withPunishments?: boolean;
+      /** @default false */
+      readonly withSkinData?: boolean;
+      /** @default false */
+      readonly withStats?: boolean;
+      /** @default false */
+      readonly withVoteStatus?: boolean;
+      /** @default false */
+      readonly withWarnings?: boolean;
+      readonly first?: number;
+      readonly after?: string;
+      readonly last?: number;
+      readonly before?: string;
+    };
+    readonly RelayPaginationQueryFaction: {
+      /** @default false */
+      readonly expand?: boolean;
+      /** @default false */
+      readonly withFactionData?: boolean;
+      /** @default false */
+      readonly withPunishments?: boolean;
+      /** @default false */
+      readonly withSkinData?: boolean;
+      /** @default false */
+      readonly withStats?: boolean;
+      /** @default false */
+      readonly withVoteStatus?: boolean;
+      /** @default false */
+      readonly withWarnings?: boolean;
+      readonly first?: number;
+      readonly after?: string;
+      readonly last?: number;
+      readonly before?: string;
+    };
+    readonly ProductPlansResponse: readonly {
+      readonly id: string;
+      readonly productId: string;
+      readonly name: string;
+      /** @enum {number} */
+      readonly type: 1 | 2;
+      readonly flags: number;
+      /** @enum {number|null} */
+      readonly interval: (1 | 2) | null;
+      readonly intervalCount: number | null;
+      readonly unitAmount: number;
+    }[];
+    readonly ProductPlanResponse: {
+      readonly id: string;
+      readonly productId: string;
+      readonly name: string;
+      /** @enum {number} */
+      readonly type: 1 | 2;
+      readonly flags: number;
+      /** @enum {number|null} */
+      readonly interval: (1 | 2) | null;
+      readonly intervalCount: number | null;
+      readonly unitAmount: number;
+    };
     readonly PlayerWinsData: {
       readonly BH: number;
       readonly BW: number;
@@ -8795,6 +9297,28 @@ export interface components {
       readonly guild: string | null;
       readonly guildMaxSize: number | null;
       readonly level: number;
+      readonly levelColors: readonly (
+        | '#000000'
+        | '#0000aa'
+        | '#00aa00'
+        | '#00aaaa'
+        | '#aa0000'
+        | '#aa00aa'
+        | '#ffaa00'
+        | '#aaaaaa'
+        | '#555555'
+        | '#5555ff'
+        | '#55ff55'
+        | '#55ffff'
+        | '#ff5555'
+        | '#ff55ff'
+        | '#ffff55'
+        | '#ffffff'
+        | '#ddd605'
+      )[];
+      /** @enum {string} */
+      readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+      readonly formattedLevel: string;
       readonly online: boolean;
       readonly credits: number;
       readonly statusCredits: number;
@@ -8804,6 +9328,7 @@ export interface components {
         | 'Owner'
         | 'Director'
         | 'Advisor'
+        | 'Community'
         | 'Admin'
         | 'Dev'
         | 'Supervisor'
@@ -10020,6 +10545,28 @@ export interface components {
                 readonly guild: string | null;
                 readonly guildMaxSize: number | null;
                 readonly level: number;
+                readonly levelColors: readonly (
+                  | '#000000'
+                  | '#0000aa'
+                  | '#00aa00'
+                  | '#00aaaa'
+                  | '#aa0000'
+                  | '#aa00aa'
+                  | '#ffaa00'
+                  | '#aaaaaa'
+                  | '#555555'
+                  | '#5555ff'
+                  | '#55ff55'
+                  | '#55ffff'
+                  | '#ff5555'
+                  | '#ff55ff'
+                  | '#ffff55'
+                  | '#ffffff'
+                  | '#ddd605'
+                )[];
+                /** @enum {string} */
+                readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+                readonly formattedLevel: string;
                 readonly online: boolean;
                 readonly credits: number;
                 readonly statusCredits: number;
@@ -10029,6 +10576,7 @@ export interface components {
                   | 'Owner'
                   | 'Director'
                   | 'Advisor'
+                  | 'Community'
                   | 'Admin'
                   | 'Dev'
                   | 'Supervisor'
@@ -10598,6 +11146,28 @@ export interface components {
                 readonly guild: string | null;
                 readonly guildMaxSize: number | null;
                 readonly level: number;
+                readonly levelColors: readonly (
+                  | '#000000'
+                  | '#0000aa'
+                  | '#00aa00'
+                  | '#00aaaa'
+                  | '#aa0000'
+                  | '#aa00aa'
+                  | '#ffaa00'
+                  | '#aaaaaa'
+                  | '#555555'
+                  | '#5555ff'
+                  | '#55ff55'
+                  | '#55ffff'
+                  | '#ff5555'
+                  | '#ff55ff'
+                  | '#ffff55'
+                  | '#ffffff'
+                  | '#ddd605'
+                )[];
+                /** @enum {string} */
+                readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+                readonly formattedLevel: string;
                 readonly online: boolean;
                 readonly credits: number;
                 readonly statusCredits: number;
@@ -10607,6 +11177,7 @@ export interface components {
                   | 'Owner'
                   | 'Director'
                   | 'Advisor'
+                  | 'Community'
                   | 'Admin'
                   | 'Dev'
                   | 'Supervisor'
@@ -11176,6 +11747,28 @@ export interface components {
                 readonly guild: string | null;
                 readonly guildMaxSize: number | null;
                 readonly level: number;
+                readonly levelColors: readonly (
+                  | '#000000'
+                  | '#0000aa'
+                  | '#00aa00'
+                  | '#00aaaa'
+                  | '#aa0000'
+                  | '#aa00aa'
+                  | '#ffaa00'
+                  | '#aaaaaa'
+                  | '#555555'
+                  | '#5555ff'
+                  | '#55ff55'
+                  | '#55ffff'
+                  | '#ff5555'
+                  | '#ff55ff'
+                  | '#ffff55'
+                  | '#ffffff'
+                  | '#ddd605'
+                )[];
+                /** @enum {string} */
+                readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+                readonly formattedLevel: string;
                 readonly online: boolean;
                 readonly credits: number;
                 readonly statusCredits: number;
@@ -11185,6 +11778,7 @@ export interface components {
                   | 'Owner'
                   | 'Director'
                   | 'Advisor'
+                  | 'Community'
                   | 'Admin'
                   | 'Dev'
                   | 'Supervisor'
@@ -12226,6 +12820,28 @@ export interface components {
       readonly guild: string | null;
       readonly guildMaxSize: number | null;
       readonly level: number;
+      readonly levelColors: readonly (
+        | '#000000'
+        | '#0000aa'
+        | '#00aa00'
+        | '#00aaaa'
+        | '#aa0000'
+        | '#aa00aa'
+        | '#ffaa00'
+        | '#aaaaaa'
+        | '#555555'
+        | '#5555ff'
+        | '#55ff55'
+        | '#55ffff'
+        | '#ff5555'
+        | '#ff55ff'
+        | '#ffff55'
+        | '#ffffff'
+        | '#ddd605'
+      )[];
+      /** @enum {string} */
+      readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+      readonly formattedLevel: string;
       readonly online: boolean;
       readonly credits: number;
       readonly statusCredits: number;
@@ -12235,6 +12851,7 @@ export interface components {
         | 'Owner'
         | 'Director'
         | 'Advisor'
+        | 'Community'
         | 'Admin'
         | 'Dev'
         | 'Supervisor'
@@ -13202,10 +13819,31 @@ export interface components {
       readonly maxSize: number;
       readonly memberCount: number;
       readonly motd: string;
-      readonly position: number;
+      readonly position?: number;
       readonly rawTag: string;
       readonly tag: string | null;
-      readonly tagColor: string | null;
+      /** @enum {string|null} */
+      readonly tagColor:
+        | (
+            | '#000000'
+            | '#0000aa'
+            | '#00aa00'
+            | '#00aaaa'
+            | '#aa0000'
+            | '#aa00aa'
+            | '#ffaa00'
+            | '#aaaaaa'
+            | '#555555'
+            | '#5555ff'
+            | '#55ff55'
+            | '#55ffff'
+            | '#ff5555'
+            | '#ff55ff'
+            | '#ffff55'
+            | '#ffffff'
+            | '#ddd605'
+          )
+        | null;
       readonly xp: number;
       readonly xpToNextLevel: number;
       readonly level: number;
@@ -13233,6 +13871,28 @@ export interface components {
         readonly guild: string | null;
         readonly guildMaxSize: number | null;
         readonly level: number;
+        readonly levelColors: readonly (
+          | '#000000'
+          | '#0000aa'
+          | '#00aa00'
+          | '#00aaaa'
+          | '#aa0000'
+          | '#aa00aa'
+          | '#ffaa00'
+          | '#aaaaaa'
+          | '#555555'
+          | '#5555ff'
+          | '#55ff55'
+          | '#55ffff'
+          | '#ff5555'
+          | '#ff55ff'
+          | '#ffff55'
+          | '#ffffff'
+          | '#ddd605'
+        )[];
+        /** @enum {string} */
+        readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+        readonly formattedLevel: string;
         readonly online: boolean;
         readonly credits: number;
         readonly statusCredits: number;
@@ -13242,6 +13902,7 @@ export interface components {
           | 'Owner'
           | 'Director'
           | 'Advisor'
+          | 'Community'
           | 'Admin'
           | 'Dev'
           | 'Supervisor'
@@ -13837,6 +14498,28 @@ export interface components {
         readonly guild: string | null;
         readonly guildMaxSize: number | null;
         readonly level: number;
+        readonly levelColors: readonly (
+          | '#000000'
+          | '#0000aa'
+          | '#00aa00'
+          | '#00aaaa'
+          | '#aa0000'
+          | '#aa00aa'
+          | '#ffaa00'
+          | '#aaaaaa'
+          | '#555555'
+          | '#5555ff'
+          | '#55ff55'
+          | '#55ffff'
+          | '#ff5555'
+          | '#ff55ff'
+          | '#ffff55'
+          | '#ffffff'
+          | '#ddd605'
+        )[];
+        /** @enum {string} */
+        readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+        readonly formattedLevel: string;
         readonly online: boolean;
         readonly credits: number;
         readonly statusCredits: number;
@@ -13846,6 +14529,7 @@ export interface components {
           | 'Owner'
           | 'Director'
           | 'Advisor'
+          | 'Community'
           | 'Admin'
           | 'Dev'
           | 'Supervisor'
@@ -14441,6 +15125,28 @@ export interface components {
         readonly guild: string | null;
         readonly guildMaxSize: number | null;
         readonly level: number;
+        readonly levelColors: readonly (
+          | '#000000'
+          | '#0000aa'
+          | '#00aa00'
+          | '#00aaaa'
+          | '#aa0000'
+          | '#aa00aa'
+          | '#ffaa00'
+          | '#aaaaaa'
+          | '#555555'
+          | '#5555ff'
+          | '#55ff55'
+          | '#55ffff'
+          | '#ff5555'
+          | '#ff55ff'
+          | '#ffff55'
+          | '#ffffff'
+          | '#ddd605'
+        )[];
+        /** @enum {string} */
+        readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+        readonly formattedLevel: string;
         readonly online: boolean;
         readonly credits: number;
         readonly statusCredits: number;
@@ -14450,6 +15156,7 @@ export interface components {
           | 'Owner'
           | 'Director'
           | 'Advisor'
+          | 'Community'
           | 'Admin'
           | 'Dev'
           | 'Supervisor'
@@ -15028,10 +15735,31 @@ export interface components {
       readonly maxSize: number;
       readonly memberCount: number;
       readonly motd: string;
-      readonly position: number;
+      readonly position?: number;
       readonly rawTag: string;
       readonly tag: string | null;
-      readonly tagColor: string | null;
+      /** @enum {string|null} */
+      readonly tagColor:
+        | (
+            | '#000000'
+            | '#0000aa'
+            | '#00aa00'
+            | '#00aaaa'
+            | '#aa0000'
+            | '#aa00aa'
+            | '#ffaa00'
+            | '#aaaaaa'
+            | '#555555'
+            | '#5555ff'
+            | '#55ff55'
+            | '#55ffff'
+            | '#ff5555'
+            | '#ff55ff'
+            | '#ffff55'
+            | '#ffffff'
+            | '#ddd605'
+          )
+        | null;
       readonly xp: number;
       readonly xpToNextLevel: number;
       readonly level: number;
@@ -15045,10 +15773,31 @@ export interface components {
       readonly maxSize: number;
       readonly memberCount: number;
       readonly motd: string;
-      readonly position: number;
+      readonly position?: number;
       readonly rawTag: string;
       readonly tag: string | null;
-      readonly tagColor: string | null;
+      /** @enum {string|null} */
+      readonly tagColor:
+        | (
+            | '#000000'
+            | '#0000aa'
+            | '#00aa00'
+            | '#00aaaa'
+            | '#aa0000'
+            | '#aa00aa'
+            | '#ffaa00'
+            | '#aaaaaa'
+            | '#555555'
+            | '#5555ff'
+            | '#55ff55'
+            | '#55ffff'
+            | '#ff5555'
+            | '#ff55ff'
+            | '#ffff55'
+            | '#ffffff'
+            | '#ddd605'
+          )
+        | null;
       readonly xp: number;
       readonly xpToNextLevel: number;
       readonly level: number;
@@ -15059,10 +15808,31 @@ export interface components {
       readonly maxSize: number;
       readonly memberCount: number;
       readonly motd: string;
-      readonly position: number;
+      readonly position?: number;
       readonly rawTag: string;
       readonly tag: string | null;
-      readonly tagColor: string | null;
+      /** @enum {string|null} */
+      readonly tagColor:
+        | (
+            | '#000000'
+            | '#0000aa'
+            | '#00aa00'
+            | '#00aaaa'
+            | '#aa0000'
+            | '#aa00aa'
+            | '#ffaa00'
+            | '#aaaaaa'
+            | '#555555'
+            | '#5555ff'
+            | '#55ff55'
+            | '#55ffff'
+            | '#ff5555'
+            | '#ff55ff'
+            | '#ffff55'
+            | '#ffffff'
+            | '#ddd605'
+          )
+        | null;
       readonly xp: number;
       readonly xpToNextLevel: number;
       readonly level: number;
@@ -15076,10 +15846,31 @@ export interface components {
         readonly maxSize: number;
         readonly memberCount: number;
         readonly motd: string;
-        readonly position: number;
+        readonly position?: number;
         readonly rawTag: string;
         readonly tag: string | null;
-        readonly tagColor: string | null;
+        /** @enum {string|null} */
+        readonly tagColor:
+          | (
+              | '#000000'
+              | '#0000aa'
+              | '#00aa00'
+              | '#00aaaa'
+              | '#aa0000'
+              | '#aa00aa'
+              | '#ffaa00'
+              | '#aaaaaa'
+              | '#555555'
+              | '#5555ff'
+              | '#55ff55'
+              | '#55ffff'
+              | '#ff5555'
+              | '#ff55ff'
+              | '#ffff55'
+              | '#ffffff'
+              | '#ddd605'
+            )
+          | null;
         readonly xp: number;
         readonly xpToNextLevel: number;
         readonly level: number;
@@ -15107,6 +15898,28 @@ export interface components {
           readonly guild: string | null;
           readonly guildMaxSize: number | null;
           readonly level: number;
+          readonly levelColors: readonly (
+            | '#000000'
+            | '#0000aa'
+            | '#00aa00'
+            | '#00aaaa'
+            | '#aa0000'
+            | '#aa00aa'
+            | '#ffaa00'
+            | '#aaaaaa'
+            | '#555555'
+            | '#5555ff'
+            | '#55ff55'
+            | '#55ffff'
+            | '#ff5555'
+            | '#ff55ff'
+            | '#ffff55'
+            | '#ffffff'
+            | '#ddd605'
+          )[];
+          /** @enum {string} */
+          readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+          readonly formattedLevel: string;
           readonly online: boolean;
           readonly credits: number;
           readonly statusCredits: number;
@@ -15116,6 +15929,7 @@ export interface components {
             | 'Owner'
             | 'Director'
             | 'Advisor'
+            | 'Community'
             | 'Admin'
             | 'Dev'
             | 'Supervisor'
@@ -15711,6 +16525,28 @@ export interface components {
           readonly guild: string | null;
           readonly guildMaxSize: number | null;
           readonly level: number;
+          readonly levelColors: readonly (
+            | '#000000'
+            | '#0000aa'
+            | '#00aa00'
+            | '#00aaaa'
+            | '#aa0000'
+            | '#aa00aa'
+            | '#ffaa00'
+            | '#aaaaaa'
+            | '#555555'
+            | '#5555ff'
+            | '#55ff55'
+            | '#55ffff'
+            | '#ff5555'
+            | '#ff55ff'
+            | '#ffff55'
+            | '#ffffff'
+            | '#ddd605'
+          )[];
+          /** @enum {string} */
+          readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+          readonly formattedLevel: string;
           readonly online: boolean;
           readonly credits: number;
           readonly statusCredits: number;
@@ -15720,6 +16556,7 @@ export interface components {
             | 'Owner'
             | 'Director'
             | 'Advisor'
+            | 'Community'
             | 'Admin'
             | 'Dev'
             | 'Supervisor'
@@ -16315,6 +17152,28 @@ export interface components {
           readonly guild: string | null;
           readonly guildMaxSize: number | null;
           readonly level: number;
+          readonly levelColors: readonly (
+            | '#000000'
+            | '#0000aa'
+            | '#00aa00'
+            | '#00aaaa'
+            | '#aa0000'
+            | '#aa00aa'
+            | '#ffaa00'
+            | '#aaaaaa'
+            | '#555555'
+            | '#5555ff'
+            | '#55ff55'
+            | '#55ffff'
+            | '#ff5555'
+            | '#ff55ff'
+            | '#ffff55'
+            | '#ffffff'
+            | '#ddd605'
+          )[];
+          /** @enum {string} */
+          readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+          readonly formattedLevel: string;
           readonly online: boolean;
           readonly credits: number;
           readonly statusCredits: number;
@@ -16324,6 +17183,7 @@ export interface components {
             | 'Owner'
             | 'Director'
             | 'Advisor'
+            | 'Community'
             | 'Admin'
             | 'Dev'
             | 'Supervisor'
@@ -16919,10 +17779,31 @@ export interface components {
         readonly maxSize: number;
         readonly memberCount: number;
         readonly motd: string;
-        readonly position: number;
+        readonly position?: number;
         readonly rawTag: string;
         readonly tag: string | null;
-        readonly tagColor: string | null;
+        /** @enum {string|null} */
+        readonly tagColor:
+          | (
+              | '#000000'
+              | '#0000aa'
+              | '#00aa00'
+              | '#00aaaa'
+              | '#aa0000'
+              | '#aa00aa'
+              | '#ffaa00'
+              | '#aaaaaa'
+              | '#555555'
+              | '#5555ff'
+              | '#55ff55'
+              | '#55ffff'
+              | '#ff5555'
+              | '#ff55ff'
+              | '#ffff55'
+              | '#ffffff'
+              | '#ddd605'
+            )
+          | null;
         readonly xp: number;
         readonly xpToNextLevel: number;
         readonly level: number;
@@ -16938,10 +17819,31 @@ export interface components {
           readonly maxSize: number;
           readonly memberCount: number;
           readonly motd: string;
-          readonly position: number;
+          readonly position?: number;
           readonly rawTag: string;
           readonly tag: string | null;
-          readonly tagColor: string | null;
+          /** @enum {string|null} */
+          readonly tagColor:
+            | (
+                | '#000000'
+                | '#0000aa'
+                | '#00aa00'
+                | '#00aaaa'
+                | '#aa0000'
+                | '#aa00aa'
+                | '#ffaa00'
+                | '#aaaaaa'
+                | '#555555'
+                | '#5555ff'
+                | '#55ff55'
+                | '#55ffff'
+                | '#ff5555'
+                | '#ff55ff'
+                | '#ffff55'
+                | '#ffffff'
+                | '#ddd605'
+              )
+            | null;
           readonly xp: number;
           readonly xpToNextLevel: number;
           readonly level: number;
@@ -16969,6 +17871,28 @@ export interface components {
             readonly guild: string | null;
             readonly guildMaxSize: number | null;
             readonly level: number;
+            readonly levelColors: readonly (
+              | '#000000'
+              | '#0000aa'
+              | '#00aa00'
+              | '#00aaaa'
+              | '#aa0000'
+              | '#aa00aa'
+              | '#ffaa00'
+              | '#aaaaaa'
+              | '#555555'
+              | '#5555ff'
+              | '#55ff55'
+              | '#55ffff'
+              | '#ff5555'
+              | '#ff55ff'
+              | '#ffff55'
+              | '#ffffff'
+              | '#ddd605'
+            )[];
+            /** @enum {string} */
+            readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+            readonly formattedLevel: string;
             readonly online: boolean;
             readonly credits: number;
             readonly statusCredits: number;
@@ -16978,6 +17902,7 @@ export interface components {
               | 'Owner'
               | 'Director'
               | 'Advisor'
+              | 'Community'
               | 'Admin'
               | 'Dev'
               | 'Supervisor'
@@ -17573,6 +18498,28 @@ export interface components {
             readonly guild: string | null;
             readonly guildMaxSize: number | null;
             readonly level: number;
+            readonly levelColors: readonly (
+              | '#000000'
+              | '#0000aa'
+              | '#00aa00'
+              | '#00aaaa'
+              | '#aa0000'
+              | '#aa00aa'
+              | '#ffaa00'
+              | '#aaaaaa'
+              | '#555555'
+              | '#5555ff'
+              | '#55ff55'
+              | '#55ffff'
+              | '#ff5555'
+              | '#ff55ff'
+              | '#ffff55'
+              | '#ffffff'
+              | '#ddd605'
+            )[];
+            /** @enum {string} */
+            readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+            readonly formattedLevel: string;
             readonly online: boolean;
             readonly credits: number;
             readonly statusCredits: number;
@@ -17582,6 +18529,7 @@ export interface components {
               | 'Owner'
               | 'Director'
               | 'Advisor'
+              | 'Community'
               | 'Admin'
               | 'Dev'
               | 'Supervisor'
@@ -18177,6 +19125,28 @@ export interface components {
             readonly guild: string | null;
             readonly guildMaxSize: number | null;
             readonly level: number;
+            readonly levelColors: readonly (
+              | '#000000'
+              | '#0000aa'
+              | '#00aa00'
+              | '#00aaaa'
+              | '#aa0000'
+              | '#aa00aa'
+              | '#ffaa00'
+              | '#aaaaaa'
+              | '#555555'
+              | '#5555ff'
+              | '#55ff55'
+              | '#55ffff'
+              | '#ff5555'
+              | '#ff55ff'
+              | '#ffff55'
+              | '#ffffff'
+              | '#ddd605'
+            )[];
+            /** @enum {string} */
+            readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+            readonly formattedLevel: string;
             readonly online: boolean;
             readonly credits: number;
             readonly statusCredits: number;
@@ -18186,6 +19156,7 @@ export interface components {
               | 'Owner'
               | 'Director'
               | 'Advisor'
+              | 'Community'
               | 'Admin'
               | 'Dev'
               | 'Supervisor'
@@ -18814,6 +19785,28 @@ export interface components {
           readonly guild: string | null;
           readonly guildMaxSize: number | null;
           readonly level: number;
+          readonly levelColors: readonly (
+            | '#000000'
+            | '#0000aa'
+            | '#00aa00'
+            | '#00aaaa'
+            | '#aa0000'
+            | '#aa00aa'
+            | '#ffaa00'
+            | '#aaaaaa'
+            | '#555555'
+            | '#5555ff'
+            | '#55ff55'
+            | '#55ffff'
+            | '#ff5555'
+            | '#ff55ff'
+            | '#ffff55'
+            | '#ffffff'
+            | '#ddd605'
+          )[];
+          /** @enum {string} */
+          readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+          readonly formattedLevel: string;
           readonly online: boolean;
           readonly credits: number;
           readonly statusCredits: number;
@@ -18823,6 +19816,7 @@ export interface components {
             | 'Owner'
             | 'Director'
             | 'Advisor'
+            | 'Community'
             | 'Admin'
             | 'Dev'
             | 'Supervisor'
@@ -19399,6 +20393,28 @@ export interface components {
           readonly guild: string | null;
           readonly guildMaxSize: number | null;
           readonly level: number;
+          readonly levelColors: readonly (
+            | '#000000'
+            | '#0000aa'
+            | '#00aa00'
+            | '#00aaaa'
+            | '#aa0000'
+            | '#aa00aa'
+            | '#ffaa00'
+            | '#aaaaaa'
+            | '#555555'
+            | '#5555ff'
+            | '#55ff55'
+            | '#55ffff'
+            | '#ff5555'
+            | '#ff55ff'
+            | '#ffff55'
+            | '#ffffff'
+            | '#ddd605'
+          )[];
+          /** @enum {string} */
+          readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+          readonly formattedLevel: string;
           readonly online: boolean;
           readonly credits: number;
           readonly statusCredits: number;
@@ -19408,6 +20424,7 @@ export interface components {
             | 'Owner'
             | 'Director'
             | 'Advisor'
+            | 'Community'
             | 'Admin'
             | 'Dev'
             | 'Supervisor'
@@ -19984,6 +21001,28 @@ export interface components {
           readonly guild: string | null;
           readonly guildMaxSize: number | null;
           readonly level: number;
+          readonly levelColors: readonly (
+            | '#000000'
+            | '#0000aa'
+            | '#00aa00'
+            | '#00aaaa'
+            | '#aa0000'
+            | '#aa00aa'
+            | '#ffaa00'
+            | '#aaaaaa'
+            | '#555555'
+            | '#5555ff'
+            | '#55ff55'
+            | '#55ffff'
+            | '#ff5555'
+            | '#ff55ff'
+            | '#ffff55'
+            | '#ffffff'
+            | '#ddd605'
+          )[];
+          /** @enum {string} */
+          readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+          readonly formattedLevel: string;
           readonly online: boolean;
           readonly credits: number;
           readonly statusCredits: number;
@@ -19993,6 +21032,7 @@ export interface components {
             | 'Owner'
             | 'Director'
             | 'Advisor'
+            | 'Community'
             | 'Admin'
             | 'Dev'
             | 'Supervisor'
@@ -20587,6 +21627,28 @@ export interface components {
             readonly guild: string | null;
             readonly guildMaxSize: number | null;
             readonly level: number;
+            readonly levelColors: readonly (
+              | '#000000'
+              | '#0000aa'
+              | '#00aa00'
+              | '#00aaaa'
+              | '#aa0000'
+              | '#aa00aa'
+              | '#ffaa00'
+              | '#aaaaaa'
+              | '#555555'
+              | '#5555ff'
+              | '#55ff55'
+              | '#55ffff'
+              | '#ff5555'
+              | '#ff55ff'
+              | '#ffff55'
+              | '#ffffff'
+              | '#ddd605'
+            )[];
+            /** @enum {string} */
+            readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+            readonly formattedLevel: string;
             readonly online: boolean;
             readonly credits: number;
             readonly statusCredits: number;
@@ -20596,6 +21658,7 @@ export interface components {
               | 'Owner'
               | 'Director'
               | 'Advisor'
+              | 'Community'
               | 'Admin'
               | 'Dev'
               | 'Supervisor'
@@ -21191,6 +22254,28 @@ export interface components {
             readonly guild: string | null;
             readonly guildMaxSize: number | null;
             readonly level: number;
+            readonly levelColors: readonly (
+              | '#000000'
+              | '#0000aa'
+              | '#00aa00'
+              | '#00aaaa'
+              | '#aa0000'
+              | '#aa00aa'
+              | '#ffaa00'
+              | '#aaaaaa'
+              | '#555555'
+              | '#5555ff'
+              | '#55ff55'
+              | '#55ffff'
+              | '#ff5555'
+              | '#ff55ff'
+              | '#ffff55'
+              | '#ffffff'
+              | '#ddd605'
+            )[];
+            /** @enum {string} */
+            readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+            readonly formattedLevel: string;
             readonly online: boolean;
             readonly credits: number;
             readonly statusCredits: number;
@@ -21200,6 +22285,7 @@ export interface components {
               | 'Owner'
               | 'Director'
               | 'Advisor'
+              | 'Community'
               | 'Admin'
               | 'Dev'
               | 'Supervisor'
@@ -21795,6 +22881,28 @@ export interface components {
             readonly guild: string | null;
             readonly guildMaxSize: number | null;
             readonly level: number;
+            readonly levelColors: readonly (
+              | '#000000'
+              | '#0000aa'
+              | '#00aa00'
+              | '#00aaaa'
+              | '#aa0000'
+              | '#aa00aa'
+              | '#ffaa00'
+              | '#aaaaaa'
+              | '#555555'
+              | '#5555ff'
+              | '#55ff55'
+              | '#55ffff'
+              | '#ff5555'
+              | '#ff55ff'
+              | '#ffff55'
+              | '#ffffff'
+              | '#ddd605'
+            )[];
+            /** @enum {string} */
+            readonly levelFormat: '§k' | '§l' | '§o' | '§r';
+            readonly formattedLevel: string;
             readonly online: boolean;
             readonly credits: number;
             readonly statusCredits: number;
@@ -21804,6 +22912,7 @@ export interface components {
               | 'Owner'
               | 'Director'
               | 'Advisor'
+              | 'Community'
               | 'Admin'
               | 'Dev'
               | 'Supervisor'
