@@ -13,11 +13,17 @@ export interface paths {
   readonly '/v1/factions/{name}': {
     readonly get: operations['Get Faction'];
   };
+  readonly '/v1/factions': {
+    readonly get: operations['Get Factions'];
+  };
   readonly '/v1/factions/batch': {
     readonly post: operations['Bulk Get Factions'];
   };
   readonly '/v1/guilds/{name}': {
     readonly get: operations['Get Guild'];
+  };
+  readonly '/v1/guilds': {
+    readonly get: operations['Get Guilds'];
   };
   readonly '/v1/guilds/batch': {
     readonly post: operations['Bulk Get Guilds'];
@@ -40,6 +46,9 @@ export interface paths {
   readonly '/v1/players/leaderboard/bulk': {
     readonly post: operations['Bulk Get Player Leaderboards'];
   };
+  readonly '/v1/players': {
+    readonly get: operations['Get Players'];
+  };
   readonly '/v1/players/batch': {
     readonly post: operations['Bulk Get Players'];
   };
@@ -47,7 +56,8 @@ export interface paths {
     readonly get: operations['Get Player Skin'];
   };
   readonly '/v1/players/{player}/stats': {
-    readonly get: operations['Get Historical Player Stats (Bot Only)'];
+    /** API key required. Rate limit at 200 requests/24 hours per API key for newly requested players. */
+    readonly get: operations['Get Player Stats History'];
   };
   readonly '/v1/search': {
     readonly get: operations['Get Search Results'];
@@ -24652,6 +24662,31 @@ export interface operations {
       };
     };
   };
+  readonly 'Get Factions': {
+    readonly parameters: {
+      readonly query: {
+        readonly expand?: boolean;
+        readonly withFactionData?: boolean;
+        readonly withPunishments?: boolean;
+        readonly withSkinData?: boolean;
+        readonly withStats?: boolean;
+        readonly withVoteStatus?: boolean;
+        readonly withWarnings?: boolean;
+        readonly first?: number;
+        readonly after?: string;
+        readonly last?: number;
+        readonly before?: string;
+      };
+    };
+    readonly responses: {
+      /** Default Response */
+      readonly 200: {
+        readonly content: {
+          readonly 'application/json': components['schemas']['RelayPaginationResponse'];
+        };
+      };
+    };
+  };
   readonly 'Bulk Get Factions': {
     readonly responses: {
       /** Default Response */
@@ -24684,6 +24719,31 @@ export interface operations {
       readonly 200: {
         readonly content: {
           readonly 'application/json': components['schemas']['GuildResponse'];
+        };
+      };
+    };
+  };
+  readonly 'Get Guilds': {
+    readonly parameters: {
+      readonly query: {
+        readonly expand?: boolean;
+        readonly withFactionData?: boolean;
+        readonly withPunishments?: boolean;
+        readonly withSkinData?: boolean;
+        readonly withStats?: boolean;
+        readonly withVoteStatus?: boolean;
+        readonly withWarnings?: boolean;
+        readonly first?: number;
+        readonly after?: string;
+        readonly last?: number;
+        readonly before?: string;
+      };
+    };
+    readonly responses: {
+      /** Default Response */
+      readonly 200: {
+        readonly content: {
+          readonly 'application/json': components['schemas']['RelayPaginationResponse'];
         };
       };
     };
@@ -24860,6 +24920,30 @@ export interface operations {
       };
     };
   };
+  readonly 'Get Players': {
+    readonly parameters: {
+      readonly query: {
+        readonly withFactionData?: boolean;
+        readonly withPunishments?: boolean;
+        readonly withSkinData?: boolean;
+        readonly withStats?: boolean;
+        readonly withVoteStatus?: boolean;
+        readonly withWarnings?: boolean;
+        readonly first?: number;
+        readonly after?: string;
+        readonly last?: number;
+        readonly before?: string;
+      };
+    };
+    readonly responses: {
+      /** Default Response */
+      readonly 200: {
+        readonly content: {
+          readonly 'application/json': components['schemas']['RelayPaginationResponse'];
+        };
+      };
+    };
+  };
   readonly 'Bulk Get Players': {
     readonly responses: {
       /** Default Response */
@@ -24890,7 +24974,8 @@ export interface operations {
       };
     };
   };
-  readonly 'Get Historical Player Stats (Bot Only)': {
+  /** API key required. Rate limit at 200 requests/24 hours per API key for newly requested players. */
+  readonly 'Get Player Stats History': {
     readonly parameters: {
       readonly query: {
         readonly version?: 1;

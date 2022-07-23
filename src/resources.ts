@@ -31,6 +31,12 @@ import type {
   PlayerSkin,
   PlayerStats,
   PlayerStatsQuery,
+  RelayPaginationFaction,
+  RelayPaginationGuild,
+  RelayPaginationPlayer,
+  RelayPaginationQueryFaction,
+  RelayPaginationQueryGuild,
+  RelayPaginationQueryPlayer,
   SearchFullTextQuery,
   SearchFullTextResponse,
   SearchResponse,
@@ -65,6 +71,11 @@ export class FactionsResource extends NetherGamesResource {
   async search(factions: string[], params?: GuildQuery): Promise<Faction[]> {
     return this._client._getBulk<Faction>('factions', factions, params);
   }
+
+  async list(params?: RelayPaginationQueryFaction): Promise<RelayPaginationFaction> {
+    const result = await this._client._getOne<RelayPaginationFaction>('/v1/factions', params);
+    return result!;
+  }
 }
 
 type GuildReturn<T extends GuildQuery> = T['expand'] extends true ? GuildExpanded : GuildDefault;
@@ -76,6 +87,11 @@ export class GuildsResource extends NetherGamesResource {
 
   async search(guilds: string[], params?: GuildQuery): Promise<Guild[]> {
     return this._client._getBulk<Guild>('guilds', guilds, params);
+  }
+
+  async list(params?: RelayPaginationQueryGuild): Promise<RelayPaginationGuild> {
+    const result = await this._client._getOne<RelayPaginationGuild>('/v1/guilds', params);
+    return result!;
   }
 }
 
@@ -200,6 +216,11 @@ export class PlayersResource extends NetherGamesResource {
 
   async search(players: string[], params?: PlayerQuery): Promise<Player[]> {
     return this._client._getBulk<Player>('players', players, params);
+  }
+
+  async list(params?: RelayPaginationQueryPlayer): Promise<RelayPaginationPlayer> {
+    const result = await this._client._getOne<RelayPaginationPlayer>('/v1/players', params);
+    return result!;
   }
 
   async leaderboard(player: string): Promise<PlayerLeaderboard | null> {

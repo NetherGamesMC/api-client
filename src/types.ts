@@ -59,3 +59,26 @@ export type ServiceStatus = components['schemas']['ServiceStatusResponse'];
 
 export type Update = components['schemas']['UpdateResponse'];
 export type UpdateQuery = components['schemas']['UpdatesQuery'];
+
+interface RelayPaginationResponse<T extends Player | Guild | Faction> {
+  readonly nodes: readonly T[];
+  readonly edges: readonly {
+    readonly cursor: string;
+    readonly node?: T;
+  }[];
+  readonly pageInfo: {
+    readonly hasNextPage: boolean;
+    readonly hasPreviousPage: boolean;
+    readonly startCursor?: string;
+    readonly endCursor?: string;
+  };
+  readonly totalCount: number;
+}
+
+export type RelayPaginationPlayer = RelayPaginationResponse<Player>;
+export type RelayPaginationGuild = RelayPaginationResponse<Guild>;
+export type RelayPaginationFaction = RelayPaginationResponse<Faction>;
+
+export type RelayPaginationQueryPlayer = components['schemas']['RelayPaginationQueryPlayer'];
+export type RelayPaginationQueryGuild = components['schemas']['RelayPaginationQueryGuild'];
+export type RelayPaginationQueryFaction = components['schemas']['RelayPaginationQueryFaction'];
