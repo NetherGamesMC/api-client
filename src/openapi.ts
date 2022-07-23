@@ -46,6 +46,9 @@ export interface paths {
   readonly '/v1/players/{player}/skin': {
     readonly get: operations['Get Player Skin'];
   };
+  readonly '/v1/players/{player}/stats': {
+    readonly get: operations['Get Historical Player Stats (Bot Only)'];
+  };
   readonly '/v1/search': {
     readonly get: operations['Get Search Results'];
   };
@@ -726,6 +729,20 @@ export interface components {
               readonly weeklyKills?: number;
               /** @default 0 */
               readonly weeklyWins?: number;
+              /** @default 0 */
+              readonly uhcKills?: number;
+              /** @default 0 */
+              readonly uhcDeaths?: number;
+              /** @default 0 */
+              readonly uhcWins?: number;
+              /** @default 0 */
+              readonly uhcIronMined?: number;
+              /** @default 0 */
+              readonly uhcGoldMined?: number;
+              /** @default 0 */
+              readonly uhcLapisMined?: number;
+              /** @default 0 */
+              readonly uhcDiamondMined?: number;
             };
             readonly extraNested?: {
               readonly bh: {
@@ -957,6 +974,23 @@ export interface components {
                 };
                 readonly time: {
                   readonly record: number;
+                };
+              };
+              readonly uhc: {
+                readonly kills: number;
+                readonly deaths: number;
+                readonly wins: number;
+                readonly iron: {
+                  readonly mined: number;
+                };
+                readonly gold: {
+                  readonly mined: number;
+                };
+                readonly lapis: {
+                  readonly mined: number;
+                };
+                readonly diamond: {
+                  readonly mined: number;
                 };
               };
               readonly weekly: {
@@ -1334,6 +1368,20 @@ export interface components {
               readonly weeklyKills?: number;
               /** @default 0 */
               readonly weeklyWins?: number;
+              /** @default 0 */
+              readonly uhcKills?: number;
+              /** @default 0 */
+              readonly uhcDeaths?: number;
+              /** @default 0 */
+              readonly uhcWins?: number;
+              /** @default 0 */
+              readonly uhcIronMined?: number;
+              /** @default 0 */
+              readonly uhcGoldMined?: number;
+              /** @default 0 */
+              readonly uhcLapisMined?: number;
+              /** @default 0 */
+              readonly uhcDiamondMined?: number;
             };
             readonly extraNested?: {
               readonly bh: {
@@ -1565,6 +1613,23 @@ export interface components {
                 };
                 readonly time: {
                   readonly record: number;
+                };
+              };
+              readonly uhc: {
+                readonly kills: number;
+                readonly deaths: number;
+                readonly wins: number;
+                readonly iron: {
+                  readonly mined: number;
+                };
+                readonly gold: {
+                  readonly mined: number;
+                };
+                readonly lapis: {
+                  readonly mined: number;
+                };
+                readonly diamond: {
+                  readonly mined: number;
                 };
               };
               readonly weekly: {
@@ -1942,6 +2007,20 @@ export interface components {
               readonly weeklyKills?: number;
               /** @default 0 */
               readonly weeklyWins?: number;
+              /** @default 0 */
+              readonly uhcKills?: number;
+              /** @default 0 */
+              readonly uhcDeaths?: number;
+              /** @default 0 */
+              readonly uhcWins?: number;
+              /** @default 0 */
+              readonly uhcIronMined?: number;
+              /** @default 0 */
+              readonly uhcGoldMined?: number;
+              /** @default 0 */
+              readonly uhcLapisMined?: number;
+              /** @default 0 */
+              readonly uhcDiamondMined?: number;
             };
             readonly extraNested?: {
               readonly bh: {
@@ -2173,6 +2252,23 @@ export interface components {
                 };
                 readonly time: {
                   readonly record: number;
+                };
+              };
+              readonly uhc: {
+                readonly kills: number;
+                readonly deaths: number;
+                readonly wins: number;
+                readonly iron: {
+                  readonly mined: number;
+                };
+                readonly gold: {
+                  readonly mined: number;
+                };
+                readonly lapis: {
+                  readonly mined: number;
+                };
+                readonly diamond: {
+                  readonly mined: number;
                 };
               };
               readonly weekly: {
@@ -2627,6 +2723,20 @@ export interface components {
                 readonly weeklyKills?: number;
                 /** @default 0 */
                 readonly weeklyWins?: number;
+                /** @default 0 */
+                readonly uhcKills?: number;
+                /** @default 0 */
+                readonly uhcDeaths?: number;
+                /** @default 0 */
+                readonly uhcWins?: number;
+                /** @default 0 */
+                readonly uhcIronMined?: number;
+                /** @default 0 */
+                readonly uhcGoldMined?: number;
+                /** @default 0 */
+                readonly uhcLapisMined?: number;
+                /** @default 0 */
+                readonly uhcDiamondMined?: number;
               };
               readonly extraNested?: {
                 readonly bh: {
@@ -2858,6 +2968,23 @@ export interface components {
                   };
                   readonly time: {
                     readonly record: number;
+                  };
+                };
+                readonly uhc: {
+                  readonly kills: number;
+                  readonly deaths: number;
+                  readonly wins: number;
+                  readonly iron: {
+                    readonly mined: number;
+                  };
+                  readonly gold: {
+                    readonly mined: number;
+                  };
+                  readonly lapis: {
+                    readonly mined: number;
+                  };
+                  readonly diamond: {
+                    readonly mined: number;
                   };
                 };
                 readonly weekly: {
@@ -3235,6 +3362,20 @@ export interface components {
                 readonly weeklyKills?: number;
                 /** @default 0 */
                 readonly weeklyWins?: number;
+                /** @default 0 */
+                readonly uhcKills?: number;
+                /** @default 0 */
+                readonly uhcDeaths?: number;
+                /** @default 0 */
+                readonly uhcWins?: number;
+                /** @default 0 */
+                readonly uhcIronMined?: number;
+                /** @default 0 */
+                readonly uhcGoldMined?: number;
+                /** @default 0 */
+                readonly uhcLapisMined?: number;
+                /** @default 0 */
+                readonly uhcDiamondMined?: number;
               };
               readonly extraNested?: {
                 readonly bh: {
@@ -3466,6 +3607,23 @@ export interface components {
                   };
                   readonly time: {
                     readonly record: number;
+                  };
+                };
+                readonly uhc: {
+                  readonly kills: number;
+                  readonly deaths: number;
+                  readonly wins: number;
+                  readonly iron: {
+                    readonly mined: number;
+                  };
+                  readonly gold: {
+                    readonly mined: number;
+                  };
+                  readonly lapis: {
+                    readonly mined: number;
+                  };
+                  readonly diamond: {
+                    readonly mined: number;
                   };
                 };
                 readonly weekly: {
@@ -3843,6 +4001,20 @@ export interface components {
                 readonly weeklyKills?: number;
                 /** @default 0 */
                 readonly weeklyWins?: number;
+                /** @default 0 */
+                readonly uhcKills?: number;
+                /** @default 0 */
+                readonly uhcDeaths?: number;
+                /** @default 0 */
+                readonly uhcWins?: number;
+                /** @default 0 */
+                readonly uhcIronMined?: number;
+                /** @default 0 */
+                readonly uhcGoldMined?: number;
+                /** @default 0 */
+                readonly uhcLapisMined?: number;
+                /** @default 0 */
+                readonly uhcDiamondMined?: number;
               };
               readonly extraNested?: {
                 readonly bh: {
@@ -4074,6 +4246,23 @@ export interface components {
                   };
                   readonly time: {
                     readonly record: number;
+                  };
+                };
+                readonly uhc: {
+                  readonly kills: number;
+                  readonly deaths: number;
+                  readonly wins: number;
+                  readonly iron: {
+                    readonly mined: number;
+                  };
+                  readonly gold: {
+                    readonly mined: number;
+                  };
+                  readonly lapis: {
+                    readonly mined: number;
+                  };
+                  readonly diamond: {
+                    readonly mined: number;
                   };
                 };
                 readonly weekly: {
@@ -4456,6 +4645,20 @@ export interface components {
             readonly weeklyKills?: number;
             /** @default 0 */
             readonly weeklyWins?: number;
+            /** @default 0 */
+            readonly uhcKills?: number;
+            /** @default 0 */
+            readonly uhcDeaths?: number;
+            /** @default 0 */
+            readonly uhcWins?: number;
+            /** @default 0 */
+            readonly uhcIronMined?: number;
+            /** @default 0 */
+            readonly uhcGoldMined?: number;
+            /** @default 0 */
+            readonly uhcLapisMined?: number;
+            /** @default 0 */
+            readonly uhcDiamondMined?: number;
           };
           readonly extraNested?: {
             readonly bh: {
@@ -4687,6 +4890,23 @@ export interface components {
               };
               readonly time: {
                 readonly record: number;
+              };
+            };
+            readonly uhc: {
+              readonly kills: number;
+              readonly deaths: number;
+              readonly wins: number;
+              readonly iron: {
+                readonly mined: number;
+              };
+              readonly gold: {
+                readonly mined: number;
+              };
+              readonly lapis: {
+                readonly mined: number;
+              };
+              readonly diamond: {
+                readonly mined: number;
               };
             };
             readonly weekly: {
@@ -5090,6 +5310,20 @@ export interface components {
                         readonly weeklyKills?: number;
                         /** @default 0 */
                         readonly weeklyWins?: number;
+                        /** @default 0 */
+                        readonly uhcKills?: number;
+                        /** @default 0 */
+                        readonly uhcDeaths?: number;
+                        /** @default 0 */
+                        readonly uhcWins?: number;
+                        /** @default 0 */
+                        readonly uhcIronMined?: number;
+                        /** @default 0 */
+                        readonly uhcGoldMined?: number;
+                        /** @default 0 */
+                        readonly uhcLapisMined?: number;
+                        /** @default 0 */
+                        readonly uhcDiamondMined?: number;
                       };
                       readonly extraNested?: {
                         readonly bh: {
@@ -5321,6 +5555,23 @@ export interface components {
                           };
                           readonly time: {
                             readonly record: number;
+                          };
+                        };
+                        readonly uhc: {
+                          readonly kills: number;
+                          readonly deaths: number;
+                          readonly wins: number;
+                          readonly iron: {
+                            readonly mined: number;
+                          };
+                          readonly gold: {
+                            readonly mined: number;
+                          };
+                          readonly lapis: {
+                            readonly mined: number;
+                          };
+                          readonly diamond: {
+                            readonly mined: number;
                           };
                         };
                         readonly weekly: {
@@ -5698,6 +5949,20 @@ export interface components {
                         readonly weeklyKills?: number;
                         /** @default 0 */
                         readonly weeklyWins?: number;
+                        /** @default 0 */
+                        readonly uhcKills?: number;
+                        /** @default 0 */
+                        readonly uhcDeaths?: number;
+                        /** @default 0 */
+                        readonly uhcWins?: number;
+                        /** @default 0 */
+                        readonly uhcIronMined?: number;
+                        /** @default 0 */
+                        readonly uhcGoldMined?: number;
+                        /** @default 0 */
+                        readonly uhcLapisMined?: number;
+                        /** @default 0 */
+                        readonly uhcDiamondMined?: number;
                       };
                       readonly extraNested?: {
                         readonly bh: {
@@ -5929,6 +6194,23 @@ export interface components {
                           };
                           readonly time: {
                             readonly record: number;
+                          };
+                        };
+                        readonly uhc: {
+                          readonly kills: number;
+                          readonly deaths: number;
+                          readonly wins: number;
+                          readonly iron: {
+                            readonly mined: number;
+                          };
+                          readonly gold: {
+                            readonly mined: number;
+                          };
+                          readonly lapis: {
+                            readonly mined: number;
+                          };
+                          readonly diamond: {
+                            readonly mined: number;
                           };
                         };
                         readonly weekly: {
@@ -6306,6 +6588,20 @@ export interface components {
                         readonly weeklyKills?: number;
                         /** @default 0 */
                         readonly weeklyWins?: number;
+                        /** @default 0 */
+                        readonly uhcKills?: number;
+                        /** @default 0 */
+                        readonly uhcDeaths?: number;
+                        /** @default 0 */
+                        readonly uhcWins?: number;
+                        /** @default 0 */
+                        readonly uhcIronMined?: number;
+                        /** @default 0 */
+                        readonly uhcGoldMined?: number;
+                        /** @default 0 */
+                        readonly uhcLapisMined?: number;
+                        /** @default 0 */
+                        readonly uhcDiamondMined?: number;
                       };
                       readonly extraNested?: {
                         readonly bh: {
@@ -6537,6 +6833,23 @@ export interface components {
                           };
                           readonly time: {
                             readonly record: number;
+                          };
+                        };
+                        readonly uhc: {
+                          readonly kills: number;
+                          readonly deaths: number;
+                          readonly wins: number;
+                          readonly iron: {
+                            readonly mined: number;
+                          };
+                          readonly gold: {
+                            readonly mined: number;
+                          };
+                          readonly lapis: {
+                            readonly mined: number;
+                          };
+                          readonly diamond: {
+                            readonly mined: number;
                           };
                         };
                         readonly weekly: {
@@ -6999,6 +7312,20 @@ export interface components {
                           readonly weeklyKills?: number;
                           /** @default 0 */
                           readonly weeklyWins?: number;
+                          /** @default 0 */
+                          readonly uhcKills?: number;
+                          /** @default 0 */
+                          readonly uhcDeaths?: number;
+                          /** @default 0 */
+                          readonly uhcWins?: number;
+                          /** @default 0 */
+                          readonly uhcIronMined?: number;
+                          /** @default 0 */
+                          readonly uhcGoldMined?: number;
+                          /** @default 0 */
+                          readonly uhcLapisMined?: number;
+                          /** @default 0 */
+                          readonly uhcDiamondMined?: number;
                         };
                         readonly extraNested?: {
                           readonly bh: {
@@ -7230,6 +7557,23 @@ export interface components {
                             };
                             readonly time: {
                               readonly record: number;
+                            };
+                          };
+                          readonly uhc: {
+                            readonly kills: number;
+                            readonly deaths: number;
+                            readonly wins: number;
+                            readonly iron: {
+                              readonly mined: number;
+                            };
+                            readonly gold: {
+                              readonly mined: number;
+                            };
+                            readonly lapis: {
+                              readonly mined: number;
+                            };
+                            readonly diamond: {
+                              readonly mined: number;
                             };
                           };
                           readonly weekly: {
@@ -7607,6 +7951,20 @@ export interface components {
                           readonly weeklyKills?: number;
                           /** @default 0 */
                           readonly weeklyWins?: number;
+                          /** @default 0 */
+                          readonly uhcKills?: number;
+                          /** @default 0 */
+                          readonly uhcDeaths?: number;
+                          /** @default 0 */
+                          readonly uhcWins?: number;
+                          /** @default 0 */
+                          readonly uhcIronMined?: number;
+                          /** @default 0 */
+                          readonly uhcGoldMined?: number;
+                          /** @default 0 */
+                          readonly uhcLapisMined?: number;
+                          /** @default 0 */
+                          readonly uhcDiamondMined?: number;
                         };
                         readonly extraNested?: {
                           readonly bh: {
@@ -7838,6 +8196,23 @@ export interface components {
                             };
                             readonly time: {
                               readonly record: number;
+                            };
+                          };
+                          readonly uhc: {
+                            readonly kills: number;
+                            readonly deaths: number;
+                            readonly wins: number;
+                            readonly iron: {
+                              readonly mined: number;
+                            };
+                            readonly gold: {
+                              readonly mined: number;
+                            };
+                            readonly lapis: {
+                              readonly mined: number;
+                            };
+                            readonly diamond: {
+                              readonly mined: number;
                             };
                           };
                           readonly weekly: {
@@ -8215,6 +8590,20 @@ export interface components {
                           readonly weeklyKills?: number;
                           /** @default 0 */
                           readonly weeklyWins?: number;
+                          /** @default 0 */
+                          readonly uhcKills?: number;
+                          /** @default 0 */
+                          readonly uhcDeaths?: number;
+                          /** @default 0 */
+                          readonly uhcWins?: number;
+                          /** @default 0 */
+                          readonly uhcIronMined?: number;
+                          /** @default 0 */
+                          readonly uhcGoldMined?: number;
+                          /** @default 0 */
+                          readonly uhcLapisMined?: number;
+                          /** @default 0 */
+                          readonly uhcDiamondMined?: number;
                         };
                         readonly extraNested?: {
                           readonly bh: {
@@ -8446,6 +8835,23 @@ export interface components {
                             };
                             readonly time: {
                               readonly record: number;
+                            };
+                          };
+                          readonly uhc: {
+                            readonly kills: number;
+                            readonly deaths: number;
+                            readonly wins: number;
+                            readonly iron: {
+                              readonly mined: number;
+                            };
+                            readonly gold: {
+                              readonly mined: number;
+                            };
+                            readonly lapis: {
+                              readonly mined: number;
+                            };
+                            readonly diamond: {
+                              readonly mined: number;
                             };
                           };
                           readonly weekly: {
@@ -8836,6 +9242,20 @@ export interface components {
                     readonly weeklyKills?: number;
                     /** @default 0 */
                     readonly weeklyWins?: number;
+                    /** @default 0 */
+                    readonly uhcKills?: number;
+                    /** @default 0 */
+                    readonly uhcDeaths?: number;
+                    /** @default 0 */
+                    readonly uhcWins?: number;
+                    /** @default 0 */
+                    readonly uhcIronMined?: number;
+                    /** @default 0 */
+                    readonly uhcGoldMined?: number;
+                    /** @default 0 */
+                    readonly uhcLapisMined?: number;
+                    /** @default 0 */
+                    readonly uhcDiamondMined?: number;
                   };
                   readonly extraNested?: {
                     readonly bh: {
@@ -9069,6 +9489,23 @@ export interface components {
                         readonly record: number;
                       };
                     };
+                    readonly uhc: {
+                      readonly kills: number;
+                      readonly deaths: number;
+                      readonly wins: number;
+                      readonly iron: {
+                        readonly mined: number;
+                      };
+                      readonly gold: {
+                        readonly mined: number;
+                      };
+                      readonly lapis: {
+                        readonly mined: number;
+                      };
+                      readonly diamond: {
+                        readonly mined: number;
+                      };
+                    };
                     readonly weekly: {
                       readonly kills: number;
                       readonly wins: number;
@@ -9260,6 +9697,40 @@ export interface components {
       /** @default */
       readonly reason?: string;
       readonly time: number;
+    };
+    readonly PlayerStatsResponse: {
+      readonly [key: string]: {
+        readonly version: number;
+        readonly credits: number;
+        readonly deaths: number;
+        readonly kills: number;
+        readonly losses: number;
+        readonly xp: number;
+        readonly wins: {
+          readonly total: number;
+          readonly bh: number;
+          readonly cq: number;
+          readonly duels: number;
+          readonly ms: number;
+          readonly sc: number;
+          readonly sg: number;
+          readonly tb: number;
+          readonly tr: number;
+          readonly uhc: number;
+          readonly bw: number;
+          readonly mm: number;
+          readonly sw: number;
+        };
+      };
+    };
+    readonly PlayerStatsQuery: {
+      /**
+       * @default 1
+       * @enum {number}
+       */
+      readonly version?: 1;
+      readonly periodStart?: number;
+      readonly periodEnd?: number;
     };
     readonly PlayerSkinResponseData: {
       readonly skin: boolean;
@@ -9602,6 +10073,20 @@ export interface components {
         readonly weeklyKills?: number;
         /** @default 0 */
         readonly weeklyWins?: number;
+        /** @default 0 */
+        readonly uhcKills?: number;
+        /** @default 0 */
+        readonly uhcDeaths?: number;
+        /** @default 0 */
+        readonly uhcWins?: number;
+        /** @default 0 */
+        readonly uhcIronMined?: number;
+        /** @default 0 */
+        readonly uhcGoldMined?: number;
+        /** @default 0 */
+        readonly uhcLapisMined?: number;
+        /** @default 0 */
+        readonly uhcDiamondMined?: number;
       };
       readonly extraNested?: {
         readonly bh: {
@@ -9833,6 +10318,23 @@ export interface components {
           };
           readonly time: {
             readonly record: number;
+          };
+        };
+        readonly uhc: {
+          readonly kills: number;
+          readonly deaths: number;
+          readonly wins: number;
+          readonly iron: {
+            readonly mined: number;
+          };
+          readonly gold: {
+            readonly mined: number;
+          };
+          readonly lapis: {
+            readonly mined: number;
+          };
+          readonly diamond: {
+            readonly mined: number;
           };
         };
         readonly weekly: {
@@ -10850,6 +11352,20 @@ export interface components {
                   readonly weeklyKills?: number;
                   /** @default 0 */
                   readonly weeklyWins?: number;
+                  /** @default 0 */
+                  readonly uhcKills?: number;
+                  /** @default 0 */
+                  readonly uhcDeaths?: number;
+                  /** @default 0 */
+                  readonly uhcWins?: number;
+                  /** @default 0 */
+                  readonly uhcIronMined?: number;
+                  /** @default 0 */
+                  readonly uhcGoldMined?: number;
+                  /** @default 0 */
+                  readonly uhcLapisMined?: number;
+                  /** @default 0 */
+                  readonly uhcDiamondMined?: number;
                 };
                 readonly extraNested?: {
                   readonly bh: {
@@ -11081,6 +11597,23 @@ export interface components {
                     };
                     readonly time: {
                       readonly record: number;
+                    };
+                  };
+                  readonly uhc: {
+                    readonly kills: number;
+                    readonly deaths: number;
+                    readonly wins: number;
+                    readonly iron: {
+                      readonly mined: number;
+                    };
+                    readonly gold: {
+                      readonly mined: number;
+                    };
+                    readonly lapis: {
+                      readonly mined: number;
+                    };
+                    readonly diamond: {
+                      readonly mined: number;
                     };
                   };
                   readonly weekly: {
@@ -11451,6 +11984,20 @@ export interface components {
                   readonly weeklyKills?: number;
                   /** @default 0 */
                   readonly weeklyWins?: number;
+                  /** @default 0 */
+                  readonly uhcKills?: number;
+                  /** @default 0 */
+                  readonly uhcDeaths?: number;
+                  /** @default 0 */
+                  readonly uhcWins?: number;
+                  /** @default 0 */
+                  readonly uhcIronMined?: number;
+                  /** @default 0 */
+                  readonly uhcGoldMined?: number;
+                  /** @default 0 */
+                  readonly uhcLapisMined?: number;
+                  /** @default 0 */
+                  readonly uhcDiamondMined?: number;
                 };
                 readonly extraNested?: {
                   readonly bh: {
@@ -11682,6 +12229,23 @@ export interface components {
                     };
                     readonly time: {
                       readonly record: number;
+                    };
+                  };
+                  readonly uhc: {
+                    readonly kills: number;
+                    readonly deaths: number;
+                    readonly wins: number;
+                    readonly iron: {
+                      readonly mined: number;
+                    };
+                    readonly gold: {
+                      readonly mined: number;
+                    };
+                    readonly lapis: {
+                      readonly mined: number;
+                    };
+                    readonly diamond: {
+                      readonly mined: number;
                     };
                   };
                   readonly weekly: {
@@ -12052,6 +12616,20 @@ export interface components {
                   readonly weeklyKills?: number;
                   /** @default 0 */
                   readonly weeklyWins?: number;
+                  /** @default 0 */
+                  readonly uhcKills?: number;
+                  /** @default 0 */
+                  readonly uhcDeaths?: number;
+                  /** @default 0 */
+                  readonly uhcWins?: number;
+                  /** @default 0 */
+                  readonly uhcIronMined?: number;
+                  /** @default 0 */
+                  readonly uhcGoldMined?: number;
+                  /** @default 0 */
+                  readonly uhcLapisMined?: number;
+                  /** @default 0 */
+                  readonly uhcDiamondMined?: number;
                 };
                 readonly extraNested?: {
                   readonly bh: {
@@ -12283,6 +12861,23 @@ export interface components {
                     };
                     readonly time: {
                       readonly record: number;
+                    };
+                  };
+                  readonly uhc: {
+                    readonly kills: number;
+                    readonly deaths: number;
+                    readonly wins: number;
+                    readonly iron: {
+                      readonly mined: number;
+                    };
+                    readonly gold: {
+                      readonly mined: number;
+                    };
+                    readonly lapis: {
+                      readonly mined: number;
+                    };
+                    readonly diamond: {
+                      readonly mined: number;
                     };
                   };
                   readonly weekly: {
@@ -12559,6 +13154,23 @@ export interface components {
           readonly record: number;
         };
       };
+      readonly uhc: {
+        readonly kills: number;
+        readonly deaths: number;
+        readonly wins: number;
+        readonly iron: {
+          readonly mined: number;
+        };
+        readonly gold: {
+          readonly mined: number;
+        };
+        readonly lapis: {
+          readonly mined: number;
+        };
+        readonly diamond: {
+          readonly mined: number;
+        };
+      };
       readonly weekly: {
         readonly kills: number;
         readonly wins: number;
@@ -12791,6 +13403,20 @@ export interface components {
       readonly weeklyKills?: number;
       /** @default 0 */
       readonly weeklyWins?: number;
+      /** @default 0 */
+      readonly uhcKills?: number;
+      /** @default 0 */
+      readonly uhcDeaths?: number;
+      /** @default 0 */
+      readonly uhcWins?: number;
+      /** @default 0 */
+      readonly uhcIronMined?: number;
+      /** @default 0 */
+      readonly uhcGoldMined?: number;
+      /** @default 0 */
+      readonly uhcLapisMined?: number;
+      /** @default 0 */
+      readonly uhcDiamondMined?: number;
     };
     readonly PlayerDiscordData: {
       readonly claim?: string;
@@ -13125,6 +13751,20 @@ export interface components {
         readonly weeklyKills?: number;
         /** @default 0 */
         readonly weeklyWins?: number;
+        /** @default 0 */
+        readonly uhcKills?: number;
+        /** @default 0 */
+        readonly uhcDeaths?: number;
+        /** @default 0 */
+        readonly uhcWins?: number;
+        /** @default 0 */
+        readonly uhcIronMined?: number;
+        /** @default 0 */
+        readonly uhcGoldMined?: number;
+        /** @default 0 */
+        readonly uhcLapisMined?: number;
+        /** @default 0 */
+        readonly uhcDiamondMined?: number;
       };
       readonly extraNested?: {
         readonly bh: {
@@ -13356,6 +13996,23 @@ export interface components {
           };
           readonly time: {
             readonly record: number;
+          };
+        };
+        readonly uhc: {
+          readonly kills: number;
+          readonly deaths: number;
+          readonly wins: number;
+          readonly iron: {
+            readonly mined: number;
+          };
+          readonly gold: {
+            readonly mined: number;
+          };
+          readonly lapis: {
+            readonly mined: number;
+          };
+          readonly diamond: {
+            readonly mined: number;
           };
         };
         readonly weekly: {
@@ -13656,89 +14313,7 @@ export interface components {
       /** @enum {string} */
       readonly scope?: 'bestStreak' | 'kills' | 'streak';
     };
-    readonly LeaderboardBulkResponse: readonly (Partial<
-      readonly {
-        readonly player: string;
-        readonly credits: number;
-      }[]
-    > &
-      Partial<
-        readonly (Partial<{
-          readonly name: string;
-          readonly leader: string;
-          readonly strength: number;
-        }> &
-          Partial<{
-            readonly player: string;
-            readonly kills: number;
-            readonly coins: number;
-            readonly bounty: number;
-            readonly streak: number;
-            readonly bestStreak: number;
-            readonly xp: number;
-            readonly xpToNextLevel: number;
-            readonly level: number;
-          }>)[]
-      > &
-      Partial<
-        readonly {
-          readonly player: string;
-          readonly value: number;
-        }[]
-      > &
-      Partial<
-        readonly {
-          readonly name: string;
-          readonly leader: string;
-          readonly xp: number;
-          readonly xpToNextLevel: number;
-          readonly level: number;
-        }[]
-      > &
-      Partial<
-        readonly {
-          readonly player: string;
-          readonly kdr: number;
-        }[]
-      > &
-      Partial<
-        readonly {
-          readonly player: string;
-          readonly kills: number;
-        }[]
-      > &
-      Partial<
-        readonly {
-          readonly name: string;
-          readonly time: number;
-        }[]
-      > &
-      Partial<
-        readonly {
-          readonly nickname: string;
-          readonly votes: number;
-        }[]
-      > &
-      Partial<
-        readonly {
-          readonly player: string;
-          readonly wins: number;
-        }[]
-      > &
-      Partial<
-        readonly {
-          readonly player: string;
-          readonly wlr: number;
-        }[]
-      > &
-      Partial<
-        readonly {
-          readonly player: string;
-          readonly xp: number;
-          readonly xpToNextLevel: number;
-          readonly level: number;
-        }[]
-      >)[];
+    readonly LeaderboardBulkResponse: readonly unknown[];
     readonly LeaderboardBulkInput: readonly {
       /** @default 100 */
       readonly limit?: number;
@@ -14176,6 +14751,20 @@ export interface components {
           readonly weeklyKills?: number;
           /** @default 0 */
           readonly weeklyWins?: number;
+          /** @default 0 */
+          readonly uhcKills?: number;
+          /** @default 0 */
+          readonly uhcDeaths?: number;
+          /** @default 0 */
+          readonly uhcWins?: number;
+          /** @default 0 */
+          readonly uhcIronMined?: number;
+          /** @default 0 */
+          readonly uhcGoldMined?: number;
+          /** @default 0 */
+          readonly uhcLapisMined?: number;
+          /** @default 0 */
+          readonly uhcDiamondMined?: number;
         };
         readonly extraNested?: {
           readonly bh: {
@@ -14407,6 +14996,23 @@ export interface components {
             };
             readonly time: {
               readonly record: number;
+            };
+          };
+          readonly uhc: {
+            readonly kills: number;
+            readonly deaths: number;
+            readonly wins: number;
+            readonly iron: {
+              readonly mined: number;
+            };
+            readonly gold: {
+              readonly mined: number;
+            };
+            readonly lapis: {
+              readonly mined: number;
+            };
+            readonly diamond: {
+              readonly mined: number;
             };
           };
           readonly weekly: {
@@ -14803,6 +15409,20 @@ export interface components {
           readonly weeklyKills?: number;
           /** @default 0 */
           readonly weeklyWins?: number;
+          /** @default 0 */
+          readonly uhcKills?: number;
+          /** @default 0 */
+          readonly uhcDeaths?: number;
+          /** @default 0 */
+          readonly uhcWins?: number;
+          /** @default 0 */
+          readonly uhcIronMined?: number;
+          /** @default 0 */
+          readonly uhcGoldMined?: number;
+          /** @default 0 */
+          readonly uhcLapisMined?: number;
+          /** @default 0 */
+          readonly uhcDiamondMined?: number;
         };
         readonly extraNested?: {
           readonly bh: {
@@ -15034,6 +15654,23 @@ export interface components {
             };
             readonly time: {
               readonly record: number;
+            };
+          };
+          readonly uhc: {
+            readonly kills: number;
+            readonly deaths: number;
+            readonly wins: number;
+            readonly iron: {
+              readonly mined: number;
+            };
+            readonly gold: {
+              readonly mined: number;
+            };
+            readonly lapis: {
+              readonly mined: number;
+            };
+            readonly diamond: {
+              readonly mined: number;
             };
           };
           readonly weekly: {
@@ -15430,6 +16067,20 @@ export interface components {
           readonly weeklyKills?: number;
           /** @default 0 */
           readonly weeklyWins?: number;
+          /** @default 0 */
+          readonly uhcKills?: number;
+          /** @default 0 */
+          readonly uhcDeaths?: number;
+          /** @default 0 */
+          readonly uhcWins?: number;
+          /** @default 0 */
+          readonly uhcIronMined?: number;
+          /** @default 0 */
+          readonly uhcGoldMined?: number;
+          /** @default 0 */
+          readonly uhcLapisMined?: number;
+          /** @default 0 */
+          readonly uhcDiamondMined?: number;
         };
         readonly extraNested?: {
           readonly bh: {
@@ -15661,6 +16312,23 @@ export interface components {
             };
             readonly time: {
               readonly record: number;
+            };
+          };
+          readonly uhc: {
+            readonly kills: number;
+            readonly deaths: number;
+            readonly wins: number;
+            readonly iron: {
+              readonly mined: number;
+            };
+            readonly gold: {
+              readonly mined: number;
+            };
+            readonly lapis: {
+              readonly mined: number;
+            };
+            readonly diamond: {
+              readonly mined: number;
             };
           };
           readonly weekly: {
@@ -16203,6 +16871,20 @@ export interface components {
             readonly weeklyKills?: number;
             /** @default 0 */
             readonly weeklyWins?: number;
+            /** @default 0 */
+            readonly uhcKills?: number;
+            /** @default 0 */
+            readonly uhcDeaths?: number;
+            /** @default 0 */
+            readonly uhcWins?: number;
+            /** @default 0 */
+            readonly uhcIronMined?: number;
+            /** @default 0 */
+            readonly uhcGoldMined?: number;
+            /** @default 0 */
+            readonly uhcLapisMined?: number;
+            /** @default 0 */
+            readonly uhcDiamondMined?: number;
           };
           readonly extraNested?: {
             readonly bh: {
@@ -16434,6 +17116,23 @@ export interface components {
               };
               readonly time: {
                 readonly record: number;
+              };
+            };
+            readonly uhc: {
+              readonly kills: number;
+              readonly deaths: number;
+              readonly wins: number;
+              readonly iron: {
+                readonly mined: number;
+              };
+              readonly gold: {
+                readonly mined: number;
+              };
+              readonly lapis: {
+                readonly mined: number;
+              };
+              readonly diamond: {
+                readonly mined: number;
               };
             };
             readonly weekly: {
@@ -16830,6 +17529,20 @@ export interface components {
             readonly weeklyKills?: number;
             /** @default 0 */
             readonly weeklyWins?: number;
+            /** @default 0 */
+            readonly uhcKills?: number;
+            /** @default 0 */
+            readonly uhcDeaths?: number;
+            /** @default 0 */
+            readonly uhcWins?: number;
+            /** @default 0 */
+            readonly uhcIronMined?: number;
+            /** @default 0 */
+            readonly uhcGoldMined?: number;
+            /** @default 0 */
+            readonly uhcLapisMined?: number;
+            /** @default 0 */
+            readonly uhcDiamondMined?: number;
           };
           readonly extraNested?: {
             readonly bh: {
@@ -17061,6 +17774,23 @@ export interface components {
               };
               readonly time: {
                 readonly record: number;
+              };
+            };
+            readonly uhc: {
+              readonly kills: number;
+              readonly deaths: number;
+              readonly wins: number;
+              readonly iron: {
+                readonly mined: number;
+              };
+              readonly gold: {
+                readonly mined: number;
+              };
+              readonly lapis: {
+                readonly mined: number;
+              };
+              readonly diamond: {
+                readonly mined: number;
               };
             };
             readonly weekly: {
@@ -17457,6 +18187,20 @@ export interface components {
             readonly weeklyKills?: number;
             /** @default 0 */
             readonly weeklyWins?: number;
+            /** @default 0 */
+            readonly uhcKills?: number;
+            /** @default 0 */
+            readonly uhcDeaths?: number;
+            /** @default 0 */
+            readonly uhcWins?: number;
+            /** @default 0 */
+            readonly uhcIronMined?: number;
+            /** @default 0 */
+            readonly uhcGoldMined?: number;
+            /** @default 0 */
+            readonly uhcLapisMined?: number;
+            /** @default 0 */
+            readonly uhcDiamondMined?: number;
           };
           readonly extraNested?: {
             readonly bh: {
@@ -17688,6 +18432,23 @@ export interface components {
               };
               readonly time: {
                 readonly record: number;
+              };
+            };
+            readonly uhc: {
+              readonly kills: number;
+              readonly deaths: number;
+              readonly wins: number;
+              readonly iron: {
+                readonly mined: number;
+              };
+              readonly gold: {
+                readonly mined: number;
+              };
+              readonly lapis: {
+                readonly mined: number;
+              };
+              readonly diamond: {
+                readonly mined: number;
               };
             };
             readonly weekly: {
@@ -18176,6 +18937,20 @@ export interface components {
               readonly weeklyKills?: number;
               /** @default 0 */
               readonly weeklyWins?: number;
+              /** @default 0 */
+              readonly uhcKills?: number;
+              /** @default 0 */
+              readonly uhcDeaths?: number;
+              /** @default 0 */
+              readonly uhcWins?: number;
+              /** @default 0 */
+              readonly uhcIronMined?: number;
+              /** @default 0 */
+              readonly uhcGoldMined?: number;
+              /** @default 0 */
+              readonly uhcLapisMined?: number;
+              /** @default 0 */
+              readonly uhcDiamondMined?: number;
             };
             readonly extraNested?: {
               readonly bh: {
@@ -18407,6 +19182,23 @@ export interface components {
                 };
                 readonly time: {
                   readonly record: number;
+                };
+              };
+              readonly uhc: {
+                readonly kills: number;
+                readonly deaths: number;
+                readonly wins: number;
+                readonly iron: {
+                  readonly mined: number;
+                };
+                readonly gold: {
+                  readonly mined: number;
+                };
+                readonly lapis: {
+                  readonly mined: number;
+                };
+                readonly diamond: {
+                  readonly mined: number;
                 };
               };
               readonly weekly: {
@@ -18803,6 +19595,20 @@ export interface components {
               readonly weeklyKills?: number;
               /** @default 0 */
               readonly weeklyWins?: number;
+              /** @default 0 */
+              readonly uhcKills?: number;
+              /** @default 0 */
+              readonly uhcDeaths?: number;
+              /** @default 0 */
+              readonly uhcWins?: number;
+              /** @default 0 */
+              readonly uhcIronMined?: number;
+              /** @default 0 */
+              readonly uhcGoldMined?: number;
+              /** @default 0 */
+              readonly uhcLapisMined?: number;
+              /** @default 0 */
+              readonly uhcDiamondMined?: number;
             };
             readonly extraNested?: {
               readonly bh: {
@@ -19034,6 +19840,23 @@ export interface components {
                 };
                 readonly time: {
                   readonly record: number;
+                };
+              };
+              readonly uhc: {
+                readonly kills: number;
+                readonly deaths: number;
+                readonly wins: number;
+                readonly iron: {
+                  readonly mined: number;
+                };
+                readonly gold: {
+                  readonly mined: number;
+                };
+                readonly lapis: {
+                  readonly mined: number;
+                };
+                readonly diamond: {
+                  readonly mined: number;
                 };
               };
               readonly weekly: {
@@ -19430,6 +20253,20 @@ export interface components {
               readonly weeklyKills?: number;
               /** @default 0 */
               readonly weeklyWins?: number;
+              /** @default 0 */
+              readonly uhcKills?: number;
+              /** @default 0 */
+              readonly uhcDeaths?: number;
+              /** @default 0 */
+              readonly uhcWins?: number;
+              /** @default 0 */
+              readonly uhcIronMined?: number;
+              /** @default 0 */
+              readonly uhcGoldMined?: number;
+              /** @default 0 */
+              readonly uhcLapisMined?: number;
+              /** @default 0 */
+              readonly uhcDiamondMined?: number;
             };
             readonly extraNested?: {
               readonly bh: {
@@ -19661,6 +20498,23 @@ export interface components {
                 };
                 readonly time: {
                   readonly record: number;
+                };
+              };
+              readonly uhc: {
+                readonly kills: number;
+                readonly deaths: number;
+                readonly wins: number;
+                readonly iron: {
+                  readonly mined: number;
+                };
+                readonly gold: {
+                  readonly mined: number;
+                };
+                readonly lapis: {
+                  readonly mined: number;
+                };
+                readonly diamond: {
+                  readonly mined: number;
                 };
               };
               readonly weekly: {
@@ -20090,6 +20944,20 @@ export interface components {
             readonly weeklyKills?: number;
             /** @default 0 */
             readonly weeklyWins?: number;
+            /** @default 0 */
+            readonly uhcKills?: number;
+            /** @default 0 */
+            readonly uhcDeaths?: number;
+            /** @default 0 */
+            readonly uhcWins?: number;
+            /** @default 0 */
+            readonly uhcIronMined?: number;
+            /** @default 0 */
+            readonly uhcGoldMined?: number;
+            /** @default 0 */
+            readonly uhcLapisMined?: number;
+            /** @default 0 */
+            readonly uhcDiamondMined?: number;
           };
           readonly extraNested?: {
             readonly bh: {
@@ -20321,6 +21189,23 @@ export interface components {
               };
               readonly time: {
                 readonly record: number;
+              };
+            };
+            readonly uhc: {
+              readonly kills: number;
+              readonly deaths: number;
+              readonly wins: number;
+              readonly iron: {
+                readonly mined: number;
+              };
+              readonly gold: {
+                readonly mined: number;
+              };
+              readonly lapis: {
+                readonly mined: number;
+              };
+              readonly diamond: {
+                readonly mined: number;
               };
             };
             readonly weekly: {
@@ -20698,6 +21583,20 @@ export interface components {
             readonly weeklyKills?: number;
             /** @default 0 */
             readonly weeklyWins?: number;
+            /** @default 0 */
+            readonly uhcKills?: number;
+            /** @default 0 */
+            readonly uhcDeaths?: number;
+            /** @default 0 */
+            readonly uhcWins?: number;
+            /** @default 0 */
+            readonly uhcIronMined?: number;
+            /** @default 0 */
+            readonly uhcGoldMined?: number;
+            /** @default 0 */
+            readonly uhcLapisMined?: number;
+            /** @default 0 */
+            readonly uhcDiamondMined?: number;
           };
           readonly extraNested?: {
             readonly bh: {
@@ -20929,6 +21828,23 @@ export interface components {
               };
               readonly time: {
                 readonly record: number;
+              };
+            };
+            readonly uhc: {
+              readonly kills: number;
+              readonly deaths: number;
+              readonly wins: number;
+              readonly iron: {
+                readonly mined: number;
+              };
+              readonly gold: {
+                readonly mined: number;
+              };
+              readonly lapis: {
+                readonly mined: number;
+              };
+              readonly diamond: {
+                readonly mined: number;
               };
             };
             readonly weekly: {
@@ -21306,6 +22222,20 @@ export interface components {
             readonly weeklyKills?: number;
             /** @default 0 */
             readonly weeklyWins?: number;
+            /** @default 0 */
+            readonly uhcKills?: number;
+            /** @default 0 */
+            readonly uhcDeaths?: number;
+            /** @default 0 */
+            readonly uhcWins?: number;
+            /** @default 0 */
+            readonly uhcIronMined?: number;
+            /** @default 0 */
+            readonly uhcGoldMined?: number;
+            /** @default 0 */
+            readonly uhcLapisMined?: number;
+            /** @default 0 */
+            readonly uhcDiamondMined?: number;
           };
           readonly extraNested?: {
             readonly bh: {
@@ -21537,6 +22467,23 @@ export interface components {
               };
               readonly time: {
                 readonly record: number;
+              };
+            };
+            readonly uhc: {
+              readonly kills: number;
+              readonly deaths: number;
+              readonly wins: number;
+              readonly iron: {
+                readonly mined: number;
+              };
+              readonly gold: {
+                readonly mined: number;
+              };
+              readonly lapis: {
+                readonly mined: number;
+              };
+              readonly diamond: {
+                readonly mined: number;
               };
             };
             readonly weekly: {
@@ -21932,6 +22879,20 @@ export interface components {
               readonly weeklyKills?: number;
               /** @default 0 */
               readonly weeklyWins?: number;
+              /** @default 0 */
+              readonly uhcKills?: number;
+              /** @default 0 */
+              readonly uhcDeaths?: number;
+              /** @default 0 */
+              readonly uhcWins?: number;
+              /** @default 0 */
+              readonly uhcIronMined?: number;
+              /** @default 0 */
+              readonly uhcGoldMined?: number;
+              /** @default 0 */
+              readonly uhcLapisMined?: number;
+              /** @default 0 */
+              readonly uhcDiamondMined?: number;
             };
             readonly extraNested?: {
               readonly bh: {
@@ -22163,6 +23124,23 @@ export interface components {
                 };
                 readonly time: {
                   readonly record: number;
+                };
+              };
+              readonly uhc: {
+                readonly kills: number;
+                readonly deaths: number;
+                readonly wins: number;
+                readonly iron: {
+                  readonly mined: number;
+                };
+                readonly gold: {
+                  readonly mined: number;
+                };
+                readonly lapis: {
+                  readonly mined: number;
+                };
+                readonly diamond: {
+                  readonly mined: number;
                 };
               };
               readonly weekly: {
@@ -22559,6 +23537,20 @@ export interface components {
               readonly weeklyKills?: number;
               /** @default 0 */
               readonly weeklyWins?: number;
+              /** @default 0 */
+              readonly uhcKills?: number;
+              /** @default 0 */
+              readonly uhcDeaths?: number;
+              /** @default 0 */
+              readonly uhcWins?: number;
+              /** @default 0 */
+              readonly uhcIronMined?: number;
+              /** @default 0 */
+              readonly uhcGoldMined?: number;
+              /** @default 0 */
+              readonly uhcLapisMined?: number;
+              /** @default 0 */
+              readonly uhcDiamondMined?: number;
             };
             readonly extraNested?: {
               readonly bh: {
@@ -22790,6 +23782,23 @@ export interface components {
                 };
                 readonly time: {
                   readonly record: number;
+                };
+              };
+              readonly uhc: {
+                readonly kills: number;
+                readonly deaths: number;
+                readonly wins: number;
+                readonly iron: {
+                  readonly mined: number;
+                };
+                readonly gold: {
+                  readonly mined: number;
+                };
+                readonly lapis: {
+                  readonly mined: number;
+                };
+                readonly diamond: {
+                  readonly mined: number;
                 };
               };
               readonly weekly: {
@@ -23186,6 +24195,20 @@ export interface components {
               readonly weeklyKills?: number;
               /** @default 0 */
               readonly weeklyWins?: number;
+              /** @default 0 */
+              readonly uhcKills?: number;
+              /** @default 0 */
+              readonly uhcDeaths?: number;
+              /** @default 0 */
+              readonly uhcWins?: number;
+              /** @default 0 */
+              readonly uhcIronMined?: number;
+              /** @default 0 */
+              readonly uhcGoldMined?: number;
+              /** @default 0 */
+              readonly uhcLapisMined?: number;
+              /** @default 0 */
+              readonly uhcDiamondMined?: number;
             };
             readonly extraNested?: {
               readonly bh: {
@@ -23417,6 +24440,23 @@ export interface components {
                 };
                 readonly time: {
                   readonly record: number;
+                };
+              };
+              readonly uhc: {
+                readonly kills: number;
+                readonly deaths: number;
+                readonly wins: number;
+                readonly iron: {
+                  readonly mined: number;
+                };
+                readonly gold: {
+                  readonly mined: number;
+                };
+                readonly lapis: {
+                  readonly mined: number;
+                };
+                readonly diamond: {
+                  readonly mined: number;
                 };
               };
               readonly weekly: {
@@ -23846,6 +24886,23 @@ export interface operations {
       readonly 200: {
         readonly content: {
           readonly 'application/json': components['schemas']['PlayerSkinResponseData'];
+        };
+      };
+    };
+  };
+  readonly 'Get Historical Player Stats (Bot Only)': {
+    readonly parameters: {
+      readonly query: {
+        readonly version?: 1;
+        readonly periodStart?: number;
+        readonly periodEnd?: number;
+      };
+    };
+    readonly responses: {
+      /** Default Response */
+      readonly 200: {
+        readonly content: {
+          readonly 'application/json': components['schemas']['PlayerStatsResponse'];
         };
       };
     };

@@ -29,6 +29,8 @@ import type {
   PlayerLeaderboard,
   PlayerQuery,
   PlayerSkin,
+  PlayerStats,
+  PlayerStatsQuery,
   SearchFullTextQuery,
   SearchFullTextResponse,
   SearchResponse,
@@ -220,6 +222,11 @@ export class PlayersResource extends NetherGamesResource {
   async skin(player: string): Promise<PlayerSkin> {
     const skin = await this._client._getOne<PlayerSkin>(`/v1/players/${player}/skin`, {dataOnly: true}, true);
     return skin!;
+  }
+
+  async statsHistory(player: string, params?: PlayerStatsQuery): Promise<PlayerStats> {
+    const stats = await this._client._getOne<PlayerStats>(`/v1/players/${player}/stats`, params);
+    return stats!;
   }
 
   /**
