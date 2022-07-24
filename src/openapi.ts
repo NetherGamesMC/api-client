@@ -56,7 +56,7 @@ export interface paths {
     readonly get: operations['Get Player Skin'];
   };
   readonly '/v1/players/{player}/stats': {
-    /** API key required. Rate limit at 200 requests/24 hours per API key for newly requested players. */
+    /** API key required. */
     readonly get: operations['Get Player Stats History'];
   };
   readonly '/v1/search': {
@@ -24550,23 +24550,25 @@ export interface components {
     readonly AnnouncementsResponseDiscord: {
       readonly content: string | null;
       /** Format: date-time */
-      readonly time: string;
+      readonly timestamp: string;
       readonly author: {
         readonly id: string;
         readonly username: string;
-        readonly avatar: string | null;
         readonly discriminator: string;
+        readonly avatar: string | null;
         readonly public_flags: number;
       };
       readonly attachments: readonly {
         readonly id: string;
         readonly filename: string;
+        readonly description?: string;
+        readonly content_type?: string;
         readonly size: number;
         readonly url: string;
         readonly proxy_url: string;
-        readonly width?: number;
         readonly height?: number;
-        readonly content_type?: string;
+        readonly width?: number;
+        readonly ephemeral?: boolean;
       }[];
     };
     readonly AnnouncementsResponseBoard: string;
@@ -24585,23 +24587,25 @@ export interface components {
         readonly {
           readonly content: string | null;
           /** Format: date-time */
-          readonly time: string;
+          readonly timestamp: string;
           readonly author: {
             readonly id: string;
             readonly username: string;
-            readonly avatar: string | null;
             readonly discriminator: string;
+            readonly avatar: string | null;
             readonly public_flags: number;
           };
           readonly attachments: readonly {
             readonly id: string;
             readonly filename: string;
+            readonly description?: string;
+            readonly content_type?: string;
             readonly size: number;
             readonly url: string;
             readonly proxy_url: string;
-            readonly width?: number;
             readonly height?: number;
-            readonly content_type?: string;
+            readonly width?: number;
+            readonly ephemeral?: boolean;
           }[];
         }[]
       >;
@@ -24974,7 +24978,7 @@ export interface operations {
       };
     };
   };
-  /** API key required. Rate limit at 200 requests/24 hours per API key for newly requested players. */
+  /** API key required. */
   readonly 'Get Player Stats History': {
     readonly parameters: {
       readonly query: {
