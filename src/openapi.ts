@@ -456,7 +456,7 @@ export interface components {
             /** @enum {string} */
             readonly levelFormat: '§k' | '§l' | '§o' | '§r';
             readonly formattedLevel: string;
-            readonly online: boolean;
+            readonly online?: boolean;
             readonly credits: number;
             readonly statusCredits: number;
             readonly xp: number;
@@ -491,7 +491,7 @@ export interface components {
             readonly tierColor: string | null;
             readonly kills: number;
             readonly deaths: number;
-            readonly kdr: number;
+            readonly kdr?: number;
             readonly wins?: number;
             readonly losses?: number;
             readonly wlr?: number;
@@ -508,10 +508,9 @@ export interface components {
               readonly serverType: string | null;
               readonly pretty: string;
             };
-            readonly discordData: {
-              readonly claim?: string;
-              readonly latest?: string;
-            };
+            /** @description Deprecated, use `discordId` instead */
+            readonly discordData: {readonly [key: string]: unknown};
+            readonly discordId: string | null;
             readonly extra?: {
               /** @default 0 */
               readonly bhWins?: number;
@@ -1018,22 +1017,16 @@ export interface components {
             } | null;
             /** @default false */
             readonly leaderboard?: boolean;
-            readonly punishments?: readonly {
-              readonly id: number;
-              readonly expires: number;
-              /** @default */
-              readonly reason?: string;
-              /** @enum {number} */
-              readonly type: 1 | 2;
+            readonly punishmentsNew?: readonly {
+              readonly reason: string;
+              /** @enum {string} */
+              readonly type: 'BAN' | 'MUTE';
+              readonly permanent: boolean;
+              readonly issuedAt: number;
+              readonly validUntil: number;
             }[];
             /** @enum {number} */
             readonly voteStatus?: 0 | 1 | 2;
-            readonly warnings?: readonly {
-              readonly id: string;
-              /** @default */
-              readonly reason?: string;
-              readonly time: number;
-            }[];
             readonly winsData?: {
               readonly BH: number;
               readonly BW: number;
@@ -1048,6 +1041,10 @@ export interface components {
               readonly TR: number;
               readonly Weekly: number;
             };
+            /** @description Deprecated, use `punishmentsNew` instead */
+            readonly punishments: readonly unknown[];
+            /** @description Deprecated, use `punishmentsNew` instead */
+            readonly warnings: readonly unknown[];
           };
           readonly officers: readonly {
             readonly xuid: string;
@@ -1095,7 +1092,7 @@ export interface components {
             /** @enum {string} */
             readonly levelFormat: '§k' | '§l' | '§o' | '§r';
             readonly formattedLevel: string;
-            readonly online: boolean;
+            readonly online?: boolean;
             readonly credits: number;
             readonly statusCredits: number;
             readonly xp: number;
@@ -1130,7 +1127,7 @@ export interface components {
             readonly tierColor: string | null;
             readonly kills: number;
             readonly deaths: number;
-            readonly kdr: number;
+            readonly kdr?: number;
             readonly wins?: number;
             readonly losses?: number;
             readonly wlr?: number;
@@ -1147,10 +1144,9 @@ export interface components {
               readonly serverType: string | null;
               readonly pretty: string;
             };
-            readonly discordData: {
-              readonly claim?: string;
-              readonly latest?: string;
-            };
+            /** @description Deprecated, use `discordId` instead */
+            readonly discordData: {readonly [key: string]: unknown};
+            readonly discordId: string | null;
             readonly extra?: {
               /** @default 0 */
               readonly bhWins?: number;
@@ -1657,22 +1653,16 @@ export interface components {
             } | null;
             /** @default false */
             readonly leaderboard?: boolean;
-            readonly punishments?: readonly {
-              readonly id: number;
-              readonly expires: number;
-              /** @default */
-              readonly reason?: string;
-              /** @enum {number} */
-              readonly type: 1 | 2;
+            readonly punishmentsNew?: readonly {
+              readonly reason: string;
+              /** @enum {string} */
+              readonly type: 'BAN' | 'MUTE';
+              readonly permanent: boolean;
+              readonly issuedAt: number;
+              readonly validUntil: number;
             }[];
             /** @enum {number} */
             readonly voteStatus?: 0 | 1 | 2;
-            readonly warnings?: readonly {
-              readonly id: string;
-              /** @default */
-              readonly reason?: string;
-              readonly time: number;
-            }[];
             readonly winsData?: {
               readonly BH: number;
               readonly BW: number;
@@ -1687,6 +1677,10 @@ export interface components {
               readonly TR: number;
               readonly Weekly: number;
             };
+            /** @description Deprecated, use `punishmentsNew` instead */
+            readonly punishments: readonly unknown[];
+            /** @description Deprecated, use `punishmentsNew` instead */
+            readonly warnings: readonly unknown[];
           }[];
           readonly members: readonly {
             readonly xuid: string;
@@ -1734,7 +1728,7 @@ export interface components {
             /** @enum {string} */
             readonly levelFormat: '§k' | '§l' | '§o' | '§r';
             readonly formattedLevel: string;
-            readonly online: boolean;
+            readonly online?: boolean;
             readonly credits: number;
             readonly statusCredits: number;
             readonly xp: number;
@@ -1769,7 +1763,7 @@ export interface components {
             readonly tierColor: string | null;
             readonly kills: number;
             readonly deaths: number;
-            readonly kdr: number;
+            readonly kdr?: number;
             readonly wins?: number;
             readonly losses?: number;
             readonly wlr?: number;
@@ -1786,10 +1780,9 @@ export interface components {
               readonly serverType: string | null;
               readonly pretty: string;
             };
-            readonly discordData: {
-              readonly claim?: string;
-              readonly latest?: string;
-            };
+            /** @description Deprecated, use `discordId` instead */
+            readonly discordData: {readonly [key: string]: unknown};
+            readonly discordId: string | null;
             readonly extra?: {
               /** @default 0 */
               readonly bhWins?: number;
@@ -2296,22 +2289,16 @@ export interface components {
             } | null;
             /** @default false */
             readonly leaderboard?: boolean;
-            readonly punishments?: readonly {
-              readonly id: number;
-              readonly expires: number;
-              /** @default */
-              readonly reason?: string;
-              /** @enum {number} */
-              readonly type: 1 | 2;
+            readonly punishmentsNew?: readonly {
+              readonly reason: string;
+              /** @enum {string} */
+              readonly type: 'BAN' | 'MUTE';
+              readonly permanent: boolean;
+              readonly issuedAt: number;
+              readonly validUntil: number;
             }[];
             /** @enum {number} */
             readonly voteStatus?: 0 | 1 | 2;
-            readonly warnings?: readonly {
-              readonly id: string;
-              /** @default */
-              readonly reason?: string;
-              readonly time: number;
-            }[];
             readonly winsData?: {
               readonly BH: number;
               readonly BW: number;
@@ -2326,6 +2313,10 @@ export interface components {
               readonly TR: number;
               readonly Weekly: number;
             };
+            /** @description Deprecated, use `punishmentsNew` instead */
+            readonly punishments: readonly unknown[];
+            /** @description Deprecated, use `punishmentsNew` instead */
+            readonly warnings: readonly unknown[];
           }[];
         }>;
     }> &
@@ -2450,7 +2441,7 @@ export interface components {
               /** @enum {string} */
               readonly levelFormat: '§k' | '§l' | '§o' | '§r';
               readonly formattedLevel: string;
-              readonly online: boolean;
+              readonly online?: boolean;
               readonly credits: number;
               readonly statusCredits: number;
               readonly xp: number;
@@ -2485,7 +2476,7 @@ export interface components {
               readonly tierColor: string | null;
               readonly kills: number;
               readonly deaths: number;
-              readonly kdr: number;
+              readonly kdr?: number;
               readonly wins?: number;
               readonly losses?: number;
               readonly wlr?: number;
@@ -2502,10 +2493,9 @@ export interface components {
                 readonly serverType: string | null;
                 readonly pretty: string;
               };
-              readonly discordData: {
-                readonly claim?: string;
-                readonly latest?: string;
-              };
+              /** @description Deprecated, use `discordId` instead */
+              readonly discordData: {readonly [key: string]: unknown};
+              readonly discordId: string | null;
               readonly extra?: {
                 /** @default 0 */
                 readonly bhWins?: number;
@@ -3012,22 +3002,16 @@ export interface components {
               } | null;
               /** @default false */
               readonly leaderboard?: boolean;
-              readonly punishments?: readonly {
-                readonly id: number;
-                readonly expires: number;
-                /** @default */
-                readonly reason?: string;
-                /** @enum {number} */
-                readonly type: 1 | 2;
+              readonly punishmentsNew?: readonly {
+                readonly reason: string;
+                /** @enum {string} */
+                readonly type: 'BAN' | 'MUTE';
+                readonly permanent: boolean;
+                readonly issuedAt: number;
+                readonly validUntil: number;
               }[];
               /** @enum {number} */
               readonly voteStatus?: 0 | 1 | 2;
-              readonly warnings?: readonly {
-                readonly id: string;
-                /** @default */
-                readonly reason?: string;
-                readonly time: number;
-              }[];
               readonly winsData?: {
                 readonly BH: number;
                 readonly BW: number;
@@ -3042,6 +3026,10 @@ export interface components {
                 readonly TR: number;
                 readonly Weekly: number;
               };
+              /** @description Deprecated, use `punishmentsNew` instead */
+              readonly punishments: readonly unknown[];
+              /** @description Deprecated, use `punishmentsNew` instead */
+              readonly warnings: readonly unknown[];
             };
             readonly officers: readonly {
               readonly xuid: string;
@@ -3089,7 +3077,7 @@ export interface components {
               /** @enum {string} */
               readonly levelFormat: '§k' | '§l' | '§o' | '§r';
               readonly formattedLevel: string;
-              readonly online: boolean;
+              readonly online?: boolean;
               readonly credits: number;
               readonly statusCredits: number;
               readonly xp: number;
@@ -3124,7 +3112,7 @@ export interface components {
               readonly tierColor: string | null;
               readonly kills: number;
               readonly deaths: number;
-              readonly kdr: number;
+              readonly kdr?: number;
               readonly wins?: number;
               readonly losses?: number;
               readonly wlr?: number;
@@ -3141,10 +3129,9 @@ export interface components {
                 readonly serverType: string | null;
                 readonly pretty: string;
               };
-              readonly discordData: {
-                readonly claim?: string;
-                readonly latest?: string;
-              };
+              /** @description Deprecated, use `discordId` instead */
+              readonly discordData: {readonly [key: string]: unknown};
+              readonly discordId: string | null;
               readonly extra?: {
                 /** @default 0 */
                 readonly bhWins?: number;
@@ -3651,22 +3638,16 @@ export interface components {
               } | null;
               /** @default false */
               readonly leaderboard?: boolean;
-              readonly punishments?: readonly {
-                readonly id: number;
-                readonly expires: number;
-                /** @default */
-                readonly reason?: string;
-                /** @enum {number} */
-                readonly type: 1 | 2;
+              readonly punishmentsNew?: readonly {
+                readonly reason: string;
+                /** @enum {string} */
+                readonly type: 'BAN' | 'MUTE';
+                readonly permanent: boolean;
+                readonly issuedAt: number;
+                readonly validUntil: number;
               }[];
               /** @enum {number} */
               readonly voteStatus?: 0 | 1 | 2;
-              readonly warnings?: readonly {
-                readonly id: string;
-                /** @default */
-                readonly reason?: string;
-                readonly time: number;
-              }[];
               readonly winsData?: {
                 readonly BH: number;
                 readonly BW: number;
@@ -3681,6 +3662,10 @@ export interface components {
                 readonly TR: number;
                 readonly Weekly: number;
               };
+              /** @description Deprecated, use `punishmentsNew` instead */
+              readonly punishments: readonly unknown[];
+              /** @description Deprecated, use `punishmentsNew` instead */
+              readonly warnings: readonly unknown[];
             }[];
             readonly members: readonly {
               readonly xuid: string;
@@ -3728,7 +3713,7 @@ export interface components {
               /** @enum {string} */
               readonly levelFormat: '§k' | '§l' | '§o' | '§r';
               readonly formattedLevel: string;
-              readonly online: boolean;
+              readonly online?: boolean;
               readonly credits: number;
               readonly statusCredits: number;
               readonly xp: number;
@@ -3763,7 +3748,7 @@ export interface components {
               readonly tierColor: string | null;
               readonly kills: number;
               readonly deaths: number;
-              readonly kdr: number;
+              readonly kdr?: number;
               readonly wins?: number;
               readonly losses?: number;
               readonly wlr?: number;
@@ -3780,10 +3765,9 @@ export interface components {
                 readonly serverType: string | null;
                 readonly pretty: string;
               };
-              readonly discordData: {
-                readonly claim?: string;
-                readonly latest?: string;
-              };
+              /** @description Deprecated, use `discordId` instead */
+              readonly discordData: {readonly [key: string]: unknown};
+              readonly discordId: string | null;
               readonly extra?: {
                 /** @default 0 */
                 readonly bhWins?: number;
@@ -4290,22 +4274,16 @@ export interface components {
               } | null;
               /** @default false */
               readonly leaderboard?: boolean;
-              readonly punishments?: readonly {
-                readonly id: number;
-                readonly expires: number;
-                /** @default */
-                readonly reason?: string;
-                /** @enum {number} */
-                readonly type: 1 | 2;
+              readonly punishmentsNew?: readonly {
+                readonly reason: string;
+                /** @enum {string} */
+                readonly type: 'BAN' | 'MUTE';
+                readonly permanent: boolean;
+                readonly issuedAt: number;
+                readonly validUntil: number;
               }[];
               /** @enum {number} */
               readonly voteStatus?: 0 | 1 | 2;
-              readonly warnings?: readonly {
-                readonly id: string;
-                /** @default */
-                readonly reason?: string;
-                readonly time: number;
-              }[];
               readonly winsData?: {
                 readonly BH: number;
                 readonly BW: number;
@@ -4320,6 +4298,10 @@ export interface components {
                 readonly TR: number;
                 readonly Weekly: number;
               };
+              /** @description Deprecated, use `punishmentsNew` instead */
+              readonly punishments: readonly unknown[];
+              /** @description Deprecated, use `punishmentsNew` instead */
+              readonly warnings: readonly unknown[];
             }[];
           }>;
       }> &
@@ -4372,7 +4354,7 @@ export interface components {
           /** @enum {string} */
           readonly levelFormat: '§k' | '§l' | '§o' | '§r';
           readonly formattedLevel: string;
-          readonly online: boolean;
+          readonly online?: boolean;
           readonly credits: number;
           readonly statusCredits: number;
           readonly xp: number;
@@ -4407,7 +4389,7 @@ export interface components {
           readonly tierColor: string | null;
           readonly kills: number;
           readonly deaths: number;
-          readonly kdr: number;
+          readonly kdr?: number;
           readonly wins?: number;
           readonly losses?: number;
           readonly wlr?: number;
@@ -4424,10 +4406,9 @@ export interface components {
             readonly serverType: string | null;
             readonly pretty: string;
           };
-          readonly discordData: {
-            readonly claim?: string;
-            readonly latest?: string;
-          };
+          /** @description Deprecated, use `discordId` instead */
+          readonly discordData: {readonly [key: string]: unknown};
+          readonly discordId: string | null;
           readonly extra?: {
             /** @default 0 */
             readonly bhWins?: number;
@@ -4934,22 +4915,16 @@ export interface components {
           } | null;
           /** @default false */
           readonly leaderboard?: boolean;
-          readonly punishments?: readonly {
-            readonly id: number;
-            readonly expires: number;
-            /** @default */
-            readonly reason?: string;
-            /** @enum {number} */
-            readonly type: 1 | 2;
+          readonly punishmentsNew?: readonly {
+            readonly reason: string;
+            /** @enum {string} */
+            readonly type: 'BAN' | 'MUTE';
+            readonly permanent: boolean;
+            readonly issuedAt: number;
+            readonly validUntil: number;
           }[];
           /** @enum {number} */
           readonly voteStatus?: 0 | 1 | 2;
-          readonly warnings?: readonly {
-            readonly id: string;
-            /** @default */
-            readonly reason?: string;
-            readonly time: number;
-          }[];
           readonly winsData?: {
             readonly BH: number;
             readonly BW: number;
@@ -4964,6 +4939,10 @@ export interface components {
             readonly TR: number;
             readonly Weekly: number;
           };
+          /** @description Deprecated, use `punishmentsNew` instead */
+          readonly punishments: readonly unknown[];
+          /** @description Deprecated, use `punishmentsNew` instead */
+          readonly warnings: readonly unknown[];
         };
       }>;
     readonly SearchQuery: {
@@ -5037,7 +5016,7 @@ export interface components {
                       /** @enum {string} */
                       readonly levelFormat: '§k' | '§l' | '§o' | '§r';
                       readonly formattedLevel: string;
-                      readonly online: boolean;
+                      readonly online?: boolean;
                       readonly credits: number;
                       readonly statusCredits: number;
                       readonly xp: number;
@@ -5072,7 +5051,7 @@ export interface components {
                       readonly tierColor: string | null;
                       readonly kills: number;
                       readonly deaths: number;
-                      readonly kdr: number;
+                      readonly kdr?: number;
                       readonly wins?: number;
                       readonly losses?: number;
                       readonly wlr?: number;
@@ -5089,10 +5068,9 @@ export interface components {
                         readonly serverType: string | null;
                         readonly pretty: string;
                       };
-                      readonly discordData: {
-                        readonly claim?: string;
-                        readonly latest?: string;
-                      };
+                      /** @description Deprecated, use `discordId` instead */
+                      readonly discordData: {readonly [key: string]: unknown};
+                      readonly discordId: string | null;
                       readonly extra?: {
                         /** @default 0 */
                         readonly bhWins?: number;
@@ -5599,22 +5577,16 @@ export interface components {
                       } | null;
                       /** @default false */
                       readonly leaderboard?: boolean;
-                      readonly punishments?: readonly {
-                        readonly id: number;
-                        readonly expires: number;
-                        /** @default */
-                        readonly reason?: string;
-                        /** @enum {number} */
-                        readonly type: 1 | 2;
+                      readonly punishmentsNew?: readonly {
+                        readonly reason: string;
+                        /** @enum {string} */
+                        readonly type: 'BAN' | 'MUTE';
+                        readonly permanent: boolean;
+                        readonly issuedAt: number;
+                        readonly validUntil: number;
                       }[];
                       /** @enum {number} */
                       readonly voteStatus?: 0 | 1 | 2;
-                      readonly warnings?: readonly {
-                        readonly id: string;
-                        /** @default */
-                        readonly reason?: string;
-                        readonly time: number;
-                      }[];
                       readonly winsData?: {
                         readonly BH: number;
                         readonly BW: number;
@@ -5629,6 +5601,10 @@ export interface components {
                         readonly TR: number;
                         readonly Weekly: number;
                       };
+                      /** @description Deprecated, use `punishmentsNew` instead */
+                      readonly punishments: readonly unknown[];
+                      /** @description Deprecated, use `punishmentsNew` instead */
+                      readonly warnings: readonly unknown[];
                     };
                     readonly officers: readonly {
                       readonly xuid: string;
@@ -5676,7 +5652,7 @@ export interface components {
                       /** @enum {string} */
                       readonly levelFormat: '§k' | '§l' | '§o' | '§r';
                       readonly formattedLevel: string;
-                      readonly online: boolean;
+                      readonly online?: boolean;
                       readonly credits: number;
                       readonly statusCredits: number;
                       readonly xp: number;
@@ -5711,7 +5687,7 @@ export interface components {
                       readonly tierColor: string | null;
                       readonly kills: number;
                       readonly deaths: number;
-                      readonly kdr: number;
+                      readonly kdr?: number;
                       readonly wins?: number;
                       readonly losses?: number;
                       readonly wlr?: number;
@@ -5728,10 +5704,9 @@ export interface components {
                         readonly serverType: string | null;
                         readonly pretty: string;
                       };
-                      readonly discordData: {
-                        readonly claim?: string;
-                        readonly latest?: string;
-                      };
+                      /** @description Deprecated, use `discordId` instead */
+                      readonly discordData: {readonly [key: string]: unknown};
+                      readonly discordId: string | null;
                       readonly extra?: {
                         /** @default 0 */
                         readonly bhWins?: number;
@@ -6238,22 +6213,16 @@ export interface components {
                       } | null;
                       /** @default false */
                       readonly leaderboard?: boolean;
-                      readonly punishments?: readonly {
-                        readonly id: number;
-                        readonly expires: number;
-                        /** @default */
-                        readonly reason?: string;
-                        /** @enum {number} */
-                        readonly type: 1 | 2;
+                      readonly punishmentsNew?: readonly {
+                        readonly reason: string;
+                        /** @enum {string} */
+                        readonly type: 'BAN' | 'MUTE';
+                        readonly permanent: boolean;
+                        readonly issuedAt: number;
+                        readonly validUntil: number;
                       }[];
                       /** @enum {number} */
                       readonly voteStatus?: 0 | 1 | 2;
-                      readonly warnings?: readonly {
-                        readonly id: string;
-                        /** @default */
-                        readonly reason?: string;
-                        readonly time: number;
-                      }[];
                       readonly winsData?: {
                         readonly BH: number;
                         readonly BW: number;
@@ -6268,6 +6237,10 @@ export interface components {
                         readonly TR: number;
                         readonly Weekly: number;
                       };
+                      /** @description Deprecated, use `punishmentsNew` instead */
+                      readonly punishments: readonly unknown[];
+                      /** @description Deprecated, use `punishmentsNew` instead */
+                      readonly warnings: readonly unknown[];
                     }[];
                     readonly members: readonly {
                       readonly xuid: string;
@@ -6315,7 +6288,7 @@ export interface components {
                       /** @enum {string} */
                       readonly levelFormat: '§k' | '§l' | '§o' | '§r';
                       readonly formattedLevel: string;
-                      readonly online: boolean;
+                      readonly online?: boolean;
                       readonly credits: number;
                       readonly statusCredits: number;
                       readonly xp: number;
@@ -6350,7 +6323,7 @@ export interface components {
                       readonly tierColor: string | null;
                       readonly kills: number;
                       readonly deaths: number;
-                      readonly kdr: number;
+                      readonly kdr?: number;
                       readonly wins?: number;
                       readonly losses?: number;
                       readonly wlr?: number;
@@ -6367,10 +6340,9 @@ export interface components {
                         readonly serverType: string | null;
                         readonly pretty: string;
                       };
-                      readonly discordData: {
-                        readonly claim?: string;
-                        readonly latest?: string;
-                      };
+                      /** @description Deprecated, use `discordId` instead */
+                      readonly discordData: {readonly [key: string]: unknown};
+                      readonly discordId: string | null;
                       readonly extra?: {
                         /** @default 0 */
                         readonly bhWins?: number;
@@ -6877,22 +6849,16 @@ export interface components {
                       } | null;
                       /** @default false */
                       readonly leaderboard?: boolean;
-                      readonly punishments?: readonly {
-                        readonly id: number;
-                        readonly expires: number;
-                        /** @default */
-                        readonly reason?: string;
-                        /** @enum {number} */
-                        readonly type: 1 | 2;
+                      readonly punishmentsNew?: readonly {
+                        readonly reason: string;
+                        /** @enum {string} */
+                        readonly type: 'BAN' | 'MUTE';
+                        readonly permanent: boolean;
+                        readonly issuedAt: number;
+                        readonly validUntil: number;
                       }[];
                       /** @enum {number} */
                       readonly voteStatus?: 0 | 1 | 2;
-                      readonly warnings?: readonly {
-                        readonly id: string;
-                        /** @default */
-                        readonly reason?: string;
-                        readonly time: number;
-                      }[];
                       readonly winsData?: {
                         readonly BH: number;
                         readonly BW: number;
@@ -6907,6 +6873,10 @@ export interface components {
                         readonly TR: number;
                         readonly Weekly: number;
                       };
+                      /** @description Deprecated, use `punishmentsNew` instead */
+                      readonly punishments: readonly unknown[];
+                      /** @description Deprecated, use `punishmentsNew` instead */
+                      readonly warnings: readonly unknown[];
                     }[];
                   }>
               >)
@@ -7039,7 +7009,7 @@ export interface components {
                         /** @enum {string} */
                         readonly levelFormat: '§k' | '§l' | '§o' | '§r';
                         readonly formattedLevel: string;
-                        readonly online: boolean;
+                        readonly online?: boolean;
                         readonly credits: number;
                         readonly statusCredits: number;
                         readonly xp: number;
@@ -7074,7 +7044,7 @@ export interface components {
                         readonly tierColor: string | null;
                         readonly kills: number;
                         readonly deaths: number;
-                        readonly kdr: number;
+                        readonly kdr?: number;
                         readonly wins?: number;
                         readonly losses?: number;
                         readonly wlr?: number;
@@ -7091,10 +7061,9 @@ export interface components {
                           readonly serverType: string | null;
                           readonly pretty: string;
                         };
-                        readonly discordData: {
-                          readonly claim?: string;
-                          readonly latest?: string;
-                        };
+                        /** @description Deprecated, use `discordId` instead */
+                        readonly discordData: {readonly [key: string]: unknown};
+                        readonly discordId: string | null;
                         readonly extra?: {
                           /** @default 0 */
                           readonly bhWins?: number;
@@ -7601,22 +7570,16 @@ export interface components {
                         } | null;
                         /** @default false */
                         readonly leaderboard?: boolean;
-                        readonly punishments?: readonly {
-                          readonly id: number;
-                          readonly expires: number;
-                          /** @default */
-                          readonly reason?: string;
-                          /** @enum {number} */
-                          readonly type: 1 | 2;
+                        readonly punishmentsNew?: readonly {
+                          readonly reason: string;
+                          /** @enum {string} */
+                          readonly type: 'BAN' | 'MUTE';
+                          readonly permanent: boolean;
+                          readonly issuedAt: number;
+                          readonly validUntil: number;
                         }[];
                         /** @enum {number} */
                         readonly voteStatus?: 0 | 1 | 2;
-                        readonly warnings?: readonly {
-                          readonly id: string;
-                          /** @default */
-                          readonly reason?: string;
-                          readonly time: number;
-                        }[];
                         readonly winsData?: {
                           readonly BH: number;
                           readonly BW: number;
@@ -7631,6 +7594,10 @@ export interface components {
                           readonly TR: number;
                           readonly Weekly: number;
                         };
+                        /** @description Deprecated, use `punishmentsNew` instead */
+                        readonly punishments: readonly unknown[];
+                        /** @description Deprecated, use `punishmentsNew` instead */
+                        readonly warnings: readonly unknown[];
                       };
                       readonly officers: readonly {
                         readonly xuid: string;
@@ -7678,7 +7645,7 @@ export interface components {
                         /** @enum {string} */
                         readonly levelFormat: '§k' | '§l' | '§o' | '§r';
                         readonly formattedLevel: string;
-                        readonly online: boolean;
+                        readonly online?: boolean;
                         readonly credits: number;
                         readonly statusCredits: number;
                         readonly xp: number;
@@ -7713,7 +7680,7 @@ export interface components {
                         readonly tierColor: string | null;
                         readonly kills: number;
                         readonly deaths: number;
-                        readonly kdr: number;
+                        readonly kdr?: number;
                         readonly wins?: number;
                         readonly losses?: number;
                         readonly wlr?: number;
@@ -7730,10 +7697,9 @@ export interface components {
                           readonly serverType: string | null;
                           readonly pretty: string;
                         };
-                        readonly discordData: {
-                          readonly claim?: string;
-                          readonly latest?: string;
-                        };
+                        /** @description Deprecated, use `discordId` instead */
+                        readonly discordData: {readonly [key: string]: unknown};
+                        readonly discordId: string | null;
                         readonly extra?: {
                           /** @default 0 */
                           readonly bhWins?: number;
@@ -8240,22 +8206,16 @@ export interface components {
                         } | null;
                         /** @default false */
                         readonly leaderboard?: boolean;
-                        readonly punishments?: readonly {
-                          readonly id: number;
-                          readonly expires: number;
-                          /** @default */
-                          readonly reason?: string;
-                          /** @enum {number} */
-                          readonly type: 1 | 2;
+                        readonly punishmentsNew?: readonly {
+                          readonly reason: string;
+                          /** @enum {string} */
+                          readonly type: 'BAN' | 'MUTE';
+                          readonly permanent: boolean;
+                          readonly issuedAt: number;
+                          readonly validUntil: number;
                         }[];
                         /** @enum {number} */
                         readonly voteStatus?: 0 | 1 | 2;
-                        readonly warnings?: readonly {
-                          readonly id: string;
-                          /** @default */
-                          readonly reason?: string;
-                          readonly time: number;
-                        }[];
                         readonly winsData?: {
                           readonly BH: number;
                           readonly BW: number;
@@ -8270,6 +8230,10 @@ export interface components {
                           readonly TR: number;
                           readonly Weekly: number;
                         };
+                        /** @description Deprecated, use `punishmentsNew` instead */
+                        readonly punishments: readonly unknown[];
+                        /** @description Deprecated, use `punishmentsNew` instead */
+                        readonly warnings: readonly unknown[];
                       }[];
                       readonly members: readonly {
                         readonly xuid: string;
@@ -8317,7 +8281,7 @@ export interface components {
                         /** @enum {string} */
                         readonly levelFormat: '§k' | '§l' | '§o' | '§r';
                         readonly formattedLevel: string;
-                        readonly online: boolean;
+                        readonly online?: boolean;
                         readonly credits: number;
                         readonly statusCredits: number;
                         readonly xp: number;
@@ -8352,7 +8316,7 @@ export interface components {
                         readonly tierColor: string | null;
                         readonly kills: number;
                         readonly deaths: number;
-                        readonly kdr: number;
+                        readonly kdr?: number;
                         readonly wins?: number;
                         readonly losses?: number;
                         readonly wlr?: number;
@@ -8369,10 +8333,9 @@ export interface components {
                           readonly serverType: string | null;
                           readonly pretty: string;
                         };
-                        readonly discordData: {
-                          readonly claim?: string;
-                          readonly latest?: string;
-                        };
+                        /** @description Deprecated, use `discordId` instead */
+                        readonly discordData: {readonly [key: string]: unknown};
+                        readonly discordId: string | null;
                         readonly extra?: {
                           /** @default 0 */
                           readonly bhWins?: number;
@@ -8879,22 +8842,16 @@ export interface components {
                         } | null;
                         /** @default false */
                         readonly leaderboard?: boolean;
-                        readonly punishments?: readonly {
-                          readonly id: number;
-                          readonly expires: number;
-                          /** @default */
-                          readonly reason?: string;
-                          /** @enum {number} */
-                          readonly type: 1 | 2;
+                        readonly punishmentsNew?: readonly {
+                          readonly reason: string;
+                          /** @enum {string} */
+                          readonly type: 'BAN' | 'MUTE';
+                          readonly permanent: boolean;
+                          readonly issuedAt: number;
+                          readonly validUntil: number;
                         }[];
                         /** @enum {number} */
                         readonly voteStatus?: 0 | 1 | 2;
-                        readonly warnings?: readonly {
-                          readonly id: string;
-                          /** @default */
-                          readonly reason?: string;
-                          readonly time: number;
-                        }[];
                         readonly winsData?: {
                           readonly BH: number;
                           readonly BW: number;
@@ -8909,6 +8866,10 @@ export interface components {
                           readonly TR: number;
                           readonly Weekly: number;
                         };
+                        /** @description Deprecated, use `punishmentsNew` instead */
+                        readonly punishments: readonly unknown[];
+                        /** @description Deprecated, use `punishmentsNew` instead */
+                        readonly warnings: readonly unknown[];
                       }[];
                     }>
                 >)
@@ -8969,7 +8930,7 @@ export interface components {
                   /** @enum {string} */
                   readonly levelFormat: '§k' | '§l' | '§o' | '§r';
                   readonly formattedLevel: string;
-                  readonly online: boolean;
+                  readonly online?: boolean;
                   readonly credits: number;
                   readonly statusCredits: number;
                   readonly xp: number;
@@ -9004,7 +8965,7 @@ export interface components {
                   readonly tierColor: string | null;
                   readonly kills: number;
                   readonly deaths: number;
-                  readonly kdr: number;
+                  readonly kdr?: number;
                   readonly wins?: number;
                   readonly losses?: number;
                   readonly wlr?: number;
@@ -9021,10 +8982,9 @@ export interface components {
                     readonly serverType: string | null;
                     readonly pretty: string;
                   };
-                  readonly discordData: {
-                    readonly claim?: string;
-                    readonly latest?: string;
-                  };
+                  /** @description Deprecated, use `discordId` instead */
+                  readonly discordData: {readonly [key: string]: unknown};
+                  readonly discordId: string | null;
                   readonly extra?: {
                     /** @default 0 */
                     readonly bhWins?: number;
@@ -9531,22 +9491,16 @@ export interface components {
                   } | null;
                   /** @default false */
                   readonly leaderboard?: boolean;
-                  readonly punishments?: readonly {
-                    readonly id: number;
-                    readonly expires: number;
-                    /** @default */
-                    readonly reason?: string;
-                    /** @enum {number} */
-                    readonly type: 1 | 2;
+                  readonly punishmentsNew?: readonly {
+                    readonly reason: string;
+                    /** @enum {string} */
+                    readonly type: 'BAN' | 'MUTE';
+                    readonly permanent: boolean;
+                    readonly issuedAt: number;
+                    readonly validUntil: number;
                   }[];
                   /** @enum {number} */
                   readonly voteStatus?: 0 | 1 | 2;
-                  readonly warnings?: readonly {
-                    readonly id: string;
-                    /** @default */
-                    readonly reason?: string;
-                    readonly time: number;
-                  }[];
                   readonly winsData?: {
                     readonly BH: number;
                     readonly BW: number;
@@ -9561,6 +9515,10 @@ export interface components {
                     readonly TR: number;
                     readonly Weekly: number;
                   };
+                  /** @description Deprecated, use `punishmentsNew` instead */
+                  readonly punishments: readonly unknown[];
+                  /** @description Deprecated, use `punishmentsNew` instead */
+                  readonly warnings: readonly unknown[];
                 }>)
             | null;
         }[]
@@ -9569,6 +9527,8 @@ export interface components {
       /** @default true */
       readonly withFactionData?: boolean;
       /** @default true */
+      readonly withOnline?: boolean;
+      /** @default true */
       readonly withPunishments?: boolean;
       /** @default false */
       readonly withSkinData?: boolean;
@@ -9576,8 +9536,6 @@ export interface components {
       readonly withStats?: boolean;
       /** @default true */
       readonly withVoteStatus?: boolean;
-      /** @default true */
-      readonly withWarnings?: boolean;
       /** @default false */
       readonly expand?: boolean;
       /** @default 100 */
@@ -9604,6 +9562,8 @@ export interface components {
       /** @default true */
       readonly withFactionData?: boolean;
       /** @default true */
+      readonly withOnline?: boolean;
+      /** @default true */
       readonly withPunishments?: boolean;
       /** @default false */
       readonly withSkinData?: boolean;
@@ -9611,8 +9571,6 @@ export interface components {
       readonly withStats?: boolean;
       /** @default true */
       readonly withVoteStatus?: boolean;
-      /** @default true */
-      readonly withWarnings?: boolean;
       readonly first?: number;
       readonly after?: string;
       readonly last?: number;
@@ -9623,6 +9581,8 @@ export interface components {
       readonly expand?: boolean;
       /** @default false */
       readonly withFactionData?: boolean;
+      /** @default true */
+      readonly withOnline?: boolean;
       /** @default false */
       readonly withPunishments?: boolean;
       /** @default false */
@@ -9631,8 +9591,6 @@ export interface components {
       readonly withStats?: boolean;
       /** @default false */
       readonly withVoteStatus?: boolean;
-      /** @default false */
-      readonly withWarnings?: boolean;
       readonly first?: number;
       readonly after?: string;
       readonly last?: number;
@@ -9643,6 +9601,8 @@ export interface components {
       readonly expand?: boolean;
       /** @default false */
       readonly withFactionData?: boolean;
+      /** @default true */
+      readonly withOnline?: boolean;
       /** @default false */
       readonly withPunishments?: boolean;
       /** @default false */
@@ -9651,8 +9611,6 @@ export interface components {
       readonly withStats?: boolean;
       /** @default false */
       readonly withVoteStatus?: boolean;
-      /** @default false */
-      readonly withWarnings?: boolean;
       readonly first?: number;
       readonly after?: string;
       readonly last?: number;
@@ -9695,18 +9653,6 @@ export interface components {
       readonly TB: number;
       readonly TR: number;
       readonly Weekly: number;
-    };
-    readonly PlayerWarningsResponse: readonly {
-      readonly id: string;
-      /** @default */
-      readonly reason?: string;
-      readonly time: number;
-    }[];
-    readonly PlayerWarningResponse: {
-      readonly id: string;
-      /** @default */
-      readonly reason?: string;
-      readonly time: number;
     };
     readonly PlayerStatsResponse: {
       readonly [key: string]: {
@@ -9800,7 +9746,7 @@ export interface components {
       /** @enum {string} */
       readonly levelFormat: '§k' | '§l' | '§o' | '§r';
       readonly formattedLevel: string;
-      readonly online: boolean;
+      readonly online?: boolean;
       readonly credits: number;
       readonly statusCredits: number;
       readonly xp: number;
@@ -9835,7 +9781,7 @@ export interface components {
       readonly tierColor: string | null;
       readonly kills: number;
       readonly deaths: number;
-      readonly kdr: number;
+      readonly kdr?: number;
       readonly wins?: number;
       readonly losses?: number;
       readonly wlr?: number;
@@ -9852,10 +9798,9 @@ export interface components {
         readonly serverType: string | null;
         readonly pretty: string;
       };
-      readonly discordData: {
-        readonly claim?: string;
-        readonly latest?: string;
-      };
+      /** @description Deprecated, use `discordId` instead */
+      readonly discordData: {readonly [key: string]: unknown};
+      readonly discordId: string | null;
       readonly extra?: {
         /** @default 0 */
         readonly bhWins?: number;
@@ -10381,22 +10326,16 @@ export interface components {
       } | null;
       /** @default false */
       readonly leaderboard?: boolean;
-      readonly punishments?: readonly {
-        readonly id: number;
-        readonly expires: number;
-        /** @default */
-        readonly reason?: string;
-        /** @enum {number} */
-        readonly type: 1 | 2;
+      readonly punishmentsNew?: readonly {
+        readonly reason: string;
+        /** @enum {string} */
+        readonly type: 'BAN' | 'MUTE';
+        readonly permanent: boolean;
+        readonly issuedAt: number;
+        readonly validUntil: number;
       }[];
       /** @enum {number} */
       readonly voteStatus?: 0 | 1 | 2;
-      readonly warnings?: readonly {
-        readonly id: string;
-        /** @default */
-        readonly reason?: string;
-        readonly time: number;
-      }[];
       readonly winsData?: {
         readonly BH: number;
         readonly BW: number;
@@ -10411,10 +10350,16 @@ export interface components {
         readonly TR: number;
         readonly Weekly: number;
       };
+      /** @description Deprecated, use `punishmentsNew` instead */
+      readonly punishments: readonly unknown[];
+      /** @description Deprecated, use `punishmentsNew` instead */
+      readonly warnings: readonly unknown[];
     };
     readonly PlayerQuery: {
       /** @default true */
       readonly withFactionData?: boolean;
+      /** @default true */
+      readonly withOnline?: boolean;
       /** @default true */
       readonly withPunishments?: boolean;
       /** @default false */
@@ -10423,24 +10368,14 @@ export interface components {
       readonly withStats?: boolean;
       /** @default true */
       readonly withVoteStatus?: boolean;
-      /** @default true */
-      readonly withWarnings?: boolean;
     };
-    readonly PlayerPunishmentsResponse: readonly {
-      readonly id: number;
-      readonly expires: number;
-      /** @default */
-      readonly reason?: string;
-      /** @enum {number} */
-      readonly type: 1 | 2;
-    }[];
     readonly PlayerPunishmentResponse: {
-      readonly id: number;
-      readonly expires: number;
-      /** @default */
-      readonly reason?: string;
-      /** @enum {number} */
-      readonly type: 1 | 2;
+      readonly reason: string;
+      /** @enum {string} */
+      readonly type: 'BAN' | 'MUTE';
+      readonly permanent: boolean;
+      readonly issuedAt: number;
+      readonly validUntil: number;
     };
     readonly PlayerLeaderboardResponse: {
       readonly player: string;
@@ -11079,7 +11014,7 @@ export interface components {
                 /** @enum {string} */
                 readonly levelFormat: '§k' | '§l' | '§o' | '§r';
                 readonly formattedLevel: string;
-                readonly online: boolean;
+                readonly online?: boolean;
                 readonly credits: number;
                 readonly statusCredits: number;
                 readonly xp: number;
@@ -11114,7 +11049,7 @@ export interface components {
                 readonly tierColor: string | null;
                 readonly kills: number;
                 readonly deaths: number;
-                readonly kdr: number;
+                readonly kdr?: number;
                 readonly wins?: number;
                 readonly losses?: number;
                 readonly wlr?: number;
@@ -11131,10 +11066,9 @@ export interface components {
                   readonly serverType: string | null;
                   readonly pretty: string;
                 };
-                readonly discordData: {
-                  readonly claim?: string;
-                  readonly latest?: string;
-                };
+                /** @description Deprecated, use `discordId` instead */
+                readonly discordData: {readonly [key: string]: unknown};
+                readonly discordId: string | null;
                 readonly extra?: {
                   /** @default 0 */
                   readonly bhWins?: number;
@@ -11634,22 +11568,16 @@ export interface components {
                 readonly factionData?: unknown | null;
                 /** @default false */
                 readonly leaderboard?: boolean;
-                readonly punishments?: readonly {
-                  readonly id: number;
-                  readonly expires: number;
-                  /** @default */
-                  readonly reason?: string;
-                  /** @enum {number} */
-                  readonly type: 1 | 2;
+                readonly punishmentsNew?: readonly {
+                  readonly reason: string;
+                  /** @enum {string} */
+                  readonly type: 'BAN' | 'MUTE';
+                  readonly permanent: boolean;
+                  readonly issuedAt: number;
+                  readonly validUntil: number;
                 }[];
                 /** @enum {number} */
                 readonly voteStatus?: 0 | 1 | 2;
-                readonly warnings?: readonly {
-                  readonly id: string;
-                  /** @default */
-                  readonly reason?: string;
-                  readonly time: number;
-                }[];
                 readonly winsData?: {
                   readonly BH: number;
                   readonly BW: number;
@@ -11664,6 +11592,10 @@ export interface components {
                   readonly TR: number;
                   readonly Weekly: number;
                 };
+                /** @description Deprecated, use `punishmentsNew` instead */
+                readonly punishments: readonly unknown[];
+                /** @description Deprecated, use `punishmentsNew` instead */
+                readonly warnings: readonly unknown[];
               };
               readonly officers: readonly {
                 readonly xuid: string;
@@ -11711,7 +11643,7 @@ export interface components {
                 /** @enum {string} */
                 readonly levelFormat: '§k' | '§l' | '§o' | '§r';
                 readonly formattedLevel: string;
-                readonly online: boolean;
+                readonly online?: boolean;
                 readonly credits: number;
                 readonly statusCredits: number;
                 readonly xp: number;
@@ -11746,7 +11678,7 @@ export interface components {
                 readonly tierColor: string | null;
                 readonly kills: number;
                 readonly deaths: number;
-                readonly kdr: number;
+                readonly kdr?: number;
                 readonly wins?: number;
                 readonly losses?: number;
                 readonly wlr?: number;
@@ -11763,10 +11695,9 @@ export interface components {
                   readonly serverType: string | null;
                   readonly pretty: string;
                 };
-                readonly discordData: {
-                  readonly claim?: string;
-                  readonly latest?: string;
-                };
+                /** @description Deprecated, use `discordId` instead */
+                readonly discordData: {readonly [key: string]: unknown};
+                readonly discordId: string | null;
                 readonly extra?: {
                   /** @default 0 */
                   readonly bhWins?: number;
@@ -12266,22 +12197,16 @@ export interface components {
                 readonly factionData?: unknown | null;
                 /** @default false */
                 readonly leaderboard?: boolean;
-                readonly punishments?: readonly {
-                  readonly id: number;
-                  readonly expires: number;
-                  /** @default */
-                  readonly reason?: string;
-                  /** @enum {number} */
-                  readonly type: 1 | 2;
+                readonly punishmentsNew?: readonly {
+                  readonly reason: string;
+                  /** @enum {string} */
+                  readonly type: 'BAN' | 'MUTE';
+                  readonly permanent: boolean;
+                  readonly issuedAt: number;
+                  readonly validUntil: number;
                 }[];
                 /** @enum {number} */
                 readonly voteStatus?: 0 | 1 | 2;
-                readonly warnings?: readonly {
-                  readonly id: string;
-                  /** @default */
-                  readonly reason?: string;
-                  readonly time: number;
-                }[];
                 readonly winsData?: {
                   readonly BH: number;
                   readonly BW: number;
@@ -12296,6 +12221,10 @@ export interface components {
                   readonly TR: number;
                   readonly Weekly: number;
                 };
+                /** @description Deprecated, use `punishmentsNew` instead */
+                readonly punishments: readonly unknown[];
+                /** @description Deprecated, use `punishmentsNew` instead */
+                readonly warnings: readonly unknown[];
               }[];
               readonly members: readonly {
                 readonly xuid: string;
@@ -12343,7 +12272,7 @@ export interface components {
                 /** @enum {string} */
                 readonly levelFormat: '§k' | '§l' | '§o' | '§r';
                 readonly formattedLevel: string;
-                readonly online: boolean;
+                readonly online?: boolean;
                 readonly credits: number;
                 readonly statusCredits: number;
                 readonly xp: number;
@@ -12378,7 +12307,7 @@ export interface components {
                 readonly tierColor: string | null;
                 readonly kills: number;
                 readonly deaths: number;
-                readonly kdr: number;
+                readonly kdr?: number;
                 readonly wins?: number;
                 readonly losses?: number;
                 readonly wlr?: number;
@@ -12395,10 +12324,9 @@ export interface components {
                   readonly serverType: string | null;
                   readonly pretty: string;
                 };
-                readonly discordData: {
-                  readonly claim?: string;
-                  readonly latest?: string;
-                };
+                /** @description Deprecated, use `discordId` instead */
+                readonly discordData: {readonly [key: string]: unknown};
+                readonly discordId: string | null;
                 readonly extra?: {
                   /** @default 0 */
                   readonly bhWins?: number;
@@ -12898,22 +12826,16 @@ export interface components {
                 readonly factionData?: unknown | null;
                 /** @default false */
                 readonly leaderboard?: boolean;
-                readonly punishments?: readonly {
-                  readonly id: number;
-                  readonly expires: number;
-                  /** @default */
-                  readonly reason?: string;
-                  /** @enum {number} */
-                  readonly type: 1 | 2;
+                readonly punishmentsNew?: readonly {
+                  readonly reason: string;
+                  /** @enum {string} */
+                  readonly type: 'BAN' | 'MUTE';
+                  readonly permanent: boolean;
+                  readonly issuedAt: number;
+                  readonly validUntil: number;
                 }[];
                 /** @enum {number} */
                 readonly voteStatus?: 0 | 1 | 2;
-                readonly warnings?: readonly {
-                  readonly id: string;
-                  /** @default */
-                  readonly reason?: string;
-                  readonly time: number;
-                }[];
                 readonly winsData?: {
                   readonly BH: number;
                   readonly BW: number;
@@ -12928,6 +12850,10 @@ export interface components {
                   readonly TR: number;
                   readonly Weekly: number;
                 };
+                /** @description Deprecated, use `punishmentsNew` instead */
+                readonly punishments: readonly unknown[];
+                /** @description Deprecated, use `punishmentsNew` instead */
+                readonly warnings: readonly unknown[];
               }[];
             }>)
         | null;
@@ -13478,7 +13404,7 @@ export interface components {
       /** @enum {string} */
       readonly levelFormat: '§k' | '§l' | '§o' | '§r';
       readonly formattedLevel: string;
-      readonly online: boolean;
+      readonly online?: boolean;
       readonly credits: number;
       readonly statusCredits: number;
       readonly xp: number;
@@ -13513,7 +13439,7 @@ export interface components {
       readonly tierColor: string | null;
       readonly kills: number;
       readonly deaths: number;
-      readonly kdr: number;
+      readonly kdr?: number;
       readonly wins?: number;
       readonly losses?: number;
       readonly wlr?: number;
@@ -13530,10 +13456,9 @@ export interface components {
         readonly serverType: string | null;
         readonly pretty: string;
       };
-      readonly discordData: {
-        readonly claim?: string;
-        readonly latest?: string;
-      };
+      /** @description Deprecated, use `discordId` instead */
+      readonly discordData: {readonly [key: string]: unknown};
+      readonly discordId: string | null;
       readonly extra?: {
         /** @default 0 */
         readonly bhWins?: number;
@@ -14059,22 +13984,16 @@ export interface components {
       } | null;
       /** @default false */
       readonly leaderboard?: boolean;
-      readonly punishments?: readonly {
-        readonly id: number;
-        readonly expires: number;
-        /** @default */
-        readonly reason?: string;
-        /** @enum {number} */
-        readonly type: 1 | 2;
+      readonly punishmentsNew?: readonly {
+        readonly reason: string;
+        /** @enum {string} */
+        readonly type: 'BAN' | 'MUTE';
+        readonly permanent: boolean;
+        readonly issuedAt: number;
+        readonly validUntil: number;
       }[];
       /** @enum {number} */
       readonly voteStatus?: 0 | 1 | 2;
-      readonly warnings?: readonly {
-        readonly id: string;
-        /** @default */
-        readonly reason?: string;
-        readonly time: number;
-      }[];
       readonly winsData?: {
         readonly BH: number;
         readonly BW: number;
@@ -14089,10 +14008,16 @@ export interface components {
         readonly TR: number;
         readonly Weekly: number;
       };
+      /** @description Deprecated, use `punishmentsNew` instead */
+      readonly punishments: readonly unknown[];
+      /** @description Deprecated, use `punishmentsNew` instead */
+      readonly warnings: readonly unknown[];
     }[];
     readonly PlayerBulkInput: {
       /** @default true */
       readonly withFactionData?: boolean;
+      /** @default true */
+      readonly withOnline?: boolean;
       /** @default true */
       readonly withPunishments?: boolean;
       /** @default false */
@@ -14101,8 +14026,6 @@ export interface components {
       readonly withStats?: boolean;
       /** @default true */
       readonly withVoteStatus?: boolean;
-      /** @default true */
-      readonly withWarnings?: boolean;
       readonly names: readonly string[];
     };
     readonly LeaderboardResponseXP: {
@@ -14478,7 +14401,7 @@ export interface components {
         /** @enum {string} */
         readonly levelFormat: '§k' | '§l' | '§o' | '§r';
         readonly formattedLevel: string;
-        readonly online: boolean;
+        readonly online?: boolean;
         readonly credits: number;
         readonly statusCredits: number;
         readonly xp: number;
@@ -14513,7 +14436,7 @@ export interface components {
         readonly tierColor: string | null;
         readonly kills: number;
         readonly deaths: number;
-        readonly kdr: number;
+        readonly kdr?: number;
         readonly wins?: number;
         readonly losses?: number;
         readonly wlr?: number;
@@ -14530,10 +14453,9 @@ export interface components {
           readonly serverType: string | null;
           readonly pretty: string;
         };
-        readonly discordData: {
-          readonly claim?: string;
-          readonly latest?: string;
-        };
+        /** @description Deprecated, use `discordId` instead */
+        readonly discordData: {readonly [key: string]: unknown};
+        readonly discordId: string | null;
         readonly extra?: {
           /** @default 0 */
           readonly bhWins?: number;
@@ -15059,22 +14981,16 @@ export interface components {
         } | null;
         /** @default false */
         readonly leaderboard?: boolean;
-        readonly punishments?: readonly {
-          readonly id: number;
-          readonly expires: number;
-          /** @default */
-          readonly reason?: string;
-          /** @enum {number} */
-          readonly type: 1 | 2;
+        readonly punishmentsNew?: readonly {
+          readonly reason: string;
+          /** @enum {string} */
+          readonly type: 'BAN' | 'MUTE';
+          readonly permanent: boolean;
+          readonly issuedAt: number;
+          readonly validUntil: number;
         }[];
         /** @enum {number} */
         readonly voteStatus?: 0 | 1 | 2;
-        readonly warnings?: readonly {
-          readonly id: string;
-          /** @default */
-          readonly reason?: string;
-          readonly time: number;
-        }[];
         readonly winsData?: {
           readonly BH: number;
           readonly BW: number;
@@ -15089,6 +15005,10 @@ export interface components {
           readonly TR: number;
           readonly Weekly: number;
         };
+        /** @description Deprecated, use `punishmentsNew` instead */
+        readonly punishments: readonly unknown[];
+        /** @description Deprecated, use `punishmentsNew` instead */
+        readonly warnings: readonly unknown[];
       };
       readonly officers: readonly {
         readonly xuid: string;
@@ -15136,7 +15056,7 @@ export interface components {
         /** @enum {string} */
         readonly levelFormat: '§k' | '§l' | '§o' | '§r';
         readonly formattedLevel: string;
-        readonly online: boolean;
+        readonly online?: boolean;
         readonly credits: number;
         readonly statusCredits: number;
         readonly xp: number;
@@ -15171,7 +15091,7 @@ export interface components {
         readonly tierColor: string | null;
         readonly kills: number;
         readonly deaths: number;
-        readonly kdr: number;
+        readonly kdr?: number;
         readonly wins?: number;
         readonly losses?: number;
         readonly wlr?: number;
@@ -15188,10 +15108,9 @@ export interface components {
           readonly serverType: string | null;
           readonly pretty: string;
         };
-        readonly discordData: {
-          readonly claim?: string;
-          readonly latest?: string;
-        };
+        /** @description Deprecated, use `discordId` instead */
+        readonly discordData: {readonly [key: string]: unknown};
+        readonly discordId: string | null;
         readonly extra?: {
           /** @default 0 */
           readonly bhWins?: number;
@@ -15717,22 +15636,16 @@ export interface components {
         } | null;
         /** @default false */
         readonly leaderboard?: boolean;
-        readonly punishments?: readonly {
-          readonly id: number;
-          readonly expires: number;
-          /** @default */
-          readonly reason?: string;
-          /** @enum {number} */
-          readonly type: 1 | 2;
+        readonly punishmentsNew?: readonly {
+          readonly reason: string;
+          /** @enum {string} */
+          readonly type: 'BAN' | 'MUTE';
+          readonly permanent: boolean;
+          readonly issuedAt: number;
+          readonly validUntil: number;
         }[];
         /** @enum {number} */
         readonly voteStatus?: 0 | 1 | 2;
-        readonly warnings?: readonly {
-          readonly id: string;
-          /** @default */
-          readonly reason?: string;
-          readonly time: number;
-        }[];
         readonly winsData?: {
           readonly BH: number;
           readonly BW: number;
@@ -15747,6 +15660,10 @@ export interface components {
           readonly TR: number;
           readonly Weekly: number;
         };
+        /** @description Deprecated, use `punishmentsNew` instead */
+        readonly punishments: readonly unknown[];
+        /** @description Deprecated, use `punishmentsNew` instead */
+        readonly warnings: readonly unknown[];
       }[];
       readonly members: readonly {
         readonly xuid: string;
@@ -15794,7 +15711,7 @@ export interface components {
         /** @enum {string} */
         readonly levelFormat: '§k' | '§l' | '§o' | '§r';
         readonly formattedLevel: string;
-        readonly online: boolean;
+        readonly online?: boolean;
         readonly credits: number;
         readonly statusCredits: number;
         readonly xp: number;
@@ -15829,7 +15746,7 @@ export interface components {
         readonly tierColor: string | null;
         readonly kills: number;
         readonly deaths: number;
-        readonly kdr: number;
+        readonly kdr?: number;
         readonly wins?: number;
         readonly losses?: number;
         readonly wlr?: number;
@@ -15846,10 +15763,9 @@ export interface components {
           readonly serverType: string | null;
           readonly pretty: string;
         };
-        readonly discordData: {
-          readonly claim?: string;
-          readonly latest?: string;
-        };
+        /** @description Deprecated, use `discordId` instead */
+        readonly discordData: {readonly [key: string]: unknown};
+        readonly discordId: string | null;
         readonly extra?: {
           /** @default 0 */
           readonly bhWins?: number;
@@ -16375,22 +16291,16 @@ export interface components {
         } | null;
         /** @default false */
         readonly leaderboard?: boolean;
-        readonly punishments?: readonly {
-          readonly id: number;
-          readonly expires: number;
-          /** @default */
-          readonly reason?: string;
-          /** @enum {number} */
-          readonly type: 1 | 2;
+        readonly punishmentsNew?: readonly {
+          readonly reason: string;
+          /** @enum {string} */
+          readonly type: 'BAN' | 'MUTE';
+          readonly permanent: boolean;
+          readonly issuedAt: number;
+          readonly validUntil: number;
         }[];
         /** @enum {number} */
         readonly voteStatus?: 0 | 1 | 2;
-        readonly warnings?: readonly {
-          readonly id: string;
-          /** @default */
-          readonly reason?: string;
-          readonly time: number;
-        }[];
         readonly winsData?: {
           readonly BH: number;
           readonly BW: number;
@@ -16405,6 +16315,10 @@ export interface components {
           readonly TR: number;
           readonly Weekly: number;
         };
+        /** @description Deprecated, use `punishmentsNew` instead */
+        readonly punishments: readonly unknown[];
+        /** @description Deprecated, use `punishmentsNew` instead */
+        readonly warnings: readonly unknown[];
       }[];
     };
     readonly GuildResponseDefault: {
@@ -16598,7 +16512,7 @@ export interface components {
           /** @enum {string} */
           readonly levelFormat: '§k' | '§l' | '§o' | '§r';
           readonly formattedLevel: string;
-          readonly online: boolean;
+          readonly online?: boolean;
           readonly credits: number;
           readonly statusCredits: number;
           readonly xp: number;
@@ -16633,7 +16547,7 @@ export interface components {
           readonly tierColor: string | null;
           readonly kills: number;
           readonly deaths: number;
-          readonly kdr: number;
+          readonly kdr?: number;
           readonly wins?: number;
           readonly losses?: number;
           readonly wlr?: number;
@@ -16650,10 +16564,9 @@ export interface components {
             readonly serverType: string | null;
             readonly pretty: string;
           };
-          readonly discordData: {
-            readonly claim?: string;
-            readonly latest?: string;
-          };
+          /** @description Deprecated, use `discordId` instead */
+          readonly discordData: {readonly [key: string]: unknown};
+          readonly discordId: string | null;
           readonly extra?: {
             /** @default 0 */
             readonly bhWins?: number;
@@ -17179,22 +17092,16 @@ export interface components {
           } | null;
           /** @default false */
           readonly leaderboard?: boolean;
-          readonly punishments?: readonly {
-            readonly id: number;
-            readonly expires: number;
-            /** @default */
-            readonly reason?: string;
-            /** @enum {number} */
-            readonly type: 1 | 2;
+          readonly punishmentsNew?: readonly {
+            readonly reason: string;
+            /** @enum {string} */
+            readonly type: 'BAN' | 'MUTE';
+            readonly permanent: boolean;
+            readonly issuedAt: number;
+            readonly validUntil: number;
           }[];
           /** @enum {number} */
           readonly voteStatus?: 0 | 1 | 2;
-          readonly warnings?: readonly {
-            readonly id: string;
-            /** @default */
-            readonly reason?: string;
-            readonly time: number;
-          }[];
           readonly winsData?: {
             readonly BH: number;
             readonly BW: number;
@@ -17209,6 +17116,10 @@ export interface components {
             readonly TR: number;
             readonly Weekly: number;
           };
+          /** @description Deprecated, use `punishmentsNew` instead */
+          readonly punishments: readonly unknown[];
+          /** @description Deprecated, use `punishmentsNew` instead */
+          readonly warnings: readonly unknown[];
         };
         readonly officers: readonly {
           readonly xuid: string;
@@ -17256,7 +17167,7 @@ export interface components {
           /** @enum {string} */
           readonly levelFormat: '§k' | '§l' | '§o' | '§r';
           readonly formattedLevel: string;
-          readonly online: boolean;
+          readonly online?: boolean;
           readonly credits: number;
           readonly statusCredits: number;
           readonly xp: number;
@@ -17291,7 +17202,7 @@ export interface components {
           readonly tierColor: string | null;
           readonly kills: number;
           readonly deaths: number;
-          readonly kdr: number;
+          readonly kdr?: number;
           readonly wins?: number;
           readonly losses?: number;
           readonly wlr?: number;
@@ -17308,10 +17219,9 @@ export interface components {
             readonly serverType: string | null;
             readonly pretty: string;
           };
-          readonly discordData: {
-            readonly claim?: string;
-            readonly latest?: string;
-          };
+          /** @description Deprecated, use `discordId` instead */
+          readonly discordData: {readonly [key: string]: unknown};
+          readonly discordId: string | null;
           readonly extra?: {
             /** @default 0 */
             readonly bhWins?: number;
@@ -17837,22 +17747,16 @@ export interface components {
           } | null;
           /** @default false */
           readonly leaderboard?: boolean;
-          readonly punishments?: readonly {
-            readonly id: number;
-            readonly expires: number;
-            /** @default */
-            readonly reason?: string;
-            /** @enum {number} */
-            readonly type: 1 | 2;
+          readonly punishmentsNew?: readonly {
+            readonly reason: string;
+            /** @enum {string} */
+            readonly type: 'BAN' | 'MUTE';
+            readonly permanent: boolean;
+            readonly issuedAt: number;
+            readonly validUntil: number;
           }[];
           /** @enum {number} */
           readonly voteStatus?: 0 | 1 | 2;
-          readonly warnings?: readonly {
-            readonly id: string;
-            /** @default */
-            readonly reason?: string;
-            readonly time: number;
-          }[];
           readonly winsData?: {
             readonly BH: number;
             readonly BW: number;
@@ -17867,6 +17771,10 @@ export interface components {
             readonly TR: number;
             readonly Weekly: number;
           };
+          /** @description Deprecated, use `punishmentsNew` instead */
+          readonly punishments: readonly unknown[];
+          /** @description Deprecated, use `punishmentsNew` instead */
+          readonly warnings: readonly unknown[];
         }[];
         readonly members: readonly {
           readonly xuid: string;
@@ -17914,7 +17822,7 @@ export interface components {
           /** @enum {string} */
           readonly levelFormat: '§k' | '§l' | '§o' | '§r';
           readonly formattedLevel: string;
-          readonly online: boolean;
+          readonly online?: boolean;
           readonly credits: number;
           readonly statusCredits: number;
           readonly xp: number;
@@ -17949,7 +17857,7 @@ export interface components {
           readonly tierColor: string | null;
           readonly kills: number;
           readonly deaths: number;
-          readonly kdr: number;
+          readonly kdr?: number;
           readonly wins?: number;
           readonly losses?: number;
           readonly wlr?: number;
@@ -17966,10 +17874,9 @@ export interface components {
             readonly serverType: string | null;
             readonly pretty: string;
           };
-          readonly discordData: {
-            readonly claim?: string;
-            readonly latest?: string;
-          };
+          /** @description Deprecated, use `discordId` instead */
+          readonly discordData: {readonly [key: string]: unknown};
+          readonly discordId: string | null;
           readonly extra?: {
             /** @default 0 */
             readonly bhWins?: number;
@@ -18495,22 +18402,16 @@ export interface components {
           } | null;
           /** @default false */
           readonly leaderboard?: boolean;
-          readonly punishments?: readonly {
-            readonly id: number;
-            readonly expires: number;
-            /** @default */
-            readonly reason?: string;
-            /** @enum {number} */
-            readonly type: 1 | 2;
+          readonly punishmentsNew?: readonly {
+            readonly reason: string;
+            /** @enum {string} */
+            readonly type: 'BAN' | 'MUTE';
+            readonly permanent: boolean;
+            readonly issuedAt: number;
+            readonly validUntil: number;
           }[];
           /** @enum {number} */
           readonly voteStatus?: 0 | 1 | 2;
-          readonly warnings?: readonly {
-            readonly id: string;
-            /** @default */
-            readonly reason?: string;
-            readonly time: number;
-          }[];
           readonly winsData?: {
             readonly BH: number;
             readonly BW: number;
@@ -18525,6 +18426,10 @@ export interface components {
             readonly TR: number;
             readonly Weekly: number;
           };
+          /** @description Deprecated, use `punishmentsNew` instead */
+          readonly punishments: readonly unknown[];
+          /** @description Deprecated, use `punishmentsNew` instead */
+          readonly warnings: readonly unknown[];
         }[];
       }>;
     readonly GuildQuery: {
@@ -18532,6 +18437,8 @@ export interface components {
       readonly expand?: boolean;
       /** @default false */
       readonly withFactionData?: boolean;
+      /** @default true */
+      readonly withOnline?: boolean;
       /** @default false */
       readonly withPunishments?: boolean;
       /** @default false */
@@ -18540,8 +18447,6 @@ export interface components {
       readonly withStats?: boolean;
       /** @default false */
       readonly withVoteStatus?: boolean;
-      /** @default false */
-      readonly withWarnings?: boolean;
     };
     readonly GuildBulkResponse: Partial<
       readonly {
@@ -18664,7 +18569,7 @@ export interface components {
             /** @enum {string} */
             readonly levelFormat: '§k' | '§l' | '§o' | '§r';
             readonly formattedLevel: string;
-            readonly online: boolean;
+            readonly online?: boolean;
             readonly credits: number;
             readonly statusCredits: number;
             readonly xp: number;
@@ -18699,7 +18604,7 @@ export interface components {
             readonly tierColor: string | null;
             readonly kills: number;
             readonly deaths: number;
-            readonly kdr: number;
+            readonly kdr?: number;
             readonly wins?: number;
             readonly losses?: number;
             readonly wlr?: number;
@@ -18716,10 +18621,9 @@ export interface components {
               readonly serverType: string | null;
               readonly pretty: string;
             };
-            readonly discordData: {
-              readonly claim?: string;
-              readonly latest?: string;
-            };
+            /** @description Deprecated, use `discordId` instead */
+            readonly discordData: {readonly [key: string]: unknown};
+            readonly discordId: string | null;
             readonly extra?: {
               /** @default 0 */
               readonly bhWins?: number;
@@ -19245,22 +19149,16 @@ export interface components {
             } | null;
             /** @default false */
             readonly leaderboard?: boolean;
-            readonly punishments?: readonly {
-              readonly id: number;
-              readonly expires: number;
-              /** @default */
-              readonly reason?: string;
-              /** @enum {number} */
-              readonly type: 1 | 2;
+            readonly punishmentsNew?: readonly {
+              readonly reason: string;
+              /** @enum {string} */
+              readonly type: 'BAN' | 'MUTE';
+              readonly permanent: boolean;
+              readonly issuedAt: number;
+              readonly validUntil: number;
             }[];
             /** @enum {number} */
             readonly voteStatus?: 0 | 1 | 2;
-            readonly warnings?: readonly {
-              readonly id: string;
-              /** @default */
-              readonly reason?: string;
-              readonly time: number;
-            }[];
             readonly winsData?: {
               readonly BH: number;
               readonly BW: number;
@@ -19275,6 +19173,10 @@ export interface components {
               readonly TR: number;
               readonly Weekly: number;
             };
+            /** @description Deprecated, use `punishmentsNew` instead */
+            readonly punishments: readonly unknown[];
+            /** @description Deprecated, use `punishmentsNew` instead */
+            readonly warnings: readonly unknown[];
           };
           readonly officers: readonly {
             readonly xuid: string;
@@ -19322,7 +19224,7 @@ export interface components {
             /** @enum {string} */
             readonly levelFormat: '§k' | '§l' | '§o' | '§r';
             readonly formattedLevel: string;
-            readonly online: boolean;
+            readonly online?: boolean;
             readonly credits: number;
             readonly statusCredits: number;
             readonly xp: number;
@@ -19357,7 +19259,7 @@ export interface components {
             readonly tierColor: string | null;
             readonly kills: number;
             readonly deaths: number;
-            readonly kdr: number;
+            readonly kdr?: number;
             readonly wins?: number;
             readonly losses?: number;
             readonly wlr?: number;
@@ -19374,10 +19276,9 @@ export interface components {
               readonly serverType: string | null;
               readonly pretty: string;
             };
-            readonly discordData: {
-              readonly claim?: string;
-              readonly latest?: string;
-            };
+            /** @description Deprecated, use `discordId` instead */
+            readonly discordData: {readonly [key: string]: unknown};
+            readonly discordId: string | null;
             readonly extra?: {
               /** @default 0 */
               readonly bhWins?: number;
@@ -19903,22 +19804,16 @@ export interface components {
             } | null;
             /** @default false */
             readonly leaderboard?: boolean;
-            readonly punishments?: readonly {
-              readonly id: number;
-              readonly expires: number;
-              /** @default */
-              readonly reason?: string;
-              /** @enum {number} */
-              readonly type: 1 | 2;
+            readonly punishmentsNew?: readonly {
+              readonly reason: string;
+              /** @enum {string} */
+              readonly type: 'BAN' | 'MUTE';
+              readonly permanent: boolean;
+              readonly issuedAt: number;
+              readonly validUntil: number;
             }[];
             /** @enum {number} */
             readonly voteStatus?: 0 | 1 | 2;
-            readonly warnings?: readonly {
-              readonly id: string;
-              /** @default */
-              readonly reason?: string;
-              readonly time: number;
-            }[];
             readonly winsData?: {
               readonly BH: number;
               readonly BW: number;
@@ -19933,6 +19828,10 @@ export interface components {
               readonly TR: number;
               readonly Weekly: number;
             };
+            /** @description Deprecated, use `punishmentsNew` instead */
+            readonly punishments: readonly unknown[];
+            /** @description Deprecated, use `punishmentsNew` instead */
+            readonly warnings: readonly unknown[];
           }[];
           readonly members: readonly {
             readonly xuid: string;
@@ -19980,7 +19879,7 @@ export interface components {
             /** @enum {string} */
             readonly levelFormat: '§k' | '§l' | '§o' | '§r';
             readonly formattedLevel: string;
-            readonly online: boolean;
+            readonly online?: boolean;
             readonly credits: number;
             readonly statusCredits: number;
             readonly xp: number;
@@ -20015,7 +19914,7 @@ export interface components {
             readonly tierColor: string | null;
             readonly kills: number;
             readonly deaths: number;
-            readonly kdr: number;
+            readonly kdr?: number;
             readonly wins?: number;
             readonly losses?: number;
             readonly wlr?: number;
@@ -20032,10 +19931,9 @@ export interface components {
               readonly serverType: string | null;
               readonly pretty: string;
             };
-            readonly discordData: {
-              readonly claim?: string;
-              readonly latest?: string;
-            };
+            /** @description Deprecated, use `discordId` instead */
+            readonly discordData: {readonly [key: string]: unknown};
+            readonly discordId: string | null;
             readonly extra?: {
               /** @default 0 */
               readonly bhWins?: number;
@@ -20561,22 +20459,16 @@ export interface components {
             } | null;
             /** @default false */
             readonly leaderboard?: boolean;
-            readonly punishments?: readonly {
-              readonly id: number;
-              readonly expires: number;
-              /** @default */
-              readonly reason?: string;
-              /** @enum {number} */
-              readonly type: 1 | 2;
+            readonly punishmentsNew?: readonly {
+              readonly reason: string;
+              /** @enum {string} */
+              readonly type: 'BAN' | 'MUTE';
+              readonly permanent: boolean;
+              readonly issuedAt: number;
+              readonly validUntil: number;
             }[];
             /** @enum {number} */
             readonly voteStatus?: 0 | 1 | 2;
-            readonly warnings?: readonly {
-              readonly id: string;
-              /** @default */
-              readonly reason?: string;
-              readonly time: number;
-            }[];
             readonly winsData?: {
               readonly BH: number;
               readonly BW: number;
@@ -20591,6 +20483,10 @@ export interface components {
               readonly TR: number;
               readonly Weekly: number;
             };
+            /** @description Deprecated, use `punishmentsNew` instead */
+            readonly punishments: readonly unknown[];
+            /** @description Deprecated, use `punishmentsNew` instead */
+            readonly warnings: readonly unknown[];
           }[];
         }[]
       >;
@@ -20599,6 +20495,8 @@ export interface components {
       readonly expand?: boolean;
       /** @default false */
       readonly withFactionData?: boolean;
+      /** @default true */
+      readonly withOnline?: boolean;
       /** @default false */
       readonly withPunishments?: boolean;
       /** @default false */
@@ -20607,8 +20505,6 @@ export interface components {
       readonly withStats?: boolean;
       /** @default false */
       readonly withVoteStatus?: boolean;
-      /** @default false */
-      readonly withWarnings?: boolean;
       readonly names: readonly string[];
     };
     readonly FactionResponse: Partial<{
@@ -20671,7 +20567,7 @@ export interface components {
           /** @enum {string} */
           readonly levelFormat: '§k' | '§l' | '§o' | '§r';
           readonly formattedLevel: string;
-          readonly online: boolean;
+          readonly online?: boolean;
           readonly credits: number;
           readonly statusCredits: number;
           readonly xp: number;
@@ -20706,7 +20602,7 @@ export interface components {
           readonly tierColor: string | null;
           readonly kills: number;
           readonly deaths: number;
-          readonly kdr: number;
+          readonly kdr?: number;
           readonly wins?: number;
           readonly losses?: number;
           readonly wlr?: number;
@@ -20723,10 +20619,9 @@ export interface components {
             readonly serverType: string | null;
             readonly pretty: string;
           };
-          readonly discordData: {
-            readonly claim?: string;
-            readonly latest?: string;
-          };
+          /** @description Deprecated, use `discordId` instead */
+          readonly discordData: {readonly [key: string]: unknown};
+          readonly discordId: string | null;
           readonly extra?: {
             /** @default 0 */
             readonly bhWins?: number;
@@ -21233,22 +21128,16 @@ export interface components {
           } | null;
           /** @default false */
           readonly leaderboard?: boolean;
-          readonly punishments?: readonly {
-            readonly id: number;
-            readonly expires: number;
-            /** @default */
-            readonly reason?: string;
-            /** @enum {number} */
-            readonly type: 1 | 2;
+          readonly punishmentsNew?: readonly {
+            readonly reason: string;
+            /** @enum {string} */
+            readonly type: 'BAN' | 'MUTE';
+            readonly permanent: boolean;
+            readonly issuedAt: number;
+            readonly validUntil: number;
           }[];
           /** @enum {number} */
           readonly voteStatus?: 0 | 1 | 2;
-          readonly warnings?: readonly {
-            readonly id: string;
-            /** @default */
-            readonly reason?: string;
-            readonly time: number;
-          }[];
           readonly winsData?: {
             readonly BH: number;
             readonly BW: number;
@@ -21263,6 +21152,10 @@ export interface components {
             readonly TR: number;
             readonly Weekly: number;
           };
+          /** @description Deprecated, use `punishmentsNew` instead */
+          readonly punishments: readonly unknown[];
+          /** @description Deprecated, use `punishmentsNew` instead */
+          readonly warnings: readonly unknown[];
         };
         readonly officers: readonly {
           readonly xuid: string;
@@ -21310,7 +21203,7 @@ export interface components {
           /** @enum {string} */
           readonly levelFormat: '§k' | '§l' | '§o' | '§r';
           readonly formattedLevel: string;
-          readonly online: boolean;
+          readonly online?: boolean;
           readonly credits: number;
           readonly statusCredits: number;
           readonly xp: number;
@@ -21345,7 +21238,7 @@ export interface components {
           readonly tierColor: string | null;
           readonly kills: number;
           readonly deaths: number;
-          readonly kdr: number;
+          readonly kdr?: number;
           readonly wins?: number;
           readonly losses?: number;
           readonly wlr?: number;
@@ -21362,10 +21255,9 @@ export interface components {
             readonly serverType: string | null;
             readonly pretty: string;
           };
-          readonly discordData: {
-            readonly claim?: string;
-            readonly latest?: string;
-          };
+          /** @description Deprecated, use `discordId` instead */
+          readonly discordData: {readonly [key: string]: unknown};
+          readonly discordId: string | null;
           readonly extra?: {
             /** @default 0 */
             readonly bhWins?: number;
@@ -21872,22 +21764,16 @@ export interface components {
           } | null;
           /** @default false */
           readonly leaderboard?: boolean;
-          readonly punishments?: readonly {
-            readonly id: number;
-            readonly expires: number;
-            /** @default */
-            readonly reason?: string;
-            /** @enum {number} */
-            readonly type: 1 | 2;
+          readonly punishmentsNew?: readonly {
+            readonly reason: string;
+            /** @enum {string} */
+            readonly type: 'BAN' | 'MUTE';
+            readonly permanent: boolean;
+            readonly issuedAt: number;
+            readonly validUntil: number;
           }[];
           /** @enum {number} */
           readonly voteStatus?: 0 | 1 | 2;
-          readonly warnings?: readonly {
-            readonly id: string;
-            /** @default */
-            readonly reason?: string;
-            readonly time: number;
-          }[];
           readonly winsData?: {
             readonly BH: number;
             readonly BW: number;
@@ -21902,6 +21788,10 @@ export interface components {
             readonly TR: number;
             readonly Weekly: number;
           };
+          /** @description Deprecated, use `punishmentsNew` instead */
+          readonly punishments: readonly unknown[];
+          /** @description Deprecated, use `punishmentsNew` instead */
+          readonly warnings: readonly unknown[];
         }[];
         readonly members: readonly {
           readonly xuid: string;
@@ -21949,7 +21839,7 @@ export interface components {
           /** @enum {string} */
           readonly levelFormat: '§k' | '§l' | '§o' | '§r';
           readonly formattedLevel: string;
-          readonly online: boolean;
+          readonly online?: boolean;
           readonly credits: number;
           readonly statusCredits: number;
           readonly xp: number;
@@ -21984,7 +21874,7 @@ export interface components {
           readonly tierColor: string | null;
           readonly kills: number;
           readonly deaths: number;
-          readonly kdr: number;
+          readonly kdr?: number;
           readonly wins?: number;
           readonly losses?: number;
           readonly wlr?: number;
@@ -22001,10 +21891,9 @@ export interface components {
             readonly serverType: string | null;
             readonly pretty: string;
           };
-          readonly discordData: {
-            readonly claim?: string;
-            readonly latest?: string;
-          };
+          /** @description Deprecated, use `discordId` instead */
+          readonly discordData: {readonly [key: string]: unknown};
+          readonly discordId: string | null;
           readonly extra?: {
             /** @default 0 */
             readonly bhWins?: number;
@@ -22511,22 +22400,16 @@ export interface components {
           } | null;
           /** @default false */
           readonly leaderboard?: boolean;
-          readonly punishments?: readonly {
-            readonly id: number;
-            readonly expires: number;
-            /** @default */
-            readonly reason?: string;
-            /** @enum {number} */
-            readonly type: 1 | 2;
+          readonly punishmentsNew?: readonly {
+            readonly reason: string;
+            /** @enum {string} */
+            readonly type: 'BAN' | 'MUTE';
+            readonly permanent: boolean;
+            readonly issuedAt: number;
+            readonly validUntil: number;
           }[];
           /** @enum {number} */
           readonly voteStatus?: 0 | 1 | 2;
-          readonly warnings?: readonly {
-            readonly id: string;
-            /** @default */
-            readonly reason?: string;
-            readonly time: number;
-          }[];
           readonly winsData?: {
             readonly BH: number;
             readonly BW: number;
@@ -22541,6 +22424,10 @@ export interface components {
             readonly TR: number;
             readonly Weekly: number;
           };
+          /** @description Deprecated, use `punishmentsNew` instead */
+          readonly punishments: readonly unknown[];
+          /** @description Deprecated, use `punishmentsNew` instead */
+          readonly warnings: readonly unknown[];
         }[];
       }>;
     readonly FactionBulkResponse: Partial<
@@ -22606,7 +22493,7 @@ export interface components {
             /** @enum {string} */
             readonly levelFormat: '§k' | '§l' | '§o' | '§r';
             readonly formattedLevel: string;
-            readonly online: boolean;
+            readonly online?: boolean;
             readonly credits: number;
             readonly statusCredits: number;
             readonly xp: number;
@@ -22641,7 +22528,7 @@ export interface components {
             readonly tierColor: string | null;
             readonly kills: number;
             readonly deaths: number;
-            readonly kdr: number;
+            readonly kdr?: number;
             readonly wins?: number;
             readonly losses?: number;
             readonly wlr?: number;
@@ -22658,10 +22545,9 @@ export interface components {
               readonly serverType: string | null;
               readonly pretty: string;
             };
-            readonly discordData: {
-              readonly claim?: string;
-              readonly latest?: string;
-            };
+            /** @description Deprecated, use `discordId` instead */
+            readonly discordData: {readonly [key: string]: unknown};
+            readonly discordId: string | null;
             readonly extra?: {
               /** @default 0 */
               readonly bhWins?: number;
@@ -23187,22 +23073,16 @@ export interface components {
             } | null;
             /** @default false */
             readonly leaderboard?: boolean;
-            readonly punishments?: readonly {
-              readonly id: number;
-              readonly expires: number;
-              /** @default */
-              readonly reason?: string;
-              /** @enum {number} */
-              readonly type: 1 | 2;
+            readonly punishmentsNew?: readonly {
+              readonly reason: string;
+              /** @enum {string} */
+              readonly type: 'BAN' | 'MUTE';
+              readonly permanent: boolean;
+              readonly issuedAt: number;
+              readonly validUntil: number;
             }[];
             /** @enum {number} */
             readonly voteStatus?: 0 | 1 | 2;
-            readonly warnings?: readonly {
-              readonly id: string;
-              /** @default */
-              readonly reason?: string;
-              readonly time: number;
-            }[];
             readonly winsData?: {
               readonly BH: number;
               readonly BW: number;
@@ -23217,6 +23097,10 @@ export interface components {
               readonly TR: number;
               readonly Weekly: number;
             };
+            /** @description Deprecated, use `punishmentsNew` instead */
+            readonly punishments: readonly unknown[];
+            /** @description Deprecated, use `punishmentsNew` instead */
+            readonly warnings: readonly unknown[];
           };
           readonly officers: readonly {
             readonly xuid: string;
@@ -23264,7 +23148,7 @@ export interface components {
             /** @enum {string} */
             readonly levelFormat: '§k' | '§l' | '§o' | '§r';
             readonly formattedLevel: string;
-            readonly online: boolean;
+            readonly online?: boolean;
             readonly credits: number;
             readonly statusCredits: number;
             readonly xp: number;
@@ -23299,7 +23183,7 @@ export interface components {
             readonly tierColor: string | null;
             readonly kills: number;
             readonly deaths: number;
-            readonly kdr: number;
+            readonly kdr?: number;
             readonly wins?: number;
             readonly losses?: number;
             readonly wlr?: number;
@@ -23316,10 +23200,9 @@ export interface components {
               readonly serverType: string | null;
               readonly pretty: string;
             };
-            readonly discordData: {
-              readonly claim?: string;
-              readonly latest?: string;
-            };
+            /** @description Deprecated, use `discordId` instead */
+            readonly discordData: {readonly [key: string]: unknown};
+            readonly discordId: string | null;
             readonly extra?: {
               /** @default 0 */
               readonly bhWins?: number;
@@ -23845,22 +23728,16 @@ export interface components {
             } | null;
             /** @default false */
             readonly leaderboard?: boolean;
-            readonly punishments?: readonly {
-              readonly id: number;
-              readonly expires: number;
-              /** @default */
-              readonly reason?: string;
-              /** @enum {number} */
-              readonly type: 1 | 2;
+            readonly punishmentsNew?: readonly {
+              readonly reason: string;
+              /** @enum {string} */
+              readonly type: 'BAN' | 'MUTE';
+              readonly permanent: boolean;
+              readonly issuedAt: number;
+              readonly validUntil: number;
             }[];
             /** @enum {number} */
             readonly voteStatus?: 0 | 1 | 2;
-            readonly warnings?: readonly {
-              readonly id: string;
-              /** @default */
-              readonly reason?: string;
-              readonly time: number;
-            }[];
             readonly winsData?: {
               readonly BH: number;
               readonly BW: number;
@@ -23875,6 +23752,10 @@ export interface components {
               readonly TR: number;
               readonly Weekly: number;
             };
+            /** @description Deprecated, use `punishmentsNew` instead */
+            readonly punishments: readonly unknown[];
+            /** @description Deprecated, use `punishmentsNew` instead */
+            readonly warnings: readonly unknown[];
           }[];
           readonly members: readonly {
             readonly xuid: string;
@@ -23922,7 +23803,7 @@ export interface components {
             /** @enum {string} */
             readonly levelFormat: '§k' | '§l' | '§o' | '§r';
             readonly formattedLevel: string;
-            readonly online: boolean;
+            readonly online?: boolean;
             readonly credits: number;
             readonly statusCredits: number;
             readonly xp: number;
@@ -23957,7 +23838,7 @@ export interface components {
             readonly tierColor: string | null;
             readonly kills: number;
             readonly deaths: number;
-            readonly kdr: number;
+            readonly kdr?: number;
             readonly wins?: number;
             readonly losses?: number;
             readonly wlr?: number;
@@ -23974,10 +23855,9 @@ export interface components {
               readonly serverType: string | null;
               readonly pretty: string;
             };
-            readonly discordData: {
-              readonly claim?: string;
-              readonly latest?: string;
-            };
+            /** @description Deprecated, use `discordId` instead */
+            readonly discordData: {readonly [key: string]: unknown};
+            readonly discordId: string | null;
             readonly extra?: {
               /** @default 0 */
               readonly bhWins?: number;
@@ -24503,22 +24383,16 @@ export interface components {
             } | null;
             /** @default false */
             readonly leaderboard?: boolean;
-            readonly punishments?: readonly {
-              readonly id: number;
-              readonly expires: number;
-              /** @default */
-              readonly reason?: string;
-              /** @enum {number} */
-              readonly type: 1 | 2;
+            readonly punishmentsNew?: readonly {
+              readonly reason: string;
+              /** @enum {string} */
+              readonly type: 'BAN' | 'MUTE';
+              readonly permanent: boolean;
+              readonly issuedAt: number;
+              readonly validUntil: number;
             }[];
             /** @enum {number} */
             readonly voteStatus?: 0 | 1 | 2;
-            readonly warnings?: readonly {
-              readonly id: string;
-              /** @default */
-              readonly reason?: string;
-              readonly time: number;
-            }[];
             readonly winsData?: {
               readonly BH: number;
               readonly BW: number;
@@ -24533,6 +24407,10 @@ export interface components {
               readonly TR: number;
               readonly Weekly: number;
             };
+            /** @description Deprecated, use `punishmentsNew` instead */
+            readonly punishments: readonly unknown[];
+            /** @description Deprecated, use `punishmentsNew` instead */
+            readonly warnings: readonly unknown[];
           }[];
         }[]
       >;
@@ -24650,11 +24528,11 @@ export interface operations {
       readonly query: {
         readonly expand?: boolean;
         readonly withFactionData?: boolean;
+        readonly withOnline?: boolean;
         readonly withPunishments?: boolean;
         readonly withSkinData?: boolean;
         readonly withStats?: boolean;
         readonly withVoteStatus?: boolean;
-        readonly withWarnings?: boolean;
       };
     };
     readonly responses: {
@@ -24671,11 +24549,11 @@ export interface operations {
       readonly query: {
         readonly expand?: boolean;
         readonly withFactionData?: boolean;
+        readonly withOnline?: boolean;
         readonly withPunishments?: boolean;
         readonly withSkinData?: boolean;
         readonly withStats?: boolean;
         readonly withVoteStatus?: boolean;
-        readonly withWarnings?: boolean;
         readonly first?: number;
         readonly after?: string;
         readonly last?: number;
@@ -24711,11 +24589,11 @@ export interface operations {
       readonly query: {
         readonly expand?: boolean;
         readonly withFactionData?: boolean;
+        readonly withOnline?: boolean;
         readonly withPunishments?: boolean;
         readonly withSkinData?: boolean;
         readonly withStats?: boolean;
         readonly withVoteStatus?: boolean;
-        readonly withWarnings?: boolean;
       };
     };
     readonly responses: {
@@ -24732,11 +24610,11 @@ export interface operations {
       readonly query: {
         readonly expand?: boolean;
         readonly withFactionData?: boolean;
+        readonly withOnline?: boolean;
         readonly withPunishments?: boolean;
         readonly withSkinData?: boolean;
         readonly withStats?: boolean;
         readonly withVoteStatus?: boolean;
-        readonly withWarnings?: boolean;
         readonly first?: number;
         readonly after?: string;
         readonly last?: number;
@@ -24868,11 +24746,11 @@ export interface operations {
     readonly parameters: {
       readonly query: {
         readonly withFactionData?: boolean;
+        readonly withOnline?: boolean;
         readonly withPunishments?: boolean;
         readonly withSkinData?: boolean;
         readonly withStats?: boolean;
         readonly withVoteStatus?: boolean;
-        readonly withWarnings?: boolean;
       };
     };
     readonly responses: {
@@ -24928,11 +24806,11 @@ export interface operations {
     readonly parameters: {
       readonly query: {
         readonly withFactionData?: boolean;
+        readonly withOnline?: boolean;
         readonly withPunishments?: boolean;
         readonly withSkinData?: boolean;
         readonly withStats?: boolean;
         readonly withVoteStatus?: boolean;
-        readonly withWarnings?: boolean;
         readonly first?: number;
         readonly after?: string;
         readonly last?: number;
@@ -25015,11 +24893,11 @@ export interface operations {
     readonly parameters: {
       readonly query: {
         readonly withFactionData?: boolean;
+        readonly withOnline?: boolean;
         readonly withPunishments?: boolean;
         readonly withSkinData?: boolean;
         readonly withStats?: boolean;
         readonly withVoteStatus?: boolean;
-        readonly withWarnings?: boolean;
         readonly expand?: boolean;
         readonly limit?: number;
         readonly query: string;

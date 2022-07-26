@@ -192,7 +192,7 @@ export class LeaderboardResource extends NetherGamesResource {
 }
 
 interface PlayerParams {
-  include?: Array<'faction' | 'punishments' | 'skin' | 'stats' | 'voteStatus' | 'warnings'>;
+  include?: Array<'faction' | 'online' | 'punishments' | 'skin' | 'stats' | 'voteStatus'>;
 }
 
 export class PlayersResource extends NetherGamesResource {
@@ -206,11 +206,11 @@ export class PlayersResource extends NetherGamesResource {
     }
     return {
       withFactionData: params.include.includes('faction'),
+      withOnline: params.include.includes('online'),
       withPunishments: params.include.includes('punishments'),
       withSkinData: params.include.includes('skin'),
       withStats: params.include.includes('stats'),
       withVoteStatus: params.include.includes('voteStatus'),
-      withWarnings: params.include.includes('warnings'),
     };
   }
 
