@@ -489,8 +489,8 @@ export interface components {
             /** @enum {string|null} */
             readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
             readonly tierColor: string | null;
-            readonly kills: number;
-            readonly deaths: number;
+            readonly kills?: number;
+            readonly deaths?: number;
             readonly kdr?: number;
             readonly wins?: number;
             readonly losses?: number;
@@ -1024,6 +1024,7 @@ export interface components {
               readonly permanent: boolean;
               readonly issuedAt: number;
               readonly validUntil: number;
+              readonly active: boolean;
             }[];
             /** @enum {number} */
             readonly voteStatus?: 0 | 1 | 2;
@@ -1125,8 +1126,8 @@ export interface components {
             /** @enum {string|null} */
             readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
             readonly tierColor: string | null;
-            readonly kills: number;
-            readonly deaths: number;
+            readonly kills?: number;
+            readonly deaths?: number;
             readonly kdr?: number;
             readonly wins?: number;
             readonly losses?: number;
@@ -1660,6 +1661,7 @@ export interface components {
               readonly permanent: boolean;
               readonly issuedAt: number;
               readonly validUntil: number;
+              readonly active: boolean;
             }[];
             /** @enum {number} */
             readonly voteStatus?: 0 | 1 | 2;
@@ -1761,8 +1763,8 @@ export interface components {
             /** @enum {string|null} */
             readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
             readonly tierColor: string | null;
-            readonly kills: number;
-            readonly deaths: number;
+            readonly kills?: number;
+            readonly deaths?: number;
             readonly kdr?: number;
             readonly wins?: number;
             readonly losses?: number;
@@ -2296,6 +2298,7 @@ export interface components {
               readonly permanent: boolean;
               readonly issuedAt: number;
               readonly validUntil: number;
+              readonly active: boolean;
             }[];
             /** @enum {number} */
             readonly voteStatus?: 0 | 1 | 2;
@@ -2474,8 +2477,8 @@ export interface components {
               /** @enum {string|null} */
               readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
               readonly tierColor: string | null;
-              readonly kills: number;
-              readonly deaths: number;
+              readonly kills?: number;
+              readonly deaths?: number;
               readonly kdr?: number;
               readonly wins?: number;
               readonly losses?: number;
@@ -3009,6 +3012,7 @@ export interface components {
                 readonly permanent: boolean;
                 readonly issuedAt: number;
                 readonly validUntil: number;
+                readonly active: boolean;
               }[];
               /** @enum {number} */
               readonly voteStatus?: 0 | 1 | 2;
@@ -3110,8 +3114,8 @@ export interface components {
               /** @enum {string|null} */
               readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
               readonly tierColor: string | null;
-              readonly kills: number;
-              readonly deaths: number;
+              readonly kills?: number;
+              readonly deaths?: number;
               readonly kdr?: number;
               readonly wins?: number;
               readonly losses?: number;
@@ -3645,6 +3649,7 @@ export interface components {
                 readonly permanent: boolean;
                 readonly issuedAt: number;
                 readonly validUntil: number;
+                readonly active: boolean;
               }[];
               /** @enum {number} */
               readonly voteStatus?: 0 | 1 | 2;
@@ -3746,8 +3751,8 @@ export interface components {
               /** @enum {string|null} */
               readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
               readonly tierColor: string | null;
-              readonly kills: number;
-              readonly deaths: number;
+              readonly kills?: number;
+              readonly deaths?: number;
               readonly kdr?: number;
               readonly wins?: number;
               readonly losses?: number;
@@ -4281,6 +4286,7 @@ export interface components {
                 readonly permanent: boolean;
                 readonly issuedAt: number;
                 readonly validUntil: number;
+                readonly active: boolean;
               }[];
               /** @enum {number} */
               readonly voteStatus?: 0 | 1 | 2;
@@ -4387,8 +4393,8 @@ export interface components {
           /** @enum {string|null} */
           readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
           readonly tierColor: string | null;
-          readonly kills: number;
-          readonly deaths: number;
+          readonly kills?: number;
+          readonly deaths?: number;
           readonly kdr?: number;
           readonly wins?: number;
           readonly losses?: number;
@@ -4922,6 +4928,7 @@ export interface components {
             readonly permanent: boolean;
             readonly issuedAt: number;
             readonly validUntil: number;
+            readonly active: boolean;
           }[];
           /** @enum {number} */
           readonly voteStatus?: 0 | 1 | 2;
@@ -5049,8 +5056,8 @@ export interface components {
                       /** @enum {string|null} */
                       readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
                       readonly tierColor: string | null;
-                      readonly kills: number;
-                      readonly deaths: number;
+                      readonly kills?: number;
+                      readonly deaths?: number;
                       readonly kdr?: number;
                       readonly wins?: number;
                       readonly losses?: number;
@@ -5584,6 +5591,7 @@ export interface components {
                         readonly permanent: boolean;
                         readonly issuedAt: number;
                         readonly validUntil: number;
+                        readonly active: boolean;
                       }[];
                       /** @enum {number} */
                       readonly voteStatus?: 0 | 1 | 2;
@@ -5685,8 +5693,8 @@ export interface components {
                       /** @enum {string|null} */
                       readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
                       readonly tierColor: string | null;
-                      readonly kills: number;
-                      readonly deaths: number;
+                      readonly kills?: number;
+                      readonly deaths?: number;
                       readonly kdr?: number;
                       readonly wins?: number;
                       readonly losses?: number;
@@ -6220,6 +6228,7 @@ export interface components {
                         readonly permanent: boolean;
                         readonly issuedAt: number;
                         readonly validUntil: number;
+                        readonly active: boolean;
                       }[];
                       /** @enum {number} */
                       readonly voteStatus?: 0 | 1 | 2;
@@ -6321,8 +6330,8 @@ export interface components {
                       /** @enum {string|null} */
                       readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
                       readonly tierColor: string | null;
-                      readonly kills: number;
-                      readonly deaths: number;
+                      readonly kills?: number;
+                      readonly deaths?: number;
                       readonly kdr?: number;
                       readonly wins?: number;
                       readonly losses?: number;
@@ -6856,6 +6865,7 @@ export interface components {
                         readonly permanent: boolean;
                         readonly issuedAt: number;
                         readonly validUntil: number;
+                        readonly active: boolean;
                       }[];
                       /** @enum {number} */
                       readonly voteStatus?: 0 | 1 | 2;
@@ -7042,8 +7052,8 @@ export interface components {
                         /** @enum {string|null} */
                         readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
                         readonly tierColor: string | null;
-                        readonly kills: number;
-                        readonly deaths: number;
+                        readonly kills?: number;
+                        readonly deaths?: number;
                         readonly kdr?: number;
                         readonly wins?: number;
                         readonly losses?: number;
@@ -7577,6 +7587,7 @@ export interface components {
                           readonly permanent: boolean;
                           readonly issuedAt: number;
                           readonly validUntil: number;
+                          readonly active: boolean;
                         }[];
                         /** @enum {number} */
                         readonly voteStatus?: 0 | 1 | 2;
@@ -7678,8 +7689,8 @@ export interface components {
                         /** @enum {string|null} */
                         readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
                         readonly tierColor: string | null;
-                        readonly kills: number;
-                        readonly deaths: number;
+                        readonly kills?: number;
+                        readonly deaths?: number;
                         readonly kdr?: number;
                         readonly wins?: number;
                         readonly losses?: number;
@@ -8213,6 +8224,7 @@ export interface components {
                           readonly permanent: boolean;
                           readonly issuedAt: number;
                           readonly validUntil: number;
+                          readonly active: boolean;
                         }[];
                         /** @enum {number} */
                         readonly voteStatus?: 0 | 1 | 2;
@@ -8314,8 +8326,8 @@ export interface components {
                         /** @enum {string|null} */
                         readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
                         readonly tierColor: string | null;
-                        readonly kills: number;
-                        readonly deaths: number;
+                        readonly kills?: number;
+                        readonly deaths?: number;
                         readonly kdr?: number;
                         readonly wins?: number;
                         readonly losses?: number;
@@ -8849,6 +8861,7 @@ export interface components {
                           readonly permanent: boolean;
                           readonly issuedAt: number;
                           readonly validUntil: number;
+                          readonly active: boolean;
                         }[];
                         /** @enum {number} */
                         readonly voteStatus?: 0 | 1 | 2;
@@ -8963,8 +8976,8 @@ export interface components {
                   /** @enum {string|null} */
                   readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
                   readonly tierColor: string | null;
-                  readonly kills: number;
-                  readonly deaths: number;
+                  readonly kills?: number;
+                  readonly deaths?: number;
                   readonly kdr?: number;
                   readonly wins?: number;
                   readonly losses?: number;
@@ -9498,6 +9511,7 @@ export interface components {
                     readonly permanent: boolean;
                     readonly issuedAt: number;
                     readonly validUntil: number;
+                    readonly active: boolean;
                   }[];
                   /** @enum {number} */
                   readonly voteStatus?: 0 | 1 | 2;
@@ -9779,8 +9793,8 @@ export interface components {
       /** @enum {string|null} */
       readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
       readonly tierColor: string | null;
-      readonly kills: number;
-      readonly deaths: number;
+      readonly kills?: number;
+      readonly deaths?: number;
       readonly kdr?: number;
       readonly wins?: number;
       readonly losses?: number;
@@ -10333,6 +10347,7 @@ export interface components {
         readonly permanent: boolean;
         readonly issuedAt: number;
         readonly validUntil: number;
+        readonly active: boolean;
       }[];
       /** @enum {number} */
       readonly voteStatus?: 0 | 1 | 2;
@@ -10376,6 +10391,7 @@ export interface components {
       readonly permanent: boolean;
       readonly issuedAt: number;
       readonly validUntil: number;
+      readonly active: boolean;
     };
     readonly PlayerLeaderboardResponse: {
       readonly player: string;
@@ -11047,8 +11063,8 @@ export interface components {
                 /** @enum {string|null} */
                 readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
                 readonly tierColor: string | null;
-                readonly kills: number;
-                readonly deaths: number;
+                readonly kills?: number;
+                readonly deaths?: number;
                 readonly kdr?: number;
                 readonly wins?: number;
                 readonly losses?: number;
@@ -11575,6 +11591,7 @@ export interface components {
                   readonly permanent: boolean;
                   readonly issuedAt: number;
                   readonly validUntil: number;
+                  readonly active: boolean;
                 }[];
                 /** @enum {number} */
                 readonly voteStatus?: 0 | 1 | 2;
@@ -11676,8 +11693,8 @@ export interface components {
                 /** @enum {string|null} */
                 readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
                 readonly tierColor: string | null;
-                readonly kills: number;
-                readonly deaths: number;
+                readonly kills?: number;
+                readonly deaths?: number;
                 readonly kdr?: number;
                 readonly wins?: number;
                 readonly losses?: number;
@@ -12204,6 +12221,7 @@ export interface components {
                   readonly permanent: boolean;
                   readonly issuedAt: number;
                   readonly validUntil: number;
+                  readonly active: boolean;
                 }[];
                 /** @enum {number} */
                 readonly voteStatus?: 0 | 1 | 2;
@@ -12305,8 +12323,8 @@ export interface components {
                 /** @enum {string|null} */
                 readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
                 readonly tierColor: string | null;
-                readonly kills: number;
-                readonly deaths: number;
+                readonly kills?: number;
+                readonly deaths?: number;
                 readonly kdr?: number;
                 readonly wins?: number;
                 readonly losses?: number;
@@ -12833,6 +12851,7 @@ export interface components {
                   readonly permanent: boolean;
                   readonly issuedAt: number;
                   readonly validUntil: number;
+                  readonly active: boolean;
                 }[];
                 /** @enum {number} */
                 readonly voteStatus?: 0 | 1 | 2;
@@ -13437,8 +13456,8 @@ export interface components {
       /** @enum {string|null} */
       readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
       readonly tierColor: string | null;
-      readonly kills: number;
-      readonly deaths: number;
+      readonly kills?: number;
+      readonly deaths?: number;
       readonly kdr?: number;
       readonly wins?: number;
       readonly losses?: number;
@@ -13991,6 +14010,7 @@ export interface components {
         readonly permanent: boolean;
         readonly issuedAt: number;
         readonly validUntil: number;
+        readonly active: boolean;
       }[];
       /** @enum {number} */
       readonly voteStatus?: 0 | 1 | 2;
@@ -14434,8 +14454,8 @@ export interface components {
         /** @enum {string|null} */
         readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
         readonly tierColor: string | null;
-        readonly kills: number;
-        readonly deaths: number;
+        readonly kills?: number;
+        readonly deaths?: number;
         readonly kdr?: number;
         readonly wins?: number;
         readonly losses?: number;
@@ -14988,6 +15008,7 @@ export interface components {
           readonly permanent: boolean;
           readonly issuedAt: number;
           readonly validUntil: number;
+          readonly active: boolean;
         }[];
         /** @enum {number} */
         readonly voteStatus?: 0 | 1 | 2;
@@ -15089,8 +15110,8 @@ export interface components {
         /** @enum {string|null} */
         readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
         readonly tierColor: string | null;
-        readonly kills: number;
-        readonly deaths: number;
+        readonly kills?: number;
+        readonly deaths?: number;
         readonly kdr?: number;
         readonly wins?: number;
         readonly losses?: number;
@@ -15643,6 +15664,7 @@ export interface components {
           readonly permanent: boolean;
           readonly issuedAt: number;
           readonly validUntil: number;
+          readonly active: boolean;
         }[];
         /** @enum {number} */
         readonly voteStatus?: 0 | 1 | 2;
@@ -15744,8 +15766,8 @@ export interface components {
         /** @enum {string|null} */
         readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
         readonly tierColor: string | null;
-        readonly kills: number;
-        readonly deaths: number;
+        readonly kills?: number;
+        readonly deaths?: number;
         readonly kdr?: number;
         readonly wins?: number;
         readonly losses?: number;
@@ -16298,6 +16320,7 @@ export interface components {
           readonly permanent: boolean;
           readonly issuedAt: number;
           readonly validUntil: number;
+          readonly active: boolean;
         }[];
         /** @enum {number} */
         readonly voteStatus?: 0 | 1 | 2;
@@ -16545,8 +16568,8 @@ export interface components {
           /** @enum {string|null} */
           readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
           readonly tierColor: string | null;
-          readonly kills: number;
-          readonly deaths: number;
+          readonly kills?: number;
+          readonly deaths?: number;
           readonly kdr?: number;
           readonly wins?: number;
           readonly losses?: number;
@@ -17099,6 +17122,7 @@ export interface components {
             readonly permanent: boolean;
             readonly issuedAt: number;
             readonly validUntil: number;
+            readonly active: boolean;
           }[];
           /** @enum {number} */
           readonly voteStatus?: 0 | 1 | 2;
@@ -17200,8 +17224,8 @@ export interface components {
           /** @enum {string|null} */
           readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
           readonly tierColor: string | null;
-          readonly kills: number;
-          readonly deaths: number;
+          readonly kills?: number;
+          readonly deaths?: number;
           readonly kdr?: number;
           readonly wins?: number;
           readonly losses?: number;
@@ -17754,6 +17778,7 @@ export interface components {
             readonly permanent: boolean;
             readonly issuedAt: number;
             readonly validUntil: number;
+            readonly active: boolean;
           }[];
           /** @enum {number} */
           readonly voteStatus?: 0 | 1 | 2;
@@ -17855,8 +17880,8 @@ export interface components {
           /** @enum {string|null} */
           readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
           readonly tierColor: string | null;
-          readonly kills: number;
-          readonly deaths: number;
+          readonly kills?: number;
+          readonly deaths?: number;
           readonly kdr?: number;
           readonly wins?: number;
           readonly losses?: number;
@@ -18409,6 +18434,7 @@ export interface components {
             readonly permanent: boolean;
             readonly issuedAt: number;
             readonly validUntil: number;
+            readonly active: boolean;
           }[];
           /** @enum {number} */
           readonly voteStatus?: 0 | 1 | 2;
@@ -18602,8 +18628,8 @@ export interface components {
             /** @enum {string|null} */
             readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
             readonly tierColor: string | null;
-            readonly kills: number;
-            readonly deaths: number;
+            readonly kills?: number;
+            readonly deaths?: number;
             readonly kdr?: number;
             readonly wins?: number;
             readonly losses?: number;
@@ -19156,6 +19182,7 @@ export interface components {
               readonly permanent: boolean;
               readonly issuedAt: number;
               readonly validUntil: number;
+              readonly active: boolean;
             }[];
             /** @enum {number} */
             readonly voteStatus?: 0 | 1 | 2;
@@ -19257,8 +19284,8 @@ export interface components {
             /** @enum {string|null} */
             readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
             readonly tierColor: string | null;
-            readonly kills: number;
-            readonly deaths: number;
+            readonly kills?: number;
+            readonly deaths?: number;
             readonly kdr?: number;
             readonly wins?: number;
             readonly losses?: number;
@@ -19811,6 +19838,7 @@ export interface components {
               readonly permanent: boolean;
               readonly issuedAt: number;
               readonly validUntil: number;
+              readonly active: boolean;
             }[];
             /** @enum {number} */
             readonly voteStatus?: 0 | 1 | 2;
@@ -19912,8 +19940,8 @@ export interface components {
             /** @enum {string|null} */
             readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
             readonly tierColor: string | null;
-            readonly kills: number;
-            readonly deaths: number;
+            readonly kills?: number;
+            readonly deaths?: number;
             readonly kdr?: number;
             readonly wins?: number;
             readonly losses?: number;
@@ -20466,6 +20494,7 @@ export interface components {
               readonly permanent: boolean;
               readonly issuedAt: number;
               readonly validUntil: number;
+              readonly active: boolean;
             }[];
             /** @enum {number} */
             readonly voteStatus?: 0 | 1 | 2;
@@ -20600,8 +20629,8 @@ export interface components {
           /** @enum {string|null} */
           readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
           readonly tierColor: string | null;
-          readonly kills: number;
-          readonly deaths: number;
+          readonly kills?: number;
+          readonly deaths?: number;
           readonly kdr?: number;
           readonly wins?: number;
           readonly losses?: number;
@@ -21135,6 +21164,7 @@ export interface components {
             readonly permanent: boolean;
             readonly issuedAt: number;
             readonly validUntil: number;
+            readonly active: boolean;
           }[];
           /** @enum {number} */
           readonly voteStatus?: 0 | 1 | 2;
@@ -21236,8 +21266,8 @@ export interface components {
           /** @enum {string|null} */
           readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
           readonly tierColor: string | null;
-          readonly kills: number;
-          readonly deaths: number;
+          readonly kills?: number;
+          readonly deaths?: number;
           readonly kdr?: number;
           readonly wins?: number;
           readonly losses?: number;
@@ -21771,6 +21801,7 @@ export interface components {
             readonly permanent: boolean;
             readonly issuedAt: number;
             readonly validUntil: number;
+            readonly active: boolean;
           }[];
           /** @enum {number} */
           readonly voteStatus?: 0 | 1 | 2;
@@ -21872,8 +21903,8 @@ export interface components {
           /** @enum {string|null} */
           readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
           readonly tierColor: string | null;
-          readonly kills: number;
-          readonly deaths: number;
+          readonly kills?: number;
+          readonly deaths?: number;
           readonly kdr?: number;
           readonly wins?: number;
           readonly losses?: number;
@@ -22407,6 +22438,7 @@ export interface components {
             readonly permanent: boolean;
             readonly issuedAt: number;
             readonly validUntil: number;
+            readonly active: boolean;
           }[];
           /** @enum {number} */
           readonly voteStatus?: 0 | 1 | 2;
@@ -22526,8 +22558,8 @@ export interface components {
             /** @enum {string|null} */
             readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
             readonly tierColor: string | null;
-            readonly kills: number;
-            readonly deaths: number;
+            readonly kills?: number;
+            readonly deaths?: number;
             readonly kdr?: number;
             readonly wins?: number;
             readonly losses?: number;
@@ -23080,6 +23112,7 @@ export interface components {
               readonly permanent: boolean;
               readonly issuedAt: number;
               readonly validUntil: number;
+              readonly active: boolean;
             }[];
             /** @enum {number} */
             readonly voteStatus?: 0 | 1 | 2;
@@ -23181,8 +23214,8 @@ export interface components {
             /** @enum {string|null} */
             readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
             readonly tierColor: string | null;
-            readonly kills: number;
-            readonly deaths: number;
+            readonly kills?: number;
+            readonly deaths?: number;
             readonly kdr?: number;
             readonly wins?: number;
             readonly losses?: number;
@@ -23735,6 +23768,7 @@ export interface components {
               readonly permanent: boolean;
               readonly issuedAt: number;
               readonly validUntil: number;
+              readonly active: boolean;
             }[];
             /** @enum {number} */
             readonly voteStatus?: 0 | 1 | 2;
@@ -23836,8 +23870,8 @@ export interface components {
             /** @enum {string|null} */
             readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
             readonly tierColor: string | null;
-            readonly kills: number;
-            readonly deaths: number;
+            readonly kills?: number;
+            readonly deaths?: number;
             readonly kdr?: number;
             readonly wins?: number;
             readonly losses?: number;
@@ -24390,6 +24424,7 @@ export interface components {
               readonly permanent: boolean;
               readonly issuedAt: number;
               readonly validUntil: number;
+              readonly active: boolean;
             }[];
             /** @enum {number} */
             readonly voteStatus?: 0 | 1 | 2;
