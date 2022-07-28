@@ -1,3 +1,4 @@
+import type {Headers} from 'node-fetch';
 import {LEADERBOARD_COLUMNS_NESTED, POSSIBLE_SUBTYPES} from './constants.js';
 
 export interface RateLimitHeaders {

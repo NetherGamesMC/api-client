@@ -1,4 +1,5 @@
 import {createNanoEvents, Emitter, Unsubscribe} from 'nanoevents';
+import type {Request, Response} from 'node-fetch';
 import fetch from 'node-fetch';
 import QuickLRU from 'quick-lru';
 import {NetherGamesError, NetherGamesRateLimitError, NetherGamesRequestError} from './errors.js';
