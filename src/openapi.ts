@@ -432,7 +432,6 @@ export interface components {
             readonly banned?: boolean;
             readonly muted?: boolean;
             readonly guild: string | null;
-            readonly guildMaxSize: number | null;
             readonly guildData?:
               | (Partial<unknown> &
                   Partial<
@@ -589,7 +588,7 @@ export interface components {
               readonly serverType: string | null;
               readonly pretty: string;
             };
-            /** @description Deprecated, use `discordId` instead */
+            /** @deprecated Deprecated, use `discordId` instead */
             readonly discordData: {readonly [key: string]: unknown};
             readonly discordId: string | null;
             readonly extra?: {
@@ -1123,9 +1122,9 @@ export interface components {
               readonly TR: number;
               readonly Weekly: number;
             };
-            /** @description Deprecated, use `punishmentsNew` instead */
+            /** @deprecated Deprecated, use `punishmentsNew` instead */
             readonly punishments: readonly unknown[];
-            /** @description Deprecated, use `punishmentsNew` instead */
+            /** @deprecated Deprecated, use `punishmentsNew` instead */
             readonly warnings: readonly unknown[];
           };
           readonly officers: readonly {
@@ -1150,7 +1149,6 @@ export interface components {
             readonly banned?: boolean;
             readonly muted?: boolean;
             readonly guild: string | null;
-            readonly guildMaxSize: number | null;
             readonly guildData?:
               | (Partial<unknown> &
                   Partial<
@@ -1307,7 +1305,7 @@ export interface components {
               readonly serverType: string | null;
               readonly pretty: string;
             };
-            /** @description Deprecated, use `discordId` instead */
+            /** @deprecated Deprecated, use `discordId` instead */
             readonly discordData: {readonly [key: string]: unknown};
             readonly discordId: string | null;
             readonly extra?: {
@@ -1841,9 +1839,9 @@ export interface components {
               readonly TR: number;
               readonly Weekly: number;
             };
-            /** @description Deprecated, use `punishmentsNew` instead */
+            /** @deprecated Deprecated, use `punishmentsNew` instead */
             readonly punishments: readonly unknown[];
-            /** @description Deprecated, use `punishmentsNew` instead */
+            /** @deprecated Deprecated, use `punishmentsNew` instead */
             readonly warnings: readonly unknown[];
           }[];
           readonly members: readonly {
@@ -1868,7 +1866,6 @@ export interface components {
             readonly banned?: boolean;
             readonly muted?: boolean;
             readonly guild: string | null;
-            readonly guildMaxSize: number | null;
             readonly guildData?:
               | (Partial<unknown> &
                   Partial<
@@ -2025,7 +2022,7 @@ export interface components {
               readonly serverType: string | null;
               readonly pretty: string;
             };
-            /** @description Deprecated, use `discordId` instead */
+            /** @deprecated Deprecated, use `discordId` instead */
             readonly discordData: {readonly [key: string]: unknown};
             readonly discordId: string | null;
             readonly extra?: {
@@ -2559,9 +2556,9 @@ export interface components {
               readonly TR: number;
               readonly Weekly: number;
             };
-            /** @description Deprecated, use `punishmentsNew` instead */
+            /** @deprecated Deprecated, use `punishmentsNew` instead */
             readonly punishments: readonly unknown[];
-            /** @description Deprecated, use `punishmentsNew` instead */
+            /** @deprecated Deprecated, use `punishmentsNew` instead */
             readonly warnings: readonly unknown[];
           }[];
         }>;
@@ -2671,7 +2668,6 @@ export interface components {
           readonly banned?: boolean;
           readonly muted?: boolean;
           readonly guild: string | null;
-          readonly guildMaxSize: number | null;
           readonly guildData?:
             | (Partial<unknown> &
                 Partial<
@@ -2828,7 +2824,7 @@ export interface components {
             readonly serverType: string | null;
             readonly pretty: string;
           };
-          /** @description Deprecated, use `discordId` instead */
+          /** @deprecated Deprecated, use `discordId` instead */
           readonly discordData: {readonly [key: string]: unknown};
           readonly discordId: string | null;
           readonly extra?: {
@@ -3362,9 +3358,9 @@ export interface components {
             readonly TR: number;
             readonly Weekly: number;
           };
-          /** @description Deprecated, use `punishmentsNew` instead */
+          /** @deprecated Deprecated, use `punishmentsNew` instead */
           readonly punishments: readonly unknown[];
-          /** @description Deprecated, use `punishmentsNew` instead */
+          /** @deprecated Deprecated, use `punishmentsNew` instead */
           readonly warnings: readonly unknown[];
         };
       }>;
@@ -3415,7 +3411,6 @@ export interface components {
                       readonly banned?: boolean;
                       readonly muted?: boolean;
                       readonly guild: string | null;
-                      readonly guildMaxSize: number | null;
                       readonly guildData?:
                         | (Partial<unknown> &
                             Partial<
@@ -3572,7 +3567,7 @@ export interface components {
                         readonly serverType: string | null;
                         readonly pretty: string;
                       };
-                      /** @description Deprecated, use `discordId` instead */
+                      /** @deprecated Deprecated, use `discordId` instead */
                       readonly discordData: {readonly [key: string]: unknown};
                       readonly discordId: string | null;
                       readonly extra?: {
@@ -4106,9 +4101,9 @@ export interface components {
                         readonly TR: number;
                         readonly Weekly: number;
                       };
-                      /** @description Deprecated, use `punishmentsNew` instead */
+                      /** @deprecated Deprecated, use `punishmentsNew` instead */
                       readonly punishments: readonly unknown[];
-                      /** @description Deprecated, use `punishmentsNew` instead */
+                      /** @deprecated Deprecated, use `punishmentsNew` instead */
                       readonly warnings: readonly unknown[];
                     };
                     readonly officers: readonly {
@@ -4133,7 +4128,6 @@ export interface components {
                       readonly banned?: boolean;
                       readonly muted?: boolean;
                       readonly guild: string | null;
-                      readonly guildMaxSize: number | null;
                       readonly guildData?:
                         | (Partial<unknown> &
                             Partial<
@@ -4290,7 +4284,7 @@ export interface components {
                         readonly serverType: string | null;
                         readonly pretty: string;
                       };
-                      /** @description Deprecated, use `discordId` instead */
+                      /** @deprecated Deprecated, use `discordId` instead */
                       readonly discordData: {readonly [key: string]: unknown};
                       readonly discordId: string | null;
                       readonly extra?: {
@@ -4824,9 +4818,9 @@ export interface components {
                         readonly TR: number;
                         readonly Weekly: number;
                       };
-                      /** @description Deprecated, use `punishmentsNew` instead */
+                      /** @deprecated Deprecated, use `punishmentsNew` instead */
                       readonly punishments: readonly unknown[];
-                      /** @description Deprecated, use `punishmentsNew` instead */
+                      /** @deprecated Deprecated, use `punishmentsNew` instead */
                       readonly warnings: readonly unknown[];
                     }[];
                     readonly members: readonly {
@@ -4851,7 +4845,6 @@ export interface components {
                       readonly banned?: boolean;
                       readonly muted?: boolean;
                       readonly guild: string | null;
-                      readonly guildMaxSize: number | null;
                       readonly guildData?:
                         | (Partial<unknown> &
                             Partial<
@@ -5008,7 +5001,7 @@ export interface components {
                         readonly serverType: string | null;
                         readonly pretty: string;
                       };
-                      /** @description Deprecated, use `discordId` instead */
+                      /** @deprecated Deprecated, use `discordId` instead */
                       readonly discordData: {readonly [key: string]: unknown};
                       readonly discordId: string | null;
                       readonly extra?: {
@@ -5542,9 +5535,9 @@ export interface components {
                         readonly TR: number;
                         readonly Weekly: number;
                       };
-                      /** @description Deprecated, use `punishmentsNew` instead */
+                      /** @deprecated Deprecated, use `punishmentsNew` instead */
                       readonly punishments: readonly unknown[];
-                      /** @description Deprecated, use `punishmentsNew` instead */
+                      /** @deprecated Deprecated, use `punishmentsNew` instead */
                       readonly warnings: readonly unknown[];
                     }[];
                   }>
@@ -5670,7 +5663,6 @@ export interface components {
                   readonly banned?: boolean;
                   readonly muted?: boolean;
                   readonly guild: string | null;
-                  readonly guildMaxSize: number | null;
                   readonly guildData?:
                     | (Partial<unknown> &
                         Partial<
@@ -5827,7 +5819,7 @@ export interface components {
                     readonly serverType: string | null;
                     readonly pretty: string;
                   };
-                  /** @description Deprecated, use `discordId` instead */
+                  /** @deprecated Deprecated, use `discordId` instead */
                   readonly discordData: {readonly [key: string]: unknown};
                   readonly discordId: string | null;
                   readonly extra?: {
@@ -6361,9 +6353,9 @@ export interface components {
                     readonly TR: number;
                     readonly Weekly: number;
                   };
-                  /** @description Deprecated, use `punishmentsNew` instead */
+                  /** @deprecated Deprecated, use `punishmentsNew` instead */
                   readonly punishments: readonly unknown[];
-                  /** @description Deprecated, use `punishmentsNew` instead */
+                  /** @deprecated Deprecated, use `punishmentsNew` instead */
                   readonly warnings: readonly unknown[];
                 }>)
             | null;
@@ -6574,7 +6566,6 @@ export interface components {
       readonly banned?: boolean;
       readonly muted?: boolean;
       readonly guild: string | null;
-      readonly guildMaxSize: number | null;
       readonly guildData?:
         | (Partial<unknown> &
             Partial<
@@ -6731,7 +6722,7 @@ export interface components {
         readonly serverType: string | null;
         readonly pretty: string;
       };
-      /** @description Deprecated, use `discordId` instead */
+      /** @deprecated Deprecated, use `discordId` instead */
       readonly discordData: {readonly [key: string]: unknown};
       readonly discordId: string | null;
       readonly extra?: {
@@ -7284,9 +7275,9 @@ export interface components {
         readonly TR: number;
         readonly Weekly: number;
       };
-      /** @description Deprecated, use `punishmentsNew` instead */
+      /** @deprecated Deprecated, use `punishmentsNew` instead */
       readonly punishments: readonly unknown[];
-      /** @description Deprecated, use `punishmentsNew` instead */
+      /** @deprecated Deprecated, use `punishmentsNew` instead */
       readonly warnings: readonly unknown[];
     };
     readonly PlayerQuery: {
@@ -7929,7 +7920,6 @@ export interface components {
                 readonly banned?: boolean;
                 readonly muted?: boolean;
                 readonly guild: string | null;
-                readonly guildMaxSize: number | null;
                 readonly guildData?:
                   | (Partial<unknown> &
                       Partial<
@@ -8086,7 +8076,7 @@ export interface components {
                   readonly serverType: string | null;
                   readonly pretty: string;
                 };
-                /** @description Deprecated, use `discordId` instead */
+                /** @deprecated Deprecated, use `discordId` instead */
                 readonly discordData: {readonly [key: string]: unknown};
                 readonly discordId: string | null;
                 readonly extra?: {
@@ -8613,9 +8603,9 @@ export interface components {
                   readonly TR: number;
                   readonly Weekly: number;
                 };
-                /** @description Deprecated, use `punishmentsNew` instead */
+                /** @deprecated Deprecated, use `punishmentsNew` instead */
                 readonly punishments: readonly unknown[];
-                /** @description Deprecated, use `punishmentsNew` instead */
+                /** @deprecated Deprecated, use `punishmentsNew` instead */
                 readonly warnings: readonly unknown[];
               };
               readonly officers: readonly {
@@ -8640,7 +8630,6 @@ export interface components {
                 readonly banned?: boolean;
                 readonly muted?: boolean;
                 readonly guild: string | null;
-                readonly guildMaxSize: number | null;
                 readonly guildData?:
                   | (Partial<unknown> &
                       Partial<
@@ -8797,7 +8786,7 @@ export interface components {
                   readonly serverType: string | null;
                   readonly pretty: string;
                 };
-                /** @description Deprecated, use `discordId` instead */
+                /** @deprecated Deprecated, use `discordId` instead */
                 readonly discordData: {readonly [key: string]: unknown};
                 readonly discordId: string | null;
                 readonly extra?: {
@@ -9324,9 +9313,9 @@ export interface components {
                   readonly TR: number;
                   readonly Weekly: number;
                 };
-                /** @description Deprecated, use `punishmentsNew` instead */
+                /** @deprecated Deprecated, use `punishmentsNew` instead */
                 readonly punishments: readonly unknown[];
-                /** @description Deprecated, use `punishmentsNew` instead */
+                /** @deprecated Deprecated, use `punishmentsNew` instead */
                 readonly warnings: readonly unknown[];
               }[];
               readonly members: readonly {
@@ -9351,7 +9340,6 @@ export interface components {
                 readonly banned?: boolean;
                 readonly muted?: boolean;
                 readonly guild: string | null;
-                readonly guildMaxSize: number | null;
                 readonly guildData?:
                   | (Partial<unknown> &
                       Partial<
@@ -9508,7 +9496,7 @@ export interface components {
                   readonly serverType: string | null;
                   readonly pretty: string;
                 };
-                /** @description Deprecated, use `discordId` instead */
+                /** @deprecated Deprecated, use `discordId` instead */
                 readonly discordData: {readonly [key: string]: unknown};
                 readonly discordId: string | null;
                 readonly extra?: {
@@ -10035,9 +10023,9 @@ export interface components {
                   readonly TR: number;
                   readonly Weekly: number;
                 };
-                /** @description Deprecated, use `punishmentsNew` instead */
+                /** @deprecated Deprecated, use `punishmentsNew` instead */
                 readonly punishments: readonly unknown[];
-                /** @description Deprecated, use `punishmentsNew` instead */
+                /** @deprecated Deprecated, use `punishmentsNew` instead */
                 readonly warnings: readonly unknown[];
               }[];
             }>)
@@ -10565,7 +10553,6 @@ export interface components {
       readonly banned?: boolean;
       readonly muted?: boolean;
       readonly guild: string | null;
-      readonly guildMaxSize: number | null;
       readonly guildData?:
         | (Partial<unknown> &
             Partial<
@@ -10722,7 +10709,7 @@ export interface components {
         readonly serverType: string | null;
         readonly pretty: string;
       };
-      /** @description Deprecated, use `discordId` instead */
+      /** @deprecated Deprecated, use `discordId` instead */
       readonly discordData: {readonly [key: string]: unknown};
       readonly discordId: string | null;
       readonly extra?: {
@@ -11275,9 +11262,9 @@ export interface components {
         readonly TR: number;
         readonly Weekly: number;
       };
-      /** @description Deprecated, use `punishmentsNew` instead */
+      /** @deprecated Deprecated, use `punishmentsNew` instead */
       readonly punishments: readonly unknown[];
-      /** @description Deprecated, use `punishmentsNew` instead */
+      /** @deprecated Deprecated, use `punishmentsNew` instead */
       readonly warnings: readonly unknown[];
     }[];
     readonly PlayerBulkInput: {
@@ -11648,7 +11635,6 @@ export interface components {
         readonly banned?: boolean;
         readonly muted?: boolean;
         readonly guild: string | null;
-        readonly guildMaxSize: number | null;
         readonly guildData?:
           | (Partial<unknown> &
               Partial<
@@ -11768,7 +11754,7 @@ export interface components {
           readonly serverType: string | null;
           readonly pretty: string;
         };
-        /** @description Deprecated, use `discordId` instead */
+        /** @deprecated Deprecated, use `discordId` instead */
         readonly discordData: {readonly [key: string]: unknown};
         readonly discordId: string | null;
         readonly extra?: {
@@ -12321,9 +12307,9 @@ export interface components {
           readonly TR: number;
           readonly Weekly: number;
         };
-        /** @description Deprecated, use `punishmentsNew` instead */
+        /** @deprecated Deprecated, use `punishmentsNew` instead */
         readonly punishments: readonly unknown[];
-        /** @description Deprecated, use `punishmentsNew` instead */
+        /** @deprecated Deprecated, use `punishmentsNew` instead */
         readonly warnings: readonly unknown[];
       };
       readonly officers: readonly {
@@ -12348,7 +12334,6 @@ export interface components {
         readonly banned?: boolean;
         readonly muted?: boolean;
         readonly guild: string | null;
-        readonly guildMaxSize: number | null;
         readonly guildData?:
           | (Partial<unknown> &
               Partial<
@@ -12468,7 +12453,7 @@ export interface components {
           readonly serverType: string | null;
           readonly pretty: string;
         };
-        /** @description Deprecated, use `discordId` instead */
+        /** @deprecated Deprecated, use `discordId` instead */
         readonly discordData: {readonly [key: string]: unknown};
         readonly discordId: string | null;
         readonly extra?: {
@@ -13021,9 +13006,9 @@ export interface components {
           readonly TR: number;
           readonly Weekly: number;
         };
-        /** @description Deprecated, use `punishmentsNew` instead */
+        /** @deprecated Deprecated, use `punishmentsNew` instead */
         readonly punishments: readonly unknown[];
-        /** @description Deprecated, use `punishmentsNew` instead */
+        /** @deprecated Deprecated, use `punishmentsNew` instead */
         readonly warnings: readonly unknown[];
       }[];
       readonly members: readonly {
@@ -13048,7 +13033,6 @@ export interface components {
         readonly banned?: boolean;
         readonly muted?: boolean;
         readonly guild: string | null;
-        readonly guildMaxSize: number | null;
         readonly guildData?:
           | (Partial<unknown> &
               Partial<
@@ -13168,7 +13152,7 @@ export interface components {
           readonly serverType: string | null;
           readonly pretty: string;
         };
-        /** @description Deprecated, use `discordId` instead */
+        /** @deprecated Deprecated, use `discordId` instead */
         readonly discordData: {readonly [key: string]: unknown};
         readonly discordId: string | null;
         readonly extra?: {
@@ -13721,9 +13705,9 @@ export interface components {
           readonly TR: number;
           readonly Weekly: number;
         };
-        /** @description Deprecated, use `punishmentsNew` instead */
+        /** @deprecated Deprecated, use `punishmentsNew` instead */
         readonly punishments: readonly unknown[];
-        /** @description Deprecated, use `punishmentsNew` instead */
+        /** @deprecated Deprecated, use `punishmentsNew` instead */
         readonly warnings: readonly unknown[];
       }[];
     };
@@ -13894,7 +13878,6 @@ export interface components {
           readonly banned?: boolean;
           readonly muted?: boolean;
           readonly guild: string | null;
-          readonly guildMaxSize: number | null;
           readonly guildData?: (Partial<unknown> & Partial<unknown>) | null;
           readonly level: number;
           readonly levelColors: readonly (
@@ -13971,7 +13954,7 @@ export interface components {
             readonly serverType: string | null;
             readonly pretty: string;
           };
-          /** @description Deprecated, use `discordId` instead */
+          /** @deprecated Deprecated, use `discordId` instead */
           readonly discordData: {readonly [key: string]: unknown};
           readonly discordId: string | null;
           readonly extra?: {
@@ -14524,9 +14507,9 @@ export interface components {
             readonly TR: number;
             readonly Weekly: number;
           };
-          /** @description Deprecated, use `punishmentsNew` instead */
+          /** @deprecated Deprecated, use `punishmentsNew` instead */
           readonly punishments: readonly unknown[];
-          /** @description Deprecated, use `punishmentsNew` instead */
+          /** @deprecated Deprecated, use `punishmentsNew` instead */
           readonly warnings: readonly unknown[];
         };
         readonly officers: readonly {
@@ -14551,7 +14534,6 @@ export interface components {
           readonly banned?: boolean;
           readonly muted?: boolean;
           readonly guild: string | null;
-          readonly guildMaxSize: number | null;
           readonly guildData?: (Partial<unknown> & Partial<unknown>) | null;
           readonly level: number;
           readonly levelColors: readonly (
@@ -14628,7 +14610,7 @@ export interface components {
             readonly serverType: string | null;
             readonly pretty: string;
           };
-          /** @description Deprecated, use `discordId` instead */
+          /** @deprecated Deprecated, use `discordId` instead */
           readonly discordData: {readonly [key: string]: unknown};
           readonly discordId: string | null;
           readonly extra?: {
@@ -15181,9 +15163,9 @@ export interface components {
             readonly TR: number;
             readonly Weekly: number;
           };
-          /** @description Deprecated, use `punishmentsNew` instead */
+          /** @deprecated Deprecated, use `punishmentsNew` instead */
           readonly punishments: readonly unknown[];
-          /** @description Deprecated, use `punishmentsNew` instead */
+          /** @deprecated Deprecated, use `punishmentsNew` instead */
           readonly warnings: readonly unknown[];
         }[];
         readonly members: readonly {
@@ -15208,7 +15190,6 @@ export interface components {
           readonly banned?: boolean;
           readonly muted?: boolean;
           readonly guild: string | null;
-          readonly guildMaxSize: number | null;
           readonly guildData?: (Partial<unknown> & Partial<unknown>) | null;
           readonly level: number;
           readonly levelColors: readonly (
@@ -15285,7 +15266,7 @@ export interface components {
             readonly serverType: string | null;
             readonly pretty: string;
           };
-          /** @description Deprecated, use `discordId` instead */
+          /** @deprecated Deprecated, use `discordId` instead */
           readonly discordData: {readonly [key: string]: unknown};
           readonly discordId: string | null;
           readonly extra?: {
@@ -15838,9 +15819,9 @@ export interface components {
             readonly TR: number;
             readonly Weekly: number;
           };
-          /** @description Deprecated, use `punishmentsNew` instead */
+          /** @deprecated Deprecated, use `punishmentsNew` instead */
           readonly punishments: readonly unknown[];
-          /** @description Deprecated, use `punishmentsNew` instead */
+          /** @deprecated Deprecated, use `punishmentsNew` instead */
           readonly warnings: readonly unknown[];
         }[];
       }>;
@@ -15954,7 +15935,6 @@ export interface components {
           readonly banned?: boolean;
           readonly muted?: boolean;
           readonly guild: string | null;
-          readonly guildMaxSize: number | null;
           readonly guildData?: (Partial<unknown> & Partial<unknown>) | null;
           readonly level: number;
           readonly levelColors: readonly (
@@ -16031,7 +16011,7 @@ export interface components {
             readonly serverType: string | null;
             readonly pretty: string;
           };
-          /** @description Deprecated, use `discordId` instead */
+          /** @deprecated Deprecated, use `discordId` instead */
           readonly discordData: {readonly [key: string]: unknown};
           readonly discordId: string | null;
           readonly extra?: {
@@ -16584,9 +16564,9 @@ export interface components {
             readonly TR: number;
             readonly Weekly: number;
           };
-          /** @description Deprecated, use `punishmentsNew` instead */
+          /** @deprecated Deprecated, use `punishmentsNew` instead */
           readonly punishments: readonly unknown[];
-          /** @description Deprecated, use `punishmentsNew` instead */
+          /** @deprecated Deprecated, use `punishmentsNew` instead */
           readonly warnings: readonly unknown[];
         };
         readonly officers: readonly {
@@ -16611,7 +16591,6 @@ export interface components {
           readonly banned?: boolean;
           readonly muted?: boolean;
           readonly guild: string | null;
-          readonly guildMaxSize: number | null;
           readonly guildData?: (Partial<unknown> & Partial<unknown>) | null;
           readonly level: number;
           readonly levelColors: readonly (
@@ -16688,7 +16667,7 @@ export interface components {
             readonly serverType: string | null;
             readonly pretty: string;
           };
-          /** @description Deprecated, use `discordId` instead */
+          /** @deprecated Deprecated, use `discordId` instead */
           readonly discordData: {readonly [key: string]: unknown};
           readonly discordId: string | null;
           readonly extra?: {
@@ -17241,9 +17220,9 @@ export interface components {
             readonly TR: number;
             readonly Weekly: number;
           };
-          /** @description Deprecated, use `punishmentsNew` instead */
+          /** @deprecated Deprecated, use `punishmentsNew` instead */
           readonly punishments: readonly unknown[];
-          /** @description Deprecated, use `punishmentsNew` instead */
+          /** @deprecated Deprecated, use `punishmentsNew` instead */
           readonly warnings: readonly unknown[];
         }[];
         readonly members: readonly {
@@ -17268,7 +17247,6 @@ export interface components {
           readonly banned?: boolean;
           readonly muted?: boolean;
           readonly guild: string | null;
-          readonly guildMaxSize: number | null;
           readonly guildData?: (Partial<unknown> & Partial<unknown>) | null;
           readonly level: number;
           readonly levelColors: readonly (
@@ -17345,7 +17323,7 @@ export interface components {
             readonly serverType: string | null;
             readonly pretty: string;
           };
-          /** @description Deprecated, use `discordId` instead */
+          /** @deprecated Deprecated, use `discordId` instead */
           readonly discordData: {readonly [key: string]: unknown};
           readonly discordId: string | null;
           readonly extra?: {
@@ -17898,9 +17876,9 @@ export interface components {
             readonly TR: number;
             readonly Weekly: number;
           };
-          /** @description Deprecated, use `punishmentsNew` instead */
+          /** @deprecated Deprecated, use `punishmentsNew` instead */
           readonly punishments: readonly unknown[];
-          /** @description Deprecated, use `punishmentsNew` instead */
+          /** @deprecated Deprecated, use `punishmentsNew` instead */
           readonly warnings: readonly unknown[];
         }[];
       }>)[];
@@ -17957,7 +17935,6 @@ export interface components {
           readonly banned?: boolean;
           readonly muted?: boolean;
           readonly guild: string | null;
-          readonly guildMaxSize: number | null;
           readonly guildData?:
             | (Partial<unknown> &
                 Partial<
@@ -18114,7 +18091,7 @@ export interface components {
             readonly serverType: string | null;
             readonly pretty: string;
           };
-          /** @description Deprecated, use `discordId` instead */
+          /** @deprecated Deprecated, use `discordId` instead */
           readonly discordData: {readonly [key: string]: unknown};
           readonly discordId: string | null;
           readonly extra?: {
@@ -18648,9 +18625,9 @@ export interface components {
             readonly TR: number;
             readonly Weekly: number;
           };
-          /** @description Deprecated, use `punishmentsNew` instead */
+          /** @deprecated Deprecated, use `punishmentsNew` instead */
           readonly punishments: readonly unknown[];
-          /** @description Deprecated, use `punishmentsNew` instead */
+          /** @deprecated Deprecated, use `punishmentsNew` instead */
           readonly warnings: readonly unknown[];
         };
         readonly officers: readonly {
@@ -18675,7 +18652,6 @@ export interface components {
           readonly banned?: boolean;
           readonly muted?: boolean;
           readonly guild: string | null;
-          readonly guildMaxSize: number | null;
           readonly guildData?:
             | (Partial<unknown> &
                 Partial<
@@ -18832,7 +18808,7 @@ export interface components {
             readonly serverType: string | null;
             readonly pretty: string;
           };
-          /** @description Deprecated, use `discordId` instead */
+          /** @deprecated Deprecated, use `discordId` instead */
           readonly discordData: {readonly [key: string]: unknown};
           readonly discordId: string | null;
           readonly extra?: {
@@ -19366,9 +19342,9 @@ export interface components {
             readonly TR: number;
             readonly Weekly: number;
           };
-          /** @description Deprecated, use `punishmentsNew` instead */
+          /** @deprecated Deprecated, use `punishmentsNew` instead */
           readonly punishments: readonly unknown[];
-          /** @description Deprecated, use `punishmentsNew` instead */
+          /** @deprecated Deprecated, use `punishmentsNew` instead */
           readonly warnings: readonly unknown[];
         }[];
         readonly members: readonly {
@@ -19393,7 +19369,6 @@ export interface components {
           readonly banned?: boolean;
           readonly muted?: boolean;
           readonly guild: string | null;
-          readonly guildMaxSize: number | null;
           readonly guildData?:
             | (Partial<unknown> &
                 Partial<
@@ -19550,7 +19525,7 @@ export interface components {
             readonly serverType: string | null;
             readonly pretty: string;
           };
-          /** @description Deprecated, use `discordId` instead */
+          /** @deprecated Deprecated, use `discordId` instead */
           readonly discordData: {readonly [key: string]: unknown};
           readonly discordId: string | null;
           readonly extra?: {
@@ -20084,9 +20059,9 @@ export interface components {
             readonly TR: number;
             readonly Weekly: number;
           };
-          /** @description Deprecated, use `punishmentsNew` instead */
+          /** @deprecated Deprecated, use `punishmentsNew` instead */
           readonly punishments: readonly unknown[];
-          /** @description Deprecated, use `punishmentsNew` instead */
+          /** @deprecated Deprecated, use `punishmentsNew` instead */
           readonly warnings: readonly unknown[];
         }[];
       }>;
@@ -20126,7 +20101,6 @@ export interface components {
           readonly banned?: boolean;
           readonly muted?: boolean;
           readonly guild: string | null;
-          readonly guildMaxSize: number | null;
           readonly guildData?:
             | (Partial<unknown> &
                 Partial<
@@ -20283,7 +20257,7 @@ export interface components {
             readonly serverType: string | null;
             readonly pretty: string;
           };
-          /** @description Deprecated, use `discordId` instead */
+          /** @deprecated Deprecated, use `discordId` instead */
           readonly discordData: {readonly [key: string]: unknown};
           readonly discordId: string | null;
           readonly extra?: {
@@ -20817,9 +20791,9 @@ export interface components {
             readonly TR: number;
             readonly Weekly: number;
           };
-          /** @description Deprecated, use `punishmentsNew` instead */
+          /** @deprecated Deprecated, use `punishmentsNew` instead */
           readonly punishments: readonly unknown[];
-          /** @description Deprecated, use `punishmentsNew` instead */
+          /** @deprecated Deprecated, use `punishmentsNew` instead */
           readonly warnings: readonly unknown[];
         };
         readonly officers: readonly {
@@ -20844,7 +20818,6 @@ export interface components {
           readonly banned?: boolean;
           readonly muted?: boolean;
           readonly guild: string | null;
-          readonly guildMaxSize: number | null;
           readonly guildData?:
             | (Partial<unknown> &
                 Partial<
@@ -21001,7 +20974,7 @@ export interface components {
             readonly serverType: string | null;
             readonly pretty: string;
           };
-          /** @description Deprecated, use `discordId` instead */
+          /** @deprecated Deprecated, use `discordId` instead */
           readonly discordData: {readonly [key: string]: unknown};
           readonly discordId: string | null;
           readonly extra?: {
@@ -21535,9 +21508,9 @@ export interface components {
             readonly TR: number;
             readonly Weekly: number;
           };
-          /** @description Deprecated, use `punishmentsNew` instead */
+          /** @deprecated Deprecated, use `punishmentsNew` instead */
           readonly punishments: readonly unknown[];
-          /** @description Deprecated, use `punishmentsNew` instead */
+          /** @deprecated Deprecated, use `punishmentsNew` instead */
           readonly warnings: readonly unknown[];
         }[];
         readonly members: readonly {
@@ -21562,7 +21535,6 @@ export interface components {
           readonly banned?: boolean;
           readonly muted?: boolean;
           readonly guild: string | null;
-          readonly guildMaxSize: number | null;
           readonly guildData?:
             | (Partial<unknown> &
                 Partial<
@@ -21719,7 +21691,7 @@ export interface components {
             readonly serverType: string | null;
             readonly pretty: string;
           };
-          /** @description Deprecated, use `discordId` instead */
+          /** @deprecated Deprecated, use `discordId` instead */
           readonly discordData: {readonly [key: string]: unknown};
           readonly discordId: string | null;
           readonly extra?: {
@@ -22253,9 +22225,9 @@ export interface components {
             readonly TR: number;
             readonly Weekly: number;
           };
-          /** @description Deprecated, use `punishmentsNew` instead */
+          /** @deprecated Deprecated, use `punishmentsNew` instead */
           readonly punishments: readonly unknown[];
-          /** @description Deprecated, use `punishmentsNew` instead */
+          /** @deprecated Deprecated, use `punishmentsNew` instead */
           readonly warnings: readonly unknown[];
         }[];
       }>)[];
