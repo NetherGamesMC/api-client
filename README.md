@@ -65,43 +65,43 @@ All resource methods return a Promise, so you must await them.
 
 #### .announcements
 
-Returns an [`AnnouncementsResource`](#announcements).
+Returns an [`AnnouncementsResource`](#announcements-1).
 
 #### .factions
 
-Returns a [`FactionsResource`](#factions).
+Returns a [`FactionsResource`](#factions-1).
 
 #### .guilds
 
-Returns a [`GuildsResource`](#guilds).
+Returns a [`GuildsResource`](#guilds-1).
 
 #### .leaderboard
 
-Returns a [`LeaderboardResource`](#leaderboard).
+Returns a [`LeaderboardResource`](#leaderboard-1).
 
 #### .players
 
-Returns a [`PlayersResource`](#players).
+Returns a [`PlayersResource`](#players-1).
 
 #### .search
 
-Returns a [`SearchResource`](#search).
+Returns a [`SearchResource`](#search-1).
 
 #### .servers
 
-Returns a [`ServersResource`](#servers).
+Returns a [`ServersResource`](#servers-1).
 
 #### .status
 
-Returns a [`StatusResource`](#status).
+Returns a [`StatusResource`](#status-1).
 
 #### .stream
 
-Returns a [`StreamResource`](#stream).
+Returns a [`StreamResource`](#stream-1).
 
 #### .updates
 
-Returns an [`UpdatesResource`](#updates).
+Returns an [`UpdatesResource`](#updates-1).
 
 #### .lastBuildId
 
