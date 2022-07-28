@@ -317,7 +317,7 @@ export class StreamResource extends NetherGamesResource {
   }
 }
 
-export class UpdateResource extends NetherGamesResource {
+export class UpdatesResource extends NetherGamesResource {
   async list(params?: UpdateQuery): Promise<Update[]> {
     return this._client._getMany<Update>('/v1/updates', {params});
   }

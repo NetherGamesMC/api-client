@@ -13,6 +13,7 @@ import {
   ServersResource,
   StatusResource,
   StreamResource,
+  UpdatesResource,
 } from './resources.js';
 import type {Faction, Guild, Player, ServerMeta} from './types.js';
 import {parseCacheHeaders, parseRateLimitHeaders, RateLimitHeaders} from './utils.js';
@@ -54,6 +55,7 @@ export class NetherGamesClient {
   readonly servers: ServersResource;
   readonly status: StatusResource;
   readonly stream: StreamResource;
+  readonly updates: UpdatesResource;
 
   lastBuildId: string | null;
   lastRateLimit: RateLimitHeaders | null;
@@ -63,7 +65,7 @@ export class NetherGamesClient {
     this.#apiKey = apiKey;
     this.#baseUrl = options.baseUrl ?? 'https://api.ngmc.co';
     this.#cache = new QuickLRU({maxSize: options.cacheMaxSize ?? 1000});
-    this.#userAgent = options.userAgent ?? 'NetherGames-API-Client/2.1.2';
+    this.#userAgent = options.userAgent ?? 'NetherGames-API-Client/2.1.3';
     this.#emitter = createNanoEvents<Events>();
     if (options.userAgentAppendix != null) {
       this.#userAgent += ` (${options.userAgentAppendix})`;
@@ -81,6 +83,7 @@ export class NetherGamesClient {
     this.servers = new ServersResource(this);
     this.status = new StatusResource(this);
     this.stream = new StreamResource(this);
+    this.updates = new UpdatesResource(this);
   }
 
   on<E extends keyof Events>(event: E, callback: Events[E]): Unsubscribe {
