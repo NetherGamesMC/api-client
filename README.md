@@ -41,27 +41,27 @@ API host to use when sending requests.
 Type: `number`\
 Default: `1000`
 
-Maximum amount of LRU objects to hold in memory.
+The maximum amount of LRU objects to hold in memory.
 
 #### userAgent
 
 Type: `string`\
-Default: `NetherGames-API-Client/2.1.1`
+Default: `NetherGames-API-Client/2.1.2`
 
-User agent to use when sending requests.
+User-agent to use when sending requests.
 
 #### userAgentAppendix
 
 _Optional_\
 Type: `string`
 
-Append an identifier to user agent in parentheses.\
-This allows us to better identify requests in our error monitoring tools.\
-Example: `Casper's Discord Bot` => `NetherGames-API-Client/2.1.1 (Casper's Discord Bot)`
+Append an identifier to the user agent in parentheses.\
+A unique identifier allows us to identify requests in our error monitoring tools.\
+Example: `Casper's Discord Bot` => `NetherGames-API-Client/2.1.2 (Casper's Discord Bot)`
 
 ### Instance
 
-All resource methods return a Promise, so they must be `await`ed.
+All resource methods return a Promise, so you must await them.
 
 #### .announcements
 
@@ -99,19 +99,23 @@ Returns a [`StatusResource`](#status).
 
 Returns a [`StreamResource`](#stream).
 
+#### .updates
+
+Returns an [`UpdatesResource`](#updates).
+
 #### .lastBuildId
 
 Type: `string`\
 Default: `null`
 
-Stores the last seen API build ID from the last request.
+The build ID returned from the previous request.
 
 #### .lastRateLimit
 
 Type: `object`\
 Default: `null`
 
-Stores the last seen API rate limit object from the last request.
+The rate limit returned from the previous request.
 
 #### .lastServerMeta
 
@@ -122,7 +126,7 @@ Stores the last retrieved [server metadata](#meta-docs) object. Useful for cachi
 
 #### .on(event, callback)
 
-Event emitter for `error`, `request` and `response`. Useful for debugging.
+Event emitter for `error`, `request`, and `response`. Useful for debugging.
 
 ### Announcements
 
@@ -134,11 +138,15 @@ List announcements for a specified type and an optional limit.
 
 #### .retrieve(faction) [Docs](https://docs.nethergames.org/#operation/Get%20Faction)
 
-Retrieve a faction by name, or null if not found.
+Retrieve a faction by name or null if not found.
 
 #### .search(faction[]) [Docs](https://docs.nethergames.org/#operation/Bulk%20Get%20Factions)
 
 Find many (1-100) factions at once.
+
+#### .list(params?) [Docs](https://docs.nethergames.org/#operation/Get%20Factions)
+
+A paginated list of factions.
 
 ### Guilds
 
@@ -149,6 +157,10 @@ Retrieve a guild by name, or null if not found.
 #### .search(guild[], params?) [Docs](https://docs.nethergames.org/#operation/Bulk%20Get%20Guilds)
 
 Find many (1-100) guilds at once.
+
+#### .list(params?) [Docs](https://docs.nethergames.org/#operation/Get%20Guilds)
+
+A paginated list of guilds.
 
 ### Leaderboard
 
@@ -164,11 +176,15 @@ Find many (1-100) leaderboards at once.
 
 #### .retrieve(player) [Docs](https://docs.nethergames.org/#operation/Get%20Player)
 
-Retrieve a player by name, or null if not found.
+Retrieve a player by name or null if not found.
 
 #### .search(player[], params?) [Docs](https://docs.nethergames.org/#operation/Bulk%20Get%20Players)
 
 Find many (1-100) players at once.
+
+#### .list(params?) [Docs](https://docs.nethergames.org/#operation/Get%20Players)
+
+A paginated list of players.
 
 #### .leaderboard(player) [Docs](https://docs.nethergames.org/#operation/Get%20Player%20Leaderboard)
 
@@ -184,7 +200,11 @@ Retrieve a player avatar object.
 
 #### .skin(player) [Docs](https://docs.nethergames.org/#operation/Get%20Player%20Skin)
 
-Retrieve a player skin object.
+Retrieve a player's skin object.
+
+#### .statsHistory(player, params?) [Docs](https://docs.nethergames.org/#operation/Get%20Player%20Stats%20History)
+
+Retrieve hourly player stats history. API key required.
 
 #### .xuidMapping(xuidOrUsername[]) [Docs](https://docs.nethergames.org/#operation/Get%20XUID%20Mapping)
 
@@ -194,7 +214,7 @@ Get a key-value mapping of XUIDs to usernames or vice versa.
 
 #### .simple(name) [Docs](https://docs.nethergames.org/#operation/Get%20Search%20Results)
 
-Performs a "simple" search, returning exact matches for `player`, `guild` and `faction`.
+Performs a "simple" search, returning exact matches for `player`, `guild`, and `faction`.
 
 #### .fulltext(query, params?) [Docs](https://docs.nethergames.org/#operation/Get%20Full-Text%20Search%20Results)
 
@@ -212,7 +232,7 @@ Retrieve server metadata.
 
 #### .ping(ip = 'play.nethergames.org', port = 19132) [Docs](https://docs.nethergames.org/#operation/Get%20Server%20Ping)
 
-Retrieve server data for any `*.nethergames.org` IP, or null if not found.
+Retrieve server data for any `*.nethergames.org` IP or null if not found.
 
 ### Status
 
@@ -225,3 +245,9 @@ Retrieve service status.
 #### .retrieve() [Docs](https://docs.nethergames.org/#operation/Get%20Stream%20Status)
 
 Retrieve YouTube streaming status.
+
+### Updates
+
+#### .list(params?) [Docs](https://docs.nethergames.org/#operation/Get%20Updates)
+
+List server updates.
