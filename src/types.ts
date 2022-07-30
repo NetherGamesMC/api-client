@@ -7,11 +7,19 @@ export type AnnouncementMessage = components['schemas']['AnnouncementsResponseMe
 export type AnnouncementTitle = components['schemas']['AnnouncementsResponseTitle'];
 export type AnnouncementQuery = components['schemas']['AnnouncementsQuery'];
 
-export type Faction = components['schemas']['FactionResponse'];
+interface ExpandedMembers {
+  leader: Player;
+  officers: Player[];
+  members: Player[];
+}
+
+export type Faction = FactionDefault | FactionExpanded;
+export type FactionDefault = components['schemas']['FactionResponse'];
+export type FactionExpanded = Omit<FactionDefault, 'leader' | 'officers' | 'members'> & ExpandedMembers;
 
 export type Guild = GuildDefault | GuildExpanded;
-export type GuildDefault = components['schemas']['GuildResponseDefault'];
-export type GuildExpanded = components['schemas']['GuildResponseExpanded'];
+export type GuildDefault = components['schemas']['GuildResponse'];
+export type GuildExpanded = Omit<GuildDefault, 'leader' | 'officers' | 'members'> & ExpandedMembers;
 export type GuildQuery = components['schemas']['GuildQuery'];
 
 export type LeaderboardCredits = components['schemas']['LeaderboardResponseCredits'];

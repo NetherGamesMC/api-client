@@ -136,11 +136,11 @@ List announcements for a specified type and an optional limit.
 
 ### Factions
 
-#### .retrieve(faction) [Docs](https://docs.nethergames.org/#operation/Get%20Faction)
+#### .retrieve(faction, params?) [Docs](https://docs.nethergames.org/#operation/Get%20Faction)
 
 Retrieve a faction by name or null if not found.
 
-#### .search(faction[]) [Docs](https://docs.nethergames.org/#operation/Bulk%20Get%20Factions)
+#### .search(faction[], params?) [Docs](https://docs.nethergames.org/#operation/Bulk%20Get%20Factions)
 
 Find many (1-100) factions at once.
 
@@ -150,7 +150,7 @@ A paginated list of factions.
 
 ### Guilds
 
-#### .retrieve(guild) [Docs](https://docs.nethergames.org/#operation/Get%20Guild)
+#### .retrieve(guild, params?) [Docs](https://docs.nethergames.org/#operation/Get%20Guild)
 
 Retrieve a guild by name, or null if not found.
 
@@ -174,7 +174,7 @@ Find many (1-100) leaderboards at once.
 
 ### Players
 
-#### .retrieve(player) [Docs](https://docs.nethergames.org/#operation/Get%20Player)
+#### .retrieve(player, params?) [Docs](https://docs.nethergames.org/#operation/Get%20Player)
 
 Retrieve a player by name or null if not found.
 

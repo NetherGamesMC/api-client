@@ -7,8 +7,8 @@ import type {
   AnnouncementMessage,
   AnnouncementQuery,
   AnnouncementTitle,
-  Faction,
-  Guild,
+  FactionDefault,
+  FactionExpanded,
   GuildDefault,
   GuildExpanded,
   GuildQuery,
@@ -63,13 +63,15 @@ export class AnnouncementsResource extends NetherGamesResource {
   }
 }
 
+type FactionReturn<T extends GuildQuery> = T['expand'] extends true ? FactionExpanded : FactionDefault;
+
 export class FactionsResource extends NetherGamesResource {
-  async retrieve(faction: string): Promise<Faction | null> {
-    return this._client._getOne<Faction>(`/v1/factions/${faction}`);
+  async retrieve<T extends GuildQuery>(faction: string, params?: T): Promise<FactionReturn<T> | null> {
+    return this._client._getOne<FactionReturn<T>>(`/v1/factions/${faction}`, params);
   }
 
-  async search(factions: string[], params?: GuildQuery): Promise<Faction[]> {
-    return this._client._getBulk<Faction>('factions', factions, params);
+  async search<T extends GuildQuery>(factions: string[], params?: GuildQuery): Promise<FactionReturn<T>[]> {
+    return this._client._getBulk<FactionReturn<T>>('factions', factions, params);
   }
 
   async list(params?: RelayPaginationQueryFaction): Promise<RelayPaginationFaction> {
@@ -85,8 +87,8 @@ export class GuildsResource extends NetherGamesResource {
     return this._client._getOne<GuildReturn<T>>(`/v1/guilds/${guild}`, params);
   }
 
-  async search(guilds: string[], params?: GuildQuery): Promise<Guild[]> {
-    return this._client._getBulk<Guild>('guilds', guilds, params);
+  async search<T extends GuildQuery>(guilds: string[], params?: GuildQuery): Promise<GuildReturn<T>[]> {
+    return this._client._getBulk<GuildReturn<T>>('guilds', guilds, params);
   }
 
   async list(params?: RelayPaginationQueryGuild): Promise<RelayPaginationGuild> {
@@ -120,7 +122,6 @@ const LEADERBOARD_MAPPINGS = {
     'bow_kills',
     'classic_kills',
     'classic_wins',
-    'infection_kills',
     'infection_wins',
     'kills',
     'knife_kills',
