@@ -29,7 +29,6 @@ export const LEADERBOARD_COLUMNS = [
   'mm_bow_kills',
   'mm_classic_kills',
   'mm_classic_wins',
-  'mm_infection_kills',
   'mm_infection_wins',
   'mm_kills',
   'mm_knife_kills',
