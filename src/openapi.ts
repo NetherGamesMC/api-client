@@ -1115,8 +1115,6 @@ export interface components {
           readonly leaderboard?: boolean;
           readonly punishmentsNew?: readonly {
             readonly xuid: string;
-            /** @description True if the XUID does not match the main account. */
-            readonly alt: boolean;
             readonly reason: string;
             /** @enum {string} */
             readonly type: 'BAN' | 'MUTE';
@@ -1124,6 +1122,8 @@ export interface components {
             readonly issuedAt: number;
             readonly validUntil: number;
             readonly active: boolean;
+            /** @description The xuids of the players affected by this punishment. */
+            readonly affectedXuids: readonly string[];
           }[];
           /** @enum {number} */
           readonly voteStatus?: 0 | 1 | 2;
@@ -1889,8 +1889,6 @@ export interface components {
                   readonly leaderboard?: boolean;
                   readonly punishmentsNew?: readonly {
                     readonly xuid: string;
-                    /** @description True if the XUID does not match the main account. */
-                    readonly alt: boolean;
                     readonly reason: string;
                     /** @enum {string} */
                     readonly type: 'BAN' | 'MUTE';
@@ -1898,6 +1896,8 @@ export interface components {
                     readonly issuedAt: number;
                     readonly validUntil: number;
                     readonly active: boolean;
+                    /** @description The xuids of the players affected by this punishment. */
+                    readonly affectedXuids: readonly string[];
                   }[];
                   /** @enum {number} */
                   readonly voteStatus?: 0 | 1 | 2;
@@ -2766,8 +2766,6 @@ export interface components {
       readonly leaderboard?: boolean;
       readonly punishmentsNew?: readonly {
         readonly xuid: string;
-        /** @description True if the XUID does not match the main account. */
-        readonly alt: boolean;
         readonly reason: string;
         /** @enum {string} */
         readonly type: 'BAN' | 'MUTE';
@@ -2775,6 +2773,8 @@ export interface components {
         readonly issuedAt: number;
         readonly validUntil: number;
         readonly active: boolean;
+        /** @description The xuids of the players affected by this punishment. */
+        readonly affectedXuids: readonly string[];
       }[];
       /** @enum {number} */
       readonly voteStatus?: 0 | 1 | 2;
@@ -2817,8 +2817,6 @@ export interface components {
     };
     readonly PlayerPunishmentResponse: {
       readonly xuid: string;
-      /** @description True if the XUID does not match the main account. */
-      readonly alt: boolean;
       readonly reason: string;
       /** @enum {string} */
       readonly type: 'BAN' | 'MUTE';
@@ -2826,6 +2824,8 @@ export interface components {
       readonly issuedAt: number;
       readonly validUntil: number;
       readonly active: boolean;
+      /** @description The xuids of the players affected by this punishment. */
+      readonly affectedXuids: readonly string[];
     };
     readonly PlayerLeaderboardResponse: {
       readonly player: string;
@@ -4608,8 +4608,6 @@ export interface components {
       readonly leaderboard?: boolean;
       readonly punishmentsNew?: readonly {
         readonly xuid: string;
-        /** @description True if the XUID does not match the main account. */
-        readonly alt: boolean;
         readonly reason: string;
         /** @enum {string} */
         readonly type: 'BAN' | 'MUTE';
@@ -4617,6 +4615,8 @@ export interface components {
         readonly issuedAt: number;
         readonly validUntil: number;
         readonly active: boolean;
+        /** @description The xuids of the players affected by this punishment. */
+        readonly affectedXuids: readonly string[];
       }[];
       /** @enum {number} */
       readonly voteStatus?: 0 | 1 | 2;
