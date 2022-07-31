@@ -72,7 +72,7 @@ export const LEADERBOARD_COLUMNS_NESTED = {
   mm: {
     total: {kills: {}, wins: {}, bow_kills: {}, knife_kills: {}, throw_knife_kills: {}},
     classic: {kills: {}, wins: {}},
-    infection: {kills: {}, wins: {}},
+    infection: {wins: {}},
   },
   sw: {
     total: {kills: {}, wins: {}},
