@@ -1114,6 +1114,9 @@ export interface components {
           /** @default false */
           readonly leaderboard?: boolean;
           readonly punishmentsNew?: readonly {
+            readonly xuid: string;
+            /** @description True if the XUID does not match the main account. */
+            readonly alt: boolean;
             readonly reason: string;
             /** @enum {string} */
             readonly type: 'BAN' | 'MUTE';
@@ -1885,6 +1888,9 @@ export interface components {
                   /** @default false */
                   readonly leaderboard?: boolean;
                   readonly punishmentsNew?: readonly {
+                    readonly xuid: string;
+                    /** @description True if the XUID does not match the main account. */
+                    readonly alt: boolean;
                     readonly reason: string;
                     /** @enum {string} */
                     readonly type: 'BAN' | 'MUTE';
@@ -2759,6 +2765,9 @@ export interface components {
       /** @default false */
       readonly leaderboard?: boolean;
       readonly punishmentsNew?: readonly {
+        readonly xuid: string;
+        /** @description True if the XUID does not match the main account. */
+        readonly alt: boolean;
         readonly reason: string;
         /** @enum {string} */
         readonly type: 'BAN' | 'MUTE';
@@ -2807,6 +2816,9 @@ export interface components {
       readonly withVoteStatus?: boolean;
     };
     readonly PlayerPunishmentResponse: {
+      readonly xuid: string;
+      /** @description True if the XUID does not match the main account. */
+      readonly alt: boolean;
       readonly reason: string;
       /** @enum {string} */
       readonly type: 'BAN' | 'MUTE';
@@ -4595,6 +4607,9 @@ export interface components {
       /** @default false */
       readonly leaderboard?: boolean;
       readonly punishmentsNew?: readonly {
+        readonly xuid: string;
+        /** @description True if the XUID does not match the main account. */
+        readonly alt: boolean;
         readonly reason: string;
         /** @enum {string} */
         readonly type: 'BAN' | 'MUTE';
