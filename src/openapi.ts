@@ -1114,12 +1114,69 @@ export interface components {
           /** @default false */
           readonly leaderboard?: boolean;
           readonly punishmentsNew?: readonly {
+            /** @description The punishment `reasonName` and `reasonCategory` joined together. */
             readonly reason: string;
             /** @enum {string} */
+            readonly reasonName:
+              | 'Abusing Report System'
+              | 'Advertisement Build'
+              | 'Advertising Hack Clients'
+              | 'Advertising Servers'
+              | 'Advertising Websites & Services'
+              | 'Anticheat Automatic Detection'
+              | 'Auto Clicker'
+              | 'Bug Exploiting'
+              | 'Chargeback'
+              | 'Credit Farming'
+              | 'Cross Teaming'
+              | 'Disrespect'
+              | 'Explicit Build'
+              | 'Fly'
+              | 'Inappropriate Conduct'
+              | 'Inappropriate Faction/Guild Name'
+              | 'Inappropriate Language'
+              | 'Inappropriate Nickname/Pet Name'
+              | 'Inappropriate Skin'
+              | 'Inappropriate Username'
+              | 'Jump'
+              | 'Key Mapper'
+              | 'Kill Farming'
+              | 'KillAura'
+              | 'Night Vision'
+              | 'Obstruction of Justice'
+              | 'Other'
+              | 'Player Tracer'
+              | 'Punishment Evading'
+              | 'Spamming'
+              | 'Speed'
+              | 'Staff Disrespect'
+              | 'Team Trolling/Killing'
+              | 'Teaming in Solo Mode'
+              | 'Teleport Trapping'
+              | 'Threat to Community'
+              | 'Violent Build'
+              | 'Xray';
+            /** @enum {string} */
+            readonly reasonCategory:
+              | 'Abusive Communication'
+              | 'Advertising'
+              | 'Enforcement'
+              | 'Factions & Guilds'
+              | 'Hacking'
+              | 'Inappropriate Behaviour'
+              | 'Inappropriate Build'
+              | 'Other'
+              | 'Prohibited Addon/Mod'
+              | 'Teaming';
+            /** @enum {string} */
             readonly type: 'BAN' | 'MUTE';
+            /** @description If true, the punishment does not expire. */
             readonly permanent: boolean;
+            /** @description For migration punishments, this value is 0. */
             readonly issuedAt: number;
+            /** @description If `permanent` is true, this value is -1. */
             readonly validUntil: number;
+            /** @description Whether this punishment is currently active. */
             readonly active: boolean;
             /** @description The XUIDs affected by this punishment. */
             readonly affectedXuids: readonly string[];
@@ -1894,12 +1951,69 @@ export interface components {
                   /** @default false */
                   readonly leaderboard?: boolean;
                   readonly punishmentsNew?: readonly {
+                    /** @description The punishment `reasonName` and `reasonCategory` joined together. */
                     readonly reason: string;
                     /** @enum {string} */
+                    readonly reasonName:
+                      | 'Abusing Report System'
+                      | 'Advertisement Build'
+                      | 'Advertising Hack Clients'
+                      | 'Advertising Servers'
+                      | 'Advertising Websites & Services'
+                      | 'Anticheat Automatic Detection'
+                      | 'Auto Clicker'
+                      | 'Bug Exploiting'
+                      | 'Chargeback'
+                      | 'Credit Farming'
+                      | 'Cross Teaming'
+                      | 'Disrespect'
+                      | 'Explicit Build'
+                      | 'Fly'
+                      | 'Inappropriate Conduct'
+                      | 'Inappropriate Faction/Guild Name'
+                      | 'Inappropriate Language'
+                      | 'Inappropriate Nickname/Pet Name'
+                      | 'Inappropriate Skin'
+                      | 'Inappropriate Username'
+                      | 'Jump'
+                      | 'Key Mapper'
+                      | 'Kill Farming'
+                      | 'KillAura'
+                      | 'Night Vision'
+                      | 'Obstruction of Justice'
+                      | 'Other'
+                      | 'Player Tracer'
+                      | 'Punishment Evading'
+                      | 'Spamming'
+                      | 'Speed'
+                      | 'Staff Disrespect'
+                      | 'Team Trolling/Killing'
+                      | 'Teaming in Solo Mode'
+                      | 'Teleport Trapping'
+                      | 'Threat to Community'
+                      | 'Violent Build'
+                      | 'Xray';
+                    /** @enum {string} */
+                    readonly reasonCategory:
+                      | 'Abusive Communication'
+                      | 'Advertising'
+                      | 'Enforcement'
+                      | 'Factions & Guilds'
+                      | 'Hacking'
+                      | 'Inappropriate Behaviour'
+                      | 'Inappropriate Build'
+                      | 'Other'
+                      | 'Prohibited Addon/Mod'
+                      | 'Teaming';
+                    /** @enum {string} */
                     readonly type: 'BAN' | 'MUTE';
+                    /** @description If true, the punishment does not expire. */
                     readonly permanent: boolean;
+                    /** @description For migration punishments, this value is 0. */
                     readonly issuedAt: number;
+                    /** @description If `permanent` is true, this value is -1. */
                     readonly validUntil: number;
+                    /** @description Whether this punishment is currently active. */
                     readonly active: boolean;
                     /** @description The XUIDs affected by this punishment. */
                     readonly affectedXuids: readonly string[];
@@ -2754,12 +2868,69 @@ export interface components {
       /** @default false */
       readonly leaderboard?: boolean;
       readonly punishmentsNew?: readonly {
+        /** @description The punishment `reasonName` and `reasonCategory` joined together. */
         readonly reason: string;
         /** @enum {string} */
+        readonly reasonName:
+          | 'Abusing Report System'
+          | 'Advertisement Build'
+          | 'Advertising Hack Clients'
+          | 'Advertising Servers'
+          | 'Advertising Websites & Services'
+          | 'Anticheat Automatic Detection'
+          | 'Auto Clicker'
+          | 'Bug Exploiting'
+          | 'Chargeback'
+          | 'Credit Farming'
+          | 'Cross Teaming'
+          | 'Disrespect'
+          | 'Explicit Build'
+          | 'Fly'
+          | 'Inappropriate Conduct'
+          | 'Inappropriate Faction/Guild Name'
+          | 'Inappropriate Language'
+          | 'Inappropriate Nickname/Pet Name'
+          | 'Inappropriate Skin'
+          | 'Inappropriate Username'
+          | 'Jump'
+          | 'Key Mapper'
+          | 'Kill Farming'
+          | 'KillAura'
+          | 'Night Vision'
+          | 'Obstruction of Justice'
+          | 'Other'
+          | 'Player Tracer'
+          | 'Punishment Evading'
+          | 'Spamming'
+          | 'Speed'
+          | 'Staff Disrespect'
+          | 'Team Trolling/Killing'
+          | 'Teaming in Solo Mode'
+          | 'Teleport Trapping'
+          | 'Threat to Community'
+          | 'Violent Build'
+          | 'Xray';
+        /** @enum {string} */
+        readonly reasonCategory:
+          | 'Abusive Communication'
+          | 'Advertising'
+          | 'Enforcement'
+          | 'Factions & Guilds'
+          | 'Hacking'
+          | 'Inappropriate Behaviour'
+          | 'Inappropriate Build'
+          | 'Other'
+          | 'Prohibited Addon/Mod'
+          | 'Teaming';
+        /** @enum {string} */
         readonly type: 'BAN' | 'MUTE';
+        /** @description If true, the punishment does not expire. */
         readonly permanent: boolean;
+        /** @description For migration punishments, this value is 0. */
         readonly issuedAt: number;
+        /** @description If `permanent` is true, this value is -1. */
         readonly validUntil: number;
+        /** @description Whether this punishment is currently active. */
         readonly active: boolean;
         /** @description The XUIDs affected by this punishment. */
         readonly affectedXuids: readonly string[];
@@ -2813,12 +2984,69 @@ export interface components {
       readonly withVoteStatus?: boolean;
     };
     readonly PlayerPunishmentResponse: {
+      /** @description The punishment `reasonName` and `reasonCategory` joined together. */
       readonly reason: string;
       /** @enum {string} */
+      readonly reasonName:
+        | 'Abusing Report System'
+        | 'Advertisement Build'
+        | 'Advertising Hack Clients'
+        | 'Advertising Servers'
+        | 'Advertising Websites & Services'
+        | 'Anticheat Automatic Detection'
+        | 'Auto Clicker'
+        | 'Bug Exploiting'
+        | 'Chargeback'
+        | 'Credit Farming'
+        | 'Cross Teaming'
+        | 'Disrespect'
+        | 'Explicit Build'
+        | 'Fly'
+        | 'Inappropriate Conduct'
+        | 'Inappropriate Faction/Guild Name'
+        | 'Inappropriate Language'
+        | 'Inappropriate Nickname/Pet Name'
+        | 'Inappropriate Skin'
+        | 'Inappropriate Username'
+        | 'Jump'
+        | 'Key Mapper'
+        | 'Kill Farming'
+        | 'KillAura'
+        | 'Night Vision'
+        | 'Obstruction of Justice'
+        | 'Other'
+        | 'Player Tracer'
+        | 'Punishment Evading'
+        | 'Spamming'
+        | 'Speed'
+        | 'Staff Disrespect'
+        | 'Team Trolling/Killing'
+        | 'Teaming in Solo Mode'
+        | 'Teleport Trapping'
+        | 'Threat to Community'
+        | 'Violent Build'
+        | 'Xray';
+      /** @enum {string} */
+      readonly reasonCategory:
+        | 'Abusive Communication'
+        | 'Advertising'
+        | 'Enforcement'
+        | 'Factions & Guilds'
+        | 'Hacking'
+        | 'Inappropriate Behaviour'
+        | 'Inappropriate Build'
+        | 'Other'
+        | 'Prohibited Addon/Mod'
+        | 'Teaming';
+      /** @enum {string} */
       readonly type: 'BAN' | 'MUTE';
+      /** @description If true, the punishment does not expire. */
       readonly permanent: boolean;
+      /** @description For migration punishments, this value is 0. */
       readonly issuedAt: number;
+      /** @description If `permanent` is true, this value is -1. */
       readonly validUntil: number;
+      /** @description Whether this punishment is currently active. */
       readonly active: boolean;
       /** @description The XUIDs affected by this punishment. */
       readonly affectedXuids: readonly string[];
@@ -4605,12 +4833,69 @@ export interface components {
       /** @default false */
       readonly leaderboard?: boolean;
       readonly punishmentsNew?: readonly {
+        /** @description The punishment `reasonName` and `reasonCategory` joined together. */
         readonly reason: string;
         /** @enum {string} */
+        readonly reasonName:
+          | 'Abusing Report System'
+          | 'Advertisement Build'
+          | 'Advertising Hack Clients'
+          | 'Advertising Servers'
+          | 'Advertising Websites & Services'
+          | 'Anticheat Automatic Detection'
+          | 'Auto Clicker'
+          | 'Bug Exploiting'
+          | 'Chargeback'
+          | 'Credit Farming'
+          | 'Cross Teaming'
+          | 'Disrespect'
+          | 'Explicit Build'
+          | 'Fly'
+          | 'Inappropriate Conduct'
+          | 'Inappropriate Faction/Guild Name'
+          | 'Inappropriate Language'
+          | 'Inappropriate Nickname/Pet Name'
+          | 'Inappropriate Skin'
+          | 'Inappropriate Username'
+          | 'Jump'
+          | 'Key Mapper'
+          | 'Kill Farming'
+          | 'KillAura'
+          | 'Night Vision'
+          | 'Obstruction of Justice'
+          | 'Other'
+          | 'Player Tracer'
+          | 'Punishment Evading'
+          | 'Spamming'
+          | 'Speed'
+          | 'Staff Disrespect'
+          | 'Team Trolling/Killing'
+          | 'Teaming in Solo Mode'
+          | 'Teleport Trapping'
+          | 'Threat to Community'
+          | 'Violent Build'
+          | 'Xray';
+        /** @enum {string} */
+        readonly reasonCategory:
+          | 'Abusive Communication'
+          | 'Advertising'
+          | 'Enforcement'
+          | 'Factions & Guilds'
+          | 'Hacking'
+          | 'Inappropriate Behaviour'
+          | 'Inappropriate Build'
+          | 'Other'
+          | 'Prohibited Addon/Mod'
+          | 'Teaming';
+        /** @enum {string} */
         readonly type: 'BAN' | 'MUTE';
+        /** @description If true, the punishment does not expire. */
         readonly permanent: boolean;
+        /** @description For migration punishments, this value is 0. */
         readonly issuedAt: number;
+        /** @description If `permanent` is true, this value is -1. */
         readonly validUntil: number;
+        /** @description Whether this punishment is currently active. */
         readonly active: boolean;
         /** @description The XUIDs affected by this punishment. */
         readonly affectedXuids: readonly string[];

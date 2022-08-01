@@ -194,6 +194,7 @@ export class LeaderboardResource extends NetherGamesResource {
 
 interface PlayerParams {
   expand?: boolean;
+  expandPunishments?: boolean;
   include?: Array<'faction' | 'guild' | 'online' | 'punishments' | 'skin' | 'stats' | 'voteStatus'>;
 }
 
