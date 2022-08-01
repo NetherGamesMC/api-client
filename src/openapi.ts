@@ -1180,8 +1180,8 @@ export interface components {
             readonly active: boolean;
             /** @description The XUIDs affected by this punishment. */
             readonly affectedXuids: readonly string[];
-            /** @description Expanded player objects for `affectedXuids` (requires `expandPunishments`). */
-            readonly affectedPlayers?: readonly unknown[];
+            /** @description The corresponding player names to `affectedXuids`. */
+            readonly affectedPlayers: readonly string[];
           }[];
           /** @enum {number} */
           readonly voteStatus?: 0 | 1 | 2;
@@ -2017,8 +2017,8 @@ export interface components {
                     readonly active: boolean;
                     /** @description The XUIDs affected by this punishment. */
                     readonly affectedXuids: readonly string[];
-                    /** @description Expanded player objects for `affectedXuids` (requires `expandPunishments`). */
-                    readonly affectedPlayers?: readonly unknown[];
+                    /** @description The corresponding player names to `affectedXuids`. */
+                    readonly affectedPlayers: readonly string[];
                   }[];
                   /** @enum {number} */
                   readonly voteStatus?: 0 | 1 | 2;
@@ -2052,8 +2052,6 @@ export interface components {
     readonly SearchFullTextQuery: {
       /** @default false */
       readonly expand?: boolean;
-      /** @default false */
-      readonly expandPunishments?: boolean;
       /** @default true */
       readonly withFactionData?: boolean;
       /** @default false */
@@ -2934,8 +2932,8 @@ export interface components {
         readonly active: boolean;
         /** @description The XUIDs affected by this punishment. */
         readonly affectedXuids: readonly string[];
-        /** @description Expanded player objects for `affectedXuids` (requires `expandPunishments`). */
-        readonly affectedPlayers?: readonly unknown[];
+        /** @description The corresponding player names to `affectedXuids`. */
+        readonly affectedPlayers: readonly string[];
       }[];
       /** @enum {number} */
       readonly voteStatus?: 0 | 1 | 2;
@@ -2966,8 +2964,6 @@ export interface components {
     readonly PlayerQuery: {
       /** @default false */
       readonly expand?: boolean;
-      /** @default false */
-      readonly expandPunishments?: boolean;
       /** @default true */
       readonly withFactionData?: boolean;
       /** @default false */
@@ -3050,8 +3046,8 @@ export interface components {
       readonly active: boolean;
       /** @description The XUIDs affected by this punishment. */
       readonly affectedXuids: readonly string[];
-      /** @description Expanded player objects for `affectedXuids` (requires `expandPunishments`). */
-      readonly affectedPlayers?: readonly unknown[];
+      /** @description The corresponding player names to `affectedXuids`. */
+      readonly affectedPlayers: readonly string[];
     };
     readonly PlayerLeaderboardResponse: {
       readonly player: string;
@@ -4899,8 +4895,8 @@ export interface components {
         readonly active: boolean;
         /** @description The XUIDs affected by this punishment. */
         readonly affectedXuids: readonly string[];
-        /** @description Expanded player objects for `affectedXuids` (requires `expandPunishments`). */
-        readonly affectedPlayers?: readonly unknown[];
+        /** @description The corresponding player names to `affectedXuids`. */
+        readonly affectedPlayers: readonly string[];
       }[];
       /** @enum {number} */
       readonly voteStatus?: 0 | 1 | 2;
@@ -4931,8 +4927,6 @@ export interface components {
     readonly PlayerBulkInput: {
       /** @default false */
       readonly expand?: boolean;
-      /** @default false */
-      readonly expandPunishments?: boolean;
       /** @default true */
       readonly withFactionData?: boolean;
       /** @default false */
@@ -5281,8 +5275,6 @@ export interface components {
     readonly GuildQuery: {
       /** @default false */
       readonly expand?: boolean;
-      /** @default false */
-      readonly expandPunishments?: boolean;
       /** @default true */
       readonly withOnline?: boolean;
       /** @default false */
@@ -5335,8 +5327,6 @@ export interface components {
     readonly GuildBulkInput: {
       /** @default false */
       readonly expand?: boolean;
-      /** @default false */
-      readonly expandPunishments?: boolean;
       /** @default true */
       readonly withOnline?: boolean;
       /** @default false */
@@ -5480,7 +5470,6 @@ export interface operations {
     readonly parameters: {
       readonly query: {
         readonly expand?: boolean;
-        readonly expandPunishments?: boolean;
         readonly withOnline?: boolean;
         readonly withPunishments?: boolean;
         readonly withSkinData?: boolean;
@@ -5536,7 +5525,6 @@ export interface operations {
     readonly parameters: {
       readonly query: {
         readonly expand?: boolean;
-        readonly expandPunishments?: boolean;
         readonly withOnline?: boolean;
         readonly withPunishments?: boolean;
         readonly withSkinData?: boolean;
@@ -5688,7 +5676,6 @@ export interface operations {
     readonly parameters: {
       readonly query: {
         readonly expand?: boolean;
-        readonly expandPunishments?: boolean;
         readonly withFactionData?: boolean;
         readonly withGuildData?: boolean;
         readonly withOnline?: boolean;
@@ -5833,7 +5820,6 @@ export interface operations {
     readonly parameters: {
       readonly query: {
         readonly expand?: boolean;
-        readonly expandPunishments?: boolean;
         readonly withFactionData?: boolean;
         readonly withGuildData?: boolean;
         readonly withOnline?: boolean;
