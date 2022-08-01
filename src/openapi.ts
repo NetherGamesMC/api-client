@@ -1140,6 +1140,7 @@ export interface components {
             readonly SW: number;
             readonly TB: number;
             readonly TR: number;
+            readonly UHC: number;
             /**
              * @description Deprecated
              * @default 0
@@ -1919,6 +1920,7 @@ export interface components {
                     readonly SW: number;
                     readonly TB: number;
                     readonly TR: number;
+                    readonly UHC: number;
                     /**
                      * @description Deprecated
                      * @default 0
@@ -2036,6 +2038,7 @@ export interface components {
       readonly SW: number;
       readonly TB: number;
       readonly TR: number;
+      readonly UHC: number;
       /**
        * @description Deprecated
        * @default 0
@@ -2777,6 +2780,7 @@ export interface components {
         readonly SW: number;
         readonly TB: number;
         readonly TR: number;
+        readonly UHC: number;
         /**
          * @description Deprecated
          * @default 0
@@ -4627,6 +4631,7 @@ export interface components {
         readonly SW: number;
         readonly TB: number;
         readonly TR: number;
+        readonly UHC: number;
         /**
          * @description Deprecated
          * @default 0
