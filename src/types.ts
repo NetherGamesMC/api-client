@@ -53,6 +53,7 @@ export type PlayerQuery = components['schemas']['PlayerQuery'];
 export type PlayerSkin = components['schemas']['PlayerSkinResponseData'];
 export type PlayerStats = components['schemas']['PlayerStatsResponse'];
 export type PlayerStatsQuery = components['schemas']['PlayerStatsQuery'];
+export type PlayerPunishment = components['schemas']['PlayerPunishmentResponse'];
 
 export type SearchResponse = components['schemas']['SearchResponse'];
 export type SearchFullTextResponse = components['schemas']['SearchFullTextResponse'];

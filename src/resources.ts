@@ -27,6 +27,7 @@ import type {
   LeaderboardXP,
   Player,
   PlayerLeaderboard,
+  PlayerPunishment,
   PlayerQuery,
   PlayerSkin,
   PlayerStats,
@@ -271,6 +272,10 @@ export class PlayersResource extends NetherGamesResource {
       method: 'POST',
       body: values,
     });
+  }
+
+  async punishments(player: string): Promise<PlayerPunishment[]> {
+    return this._client._getMany<PlayerPunishment>(`/v1/players/${player}/punishments`);
   }
 }
 
