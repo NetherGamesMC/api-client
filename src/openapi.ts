@@ -138,137 +138,149 @@ export interface components {
       readonly motds: readonly string[];
     };
     readonly ServerResponse: {
-      readonly mm?: {
-        readonly max?: number;
-        readonly count?: number;
-        readonly infection?: {
-          readonly max?: number;
-          readonly count?: number;
+      readonly mm: {
+        readonly max: number;
+        readonly count: number;
+        readonly infection: {
+          readonly max: number;
+          readonly count: number;
         };
-        readonly classic?: {
-          readonly max?: number;
-          readonly count?: number;
-        };
-      };
-      readonly sw?: {
-        readonly max?: number;
-        readonly count?: number;
-        readonly doubles?: {
-          readonly max?: number;
-          readonly count?: number;
-        };
-        readonly solo?: {
-          readonly max?: number;
-          readonly count?: number;
-        };
-        readonly onevone?: {
-          readonly max?: number;
-          readonly count?: number;
-        };
-        readonly twovtwo?: {
-          readonly max?: number;
-          readonly count?: number;
+        readonly classic: {
+          readonly max: number;
+          readonly count: number;
         };
       };
-      readonly ms?: {
-        readonly max?: number;
-        readonly count?: number;
-      };
-      readonly replay?: {
-        readonly max?: number;
-        readonly count?: number;
-      };
-      readonly duels?: {
-        readonly max?: number;
-        readonly count?: number;
-        readonly doubles?: {
-          readonly max?: number;
-          readonly count?: number;
+      readonly sw: {
+        readonly max: number;
+        readonly count: number;
+        readonly doubles: {
+          readonly max: number;
+          readonly count: number;
         };
-        readonly solo?: {
-          readonly max?: number;
-          readonly count?: number;
+        readonly solo: {
+          readonly max: number;
+          readonly count: number;
         };
-      };
-      readonly creative?: {
-        readonly max?: number;
-        readonly count?: number;
-      };
-      readonly tb?: {
-        readonly max?: number;
-        readonly count?: number;
-        readonly doubles?: {
-          readonly max?: number;
-          readonly count?: number;
+        readonly onevone: {
+          readonly max: number;
+          readonly count: number;
         };
-        readonly solo?: {
-          readonly max?: number;
-          readonly count?: number;
+        readonly twovtwo: {
+          readonly max: number;
+          readonly count: number;
         };
       };
-      readonly cq?: {
-        readonly max?: number;
-        readonly count?: number;
-        readonly mega?: {
-          readonly max?: number;
-          readonly count?: number;
+      readonly ms: {
+        readonly max: number;
+        readonly count: number;
+      };
+      readonly replay: {
+        readonly max: number;
+        readonly count: number;
+      };
+      readonly duels: {
+        readonly max: number;
+        readonly count: number;
+        readonly doubles: {
+          readonly max: number;
+          readonly count: number;
+        };
+        readonly solo: {
+          readonly max: number;
+          readonly count: number;
         };
       };
-      readonly sb?: {
-        readonly max?: number;
-        readonly count?: number;
-        readonly skyland?: {
-          readonly max?: number;
-          readonly count?: number;
+      readonly tb: {
+        readonly max: number;
+        readonly count: number;
+        readonly doubles: {
+          readonly max: number;
+          readonly count: number;
         };
-        readonly agora?: {
-          readonly max?: number;
-          readonly count?: number;
-        };
-      };
-      readonly sc?: {
-        readonly max?: number;
-        readonly count?: number;
-      };
-      readonly uhc?: {
-        readonly max?: number;
-        readonly count?: number;
-        readonly doubles?: {
-          readonly max?: number;
-          readonly count?: number;
-        };
-        readonly solo?: {
-          readonly max?: number;
-          readonly count?: number;
+        readonly solo: {
+          readonly max: number;
+          readonly count: number;
         };
       };
-      readonly lobby?: {
-        readonly max?: number;
-        readonly count?: number;
-      };
-      readonly sg?: {
-        readonly max?: number;
-        readonly count?: number;
-      };
-      readonly bw?: {
-        readonly max?: number;
-        readonly count?: number;
-        readonly doubles?: {
-          readonly max?: number;
-          readonly count?: number;
-        };
-        readonly squads?: {
-          readonly max?: number;
-          readonly count?: number;
-        };
-        readonly solo?: {
-          readonly max?: number;
-          readonly count?: number;
+      readonly cq: {
+        readonly max: number;
+        readonly count: number;
+        readonly mega: {
+          readonly max: number;
+          readonly count: number;
         };
       };
-      readonly setup?: {
-        readonly max?: number;
-        readonly count?: number;
+      readonly creative: {
+        readonly max: number;
+        readonly count: number;
+      };
+      readonly sb: {
+        readonly max: number;
+        readonly count: number;
+        readonly skyland: {
+          readonly max: number;
+          readonly count: number;
+        };
+        readonly agora: {
+          readonly max: number;
+          readonly count: number;
+        };
+      };
+      readonly factions: {
+        readonly max: number;
+        readonly count: number;
+        readonly farlands: {
+          readonly max: number;
+          readonly count: number;
+        };
+        readonly badlands: {
+          readonly max: number;
+          readonly count: number;
+        };
+      };
+      readonly sc: {
+        readonly max: number;
+        readonly count: number;
+      };
+      readonly uhc: {
+        readonly max: number;
+        readonly count: number;
+        readonly doubles: {
+          readonly max: number;
+          readonly count: number;
+        };
+        readonly solo: {
+          readonly max: number;
+          readonly count: number;
+        };
+      };
+      readonly lobby: {
+        readonly max: number;
+        readonly count: number;
+      };
+      readonly sg: {
+        readonly max: number;
+        readonly count: number;
+      };
+      readonly bw: {
+        readonly max: number;
+        readonly count: number;
+        readonly doubles: {
+          readonly max: number;
+          readonly count: number;
+        };
+        readonly squads: {
+          readonly max: number;
+          readonly count: number;
+        };
+        readonly solo: {
+          readonly max: number;
+          readonly count: number;
+        };
+      };
+      readonly setup: {
+        readonly max: number;
+        readonly count: number;
       };
     };
     readonly ServerPingResponse: {
