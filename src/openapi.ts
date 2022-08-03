@@ -2202,7 +2202,8 @@ export interface components {
        * @enum {number}
        */
       readonly version?: 1;
-      readonly periodStart?: number;
+      readonly periodStart: number;
+      /** @default 1659529511 */
       readonly periodEnd?: number;
     };
     readonly PlayerSkinResponseData: {
@@ -5886,7 +5887,7 @@ export interface operations {
     readonly parameters: {
       readonly query: {
         readonly version?: 1;
-        readonly periodStart?: number;
+        readonly periodStart: number;
         readonly periodEnd?: number;
       };
     };
