@@ -2204,7 +2204,7 @@ export interface components {
       readonly version?: 1;
       readonly periodStart: number;
       /** @default -1 */
-      readonly periodEnd?: number;
+      readonly periodEnd?: Partial<number> & Partial<-1>;
     };
     readonly PlayerSkinResponseData: {
       readonly skin: boolean;
@@ -5888,7 +5888,7 @@ export interface operations {
       readonly query: {
         readonly version?: 1;
         readonly periodStart: number;
-        readonly periodEnd?: number;
+        readonly periodEnd?: Partial<number> & Partial<-1>;
       };
     };
     readonly responses: {
