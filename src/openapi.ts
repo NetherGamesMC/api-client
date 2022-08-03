@@ -59,8 +59,8 @@ export interface paths {
     readonly get: operations['Get Player Skin'];
   };
   readonly '/v1/players/{player}/stats': {
-    /** API key required. */
-    readonly get: operations['Get Player Stats History'];
+    /** This feature is experimental. API key required. */
+    readonly get: operations['Get Player Stats History (BETA)'];
   };
   readonly '/v1/search': {
     readonly get: operations['Get Search Results'];
@@ -2174,7 +2174,6 @@ export interface components {
     };
     readonly PlayerStatsResponse: {
       readonly [key: string]: {
-        readonly version: number;
         readonly credits: number;
         readonly deaths: number;
         readonly kills: number;
@@ -5882,8 +5881,8 @@ export interface operations {
       };
     };
   };
-  /** API key required. */
-  readonly 'Get Player Stats History': {
+  /** This feature is experimental. API key required. */
+  readonly 'Get Player Stats History (BETA)': {
     readonly parameters: {
       readonly query: {
         readonly version?: 1;
