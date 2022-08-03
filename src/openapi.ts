@@ -2203,7 +2203,7 @@ export interface components {
        */
       readonly version?: 1;
       readonly periodStart: number;
-      /** @default 1659529511 */
+      /** @default -1 */
       readonly periodEnd?: number;
     };
     readonly PlayerSkinResponseData: {
