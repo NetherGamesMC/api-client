@@ -1129,6 +1129,7 @@ export interface components {
           /** @default false */
           readonly leaderboard?: boolean;
           readonly punishmentsNew?: readonly {
+            readonly id: string;
             /** @description The punishment `reasonName` and `reasonCategory` joined together. */
             readonly reason: string;
             /** @enum {string} */
@@ -1197,6 +1198,7 @@ export interface components {
             readonly affectedXuids: readonly string[];
             /** @description The corresponding player names to `affectedXuids`. */
             readonly affectedPlayers: readonly string[];
+            readonly alt: boolean;
           }[];
           /** @enum {number} */
           readonly voteStatus?: 0 | 1 | 2;
@@ -1966,6 +1968,7 @@ export interface components {
                   /** @default false */
                   readonly leaderboard?: boolean;
                   readonly punishmentsNew?: readonly {
+                    readonly id: string;
                     /** @description The punishment `reasonName` and `reasonCategory` joined together. */
                     readonly reason: string;
                     /** @enum {string} */
@@ -2034,6 +2037,7 @@ export interface components {
                     readonly affectedXuids: readonly string[];
                     /** @description The corresponding player names to `affectedXuids`. */
                     readonly affectedPlayers: readonly string[];
+                    readonly alt: boolean;
                   }[];
                   /** @enum {number} */
                   readonly voteStatus?: 0 | 1 | 2;
@@ -2881,6 +2885,7 @@ export interface components {
       /** @default false */
       readonly leaderboard?: boolean;
       readonly punishmentsNew?: readonly {
+        readonly id: string;
         /** @description The punishment `reasonName` and `reasonCategory` joined together. */
         readonly reason: string;
         /** @enum {string} */
@@ -2949,6 +2954,7 @@ export interface components {
         readonly affectedXuids: readonly string[];
         /** @description The corresponding player names to `affectedXuids`. */
         readonly affectedPlayers: readonly string[];
+        readonly alt: boolean;
       }[];
       /** @enum {number} */
       readonly voteStatus?: 0 | 1 | 2;
@@ -2998,6 +3004,7 @@ export interface components {
       readonly xuid: string;
       readonly name: string;
       readonly punishments: readonly {
+        readonly id: string;
         /** @description The punishment `reasonName` and `reasonCategory` joined together. */
         readonly reason: string;
         /** @enum {string} */
@@ -3066,9 +3073,11 @@ export interface components {
         readonly affectedXuids: readonly string[];
         /** @description The corresponding player names to `affectedXuids`. */
         readonly affectedPlayers: readonly string[];
+        readonly alt: boolean;
       }[];
     };
     readonly PlayerPunishmentResponse: {
+      readonly id: string;
       /** @description The punishment `reasonName` and `reasonCategory` joined together. */
       readonly reason: string;
       /** @enum {string} */
@@ -3137,6 +3146,7 @@ export interface components {
       readonly affectedXuids: readonly string[];
       /** @description The corresponding player names to `affectedXuids`. */
       readonly affectedPlayers: readonly string[];
+      readonly alt: boolean;
     };
     readonly PlayerLeaderboardResponse: {
       readonly player: string;
@@ -4918,6 +4928,7 @@ export interface components {
       /** @default false */
       readonly leaderboard?: boolean;
       readonly punishmentsNew?: readonly {
+        readonly id: string;
         /** @description The punishment `reasonName` and `reasonCategory` joined together. */
         readonly reason: string;
         /** @enum {string} */
@@ -4986,6 +4997,7 @@ export interface components {
         readonly affectedXuids: readonly string[];
         /** @description The corresponding player names to `affectedXuids`. */
         readonly affectedPlayers: readonly string[];
+        readonly alt: boolean;
       }[];
       /** @enum {number} */
       readonly voteStatus?: 0 | 1 | 2;

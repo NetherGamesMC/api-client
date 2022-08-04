@@ -1,6 +1,6 @@
 {
   "name": "@nethergames/api",
-  "version": "2.2.8",
+  "version": "2.2.9",
   "description": "Fully typed client for the NetherGames API.",
   "keywords": [
     "nethergames",
