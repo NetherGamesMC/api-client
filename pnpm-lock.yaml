@@ -5,18 +5,18 @@ specifiers:
   '@sindresorhus/tsconfig': ^3.0.1
   ava: ^4.3.1
   nanoevents: ^7.0.1
-  node-fetch: ^3.2.9
+  node-fetch: ^3.2.10
   openapi-typescript: ^5.4.1
   prettier: ^2.7.1
   quick-lru: ^6.1.1
-  type-fest: ^2.17.0
+  type-fest: ^2.18.0
   typescript: ^4.7.4
 
 dependencies:
   nanoevents: 7.0.1
-  node-fetch: 3.2.9
+  node-fetch: 3.2.10
   quick-lru: 6.1.1
-  type-fest: 2.17.0
+  type-fest: 2.18.0
 
 devDependencies:
   '@ava/typescript': 3.0.1
@@ -857,8 +857,8 @@ packages:
     engines: {node: '>=10.5.0'}
     dev: false
 
-  /node-fetch/3.2.9:
-    resolution: {integrity: sha512-/2lI+DBecVvVm9tDhjziTVjo2wmTsSxSk58saUYP0P/fRJ3xxtfMDY24+CKTkfm0Dlhyn3CSXNL0SoRiCZ8Rzg==}
+  /node-fetch/3.2.10:
+    resolution: {integrity: sha512-MhuzNwdURnZ1Cp4XTazr69K0BTizsBroX7Zx3UgDSVcZYKF/6p0CBe4EUb/hLqmzVhl0UpYfgRljQ4yxE+iCxA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       data-uri-to-buffer: 4.0.0
@@ -905,8 +905,8 @@ packages:
       mime: 3.0.0
       prettier: 2.7.1
       tiny-glob: 0.2.9
-      undici: 5.8.0
-      yargs-parser: 21.0.1
+      undici: 5.8.1
+      yargs-parser: 21.1.1
     dev: true
 
   /p-defer/1.0.0:
@@ -1199,8 +1199,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /type-fest/2.17.0:
-    resolution: {integrity: sha512-U+g3/JVXnOki1kLSc+xZGPRll3Ah9u2VIG6Sn9iH9YX6UkPERmt6O/0fIyTgsd2/whV0+gAaHAg8fz6sG1QzMA==}
+  /type-fest/2.18.0:
+    resolution: {integrity: sha512-pRS+/yrW5TjPPHNOvxhbNZexr2bS63WjrMU8a+VzEBhUi9Tz1pZeD+vQz3ut0svZ46P+SRqMEPnJmk2XnvNzTw==}
     engines: {node: '>=12.20'}
     dev: false
 
@@ -1210,8 +1210,8 @@ packages:
     hasBin: true
     dev: true
 
-  /undici/5.8.0:
-    resolution: {integrity: sha512-1F7Vtcez5w/LwH2G2tGnFIihuWUlc58YidwLiCv+jR2Z50x0tNXpRRw7eOIJ+GvqCqIkg9SB7NWAJ/T9TLfv8Q==}
+  /undici/5.8.1:
+    resolution: {integrity: sha512-iDRmWX4Zar/4A/t+1LrKQRm102zw2l9Wgat3LtTlTn8ykvMZmAmpq9tjyHEigx18FsY7IfATvyN3xSw9BDz0eA==}
     engines: {node: '>=12.18'}
     dev: true
 
@@ -1263,8 +1263,8 @@ packages:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
     dev: true
 
-  /yargs-parser/21.0.1:
-    resolution: {integrity: sha512-9BK1jFpLzJROCI5TzwZL/TU4gqjK5xiHV/RfWLOahrjAko/e4DJkRDZQXfvqAsiZzzYhgAzbgz6lg48jcm4GLg==}
+  /yargs-parser/21.1.1:
+    resolution: {integrity: sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw==}
     engines: {node: '>=12'}
     dev: true
 
@@ -1278,7 +1278,7 @@ packages:
       require-directory: 2.1.1
       string-width: 4.2.3
       y18n: 5.0.8
-      yargs-parser: 21.0.1
+      yargs-parser: 21.1.1
     dev: true
 
   /yocto-queue/1.0.0:
