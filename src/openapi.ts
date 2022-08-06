@@ -59,8 +59,8 @@ export interface paths {
     readonly get: operations['Get Player Skin'];
   };
   readonly '/v1/players/{player}/stats': {
-    /** This feature is experimental. API key required. */
-    readonly get: operations['Get Player Stats History (BETA)'];
+    /** API key required. */
+    readonly get: operations['Get Player Stats History'];
   };
   readonly '/v1/search': {
     readonly get: operations['Get Search Results'];
@@ -5894,8 +5894,8 @@ export interface operations {
       };
     };
   };
-  /** This feature is experimental. API key required. */
-  readonly 'Get Player Stats History (BETA)': {
+  /** API key required. */
+  readonly 'Get Player Stats History': {
     readonly parameters: {
       readonly query: {
         readonly version?: 1;
