@@ -350,7 +350,7 @@ export interface components {
       /** @enum {string} */
       readonly SP: 'Spleef';
       /** @enum {string} */
-      readonly SW: 'SkyWars';
+      readonly SW: 'Skywars';
       /** @enum {string} */
       readonly TB: 'The Bridge';
       /** @enum {string} */
@@ -396,7 +396,7 @@ export interface components {
       /** @enum {string} */
       readonly sp: 'Spleef';
       /** @enum {string} */
-      readonly sw: 'SkyWars';
+      readonly sw: 'Skywars';
       /** @enum {string} */
       readonly tb: 'The Bridge';
       /** @enum {string} */
