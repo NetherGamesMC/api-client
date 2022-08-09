@@ -484,6 +484,9 @@ export interface components {
           readonly skinVisibility: boolean;
           readonly bio: string;
           readonly staff: boolean;
+          readonly titan: boolean;
+          /** Format: date-time */
+          readonly titanUntil: string | null;
           readonly flags: number;
           readonly banned?: boolean;
           readonly muted?: boolean;
@@ -1323,6 +1326,9 @@ export interface components {
                   readonly skinVisibility: boolean;
                   readonly bio: string;
                   readonly staff: boolean;
+                  readonly titan: boolean;
+                  /** Format: date-time */
+                  readonly titanUntil: string | null;
                   readonly flags: number;
                   readonly banned?: boolean;
                   readonly muted?: boolean;
@@ -2240,6 +2246,9 @@ export interface components {
       readonly skinVisibility: boolean;
       readonly bio: string;
       readonly staff: boolean;
+      readonly titan: boolean;
+      /** Format: date-time */
+      readonly titanUntil: string | null;
       readonly flags: number;
       readonly banned?: boolean;
       readonly muted?: boolean;
@@ -4283,6 +4292,9 @@ export interface components {
       readonly skinVisibility: boolean;
       readonly bio: string;
       readonly staff: boolean;
+      readonly titan: boolean;
+      /** Format: date-time */
+      readonly titanUntil: string | null;
       readonly flags: number;
       readonly banned?: boolean;
       readonly muted?: boolean;
