@@ -102,12 +102,11 @@ export interface components {
     }> &
       Partial<readonly string[]>;
     readonly UpdatesResponse: readonly {
-      readonly id: number;
-      readonly content: string;
+      readonly title: string;
       /** Format: date-time */
       readonly timestamp: string;
-      /** Format: date-time */
-      readonly editedTimestamp: string | null;
+      readonly formattedTimestamp: string;
+      readonly content: string;
     }[];
     readonly UpdatesQuery: {
       readonly before?: number;
@@ -116,12 +115,11 @@ export interface components {
       readonly limit?: number;
     };
     readonly UpdateResponse: {
-      readonly id: number;
-      readonly content: string;
+      readonly title: string;
       /** Format: date-time */
       readonly timestamp: string;
-      /** Format: date-time */
-      readonly editedTimestamp: string | null;
+      readonly formattedTimestamp: string;
+      readonly content: string;
     };
     readonly StreamResponse: {
       readonly streaming: boolean;
