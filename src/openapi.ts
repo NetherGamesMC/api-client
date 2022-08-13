@@ -102,6 +102,7 @@ export interface components {
     }> &
       Partial<readonly string[]>;
     readonly UpdatesResponse: readonly {
+      readonly id: number;
       readonly title: string;
       /** Format: date-time */
       readonly timestamp: string;
@@ -115,6 +116,7 @@ export interface components {
       readonly limit?: number;
     };
     readonly UpdateResponse: {
+      readonly id: number;
       readonly title: string;
       /** Format: date-time */
       readonly timestamp: string;
@@ -2213,6 +2215,7 @@ export interface components {
       readonly periodStart: number;
       /** @default -1 */
       readonly periodEnd?: Partial<number> & Partial<-1>;
+      readonly hour?: number;
     };
     readonly PlayerSkinResponseData: {
       readonly skin: boolean;
@@ -5911,6 +5914,7 @@ export interface operations {
         readonly version?: 1;
         readonly periodStart: number;
         readonly periodEnd?: Partial<number> & Partial<-1>;
+        readonly hour?: number;
       };
     };
     readonly responses: {
