@@ -204,7 +204,7 @@ Retrieve a player's skin object.
 
 #### .statsHistory(player, params?) [Docs](https://docs.nethergames.org/#operation/Get%20Player%20Stats%20History)
 
-Retrieve hourly player stats history. API key required.
+Retrieve hourly player stats history. API key required to request new players.
 
 #### .statsHistoryBulk(players, params?) [Docs](https://docs.nethergames.org/#operation/Bulk%20Get%20Player%20Stats%20History)
 
