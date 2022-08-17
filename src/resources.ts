@@ -255,6 +255,15 @@ export class PlayersResource extends NetherGamesResource {
     return stats!;
   }
 
+  async statsHistoryBulk(names: string[], params?: PlayerStatsQuery): Promise<Record<string, PlayerStats>> {
+    const stats = await this._client._makeRequest<Record<string, PlayerStats>>({
+      path: '/v1/players/stats/bulk',
+      method: 'POST',
+      body: {names, ...params},
+    });
+    return stats;
+  }
+
   /**
    * @deprecated Use `PlayersResource.xuidMapping` instead.
    */

@@ -59,8 +59,12 @@ export interface paths {
     readonly get: operations['Get Player Skin'];
   };
   readonly '/v1/players/{player}/stats': {
-    /** API key required. */
+    /** Track hourly stats for a player (lazy-loaded). Max 100 new players every 24 hours for each API key. */
     readonly get: operations['Get Player Stats History'];
+  };
+  readonly '/v1/players/stats/bulk': {
+    /** Track hourly stats for a player (lazy-loaded). Max 100 new players every 24 hours for each API key. */
+    readonly post: operations['Bulk Get Player Stats History'];
   };
   readonly '/v1/search': {
     readonly get: operations['Get Search Results'];
@@ -2182,6 +2186,32 @@ export interface components {
        */
       readonly Weekly?: number;
     };
+    readonly PlayerStatsResponseBulk: {
+      readonly [key: string]: {
+        readonly [key: string]: {
+          readonly credits: number;
+          readonly deaths: number;
+          readonly kills: number;
+          readonly losses: number;
+          readonly xp: number;
+          readonly wins: {
+            readonly total: number;
+            readonly bh: number;
+            readonly cq: number;
+            readonly duels: number;
+            readonly ms: number;
+            readonly sc: number;
+            readonly sg: number;
+            readonly tb: number;
+            readonly tr: number;
+            readonly uhc: number;
+            readonly bw: number;
+            readonly mm: number;
+            readonly sw: number;
+          };
+        };
+      };
+    };
     readonly PlayerStatsResponse: {
       readonly [key: string]: {
         readonly credits: number;
@@ -2216,6 +2246,18 @@ export interface components {
       /** @default -1 */
       readonly periodEnd?: Partial<number> & Partial<-1>;
       readonly hour?: number;
+    };
+    readonly PlayerStatsInput: {
+      /**
+       * @default 1
+       * @enum {number}
+       */
+      readonly version?: 1;
+      readonly periodStart: number;
+      /** @default -1 */
+      readonly periodEnd?: Partial<number> & Partial<-1>;
+      readonly hour?: number;
+      readonly names: readonly string[];
     };
     readonly PlayerSkinResponseData: {
       readonly skin: boolean;
@@ -5907,7 +5949,7 @@ export interface operations {
       };
     };
   };
-  /** API key required. */
+  /** Track hourly stats for a player (lazy-loaded). Max 100 new players every 24 hours for each API key. */
   readonly 'Get Player Stats History': {
     readonly parameters: {
       readonly query: {
@@ -5923,6 +5965,22 @@ export interface operations {
         readonly content: {
           readonly 'application/json': components['schemas']['PlayerStatsResponse'];
         };
+      };
+    };
+  };
+  /** Track hourly stats for a player (lazy-loaded). Max 100 new players every 24 hours for each API key. */
+  readonly 'Bulk Get Player Stats History': {
+    readonly responses: {
+      /** Default Response */
+      readonly 200: {
+        readonly content: {
+          readonly 'application/json': components['schemas']['PlayerStatsResponseBulk'];
+        };
+      };
+    };
+    readonly requestBody: {
+      readonly content: {
+        readonly 'application/json': components['schemas']['PlayerStatsInput'];
       };
     };
   };
