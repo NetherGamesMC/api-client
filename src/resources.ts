@@ -31,6 +31,7 @@ import type {
   PlayerQuery,
   PlayerSkin,
   PlayerStats,
+  PlayerStatsByTypeResponse,
   PlayerStatsQuery,
   RelayPaginationFaction,
   RelayPaginationGuild,
@@ -159,6 +160,7 @@ interface LeaderboardParams<T extends LeaderboardKey> {
   limit?: number;
   column?: LeaderboardQuery['column'] | LeaderboardQueryColumn<T>;
   scope?: LeaderboardQuery['scope'];
+  period?: LeaderboardQuery['period'];
 }
 
 export class LeaderboardResource extends NetherGamesResource {
@@ -248,6 +250,14 @@ export class PlayersResource extends NetherGamesResource {
   async skin(player: string): Promise<PlayerSkin> {
     const skin = await this._client._getOne<PlayerSkin>(`/v1/players/${player}/skin`, {dataOnly: true}, true);
     return skin!;
+  }
+
+  async stats(
+    player: string,
+    type: Exclude<LeaderboardQuery['period'], undefined>,
+  ): Promise<PlayerStatsByTypeResponse> {
+    const stats = await this._client._getOne<PlayerStatsByTypeResponse>(`/v1/players/${player}/stats/${type}`);
+    return stats!;
   }
 
   async statsHistory(player: string, params?: PlayerStatsQuery): Promise<PlayerStats> {

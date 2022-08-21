@@ -46,7 +46,7 @@ The maximum amount of LRU objects to hold in memory.
 #### userAgent
 
 Type: `string`\
-Default: `NetherGames-API-Client/2.2.15`
+Default: `NetherGames-API-Client/2.3.0`
 
 User-agent to use when sending requests.
 
@@ -57,7 +57,7 @@ Type: `string`
 
 Append an identifier to the user agent in parentheses.\
 A unique identifier allows us to identify requests in our error monitoring tools.\
-Example: `Casper's Discord Bot` => `NetherGames-API-Client/2.2.15 (Casper's Discord Bot)`
+Example: `Casper's Discord Bot` => `NetherGames-API-Client/2.3.0 (Casper's Discord Bot)`
 
 ### Instance
 
@@ -201,6 +201,10 @@ Retrieve a player avatar object.
 #### .skin(player) [Docs](https://docs.nethergames.org/#operation/Get%20Player%20Skin)
 
 Retrieve a player's skin object.
+
+#### .stats(player, type) [Docs](https://docs.nethergames.org/#operation/Get%20Player%20Stats%20by%20Type)
+
+Retrieve a player's stats for a specified type.
 
 #### .statsHistory(player, params?) [Docs](https://docs.nethergames.org/#operation/Get%20Player%20Stats%20History)
 
