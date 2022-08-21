@@ -20,6 +20,7 @@ import type {
   LeaderboardKDR,
   LeaderboardKills,
   LeaderboardParkour,
+  LeaderboardPlaytime,
   LeaderboardQuery,
   LeaderboardVoters,
   LeaderboardWins,
@@ -124,6 +125,7 @@ const LEADERBOARD_MAPPINGS = {
     'bow_kills',
     'classic_kills',
     'classic_wins',
+    'infection_kills',
     'infection_wins',
     'kills',
     'knife_kills',
@@ -171,6 +173,7 @@ export class LeaderboardResource extends NetherGamesResource {
   async list<T extends LeaderboardKey>(type: 'kdr', params?: LeaderboardParams<T>): Promise<LeaderboardKDR[]>;
   async list<T extends LeaderboardKey>(type: 'kills', params?: LeaderboardParams<T>): Promise<LeaderboardKills[]>;
   async list<T extends LeaderboardKey>(type: 'parkour', params?: LeaderboardParams<T>): Promise<LeaderboardParkour[]>;
+  async list<T extends LeaderboardKey>(type: 'playtime', params?: LeaderboardParams<T>): Promise<LeaderboardPlaytime[]>;
   async list<T extends LeaderboardKey>(type: 'voters', params?: LeaderboardParams<T>): Promise<LeaderboardVoters[]>;
   async list<T extends LeaderboardKey>(type: 'wins', params?: LeaderboardParams<T>): Promise<LeaderboardWins[]>;
   async list<T extends LeaderboardKey>(type: 'wlr', params?: LeaderboardParams<T>): Promise<LeaderboardWLR[]>;
@@ -272,17 +275,6 @@ export class PlayersResource extends NetherGamesResource {
       body: {names, ...params},
     });
     return stats;
-  }
-
-  /**
-   * @deprecated Use `PlayersResource.xuidMapping` instead.
-   */
-  async usernamesByXuids(xuids: string[]): Promise<Record<string, string>> {
-    return this._client._makeRequest<Record<string, string>>({
-      path: '/v1/players/xuids',
-      method: 'POST',
-      body: {xuids},
-    });
   }
 
   async xuidMapping(values: string[]): Promise<Record<string, string>> {

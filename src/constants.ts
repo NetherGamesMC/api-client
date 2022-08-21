@@ -29,6 +29,7 @@ export const LEADERBOARD_COLUMNS = [
   'mm_bow_kills',
   'mm_classic_kills',
   'mm_classic_wins',
+  'mm_infection_kills',
   'mm_infection_wins',
   'mm_kills',
   'mm_knife_kills',
@@ -72,7 +73,7 @@ export const LEADERBOARD_COLUMNS_NESTED = {
   mm: {
     total: {kills: {}, wins: {}, bow_kills: {}, knife_kills: {}, throw_knife_kills: {}},
     classic: {kills: {}, wins: {}},
-    infection: {wins: {}},
+    infection: {kills: {}, wins: {}},
   },
   sw: {
     total: {kills: {}, wins: {}},

@@ -29,6 +29,7 @@ export type LeaderboardGuilds = components['schemas']['LeaderboardResponseGuilds
 export type LeaderboardKDR = components['schemas']['LeaderboardResponseKDR'];
 export type LeaderboardKills = components['schemas']['LeaderboardResponseKills'];
 export type LeaderboardParkour = components['schemas']['LeaderboardResponseParkour'];
+export type LeaderboardPlaytime = components['schemas']['LeaderboardResponsePlaytime'];
 export type LeaderboardVoters = components['schemas']['LeaderboardResponseVoters'];
 export type LeaderboardWins = components['schemas']['LeaderboardResponseWins'];
 export type LeaderboardWLR = components['schemas']['LeaderboardResponseWLR'];
@@ -41,6 +42,7 @@ export type Leaderboard =
   | LeaderboardKDR
   | LeaderboardKills
   | LeaderboardParkour
+  | LeaderboardPlaytime
   | LeaderboardVoters
   | LeaderboardWins
   | LeaderboardWLR
