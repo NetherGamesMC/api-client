@@ -592,6 +592,7 @@ export interface components {
             | 'Tester'
           )[];
           readonly rankColors: readonly string[];
+          readonly youtubeChannelUrl: string | null;
           /** @enum {string|null} */
           readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
           readonly tierColor: string | null;
@@ -1430,6 +1431,7 @@ export interface components {
                     | 'Tester'
                   )[];
                   readonly rankColors: readonly string[];
+                  readonly youtubeChannelUrl: string | null;
                   /** @enum {string|null} */
                   readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
                   readonly tierColor: string | null;
@@ -2923,6 +2925,7 @@ export interface components {
         | 'Tester'
       )[];
       readonly rankColors: readonly string[];
+      readonly youtubeChannelUrl: string | null;
       /** @enum {string|null} */
       readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
       readonly tierColor: string | null;
@@ -5470,6 +5473,7 @@ export interface components {
         | 'Tester'
       )[];
       readonly rankColors: readonly string[];
+      readonly youtubeChannelUrl: string | null;
       /** @enum {string|null} */
       readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null;
       readonly tierColor: string | null;
