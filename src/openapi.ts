@@ -3729,6 +3729,13 @@ export interface components {
       readonly affectedPlayers: readonly string[];
       readonly alt: boolean;
     };
+    readonly PlayerLeaderboardQuery: {
+      /**
+       * @default global
+       * @enum {string}
+       */
+      readonly period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly';
+    };
     readonly PlayerLeaderboardResponse: {
       readonly player: string;
       readonly data: {
@@ -4290,6 +4297,11 @@ export interface components {
       readonly timestamp: number;
     }[];
     readonly PlayerLeaderboardBulkInput: {
+      /**
+       * @default global
+       * @enum {string}
+       */
+      readonly period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly';
       readonly names: readonly string[];
     };
     readonly PlayerLastServerParsed: {
@@ -6911,6 +6923,11 @@ export interface operations {
     };
   };
   readonly 'Get Player Leaderboard': {
+    readonly parameters: {
+      readonly query: {
+        readonly period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly';
+      };
+    };
     readonly responses: {
       /** Default Response */
       readonly 200: {
