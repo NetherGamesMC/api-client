@@ -186,11 +186,11 @@ Find many (1-100) players at once.
 
 A paginated list of players.
 
-#### .leaderboard(player) [Docs](https://docs.nethergames.org/#operation/Get%20Player%20Leaderboard)
+#### .leaderboard(player, params?) [Docs](https://docs.nethergames.org/#operation/Get%20Player%20Leaderboard)
 
 Retrieve a player leaderboard, or null if not found.
 
-#### .leaderboardBulk(player[]) [Docs](https://docs.nethergames.org/#operation/Bulk%20Get%20Player%20Leaderboards)
+#### .leaderboardBulk(player[], params?) [Docs](https://docs.nethergames.org/#operation/Bulk%20Get%20Player%20Leaderboards)
 
 Find many (1-100) player leaderboards at once.
 
