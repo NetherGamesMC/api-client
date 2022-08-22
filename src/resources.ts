@@ -28,6 +28,7 @@ import type {
   LeaderboardXP,
   Player,
   PlayerLeaderboard,
+  PlayerLeaderboardQuery,
   PlayerPunishment,
   PlayerQuery,
   PlayerSkin,
@@ -233,15 +234,15 @@ export class PlayersResource extends NetherGamesResource {
     return result!;
   }
 
-  async leaderboard(player: string): Promise<PlayerLeaderboard | null> {
-    return this._client._getOne<PlayerLeaderboard>(`/v1/players/${player}/leaderboard`);
+  async leaderboard(player: string, params?: PlayerLeaderboardQuery): Promise<PlayerLeaderboard | null> {
+    return this._client._getOne<PlayerLeaderboard>(`/v1/players/${player}/leaderboard`, params);
   }
 
-  async leaderboardBulk(names: string[]): Promise<PlayerLeaderboard[]> {
+  async leaderboardBulk(names: string[], params?: PlayerLeaderboardQuery): Promise<PlayerLeaderboard[]> {
     return this._client._makeRequest<PlayerLeaderboard[]>({
       path: '/v1/players/leaderboard/bulk',
       method: 'POST',
-      body: {names},
+      body: {names, ...params},
     });
   }
 

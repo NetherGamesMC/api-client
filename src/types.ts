@@ -51,6 +51,7 @@ export type LeaderboardQuery = components['schemas']['LeaderboardQuery'];
 
 export type Player = components['schemas']['PlayerResponse'];
 export type PlayerLeaderboard = components['schemas']['PlayerLeaderboardResponse'];
+export type PlayerLeaderboardQuery = components['schemas']['PlayerLeaderboardQuery'];
 export type PlayerQuery = components['schemas']['PlayerQuery'];
 export type PlayerSkin = components['schemas']['PlayerSkinResponseData'];
 export type PlayerStats = components['schemas']['PlayerStatsResponse'];
