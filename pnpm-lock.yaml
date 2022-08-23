@@ -16,7 +16,7 @@ dependencies:
   nanoevents: 7.0.1
   node-fetch: 3.2.10
   quick-lru: 6.1.1
-  type-fest: 2.18.0
+  type-fest: 2.19.0
 
 devDependencies:
   '@ava/typescript': 3.0.1
@@ -203,7 +203,7 @@ packages:
       strip-ansi: 7.0.1
       supertap: 3.0.1
       temp-dir: 2.0.0
-      write-file-atomic: 4.0.1
+      write-file-atomic: 4.0.2
       yargs: 17.5.1
     transitivePeerDependencies:
       - supports-color
@@ -905,7 +905,7 @@ packages:
       mime: 3.0.0
       prettier: 2.7.1
       tiny-glob: 0.2.9
-      undici: 5.8.1
+      undici: 5.9.1
       yargs-parser: 21.1.1
     dev: true
 
@@ -1199,8 +1199,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /type-fest/2.18.0:
-    resolution: {integrity: sha512-pRS+/yrW5TjPPHNOvxhbNZexr2bS63WjrMU8a+VzEBhUi9Tz1pZeD+vQz3ut0svZ46P+SRqMEPnJmk2XnvNzTw==}
+  /type-fest/2.19.0:
+    resolution: {integrity: sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==}
     engines: {node: '>=12.20'}
     dev: false
 
@@ -1210,8 +1210,8 @@ packages:
     hasBin: true
     dev: true
 
-  /undici/5.8.1:
-    resolution: {integrity: sha512-iDRmWX4Zar/4A/t+1LrKQRm102zw2l9Wgat3LtTlTn8ykvMZmAmpq9tjyHEigx18FsY7IfATvyN3xSw9BDz0eA==}
+  /undici/5.9.1:
+    resolution: {integrity: sha512-6fB3a+SNnWEm4CJbgo0/CWR8RGcOCQP68SF4X0mxtYTq2VNN8T88NYrWVBAeSX+zb7bny2dx2iYhP3XHi00omg==}
     engines: {node: '>=12.18'}
     dev: true
 
@@ -1246,9 +1246,9 @@ packages:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
     dev: true
 
-  /write-file-atomic/4.0.1:
-    resolution: {integrity: sha512-nSKUxgAbyioruk6hU87QzVbY279oYT6uiwgDoujth2ju4mJ+TZau7SQBhtbTmUyuNYTuXnSyRn66FV0+eCgcrQ==}
-    engines: {node: ^12.13.0 || ^14.15.0 || >=16}
+  /write-file-atomic/4.0.2:
+    resolution: {integrity: sha512-7KxauUdBmSdWnmpaGFg+ppNjKF8uNLry8LyzjauQDOVONfFLNKrKvQOxZ/VuTIcS/gge/YNahf5RIIQWTSarlg==}
+    engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
     dependencies:
       imurmurhash: 0.1.4
       signal-exit: 3.0.7
