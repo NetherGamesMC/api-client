@@ -599,9 +599,11 @@ export interface components {
           readonly kills?: number;
           readonly deaths?: number;
           readonly kdr?: number;
+          readonly killsUntilNextKdr?: number;
           readonly wins?: number;
           readonly losses?: number;
           readonly wlr?: number;
+          readonly winsUntilNextWlr?: number;
           readonly firstJoin: string | null;
           readonly firstJoined: number;
           readonly lastJoin: string | null;
@@ -1438,9 +1440,11 @@ export interface components {
                   readonly kills?: number;
                   readonly deaths?: number;
                   readonly kdr?: number;
+                  readonly killsUntilNextKdr?: number;
                   readonly wins?: number;
                   readonly losses?: number;
                   readonly wlr?: number;
+                  readonly winsUntilNextWlr?: number;
                   readonly firstJoin: string | null;
                   readonly firstJoined: number;
                   readonly lastJoin: string | null;
@@ -2932,9 +2936,11 @@ export interface components {
       readonly kills?: number;
       readonly deaths?: number;
       readonly kdr?: number;
+      readonly killsUntilNextKdr?: number;
       readonly wins?: number;
       readonly losses?: number;
       readonly wlr?: number;
+      readonly winsUntilNextWlr?: number;
       readonly firstJoin: string | null;
       readonly firstJoined: number;
       readonly lastJoin: string | null;
@@ -5480,9 +5486,11 @@ export interface components {
       readonly kills?: number;
       readonly deaths?: number;
       readonly kdr?: number;
+      readonly killsUntilNextKdr?: number;
       readonly wins?: number;
       readonly losses?: number;
       readonly wlr?: number;
+      readonly winsUntilNextWlr?: number;
       readonly firstJoin: string | null;
       readonly firstJoined: number;
       readonly lastJoin: string | null;
@@ -6142,6 +6150,7 @@ export interface components {
     readonly LeaderboardResponseWLR: {
       readonly player: string;
       readonly wlr: number;
+      readonly winsUntilNextWlr: number;
     };
     readonly LeaderboardResponseWins: {
       readonly player: string;
@@ -6166,6 +6175,7 @@ export interface components {
     readonly LeaderboardResponseKDR: {
       readonly player: string;
       readonly kdr: number;
+      readonly killsUntilNextKdr: number;
     };
     readonly LeaderboardResponseGuilds: {
       readonly name: string;
@@ -6241,6 +6251,7 @@ export interface components {
         readonly {
           readonly player: string;
           readonly kdr: number;
+          readonly killsUntilNextKdr: number;
         }[]
       > &
       Partial<
@@ -6277,6 +6288,7 @@ export interface components {
         readonly {
           readonly player: string;
           readonly wlr: number;
+          readonly winsUntilNextWlr: number;
         }[]
       > &
       Partial<
