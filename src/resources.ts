@@ -149,6 +149,7 @@ const LEADERBOARD_MAPPINGS = {
     'wins',
   ],
   tb: ['kills', 'wins'],
+  uhc: ['kills', 'wins'],
 } as const;
 
 type LeaderboardMappings = typeof LEADERBOARD_MAPPINGS;

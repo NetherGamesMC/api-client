@@ -6370,6 +6370,8 @@ export interface components {
         | 'sw_wins'
         | 'tb_kills'
         | 'tb_wins'
+        | 'uhc_kills'
+        | 'uhc_wins'
         | 'wins';
       /** @enum {string} */
       readonly scope?: 'bestStreak' | 'kills' | 'streak';
@@ -6451,6 +6453,8 @@ export interface components {
         | 'sw_wins'
         | 'tb_kills'
         | 'tb_wins'
+        | 'uhc_kills'
+        | 'uhc_wins'
         | 'wins';
       /** @enum {string} */
       readonly scope?: 'bestStreak' | 'kills' | 'streak';
@@ -6872,6 +6876,8 @@ export interface operations {
           | 'sw_wins'
           | 'tb_kills'
           | 'tb_wins'
+          | 'uhc_kills'
+          | 'uhc_wins'
           | 'wins';
         readonly scope?: 'bestStreak' | 'kills' | 'streak';
         readonly period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly';

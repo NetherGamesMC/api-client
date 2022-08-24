@@ -51,6 +51,8 @@ export const LEADERBOARD_COLUMNS = [
   'sw_wins',
   'tb_kills',
   'tb_wins',
+  'uhc_kills',
+  'uhc_wins',
   'wins',
 ] as const;
 
@@ -63,6 +65,7 @@ export const LEADERBOARD_COLUMNS_NESTED = {
   sc: {total: {wins: {}}},
   sg: {total: {kills: {}, wins: {}}},
   tb: {total: {kills: {}, wins: {}}},
+  uhc: {total: {kills: {}, wins: {}}},
   bw: {
     total: {kills: {}, wins: {}, beds_broken: {}, final_kills: {}},
     doubles: {kills: {}, wins: {}, beds_broken: {}, final_kills: {}},
