@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@ava/typescript': 3.0.1
   '@sindresorhus/tsconfig': 3.0.1
-  ava: 4.3.1
+  ava: 4.3.3
   nanoevents: ^7.0.1
   node-fetch: ^3.2.10
   openapi-typescript: 5.4.1
@@ -21,7 +21,7 @@ dependencies:
 devDependencies:
   '@ava/typescript': 3.0.1
   '@sindresorhus/tsconfig': 3.0.1
-  ava: 4.3.1_@ava+typescript@3.0.1
+  ava: 4.3.3_@ava+typescript@3.0.1
   openapi-typescript: 5.4.1
   prettier: 2.7.1
   typescript: 4.7.4
@@ -149,8 +149,8 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /ava/4.3.1_@ava+typescript@3.0.1:
-    resolution: {integrity: sha512-zdSp9QxRTmN5hJeGmg+ZjUKL5yHFLMcP/0KBla8GH25XD8Xm7Uc34CDFlwqGL6JXtjNbVkJ0Zw+DqcTf4ggCCA==}
+  /ava/4.3.3_@ava+typescript@3.0.1:
+    resolution: {integrity: sha512-9Egq/d9R74ExrWohHeqUlexjDbgZJX5jA1Wq4KCTqc3wIfpGEK79zVy4rBtofJ9YKIxs4PzhJ8BgbW5PlAYe6w==}
     engines: {node: '>=12.22 <13 || >=14.17 <15 || >=16.4 <17 || >=18'}
     hasBin: true
     peerDependencies:
