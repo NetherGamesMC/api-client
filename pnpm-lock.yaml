@@ -9,7 +9,7 @@ specifiers:
   openapi-typescript: 5.4.1
   prettier: 2.7.1
   quick-lru: ^6.1.1
-  type-fest: ^2.18.0
+  type-fest: ^2.19.0
   typescript: 4.8.2
 
 dependencies:
@@ -905,7 +905,7 @@ packages:
       mime: 3.0.0
       prettier: 2.7.1
       tiny-glob: 0.2.9
-      undici: 5.9.1
+      undici: 5.10.0
       yargs-parser: 21.1.1
     dev: true
 
@@ -1210,8 +1210,8 @@ packages:
     hasBin: true
     dev: true
 
-  /undici/5.9.1:
-    resolution: {integrity: sha512-6fB3a+SNnWEm4CJbgo0/CWR8RGcOCQP68SF4X0mxtYTq2VNN8T88NYrWVBAeSX+zb7bny2dx2iYhP3XHi00omg==}
+  /undici/5.10.0:
+    resolution: {integrity: sha512-c8HsD3IbwmjjbLvoZuRI26TZic+TSEe8FPMLLOkN1AfYRhdjnKBU6yL+IwcSCbdZiX4e5t0lfMDLDCqj4Sq70g==}
     engines: {node: '>=12.18'}
     dev: true
 
