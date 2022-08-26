@@ -6,7 +6,6 @@ specifiers:
   '@typescript-eslint/eslint-plugin': 5.35.1
   '@typescript-eslint/parser': 5.35.1
   ava: 4.3.3
-  discord-api-types: 0.37.5
   eslint: 8.22.0
   eslint-config-prettier: 8.5.0
   eslint-plugin-import: 2.26.0
@@ -32,7 +31,6 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 5.35.1_4kgehhvxgrxdvptdn2db7re534
   '@typescript-eslint/parser': 5.35.1_shit3uhl6a7megkzgoz6xssnfa
   ava: 4.3.3_@ava+typescript@3.0.1
-  discord-api-types: 0.37.5
   eslint: 8.22.0
   eslint-config-prettier: 8.5.0_eslint@8.22.0
   eslint-plugin-import: 2.26.0_lewfh47l4outvz5ytnjtm3tbm4
@@ -758,10 +756,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       path-type: 4.0.0
-    dev: true
-
-  /discord-api-types/0.37.5:
-    resolution: {integrity: sha512-RhzoX02jw2M+n/AU5K74KTM4J8Sn3ZImUJvoA4lh+SDcrqi1ddSjrafciF4bECj4rPc2vHwoyyTNgbUwE8vbpA==}
     dev: true
 
   /doctrine/2.1.0:
