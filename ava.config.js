@@ -7,4 +7,4 @@ export default {
     rewritePaths: {'src/': 'dist/'},
     compile: false,
   },
-};
+}

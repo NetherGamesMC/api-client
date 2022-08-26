@@ -99,7 +99,7 @@ export const RANDOM_FACTIONS = [
   'WeDontHeck',
   '400',
   'RuthlessOnTop',
-] as const;
+] as const
 
 export const RANDOM_GUILDS = [
   'Sanctuary',
@@ -202,7 +202,7 @@ export const RANDOM_GUILDS = [
   'mcpegamers',
   'Theoneplace',
   'Oceanic',
-];
+]
 
 export const RANDOM_PLAYERS = [
   'Chr7st',
@@ -305,4 +305,4 @@ export const RANDOM_PLAYERS = [
   'rabbitstew4245',
   'JohnMelvinYT',
   'IshanKing234',
-] as const;
+] as const

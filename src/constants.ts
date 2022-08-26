@@ -54,7 +54,7 @@ export const LEADERBOARD_COLUMNS = [
   'uhc_kills',
   'uhc_wins',
   'wins',
-] as const;
+] as const
 
 export const LEADERBOARD_COLUMNS_NESTED = {
   total: {kills: {}, wins: {}, total: {kills: {}, wins: {}}},
@@ -83,7 +83,7 @@ export const LEADERBOARD_COLUMNS_NESTED = {
     doubles: {kills: {}, wins: {}, insane_kills: {}, normal_kills: {}},
     solo: {kills: {}, wins: {}, insane_kills: {}, normal_kills: {}},
   },
-} as const;
+} as const
 
 export const POSSIBLE_SUBTYPES = new Set([
   'kills',
@@ -93,4 +93,4 @@ export const POSSIBLE_SUBTYPES = new Set([
   'final_kills',
   'insane_kills',
   'normal_kills',
-]);
+])
