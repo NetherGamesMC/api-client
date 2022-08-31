@@ -608,6 +608,7 @@ export interface components {
           readonly firstJoined: number
           readonly lastJoin: string | null
           readonly lastJoined: number
+          readonly lastQuit: number
           readonly lastSeen: string | null
           readonly lastServer: string
           readonly lastServerParsed: {
@@ -721,6 +722,8 @@ export interface components {
             readonly duelsStreak?: number
             /** @default 0 */
             readonly duelsWins?: number
+            /** @default 0 */
+            readonly gxp?: number
             /** @default 0 */
             readonly mmBowKills?: number
             /** @default 0 */
@@ -1112,6 +1115,7 @@ export interface components {
             readonly online: {
               readonly time: number
             }
+            readonly gxp: number
           }
           readonly factionData?: {
             readonly tags: number
@@ -1449,6 +1453,7 @@ export interface components {
                   readonly firstJoined: number
                   readonly lastJoin: string | null
                   readonly lastJoined: number
+                  readonly lastQuit: number
                   readonly lastSeen: string | null
                   readonly lastServer: string
                   readonly lastServerParsed: {
@@ -1562,6 +1567,8 @@ export interface components {
                     readonly duelsStreak?: number
                     /** @default 0 */
                     readonly duelsWins?: number
+                    /** @default 0 */
+                    readonly gxp?: number
                     /** @default 0 */
                     readonly mmBowKills?: number
                     /** @default 0 */
@@ -1953,6 +1960,7 @@ export interface components {
                     readonly online: {
                       readonly time: number
                     }
+                    readonly gxp: number
                   }
                   readonly factionData?: {
                     readonly tags: number
@@ -2096,6 +2104,11 @@ export interface components {
       readonly withStats?: boolean
       /** @default true */
       readonly withVoteStatus?: boolean
+      /**
+       * @default global
+       * @enum {string}
+       */
+      readonly period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly'
       /** @default 100 */
       readonly limit?: number
       readonly query: string
@@ -2404,6 +2417,8 @@ export interface components {
           readonly duelsStreak?: number
           /** @default 0 */
           readonly duelsWins?: number
+          /** @default 0 */
+          readonly gxp?: number
           /** @default 0 */
           readonly mmBowKills?: number
           /** @default 0 */
@@ -2795,6 +2810,7 @@ export interface components {
           readonly online: {
             readonly time: number
           }
+          readonly gxp: number
         }
       }
     }
@@ -2945,6 +2961,7 @@ export interface components {
       readonly firstJoined: number
       readonly lastJoin: string | null
       readonly lastJoined: number
+      readonly lastQuit: number
       readonly lastSeen: string | null
       readonly lastServer: string
       readonly lastServerParsed: {
@@ -3058,6 +3075,8 @@ export interface components {
         readonly duelsStreak?: number
         /** @default 0 */
         readonly duelsWins?: number
+        /** @default 0 */
+        readonly gxp?: number
         /** @default 0 */
         readonly mmBowKills?: number
         /** @default 0 */
@@ -3449,6 +3468,7 @@ export interface components {
         readonly online: {
           readonly time: number
         }
+        readonly gxp: number
       }
       readonly factionData?: {
         readonly tags: number
@@ -3589,6 +3609,11 @@ export interface components {
       readonly withStats?: boolean
       /** @default true */
       readonly withVoteStatus?: boolean
+      /**
+       * @default global
+       * @enum {string}
+       */
+      readonly period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly'
     }
     readonly PlayerPunishmentsResponse: {
       readonly xuid: string
@@ -4588,6 +4613,7 @@ export interface components {
       readonly online: {
         readonly time: number
       }
+      readonly gxp: number
     }
     readonly PlayerExtra: {
       /** @default 0 */
@@ -4690,6 +4716,8 @@ export interface components {
       readonly duelsStreak?: number
       /** @default 0 */
       readonly duelsWins?: number
+      /** @default 0 */
+      readonly gxp?: number
       /** @default 0 */
       readonly mmBowKills?: number
       /** @default 0 */
@@ -4967,6 +4995,8 @@ export interface components {
         readonly duelsStreak?: number
         /** @default 0 */
         readonly duelsWins?: number
+        /** @default 0 */
+        readonly gxp?: number
         /** @default 0 */
         readonly mmBowKills?: number
         /** @default 0 */
@@ -5358,6 +5388,7 @@ export interface components {
         readonly online: {
           readonly time: number
         }
+        readonly gxp: number
       }
     }
     readonly PlayerBulkResponse: readonly {
@@ -5495,6 +5526,7 @@ export interface components {
       readonly firstJoined: number
       readonly lastJoin: string | null
       readonly lastJoined: number
+      readonly lastQuit: number
       readonly lastSeen: string | null
       readonly lastServer: string
       readonly lastServerParsed: {
@@ -5608,6 +5640,8 @@ export interface components {
         readonly duelsStreak?: number
         /** @default 0 */
         readonly duelsWins?: number
+        /** @default 0 */
+        readonly gxp?: number
         /** @default 0 */
         readonly mmBowKills?: number
         /** @default 0 */
@@ -5999,6 +6033,7 @@ export interface components {
         readonly online: {
           readonly time: number
         }
+        readonly gxp: number
       }
       readonly factionData?: {
         readonly tags: number
@@ -6139,6 +6174,11 @@ export interface components {
       readonly withStats?: boolean
       /** @default true */
       readonly withVoteStatus?: boolean
+      /**
+       * @default global
+       * @enum {string}
+       */
+      readonly period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly'
       readonly names: readonly string[]
     }
     readonly LeaderboardResponseXP: {
@@ -6183,6 +6223,7 @@ export interface components {
       readonly xp: number
       readonly xpToNextLevel: number
       readonly level: number
+      readonly earnedXp?: number
     }
     readonly LeaderboardResponseGame: {
       readonly player: string
@@ -6245,6 +6286,7 @@ export interface components {
           readonly xp: number
           readonly xpToNextLevel: number
           readonly level: number
+          readonly earnedXp?: number
         }[]
       > &
       Partial<
@@ -6375,6 +6417,38 @@ export interface components {
         | 'wins'
       /** @enum {string} */
       readonly scope?: 'bestStreak' | 'kills' | 'streak'
+      /** @enum {string} */
+      readonly kdrPrefix?:
+        | 'bw_doubles_final'
+        | 'bw_doubles'
+        | 'bw_final'
+        | 'bw'
+        | 'bw_solo_final'
+        | 'bw_solo'
+        | 'bw_squads_final'
+        | 'bw_squads'
+        | 'bw_trios_final'
+        | 'bw_trios'
+        | 'cq'
+        | 'duels'
+        | 'mm_bow'
+        | 'mm_classic'
+        | 'mm_infection'
+        | 'mm'
+        | 'mm_knife'
+        | 'mm_throw_knife'
+        | 'sg'
+        | 'sw_doubles_insane'
+        | 'sw_doubles'
+        | 'sw_doubles_normal'
+        | 'sw'
+        | 'sw_solo_insane'
+        | 'sw_solo'
+        | 'sw_solo_normal'
+        | 'tb'
+        | 'uhc'
+      /** @enum {string} */
+      readonly wlrPrefix?: 'duels' | 'sw_doubles' | 'sw_wins' | 'sw_solo' | 'tb' | 'tr'
       /**
        * @default global
        * @enum {string}
@@ -6458,6 +6532,38 @@ export interface components {
         | 'wins'
       /** @enum {string} */
       readonly scope?: 'bestStreak' | 'kills' | 'streak'
+      /** @enum {string} */
+      readonly kdrPrefix?:
+        | 'bw_doubles_final'
+        | 'bw_doubles'
+        | 'bw_final'
+        | 'bw'
+        | 'bw_solo_final'
+        | 'bw_solo'
+        | 'bw_squads_final'
+        | 'bw_squads'
+        | 'bw_trios_final'
+        | 'bw_trios'
+        | 'cq'
+        | 'duels'
+        | 'mm_bow'
+        | 'mm_classic'
+        | 'mm_infection'
+        | 'mm'
+        | 'mm_knife'
+        | 'mm_throw_knife'
+        | 'sg'
+        | 'sw_doubles_insane'
+        | 'sw_doubles'
+        | 'sw_doubles_normal'
+        | 'sw'
+        | 'sw_solo_insane'
+        | 'sw_solo'
+        | 'sw_solo_normal'
+        | 'tb'
+        | 'uhc'
+      /** @enum {string} */
+      readonly wlrPrefix?: 'duels' | 'sw_doubles' | 'sw_wins' | 'sw_solo' | 'tb' | 'tr'
       /**
        * @default global
        * @enum {string}
@@ -6880,6 +6986,36 @@ export interface operations {
           | 'uhc_wins'
           | 'wins'
         readonly scope?: 'bestStreak' | 'kills' | 'streak'
+        readonly kdrPrefix?:
+          | 'bw_doubles_final'
+          | 'bw_doubles'
+          | 'bw_final'
+          | 'bw'
+          | 'bw_solo_final'
+          | 'bw_solo'
+          | 'bw_squads_final'
+          | 'bw_squads'
+          | 'bw_trios_final'
+          | 'bw_trios'
+          | 'cq'
+          | 'duels'
+          | 'mm_bow'
+          | 'mm_classic'
+          | 'mm_infection'
+          | 'mm'
+          | 'mm_knife'
+          | 'mm_throw_knife'
+          | 'sg'
+          | 'sw_doubles_insane'
+          | 'sw_doubles'
+          | 'sw_doubles_normal'
+          | 'sw'
+          | 'sw_solo_insane'
+          | 'sw_solo'
+          | 'sw_solo_normal'
+          | 'tb'
+          | 'uhc'
+        readonly wlrPrefix?: 'duels' | 'sw_doubles' | 'sw_wins' | 'sw_solo' | 'tb' | 'tr'
         readonly period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly'
       }
     }
@@ -6918,6 +7054,7 @@ export interface operations {
         readonly withSkinData?: boolean
         readonly withStats?: boolean
         readonly withVoteStatus?: boolean
+        readonly period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly'
       }
     }
     readonly responses: {
@@ -7104,6 +7241,7 @@ export interface operations {
         readonly withSkinData?: boolean
         readonly withStats?: boolean
         readonly withVoteStatus?: boolean
+        readonly period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly'
         readonly limit?: number
         readonly query: string
         readonly type?: 'faction' | 'guild' | 'player'
