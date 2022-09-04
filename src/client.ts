@@ -14,7 +14,6 @@ import {
   PlayersResource,
   SearchResource,
   ServersResource,
-  StatusResource,
   StreamResource,
   UpdatesResource,
 } from './resources.js'
@@ -57,7 +56,6 @@ export class NetherGamesClient {
   readonly players: PlayersResource
   readonly search: SearchResource
   readonly servers: ServersResource
-  readonly status: StatusResource
   readonly stream: StreamResource
   readonly updates: UpdatesResource
 
@@ -84,7 +82,6 @@ export class NetherGamesClient {
     this.players = new PlayersResource(this)
     this.search = new SearchResource(this)
     this.servers = new ServersResource(this)
-    this.status = new StatusResource(this)
     this.stream = new StreamResource(this)
     this.updates = new UpdatesResource(this)
   }
