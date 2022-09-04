@@ -68,7 +68,6 @@ export type ServerPing = components['schemas']['ServerPingResponse']
 export type Servers = components['schemas']['ServerResponse']
 
 export type Stream = components['schemas']['StreamResponse']
-export type ServiceStatus = components['schemas']['ServiceStatusResponse']
 
 export type Update = components['schemas']['UpdateResponse']
 export type UpdateQuery = components['schemas']['UpdatesQuery']

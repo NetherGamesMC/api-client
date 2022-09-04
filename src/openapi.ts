@@ -87,9 +87,6 @@ export interface paths {
   readonly '/v1/servers': {
     readonly get: operations['Get Servers']
   }
-  readonly '/v1/status': {
-    readonly get: operations['Get Service Status']
-  }
   readonly '/v1/stream': {
     readonly get: operations['Get Stream Status']
   }
@@ -132,14 +129,6 @@ export interface components {
     }
     readonly StreamResponse: {
       readonly streaming: boolean
-    }
-    readonly ServiceStatusResponse: {
-      readonly title: string
-      readonly message: string
-      /** @enum {string} */
-      readonly status: 'maintenance' | 'major_outage' | 'minor_outage' | 'degraded_performance' | 'operational'
-      readonly color: string
-      readonly url: string
     }
     readonly ServerSettingsResponse: {
       readonly motds: readonly string[]
@@ -7298,16 +7287,6 @@ export interface operations {
       readonly 200: {
         readonly content: {
           readonly 'application/json': components['schemas']['ServerResponse']
-        }
-      }
-    }
-  }
-  readonly 'Get Service Status': {
-    readonly responses: {
-      /** Default Response */
-      readonly 200: {
-        readonly content: {
-          readonly 'application/json': components['schemas']['ServiceStatusResponse']
         }
       }
     }

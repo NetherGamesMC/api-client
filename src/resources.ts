@@ -47,7 +47,6 @@ import type {
   ServerMeta,
   ServerPing,
   Servers,
-  ServiceStatus,
   Stream,
   Update,
   UpdateQuery,
@@ -316,13 +315,6 @@ export class ServersResource extends NetherGamesResource {
 
   async ping(ip = 'play.nethergames.org', port = 19_132): Promise<ServerPing | null> {
     return this._client._getOne<ServerPing>('/v1/servers/ping', {ip, port})
-  }
-}
-
-export class StatusResource extends NetherGamesResource {
-  async retrieve(): Promise<ServiceStatus> {
-    const data = await this._client._getOne<ServiceStatus>('/v1/status')
-    return data!
   }
 }
 
