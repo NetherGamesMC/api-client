@@ -6448,7 +6448,7 @@ export interface components {
         | 'tb'
         | 'uhc'
       /** @enum {string} */
-      readonly wlrPrefix?: 'duels' | 'sw_doubles' | 'sw_wins' | 'sw_solo' | 'tb' | 'tr'
+      readonly wlrPrefix?: 'duels' | 'sw_doubles' | 'sw_solo' | 'sw' | 'tb' | 'tr'
       /**
        * @default global
        * @enum {string}
@@ -6563,7 +6563,7 @@ export interface components {
         | 'tb'
         | 'uhc'
       /** @enum {string} */
-      readonly wlrPrefix?: 'duels' | 'sw_doubles' | 'sw_wins' | 'sw_solo' | 'tb' | 'tr'
+      readonly wlrPrefix?: 'duels' | 'sw_doubles' | 'sw_solo' | 'sw' | 'tb' | 'tr'
       /**
        * @default global
        * @enum {string}
@@ -7015,7 +7015,7 @@ export interface operations {
           | 'sw_solo_normal'
           | 'tb'
           | 'uhc'
-        readonly wlrPrefix?: 'duels' | 'sw_doubles' | 'sw_wins' | 'sw_solo' | 'tb' | 'tr'
+        readonly wlrPrefix?: 'duels' | 'sw_doubles' | 'sw_solo' | 'sw' | 'tb' | 'tr'
         readonly period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly'
       }
     }
