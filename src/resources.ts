@@ -13,6 +13,7 @@ import type {
   GuildExpanded,
   GuildQuery,
   Leaderboard,
+  LeaderboardCrateKeys,
   LeaderboardCredits,
   LeaderboardFactions,
   LeaderboardGame,
@@ -167,6 +168,10 @@ interface LeaderboardParams<T extends LeaderboardKey> {
 }
 
 export class LeaderboardResource extends NetherGamesResource {
+  async list<T extends LeaderboardKey>(
+    type: 'crateKeys',
+    params?: LeaderboardParams<T>,
+  ): Promise<LeaderboardCrateKeys[]>
   async list<T extends LeaderboardKey>(type: 'credits', params?: LeaderboardParams<T>): Promise<LeaderboardCredits[]>
   async list<T extends LeaderboardKey>(type: 'factions', params?: LeaderboardParams<T>): Promise<LeaderboardFactions[]>
   async list<T extends LeaderboardKey>(type: 'game', params?: LeaderboardParams<T>): Promise<LeaderboardGame[]>

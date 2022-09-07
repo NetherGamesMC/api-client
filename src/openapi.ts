@@ -40,6 +40,9 @@ export interface paths {
   readonly '/v1/players/{player}/avatar': {
     readonly get: operations['Get Player Avatar']
   }
+  readonly '/v1/servers/player-count': {
+    readonly get: operations['Get Player Count']
+  }
   readonly '/v1/players/{player}/leaderboard': {
     readonly get: operations['Get Player Leaderboard']
   }
@@ -554,6 +557,7 @@ export interface components {
           readonly online?: boolean
           readonly credits: number
           readonly statusCredits: number
+          readonly crateKeys: number
           readonly xp: number
           readonly xpToNextLevel: number
           readonly ranks: readonly (
@@ -586,8 +590,11 @@ export interface components {
           readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null
           readonly tierColor: string | null
           readonly kills?: number
+          readonly killsTotal?: number
           readonly deaths?: number
+          readonly deathsTotal?: number
           readonly kdr?: number
+          readonly kdrTotal?: number
           readonly killsUntilNextKdr?: number
           readonly wins?: number
           readonly losses?: number
@@ -1399,6 +1406,7 @@ export interface components {
                   readonly online?: boolean
                   readonly credits: number
                   readonly statusCredits: number
+                  readonly crateKeys: number
                   readonly xp: number
                   readonly xpToNextLevel: number
                   readonly ranks: readonly (
@@ -1431,8 +1439,11 @@ export interface components {
                   readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null
                   readonly tierColor: string | null
                   readonly kills?: number
+                  readonly killsTotal?: number
                   readonly deaths?: number
+                  readonly deathsTotal?: number
                   readonly kdr?: number
+                  readonly kdrTotal?: number
                   readonly killsUntilNextKdr?: number
                   readonly wins?: number
                   readonly losses?: number
@@ -2274,8 +2285,11 @@ export interface components {
       readonly name: string
       readonly stats: {
         readonly kills: number
+        readonly killsTotal: number
         readonly deaths: number
+        readonly deathsTotal: number
         readonly kdr: number
+        readonly kdrTotal: number
         readonly wins: number
         readonly winsData: {
           /** @default 0 */
@@ -2815,6 +2829,539 @@ export interface components {
       /** @default false */
       readonly dataOnly?: boolean
     }
+    readonly PlayerResponseStats: {
+      readonly kills: number
+      readonly killsTotal: number
+      readonly deaths: number
+      readonly deathsTotal: number
+      readonly kdr: number
+      readonly kdrTotal: number
+      readonly wins: number
+      readonly winsData: {
+        /** @default 0 */
+        readonly BH?: number
+        /** @default 0 */
+        readonly BW?: number
+        /** @default 0 */
+        readonly CQ?: number
+        /** @default 0 */
+        readonly Duels?: number
+        /** @default 0 */
+        readonly MM?: number
+        /** @default 0 */
+        readonly MS?: number
+        /** @default 0 */
+        readonly SC?: number
+        /** @default 0 */
+        readonly SG?: number
+        /** @default 0 */
+        readonly SW?: number
+        /** @default 0 */
+        readonly TB?: number
+        /** @default 0 */
+        readonly TR?: number
+        /** @default 0 */
+        readonly UHC?: number
+      }
+      readonly losses: number
+      readonly wlr: number
+      readonly extra: {
+        /** @default 0 */
+        readonly bhWins?: number
+        /** @default 0 */
+        readonly bwBedsBroken?: number
+        /** @default 0 */
+        readonly bwBestStreak?: number
+        /** @default 0 */
+        readonly bwDeaths?: number
+        /** @default 0 */
+        readonly bwDiamondsCollected?: number
+        /** @default 0 */
+        readonly bwDoublesBedsBroken?: number
+        /** @default 0 */
+        readonly bwDoublesDeaths?: number
+        /** @default 0 */
+        readonly bwDoublesFinalKills?: number
+        /** @default 0 */
+        readonly bwDoublesKills?: number
+        /** @default 0 */
+        readonly bwDoublesWins?: number
+        /** @default 0 */
+        readonly bwEmeraldsCollected?: number
+        /** @default 0 */
+        readonly bwFinalKills?: number
+        /** @default 0 */
+        readonly bwGoldCollected?: number
+        /** @default 0 */
+        readonly bwIronCollected?: number
+        /** @default 0 */
+        readonly bwKills?: number
+        /** @default 0 */
+        readonly bwSoloBedsBroken?: number
+        /** @default 0 */
+        readonly bwSoloDeaths?: number
+        /** @default 0 */
+        readonly bwSoloFinalKills?: number
+        /** @default 0 */
+        readonly bwSoloKills?: number
+        /** @default 0 */
+        readonly bwSoloWins?: number
+        /** @default 0 */
+        readonly bwSquadsBedsBroken?: number
+        /** @default 0 */
+        readonly bwSquadsDeaths?: number
+        /** @default 0 */
+        readonly bwSquadsFinalKills?: number
+        /** @default 0 */
+        readonly bwSquadsKills?: number
+        /** @default 0 */
+        readonly bwSquadsWins?: number
+        /** @default 0 */
+        readonly bwStreak?: number
+        /** @default 0 */
+        readonly bwTriosBedsBroken?: number
+        /** @default 0 */
+        readonly bwTriosDeaths?: number
+        /** @default 0 */
+        readonly bwTriosFinalKills?: number
+        /** @default 0 */
+        readonly bwTriosKills?: number
+        /** @default 0 */
+        readonly bwTriosWins?: number
+        /** @default 0 */
+        readonly bwWins?: number
+        /** @default 0 */
+        readonly cqDeaths?: number
+        /** @default 0 */
+        readonly cqDiamondsCollected?: number
+        /** @default 0 */
+        readonly cqEmeraldsCollected?: number
+        /** @default 0 */
+        readonly cqFlagsCaptured?: number
+        /** @default 0 */
+        readonly cqFlagsCollected?: number
+        /** @default 0 */
+        readonly cqFlagsReturned?: number
+        /** @default 0 */
+        readonly cqGoldCollected?: number
+        /** @default 0 */
+        readonly cqIronCollected?: number
+        /** @default 0 */
+        readonly cqKills?: number
+        /** @default 0 */
+        readonly cqWins?: number
+        /** @default 0 */
+        readonly duelsArrowsShot?: number
+        /** @default 0 */
+        readonly duelsBestStreak?: number
+        /** @default 0 */
+        readonly duelsDeaths?: number
+        /** @default 0 */
+        readonly duelsKills?: number
+        /** @default 0 */
+        readonly duelsLosses?: number
+        /** @default 0 */
+        readonly duelsMeleeHits?: number
+        /** @default 0 */
+        readonly duelsStreak?: number
+        /** @default 0 */
+        readonly duelsWins?: number
+        /** @default 0 */
+        readonly gxp?: number
+        /** @default 0 */
+        readonly mmBowKills?: number
+        /** @default 0 */
+        readonly mmClassicDeaths?: number
+        /** @default 0 */
+        readonly mmClassicKills?: number
+        /** @default 0 */
+        readonly mmClassicWins?: number
+        /** @default 0 */
+        readonly mmDeaths?: number
+        /** @default 0 */
+        readonly mmInfectionDeaths?: number
+        /** @default 0 */
+        readonly mmInfectionKills?: number
+        /** @default 0 */
+        readonly mmInfectionWins?: number
+        /** @default 0 */
+        readonly mmKills?: number
+        /** @default 0 */
+        readonly mmKnifeKills?: number
+        /** @default 0 */
+        readonly mmThrowKnifeKills?: number
+        /** @default 0 */
+        readonly mmWins?: number
+        /** @default 0 */
+        readonly msFails?: number
+        /** @default 0 */
+        readonly msSuccesses?: number
+        /** @default 0 */
+        readonly msWins?: number
+        /** @default 0 */
+        readonly onlineTime?: number
+        /** @default 0 */
+        readonly scGoals?: number
+        /** @default 0 */
+        readonly scWins?: number
+        /** @default 0 */
+        readonly sgDeaths?: number
+        /** @default 0 */
+        readonly sgKills?: number
+        /** @default 0 */
+        readonly sgWins?: number
+        /** @default 0 */
+        readonly swArrowsShot?: number
+        /** @default 0 */
+        readonly swBlocksBroken?: number
+        /** @default 0 */
+        readonly swBlocksPlaced?: number
+        /** @default 0 */
+        readonly swCoins?: number
+        /** @default 0 */
+        readonly swDeaths?: number
+        /** @default 0 */
+        readonly swDoublesDeaths?: number
+        /** @default 0 */
+        readonly swDoublesInsaneDeaths?: number
+        /** @default 0 */
+        readonly swDoublesInsaneKills?: number
+        /** @default 0 */
+        readonly swDoublesKills?: number
+        /** @default 0 */
+        readonly swDoublesLosses?: number
+        /** @default 0 */
+        readonly swDoublesNormalDeaths?: number
+        /** @default 0 */
+        readonly swDoublesNormalKills?: number
+        /** @default 0 */
+        readonly swDoublesWins?: number
+        /** @default 0 */
+        readonly swEggsThrown?: number
+        /** @default 0 */
+        readonly swEpearlsThrown?: number
+        /** @default 0 */
+        readonly swKills?: number
+        /** @default 0 */
+        readonly swLosses?: number
+        /** @default 0 */
+        readonly swSoloDeaths?: number
+        /** @default 0 */
+        readonly swSoloInsaneDeaths?: number
+        /** @default 0 */
+        readonly swSoloInsaneKills?: number
+        /** @default 0 */
+        readonly swSoloKills?: number
+        /** @default 0 */
+        readonly swSoloLosses?: number
+        /** @default 0 */
+        readonly swSoloNormalDeaths?: number
+        /** @default 0 */
+        readonly swSoloNormalKills?: number
+        /** @default 0 */
+        readonly swSoloWins?: number
+        /** @default 0 */
+        readonly swWins?: number
+        /** @default 0 */
+        readonly tbArrowsShot?: number
+        /** @default 0 */
+        readonly tbBestStreak?: number
+        /** @default 0 */
+        readonly tbDeaths?: number
+        /** @default 0 */
+        readonly tbGoals?: number
+        /** @default 0 */
+        readonly tbKills?: number
+        /** @default 0 */
+        readonly tbLosses?: number
+        /** @default 0 */
+        readonly tbMeleeHits?: number
+        /** @default 0 */
+        readonly tbStreak?: number
+        /** @default 0 */
+        readonly tbWins?: number
+        /** @default 0 */
+        readonly trBestStreak?: number
+        /** @default 0 */
+        readonly trBlocksDropped?: number
+        /** @default 0 */
+        readonly trLosses?: number
+        /** @default 0 */
+        readonly trStreak?: number
+        /** @default 0 */
+        readonly trTimeRecord?: number
+        /** @default 0 */
+        readonly trWins?: number
+        /** @default 0 */
+        readonly uhcDeaths?: number
+        /** @default 0 */
+        readonly uhcDiamondMined?: number
+        /** @default 0 */
+        readonly uhcGoldMined?: number
+        /** @default 0 */
+        readonly uhcIronMined?: number
+        /** @default 0 */
+        readonly uhcKills?: number
+        /** @default 0 */
+        readonly uhcLapisMined?: number
+        /** @default 0 */
+        readonly uhcWins?: number
+      }
+      readonly extraNested: {
+        readonly bh: {
+          readonly wins: number
+        }
+        readonly bw: {
+          readonly kills: number
+          readonly deaths: number
+          readonly solo: {
+            readonly kills: number
+            readonly deaths: number
+            readonly beds: {
+              readonly broken: number
+            }
+            readonly final: {
+              readonly kills: number
+            }
+            readonly wins: number
+          }
+          readonly doubles: {
+            readonly kills: number
+            readonly deaths: number
+            readonly beds: {
+              readonly broken: number
+            }
+            readonly final: {
+              readonly kills: number
+            }
+            readonly wins: number
+          }
+          readonly trios: {
+            readonly kills: number
+            readonly deaths: number
+            readonly beds: {
+              readonly broken: number
+            }
+            readonly final: {
+              readonly kills: number
+            }
+            readonly wins: number
+          }
+          readonly squads: {
+            readonly kills: number
+            readonly deaths: number
+            readonly beds: {
+              readonly broken: number
+            }
+            readonly final: {
+              readonly kills: number
+            }
+            readonly wins: number
+          }
+          readonly beds: {
+            readonly broken: number
+          }
+          readonly diamonds: {
+            readonly collected: number
+          }
+          readonly emeralds: {
+            readonly collected: number
+          }
+          readonly gold: {
+            readonly collected: number
+          }
+          readonly iron: {
+            readonly collected: number
+          }
+          readonly final: {
+            readonly kills: number
+          }
+          readonly streak: number
+          readonly best: {
+            readonly streak: number
+          }
+          readonly wins: number
+        }
+        readonly cq: {
+          readonly kills: number
+          readonly deaths: number
+          readonly wins: number
+          readonly flags: {
+            readonly collected: number
+            readonly captured: number
+            readonly returned: number
+          }
+          readonly diamonds: {
+            readonly collected: number
+          }
+          readonly emeralds: {
+            readonly collected: number
+          }
+          readonly gold: {
+            readonly collected: number
+          }
+          readonly iron: {
+            readonly collected: number
+          }
+        }
+        readonly duels: {
+          readonly kills: number
+          readonly deaths: number
+          readonly arrows: {
+            readonly shot: number
+          }
+          readonly melee: {
+            readonly hits: number
+          }
+          readonly streak: number
+          readonly best: {
+            readonly streak: number
+          }
+          readonly wins: number
+          readonly losses: number
+        }
+        readonly mm: {
+          readonly kills: number
+          readonly deaths: number
+          readonly classic: {
+            readonly kills: number
+            readonly deaths: number
+            readonly wins: number
+          }
+          readonly infection: {
+            readonly kills: number
+            readonly deaths: number
+            readonly wins: number
+          }
+          readonly bow: {
+            readonly kills: number
+          }
+          readonly knife: {
+            readonly kills: number
+          }
+          readonly throw: {
+            readonly knife: {
+              readonly kills: number
+            }
+          }
+          readonly wins: number
+        }
+        readonly ms: {
+          readonly successes: number
+          readonly fails: number
+          readonly wins: number
+        }
+        readonly sc: {
+          readonly wins: number
+          readonly goals: number
+        }
+        readonly sg: {
+          readonly kills: number
+          readonly deaths: number
+          readonly wins: number
+        }
+        readonly sw: {
+          readonly coins: number
+          readonly kills: number
+          readonly deaths: number
+          readonly solo: {
+            readonly kills: number
+            readonly deaths: number
+            readonly normal: {
+              readonly kills: number
+              readonly deaths: number
+            }
+            readonly insane: {
+              readonly kills: number
+              readonly deaths: number
+            }
+            readonly wins: number
+            readonly losses: number
+          }
+          readonly doubles: {
+            readonly kills: number
+            readonly deaths: number
+            readonly normal: {
+              readonly kills: number
+              readonly deaths: number
+            }
+            readonly insane: {
+              readonly kills: number
+              readonly deaths: number
+            }
+            readonly wins: number
+            readonly losses: number
+          }
+          readonly blocks: {
+            readonly broken: number
+            readonly placed: number
+          }
+          readonly arrows: {
+            readonly shot: number
+          }
+          readonly eggs: {
+            readonly thrown: number
+          }
+          readonly epearls: {
+            readonly thrown: number
+          }
+          readonly wins: number
+          readonly losses: number
+        }
+        readonly tb: {
+          readonly kills: number
+          readonly deaths: number
+          readonly arrows: {
+            readonly shot: number
+          }
+          readonly melee: {
+            readonly hits: number
+          }
+          readonly goals: number
+          readonly streak: number
+          readonly best: {
+            readonly streak: number
+          }
+          readonly wins: number
+          readonly losses: number
+        }
+        readonly tr: {
+          readonly wins: number
+          readonly losses: number
+          readonly streak: number
+          readonly best: {
+            readonly streak: number
+          }
+          readonly blocks: {
+            readonly dropped: number
+          }
+          readonly time: {
+            readonly record: number
+          }
+        }
+        readonly uhc: {
+          readonly kills: number
+          readonly deaths: number
+          readonly wins: number
+          readonly iron: {
+            readonly mined: number
+          }
+          readonly gold: {
+            readonly mined: number
+          }
+          readonly lapis: {
+            readonly mined: number
+          }
+          readonly diamond: {
+            readonly mined: number
+          }
+        }
+        readonly online: {
+          readonly time: number
+        }
+        readonly gxp: number
+      }
+    }
     readonly PlayerResponse: {
       readonly xuid: string
       readonly name: string
@@ -2907,6 +3454,7 @@ export interface components {
       readonly online?: boolean
       readonly credits: number
       readonly statusCredits: number
+      readonly crateKeys: number
       readonly xp: number
       readonly xpToNextLevel: number
       readonly ranks: readonly (
@@ -2939,8 +3487,11 @@ export interface components {
       readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null
       readonly tierColor: string | null
       readonly kills?: number
+      readonly killsTotal?: number
       readonly deaths?: number
+      readonly deathsTotal?: number
       readonly kdr?: number
+      readonly kdrTotal?: number
       readonly killsUntilNextKdr?: number
       readonly wins?: number
       readonly losses?: number
@@ -3752,13 +4303,6 @@ export interface components {
       readonly affectedPlayers: readonly string[]
       readonly alt: boolean
     }
-    readonly PlayerLeaderboardQuery: {
-      /**
-       * @default global
-       * @enum {string}
-       */
-      readonly period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly'
-    }
     readonly PlayerLeaderboardResponse: {
       readonly player: string
       readonly data: {
@@ -3946,6 +4490,13 @@ export interface components {
         readonly wins: number
       }
       readonly timestamp: number
+    }
+    readonly PlayerLeaderboardQuery: {
+      /**
+       * @default global
+       * @enum {string}
+       */
+      readonly period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly'
     }
     readonly PlayerLeaderboardDataNested: {
       readonly bh: {
@@ -4850,535 +5401,8 @@ export interface components {
       readonly claim?: string
       readonly latest?: string
     }
-    readonly PlayerResponseStats: {
-      readonly kills: number
-      readonly deaths: number
-      readonly kdr: number
-      readonly wins: number
-      readonly winsData: {
-        /** @default 0 */
-        readonly BH?: number
-        /** @default 0 */
-        readonly BW?: number
-        /** @default 0 */
-        readonly CQ?: number
-        /** @default 0 */
-        readonly Duels?: number
-        /** @default 0 */
-        readonly MM?: number
-        /** @default 0 */
-        readonly MS?: number
-        /** @default 0 */
-        readonly SC?: number
-        /** @default 0 */
-        readonly SG?: number
-        /** @default 0 */
-        readonly SW?: number
-        /** @default 0 */
-        readonly TB?: number
-        /** @default 0 */
-        readonly TR?: number
-        /** @default 0 */
-        readonly UHC?: number
-      }
-      readonly losses: number
-      readonly wlr: number
-      readonly extra: {
-        /** @default 0 */
-        readonly bhWins?: number
-        /** @default 0 */
-        readonly bwBedsBroken?: number
-        /** @default 0 */
-        readonly bwBestStreak?: number
-        /** @default 0 */
-        readonly bwDeaths?: number
-        /** @default 0 */
-        readonly bwDiamondsCollected?: number
-        /** @default 0 */
-        readonly bwDoublesBedsBroken?: number
-        /** @default 0 */
-        readonly bwDoublesDeaths?: number
-        /** @default 0 */
-        readonly bwDoublesFinalKills?: number
-        /** @default 0 */
-        readonly bwDoublesKills?: number
-        /** @default 0 */
-        readonly bwDoublesWins?: number
-        /** @default 0 */
-        readonly bwEmeraldsCollected?: number
-        /** @default 0 */
-        readonly bwFinalKills?: number
-        /** @default 0 */
-        readonly bwGoldCollected?: number
-        /** @default 0 */
-        readonly bwIronCollected?: number
-        /** @default 0 */
-        readonly bwKills?: number
-        /** @default 0 */
-        readonly bwSoloBedsBroken?: number
-        /** @default 0 */
-        readonly bwSoloDeaths?: number
-        /** @default 0 */
-        readonly bwSoloFinalKills?: number
-        /** @default 0 */
-        readonly bwSoloKills?: number
-        /** @default 0 */
-        readonly bwSoloWins?: number
-        /** @default 0 */
-        readonly bwSquadsBedsBroken?: number
-        /** @default 0 */
-        readonly bwSquadsDeaths?: number
-        /** @default 0 */
-        readonly bwSquadsFinalKills?: number
-        /** @default 0 */
-        readonly bwSquadsKills?: number
-        /** @default 0 */
-        readonly bwSquadsWins?: number
-        /** @default 0 */
-        readonly bwStreak?: number
-        /** @default 0 */
-        readonly bwTriosBedsBroken?: number
-        /** @default 0 */
-        readonly bwTriosDeaths?: number
-        /** @default 0 */
-        readonly bwTriosFinalKills?: number
-        /** @default 0 */
-        readonly bwTriosKills?: number
-        /** @default 0 */
-        readonly bwTriosWins?: number
-        /** @default 0 */
-        readonly bwWins?: number
-        /** @default 0 */
-        readonly cqDeaths?: number
-        /** @default 0 */
-        readonly cqDiamondsCollected?: number
-        /** @default 0 */
-        readonly cqEmeraldsCollected?: number
-        /** @default 0 */
-        readonly cqFlagsCaptured?: number
-        /** @default 0 */
-        readonly cqFlagsCollected?: number
-        /** @default 0 */
-        readonly cqFlagsReturned?: number
-        /** @default 0 */
-        readonly cqGoldCollected?: number
-        /** @default 0 */
-        readonly cqIronCollected?: number
-        /** @default 0 */
-        readonly cqKills?: number
-        /** @default 0 */
-        readonly cqWins?: number
-        /** @default 0 */
-        readonly duelsArrowsShot?: number
-        /** @default 0 */
-        readonly duelsBestStreak?: number
-        /** @default 0 */
-        readonly duelsDeaths?: number
-        /** @default 0 */
-        readonly duelsKills?: number
-        /** @default 0 */
-        readonly duelsLosses?: number
-        /** @default 0 */
-        readonly duelsMeleeHits?: number
-        /** @default 0 */
-        readonly duelsStreak?: number
-        /** @default 0 */
-        readonly duelsWins?: number
-        /** @default 0 */
-        readonly gxp?: number
-        /** @default 0 */
-        readonly mmBowKills?: number
-        /** @default 0 */
-        readonly mmClassicDeaths?: number
-        /** @default 0 */
-        readonly mmClassicKills?: number
-        /** @default 0 */
-        readonly mmClassicWins?: number
-        /** @default 0 */
-        readonly mmDeaths?: number
-        /** @default 0 */
-        readonly mmInfectionDeaths?: number
-        /** @default 0 */
-        readonly mmInfectionKills?: number
-        /** @default 0 */
-        readonly mmInfectionWins?: number
-        /** @default 0 */
-        readonly mmKills?: number
-        /** @default 0 */
-        readonly mmKnifeKills?: number
-        /** @default 0 */
-        readonly mmThrowKnifeKills?: number
-        /** @default 0 */
-        readonly mmWins?: number
-        /** @default 0 */
-        readonly msFails?: number
-        /** @default 0 */
-        readonly msSuccesses?: number
-        /** @default 0 */
-        readonly msWins?: number
-        /** @default 0 */
-        readonly onlineTime?: number
-        /** @default 0 */
-        readonly scGoals?: number
-        /** @default 0 */
-        readonly scWins?: number
-        /** @default 0 */
-        readonly sgDeaths?: number
-        /** @default 0 */
-        readonly sgKills?: number
-        /** @default 0 */
-        readonly sgWins?: number
-        /** @default 0 */
-        readonly swArrowsShot?: number
-        /** @default 0 */
-        readonly swBlocksBroken?: number
-        /** @default 0 */
-        readonly swBlocksPlaced?: number
-        /** @default 0 */
-        readonly swCoins?: number
-        /** @default 0 */
-        readonly swDeaths?: number
-        /** @default 0 */
-        readonly swDoublesDeaths?: number
-        /** @default 0 */
-        readonly swDoublesInsaneDeaths?: number
-        /** @default 0 */
-        readonly swDoublesInsaneKills?: number
-        /** @default 0 */
-        readonly swDoublesKills?: number
-        /** @default 0 */
-        readonly swDoublesLosses?: number
-        /** @default 0 */
-        readonly swDoublesNormalDeaths?: number
-        /** @default 0 */
-        readonly swDoublesNormalKills?: number
-        /** @default 0 */
-        readonly swDoublesWins?: number
-        /** @default 0 */
-        readonly swEggsThrown?: number
-        /** @default 0 */
-        readonly swEpearlsThrown?: number
-        /** @default 0 */
-        readonly swKills?: number
-        /** @default 0 */
-        readonly swLosses?: number
-        /** @default 0 */
-        readonly swSoloDeaths?: number
-        /** @default 0 */
-        readonly swSoloInsaneDeaths?: number
-        /** @default 0 */
-        readonly swSoloInsaneKills?: number
-        /** @default 0 */
-        readonly swSoloKills?: number
-        /** @default 0 */
-        readonly swSoloLosses?: number
-        /** @default 0 */
-        readonly swSoloNormalDeaths?: number
-        /** @default 0 */
-        readonly swSoloNormalKills?: number
-        /** @default 0 */
-        readonly swSoloWins?: number
-        /** @default 0 */
-        readonly swWins?: number
-        /** @default 0 */
-        readonly tbArrowsShot?: number
-        /** @default 0 */
-        readonly tbBestStreak?: number
-        /** @default 0 */
-        readonly tbDeaths?: number
-        /** @default 0 */
-        readonly tbGoals?: number
-        /** @default 0 */
-        readonly tbKills?: number
-        /** @default 0 */
-        readonly tbLosses?: number
-        /** @default 0 */
-        readonly tbMeleeHits?: number
-        /** @default 0 */
-        readonly tbStreak?: number
-        /** @default 0 */
-        readonly tbWins?: number
-        /** @default 0 */
-        readonly trBestStreak?: number
-        /** @default 0 */
-        readonly trBlocksDropped?: number
-        /** @default 0 */
-        readonly trLosses?: number
-        /** @default 0 */
-        readonly trStreak?: number
-        /** @default 0 */
-        readonly trTimeRecord?: number
-        /** @default 0 */
-        readonly trWins?: number
-        /** @default 0 */
-        readonly uhcDeaths?: number
-        /** @default 0 */
-        readonly uhcDiamondMined?: number
-        /** @default 0 */
-        readonly uhcGoldMined?: number
-        /** @default 0 */
-        readonly uhcIronMined?: number
-        /** @default 0 */
-        readonly uhcKills?: number
-        /** @default 0 */
-        readonly uhcLapisMined?: number
-        /** @default 0 */
-        readonly uhcWins?: number
-      }
-      readonly extraNested: {
-        readonly bh: {
-          readonly wins: number
-        }
-        readonly bw: {
-          readonly kills: number
-          readonly deaths: number
-          readonly solo: {
-            readonly kills: number
-            readonly deaths: number
-            readonly beds: {
-              readonly broken: number
-            }
-            readonly final: {
-              readonly kills: number
-            }
-            readonly wins: number
-          }
-          readonly doubles: {
-            readonly kills: number
-            readonly deaths: number
-            readonly beds: {
-              readonly broken: number
-            }
-            readonly final: {
-              readonly kills: number
-            }
-            readonly wins: number
-          }
-          readonly trios: {
-            readonly kills: number
-            readonly deaths: number
-            readonly beds: {
-              readonly broken: number
-            }
-            readonly final: {
-              readonly kills: number
-            }
-            readonly wins: number
-          }
-          readonly squads: {
-            readonly kills: number
-            readonly deaths: number
-            readonly beds: {
-              readonly broken: number
-            }
-            readonly final: {
-              readonly kills: number
-            }
-            readonly wins: number
-          }
-          readonly beds: {
-            readonly broken: number
-          }
-          readonly diamonds: {
-            readonly collected: number
-          }
-          readonly emeralds: {
-            readonly collected: number
-          }
-          readonly gold: {
-            readonly collected: number
-          }
-          readonly iron: {
-            readonly collected: number
-          }
-          readonly final: {
-            readonly kills: number
-          }
-          readonly streak: number
-          readonly best: {
-            readonly streak: number
-          }
-          readonly wins: number
-        }
-        readonly cq: {
-          readonly kills: number
-          readonly deaths: number
-          readonly wins: number
-          readonly flags: {
-            readonly collected: number
-            readonly captured: number
-            readonly returned: number
-          }
-          readonly diamonds: {
-            readonly collected: number
-          }
-          readonly emeralds: {
-            readonly collected: number
-          }
-          readonly gold: {
-            readonly collected: number
-          }
-          readonly iron: {
-            readonly collected: number
-          }
-        }
-        readonly duels: {
-          readonly kills: number
-          readonly deaths: number
-          readonly arrows: {
-            readonly shot: number
-          }
-          readonly melee: {
-            readonly hits: number
-          }
-          readonly streak: number
-          readonly best: {
-            readonly streak: number
-          }
-          readonly wins: number
-          readonly losses: number
-        }
-        readonly mm: {
-          readonly kills: number
-          readonly deaths: number
-          readonly classic: {
-            readonly kills: number
-            readonly deaths: number
-            readonly wins: number
-          }
-          readonly infection: {
-            readonly kills: number
-            readonly deaths: number
-            readonly wins: number
-          }
-          readonly bow: {
-            readonly kills: number
-          }
-          readonly knife: {
-            readonly kills: number
-          }
-          readonly throw: {
-            readonly knife: {
-              readonly kills: number
-            }
-          }
-          readonly wins: number
-        }
-        readonly ms: {
-          readonly successes: number
-          readonly fails: number
-          readonly wins: number
-        }
-        readonly sc: {
-          readonly wins: number
-          readonly goals: number
-        }
-        readonly sg: {
-          readonly kills: number
-          readonly deaths: number
-          readonly wins: number
-        }
-        readonly sw: {
-          readonly coins: number
-          readonly kills: number
-          readonly deaths: number
-          readonly solo: {
-            readonly kills: number
-            readonly deaths: number
-            readonly normal: {
-              readonly kills: number
-              readonly deaths: number
-            }
-            readonly insane: {
-              readonly kills: number
-              readonly deaths: number
-            }
-            readonly wins: number
-            readonly losses: number
-          }
-          readonly doubles: {
-            readonly kills: number
-            readonly deaths: number
-            readonly normal: {
-              readonly kills: number
-              readonly deaths: number
-            }
-            readonly insane: {
-              readonly kills: number
-              readonly deaths: number
-            }
-            readonly wins: number
-            readonly losses: number
-          }
-          readonly blocks: {
-            readonly broken: number
-            readonly placed: number
-          }
-          readonly arrows: {
-            readonly shot: number
-          }
-          readonly eggs: {
-            readonly thrown: number
-          }
-          readonly epearls: {
-            readonly thrown: number
-          }
-          readonly wins: number
-          readonly losses: number
-        }
-        readonly tb: {
-          readonly kills: number
-          readonly deaths: number
-          readonly arrows: {
-            readonly shot: number
-          }
-          readonly melee: {
-            readonly hits: number
-          }
-          readonly goals: number
-          readonly streak: number
-          readonly best: {
-            readonly streak: number
-          }
-          readonly wins: number
-          readonly losses: number
-        }
-        readonly tr: {
-          readonly wins: number
-          readonly losses: number
-          readonly streak: number
-          readonly best: {
-            readonly streak: number
-          }
-          readonly blocks: {
-            readonly dropped: number
-          }
-          readonly time: {
-            readonly record: number
-          }
-        }
-        readonly uhc: {
-          readonly kills: number
-          readonly deaths: number
-          readonly wins: number
-          readonly iron: {
-            readonly mined: number
-          }
-          readonly gold: {
-            readonly mined: number
-          }
-          readonly lapis: {
-            readonly mined: number
-          }
-          readonly diamond: {
-            readonly mined: number
-          }
-        }
-        readonly online: {
-          readonly time: number
-        }
-        readonly gxp: number
-      }
+    readonly PlayerCountResponse: {
+      readonly count: number
     }
     readonly PlayerBulkResponse: readonly {
       readonly xuid: string
@@ -5472,6 +5496,7 @@ export interface components {
       readonly online?: boolean
       readonly credits: number
       readonly statusCredits: number
+      readonly crateKeys: number
       readonly xp: number
       readonly xpToNextLevel: number
       readonly ranks: readonly (
@@ -5504,8 +5529,11 @@ export interface components {
       readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null
       readonly tierColor: string | null
       readonly kills?: number
+      readonly killsTotal?: number
       readonly deaths?: number
+      readonly deathsTotal?: number
       readonly kdr?: number
+      readonly kdrTotal?: number
       readonly killsUntilNextKdr?: number
       readonly wins?: number
       readonly losses?: number
@@ -6238,12 +6266,22 @@ export interface components {
       readonly player: string
       readonly credits: number
     }
+    readonly LeaderboardResponseCrateKeys: {
+      readonly player: string
+      readonly crateKeys: number
+    }
     readonly LeaderboardResponse: Partial<
       readonly {
         readonly player: string
-        readonly credits: number
+        readonly crateKeys: number
       }[]
     > &
+      Partial<
+        readonly {
+          readonly player: string
+          readonly credits: number
+        }[]
+      > &
       Partial<
         readonly (Partial<{
           readonly name: string
@@ -6335,6 +6373,7 @@ export interface components {
       readonly limit?: number
       /** @enum {string} */
       readonly type:
+        | 'crateKeys'
         | 'credits'
         | 'factions'
         | 'game'
@@ -6450,6 +6489,7 @@ export interface components {
       readonly limit?: number
       /** @enum {string} */
       readonly type:
+        | 'crateKeys'
         | 'credits'
         | 'factions'
         | 'game'
@@ -6906,6 +6946,7 @@ export interface operations {
       readonly query: {
         readonly limit?: number
         readonly type:
+          | 'crateKeys'
           | 'credits'
           | 'factions'
           | 'game'
@@ -7066,6 +7107,16 @@ export interface operations {
       readonly 200: {
         readonly content: {
           readonly 'application/json': components['schemas']['PlayerSkinResponseData']
+        }
+      }
+    }
+  }
+  readonly 'Get Player Count': {
+    readonly responses: {
+      /** Default Response */
+      readonly 200: {
+        readonly content: {
+          readonly 'application/json': components['schemas']['PlayerCountResponse']
         }
       }
     }
