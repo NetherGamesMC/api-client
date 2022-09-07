@@ -6225,6 +6225,10 @@ export interface components {
       readonly name: string
       readonly time: number
     }
+    readonly LeaderboardResponseOldest: {
+      readonly player: string
+      readonly joinedAt: number
+    }
     readonly LeaderboardResponseKills: {
       readonly player: string
       readonly kills: number
@@ -6331,6 +6335,12 @@ export interface components {
       > &
       Partial<
         readonly {
+          readonly player: string
+          readonly joinedAt: number
+        }[]
+      > &
+      Partial<
+        readonly {
           readonly name: string
           readonly time: number
         }[]
@@ -6380,6 +6390,7 @@ export interface components {
         | 'guilds'
         | 'kdr'
         | 'kills'
+        | 'oldest'
         | 'parkour'
         | 'playtime'
         | 'voters'
@@ -6496,6 +6507,7 @@ export interface components {
         | 'guilds'
         | 'kdr'
         | 'kills'
+        | 'oldest'
         | 'parkour'
         | 'playtime'
         | 'voters'
@@ -6953,6 +6965,7 @@ export interface operations {
           | 'guilds'
           | 'kdr'
           | 'kills'
+          | 'oldest'
           | 'parkour'
           | 'playtime'
           | 'voters'

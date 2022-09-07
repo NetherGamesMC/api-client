@@ -20,6 +20,7 @@ import type {
   LeaderboardGuilds,
   LeaderboardKDR,
   LeaderboardKills,
+  LeaderboardOldest,
   LeaderboardParkour,
   LeaderboardPlaytime,
   LeaderboardQuery,
@@ -178,6 +179,7 @@ export class LeaderboardResource extends NetherGamesResource {
   async list<T extends LeaderboardKey>(type: 'guilds', params?: LeaderboardParams<T>): Promise<LeaderboardGuilds[]>
   async list<T extends LeaderboardKey>(type: 'kdr', params?: LeaderboardParams<T>): Promise<LeaderboardKDR[]>
   async list<T extends LeaderboardKey>(type: 'kills', params?: LeaderboardParams<T>): Promise<LeaderboardKills[]>
+  async list<T extends LeaderboardKey>(type: 'oldest', params?: LeaderboardParams<T>): Promise<LeaderboardOldest[]>
   async list<T extends LeaderboardKey>(type: 'parkour', params?: LeaderboardParams<T>): Promise<LeaderboardParkour[]>
   async list<T extends LeaderboardKey>(type: 'playtime', params?: LeaderboardParams<T>): Promise<LeaderboardPlaytime[]>
   async list<T extends LeaderboardKey>(type: 'voters', params?: LeaderboardParams<T>): Promise<LeaderboardVoters[]>
@@ -320,6 +322,11 @@ export class ServersResource extends NetherGamesResource {
 
   async ping(ip = 'play.nethergames.org', port = 19_132): Promise<ServerPing | null> {
     return this._client._getOne<ServerPing>('/v1/servers/ping', {ip, port})
+  }
+
+  async playerCount(): Promise<number> {
+    const data = await this._client._getOne<{count: number}>('/v1/servers/player-count')
+    return data!.count
   }
 }
 

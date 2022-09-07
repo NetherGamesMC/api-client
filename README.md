@@ -46,7 +46,7 @@ The maximum amount of LRU objects to hold in memory.
 #### userAgent
 
 Type: `string`\
-Default: `NetherGames-API-Client/2.4.1`
+Default: `NetherGames-API-Client/2.4.2`
 
 User-agent to use when sending requests.
 
@@ -57,7 +57,7 @@ Type: `string`
 
 Append an identifier to the user agent in parentheses.\
 A unique identifier allows us to identify requests in our error monitoring tools.\
-Example: `Casper's Discord Bot` => `NetherGames-API-Client/2.4.1 (Casper's Discord Bot)`
+Example: `Casper's Discord Bot` => `NetherGames-API-Client/2.4.2 (Casper's Discord Bot)`
 
 ### Instance
 
@@ -245,6 +245,10 @@ Retrieve server metadata.
 #### .ping(ip = 'play.nethergames.org', port = 19132) [Docs](https://docs.nethergames.org/#operation/Get%20Server%20Ping)
 
 Retrieve server data for any `*.nethergames.org` IP or null if not found.
+
+#### .playerCount() [Docs](https://docs.nethergames.org/#operation/Get%20Player%20Count)
+
+Retrieve the total player count (cached for one hour).
 
 ### Status
 
