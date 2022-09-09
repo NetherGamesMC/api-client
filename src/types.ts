@@ -1,7 +1,6 @@
 import type {components} from './openapi.js'
 
-export type Announcement = string | AnnouncementDiscord
-export type AnnouncementDiscord = components['schemas']['AnnouncementsResponseDiscord']
+export type Announcement = any
 export type AnnouncementQuery = components['schemas']['AnnouncementsQuery']
 
 interface ExpandedMembers {

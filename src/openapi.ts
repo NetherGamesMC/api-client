@@ -6737,62 +6737,12 @@ export interface components {
     readonly DiscordCountResponse: {
       readonly members: number
     }
-    readonly AnnouncementsResponseDiscord: {
-      readonly content: string | null
-      /** Format: date-time */
-      readonly timestamp: string
-      readonly author: {
-        readonly id: string
-        readonly username: string
-        readonly discriminator: string
-        readonly avatar: string | null
-        readonly public_flags: number
-      }
-      readonly attachments: readonly {
-        readonly id: string
-        readonly filename: string
-        readonly description?: string
-        readonly content_type?: string
-        readonly size: number
-        readonly url: string
-        readonly proxy_url: string
-        readonly height?: number
-        readonly width?: number
-        readonly ephemeral?: boolean
-      }[]
-    }
-    readonly AnnouncementsResponse: Partial<readonly string[]> &
-      Partial<
-        readonly {
-          readonly content: string | null
-          /** Format: date-time */
-          readonly timestamp: string
-          readonly author: {
-            readonly id: string
-            readonly username: string
-            readonly discriminator: string
-            readonly avatar: string | null
-            readonly public_flags: number
-          }
-          readonly attachments: readonly {
-            readonly id: string
-            readonly filename: string
-            readonly description?: string
-            readonly content_type?: string
-            readonly size: number
-            readonly url: string
-            readonly proxy_url: string
-            readonly height?: number
-            readonly width?: number
-            readonly ephemeral?: boolean
-          }[]
-        }[]
-      >
+    readonly AnnouncementsResponse: readonly unknown[]
     readonly AnnouncementsQuery: {
       /** @default 100 */
       readonly limit?: number
       /** @enum {string} */
-      readonly type: 'board' | 'bossbar' | 'discord' | 'message'
+      readonly type: 'board' | 'bossbar' | 'discord' | 'message' | 'title'
     }
   }
 }
@@ -6802,7 +6752,7 @@ export interface operations {
     readonly parameters: {
       readonly query: {
         readonly limit?: number
-        readonly type: 'board' | 'bossbar' | 'discord' | 'message'
+        readonly type: 'board' | 'bossbar' | 'discord' | 'message' | 'title'
       }
     }
     readonly responses: {

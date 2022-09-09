@@ -23,3 +23,8 @@ test('listing discord announcements works', async t => {
   const announcements = await client.announcements.list('discord')
   t.is(Array.isArray(announcements) && announcements.length > 0, true)
 })
+
+test('listing title announcements works', async t => {
+  const announcements = await client.announcements.list('title')
+  t.is(Array.isArray(announcements) && announcements.length > 0, true)
+})
