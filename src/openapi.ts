@@ -6737,14 +6737,6 @@ export interface components {
     readonly DiscordCountResponse: {
       readonly members: number
     }
-    readonly AnnouncementsResponseTitle: {
-      readonly title: string
-      readonly subtitle: string
-      readonly fadeIn: number
-      readonly duration: number
-      readonly fadeOut: number
-    }
-    readonly AnnouncementsResponseMessage: string
     readonly AnnouncementsResponseDiscord: {
       readonly content: string | null
       /** Format: date-time */
@@ -6769,18 +6761,7 @@ export interface components {
         readonly ephemeral?: boolean
       }[]
     }
-    readonly AnnouncementsResponseBoard: string
     readonly AnnouncementsResponse: Partial<readonly string[]> &
-      Partial<readonly string[]> &
-      Partial<
-        readonly {
-          readonly title: string
-          readonly subtitle: string
-          readonly fadeIn: number
-          readonly duration: number
-          readonly fadeOut: number
-        }[]
-      > &
       Partial<
         readonly {
           readonly content: string | null
@@ -6811,7 +6792,7 @@ export interface components {
       /** @default 100 */
       readonly limit?: number
       /** @enum {string} */
-      readonly type: 'board' | 'message' | 'title' | 'discord'
+      readonly type: 'board' | 'bossbar' | 'discord' | 'message'
     }
   }
 }
@@ -6821,7 +6802,7 @@ export interface operations {
     readonly parameters: {
       readonly query: {
         readonly limit?: number
-        readonly type: 'board' | 'message' | 'title' | 'discord'
+        readonly type: 'board' | 'bossbar' | 'discord' | 'message'
       }
     }
     readonly responses: {

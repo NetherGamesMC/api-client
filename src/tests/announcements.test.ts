@@ -9,13 +9,13 @@ test('listing board announcements works', async t => {
   t.is(Array.isArray(announcements) && announcements.length > 0, true)
 })
 
-test('listing message announcements works', async t => {
-  const announcements = await client.announcements.list('message')
+test('listing bossbar announcements works', async t => {
+  const announcements = await client.announcements.list('bossbar')
   t.is(Array.isArray(announcements) && announcements.length > 0, true)
 })
 
-test('listing title announcements works', async t => {
-  const announcements = await client.announcements.list('title')
+test('listing message announcements works', async t => {
+  const announcements = await client.announcements.list('message')
   t.is(Array.isArray(announcements) && announcements.length > 0, true)
 })
 

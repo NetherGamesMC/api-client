@@ -2,11 +2,8 @@ import type {NetherGamesClient} from './client.js'
 import {NetherGamesValidationError} from './errors.js'
 import type {
   Announcement,
-  AnnouncementBoard,
   AnnouncementDiscord,
-  AnnouncementMessage,
   AnnouncementQuery,
-  AnnouncementTitle,
   FactionDefault,
   FactionExpanded,
   GuildDefault,
@@ -59,9 +56,9 @@ export class NetherGamesResource {
 }
 
 export class AnnouncementsResource extends NetherGamesResource {
-  async list(type: 'board', limit?: number): Promise<AnnouncementBoard[]>
-  async list(type: 'message', limit?: number): Promise<AnnouncementMessage[]>
-  async list(type: 'title', limit?: number): Promise<AnnouncementTitle[]>
+  async list(type: 'board', limit?: number): Promise<string[]>
+  async list(type: 'bossbar', limit?: number): Promise<string[]>
+  async list(type: 'message', limit?: number): Promise<string[]>
   async list(type: 'discord', limit?: number): Promise<AnnouncementDiscord[]>
   async list(type: AnnouncementQuery['type'], limit = 100): Promise<Announcement[]> {
     return this._client._getMany<Announcement>('/v1/announcements', {type, limit})
