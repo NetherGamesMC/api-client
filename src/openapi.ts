@@ -472,24 +472,112 @@ export interface components {
           readonly avatar: string
           /** Format: uri */
           readonly skin: string
-          readonly skinData?: {
-            readonly skin: boolean
-            /** @enum {string} */
-            readonly skinType: 'steve' | 'alex'
-            readonly skinVisibility: boolean
-            readonly base64: string
-            readonly raw: string | null
-          }
-          readonly skinVisibility: boolean
+          readonly online?: boolean
+          readonly flags: number
+          /** @enum {number} */
+          readonly dmStatus: 0 | 1 | 2
           readonly bio: string
+          readonly discordId: string | null
+          readonly guild: string | null
+          readonly ranks: readonly (
+            | 'Owner'
+            | 'Director'
+            | 'Advisor'
+            | 'Community'
+            | 'Admin'
+            | 'Dev'
+            | 'Supervisor'
+            | 'Discord'
+            | 'Mod'
+            | 'Crew'
+            | 'Trainee'
+            | 'Builder'
+            | 'Designer'
+            | 'Game Designer'
+            | 'Media'
+            | 'Partner'
+            | 'Titan'
+            | 'Legend'
+            | 'Emerald'
+            | 'Ultra'
+            | 'Youtube'
+            | 'Tester'
+          )[]
+          /** @enum {string|null} */
+          readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null
+          readonly banned?: boolean
+          readonly muted?: boolean
           readonly staff: boolean
           readonly titan: boolean
           /** Format: date-time */
           readonly titanUntil: string | null
-          readonly flags: number
-          readonly banned?: boolean
-          readonly muted?: boolean
-          readonly guild: string | null
+          /** @enum {number} */
+          readonly voteStatus?: 0 | 1 | 2
+          readonly firstJoin: string | null
+          readonly firstJoined: number
+          readonly lastJoin: string | null
+          readonly lastJoined: number
+          readonly lastQuit: number
+          readonly lastSeen: string | null
+          readonly lastServer: string
+          readonly crateKeys: number
+          readonly credits: number
+          readonly deaths?: number
+          readonly deathsTotal?: number
+          readonly kdr?: number
+          readonly kdrTotal?: number
+          readonly kills?: number
+          readonly killsTotal?: number
+          readonly level: number
+          readonly losses?: number
+          readonly wins?: number
+          readonly wlr?: number
+          readonly xp: number
+          readonly formattedLevel: string
+          readonly levelColors: readonly (
+            | '#000000'
+            | '#0000aa'
+            | '#00aa00'
+            | '#00aaaa'
+            | '#aa0000'
+            | '#aa00aa'
+            | '#ffaa00'
+            | '#aaaaaa'
+            | '#555555'
+            | '#5555ff'
+            | '#55ff55'
+            | '#55ffff'
+            | '#ff5555'
+            | '#ff55ff'
+            | '#ffff55'
+            | '#ffffff'
+            | '#ddd605'
+          )[]
+          /** @enum {string} */
+          readonly levelFormat: '§k' | '§l' | '§o' | '§r'
+          readonly rankColors: readonly string[]
+          readonly skinVisibility: boolean
+          readonly tierColor: string | null
+          readonly youtubeChannelUrl: string | null
+          readonly killsUntilNextKdr?: number
+          readonly winsUntilNextWlr?: number
+          readonly xpToNextLevel: number
+          readonly factionData?: {
+            readonly tags: number
+            readonly registerDate: string
+            readonly coins: number
+            readonly kills: number
+            readonly bounty: number
+            readonly faction: {
+              readonly id: number
+              readonly name: string
+              readonly strength: number
+              readonly allies: readonly string[]
+              readonly leader?: unknown
+              readonly officers: readonly unknown[]
+              readonly members: readonly unknown[]
+            } | null
+          } | null
           readonly guildData?:
             | (Partial<unknown> &
                 Partial<{
@@ -531,82 +619,6 @@ export interface components {
                   readonly members: readonly unknown[]
                 }>)
             | null
-          readonly level: number
-          readonly levelColors: readonly (
-            | '#000000'
-            | '#0000aa'
-            | '#00aa00'
-            | '#00aaaa'
-            | '#aa0000'
-            | '#aa00aa'
-            | '#ffaa00'
-            | '#aaaaaa'
-            | '#555555'
-            | '#5555ff'
-            | '#55ff55'
-            | '#55ffff'
-            | '#ff5555'
-            | '#ff55ff'
-            | '#ffff55'
-            | '#ffffff'
-            | '#ddd605'
-          )[]
-          /** @enum {string} */
-          readonly levelFormat: '§k' | '§l' | '§o' | '§r'
-          readonly formattedLevel: string
-          readonly online?: boolean
-          readonly credits: number
-          readonly statusCredits: number
-          readonly crateKeys: number
-          readonly xp: number
-          readonly xpToNextLevel: number
-          readonly ranks: readonly (
-            | 'Owner'
-            | 'Director'
-            | 'Advisor'
-            | 'Community'
-            | 'Admin'
-            | 'Dev'
-            | 'Supervisor'
-            | 'Discord'
-            | 'Mod'
-            | 'Crew'
-            | 'Trainee'
-            | 'Builder'
-            | 'Designer'
-            | 'Game Designer'
-            | 'Media'
-            | 'Partner'
-            | 'Titan'
-            | 'Legend'
-            | 'Emerald'
-            | 'Ultra'
-            | 'Youtube'
-            | 'Tester'
-          )[]
-          readonly rankColors: readonly string[]
-          readonly youtubeChannelUrl: string | null
-          /** @enum {string|null} */
-          readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null
-          readonly tierColor: string | null
-          readonly kills?: number
-          readonly killsTotal?: number
-          readonly deaths?: number
-          readonly deathsTotal?: number
-          readonly kdr?: number
-          readonly kdrTotal?: number
-          readonly killsUntilNextKdr?: number
-          readonly wins?: number
-          readonly losses?: number
-          readonly wlr?: number
-          readonly winsUntilNextWlr?: number
-          readonly firstJoin: string | null
-          readonly firstJoined: number
-          readonly lastJoin: string | null
-          readonly lastJoined: number
-          readonly lastQuit: number
-          readonly lastSeen: string | null
-          readonly lastServer: string
           readonly lastServerParsed: {
             readonly region: string | null
             readonly serverName: string | null
@@ -614,9 +626,62 @@ export interface components {
             readonly serverType: string | null
             readonly pretty: string
           }
-          /** @deprecated use `discordId` instead */
-          readonly discordData: {readonly [key: string]: unknown}
-          readonly discordId: string | null
+          readonly punishmentsNew?: readonly {
+            readonly id: string
+            /** @description The punishment `reasonName` and `reasonCategory` joined together. */
+            readonly reason: string
+            readonly reasonName: string
+            readonly reasonCategory: string
+            /** @enum {string} */
+            readonly type: 'BAN' | 'MUTE'
+            /** @description If true, the punishment does not expire. */
+            readonly permanent: boolean
+            /** @description For migration punishments, this value is 0. */
+            readonly issuedAt: number
+            /** @description If `permanent` is true, this value is -1. */
+            readonly validUntil: number
+            /** @description Whether this punishment is currently active. */
+            readonly active: boolean
+            /** @description The XUIDs affected by this punishment. */
+            readonly affectedXuids: readonly string[]
+            /** @description The corresponding player names to `affectedXuids`. */
+            readonly affectedPlayers: readonly string[]
+            readonly alt: boolean
+          }[]
+          readonly skinData?: {
+            readonly skin: boolean
+            /** @enum {string} */
+            readonly skinType: 'steve' | 'alex'
+            readonly skinVisibility: boolean
+            readonly base64: string
+            readonly raw: string | null
+          }
+          readonly winsData?: {
+            /** @default 0 */
+            readonly BH?: number
+            /** @default 0 */
+            readonly BW?: number
+            /** @default 0 */
+            readonly CQ?: number
+            /** @default 0 */
+            readonly Duels?: number
+            /** @default 0 */
+            readonly MM?: number
+            /** @default 0 */
+            readonly MS?: number
+            /** @default 0 */
+            readonly SC?: number
+            /** @default 0 */
+            readonly SG?: number
+            /** @default 0 */
+            readonly SW?: number
+            /** @default 0 */
+            readonly TB?: number
+            /** @default 0 */
+            readonly TR?: number
+            /** @default 0 */
+            readonly UHC?: number
+          }
           readonly extra?: {
             /** @default 0 */
             readonly bhWins?: number
@@ -1113,127 +1178,9 @@ export interface components {
             }
             readonly gxp: number
           }
-          readonly factionData?: {
-            readonly tags: number
-            readonly registerDate: string
-            readonly coins: number
-            readonly kills: number
-            readonly bounty: number
-            readonly faction: {
-              readonly id: number
-              readonly name: string
-              readonly strength: number
-              readonly allies: readonly string[]
-              readonly leader?: unknown
-              readonly officers: readonly unknown[]
-              readonly members: readonly unknown[]
-            } | null
-          } | null
           readonly leaderboard: boolean
-          readonly punishmentsNew?: readonly {
-            readonly id: string
-            /** @description The punishment `reasonName` and `reasonCategory` joined together. */
-            readonly reason: string
-            /** @enum {string} */
-            readonly reasonName:
-              | 'Abusing Report System'
-              | 'Advertisement Build'
-              | 'Advertising Hack Clients'
-              | 'Advertising Servers'
-              | 'Advertising Websites & Services'
-              | 'Anticheat Automatic Detection'
-              | 'Auto Clicker'
-              | 'Bug Exploiting'
-              | 'Chargeback'
-              | 'Credit Farming'
-              | 'Cross Teaming'
-              | 'Disrespect'
-              | 'Explicit Build'
-              | 'Fly'
-              | 'Inappropriate Conduct'
-              | 'Inappropriate Faction/Guild Name'
-              | 'Inappropriate Language'
-              | 'Inappropriate Nickname/Pet Name'
-              | 'Inappropriate Skin'
-              | 'Inappropriate Username'
-              | 'Jump'
-              | 'Key Mapper'
-              | 'Kill Farming'
-              | 'KillAura'
-              | 'Night Vision'
-              | 'Obstruction of Justice'
-              | 'Other'
-              | 'Player Tracer'
-              | 'Punishment Evading'
-              | 'Spamming'
-              | 'Speed'
-              | 'Staff Disrespect'
-              | 'Team Trolling/Killing'
-              | 'Teaming in Solo Mode'
-              | 'Teleport Trapping'
-              | 'Threat to Community'
-              | 'Violent Build'
-              | 'Xray'
-            /** @enum {string} */
-            readonly reasonCategory:
-              | 'Abusive Communication'
-              | 'Advertising'
-              | 'Cheating'
-              | 'Enforcement'
-              | 'Factions & Guilds'
-              | 'Inappropriate Behaviour'
-              | 'Inappropriate Build'
-              | 'Other'
-              | 'Prohibited Addon/Mod'
-              | 'Teaming'
-            /** @enum {string} */
-            readonly type: 'BAN' | 'MUTE'
-            /** @description If true, the punishment does not expire. */
-            readonly permanent: boolean
-            /** @description For migration punishments, this value is 0. */
-            readonly issuedAt: number
-            /** @description If `permanent` is true, this value is -1. */
-            readonly validUntil: number
-            /** @description Whether this punishment is currently active. */
-            readonly active: boolean
-            /** @description The XUIDs affected by this punishment. */
-            readonly affectedXuids: readonly string[]
-            /** @description The corresponding player names to `affectedXuids`. */
-            readonly affectedPlayers: readonly string[]
-            readonly alt: boolean
-          }[]
-          /** @enum {number} */
-          readonly voteStatus?: 0 | 1 | 2
-          readonly winsData?: {
-            /** @default 0 */
-            readonly BH?: number
-            /** @default 0 */
-            readonly BW?: number
-            /** @default 0 */
-            readonly CQ?: number
-            /** @default 0 */
-            readonly Duels?: number
-            /** @default 0 */
-            readonly MM?: number
-            /** @default 0 */
-            readonly MS?: number
-            /** @default 0 */
-            readonly SC?: number
-            /** @default 0 */
-            readonly SG?: number
-            /** @default 0 */
-            readonly SW?: number
-            /** @default 0 */
-            readonly TB?: number
-            /** @default 0 */
-            readonly TR?: number
-            /** @default 0 */
-            readonly UHC?: number
-          }
-          /** @deprecated use `punishmentsNew` instead */
-          readonly punishments: readonly unknown[]
-          /** @deprecated use `punishmentsNew` instead */
-          readonly warnings: readonly unknown[]
+          /** @deprecated use `credits` instead. */
+          readonly statusCredits: number
         }
       }>
     readonly SearchQuery: {
@@ -1321,24 +1268,112 @@ export interface components {
                   readonly avatar: string
                   /** Format: uri */
                   readonly skin: string
-                  readonly skinData?: {
-                    readonly skin: boolean
-                    /** @enum {string} */
-                    readonly skinType: 'steve' | 'alex'
-                    readonly skinVisibility: boolean
-                    readonly base64: string
-                    readonly raw: string | null
-                  }
-                  readonly skinVisibility: boolean
+                  readonly online?: boolean
+                  readonly flags: number
+                  /** @enum {number} */
+                  readonly dmStatus: 0 | 1 | 2
                   readonly bio: string
+                  readonly discordId: string | null
+                  readonly guild: string | null
+                  readonly ranks: readonly (
+                    | 'Owner'
+                    | 'Director'
+                    | 'Advisor'
+                    | 'Community'
+                    | 'Admin'
+                    | 'Dev'
+                    | 'Supervisor'
+                    | 'Discord'
+                    | 'Mod'
+                    | 'Crew'
+                    | 'Trainee'
+                    | 'Builder'
+                    | 'Designer'
+                    | 'Game Designer'
+                    | 'Media'
+                    | 'Partner'
+                    | 'Titan'
+                    | 'Legend'
+                    | 'Emerald'
+                    | 'Ultra'
+                    | 'Youtube'
+                    | 'Tester'
+                  )[]
+                  /** @enum {string|null} */
+                  readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null
+                  readonly banned?: boolean
+                  readonly muted?: boolean
                   readonly staff: boolean
                   readonly titan: boolean
                   /** Format: date-time */
                   readonly titanUntil: string | null
-                  readonly flags: number
-                  readonly banned?: boolean
-                  readonly muted?: boolean
-                  readonly guild: string | null
+                  /** @enum {number} */
+                  readonly voteStatus?: 0 | 1 | 2
+                  readonly firstJoin: string | null
+                  readonly firstJoined: number
+                  readonly lastJoin: string | null
+                  readonly lastJoined: number
+                  readonly lastQuit: number
+                  readonly lastSeen: string | null
+                  readonly lastServer: string
+                  readonly crateKeys: number
+                  readonly credits: number
+                  readonly deaths?: number
+                  readonly deathsTotal?: number
+                  readonly kdr?: number
+                  readonly kdrTotal?: number
+                  readonly kills?: number
+                  readonly killsTotal?: number
+                  readonly level: number
+                  readonly losses?: number
+                  readonly wins?: number
+                  readonly wlr?: number
+                  readonly xp: number
+                  readonly formattedLevel: string
+                  readonly levelColors: readonly (
+                    | '#000000'
+                    | '#0000aa'
+                    | '#00aa00'
+                    | '#00aaaa'
+                    | '#aa0000'
+                    | '#aa00aa'
+                    | '#ffaa00'
+                    | '#aaaaaa'
+                    | '#555555'
+                    | '#5555ff'
+                    | '#55ff55'
+                    | '#55ffff'
+                    | '#ff5555'
+                    | '#ff55ff'
+                    | '#ffff55'
+                    | '#ffffff'
+                    | '#ddd605'
+                  )[]
+                  /** @enum {string} */
+                  readonly levelFormat: '§k' | '§l' | '§o' | '§r'
+                  readonly rankColors: readonly string[]
+                  readonly skinVisibility: boolean
+                  readonly tierColor: string | null
+                  readonly youtubeChannelUrl: string | null
+                  readonly killsUntilNextKdr?: number
+                  readonly winsUntilNextWlr?: number
+                  readonly xpToNextLevel: number
+                  readonly factionData?: {
+                    readonly tags: number
+                    readonly registerDate: string
+                    readonly coins: number
+                    readonly kills: number
+                    readonly bounty: number
+                    readonly faction: {
+                      readonly id: number
+                      readonly name: string
+                      readonly strength: number
+                      readonly allies: readonly string[]
+                      readonly leader?: unknown
+                      readonly officers: readonly unknown[]
+                      readonly members: readonly unknown[]
+                    } | null
+                  } | null
                   readonly guildData?:
                     | (Partial<unknown> &
                         Partial<{
@@ -1380,82 +1415,6 @@ export interface components {
                           readonly members: readonly unknown[]
                         }>)
                     | null
-                  readonly level: number
-                  readonly levelColors: readonly (
-                    | '#000000'
-                    | '#0000aa'
-                    | '#00aa00'
-                    | '#00aaaa'
-                    | '#aa0000'
-                    | '#aa00aa'
-                    | '#ffaa00'
-                    | '#aaaaaa'
-                    | '#555555'
-                    | '#5555ff'
-                    | '#55ff55'
-                    | '#55ffff'
-                    | '#ff5555'
-                    | '#ff55ff'
-                    | '#ffff55'
-                    | '#ffffff'
-                    | '#ddd605'
-                  )[]
-                  /** @enum {string} */
-                  readonly levelFormat: '§k' | '§l' | '§o' | '§r'
-                  readonly formattedLevel: string
-                  readonly online?: boolean
-                  readonly credits: number
-                  readonly statusCredits: number
-                  readonly crateKeys: number
-                  readonly xp: number
-                  readonly xpToNextLevel: number
-                  readonly ranks: readonly (
-                    | 'Owner'
-                    | 'Director'
-                    | 'Advisor'
-                    | 'Community'
-                    | 'Admin'
-                    | 'Dev'
-                    | 'Supervisor'
-                    | 'Discord'
-                    | 'Mod'
-                    | 'Crew'
-                    | 'Trainee'
-                    | 'Builder'
-                    | 'Designer'
-                    | 'Game Designer'
-                    | 'Media'
-                    | 'Partner'
-                    | 'Titan'
-                    | 'Legend'
-                    | 'Emerald'
-                    | 'Ultra'
-                    | 'Youtube'
-                    | 'Tester'
-                  )[]
-                  readonly rankColors: readonly string[]
-                  readonly youtubeChannelUrl: string | null
-                  /** @enum {string|null} */
-                  readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null
-                  readonly tierColor: string | null
-                  readonly kills?: number
-                  readonly killsTotal?: number
-                  readonly deaths?: number
-                  readonly deathsTotal?: number
-                  readonly kdr?: number
-                  readonly kdrTotal?: number
-                  readonly killsUntilNextKdr?: number
-                  readonly wins?: number
-                  readonly losses?: number
-                  readonly wlr?: number
-                  readonly winsUntilNextWlr?: number
-                  readonly firstJoin: string | null
-                  readonly firstJoined: number
-                  readonly lastJoin: string | null
-                  readonly lastJoined: number
-                  readonly lastQuit: number
-                  readonly lastSeen: string | null
-                  readonly lastServer: string
                   readonly lastServerParsed: {
                     readonly region: string | null
                     readonly serverName: string | null
@@ -1463,9 +1422,62 @@ export interface components {
                     readonly serverType: string | null
                     readonly pretty: string
                   }
-                  /** @deprecated use `discordId` instead */
-                  readonly discordData: {readonly [key: string]: unknown}
-                  readonly discordId: string | null
+                  readonly punishmentsNew?: readonly {
+                    readonly id: string
+                    /** @description The punishment `reasonName` and `reasonCategory` joined together. */
+                    readonly reason: string
+                    readonly reasonName: string
+                    readonly reasonCategory: string
+                    /** @enum {string} */
+                    readonly type: 'BAN' | 'MUTE'
+                    /** @description If true, the punishment does not expire. */
+                    readonly permanent: boolean
+                    /** @description For migration punishments, this value is 0. */
+                    readonly issuedAt: number
+                    /** @description If `permanent` is true, this value is -1. */
+                    readonly validUntil: number
+                    /** @description Whether this punishment is currently active. */
+                    readonly active: boolean
+                    /** @description The XUIDs affected by this punishment. */
+                    readonly affectedXuids: readonly string[]
+                    /** @description The corresponding player names to `affectedXuids`. */
+                    readonly affectedPlayers: readonly string[]
+                    readonly alt: boolean
+                  }[]
+                  readonly skinData?: {
+                    readonly skin: boolean
+                    /** @enum {string} */
+                    readonly skinType: 'steve' | 'alex'
+                    readonly skinVisibility: boolean
+                    readonly base64: string
+                    readonly raw: string | null
+                  }
+                  readonly winsData?: {
+                    /** @default 0 */
+                    readonly BH?: number
+                    /** @default 0 */
+                    readonly BW?: number
+                    /** @default 0 */
+                    readonly CQ?: number
+                    /** @default 0 */
+                    readonly Duels?: number
+                    /** @default 0 */
+                    readonly MM?: number
+                    /** @default 0 */
+                    readonly MS?: number
+                    /** @default 0 */
+                    readonly SC?: number
+                    /** @default 0 */
+                    readonly SG?: number
+                    /** @default 0 */
+                    readonly SW?: number
+                    /** @default 0 */
+                    readonly TB?: number
+                    /** @default 0 */
+                    readonly TR?: number
+                    /** @default 0 */
+                    readonly UHC?: number
+                  }
                   readonly extra?: {
                     /** @default 0 */
                     readonly bhWins?: number
@@ -1962,127 +1974,9 @@ export interface components {
                     }
                     readonly gxp: number
                   }
-                  readonly factionData?: {
-                    readonly tags: number
-                    readonly registerDate: string
-                    readonly coins: number
-                    readonly kills: number
-                    readonly bounty: number
-                    readonly faction: {
-                      readonly id: number
-                      readonly name: string
-                      readonly strength: number
-                      readonly allies: readonly string[]
-                      readonly leader?: unknown
-                      readonly officers: readonly unknown[]
-                      readonly members: readonly unknown[]
-                    } | null
-                  } | null
                   readonly leaderboard: boolean
-                  readonly punishmentsNew?: readonly {
-                    readonly id: string
-                    /** @description The punishment `reasonName` and `reasonCategory` joined together. */
-                    readonly reason: string
-                    /** @enum {string} */
-                    readonly reasonName:
-                      | 'Abusing Report System'
-                      | 'Advertisement Build'
-                      | 'Advertising Hack Clients'
-                      | 'Advertising Servers'
-                      | 'Advertising Websites & Services'
-                      | 'Anticheat Automatic Detection'
-                      | 'Auto Clicker'
-                      | 'Bug Exploiting'
-                      | 'Chargeback'
-                      | 'Credit Farming'
-                      | 'Cross Teaming'
-                      | 'Disrespect'
-                      | 'Explicit Build'
-                      | 'Fly'
-                      | 'Inappropriate Conduct'
-                      | 'Inappropriate Faction/Guild Name'
-                      | 'Inappropriate Language'
-                      | 'Inappropriate Nickname/Pet Name'
-                      | 'Inappropriate Skin'
-                      | 'Inappropriate Username'
-                      | 'Jump'
-                      | 'Key Mapper'
-                      | 'Kill Farming'
-                      | 'KillAura'
-                      | 'Night Vision'
-                      | 'Obstruction of Justice'
-                      | 'Other'
-                      | 'Player Tracer'
-                      | 'Punishment Evading'
-                      | 'Spamming'
-                      | 'Speed'
-                      | 'Staff Disrespect'
-                      | 'Team Trolling/Killing'
-                      | 'Teaming in Solo Mode'
-                      | 'Teleport Trapping'
-                      | 'Threat to Community'
-                      | 'Violent Build'
-                      | 'Xray'
-                    /** @enum {string} */
-                    readonly reasonCategory:
-                      | 'Abusive Communication'
-                      | 'Advertising'
-                      | 'Cheating'
-                      | 'Enforcement'
-                      | 'Factions & Guilds'
-                      | 'Inappropriate Behaviour'
-                      | 'Inappropriate Build'
-                      | 'Other'
-                      | 'Prohibited Addon/Mod'
-                      | 'Teaming'
-                    /** @enum {string} */
-                    readonly type: 'BAN' | 'MUTE'
-                    /** @description If true, the punishment does not expire. */
-                    readonly permanent: boolean
-                    /** @description For migration punishments, this value is 0. */
-                    readonly issuedAt: number
-                    /** @description If `permanent` is true, this value is -1. */
-                    readonly validUntil: number
-                    /** @description Whether this punishment is currently active. */
-                    readonly active: boolean
-                    /** @description The XUIDs affected by this punishment. */
-                    readonly affectedXuids: readonly string[]
-                    /** @description The corresponding player names to `affectedXuids`. */
-                    readonly affectedPlayers: readonly string[]
-                    readonly alt: boolean
-                  }[]
-                  /** @enum {number} */
-                  readonly voteStatus?: 0 | 1 | 2
-                  readonly winsData?: {
-                    /** @default 0 */
-                    readonly BH?: number
-                    /** @default 0 */
-                    readonly BW?: number
-                    /** @default 0 */
-                    readonly CQ?: number
-                    /** @default 0 */
-                    readonly Duels?: number
-                    /** @default 0 */
-                    readonly MM?: number
-                    /** @default 0 */
-                    readonly MS?: number
-                    /** @default 0 */
-                    readonly SC?: number
-                    /** @default 0 */
-                    readonly SG?: number
-                    /** @default 0 */
-                    readonly SW?: number
-                    /** @default 0 */
-                    readonly TB?: number
-                    /** @default 0 */
-                    readonly TR?: number
-                    /** @default 0 */
-                    readonly UHC?: number
-                  }
-                  /** @deprecated use `punishmentsNew` instead */
-                  readonly punishments: readonly unknown[]
-                  /** @deprecated use `punishmentsNew` instead */
-                  readonly warnings: readonly unknown[]
+                  /** @deprecated use `credits` instead. */
+                  readonly statusCredits: number
                 }>)
             | null
         }[]
@@ -3369,24 +3263,112 @@ export interface components {
       readonly avatar: string
       /** Format: uri */
       readonly skin: string
-      readonly skinData?: {
-        readonly skin: boolean
-        /** @enum {string} */
-        readonly skinType: 'steve' | 'alex'
-        readonly skinVisibility: boolean
-        readonly base64: string
-        readonly raw: string | null
-      }
-      readonly skinVisibility: boolean
+      readonly online?: boolean
+      readonly flags: number
+      /** @enum {number} */
+      readonly dmStatus: 0 | 1 | 2
       readonly bio: string
+      readonly discordId: string | null
+      readonly guild: string | null
+      readonly ranks: readonly (
+        | 'Owner'
+        | 'Director'
+        | 'Advisor'
+        | 'Community'
+        | 'Admin'
+        | 'Dev'
+        | 'Supervisor'
+        | 'Discord'
+        | 'Mod'
+        | 'Crew'
+        | 'Trainee'
+        | 'Builder'
+        | 'Designer'
+        | 'Game Designer'
+        | 'Media'
+        | 'Partner'
+        | 'Titan'
+        | 'Legend'
+        | 'Emerald'
+        | 'Ultra'
+        | 'Youtube'
+        | 'Tester'
+      )[]
+      /** @enum {string|null} */
+      readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null
+      readonly banned?: boolean
+      readonly muted?: boolean
       readonly staff: boolean
       readonly titan: boolean
       /** Format: date-time */
       readonly titanUntil: string | null
-      readonly flags: number
-      readonly banned?: boolean
-      readonly muted?: boolean
-      readonly guild: string | null
+      /** @enum {number} */
+      readonly voteStatus?: 0 | 1 | 2
+      readonly firstJoin: string | null
+      readonly firstJoined: number
+      readonly lastJoin: string | null
+      readonly lastJoined: number
+      readonly lastQuit: number
+      readonly lastSeen: string | null
+      readonly lastServer: string
+      readonly crateKeys: number
+      readonly credits: number
+      readonly deaths?: number
+      readonly deathsTotal?: number
+      readonly kdr?: number
+      readonly kdrTotal?: number
+      readonly kills?: number
+      readonly killsTotal?: number
+      readonly level: number
+      readonly losses?: number
+      readonly wins?: number
+      readonly wlr?: number
+      readonly xp: number
+      readonly formattedLevel: string
+      readonly levelColors: readonly (
+        | '#000000'
+        | '#0000aa'
+        | '#00aa00'
+        | '#00aaaa'
+        | '#aa0000'
+        | '#aa00aa'
+        | '#ffaa00'
+        | '#aaaaaa'
+        | '#555555'
+        | '#5555ff'
+        | '#55ff55'
+        | '#55ffff'
+        | '#ff5555'
+        | '#ff55ff'
+        | '#ffff55'
+        | '#ffffff'
+        | '#ddd605'
+      )[]
+      /** @enum {string} */
+      readonly levelFormat: '§k' | '§l' | '§o' | '§r'
+      readonly rankColors: readonly string[]
+      readonly skinVisibility: boolean
+      readonly tierColor: string | null
+      readonly youtubeChannelUrl: string | null
+      readonly killsUntilNextKdr?: number
+      readonly winsUntilNextWlr?: number
+      readonly xpToNextLevel: number
+      readonly factionData?: {
+        readonly tags: number
+        readonly registerDate: string
+        readonly coins: number
+        readonly kills: number
+        readonly bounty: number
+        readonly faction: {
+          readonly id: number
+          readonly name: string
+          readonly strength: number
+          readonly allies: readonly string[]
+          readonly leader?: unknown
+          readonly officers: readonly unknown[]
+          readonly members: readonly unknown[]
+        } | null
+      } | null
       readonly guildData?:
         | (Partial<unknown> &
             Partial<{
@@ -3428,82 +3410,6 @@ export interface components {
               readonly members: readonly unknown[]
             }>)
         | null
-      readonly level: number
-      readonly levelColors: readonly (
-        | '#000000'
-        | '#0000aa'
-        | '#00aa00'
-        | '#00aaaa'
-        | '#aa0000'
-        | '#aa00aa'
-        | '#ffaa00'
-        | '#aaaaaa'
-        | '#555555'
-        | '#5555ff'
-        | '#55ff55'
-        | '#55ffff'
-        | '#ff5555'
-        | '#ff55ff'
-        | '#ffff55'
-        | '#ffffff'
-        | '#ddd605'
-      )[]
-      /** @enum {string} */
-      readonly levelFormat: '§k' | '§l' | '§o' | '§r'
-      readonly formattedLevel: string
-      readonly online?: boolean
-      readonly credits: number
-      readonly statusCredits: number
-      readonly crateKeys: number
-      readonly xp: number
-      readonly xpToNextLevel: number
-      readonly ranks: readonly (
-        | 'Owner'
-        | 'Director'
-        | 'Advisor'
-        | 'Community'
-        | 'Admin'
-        | 'Dev'
-        | 'Supervisor'
-        | 'Discord'
-        | 'Mod'
-        | 'Crew'
-        | 'Trainee'
-        | 'Builder'
-        | 'Designer'
-        | 'Game Designer'
-        | 'Media'
-        | 'Partner'
-        | 'Titan'
-        | 'Legend'
-        | 'Emerald'
-        | 'Ultra'
-        | 'Youtube'
-        | 'Tester'
-      )[]
-      readonly rankColors: readonly string[]
-      readonly youtubeChannelUrl: string | null
-      /** @enum {string|null} */
-      readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null
-      readonly tierColor: string | null
-      readonly kills?: number
-      readonly killsTotal?: number
-      readonly deaths?: number
-      readonly deathsTotal?: number
-      readonly kdr?: number
-      readonly kdrTotal?: number
-      readonly killsUntilNextKdr?: number
-      readonly wins?: number
-      readonly losses?: number
-      readonly wlr?: number
-      readonly winsUntilNextWlr?: number
-      readonly firstJoin: string | null
-      readonly firstJoined: number
-      readonly lastJoin: string | null
-      readonly lastJoined: number
-      readonly lastQuit: number
-      readonly lastSeen: string | null
-      readonly lastServer: string
       readonly lastServerParsed: {
         readonly region: string | null
         readonly serverName: string | null
@@ -3511,9 +3417,62 @@ export interface components {
         readonly serverType: string | null
         readonly pretty: string
       }
-      /** @deprecated use `discordId` instead */
-      readonly discordData: {readonly [key: string]: unknown}
-      readonly discordId: string | null
+      readonly punishmentsNew?: readonly {
+        readonly id: string
+        /** @description The punishment `reasonName` and `reasonCategory` joined together. */
+        readonly reason: string
+        readonly reasonName: string
+        readonly reasonCategory: string
+        /** @enum {string} */
+        readonly type: 'BAN' | 'MUTE'
+        /** @description If true, the punishment does not expire. */
+        readonly permanent: boolean
+        /** @description For migration punishments, this value is 0. */
+        readonly issuedAt: number
+        /** @description If `permanent` is true, this value is -1. */
+        readonly validUntil: number
+        /** @description Whether this punishment is currently active. */
+        readonly active: boolean
+        /** @description The XUIDs affected by this punishment. */
+        readonly affectedXuids: readonly string[]
+        /** @description The corresponding player names to `affectedXuids`. */
+        readonly affectedPlayers: readonly string[]
+        readonly alt: boolean
+      }[]
+      readonly skinData?: {
+        readonly skin: boolean
+        /** @enum {string} */
+        readonly skinType: 'steve' | 'alex'
+        readonly skinVisibility: boolean
+        readonly base64: string
+        readonly raw: string | null
+      }
+      readonly winsData?: {
+        /** @default 0 */
+        readonly BH?: number
+        /** @default 0 */
+        readonly BW?: number
+        /** @default 0 */
+        readonly CQ?: number
+        /** @default 0 */
+        readonly Duels?: number
+        /** @default 0 */
+        readonly MM?: number
+        /** @default 0 */
+        readonly MS?: number
+        /** @default 0 */
+        readonly SC?: number
+        /** @default 0 */
+        readonly SG?: number
+        /** @default 0 */
+        readonly SW?: number
+        /** @default 0 */
+        readonly TB?: number
+        /** @default 0 */
+        readonly TR?: number
+        /** @default 0 */
+        readonly UHC?: number
+      }
       readonly extra?: {
         /** @default 0 */
         readonly bhWins?: number
@@ -4010,127 +3969,9 @@ export interface components {
         }
         readonly gxp: number
       }
-      readonly factionData?: {
-        readonly tags: number
-        readonly registerDate: string
-        readonly coins: number
-        readonly kills: number
-        readonly bounty: number
-        readonly faction: {
-          readonly id: number
-          readonly name: string
-          readonly strength: number
-          readonly allies: readonly string[]
-          readonly leader?: unknown
-          readonly officers: readonly unknown[]
-          readonly members: readonly unknown[]
-        } | null
-      } | null
       readonly leaderboard: boolean
-      readonly punishmentsNew?: readonly {
-        readonly id: string
-        /** @description The punishment `reasonName` and `reasonCategory` joined together. */
-        readonly reason: string
-        /** @enum {string} */
-        readonly reasonName:
-          | 'Abusing Report System'
-          | 'Advertisement Build'
-          | 'Advertising Hack Clients'
-          | 'Advertising Servers'
-          | 'Advertising Websites & Services'
-          | 'Anticheat Automatic Detection'
-          | 'Auto Clicker'
-          | 'Bug Exploiting'
-          | 'Chargeback'
-          | 'Credit Farming'
-          | 'Cross Teaming'
-          | 'Disrespect'
-          | 'Explicit Build'
-          | 'Fly'
-          | 'Inappropriate Conduct'
-          | 'Inappropriate Faction/Guild Name'
-          | 'Inappropriate Language'
-          | 'Inappropriate Nickname/Pet Name'
-          | 'Inappropriate Skin'
-          | 'Inappropriate Username'
-          | 'Jump'
-          | 'Key Mapper'
-          | 'Kill Farming'
-          | 'KillAura'
-          | 'Night Vision'
-          | 'Obstruction of Justice'
-          | 'Other'
-          | 'Player Tracer'
-          | 'Punishment Evading'
-          | 'Spamming'
-          | 'Speed'
-          | 'Staff Disrespect'
-          | 'Team Trolling/Killing'
-          | 'Teaming in Solo Mode'
-          | 'Teleport Trapping'
-          | 'Threat to Community'
-          | 'Violent Build'
-          | 'Xray'
-        /** @enum {string} */
-        readonly reasonCategory:
-          | 'Abusive Communication'
-          | 'Advertising'
-          | 'Cheating'
-          | 'Enforcement'
-          | 'Factions & Guilds'
-          | 'Inappropriate Behaviour'
-          | 'Inappropriate Build'
-          | 'Other'
-          | 'Prohibited Addon/Mod'
-          | 'Teaming'
-        /** @enum {string} */
-        readonly type: 'BAN' | 'MUTE'
-        /** @description If true, the punishment does not expire. */
-        readonly permanent: boolean
-        /** @description For migration punishments, this value is 0. */
-        readonly issuedAt: number
-        /** @description If `permanent` is true, this value is -1. */
-        readonly validUntil: number
-        /** @description Whether this punishment is currently active. */
-        readonly active: boolean
-        /** @description The XUIDs affected by this punishment. */
-        readonly affectedXuids: readonly string[]
-        /** @description The corresponding player names to `affectedXuids`. */
-        readonly affectedPlayers: readonly string[]
-        readonly alt: boolean
-      }[]
-      /** @enum {number} */
-      readonly voteStatus?: 0 | 1 | 2
-      readonly winsData?: {
-        /** @default 0 */
-        readonly BH?: number
-        /** @default 0 */
-        readonly BW?: number
-        /** @default 0 */
-        readonly CQ?: number
-        /** @default 0 */
-        readonly Duels?: number
-        /** @default 0 */
-        readonly MM?: number
-        /** @default 0 */
-        readonly MS?: number
-        /** @default 0 */
-        readonly SC?: number
-        /** @default 0 */
-        readonly SG?: number
-        /** @default 0 */
-        readonly SW?: number
-        /** @default 0 */
-        readonly TB?: number
-        /** @default 0 */
-        readonly TR?: number
-        /** @default 0 */
-        readonly UHC?: number
-      }
-      /** @deprecated use `punishmentsNew` instead */
-      readonly punishments: readonly unknown[]
-      /** @deprecated use `punishmentsNew` instead */
-      readonly warnings: readonly unknown[]
+      /** @deprecated use `credits` instead. */
+      readonly statusCredits: number
     }
     readonly PlayerQuery: {
       /** @default false */
@@ -4162,58 +4003,8 @@ export interface components {
         readonly id: string
         /** @description The punishment `reasonName` and `reasonCategory` joined together. */
         readonly reason: string
-        /** @enum {string} */
-        readonly reasonName:
-          | 'Abusing Report System'
-          | 'Advertisement Build'
-          | 'Advertising Hack Clients'
-          | 'Advertising Servers'
-          | 'Advertising Websites & Services'
-          | 'Anticheat Automatic Detection'
-          | 'Auto Clicker'
-          | 'Bug Exploiting'
-          | 'Chargeback'
-          | 'Credit Farming'
-          | 'Cross Teaming'
-          | 'Disrespect'
-          | 'Explicit Build'
-          | 'Fly'
-          | 'Inappropriate Conduct'
-          | 'Inappropriate Faction/Guild Name'
-          | 'Inappropriate Language'
-          | 'Inappropriate Nickname/Pet Name'
-          | 'Inappropriate Skin'
-          | 'Inappropriate Username'
-          | 'Jump'
-          | 'Key Mapper'
-          | 'Kill Farming'
-          | 'KillAura'
-          | 'Night Vision'
-          | 'Obstruction of Justice'
-          | 'Other'
-          | 'Player Tracer'
-          | 'Punishment Evading'
-          | 'Spamming'
-          | 'Speed'
-          | 'Staff Disrespect'
-          | 'Team Trolling/Killing'
-          | 'Teaming in Solo Mode'
-          | 'Teleport Trapping'
-          | 'Threat to Community'
-          | 'Violent Build'
-          | 'Xray'
-        /** @enum {string} */
-        readonly reasonCategory:
-          | 'Abusive Communication'
-          | 'Advertising'
-          | 'Cheating'
-          | 'Enforcement'
-          | 'Factions & Guilds'
-          | 'Inappropriate Behaviour'
-          | 'Inappropriate Build'
-          | 'Other'
-          | 'Prohibited Addon/Mod'
-          | 'Teaming'
+        readonly reasonName: string
+        readonly reasonCategory: string
         /** @enum {string} */
         readonly type: 'BAN' | 'MUTE'
         /** @description If true, the punishment does not expire. */
@@ -4235,58 +4026,8 @@ export interface components {
       readonly id: string
       /** @description The punishment `reasonName` and `reasonCategory` joined together. */
       readonly reason: string
-      /** @enum {string} */
-      readonly reasonName:
-        | 'Abusing Report System'
-        | 'Advertisement Build'
-        | 'Advertising Hack Clients'
-        | 'Advertising Servers'
-        | 'Advertising Websites & Services'
-        | 'Anticheat Automatic Detection'
-        | 'Auto Clicker'
-        | 'Bug Exploiting'
-        | 'Chargeback'
-        | 'Credit Farming'
-        | 'Cross Teaming'
-        | 'Disrespect'
-        | 'Explicit Build'
-        | 'Fly'
-        | 'Inappropriate Conduct'
-        | 'Inappropriate Faction/Guild Name'
-        | 'Inappropriate Language'
-        | 'Inappropriate Nickname/Pet Name'
-        | 'Inappropriate Skin'
-        | 'Inappropriate Username'
-        | 'Jump'
-        | 'Key Mapper'
-        | 'Kill Farming'
-        | 'KillAura'
-        | 'Night Vision'
-        | 'Obstruction of Justice'
-        | 'Other'
-        | 'Player Tracer'
-        | 'Punishment Evading'
-        | 'Spamming'
-        | 'Speed'
-        | 'Staff Disrespect'
-        | 'Team Trolling/Killing'
-        | 'Teaming in Solo Mode'
-        | 'Teleport Trapping'
-        | 'Threat to Community'
-        | 'Violent Build'
-        | 'Xray'
-      /** @enum {string} */
-      readonly reasonCategory:
-        | 'Abusive Communication'
-        | 'Advertising'
-        | 'Cheating'
-        | 'Enforcement'
-        | 'Factions & Guilds'
-        | 'Inappropriate Behaviour'
-        | 'Inappropriate Build'
-        | 'Other'
-        | 'Prohibited Addon/Mod'
-        | 'Teaming'
+      readonly reasonName: string
+      readonly reasonCategory: string
       /** @enum {string} */
       readonly type: 'BAN' | 'MUTE'
       /** @description If true, the punishment does not expire. */
@@ -5411,24 +5152,112 @@ export interface components {
       readonly avatar: string
       /** Format: uri */
       readonly skin: string
-      readonly skinData?: {
-        readonly skin: boolean
-        /** @enum {string} */
-        readonly skinType: 'steve' | 'alex'
-        readonly skinVisibility: boolean
-        readonly base64: string
-        readonly raw: string | null
-      }
-      readonly skinVisibility: boolean
+      readonly online?: boolean
+      readonly flags: number
+      /** @enum {number} */
+      readonly dmStatus: 0 | 1 | 2
       readonly bio: string
+      readonly discordId: string | null
+      readonly guild: string | null
+      readonly ranks: readonly (
+        | 'Owner'
+        | 'Director'
+        | 'Advisor'
+        | 'Community'
+        | 'Admin'
+        | 'Dev'
+        | 'Supervisor'
+        | 'Discord'
+        | 'Mod'
+        | 'Crew'
+        | 'Trainee'
+        | 'Builder'
+        | 'Designer'
+        | 'Game Designer'
+        | 'Media'
+        | 'Partner'
+        | 'Titan'
+        | 'Legend'
+        | 'Emerald'
+        | 'Ultra'
+        | 'Youtube'
+        | 'Tester'
+      )[]
+      /** @enum {string|null} */
+      readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null
+      readonly banned?: boolean
+      readonly muted?: boolean
       readonly staff: boolean
       readonly titan: boolean
       /** Format: date-time */
       readonly titanUntil: string | null
-      readonly flags: number
-      readonly banned?: boolean
-      readonly muted?: boolean
-      readonly guild: string | null
+      /** @enum {number} */
+      readonly voteStatus?: 0 | 1 | 2
+      readonly firstJoin: string | null
+      readonly firstJoined: number
+      readonly lastJoin: string | null
+      readonly lastJoined: number
+      readonly lastQuit: number
+      readonly lastSeen: string | null
+      readonly lastServer: string
+      readonly crateKeys: number
+      readonly credits: number
+      readonly deaths?: number
+      readonly deathsTotal?: number
+      readonly kdr?: number
+      readonly kdrTotal?: number
+      readonly kills?: number
+      readonly killsTotal?: number
+      readonly level: number
+      readonly losses?: number
+      readonly wins?: number
+      readonly wlr?: number
+      readonly xp: number
+      readonly formattedLevel: string
+      readonly levelColors: readonly (
+        | '#000000'
+        | '#0000aa'
+        | '#00aa00'
+        | '#00aaaa'
+        | '#aa0000'
+        | '#aa00aa'
+        | '#ffaa00'
+        | '#aaaaaa'
+        | '#555555'
+        | '#5555ff'
+        | '#55ff55'
+        | '#55ffff'
+        | '#ff5555'
+        | '#ff55ff'
+        | '#ffff55'
+        | '#ffffff'
+        | '#ddd605'
+      )[]
+      /** @enum {string} */
+      readonly levelFormat: '§k' | '§l' | '§o' | '§r'
+      readonly rankColors: readonly string[]
+      readonly skinVisibility: boolean
+      readonly tierColor: string | null
+      readonly youtubeChannelUrl: string | null
+      readonly killsUntilNextKdr?: number
+      readonly winsUntilNextWlr?: number
+      readonly xpToNextLevel: number
+      readonly factionData?: {
+        readonly tags: number
+        readonly registerDate: string
+        readonly coins: number
+        readonly kills: number
+        readonly bounty: number
+        readonly faction: {
+          readonly id: number
+          readonly name: string
+          readonly strength: number
+          readonly allies: readonly string[]
+          readonly leader?: unknown
+          readonly officers: readonly unknown[]
+          readonly members: readonly unknown[]
+        } | null
+      } | null
       readonly guildData?:
         | (Partial<unknown> &
             Partial<{
@@ -5470,82 +5299,6 @@ export interface components {
               readonly members: readonly unknown[]
             }>)
         | null
-      readonly level: number
-      readonly levelColors: readonly (
-        | '#000000'
-        | '#0000aa'
-        | '#00aa00'
-        | '#00aaaa'
-        | '#aa0000'
-        | '#aa00aa'
-        | '#ffaa00'
-        | '#aaaaaa'
-        | '#555555'
-        | '#5555ff'
-        | '#55ff55'
-        | '#55ffff'
-        | '#ff5555'
-        | '#ff55ff'
-        | '#ffff55'
-        | '#ffffff'
-        | '#ddd605'
-      )[]
-      /** @enum {string} */
-      readonly levelFormat: '§k' | '§l' | '§o' | '§r'
-      readonly formattedLevel: string
-      readonly online?: boolean
-      readonly credits: number
-      readonly statusCredits: number
-      readonly crateKeys: number
-      readonly xp: number
-      readonly xpToNextLevel: number
-      readonly ranks: readonly (
-        | 'Owner'
-        | 'Director'
-        | 'Advisor'
-        | 'Community'
-        | 'Admin'
-        | 'Dev'
-        | 'Supervisor'
-        | 'Discord'
-        | 'Mod'
-        | 'Crew'
-        | 'Trainee'
-        | 'Builder'
-        | 'Designer'
-        | 'Game Designer'
-        | 'Media'
-        | 'Partner'
-        | 'Titan'
-        | 'Legend'
-        | 'Emerald'
-        | 'Ultra'
-        | 'Youtube'
-        | 'Tester'
-      )[]
-      readonly rankColors: readonly string[]
-      readonly youtubeChannelUrl: string | null
-      /** @enum {string|null} */
-      readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null
-      readonly tierColor: string | null
-      readonly kills?: number
-      readonly killsTotal?: number
-      readonly deaths?: number
-      readonly deathsTotal?: number
-      readonly kdr?: number
-      readonly kdrTotal?: number
-      readonly killsUntilNextKdr?: number
-      readonly wins?: number
-      readonly losses?: number
-      readonly wlr?: number
-      readonly winsUntilNextWlr?: number
-      readonly firstJoin: string | null
-      readonly firstJoined: number
-      readonly lastJoin: string | null
-      readonly lastJoined: number
-      readonly lastQuit: number
-      readonly lastSeen: string | null
-      readonly lastServer: string
       readonly lastServerParsed: {
         readonly region: string | null
         readonly serverName: string | null
@@ -5553,9 +5306,62 @@ export interface components {
         readonly serverType: string | null
         readonly pretty: string
       }
-      /** @deprecated use `discordId` instead */
-      readonly discordData: {readonly [key: string]: unknown}
-      readonly discordId: string | null
+      readonly punishmentsNew?: readonly {
+        readonly id: string
+        /** @description The punishment `reasonName` and `reasonCategory` joined together. */
+        readonly reason: string
+        readonly reasonName: string
+        readonly reasonCategory: string
+        /** @enum {string} */
+        readonly type: 'BAN' | 'MUTE'
+        /** @description If true, the punishment does not expire. */
+        readonly permanent: boolean
+        /** @description For migration punishments, this value is 0. */
+        readonly issuedAt: number
+        /** @description If `permanent` is true, this value is -1. */
+        readonly validUntil: number
+        /** @description Whether this punishment is currently active. */
+        readonly active: boolean
+        /** @description The XUIDs affected by this punishment. */
+        readonly affectedXuids: readonly string[]
+        /** @description The corresponding player names to `affectedXuids`. */
+        readonly affectedPlayers: readonly string[]
+        readonly alt: boolean
+      }[]
+      readonly skinData?: {
+        readonly skin: boolean
+        /** @enum {string} */
+        readonly skinType: 'steve' | 'alex'
+        readonly skinVisibility: boolean
+        readonly base64: string
+        readonly raw: string | null
+      }
+      readonly winsData?: {
+        /** @default 0 */
+        readonly BH?: number
+        /** @default 0 */
+        readonly BW?: number
+        /** @default 0 */
+        readonly CQ?: number
+        /** @default 0 */
+        readonly Duels?: number
+        /** @default 0 */
+        readonly MM?: number
+        /** @default 0 */
+        readonly MS?: number
+        /** @default 0 */
+        readonly SC?: number
+        /** @default 0 */
+        readonly SG?: number
+        /** @default 0 */
+        readonly SW?: number
+        /** @default 0 */
+        readonly TB?: number
+        /** @default 0 */
+        readonly TR?: number
+        /** @default 0 */
+        readonly UHC?: number
+      }
       readonly extra?: {
         /** @default 0 */
         readonly bhWins?: number
@@ -6052,127 +5858,9 @@ export interface components {
         }
         readonly gxp: number
       }
-      readonly factionData?: {
-        readonly tags: number
-        readonly registerDate: string
-        readonly coins: number
-        readonly kills: number
-        readonly bounty: number
-        readonly faction: {
-          readonly id: number
-          readonly name: string
-          readonly strength: number
-          readonly allies: readonly string[]
-          readonly leader?: unknown
-          readonly officers: readonly unknown[]
-          readonly members: readonly unknown[]
-        } | null
-      } | null
       readonly leaderboard: boolean
-      readonly punishmentsNew?: readonly {
-        readonly id: string
-        /** @description The punishment `reasonName` and `reasonCategory` joined together. */
-        readonly reason: string
-        /** @enum {string} */
-        readonly reasonName:
-          | 'Abusing Report System'
-          | 'Advertisement Build'
-          | 'Advertising Hack Clients'
-          | 'Advertising Servers'
-          | 'Advertising Websites & Services'
-          | 'Anticheat Automatic Detection'
-          | 'Auto Clicker'
-          | 'Bug Exploiting'
-          | 'Chargeback'
-          | 'Credit Farming'
-          | 'Cross Teaming'
-          | 'Disrespect'
-          | 'Explicit Build'
-          | 'Fly'
-          | 'Inappropriate Conduct'
-          | 'Inappropriate Faction/Guild Name'
-          | 'Inappropriate Language'
-          | 'Inappropriate Nickname/Pet Name'
-          | 'Inappropriate Skin'
-          | 'Inappropriate Username'
-          | 'Jump'
-          | 'Key Mapper'
-          | 'Kill Farming'
-          | 'KillAura'
-          | 'Night Vision'
-          | 'Obstruction of Justice'
-          | 'Other'
-          | 'Player Tracer'
-          | 'Punishment Evading'
-          | 'Spamming'
-          | 'Speed'
-          | 'Staff Disrespect'
-          | 'Team Trolling/Killing'
-          | 'Teaming in Solo Mode'
-          | 'Teleport Trapping'
-          | 'Threat to Community'
-          | 'Violent Build'
-          | 'Xray'
-        /** @enum {string} */
-        readonly reasonCategory:
-          | 'Abusive Communication'
-          | 'Advertising'
-          | 'Cheating'
-          | 'Enforcement'
-          | 'Factions & Guilds'
-          | 'Inappropriate Behaviour'
-          | 'Inappropriate Build'
-          | 'Other'
-          | 'Prohibited Addon/Mod'
-          | 'Teaming'
-        /** @enum {string} */
-        readonly type: 'BAN' | 'MUTE'
-        /** @description If true, the punishment does not expire. */
-        readonly permanent: boolean
-        /** @description For migration punishments, this value is 0. */
-        readonly issuedAt: number
-        /** @description If `permanent` is true, this value is -1. */
-        readonly validUntil: number
-        /** @description Whether this punishment is currently active. */
-        readonly active: boolean
-        /** @description The XUIDs affected by this punishment. */
-        readonly affectedXuids: readonly string[]
-        /** @description The corresponding player names to `affectedXuids`. */
-        readonly affectedPlayers: readonly string[]
-        readonly alt: boolean
-      }[]
-      /** @enum {number} */
-      readonly voteStatus?: 0 | 1 | 2
-      readonly winsData?: {
-        /** @default 0 */
-        readonly BH?: number
-        /** @default 0 */
-        readonly BW?: number
-        /** @default 0 */
-        readonly CQ?: number
-        /** @default 0 */
-        readonly Duels?: number
-        /** @default 0 */
-        readonly MM?: number
-        /** @default 0 */
-        readonly MS?: number
-        /** @default 0 */
-        readonly SC?: number
-        /** @default 0 */
-        readonly SG?: number
-        /** @default 0 */
-        readonly SW?: number
-        /** @default 0 */
-        readonly TB?: number
-        /** @default 0 */
-        readonly TR?: number
-        /** @default 0 */
-        readonly UHC?: number
-      }
-      /** @deprecated use `punishmentsNew` instead */
-      readonly punishments: readonly unknown[]
-      /** @deprecated use `punishmentsNew` instead */
-      readonly warnings: readonly unknown[]
+      /** @deprecated use `credits` instead. */
+      readonly statusCredits: number
     }[]
     readonly PlayerBulkInput: {
       /** @default false */
