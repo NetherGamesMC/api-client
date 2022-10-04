@@ -480,14 +480,9 @@ export interface components {
           readonly discordId: string | null
           readonly guild: string | null
           readonly ranks: readonly (
-            | 'Owner'
-            | 'Director'
-            | 'Advisor'
-            | 'Community'
             | 'Admin'
             | 'Dev'
             | 'Supervisor'
-            | 'Discord'
             | 'Mod'
             | 'Crew'
             | 'Trainee'
@@ -495,6 +490,7 @@ export interface components {
             | 'Designer'
             | 'Game Designer'
             | 'Media'
+            | 'Discord'
             | 'Partner'
             | 'Titan'
             | 'Legend'
@@ -1276,14 +1272,9 @@ export interface components {
                   readonly discordId: string | null
                   readonly guild: string | null
                   readonly ranks: readonly (
-                    | 'Owner'
-                    | 'Director'
-                    | 'Advisor'
-                    | 'Community'
                     | 'Admin'
                     | 'Dev'
                     | 'Supervisor'
-                    | 'Discord'
                     | 'Mod'
                     | 'Crew'
                     | 'Trainee'
@@ -1291,6 +1282,7 @@ export interface components {
                     | 'Designer'
                     | 'Game Designer'
                     | 'Media'
+                    | 'Discord'
                     | 'Partner'
                     | 'Titan'
                     | 'Legend'
@@ -3271,14 +3263,9 @@ export interface components {
       readonly discordId: string | null
       readonly guild: string | null
       readonly ranks: readonly (
-        | 'Owner'
-        | 'Director'
-        | 'Advisor'
-        | 'Community'
         | 'Admin'
         | 'Dev'
         | 'Supervisor'
-        | 'Discord'
         | 'Mod'
         | 'Crew'
         | 'Trainee'
@@ -3286,6 +3273,7 @@ export interface components {
         | 'Designer'
         | 'Game Designer'
         | 'Media'
+        | 'Discord'
         | 'Partner'
         | 'Titan'
         | 'Legend'
@@ -5160,14 +5148,9 @@ export interface components {
       readonly discordId: string | null
       readonly guild: string | null
       readonly ranks: readonly (
-        | 'Owner'
-        | 'Director'
-        | 'Advisor'
-        | 'Community'
         | 'Admin'
         | 'Dev'
         | 'Supervisor'
-        | 'Discord'
         | 'Mod'
         | 'Crew'
         | 'Trainee'
@@ -5175,6 +5158,7 @@ export interface components {
         | 'Designer'
         | 'Game Designer'
         | 'Media'
+        | 'Discord'
         | 'Partner'
         | 'Titan'
         | 'Legend'
