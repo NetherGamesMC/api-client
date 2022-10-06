@@ -502,11 +502,15 @@ export interface components {
           /** @enum {string|null} */
           readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null
           readonly banned?: boolean
+          readonly bannedUntil?: (Partial<unknown> & Partial<number>) | null
           readonly muted?: boolean
+          readonly mutedUntil?: (Partial<unknown> & Partial<number>) | null
           readonly staff: boolean
           readonly titan: boolean
           /** Format: date-time */
           readonly titanUntil: string | null
+          /** Format: date-time */
+          readonly lastRankTimestamp: string | null
           /** @enum {number} */
           readonly voteStatus?: 0 | 1 | 2
           readonly firstJoin: string | null
@@ -558,6 +562,8 @@ export interface components {
           readonly killsUntilNextKdr?: number
           readonly winsUntilNextWlr?: number
           readonly xpToNextLevel: number
+          readonly discoveredTokens: readonly string[]
+          readonly discoveredZones: readonly string[]
           readonly factionData?: {
             readonly tags: number
             readonly registerDate: string
@@ -1294,11 +1300,15 @@ export interface components {
                   /** @enum {string|null} */
                   readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null
                   readonly banned?: boolean
+                  readonly bannedUntil?: (Partial<unknown> & Partial<number>) | null
                   readonly muted?: boolean
+                  readonly mutedUntil?: (Partial<unknown> & Partial<number>) | null
                   readonly staff: boolean
                   readonly titan: boolean
                   /** Format: date-time */
                   readonly titanUntil: string | null
+                  /** Format: date-time */
+                  readonly lastRankTimestamp: string | null
                   /** @enum {number} */
                   readonly voteStatus?: 0 | 1 | 2
                   readonly firstJoin: string | null
@@ -1350,6 +1360,8 @@ export interface components {
                   readonly killsUntilNextKdr?: number
                   readonly winsUntilNextWlr?: number
                   readonly xpToNextLevel: number
+                  readonly discoveredTokens: readonly string[]
+                  readonly discoveredZones: readonly string[]
                   readonly factionData?: {
                     readonly tags: number
                     readonly registerDate: string
@@ -3285,11 +3297,15 @@ export interface components {
       /** @enum {string|null} */
       readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null
       readonly banned?: boolean
+      readonly bannedUntil?: (Partial<unknown> & Partial<number>) | null
       readonly muted?: boolean
+      readonly mutedUntil?: (Partial<unknown> & Partial<number>) | null
       readonly staff: boolean
       readonly titan: boolean
       /** Format: date-time */
       readonly titanUntil: string | null
+      /** Format: date-time */
+      readonly lastRankTimestamp: string | null
       /** @enum {number} */
       readonly voteStatus?: 0 | 1 | 2
       readonly firstJoin: string | null
@@ -3341,6 +3357,8 @@ export interface components {
       readonly killsUntilNextKdr?: number
       readonly winsUntilNextWlr?: number
       readonly xpToNextLevel: number
+      readonly discoveredTokens: readonly string[]
+      readonly discoveredZones: readonly string[]
       readonly factionData?: {
         readonly tags: number
         readonly registerDate: string
@@ -5170,11 +5188,15 @@ export interface components {
       /** @enum {string|null} */
       readonly tier: ('Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite') | null
       readonly banned?: boolean
+      readonly bannedUntil?: (Partial<unknown> & Partial<number>) | null
       readonly muted?: boolean
+      readonly mutedUntil?: (Partial<unknown> & Partial<number>) | null
       readonly staff: boolean
       readonly titan: boolean
       /** Format: date-time */
       readonly titanUntil: string | null
+      /** Format: date-time */
+      readonly lastRankTimestamp: string | null
       /** @enum {number} */
       readonly voteStatus?: 0 | 1 | 2
       readonly firstJoin: string | null
@@ -5226,6 +5248,8 @@ export interface components {
       readonly killsUntilNextKdr?: number
       readonly winsUntilNextWlr?: number
       readonly xpToNextLevel: number
+      readonly discoveredTokens: readonly string[]
+      readonly discoveredZones: readonly string[]
       readonly factionData?: {
         readonly tags: number
         readonly registerDate: string
@@ -6327,8 +6351,6 @@ export interface components {
       /** @default true */
       readonly withOnline?: boolean
       /** @default false */
-      readonly withPunishments?: boolean
-      /** @default false */
       readonly withSkinData?: boolean
       /** @default false */
       readonly withStats?: boolean
@@ -6378,8 +6400,6 @@ export interface components {
       readonly expand?: boolean
       /** @default true */
       readonly withOnline?: boolean
-      /** @default false */
-      readonly withPunishments?: boolean
       /** @default false */
       readonly withSkinData?: boolean
       /** @default false */
@@ -6451,7 +6471,6 @@ export interface operations {
       readonly query: {
         readonly expand?: boolean
         readonly withOnline?: boolean
-        readonly withPunishments?: boolean
         readonly withSkinData?: boolean
         readonly withStats?: boolean
         readonly withVoteStatus?: boolean
@@ -6506,7 +6525,6 @@ export interface operations {
       readonly query: {
         readonly expand?: boolean
         readonly withOnline?: boolean
-        readonly withPunishments?: boolean
         readonly withSkinData?: boolean
         readonly withStats?: boolean
         readonly withVoteStatus?: boolean
