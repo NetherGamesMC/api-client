@@ -5895,17 +5895,20 @@ export interface components {
       readonly names: readonly string[]
     }
     readonly LeaderboardResponseXP: {
+      readonly xuid: string
       readonly player: string
       readonly xp: number
       readonly xpToNextLevel: number
       readonly level: number
     }
     readonly LeaderboardResponseWLR: {
+      readonly xuid: string
       readonly player: string
       readonly wlr: number
       readonly winsUntilNextWlr: number
     }
     readonly LeaderboardResponseWins: {
+      readonly xuid: string
       readonly player: string
       readonly wins: number
     }
@@ -5914,22 +5917,27 @@ export interface components {
       readonly votes: number
     }
     readonly LeaderboardResponsePlaytime: {
+      readonly xuid: string
       readonly player: string
       readonly onlineTime: number
     }
     readonly LeaderboardResponseParkour: {
+      readonly xuid: string
       readonly name: string
       readonly time: number
     }
     readonly LeaderboardResponseOldest: {
+      readonly xuid: string
       readonly player: string
       readonly joinedAt: number
     }
     readonly LeaderboardResponseKills: {
+      readonly xuid: string
       readonly player: string
       readonly kills: number
     }
     readonly LeaderboardResponseKDR: {
+      readonly xuid: string
       readonly player: string
       readonly kdr: number
       readonly killsUntilNextKdr: number
@@ -5943,6 +5951,7 @@ export interface components {
       readonly earnedXp?: number
     }
     readonly LeaderboardResponseGame: {
+      readonly xuid: string
       readonly player: string
       readonly value: number
     }
@@ -5952,6 +5961,7 @@ export interface components {
       readonly strength: number
     }> &
       Partial<{
+        readonly xuid: string
         readonly player: string
         readonly kills: number
         readonly coins: number
@@ -5963,21 +5973,25 @@ export interface components {
         readonly level: number
       }>
     readonly LeaderboardResponseCredits: {
+      readonly xuid: string
       readonly player: string
       readonly credits: number
     }
     readonly LeaderboardResponseCrateKeys: {
+      readonly xuid: string
       readonly player: string
       readonly crateKeys: number
     }
     readonly LeaderboardResponse: Partial<
       readonly {
+        readonly xuid: string
         readonly player: string
         readonly crateKeys: number
       }[]
     > &
       Partial<
         readonly {
+          readonly xuid: string
           readonly player: string
           readonly credits: number
         }[]
@@ -5989,6 +6003,7 @@ export interface components {
           readonly strength: number
         }> &
           Partial<{
+            readonly xuid: string
             readonly player: string
             readonly kills: number
             readonly coins: number
@@ -6002,6 +6017,7 @@ export interface components {
       > &
       Partial<
         readonly {
+          readonly xuid: string
           readonly player: string
           readonly value: number
         }[]
@@ -6018,6 +6034,7 @@ export interface components {
       > &
       Partial<
         readonly {
+          readonly xuid: string
           readonly player: string
           readonly kdr: number
           readonly killsUntilNextKdr: number
@@ -6025,24 +6042,28 @@ export interface components {
       > &
       Partial<
         readonly {
+          readonly xuid: string
           readonly player: string
           readonly kills: number
         }[]
       > &
       Partial<
         readonly {
+          readonly xuid: string
           readonly player: string
           readonly joinedAt: number
         }[]
       > &
       Partial<
         readonly {
+          readonly xuid: string
           readonly name: string
           readonly time: number
         }[]
       > &
       Partial<
         readonly {
+          readonly xuid: string
           readonly player: string
           readonly onlineTime: number
         }[]
@@ -6055,12 +6076,14 @@ export interface components {
       > &
       Partial<
         readonly {
+          readonly xuid: string
           readonly player: string
           readonly wins: number
         }[]
       > &
       Partial<
         readonly {
+          readonly xuid: string
           readonly player: string
           readonly wlr: number
           readonly winsUntilNextWlr: number
@@ -6068,6 +6091,7 @@ export interface components {
       > &
       Partial<
         readonly {
+          readonly xuid: string
           readonly player: string
           readonly xp: number
           readonly xpToNextLevel: number

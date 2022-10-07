@@ -1,6 +1,6 @@
 {
   "name": "@nethergames/api",
-  "version": "2.5.4",
+  "version": "2.5.5",
   "description": "Fully typed client for the NetherGames API.",
   "keywords": [
     "nethergames",
@@ -39,7 +39,7 @@
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-simple-import-sort": "8.0.0",
-    "eslint-plugin-unicorn": "44.0.1",
+    "eslint-plugin-unicorn": "44.0.2",
     "openapi-typescript": "5.4.1",
     "prettier": "2.7.1",
     "typescript": "4.8.4"
