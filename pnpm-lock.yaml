@@ -16,14 +16,14 @@ specifiers:
   openapi-typescript: 5.4.1
   prettier: 2.7.1
   quick-lru: ^6.1.1
-  type-fest: ^3.0.0
+  type-fest: ^3.1.0
   typescript: 4.8.4
 
 dependencies:
   nanoevents: 7.0.1
   node-fetch: 3.2.10
   quick-lru: 6.1.1
-  type-fest: 3.0.0
+  type-fest: 3.1.0
 
 devDependencies:
   '@ava/typescript': 3.0.1
@@ -425,7 +425,7 @@ packages:
       chalk: 5.1.0
       chokidar: 3.5.3
       chunkd: 2.0.1
-      ci-info: 3.4.0
+      ci-info: 3.5.0
       ci-parallel-vars: 1.0.1
       clean-yaml-object: 0.1.0
       cli-truncate: 3.1.0
@@ -568,8 +568,8 @@ packages:
     resolution: {integrity: sha512-7d58XsFmOq0j6el67Ug9mHf9ELUXsQXYJBkyxhH/k+6Ke0qXRnv0kbemx+Twc6fRJ07C49lcbdgm9FL1Ei/6SQ==}
     dev: true
 
-  /ci-info/3.4.0:
-    resolution: {integrity: sha512-t5QdPT5jq3o262DOQ8zA6E1tlH2upmUc4Hlvrbx1pGYJuiiHl7O7rvVNI+l8HTVhd/q3Qc9vqimkNk5yiXsAug==}
+  /ci-info/3.5.0:
+    resolution: {integrity: sha512-yH4RezKOGlOhxkmhbeNuC4eYZKAUsEaGtBuBzDDP1eFUKiccDWzBABxBfOx31IDwDIXMTxWuwAxUGModvkbuVw==}
     dev: true
 
   /ci-parallel-vars/1.0.1:
@@ -967,7 +967,7 @@ packages:
       eslint: '>=8.23.1'
     dependencies:
       '@babel/helper-validator-identifier': 7.19.1
-      ci-info: 3.4.0
+      ci-info: 3.5.0
       clean-regexp: 1.0.0
       eslint: 8.25.0
       eslint-utils: 3.0.0_eslint@8.25.0
@@ -2499,8 +2499,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /type-fest/3.0.0:
-    resolution: {integrity: sha512-MINvUN5ug9u+0hJDzSZNSnuKXI8M4F5Yvb6SQZ2CYqe7SgKXKOosEcU5R7tRgo85I6eAVBbkVF7TCvB4AUK2xQ==}
+  /type-fest/3.1.0:
+    resolution: {integrity: sha512-StmrZmK3eD9mDF9Vt7UhqthrDSk66O9iYl5t5a0TSoVkHjl0XZx/xuc/BRz4urAXXGHOY5OLsE0RdJFIApSFmw==}
     engines: {node: '>=14.16'}
     dev: false
 
