@@ -470,6 +470,7 @@ export interface components {
           readonly name: string
           /** Format: uri */
           readonly avatar: string
+          readonly avatarBlurhash?: string
           /** Format: uri */
           readonly skin: string
           readonly online?: boolean
@@ -1268,6 +1269,7 @@ export interface components {
                   readonly name: string
                   /** Format: uri */
                   readonly avatar: string
+                  readonly avatarBlurhash?: string
                   /** Format: uri */
                   readonly skin: string
                   readonly online?: boolean
@@ -2002,6 +2004,8 @@ export interface components {
       readonly withStats?: boolean
       /** @default true */
       readonly withVoteStatus?: boolean
+      /** @default false */
+      readonly withAvatarBlurhash?: boolean
       /**
        * @default global
        * @enum {string}
@@ -2059,6 +2063,7 @@ export interface components {
       readonly id: string
       readonly productId: string
       readonly name: string
+      readonly description: string
       /** @enum {number} */
       readonly type: 1 | 2
       readonly flags: number
@@ -2071,6 +2076,7 @@ export interface components {
       readonly id: string
       readonly productId: string
       readonly name: string
+      readonly description: string
       /** @enum {number} */
       readonly type: 1 | 2
       readonly flags: number
@@ -3265,6 +3271,7 @@ export interface components {
       readonly name: string
       /** Format: uri */
       readonly avatar: string
+      readonly avatarBlurhash?: string
       /** Format: uri */
       readonly skin: string
       readonly online?: boolean
@@ -3996,6 +4003,8 @@ export interface components {
       readonly withStats?: boolean
       /** @default true */
       readonly withVoteStatus?: boolean
+      /** @default false */
+      readonly withAvatarBlurhash?: boolean
       /**
        * @default global
        * @enum {string}
@@ -5156,6 +5165,7 @@ export interface components {
       readonly name: string
       /** Format: uri */
       readonly avatar: string
+      readonly avatarBlurhash?: string
       /** Format: uri */
       readonly skin: string
       readonly online?: boolean
@@ -5887,6 +5897,8 @@ export interface components {
       readonly withStats?: boolean
       /** @default true */
       readonly withVoteStatus?: boolean
+      /** @default false */
+      readonly withAvatarBlurhash?: boolean
       /**
        * @default global
        * @enum {string}
@@ -5900,17 +5912,86 @@ export interface components {
       readonly xp: number
       readonly xpToNextLevel: number
       readonly level: number
+      /** @enum {string|null} */
+      readonly topRank:
+        | (
+            | 'Admin'
+            | 'Dev'
+            | 'Supervisor'
+            | 'Mod'
+            | 'Crew'
+            | 'Trainee'
+            | 'Builder'
+            | 'Designer'
+            | 'Game Designer'
+            | 'Media'
+            | 'Discord'
+            | 'Partner'
+            | 'Titan'
+            | 'Legend'
+            | 'Emerald'
+            | 'Ultra'
+            | 'Youtube'
+            | 'Tester'
+          )
+        | null
     }
     readonly LeaderboardResponseWLR: {
       readonly xuid: string
       readonly player: string
       readonly wlr: number
       readonly winsUntilNextWlr: number
+      /** @enum {string|null} */
+      readonly topRank:
+        | (
+            | 'Admin'
+            | 'Dev'
+            | 'Supervisor'
+            | 'Mod'
+            | 'Crew'
+            | 'Trainee'
+            | 'Builder'
+            | 'Designer'
+            | 'Game Designer'
+            | 'Media'
+            | 'Discord'
+            | 'Partner'
+            | 'Titan'
+            | 'Legend'
+            | 'Emerald'
+            | 'Ultra'
+            | 'Youtube'
+            | 'Tester'
+          )
+        | null
     }
     readonly LeaderboardResponseWins: {
       readonly xuid: string
       readonly player: string
       readonly wins: number
+      /** @enum {string|null} */
+      readonly topRank:
+        | (
+            | 'Admin'
+            | 'Dev'
+            | 'Supervisor'
+            | 'Mod'
+            | 'Crew'
+            | 'Trainee'
+            | 'Builder'
+            | 'Designer'
+            | 'Game Designer'
+            | 'Media'
+            | 'Discord'
+            | 'Partner'
+            | 'Titan'
+            | 'Legend'
+            | 'Emerald'
+            | 'Ultra'
+            | 'Youtube'
+            | 'Tester'
+          )
+        | null
     }
     readonly LeaderboardResponseVoters: {
       readonly nickname: string
@@ -5920,27 +6001,142 @@ export interface components {
       readonly xuid: string
       readonly player: string
       readonly onlineTime: number
+      /** @enum {string|null} */
+      readonly topRank:
+        | (
+            | 'Admin'
+            | 'Dev'
+            | 'Supervisor'
+            | 'Mod'
+            | 'Crew'
+            | 'Trainee'
+            | 'Builder'
+            | 'Designer'
+            | 'Game Designer'
+            | 'Media'
+            | 'Discord'
+            | 'Partner'
+            | 'Titan'
+            | 'Legend'
+            | 'Emerald'
+            | 'Ultra'
+            | 'Youtube'
+            | 'Tester'
+          )
+        | null
     }
     readonly LeaderboardResponseParkour: {
       readonly xuid: string
       readonly name: string
       readonly time: number
+      /** @enum {string|null} */
+      readonly topRank:
+        | (
+            | 'Admin'
+            | 'Dev'
+            | 'Supervisor'
+            | 'Mod'
+            | 'Crew'
+            | 'Trainee'
+            | 'Builder'
+            | 'Designer'
+            | 'Game Designer'
+            | 'Media'
+            | 'Discord'
+            | 'Partner'
+            | 'Titan'
+            | 'Legend'
+            | 'Emerald'
+            | 'Ultra'
+            | 'Youtube'
+            | 'Tester'
+          )
+        | null
     }
     readonly LeaderboardResponseOldest: {
       readonly xuid: string
       readonly player: string
       readonly joinedAt: number
+      /** @enum {string|null} */
+      readonly topRank:
+        | (
+            | 'Admin'
+            | 'Dev'
+            | 'Supervisor'
+            | 'Mod'
+            | 'Crew'
+            | 'Trainee'
+            | 'Builder'
+            | 'Designer'
+            | 'Game Designer'
+            | 'Media'
+            | 'Discord'
+            | 'Partner'
+            | 'Titan'
+            | 'Legend'
+            | 'Emerald'
+            | 'Ultra'
+            | 'Youtube'
+            | 'Tester'
+          )
+        | null
     }
     readonly LeaderboardResponseKills: {
       readonly xuid: string
       readonly player: string
       readonly kills: number
+      /** @enum {string|null} */
+      readonly topRank:
+        | (
+            | 'Admin'
+            | 'Dev'
+            | 'Supervisor'
+            | 'Mod'
+            | 'Crew'
+            | 'Trainee'
+            | 'Builder'
+            | 'Designer'
+            | 'Game Designer'
+            | 'Media'
+            | 'Discord'
+            | 'Partner'
+            | 'Titan'
+            | 'Legend'
+            | 'Emerald'
+            | 'Ultra'
+            | 'Youtube'
+            | 'Tester'
+          )
+        | null
     }
     readonly LeaderboardResponseKDR: {
       readonly xuid: string
       readonly player: string
       readonly kdr: number
       readonly killsUntilNextKdr: number
+      /** @enum {string|null} */
+      readonly topRank:
+        | (
+            | 'Admin'
+            | 'Dev'
+            | 'Supervisor'
+            | 'Mod'
+            | 'Crew'
+            | 'Trainee'
+            | 'Builder'
+            | 'Designer'
+            | 'Game Designer'
+            | 'Media'
+            | 'Discord'
+            | 'Partner'
+            | 'Titan'
+            | 'Legend'
+            | 'Emerald'
+            | 'Ultra'
+            | 'Youtube'
+            | 'Tester'
+          )
+        | null
     }
     readonly LeaderboardResponseGuilds: {
       readonly name: string
@@ -5954,6 +6150,29 @@ export interface components {
       readonly xuid: string
       readonly player: string
       readonly value: number
+      /** @enum {string|null} */
+      readonly topRank:
+        | (
+            | 'Admin'
+            | 'Dev'
+            | 'Supervisor'
+            | 'Mod'
+            | 'Crew'
+            | 'Trainee'
+            | 'Builder'
+            | 'Designer'
+            | 'Game Designer'
+            | 'Media'
+            | 'Discord'
+            | 'Partner'
+            | 'Titan'
+            | 'Legend'
+            | 'Emerald'
+            | 'Ultra'
+            | 'Youtube'
+            | 'Tester'
+          )
+        | null
     }
     readonly LeaderboardResponseFactions: Partial<{
       readonly name: string
@@ -5976,17 +6195,86 @@ export interface components {
       readonly xuid: string
       readonly player: string
       readonly credits: number
+      /** @enum {string|null} */
+      readonly topRank:
+        | (
+            | 'Admin'
+            | 'Dev'
+            | 'Supervisor'
+            | 'Mod'
+            | 'Crew'
+            | 'Trainee'
+            | 'Builder'
+            | 'Designer'
+            | 'Game Designer'
+            | 'Media'
+            | 'Discord'
+            | 'Partner'
+            | 'Titan'
+            | 'Legend'
+            | 'Emerald'
+            | 'Ultra'
+            | 'Youtube'
+            | 'Tester'
+          )
+        | null
     }
     readonly LeaderboardResponseCrateKeys: {
       readonly xuid: string
       readonly player: string
       readonly crateKeys: number
+      /** @enum {string|null} */
+      readonly topRank:
+        | (
+            | 'Admin'
+            | 'Dev'
+            | 'Supervisor'
+            | 'Mod'
+            | 'Crew'
+            | 'Trainee'
+            | 'Builder'
+            | 'Designer'
+            | 'Game Designer'
+            | 'Media'
+            | 'Discord'
+            | 'Partner'
+            | 'Titan'
+            | 'Legend'
+            | 'Emerald'
+            | 'Ultra'
+            | 'Youtube'
+            | 'Tester'
+          )
+        | null
     }
     readonly LeaderboardResponse: Partial<
       readonly {
         readonly xuid: string
         readonly player: string
         readonly crateKeys: number
+        /** @enum {string|null} */
+        readonly topRank:
+          | (
+              | 'Admin'
+              | 'Dev'
+              | 'Supervisor'
+              | 'Mod'
+              | 'Crew'
+              | 'Trainee'
+              | 'Builder'
+              | 'Designer'
+              | 'Game Designer'
+              | 'Media'
+              | 'Discord'
+              | 'Partner'
+              | 'Titan'
+              | 'Legend'
+              | 'Emerald'
+              | 'Ultra'
+              | 'Youtube'
+              | 'Tester'
+            )
+          | null
       }[]
     > &
       Partial<
@@ -5994,6 +6282,29 @@ export interface components {
           readonly xuid: string
           readonly player: string
           readonly credits: number
+          /** @enum {string|null} */
+          readonly topRank:
+            | (
+                | 'Admin'
+                | 'Dev'
+                | 'Supervisor'
+                | 'Mod'
+                | 'Crew'
+                | 'Trainee'
+                | 'Builder'
+                | 'Designer'
+                | 'Game Designer'
+                | 'Media'
+                | 'Discord'
+                | 'Partner'
+                | 'Titan'
+                | 'Legend'
+                | 'Emerald'
+                | 'Ultra'
+                | 'Youtube'
+                | 'Tester'
+              )
+            | null
         }[]
       > &
       Partial<
@@ -6020,6 +6331,29 @@ export interface components {
           readonly xuid: string
           readonly player: string
           readonly value: number
+          /** @enum {string|null} */
+          readonly topRank:
+            | (
+                | 'Admin'
+                | 'Dev'
+                | 'Supervisor'
+                | 'Mod'
+                | 'Crew'
+                | 'Trainee'
+                | 'Builder'
+                | 'Designer'
+                | 'Game Designer'
+                | 'Media'
+                | 'Discord'
+                | 'Partner'
+                | 'Titan'
+                | 'Legend'
+                | 'Emerald'
+                | 'Ultra'
+                | 'Youtube'
+                | 'Tester'
+              )
+            | null
         }[]
       > &
       Partial<
@@ -6038,6 +6372,29 @@ export interface components {
           readonly player: string
           readonly kdr: number
           readonly killsUntilNextKdr: number
+          /** @enum {string|null} */
+          readonly topRank:
+            | (
+                | 'Admin'
+                | 'Dev'
+                | 'Supervisor'
+                | 'Mod'
+                | 'Crew'
+                | 'Trainee'
+                | 'Builder'
+                | 'Designer'
+                | 'Game Designer'
+                | 'Media'
+                | 'Discord'
+                | 'Partner'
+                | 'Titan'
+                | 'Legend'
+                | 'Emerald'
+                | 'Ultra'
+                | 'Youtube'
+                | 'Tester'
+              )
+            | null
         }[]
       > &
       Partial<
@@ -6045,6 +6402,29 @@ export interface components {
           readonly xuid: string
           readonly player: string
           readonly kills: number
+          /** @enum {string|null} */
+          readonly topRank:
+            | (
+                | 'Admin'
+                | 'Dev'
+                | 'Supervisor'
+                | 'Mod'
+                | 'Crew'
+                | 'Trainee'
+                | 'Builder'
+                | 'Designer'
+                | 'Game Designer'
+                | 'Media'
+                | 'Discord'
+                | 'Partner'
+                | 'Titan'
+                | 'Legend'
+                | 'Emerald'
+                | 'Ultra'
+                | 'Youtube'
+                | 'Tester'
+              )
+            | null
         }[]
       > &
       Partial<
@@ -6052,6 +6432,29 @@ export interface components {
           readonly xuid: string
           readonly player: string
           readonly joinedAt: number
+          /** @enum {string|null} */
+          readonly topRank:
+            | (
+                | 'Admin'
+                | 'Dev'
+                | 'Supervisor'
+                | 'Mod'
+                | 'Crew'
+                | 'Trainee'
+                | 'Builder'
+                | 'Designer'
+                | 'Game Designer'
+                | 'Media'
+                | 'Discord'
+                | 'Partner'
+                | 'Titan'
+                | 'Legend'
+                | 'Emerald'
+                | 'Ultra'
+                | 'Youtube'
+                | 'Tester'
+              )
+            | null
         }[]
       > &
       Partial<
@@ -6059,6 +6462,29 @@ export interface components {
           readonly xuid: string
           readonly name: string
           readonly time: number
+          /** @enum {string|null} */
+          readonly topRank:
+            | (
+                | 'Admin'
+                | 'Dev'
+                | 'Supervisor'
+                | 'Mod'
+                | 'Crew'
+                | 'Trainee'
+                | 'Builder'
+                | 'Designer'
+                | 'Game Designer'
+                | 'Media'
+                | 'Discord'
+                | 'Partner'
+                | 'Titan'
+                | 'Legend'
+                | 'Emerald'
+                | 'Ultra'
+                | 'Youtube'
+                | 'Tester'
+              )
+            | null
         }[]
       > &
       Partial<
@@ -6066,6 +6492,29 @@ export interface components {
           readonly xuid: string
           readonly player: string
           readonly onlineTime: number
+          /** @enum {string|null} */
+          readonly topRank:
+            | (
+                | 'Admin'
+                | 'Dev'
+                | 'Supervisor'
+                | 'Mod'
+                | 'Crew'
+                | 'Trainee'
+                | 'Builder'
+                | 'Designer'
+                | 'Game Designer'
+                | 'Media'
+                | 'Discord'
+                | 'Partner'
+                | 'Titan'
+                | 'Legend'
+                | 'Emerald'
+                | 'Ultra'
+                | 'Youtube'
+                | 'Tester'
+              )
+            | null
         }[]
       > &
       Partial<
@@ -6079,6 +6528,29 @@ export interface components {
           readonly xuid: string
           readonly player: string
           readonly wins: number
+          /** @enum {string|null} */
+          readonly topRank:
+            | (
+                | 'Admin'
+                | 'Dev'
+                | 'Supervisor'
+                | 'Mod'
+                | 'Crew'
+                | 'Trainee'
+                | 'Builder'
+                | 'Designer'
+                | 'Game Designer'
+                | 'Media'
+                | 'Discord'
+                | 'Partner'
+                | 'Titan'
+                | 'Legend'
+                | 'Emerald'
+                | 'Ultra'
+                | 'Youtube'
+                | 'Tester'
+              )
+            | null
         }[]
       > &
       Partial<
@@ -6087,6 +6559,29 @@ export interface components {
           readonly player: string
           readonly wlr: number
           readonly winsUntilNextWlr: number
+          /** @enum {string|null} */
+          readonly topRank:
+            | (
+                | 'Admin'
+                | 'Dev'
+                | 'Supervisor'
+                | 'Mod'
+                | 'Crew'
+                | 'Trainee'
+                | 'Builder'
+                | 'Designer'
+                | 'Game Designer'
+                | 'Media'
+                | 'Discord'
+                | 'Partner'
+                | 'Titan'
+                | 'Legend'
+                | 'Emerald'
+                | 'Ultra'
+                | 'Youtube'
+                | 'Tester'
+              )
+            | null
         }[]
       > &
       Partial<
@@ -6096,6 +6591,29 @@ export interface components {
           readonly xp: number
           readonly xpToNextLevel: number
           readonly level: number
+          /** @enum {string|null} */
+          readonly topRank:
+            | (
+                | 'Admin'
+                | 'Dev'
+                | 'Supervisor'
+                | 'Mod'
+                | 'Crew'
+                | 'Trainee'
+                | 'Builder'
+                | 'Designer'
+                | 'Game Designer'
+                | 'Media'
+                | 'Discord'
+                | 'Partner'
+                | 'Titan'
+                | 'Legend'
+                | 'Emerald'
+                | 'Ultra'
+                | 'Youtube'
+                | 'Tester'
+              )
+            | null
         }[]
       >
     readonly LeaderboardQuery: {
@@ -6742,6 +7260,7 @@ export interface operations {
         readonly withSkinData?: boolean
         readonly withStats?: boolean
         readonly withVoteStatus?: boolean
+        readonly withAvatarBlurhash?: boolean
         readonly period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly'
       }
     }
@@ -6939,6 +7458,7 @@ export interface operations {
         readonly withSkinData?: boolean
         readonly withStats?: boolean
         readonly withVoteStatus?: boolean
+        readonly withAvatarBlurhash?: boolean
         readonly period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly'
         readonly limit?: number
         readonly query: string
