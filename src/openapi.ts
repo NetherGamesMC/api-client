@@ -6744,6 +6744,8 @@ export interface components {
        * @enum {string}
        */
       readonly period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly'
+      /** @enum {string} */
+      readonly gameMode?: 'bh' | 'bw' | 'cq' | 'duels' | 'mm' | 'ms' | 'sc' | 'sg' | 'sw' | 'tb' | 'uhc'
     }
     readonly LeaderboardBulkResponse: readonly unknown[]
     readonly LeaderboardBulkInput: readonly {
@@ -6862,6 +6864,8 @@ export interface components {
        * @enum {string}
        */
       readonly period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly'
+      /** @enum {string} */
+      readonly gameMode?: 'bh' | 'bw' | 'cq' | 'duels' | 'mm' | 'ms' | 'sc' | 'sg' | 'sw' | 'tb' | 'uhc'
     }[]
     readonly GuildResponse: {
       readonly id: number
@@ -7238,6 +7242,7 @@ export interface operations {
           | 'uhc'
         readonly wlrPrefix?: 'duels' | 'sw_doubles' | 'sw_solo' | 'sw' | 'tb' | 'tr'
         readonly period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly'
+        readonly gameMode?: 'bh' | 'bw' | 'cq' | 'duels' | 'mm' | 'ms' | 'sc' | 'sg' | 'sw' | 'tb' | 'uhc'
       }
     }
     readonly responses: {
