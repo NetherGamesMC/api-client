@@ -16,6 +16,7 @@ import type {
   LeaderboardGuilds,
   LeaderboardKDR,
   LeaderboardKills,
+  LeaderboardMapVotes,
   LeaderboardOldest,
   LeaderboardParkour,
   LeaderboardPlaytime,
@@ -176,6 +177,7 @@ export class LeaderboardResource extends NetherGamesResource {
   async list<T extends LeaderboardKey>(type: 'guilds', params?: LeaderboardParams<T>): Promise<LeaderboardGuilds[]>
   async list<T extends LeaderboardKey>(type: 'kdr', params?: LeaderboardParams<T>): Promise<LeaderboardKDR[]>
   async list<T extends LeaderboardKey>(type: 'kills', params?: LeaderboardParams<T>): Promise<LeaderboardKills[]>
+  async list<T extends LeaderboardKey>(type: 'mapVotes', params?: LeaderboardParams<T>): Promise<LeaderboardMapVotes[]>
   async list<T extends LeaderboardKey>(type: 'oldest', params?: LeaderboardParams<T>): Promise<LeaderboardOldest[]>
   async list<T extends LeaderboardKey>(type: 'parkour', params?: LeaderboardParams<T>): Promise<LeaderboardParkour[]>
   async list<T extends LeaderboardKey>(type: 'playtime', params?: LeaderboardParams<T>): Promise<LeaderboardPlaytime[]>

@@ -25,6 +25,7 @@ export type LeaderboardGame = components['schemas']['LeaderboardResponseGame']
 export type LeaderboardGuilds = components['schemas']['LeaderboardResponseGuilds']
 export type LeaderboardKDR = components['schemas']['LeaderboardResponseKDR']
 export type LeaderboardKills = components['schemas']['LeaderboardResponseKills']
+export type LeaderboardMapVotes = components['schemas']['LeaderboardResponseMapVotes']
 export type LeaderboardOldest = components['schemas']['LeaderboardResponseOldest']
 export type LeaderboardParkour = components['schemas']['LeaderboardResponseParkour']
 export type LeaderboardPlaytime = components['schemas']['LeaderboardResponsePlaytime']
@@ -40,6 +41,7 @@ export type Leaderboard =
   | LeaderboardGuilds
   | LeaderboardKDR
   | LeaderboardKills
+  | LeaderboardMapVotes
   | LeaderboardOldest
   | LeaderboardParkour
   | LeaderboardPlaytime

@@ -6081,6 +6081,11 @@ export interface components {
           )
         | null
     }
+    readonly LeaderboardResponseMapVotes: {
+      readonly gameMode: string
+      readonly mapName: string
+      readonly votes: number
+    }
     readonly LeaderboardResponseKills: {
       readonly xuid: string
       readonly player: string
@@ -6429,6 +6434,13 @@ export interface components {
       > &
       Partial<
         readonly {
+          readonly gameMode: string
+          readonly mapName: string
+          readonly votes: number
+        }[]
+      > &
+      Partial<
+        readonly {
           readonly xuid: string
           readonly player: string
           readonly joinedAt: number
@@ -6628,6 +6640,7 @@ export interface components {
         | 'guilds'
         | 'kdr'
         | 'kills'
+        | 'mapVotes'
         | 'oldest'
         | 'parkour'
         | 'playtime'
@@ -6745,6 +6758,7 @@ export interface components {
         | 'guilds'
         | 'kdr'
         | 'kills'
+        | 'mapVotes'
         | 'oldest'
         | 'parkour'
         | 'playtime'
@@ -7128,6 +7142,7 @@ export interface operations {
           | 'guilds'
           | 'kdr'
           | 'kills'
+          | 'mapVotes'
           | 'oldest'
           | 'parkour'
           | 'playtime'
