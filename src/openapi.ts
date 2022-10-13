@@ -6085,6 +6085,7 @@ export interface components {
       readonly gameMode: string
       readonly mapName: string
       readonly votes: number
+      readonly votesDailyAvg: number
     }
     readonly LeaderboardResponseKills: {
       readonly xuid: string
@@ -6437,6 +6438,7 @@ export interface components {
           readonly gameMode: string
           readonly mapName: string
           readonly votes: number
+          readonly votesDailyAvg: number
         }[]
       > &
       Partial<
