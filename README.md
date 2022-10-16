@@ -46,7 +46,7 @@ The maximum amount of LRU objects to hold in memory.
 #### userAgent
 
 Type: `string`\
-Default: `NetherGames-API-Client/2.5.9`
+Default: `NetherGames-API-Client/2.5.10`
 
 User-agent to use when sending requests.
 
@@ -57,7 +57,7 @@ Type: `string`
 
 Append an identifier to the user agent in parentheses.\
 A unique identifier allows us to identify requests in our error monitoring tools.\
-Example: `Casper's Discord Bot` => `NetherGames-API-Client/2.5.9 (Casper's Discord Bot)`
+Example: `Casper's Discord Bot` => `NetherGames-API-Client/2.5.10 (Casper's Discord Bot)`
 
 ### Instance
 

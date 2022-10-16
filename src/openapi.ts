@@ -6740,7 +6740,7 @@ export interface components {
         | 'tb'
         | 'uhc'
       /** @enum {string} */
-      readonly wlrPrefix?: 'duels' | 'sw_doubles' | 'sw_solo' | 'sw' | 'tb' | 'tr'
+      readonly wlrPrefix?: 'duels' | 'sw_doubles' | 'sw_solo' | 'sw' | 'tb'
       /**
        * @default global
        * @enum {string}
@@ -6860,7 +6860,7 @@ export interface components {
         | 'tb'
         | 'uhc'
       /** @enum {string} */
-      readonly wlrPrefix?: 'duels' | 'sw_doubles' | 'sw_solo' | 'sw' | 'tb' | 'tr'
+      readonly wlrPrefix?: 'duels' | 'sw_doubles' | 'sw_solo' | 'sw' | 'tb'
       /**
        * @default global
        * @enum {string}
@@ -7242,7 +7242,7 @@ export interface operations {
           | 'sw_solo_normal'
           | 'tb'
           | 'uhc'
-        readonly wlrPrefix?: 'duels' | 'sw_doubles' | 'sw_solo' | 'sw' | 'tb' | 'tr'
+        readonly wlrPrefix?: 'duels' | 'sw_doubles' | 'sw_solo' | 'sw' | 'tb'
         readonly period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly'
         readonly gameMode?: 'bh' | 'bw' | 'cq' | 'duels' | 'mm' | 'ms' | 'sc' | 'sg' | 'sw' | 'tb' | 'uhc'
       }
