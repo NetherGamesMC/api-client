@@ -14,7 +14,7 @@ test('retrieving server meta works', async t => {
   t.is(Object.keys(meta).length > 0, true)
 })
 
-test('retrieving serveer ping works', async t => {
+test('retrieving server ping works', async t => {
   const ping = await client.servers.ping()
   t.is(Object.keys(ping!).length > 0, true)
 })
