@@ -72,6 +72,10 @@ export interface paths {
   readonly '/v1/players/{player}/stats/{type}': {
     readonly get: operations['Get Player Stats by Type']
   }
+  readonly '/v1/players/{player}/status': {
+    /** Determine if given XUID or username exists. */
+    readonly get: operations['Get Player Status']
+  }
   readonly '/v1/search': {
     readonly get: operations['Get Search Results']
   }
@@ -479,6 +483,7 @@ export interface components {
           readonly dmStatus: 0 | 1 | 2
           readonly bio: string
           readonly discordId: string | null
+          readonly discordTag: string | null
           readonly guild: string | null
           readonly ranks: readonly (
             | 'Admin'
@@ -1278,6 +1283,7 @@ export interface components {
                   readonly dmStatus: 0 | 1 | 2
                   readonly bio: string
                   readonly discordId: string | null
+                  readonly discordTag: string | null
                   readonly guild: string | null
                   readonly ranks: readonly (
                     | 'Admin'
@@ -2110,6 +2116,9 @@ export interface components {
       readonly TR?: number
       /** @default 0 */
       readonly UHC?: number
+    }
+    readonly PlayerStatusResponse: {
+      readonly status: boolean
     }
     readonly PlayerStatsResponseBulk: {
       readonly [key: string]: {
@@ -3280,6 +3289,7 @@ export interface components {
       readonly dmStatus: 0 | 1 | 2
       readonly bio: string
       readonly discordId: string | null
+      readonly discordTag: string | null
       readonly guild: string | null
       readonly ranks: readonly (
         | 'Admin'
@@ -5174,6 +5184,7 @@ export interface components {
       readonly dmStatus: 0 | 1 | 2
       readonly bio: string
       readonly discordId: string | null
+      readonly discordTag: string | null
       readonly guild: string | null
       readonly ranks: readonly (
         | 'Admin'
@@ -7450,6 +7461,17 @@ export interface operations {
       readonly 200: {
         readonly content: {
           readonly 'application/json': components['schemas']['PlayerStatsByTypeResponse']
+        }
+      }
+    }
+  }
+  /** Determine if given XUID or username exists. */
+  readonly 'Get Player Status': {
+    readonly responses: {
+      /** Default Response */
+      readonly 200: {
+        readonly content: {
+          readonly 'application/json': components['schemas']['PlayerStatusResponse']
         }
       }
     }

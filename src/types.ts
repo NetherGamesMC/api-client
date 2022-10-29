@@ -60,6 +60,7 @@ export type PlayerStats = components['schemas']['PlayerStatsResponse']
 export type PlayerStatsByTypeResponse = components['schemas']['PlayerStatsByTypeResponse']
 export type PlayerStatsQuery = components['schemas']['PlayerStatsQuery']
 export type PlayerPunishment = components['schemas']['PlayerPunishmentResponse']
+export type PlayerStatus = components['schemas']['PlayerStatusResponse']
 
 export type SearchResponse = components['schemas']['SearchResponse']
 export type SearchFullTextResponse = components['schemas']['SearchFullTextResponse']

@@ -46,7 +46,7 @@ The maximum amount of LRU objects to hold in memory.
 #### userAgent
 
 Type: `string`\
-Default: `NetherGames-API-Client/2.5.10`
+Default: `NetherGames-API-Client/2.5.11`
 
 User-agent to use when sending requests.
 
@@ -57,7 +57,7 @@ Type: `string`
 
 Append an identifier to the user agent in parentheses.\
 A unique identifier allows us to identify requests in our error monitoring tools.\
-Example: `Casper's Discord Bot` => `NetherGames-API-Client/2.5.10 (Casper's Discord Bot)`
+Example: `Casper's Discord Bot` => `NetherGames-API-Client/2.5.11 (Casper's Discord Bot)`
 
 ### Instance
 
@@ -221,6 +221,10 @@ Get a key-value mapping of XUIDs to usernames or vice versa.
 #### .punishments(player) [Docs](https://docs.nethergames.org/#operation/Get%20Player%20Punishments)
 
 Retrieve a player's punishments.
+
+#### .check(player) [Docs](https://docs.nethergames.org/#operation/Get%20Player%20Status)
+
+Check if a player by the specified username or XUID exists.
 
 ### Search
 

@@ -34,6 +34,7 @@ import type {
   PlayerStats,
   PlayerStatsByTypeResponse,
   PlayerStatsQuery,
+  PlayerStatus,
   RelayPaginationFaction,
   RelayPaginationGuild,
   RelayPaginationPlayer,
@@ -291,6 +292,11 @@ export class PlayersResource extends NetherGamesResource {
 
   async punishments(player: string): Promise<PlayerPunishment[]> {
     return this._client._getMany<PlayerPunishment>(`/v1/players/${player}/punishments`)
+  }
+
+  async check(player: string): Promise<boolean> {
+    const response = await this._client._getOne<PlayerStatus>(`/v1/players/${player}/status`)
+    return response!.status
   }
 }
 
