@@ -82,6 +82,11 @@ export class FactionsResource extends NetherGamesResource {
     const result = await this._client._getOne<RelayPaginationFaction>('/v1/factions', params)
     return result!
   }
+
+  async check(faction: string): Promise<boolean> {
+    const response = await this._client._getOne<PlayerStatus>(`/v1/factions/${faction}/status`)
+    return response!.status
+  }
 }
 
 type GuildReturn<T extends GuildQuery> = T['expand'] extends true ? GuildExpanded : GuildDefault
@@ -98,6 +103,11 @@ export class GuildsResource extends NetherGamesResource {
   async list(params?: RelayPaginationQueryGuild): Promise<RelayPaginationGuild> {
     const result = await this._client._getOne<RelayPaginationGuild>('/v1/guilds', params)
     return result!
+  }
+
+  async check(guild: string): Promise<boolean> {
+    const response = await this._client._getOne<PlayerStatus>(`/v1/guilds/${guild}/status`)
+    return response!.status
   }
 }
 

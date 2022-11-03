@@ -46,7 +46,7 @@ The maximum amount of LRU objects to hold in memory.
 #### userAgent
 
 Type: `string`\
-Default: `NetherGames-API-Client/2.5.11`
+Default: `NetherGames-API-Client/2.5.12`
 
 User-agent to use when sending requests.
 
@@ -57,7 +57,7 @@ Type: `string`
 
 Append an identifier to the user agent in parentheses.\
 A unique identifier allows us to identify requests in our error monitoring tools.\
-Example: `Casper's Discord Bot` => `NetherGames-API-Client/2.5.11 (Casper's Discord Bot)`
+Example: `Casper's Discord Bot` => `NetherGames-API-Client/2.5.12 (Casper's Discord Bot)`
 
 ### Instance
 
@@ -148,6 +148,10 @@ Find many (1-100) factions at once.
 
 A paginated list of factions.
 
+#### .check(faction) [Docs](https://docs.nethergames.org/#operation/Get%20Faction%20Status)
+
+Check if the specified faction name or ID exists.
+
 ### Guilds
 
 #### .retrieve(guild, params?) [Docs](https://docs.nethergames.org/#operation/Get%20Guild)
@@ -161,6 +165,10 @@ Find many (1-100) guilds at once.
 #### .list(params?) [Docs](https://docs.nethergames.org/#operation/Get%20Guilds)
 
 A paginated list of guilds.
+
+#### .check(guild) [Docs](https://docs.nethergames.org/#operation/Get%20Guild%20Status)
+
+Check if the specified guild name or ID exists.
 
 ### Leaderboard
 

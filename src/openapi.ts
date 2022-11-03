@@ -19,6 +19,10 @@ export interface paths {
   readonly '/v1/factions/batch': {
     readonly post: operations['Bulk Get Factions']
   }
+  readonly '/v1/factions/{faction}/status': {
+    /** Determine if given faction name or ID exists. */
+    readonly get: operations['Get Faction Status']
+  }
   readonly '/v1/guilds/{name}': {
     readonly get: operations['Get Guild']
   }
@@ -27,6 +31,10 @@ export interface paths {
   }
   readonly '/v1/guilds/batch': {
     readonly post: operations['Bulk Get Guilds']
+  }
+  readonly '/v1/guilds/{guild}/status': {
+    /** Determine if given guild name or ID exists. */
+    readonly get: operations['Get Guild Status']
   }
   readonly '/v1/leaderboard': {
     readonly get: operations['Get Leaderboard']
@@ -7093,6 +7101,17 @@ export interface operations {
       }
     }
   }
+  /** Determine if given faction name or ID exists. */
+  readonly 'Get Faction Status': {
+    readonly responses: {
+      /** Default Response */
+      readonly 200: {
+        readonly content: {
+          readonly 'application/json': components['schemas']['PlayerStatusResponse']
+        }
+      }
+    }
+  }
   readonly 'Get Guild': {
     readonly parameters: {
       readonly query: {
@@ -7144,6 +7163,17 @@ export interface operations {
     readonly requestBody: {
       readonly content: {
         readonly 'application/json': components['schemas']['GuildBulkInput']
+      }
+    }
+  }
+  /** Determine if given guild name or ID exists. */
+  readonly 'Get Guild Status': {
+    readonly responses: {
+      /** Default Response */
+      readonly 200: {
+        readonly content: {
+          readonly 'application/json': components['schemas']['PlayerStatusResponse']
+        }
       }
     }
   }
