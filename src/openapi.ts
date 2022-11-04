@@ -339,8 +339,6 @@ export interface components {
       /** @enum {string} */
       readonly Creative: 'Creative'
       /** @enum {string} */
-      readonly CTF: 'Capture the Flag'
-      /** @enum {string} */
       readonly Duels: 'Duels'
       /** @enum {string} */
       readonly Factions: 'Factions'
