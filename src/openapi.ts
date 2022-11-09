@@ -4,7572 +4,6508 @@
  */
 
 export interface paths {
-  '/v1/announcements': {
-    get: operations['Get Announcements']
-  }
-  '/v1/discord': {
-    get: operations['Get Discord Member Count']
-  }
-  '/v1/factions/{name}': {
-    get: operations['Get Faction']
-  }
-  '/v1/factions': {
-    get: operations['Get Factions']
-  }
-  '/v1/factions/batch': {
-    post: operations['Bulk Get Factions']
-  }
-  '/v1/factions/{faction}/status': {
+  "/v1/announcements": {
+    get: operations["Get Announcements"];
+  };
+  "/v1/discord": {
+    get: operations["Get Discord Member Count"];
+  };
+  "/v1/factions/{faction}": {
+    get: operations["Get Faction"];
+  };
+  "/v1/factions": {
+    get: operations["Get Factions"];
+  };
+  "/v1/factions/batch": {
+    post: operations["Bulk Get Factions"];
+  };
+  "/v1/factions/{faction}/status": {
     /** @description Determine if given faction name or ID exists. */
-    get: operations['Get Faction Status']
-  }
-  '/v1/guilds/{name}': {
-    get: operations['Get Guild']
-  }
-  '/v1/guilds': {
-    get: operations['Get Guilds']
-  }
-  '/v1/guilds/batch': {
-    post: operations['Bulk Get Guilds']
-  }
-  '/v1/guilds/{guild}/status': {
+    get: operations["Get Faction Status"];
+  };
+  "/v1/guilds/{guild}": {
+    get: operations["Get Guild"];
+  };
+  "/v1/guilds": {
+    get: operations["Get Guilds"];
+  };
+  "/v1/guilds/batch": {
+    post: operations["Bulk Get Guilds"];
+  };
+  "/v1/guilds/{guild}/status": {
     /** @description Determine if given guild name or ID exists. */
-    get: operations['Get Guild Status']
-  }
-  '/v1/leaderboard': {
-    get: operations['Get Leaderboard']
-  }
-  '/v1/leaderboard/bulk': {
-    post: operations['Bulk Get Leaderboards']
-  }
-  '/v1/players/{player}': {
-    get: operations['Get Player']
-  }
-  '/v1/players/{player}/avatar': {
-    get: operations['Get Player Avatar']
-  }
-  '/v1/servers/player-count': {
-    get: operations['Get Player Count']
-  }
-  '/v1/players/{player}/leaderboard': {
-    get: operations['Get Player Leaderboard']
-  }
-  '/v1/players/leaderboard/bulk': {
-    post: operations['Bulk Get Player Leaderboards']
-  }
-  '/v1/players/{player}/punishments': {
-    get: operations['Get Player Punishments']
-  }
-  '/v1/players': {
-    get: operations['Get Players']
-  }
-  '/v1/players/batch': {
-    post: operations['Bulk Get Players']
-  }
-  '/v1/players/{player}/skin': {
-    get: operations['Get Player Skin']
-  }
-  '/v1/players/{player}/stats': {
+    get: operations["Get Guild Status"];
+  };
+  "/v1/leaderboard": {
+    get: operations["Get Leaderboard"];
+  };
+  "/v1/leaderboard/bulk": {
+    post: operations["Bulk Get Leaderboards"];
+  };
+  "/v1/players/{player}": {
+    get: operations["Get Player"];
+  };
+  "/v1/players/{player}/avatar": {
+    get: operations["Get Player Avatar"];
+  };
+  "/v1/servers/player-count": {
+    get: operations["Get Player Count"];
+  };
+  "/v1/players/{player}/leaderboard": {
+    get: operations["Get Player Leaderboard"];
+  };
+  "/v1/players/leaderboard/bulk": {
+    post: operations["Bulk Get Player Leaderboards"];
+  };
+  "/v1/players/{player}/punishments": {
+    get: operations["Get Player Punishments"];
+  };
+  "/v1/players": {
+    get: operations["Get Players"];
+  };
+  "/v1/players/batch": {
+    post: operations["Bulk Get Players"];
+  };
+  "/v1/players/{player}/skin": {
+    get: operations["Get Player Skin"];
+  };
+  "/v1/players/{player}/stats": {
     /** @description Track hourly stats for a player (lazy-loaded). Max 100 new players every 24 hours for each API key. */
-    get: operations['Get Player Stats History']
-  }
-  '/v1/players/stats/bulk': {
+    get: operations["Get Player Stats History"];
+  };
+  "/v1/players/stats/bulk": {
     /** @description Track hourly stats for a player (lazy-loaded). Max 100 new players every 24 hours for each API key. */
-    post: operations['Bulk Get Player Stats History']
-  }
-  '/v1/players/{player}/stats/{type}': {
-    get: operations['Get Player Stats by Type']
-  }
-  '/v1/players/{player}/status': {
+    post: operations["Bulk Get Player Stats History"];
+  };
+  "/v1/players/{player}/stats/{type}": {
+    get: operations["Get Player Stats by Type"];
+  };
+  "/v1/players/{player}/status": {
     /** @description Determine if given XUID or username exists. */
-    get: operations['Get Player Status']
-  }
-  '/v1/search': {
-    get: operations['Get Search Results']
-  }
-  '/v1/search-full': {
-    get: operations['Get Full-Text Search Results']
-  }
-  '/v1/servers/meta': {
-    get: operations['Get Server Metadata']
-  }
-  '/v1/servers/settings': {
-    get: operations['Get Server MOTDs']
-  }
-  '/v1/servers/ping': {
-    get: operations['Get Server Ping']
-  }
-  '/v1/servers': {
-    get: operations['Get Servers']
-  }
-  '/v1/stream': {
-    get: operations['Get Stream Status']
-  }
-  '/v1/updates': {
-    get: operations['Get Updates']
-  }
-  '/v1/players/xuids': {
-    post: operations['Get XUID Mapping']
-  }
+    get: operations["Get Player Status"];
+  };
+  "/v1/search": {
+    get: operations["Get Search Results"];
+  };
+  "/v1/search-full": {
+    get: operations["Get Full-Text Search Results"];
+  };
+  "/v1/servers/meta": {
+    get: operations["Get Server Metadata"];
+  };
+  "/v1/servers/settings": {
+    get: operations["Get Server MOTDs"];
+  };
+  "/v1/servers/ping": {
+    get: operations["Get Server Ping"];
+  };
+  "/v1/servers": {
+    get: operations["Get Servers"];
+  };
+  "/v1/stream": {
+    get: operations["Get Stream Status"];
+  };
+  "/v1/updates": {
+    get: operations["Get Updates"];
+  };
+  "/v1/players/xuids": {
+    post: operations["Get XUID Mapping"];
+  };
 }
 
 export interface components {
   schemas: {
     XuidMappingResponse: {
-      [key: string]: string | undefined
-    }
-    XuidMappingInput:
-      | {
-          xuids: string[]
-        }
-      | string[]
-    UpdatesResponse: {
-      id: number
-      title: string
-      /** Format: date-time */
-      timestamp: string
-      formattedTimestamp: string
-      content: string
-    }[]
+      [key: string]: string | undefined;
+    };
+    XuidMappingInput: {
+      xuids: (string)[];
+    } | (string)[];
+    UpdatesResponse: ({
+        id: number;
+        title: string;
+        /** Format: date-time */
+        timestamp: string;
+        formattedTimestamp: string;
+        content: string;
+      })[];
     UpdatesQuery: {
-      before?: number
-      after?: number
+      before?: number;
+      after?: number;
       /** @default 100 */
-      limit?: number
-    }
+      limit?: number;
+    };
     UpdateResponse: {
-      id: number
-      title: string
+      id: number;
+      title: string;
       /** Format: date-time */
-      timestamp: string
-      formattedTimestamp: string
-      content: string
-    }
+      timestamp: string;
+      formattedTimestamp: string;
+      content: string;
+    };
     StreamResponse: {
-      streaming: boolean
-    }
+      streaming: boolean;
+    };
     ServerSettingsResponse: {
-      motds: string[]
-    }
+      motds: (string)[];
+    };
     ServerResponse: {
       mm: {
-        max: number
-        count: number
+        max: number;
+        count: number;
         infection: {
-          max: number
-          count: number
-        }
+          max: number;
+          count: number;
+        };
         classic: {
-          max: number
-          count: number
-        }
-      }
+          max: number;
+          count: number;
+        };
+      };
       sw: {
-        max: number
-        count: number
+        max: number;
+        count: number;
         doubles: {
-          max: number
-          count: number
-        }
+          max: number;
+          count: number;
+        };
         solo: {
-          max: number
-          count: number
-        }
+          max: number;
+          count: number;
+        };
         onevone: {
-          max: number
-          count: number
-        }
+          max: number;
+          count: number;
+        };
         twovtwo: {
-          max: number
-          count: number
-        }
-      }
+          max: number;
+          count: number;
+        };
+      };
       ms: {
-        max: number
-        count: number
-      }
+        max: number;
+        count: number;
+      };
       replay: {
-        max: number
-        count: number
-      }
+        max: number;
+        count: number;
+      };
       duels: {
-        max: number
-        count: number
+        max: number;
+        count: number;
         doubles: {
-          max: number
-          count: number
-        }
+          max: number;
+          count: number;
+        };
         solo: {
-          max: number
-          count: number
-        }
-      }
+          max: number;
+          count: number;
+        };
+      };
       tb: {
-        max: number
-        count: number
+        max: number;
+        count: number;
         doubles: {
-          max: number
-          count: number
-        }
+          max: number;
+          count: number;
+        };
         solo: {
-          max: number
-          count: number
-        }
-      }
+          max: number;
+          count: number;
+        };
+      };
       cq: {
-        max: number
-        count: number
+        max: number;
+        count: number;
         mega: {
-          max: number
-          count: number
-        }
-      }
+          max: number;
+          count: number;
+        };
+      };
       creative: {
-        max: number
-        count: number
-      }
+        max: number;
+        count: number;
+      };
       sb: {
-        max: number
-        count: number
+        max: number;
+        count: number;
         skyland: {
-          max: number
-          count: number
-        }
+          max: number;
+          count: number;
+        };
         agora: {
-          max: number
-          count: number
-        }
-      }
+          max: number;
+          count: number;
+        };
+      };
       factions: {
-        max: number
-        count: number
+        max: number;
+        count: number;
         farlands: {
-          max: number
-          count: number
-        }
+          max: number;
+          count: number;
+        };
         badlands: {
-          max: number
-          count: number
-        }
-      }
+          max: number;
+          count: number;
+        };
+      };
       sc: {
-        max: number
-        count: number
-      }
+        max: number;
+        count: number;
+      };
       uhc: {
-        max: number
-        count: number
+        max: number;
+        count: number;
         doubles: {
-          max: number
-          count: number
-        }
+          max: number;
+          count: number;
+        };
         solo: {
-          max: number
-          count: number
-        }
-      }
+          max: number;
+          count: number;
+        };
+      };
       lobby: {
-        max: number
-        count: number
-      }
+        max: number;
+        count: number;
+      };
       sg: {
-        max: number
-        count: number
-      }
+        max: number;
+        count: number;
+      };
       bw: {
-        max: number
-        count: number
+        max: number;
+        count: number;
         doubles: {
-          max: number
-          count: number
-        }
+          max: number;
+          count: number;
+        };
         squads: {
-          max: number
-          count: number
-        }
+          max: number;
+          count: number;
+        };
         solo: {
-          max: number
-          count: number
-        }
-      }
+          max: number;
+          count: number;
+        };
+      };
       setup: {
-        max: number
-        count: number
-      }
-    }
+        max: number;
+        count: number;
+      };
+    };
     ServerPingResponse: {
       /** @enum {string} */
-      edition: 'MCPE'
+      edition: "MCPE";
       motd: {
-        raw: string
-        clean: string
-      }
+        raw: string;
+        clean: string;
+      };
       version: {
-        name: string
-        protocol: number
-      }
+        name: string;
+        protocol: number;
+      };
       players: {
-        online: number
-        max: number
-      }
-      serverID: string
-      gameMode: string
-      gameModeID: number
-      portIPv4: number
-      portIPv6: number
-    }
+        online: number;
+        max: number;
+      };
+      serverID: string;
+      gameMode: string;
+      gameModeID: number;
+      portIPv4: number;
+      portIPv6: number;
+    };
     ServerPingQuery: {
       /** @default play.nethergames.org */
-      ip?: string
+      ip?: string;
       /** @default 19132 */
-      port?: number
-    }
+      port?: number;
+    };
     ServerMetaResponse: {
       /** @enum {string} */
-      AC: 'Arcade'
+      AC: "Arcade";
       /** @enum {string} */
-      BB: 'Build Battle'
+      BB: "Build Battle";
       /** @enum {string} */
-      Beta: 'Beta'
+      Beta: "Beta";
       /** @enum {string} */
-      BH: 'Block Hunt'
+      BH: "Block Hunt";
       /** @enum {string} */
-      BR: 'Battle Royale'
+      BR: "Battle Royale";
       /** @enum {string} */
-      BW: 'Bedwars'
+      BW: "Bedwars";
       /** @enum {string} */
-      CQ: 'Conquests'
+      CQ: "Conquests";
       /** @enum {string} */
-      Creative: 'Creative'
+      Creative: "Creative";
       /** @enum {string} */
-      Duels: 'Duels'
+      Duels: "Duels";
       /** @enum {string} */
-      Factions: 'Factions'
+      Factions: "Factions";
       /** @enum {string} */
-      Lobby: 'Lobby'
+      Lobby: "Lobby";
       /** @enum {string} */
-      MM: 'Murder Mystery'
+      MM: "Murder Mystery";
       /** @enum {string} */
-      MS: 'Momma Says'
+      MS: "Momma Says";
       /** @enum {string} */
-      Replay: 'Replay'
+      Replay: "Replay";
       /** @enum {string} */
-      SB: 'Skyblock'
+      SB: "Skyblock";
       /** @enum {string} */
-      SC: 'Soccer'
+      SC: "Soccer";
       /** @enum {string} */
-      SG: 'Survival Games'
+      SG: "Survival Games";
       /** @enum {string} */
-      SP: 'Spleef'
+      SP: "Spleef";
       /** @enum {string} */
-      SW: 'Skywars'
+      SW: "Skywars";
       /** @enum {string} */
-      TB: 'The Bridge'
+      TB: "The Bridge";
       /** @enum {string} */
-      TR: 'TNT Run'
+      TR: "TNT Run";
       /** @enum {string} */
-      UHC: 'UHC'
+      UHC: "UHC";
       /** @enum {string} */
-      ac: 'Arcade'
+      ac: "Arcade";
       /** @enum {string} */
-      bb: 'Build Battle'
+      bb: "Build Battle";
       /** @enum {string} */
-      beta: 'Beta'
+      beta: "Beta";
       /** @enum {string} */
-      bh: 'Block Hunt'
+      bh: "Block Hunt";
       /** @enum {string} */
-      br: 'Battle Royale'
+      br: "Battle Royale";
       /** @enum {string} */
-      bw: 'Bedwars'
+      bw: "Bedwars";
       /** @enum {string} */
-      cq: 'Conquests'
+      cq: "Conquests";
       /** @enum {string} */
-      creative: 'Creative'
+      creative: "Creative";
       /** @enum {string} */
-      duels: 'Duels'
+      duels: "Duels";
       /** @enum {string} */
-      factions: 'Factions'
+      factions: "Factions";
       /** @enum {string} */
-      lobby: 'Lobby'
+      lobby: "Lobby";
       /** @enum {string} */
-      mm: 'Murder Mystery'
+      mm: "Murder Mystery";
       /** @enum {string} */
-      ms: 'Momma Says'
+      ms: "Momma Says";
       /** @enum {string} */
-      replay: 'Replay'
+      replay: "Replay";
       /** @enum {string} */
-      sb: 'Skyblock'
+      sb: "Skyblock";
       /** @enum {string} */
-      sc: 'Soccer'
+      sc: "Soccer";
       /** @enum {string} */
-      sg: 'Survival Games'
+      sg: "Survival Games";
       /** @enum {string} */
-      sp: 'Spleef'
+      sp: "Spleef";
       /** @enum {string} */
-      sw: 'Skywars'
+      sw: "Skywars";
       /** @enum {string} */
-      tb: 'The Bridge'
+      tb: "The Bridge";
       /** @enum {string} */
-      tr: 'TNT Run'
+      tr: "TNT Run";
       /** @enum {string} */
-      uhc: 'UHC'
-    }
+      uhc: "UHC";
+    };
     ServerGameStats: {
-      max: number
-      count: number
-    }
-    SearchResponse:
-      | {
-          /** @enum {string} */
-          type: 'faction'
-          data: {
-            id: number
-            name: string
-            strength: number
-            allies: string[]
-            leader?: Record<string, never>
-            officers: unknown[]
-            members: unknown[]
-          }
-        }
-      | {
-          /** @enum {string} */
-          type: 'guild'
-          data: {
-            id: number
-            name: string
-            maxSize: number
-            memberCount: number
-            motd: string
-            position?: number
-            rawTag: string
-            tag: string
-            /** @enum {string|null} */
-            tagColor:
-              | '#000000'
-              | '#0000aa'
-              | '#00aa00'
-              | '#00aaaa'
-              | '#aa0000'
-              | '#aa00aa'
-              | '#ffaa00'
-              | '#aaaaaa'
-              | '#555555'
-              | '#5555ff'
-              | '#55ff55'
-              | '#55ffff'
-              | '#ff5555'
-              | '#ff55ff'
-              | '#ffff55'
-              | '#ffffff'
-              | '#ddd605'
-              | null
-            xp: number
-            xpToNextLevel: number
-            level: number
-            leader?: Record<string, never>
-            officers: unknown[]
-            members: unknown[]
-          }
-        }
-      | {
-          /** @enum {string} */
-          type: 'player'
-          data: {
-            xuid: string
-            name: string
-            /** Format: uri */
-            avatar: string
-            avatarBlurhash?: string
-            /** Format: uri */
-            skin: string
-            online?: boolean
-            flags: number
-            /** @enum {number} */
-            dmStatus: 0 | 1 | 2
-            bio: string
-            discordId: string
-            discordTag: string
-            guild: string
-            ranks: (
-              | 'Admin'
-              | 'Dev'
-              | 'Supervisor'
-              | 'Mod'
-              | 'Crew'
-              | 'Trainee'
-              | 'Builder'
-              | 'Designer'
-              | 'Game Designer'
-              | 'Media'
-              | 'Discord'
-              | 'Partner'
-              | 'Titan'
-              | 'Legend'
-              | 'Emerald'
-              | 'Ultra'
-              | 'Youtube'
-              | 'Tester'
-            )[]
-            /** @enum {string|null} */
-            tier: 'Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite' | null
-            banned?: boolean
-            bannedUntil?: (Record<string, never> | number) | null
-            muted?: boolean
-            mutedUntil?: (Record<string, never> | number) | null
-            staff: boolean
-            titan: boolean
-            /** Format: date-time */
-            titanUntil: string
-            /** Format: date-time */
-            lastRankTimestamp: string
-            /** @enum {number} */
-            voteStatus?: 0 | 1 | 2
-            firstJoin: string
-            firstJoined: number
-            lastJoin: string
-            lastJoined: number
-            lastQuit: number
-            lastSeen: string
-            lastServer: string
-            crateKeys: number
-            credits: number
-            deaths?: number
-            deathsTotal?: number
-            kdr?: number
-            kdrTotal?: number
-            kills?: number
-            killsTotal?: number
-            level: number
-            losses?: number
-            wins?: number
-            wlr?: number
-            xp: number
-            formattedLevel: string
-            levelColors: (
-              | '#000000'
-              | '#0000aa'
-              | '#00aa00'
-              | '#00aaaa'
-              | '#aa0000'
-              | '#aa00aa'
-              | '#ffaa00'
-              | '#aaaaaa'
-              | '#555555'
-              | '#5555ff'
-              | '#55ff55'
-              | '#55ffff'
-              | '#ff5555'
-              | '#ff55ff'
-              | '#ffff55'
-              | '#ffffff'
-              | '#ddd605'
-            )[]
+      max: number;
+      count: number;
+    };
+    SearchResponse: {
+      /** @enum {string} */
+      type: "faction";
+      data: {
+        id: number;
+        name: string;
+        strength: number;
+        allies: (string)[];
+        leader?: Record<string, never>;
+        officers: (unknown)[];
+        members: (unknown)[];
+      };
+    } | ({
+      /** @enum {string} */
+      type: "guild";
+      data: {
+        id: number;
+        name: string;
+        maxSize: number;
+        memberCount: number;
+        motd: string;
+        position?: number;
+        rawTag: string;
+        tag: string;
+        /** @enum {string|null} */
+        tagColor: "#000000" | "#0000aa" | "#00aa00" | "#00aaaa" | "#aa0000" | "#aa00aa" | "#ffaa00" | "#aaaaaa" | "#555555" | "#5555ff" | "#55ff55" | "#55ffff" | "#ff5555" | "#ff55ff" | "#ffff55" | "#ffffff" | "#ddd605" | null;
+        xp: number;
+        xpToNextLevel: number;
+        level: number;
+        leader?: Record<string, never>;
+        officers: (unknown)[];
+        members: (unknown)[];
+        discordInvite: string;
+      };
+    }) | ({
+      /** @enum {string} */
+      type: "player";
+      data: {
+        xuid: string;
+        name: string;
+        /** Format: uri */
+        avatar: string;
+        avatarBlurhash?: string;
+        /** Format: uri */
+        skin: string;
+        online?: boolean;
+        flags: number;
+        /** @enum {number} */
+        dmStatus: 0 | 1 | 2;
+        bio: string;
+        discordId: string;
+        discordTag: string;
+        guild: string;
+        ranks: ("Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester")[];
+        /** @enum {string|null} */
+        tier: "Silver" | "Gold" | "Guardian" | "Eagle" | "Elite" | null;
+        banned?: boolean;
+        bannedUntil?: (Record<string, never> | number) | null;
+        muted?: boolean;
+        mutedUntil?: (Record<string, never> | number) | null;
+        staff: boolean;
+        titan: boolean;
+        /** Format: date-time */
+        titanUntil: string;
+        /** Format: date-time */
+        lastRankTimestamp: string;
+        /** @enum {number} */
+        voteStatus?: 0 | 1 | 2;
+        firstJoin: string;
+        firstJoined: number;
+        lastJoin: string;
+        lastJoined: number;
+        lastQuit: number;
+        lastSeen: string;
+        lastServer: string;
+        crateKeys: number;
+        credits: number;
+        deaths?: number;
+        deathsTotal?: number;
+        kdr?: number;
+        kdrTotal?: number;
+        kills?: number;
+        killsTotal?: number;
+        level: number;
+        losses?: number;
+        wins?: number;
+        wlr?: number;
+        xp: number;
+        formattedLevel: string;
+        levelColors: ("#000000" | "#0000aa" | "#00aa00" | "#00aaaa" | "#aa0000" | "#aa00aa" | "#ffaa00" | "#aaaaaa" | "#555555" | "#5555ff" | "#55ff55" | "#55ffff" | "#ff5555" | "#ff55ff" | "#ffff55" | "#ffffff" | "#ddd605")[];
+        /** @enum {string} */
+        levelFormat: "§k" | "§l" | "§o" | "§r";
+        rankColors: (string)[];
+        skinVisibility: boolean;
+        tierColor: string;
+        youtubeChannelUrl: string;
+        killsUntilNextKdr?: number;
+        winsUntilNextWlr?: number;
+        xpToNextLevel: number;
+        discoveredTokens: (string)[];
+        discoveredZones: (string)[];
+        factionData?: ({
+          tags: number;
+          registerDate: string;
+          coins: number;
+          kills: number;
+          bounty: number;
+          faction: {
+            id: number;
+            name: string;
+            strength: number;
+            allies: (string)[];
+            leader?: Record<string, never>;
+            officers: (unknown)[];
+            members: (unknown)[];
+          } | null;
+        }) | null;
+        guildData?: (Record<string, never> | ({
+          id: number;
+          name: string;
+          maxSize: number;
+          memberCount: number;
+          motd: string;
+          position?: number;
+          rawTag: string;
+          tag: string;
+          /** @enum {string|null} */
+          tagColor: "#000000" | "#0000aa" | "#00aa00" | "#00aaaa" | "#aa0000" | "#aa00aa" | "#ffaa00" | "#aaaaaa" | "#555555" | "#5555ff" | "#55ff55" | "#55ffff" | "#ff5555" | "#ff55ff" | "#ffff55" | "#ffffff" | "#ddd605" | null;
+          xp: number;
+          xpToNextLevel: number;
+          level: number;
+          leader?: Record<string, never>;
+          officers: (unknown)[];
+          members: (unknown)[];
+          discordInvite: string;
+        })) | null;
+        lastServerParsed: {
+          region: string;
+          serverName: string;
+          serverNameLong: string;
+          serverType: string;
+          pretty: string;
+        };
+        punishmentsNew?: ({
+            id: string;
+            /** @description The punishment `reasonName` and `reasonCategory` joined together. */
+            reason: string;
+            reasonName: string;
+            reasonCategory: string;
             /** @enum {string} */
-            levelFormat: '§k' | '§l' | '§o' | '§r'
-            rankColors: string[]
-            skinVisibility: boolean
-            tierColor: string
-            youtubeChannelUrl: string
-            killsUntilNextKdr?: number
-            winsUntilNextWlr?: number
-            xpToNextLevel: number
-            discoveredTokens: string[]
-            discoveredZones: string[]
-            factionData?: {
-              tags: number
-              registerDate: string
-              coins: number
-              kills: number
-              bounty: number
-              faction: {
-                id: number
-                name: string
-                strength: number
-                allies: string[]
-                leader?: Record<string, never>
-                officers: unknown[]
-                members: unknown[]
-              } | null
-            } | null
-            guildData?:
-              | (
-                  | Record<string, never>
-                  | {
-                      id: number
-                      name: string
-                      maxSize: number
-                      memberCount: number
-                      motd: string
-                      position?: number
-                      rawTag: string
-                      tag: string
-                      /** @enum {string|null} */
-                      tagColor:
-                        | '#000000'
-                        | '#0000aa'
-                        | '#00aa00'
-                        | '#00aaaa'
-                        | '#aa0000'
-                        | '#aa00aa'
-                        | '#ffaa00'
-                        | '#aaaaaa'
-                        | '#555555'
-                        | '#5555ff'
-                        | '#55ff55'
-                        | '#55ffff'
-                        | '#ff5555'
-                        | '#ff55ff'
-                        | '#ffff55'
-                        | '#ffffff'
-                        | '#ddd605'
-                        | null
-                      xp: number
-                      xpToNextLevel: number
-                      level: number
-                      leader?: Record<string, never>
-                      officers: unknown[]
-                      members: unknown[]
-                    }
-                )
-              | null
-            lastServerParsed: {
-              region: string
-              serverName: string
-              serverNameLong: string
-              serverType: string
-              pretty: string
-            }
-            punishmentsNew?: {
-              id: string
-              /** @description The punishment `reasonName` and `reasonCategory` joined together. */
-              reason: string
-              reasonName: string
-              reasonCategory: string
-              /** @enum {string} */
-              type: 'BAN' | 'MUTE'
-              /** @description If true, the punishment does not expire. */
-              permanent: boolean
-              /** @description For migration punishments, this value is 0. */
-              issuedAt: number
-              /** @description If `permanent` is true, this value is -1. */
-              validUntil: number
-              /** @description Whether this punishment is currently active. */
-              active: boolean
-              /** @description The XUIDs affected by this punishment. */
-              affectedXuids: string[]
-              /** @description The corresponding player names to `affectedXuids`. */
-              affectedPlayers: string[]
-              alt: boolean
-            }[]
-            skinData?: {
-              skin: boolean
-              /** @enum {string} */
-              skinType: 'steve' | 'alex'
-              skinVisibility: boolean
-              base64: string
-              raw: string
-            }
-            winsData?: {
-              /** @default 0 */
-              BH?: number
-              /** @default 0 */
-              BW?: number
-              /** @default 0 */
-              CQ?: number
-              /** @default 0 */
-              Duels?: number
-              /** @default 0 */
-              MM?: number
-              /** @default 0 */
-              MS?: number
-              /** @default 0 */
-              SC?: number
-              /** @default 0 */
-              SG?: number
-              /** @default 0 */
-              SW?: number
-              /** @default 0 */
-              TB?: number
-              /** @default 0 */
-              TR?: number
-              /** @default 0 */
-              UHC?: number
-            }
-            extra?: {
-              /** @default 0 */
-              bhWins?: number
-              /** @default 0 */
-              bwBedsBroken?: number
-              /** @default 0 */
-              bwBestStreak?: number
-              /** @default 0 */
-              bwDeaths?: number
-              /** @default 0 */
-              bwDiamondsCollected?: number
-              /** @default 0 */
-              bwDoublesBedsBroken?: number
-              /** @default 0 */
-              bwDoublesDeaths?: number
-              /** @default 0 */
-              bwDoublesFinalKills?: number
-              /** @default 0 */
-              bwDoublesKills?: number
-              /** @default 0 */
-              bwDoublesWins?: number
-              /** @default 0 */
-              bwEmeraldsCollected?: number
-              /** @default 0 */
-              bwFinalKills?: number
-              /** @default 0 */
-              bwGoldCollected?: number
-              /** @default 0 */
-              bwIronCollected?: number
-              /** @default 0 */
-              bwKills?: number
-              /** @default 0 */
-              bwSoloBedsBroken?: number
-              /** @default 0 */
-              bwSoloDeaths?: number
-              /** @default 0 */
-              bwSoloFinalKills?: number
-              /** @default 0 */
-              bwSoloKills?: number
-              /** @default 0 */
-              bwSoloWins?: number
-              /** @default 0 */
-              bwSquadsBedsBroken?: number
-              /** @default 0 */
-              bwSquadsDeaths?: number
-              /** @default 0 */
-              bwSquadsFinalKills?: number
-              /** @default 0 */
-              bwSquadsKills?: number
-              /** @default 0 */
-              bwSquadsWins?: number
-              /** @default 0 */
-              bwStreak?: number
-              /** @default 0 */
-              bwTriosBedsBroken?: number
-              /** @default 0 */
-              bwTriosDeaths?: number
-              /** @default 0 */
-              bwTriosFinalKills?: number
-              /** @default 0 */
-              bwTriosKills?: number
-              /** @default 0 */
-              bwTriosWins?: number
-              /** @default 0 */
-              bwWins?: number
-              /** @default 0 */
-              cqDeaths?: number
-              /** @default 0 */
-              cqDiamondsCollected?: number
-              /** @default 0 */
-              cqEmeraldsCollected?: number
-              /** @default 0 */
-              cqFlagsCaptured?: number
-              /** @default 0 */
-              cqFlagsCollected?: number
-              /** @default 0 */
-              cqFlagsReturned?: number
-              /** @default 0 */
-              cqGoldCollected?: number
-              /** @default 0 */
-              cqIronCollected?: number
-              /** @default 0 */
-              cqKills?: number
-              /** @default 0 */
-              cqWins?: number
-              /** @default 0 */
-              duelsArrowsShot?: number
-              /** @default 0 */
-              duelsBestStreak?: number
-              /** @default 0 */
-              duelsDeaths?: number
-              /** @default 0 */
-              duelsKills?: number
-              /** @default 0 */
-              duelsLosses?: number
-              /** @default 0 */
-              duelsMeleeHits?: number
-              /** @default 0 */
-              duelsStreak?: number
-              /** @default 0 */
-              duelsWins?: number
-              /** @default 0 */
-              gxp?: number
-              /** @default 0 */
-              mmBowKills?: number
-              /** @default 0 */
-              mmClassicDeaths?: number
-              /** @default 0 */
-              mmClassicKills?: number
-              /** @default 0 */
-              mmClassicWins?: number
-              /** @default 0 */
-              mmDeaths?: number
-              /** @default 0 */
-              mmInfectionDeaths?: number
-              /** @default 0 */
-              mmInfectionKills?: number
-              /** @default 0 */
-              mmInfectionWins?: number
-              /** @default 0 */
-              mmKills?: number
-              /** @default 0 */
-              mmKnifeKills?: number
-              /** @default 0 */
-              mmThrowKnifeKills?: number
-              /** @default 0 */
-              mmWins?: number
-              /** @default 0 */
-              msFails?: number
-              /** @default 0 */
-              msSuccesses?: number
-              /** @default 0 */
-              msWins?: number
-              /** @default 0 */
-              onlineTime?: number
-              /** @default 0 */
-              scGoals?: number
-              /** @default 0 */
-              scWins?: number
-              /** @default 0 */
-              sgDeaths?: number
-              /** @default 0 */
-              sgKills?: number
-              /** @default 0 */
-              sgWins?: number
-              /** @default 0 */
-              swArrowsShot?: number
-              /** @default 0 */
-              swBlocksBroken?: number
-              /** @default 0 */
-              swBlocksPlaced?: number
-              /** @default 0 */
-              swCoins?: number
-              /** @default 0 */
-              swDeaths?: number
-              /** @default 0 */
-              swDoublesDeaths?: number
-              /** @default 0 */
-              swDoublesInsaneDeaths?: number
-              /** @default 0 */
-              swDoublesInsaneKills?: number
-              /** @default 0 */
-              swDoublesKills?: number
-              /** @default 0 */
-              swDoublesLosses?: number
-              /** @default 0 */
-              swDoublesNormalDeaths?: number
-              /** @default 0 */
-              swDoublesNormalKills?: number
-              /** @default 0 */
-              swDoublesWins?: number
-              /** @default 0 */
-              swEggsThrown?: number
-              /** @default 0 */
-              swEpearlsThrown?: number
-              /** @default 0 */
-              swKills?: number
-              /** @default 0 */
-              swLosses?: number
-              /** @default 0 */
-              swSoloDeaths?: number
-              /** @default 0 */
-              swSoloInsaneDeaths?: number
-              /** @default 0 */
-              swSoloInsaneKills?: number
-              /** @default 0 */
-              swSoloKills?: number
-              /** @default 0 */
-              swSoloLosses?: number
-              /** @default 0 */
-              swSoloNormalDeaths?: number
-              /** @default 0 */
-              swSoloNormalKills?: number
-              /** @default 0 */
-              swSoloWins?: number
-              /** @default 0 */
-              swWins?: number
-              /** @default 0 */
-              tbArrowsShot?: number
-              /** @default 0 */
-              tbBestStreak?: number
-              /** @default 0 */
-              tbDeaths?: number
-              /** @default 0 */
-              tbGoals?: number
-              /** @default 0 */
-              tbKills?: number
-              /** @default 0 */
-              tbLosses?: number
-              /** @default 0 */
-              tbMeleeHits?: number
-              /** @default 0 */
-              tbStreak?: number
-              /** @default 0 */
-              tbWins?: number
-              /** @default 0 */
-              trBestStreak?: number
-              /** @default 0 */
-              trBlocksDropped?: number
-              /** @default 0 */
-              trLosses?: number
-              /** @default 0 */
-              trStreak?: number
-              /** @default 0 */
-              trTimeRecord?: number
-              /** @default 0 */
-              trWins?: number
-              /** @default 0 */
-              uhcDeaths?: number
-              /** @default 0 */
-              uhcDiamondMined?: number
-              /** @default 0 */
-              uhcGoldMined?: number
-              /** @default 0 */
-              uhcIronMined?: number
-              /** @default 0 */
-              uhcKills?: number
-              /** @default 0 */
-              uhcLapisMined?: number
-              /** @default 0 */
-              uhcWins?: number
-            }
-            extraNested?: {
-              bh: {
-                wins: number
-              }
-              bw: {
-                kills: number
-                deaths: number
-                solo: {
-                  kills: number
-                  deaths: number
-                  beds: {
-                    broken: number
-                  }
-                  final: {
-                    kills: number
-                  }
-                  wins: number
-                }
-                doubles: {
-                  kills: number
-                  deaths: number
-                  beds: {
-                    broken: number
-                  }
-                  final: {
-                    kills: number
-                  }
-                  wins: number
-                }
-                trios: {
-                  kills: number
-                  deaths: number
-                  beds: {
-                    broken: number
-                  }
-                  final: {
-                    kills: number
-                  }
-                  wins: number
-                }
-                squads: {
-                  kills: number
-                  deaths: number
-                  beds: {
-                    broken: number
-                  }
-                  final: {
-                    kills: number
-                  }
-                  wins: number
-                }
-                beds: {
-                  broken: number
-                }
-                diamonds: {
-                  collected: number
-                }
-                emeralds: {
-                  collected: number
-                }
-                gold: {
-                  collected: number
-                }
-                iron: {
-                  collected: number
-                }
-                final: {
-                  kills: number
-                }
-                streak: number
-                best: {
-                  streak: number
-                }
-                wins: number
-              }
-              cq: {
-                kills: number
-                deaths: number
-                wins: number
-                flags: {
-                  collected: number
-                  captured: number
-                  returned: number
-                }
-                diamonds: {
-                  collected: number
-                }
-                emeralds: {
-                  collected: number
-                }
-                gold: {
-                  collected: number
-                }
-                iron: {
-                  collected: number
-                }
-              }
-              duels: {
-                kills: number
-                deaths: number
-                arrows: {
-                  shot: number
-                }
-                melee: {
-                  hits: number
-                }
-                streak: number
-                best: {
-                  streak: number
-                }
-                wins: number
-                losses: number
-              }
-              mm: {
-                kills: number
-                deaths: number
-                classic: {
-                  kills: number
-                  deaths: number
-                  wins: number
-                }
-                infection: {
-                  kills: number
-                  deaths: number
-                  wins: number
-                }
-                bow: {
-                  kills: number
-                }
-                knife: {
-                  kills: number
-                }
-                throw: {
-                  knife: {
-                    kills: number
-                  }
-                }
-                wins: number
-              }
-              ms: {
-                successes: number
-                fails: number
-                wins: number
-              }
-              sc: {
-                wins: number
-                goals: number
-              }
-              sg: {
-                kills: number
-                deaths: number
-                wins: number
-              }
-              sw: {
-                coins: number
-                kills: number
-                deaths: number
-                solo: {
-                  kills: number
-                  deaths: number
-                  normal: {
-                    kills: number
-                    deaths: number
-                  }
-                  insane: {
-                    kills: number
-                    deaths: number
-                  }
-                  wins: number
-                  losses: number
-                }
-                doubles: {
-                  kills: number
-                  deaths: number
-                  normal: {
-                    kills: number
-                    deaths: number
-                  }
-                  insane: {
-                    kills: number
-                    deaths: number
-                  }
-                  wins: number
-                  losses: number
-                }
-                blocks: {
-                  broken: number
-                  placed: number
-                }
-                arrows: {
-                  shot: number
-                }
-                eggs: {
-                  thrown: number
-                }
-                epearls: {
-                  thrown: number
-                }
-                wins: number
-                losses: number
-              }
-              tb: {
-                kills: number
-                deaths: number
-                arrows: {
-                  shot: number
-                }
-                melee: {
-                  hits: number
-                }
-                goals: number
-                streak: number
-                best: {
-                  streak: number
-                }
-                wins: number
-                losses: number
-              }
-              tr: {
-                wins: number
-                losses: number
-                streak: number
-                best: {
-                  streak: number
-                }
-                blocks: {
-                  dropped: number
-                }
-                time: {
-                  record: number
-                }
-              }
-              uhc: {
-                kills: number
-                deaths: number
-                wins: number
-                iron: {
-                  mined: number
-                }
-                gold: {
-                  mined: number
-                }
-                lapis: {
-                  mined: number
-                }
-                diamond: {
-                  mined: number
-                }
-              }
-              online: {
-                time: number
-              }
-              gxp: number
-            }
-            leaderboard: boolean
-            /** @deprecated use `credits` instead. */
-            statusCredits: number
-          }
-        }
+            type: "BAN" | "MUTE";
+            /** @description If true, the punishment does not expire. */
+            permanent: boolean;
+            /** @description For migration punishments, this value is 0. */
+            issuedAt: number;
+            /** @description If `permanent` is true, this value is -1. */
+            validUntil: number;
+            /** @description Whether this punishment is currently active. */
+            active: boolean;
+            /** @description The XUIDs affected by this punishment. */
+            affectedXuids: (string)[];
+            /** @description The corresponding player names to `affectedXuids`. */
+            affectedPlayers: (string)[];
+            alt: boolean;
+          })[];
+        skinData?: {
+          skin: boolean;
+          /** @enum {string} */
+          skinType: "steve" | "alex";
+          skinVisibility: boolean;
+          base64: string;
+          raw: string;
+        };
+        winsData?: {
+          /** @default 0 */
+          BH?: number;
+          /** @default 0 */
+          BW?: number;
+          /** @default 0 */
+          CQ?: number;
+          /** @default 0 */
+          Duels?: number;
+          /** @default 0 */
+          MM?: number;
+          /** @default 0 */
+          MS?: number;
+          /** @default 0 */
+          SC?: number;
+          /** @default 0 */
+          SG?: number;
+          /** @default 0 */
+          SW?: number;
+          /** @default 0 */
+          TB?: number;
+          /** @default 0 */
+          TR?: number;
+          /** @default 0 */
+          UHC?: number;
+        };
+        extra?: {
+          /** @default 0 */
+          bhWins?: number;
+          /** @default 0 */
+          bwBedsBroken?: number;
+          /** @default 0 */
+          bwBestStreak?: number;
+          /** @default 0 */
+          bwDeaths?: number;
+          /** @default 0 */
+          bwDiamondsCollected?: number;
+          /** @default 0 */
+          bwDoublesBedsBroken?: number;
+          /** @default 0 */
+          bwDoublesDeaths?: number;
+          /** @default 0 */
+          bwDoublesFinalKills?: number;
+          /** @default 0 */
+          bwDoublesKills?: number;
+          /** @default 0 */
+          bwDoublesWins?: number;
+          /** @default 0 */
+          bwEmeraldsCollected?: number;
+          /** @default 0 */
+          bwFinalKills?: number;
+          /** @default 0 */
+          bwGoldCollected?: number;
+          /** @default 0 */
+          bwIronCollected?: number;
+          /** @default 0 */
+          bwKills?: number;
+          /** @default 0 */
+          bwSoloBedsBroken?: number;
+          /** @default 0 */
+          bwSoloDeaths?: number;
+          /** @default 0 */
+          bwSoloFinalKills?: number;
+          /** @default 0 */
+          bwSoloKills?: number;
+          /** @default 0 */
+          bwSoloWins?: number;
+          /** @default 0 */
+          bwSquadsBedsBroken?: number;
+          /** @default 0 */
+          bwSquadsDeaths?: number;
+          /** @default 0 */
+          bwSquadsFinalKills?: number;
+          /** @default 0 */
+          bwSquadsKills?: number;
+          /** @default 0 */
+          bwSquadsWins?: number;
+          /** @default 0 */
+          bwStreak?: number;
+          /** @default 0 */
+          bwTriosBedsBroken?: number;
+          /** @default 0 */
+          bwTriosDeaths?: number;
+          /** @default 0 */
+          bwTriosFinalKills?: number;
+          /** @default 0 */
+          bwTriosKills?: number;
+          /** @default 0 */
+          bwTriosWins?: number;
+          /** @default 0 */
+          bwWins?: number;
+          /** @default 0 */
+          cqDeaths?: number;
+          /** @default 0 */
+          cqDiamondsCollected?: number;
+          /** @default 0 */
+          cqEmeraldsCollected?: number;
+          /** @default 0 */
+          cqFlagsCaptured?: number;
+          /** @default 0 */
+          cqFlagsCollected?: number;
+          /** @default 0 */
+          cqFlagsReturned?: number;
+          /** @default 0 */
+          cqGoldCollected?: number;
+          /** @default 0 */
+          cqIronCollected?: number;
+          /** @default 0 */
+          cqKills?: number;
+          /** @default 0 */
+          cqWins?: number;
+          /** @default 0 */
+          duelsArrowsShot?: number;
+          /** @default 0 */
+          duelsBestStreak?: number;
+          /** @default 0 */
+          duelsDeaths?: number;
+          /** @default 0 */
+          duelsKills?: number;
+          /** @default 0 */
+          duelsLosses?: number;
+          /** @default 0 */
+          duelsMeleeHits?: number;
+          /** @default 0 */
+          duelsStreak?: number;
+          /** @default 0 */
+          duelsWins?: number;
+          /** @default 0 */
+          gxp?: number;
+          /** @default 0 */
+          mmBowKills?: number;
+          /** @default 0 */
+          mmClassicDeaths?: number;
+          /** @default 0 */
+          mmClassicKills?: number;
+          /** @default 0 */
+          mmClassicWins?: number;
+          /** @default 0 */
+          mmDeaths?: number;
+          /** @default 0 */
+          mmInfectionDeaths?: number;
+          /** @default 0 */
+          mmInfectionKills?: number;
+          /** @default 0 */
+          mmInfectionWins?: number;
+          /** @default 0 */
+          mmKills?: number;
+          /** @default 0 */
+          mmKnifeKills?: number;
+          /** @default 0 */
+          mmThrowKnifeKills?: number;
+          /** @default 0 */
+          mmWins?: number;
+          /** @default 0 */
+          msFails?: number;
+          /** @default 0 */
+          msSuccesses?: number;
+          /** @default 0 */
+          msWins?: number;
+          /** @default 0 */
+          onlineTime?: number;
+          /** @default 0 */
+          scGoals?: number;
+          /** @default 0 */
+          scWins?: number;
+          /** @default 0 */
+          sgDeaths?: number;
+          /** @default 0 */
+          sgKills?: number;
+          /** @default 0 */
+          sgWins?: number;
+          /** @default 0 */
+          swArrowsShot?: number;
+          /** @default 0 */
+          swBlocksBroken?: number;
+          /** @default 0 */
+          swBlocksPlaced?: number;
+          /** @default 0 */
+          swCoins?: number;
+          /** @default 0 */
+          swDeaths?: number;
+          /** @default 0 */
+          swDoublesDeaths?: number;
+          /** @default 0 */
+          swDoublesInsaneDeaths?: number;
+          /** @default 0 */
+          swDoublesInsaneKills?: number;
+          /** @default 0 */
+          swDoublesKills?: number;
+          /** @default 0 */
+          swDoublesLosses?: number;
+          /** @default 0 */
+          swDoublesNormalDeaths?: number;
+          /** @default 0 */
+          swDoublesNormalKills?: number;
+          /** @default 0 */
+          swDoublesWins?: number;
+          /** @default 0 */
+          swEggsThrown?: number;
+          /** @default 0 */
+          swEpearlsThrown?: number;
+          /** @default 0 */
+          swKills?: number;
+          /** @default 0 */
+          swLosses?: number;
+          /** @default 0 */
+          swSoloDeaths?: number;
+          /** @default 0 */
+          swSoloInsaneDeaths?: number;
+          /** @default 0 */
+          swSoloInsaneKills?: number;
+          /** @default 0 */
+          swSoloKills?: number;
+          /** @default 0 */
+          swSoloLosses?: number;
+          /** @default 0 */
+          swSoloNormalDeaths?: number;
+          /** @default 0 */
+          swSoloNormalKills?: number;
+          /** @default 0 */
+          swSoloWins?: number;
+          /** @default 0 */
+          swWins?: number;
+          /** @default 0 */
+          tbArrowsShot?: number;
+          /** @default 0 */
+          tbBestStreak?: number;
+          /** @default 0 */
+          tbDeaths?: number;
+          /** @default 0 */
+          tbGoals?: number;
+          /** @default 0 */
+          tbKills?: number;
+          /** @default 0 */
+          tbLosses?: number;
+          /** @default 0 */
+          tbMeleeHits?: number;
+          /** @default 0 */
+          tbStreak?: number;
+          /** @default 0 */
+          tbWins?: number;
+          /** @default 0 */
+          trBestStreak?: number;
+          /** @default 0 */
+          trBlocksDropped?: number;
+          /** @default 0 */
+          trLosses?: number;
+          /** @default 0 */
+          trStreak?: number;
+          /** @default 0 */
+          trTimeRecord?: number;
+          /** @default 0 */
+          trWins?: number;
+          /** @default 0 */
+          uhcDeaths?: number;
+          /** @default 0 */
+          uhcDiamondMined?: number;
+          /** @default 0 */
+          uhcGoldMined?: number;
+          /** @default 0 */
+          uhcIronMined?: number;
+          /** @default 0 */
+          uhcKills?: number;
+          /** @default 0 */
+          uhcLapisMined?: number;
+          /** @default 0 */
+          uhcWins?: number;
+        };
+        extraNested?: {
+          bh: {
+            wins: number;
+          };
+          bw: {
+            kills: number;
+            deaths: number;
+            solo: {
+              kills: number;
+              deaths: number;
+              beds: {
+                broken: number;
+              };
+              final: {
+                kills: number;
+              };
+              wins: number;
+            };
+            doubles: {
+              kills: number;
+              deaths: number;
+              beds: {
+                broken: number;
+              };
+              final: {
+                kills: number;
+              };
+              wins: number;
+            };
+            trios: {
+              kills: number;
+              deaths: number;
+              beds: {
+                broken: number;
+              };
+              final: {
+                kills: number;
+              };
+              wins: number;
+            };
+            squads: {
+              kills: number;
+              deaths: number;
+              beds: {
+                broken: number;
+              };
+              final: {
+                kills: number;
+              };
+              wins: number;
+            };
+            beds: {
+              broken: number;
+            };
+            diamonds: {
+              collected: number;
+            };
+            emeralds: {
+              collected: number;
+            };
+            gold: {
+              collected: number;
+            };
+            iron: {
+              collected: number;
+            };
+            final: {
+              kills: number;
+            };
+            streak: number;
+            best: {
+              streak: number;
+            };
+            wins: number;
+          };
+          cq: {
+            kills: number;
+            deaths: number;
+            wins: number;
+            flags: {
+              collected: number;
+              captured: number;
+              returned: number;
+            };
+            diamonds: {
+              collected: number;
+            };
+            emeralds: {
+              collected: number;
+            };
+            gold: {
+              collected: number;
+            };
+            iron: {
+              collected: number;
+            };
+          };
+          duels: {
+            kills: number;
+            deaths: number;
+            arrows: {
+              shot: number;
+            };
+            melee: {
+              hits: number;
+            };
+            streak: number;
+            best: {
+              streak: number;
+            };
+            wins: number;
+            losses: number;
+          };
+          mm: {
+            kills: number;
+            deaths: number;
+            classic: {
+              kills: number;
+              deaths: number;
+              wins: number;
+            };
+            infection: {
+              kills: number;
+              deaths: number;
+              wins: number;
+            };
+            bow: {
+              kills: number;
+            };
+            knife: {
+              kills: number;
+            };
+            throw: {
+              knife: {
+                kills: number;
+              };
+            };
+            wins: number;
+          };
+          ms: {
+            successes: number;
+            fails: number;
+            wins: number;
+          };
+          sc: {
+            wins: number;
+            goals: number;
+          };
+          sg: {
+            kills: number;
+            deaths: number;
+            wins: number;
+          };
+          sw: {
+            coins: number;
+            kills: number;
+            deaths: number;
+            solo: {
+              kills: number;
+              deaths: number;
+              normal: {
+                kills: number;
+                deaths: number;
+              };
+              insane: {
+                kills: number;
+                deaths: number;
+              };
+              wins: number;
+              losses: number;
+            };
+            doubles: {
+              kills: number;
+              deaths: number;
+              normal: {
+                kills: number;
+                deaths: number;
+              };
+              insane: {
+                kills: number;
+                deaths: number;
+              };
+              wins: number;
+              losses: number;
+            };
+            blocks: {
+              broken: number;
+              placed: number;
+            };
+            arrows: {
+              shot: number;
+            };
+            eggs: {
+              thrown: number;
+            };
+            epearls: {
+              thrown: number;
+            };
+            wins: number;
+            losses: number;
+          };
+          tb: {
+            kills: number;
+            deaths: number;
+            arrows: {
+              shot: number;
+            };
+            melee: {
+              hits: number;
+            };
+            goals: number;
+            streak: number;
+            best: {
+              streak: number;
+            };
+            wins: number;
+            losses: number;
+          };
+          tr: {
+            wins: number;
+            losses: number;
+            streak: number;
+            best: {
+              streak: number;
+            };
+            blocks: {
+              dropped: number;
+            };
+            time: {
+              record: number;
+            };
+          };
+          uhc: {
+            kills: number;
+            deaths: number;
+            wins: number;
+            iron: {
+              mined: number;
+            };
+            gold: {
+              mined: number;
+            };
+            lapis: {
+              mined: number;
+            };
+            diamond: {
+              mined: number;
+            };
+          };
+          online: {
+            time: number;
+          };
+          gxp: number;
+        };
+        leaderboard: boolean;
+        /** @deprecated use `credits` instead. */
+        statusCredits: number;
+      };
+    });
     SearchQuery: {
-      name: string
-    }
-    SearchFullTextResponse:
-      | {
+      name: string;
+    };
+    SearchFullTextResponse: (({
+        /** @enum {string} */
+        type: "faction";
+        name: string;
+        data?: (Record<string, never> | {
+          id: number;
+          name: string;
+          strength: number;
+          allies: (string)[];
+          leader?: Record<string, never>;
+          officers: (unknown)[];
+          members: (unknown)[];
+        }) | null;
+      })[]) | (({
+        /** @enum {string} */
+        type: "guild";
+        name: string;
+        data?: (Record<string, never> | ({
+          id: number;
+          name: string;
+          maxSize: number;
+          memberCount: number;
+          motd: string;
+          position?: number;
+          rawTag: string;
+          tag: string;
+          /** @enum {string|null} */
+          tagColor: "#000000" | "#0000aa" | "#00aa00" | "#00aaaa" | "#aa0000" | "#aa00aa" | "#ffaa00" | "#aaaaaa" | "#555555" | "#5555ff" | "#55ff55" | "#55ffff" | "#ff5555" | "#ff55ff" | "#ffff55" | "#ffffff" | "#ddd605" | null;
+          xp: number;
+          xpToNextLevel: number;
+          level: number;
+          leader?: Record<string, never>;
+          officers: (unknown)[];
+          members: (unknown)[];
+          discordInvite: string;
+        })) | null;
+      })[]) | (({
+        /** @enum {string} */
+        type: "player";
+        name: string;
+        rank: string;
+        data?: (Record<string, never> | ({
+          xuid: string;
+          name: string;
+          /** Format: uri */
+          avatar: string;
+          avatarBlurhash?: string;
+          /** Format: uri */
+          skin: string;
+          online?: boolean;
+          flags: number;
+          /** @enum {number} */
+          dmStatus: 0 | 1 | 2;
+          bio: string;
+          discordId: string;
+          discordTag: string;
+          guild: string;
+          ranks: ("Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester")[];
+          /** @enum {string|null} */
+          tier: "Silver" | "Gold" | "Guardian" | "Eagle" | "Elite" | null;
+          banned?: boolean;
+          bannedUntil?: (Record<string, never> | number) | null;
+          muted?: boolean;
+          mutedUntil?: (Record<string, never> | number) | null;
+          staff: boolean;
+          titan: boolean;
+          /** Format: date-time */
+          titanUntil: string;
+          /** Format: date-time */
+          lastRankTimestamp: string;
+          /** @enum {number} */
+          voteStatus?: 0 | 1 | 2;
+          firstJoin: string;
+          firstJoined: number;
+          lastJoin: string;
+          lastJoined: number;
+          lastQuit: number;
+          lastSeen: string;
+          lastServer: string;
+          crateKeys: number;
+          credits: number;
+          deaths?: number;
+          deathsTotal?: number;
+          kdr?: number;
+          kdrTotal?: number;
+          kills?: number;
+          killsTotal?: number;
+          level: number;
+          losses?: number;
+          wins?: number;
+          wlr?: number;
+          xp: number;
+          formattedLevel: string;
+          levelColors: ("#000000" | "#0000aa" | "#00aa00" | "#00aaaa" | "#aa0000" | "#aa00aa" | "#ffaa00" | "#aaaaaa" | "#555555" | "#5555ff" | "#55ff55" | "#55ffff" | "#ff5555" | "#ff55ff" | "#ffff55" | "#ffffff" | "#ddd605")[];
           /** @enum {string} */
-          type: 'faction'
-          name: string
-          data?:
-            | (
-                | Record<string, never>
-                | {
-                    id: number
-                    name: string
-                    strength: number
-                    allies: string[]
-                    leader?: Record<string, never>
-                    officers: unknown[]
-                    members: unknown[]
-                  }
-              )
-            | null
-        }[]
-      | {
-          /** @enum {string} */
-          type: 'guild'
-          name: string
-          data?:
-            | (
-                | Record<string, never>
-                | {
-                    id: number
-                    name: string
-                    maxSize: number
-                    memberCount: number
-                    motd: string
-                    position?: number
-                    rawTag: string
-                    tag: string
-                    /** @enum {string|null} */
-                    tagColor:
-                      | '#000000'
-                      | '#0000aa'
-                      | '#00aa00'
-                      | '#00aaaa'
-                      | '#aa0000'
-                      | '#aa00aa'
-                      | '#ffaa00'
-                      | '#aaaaaa'
-                      | '#555555'
-                      | '#5555ff'
-                      | '#55ff55'
-                      | '#55ffff'
-                      | '#ff5555'
-                      | '#ff55ff'
-                      | '#ffff55'
-                      | '#ffffff'
-                      | '#ddd605'
-                      | null
-                    xp: number
-                    xpToNextLevel: number
-                    level: number
-                    leader?: Record<string, never>
-                    officers: unknown[]
-                    members: unknown[]
-                  }
-              )
-            | null
-        }[]
-      | {
-          /** @enum {string} */
-          type: 'player'
-          name: string
-          rank: string
-          data?:
-            | (
-                | Record<string, never>
-                | {
-                    xuid: string
-                    name: string
-                    /** Format: uri */
-                    avatar: string
-                    avatarBlurhash?: string
-                    /** Format: uri */
-                    skin: string
-                    online?: boolean
-                    flags: number
-                    /** @enum {number} */
-                    dmStatus: 0 | 1 | 2
-                    bio: string
-                    discordId: string
-                    discordTag: string
-                    guild: string
-                    ranks: (
-                      | 'Admin'
-                      | 'Dev'
-                      | 'Supervisor'
-                      | 'Mod'
-                      | 'Crew'
-                      | 'Trainee'
-                      | 'Builder'
-                      | 'Designer'
-                      | 'Game Designer'
-                      | 'Media'
-                      | 'Discord'
-                      | 'Partner'
-                      | 'Titan'
-                      | 'Legend'
-                      | 'Emerald'
-                      | 'Ultra'
-                      | 'Youtube'
-                      | 'Tester'
-                    )[]
-                    /** @enum {string|null} */
-                    tier: 'Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite' | null
-                    banned?: boolean
-                    bannedUntil?: (Record<string, never> | number) | null
-                    muted?: boolean
-                    mutedUntil?: (Record<string, never> | number) | null
-                    staff: boolean
-                    titan: boolean
-                    /** Format: date-time */
-                    titanUntil: string
-                    /** Format: date-time */
-                    lastRankTimestamp: string
-                    /** @enum {number} */
-                    voteStatus?: 0 | 1 | 2
-                    firstJoin: string
-                    firstJoined: number
-                    lastJoin: string
-                    lastJoined: number
-                    lastQuit: number
-                    lastSeen: string
-                    lastServer: string
-                    crateKeys: number
-                    credits: number
-                    deaths?: number
-                    deathsTotal?: number
-                    kdr?: number
-                    kdrTotal?: number
-                    kills?: number
-                    killsTotal?: number
-                    level: number
-                    losses?: number
-                    wins?: number
-                    wlr?: number
-                    xp: number
-                    formattedLevel: string
-                    levelColors: (
-                      | '#000000'
-                      | '#0000aa'
-                      | '#00aa00'
-                      | '#00aaaa'
-                      | '#aa0000'
-                      | '#aa00aa'
-                      | '#ffaa00'
-                      | '#aaaaaa'
-                      | '#555555'
-                      | '#5555ff'
-                      | '#55ff55'
-                      | '#55ffff'
-                      | '#ff5555'
-                      | '#ff55ff'
-                      | '#ffff55'
-                      | '#ffffff'
-                      | '#ddd605'
-                    )[]
-                    /** @enum {string} */
-                    levelFormat: '§k' | '§l' | '§o' | '§r'
-                    rankColors: string[]
-                    skinVisibility: boolean
-                    tierColor: string
-                    youtubeChannelUrl: string
-                    killsUntilNextKdr?: number
-                    winsUntilNextWlr?: number
-                    xpToNextLevel: number
-                    discoveredTokens: string[]
-                    discoveredZones: string[]
-                    factionData?: {
-                      tags: number
-                      registerDate: string
-                      coins: number
-                      kills: number
-                      bounty: number
-                      faction: {
-                        id: number
-                        name: string
-                        strength: number
-                        allies: string[]
-                        leader?: Record<string, never>
-                        officers: unknown[]
-                        members: unknown[]
-                      } | null
-                    } | null
-                    guildData?:
-                      | (
-                          | Record<string, never>
-                          | {
-                              id: number
-                              name: string
-                              maxSize: number
-                              memberCount: number
-                              motd: string
-                              position?: number
-                              rawTag: string
-                              tag: string
-                              /** @enum {string|null} */
-                              tagColor:
-                                | '#000000'
-                                | '#0000aa'
-                                | '#00aa00'
-                                | '#00aaaa'
-                                | '#aa0000'
-                                | '#aa00aa'
-                                | '#ffaa00'
-                                | '#aaaaaa'
-                                | '#555555'
-                                | '#5555ff'
-                                | '#55ff55'
-                                | '#55ffff'
-                                | '#ff5555'
-                                | '#ff55ff'
-                                | '#ffff55'
-                                | '#ffffff'
-                                | '#ddd605'
-                                | null
-                              xp: number
-                              xpToNextLevel: number
-                              level: number
-                              leader?: Record<string, never>
-                              officers: unknown[]
-                              members: unknown[]
-                            }
-                        )
-                      | null
-                    lastServerParsed: {
-                      region: string
-                      serverName: string
-                      serverNameLong: string
-                      serverType: string
-                      pretty: string
-                    }
-                    punishmentsNew?: {
-                      id: string
-                      /** @description The punishment `reasonName` and `reasonCategory` joined together. */
-                      reason: string
-                      reasonName: string
-                      reasonCategory: string
-                      /** @enum {string} */
-                      type: 'BAN' | 'MUTE'
-                      /** @description If true, the punishment does not expire. */
-                      permanent: boolean
-                      /** @description For migration punishments, this value is 0. */
-                      issuedAt: number
-                      /** @description If `permanent` is true, this value is -1. */
-                      validUntil: number
-                      /** @description Whether this punishment is currently active. */
-                      active: boolean
-                      /** @description The XUIDs affected by this punishment. */
-                      affectedXuids: string[]
-                      /** @description The corresponding player names to `affectedXuids`. */
-                      affectedPlayers: string[]
-                      alt: boolean
-                    }[]
-                    skinData?: {
-                      skin: boolean
-                      /** @enum {string} */
-                      skinType: 'steve' | 'alex'
-                      skinVisibility: boolean
-                      base64: string
-                      raw: string
-                    }
-                    winsData?: {
-                      /** @default 0 */
-                      BH?: number
-                      /** @default 0 */
-                      BW?: number
-                      /** @default 0 */
-                      CQ?: number
-                      /** @default 0 */
-                      Duels?: number
-                      /** @default 0 */
-                      MM?: number
-                      /** @default 0 */
-                      MS?: number
-                      /** @default 0 */
-                      SC?: number
-                      /** @default 0 */
-                      SG?: number
-                      /** @default 0 */
-                      SW?: number
-                      /** @default 0 */
-                      TB?: number
-                      /** @default 0 */
-                      TR?: number
-                      /** @default 0 */
-                      UHC?: number
-                    }
-                    extra?: {
-                      /** @default 0 */
-                      bhWins?: number
-                      /** @default 0 */
-                      bwBedsBroken?: number
-                      /** @default 0 */
-                      bwBestStreak?: number
-                      /** @default 0 */
-                      bwDeaths?: number
-                      /** @default 0 */
-                      bwDiamondsCollected?: number
-                      /** @default 0 */
-                      bwDoublesBedsBroken?: number
-                      /** @default 0 */
-                      bwDoublesDeaths?: number
-                      /** @default 0 */
-                      bwDoublesFinalKills?: number
-                      /** @default 0 */
-                      bwDoublesKills?: number
-                      /** @default 0 */
-                      bwDoublesWins?: number
-                      /** @default 0 */
-                      bwEmeraldsCollected?: number
-                      /** @default 0 */
-                      bwFinalKills?: number
-                      /** @default 0 */
-                      bwGoldCollected?: number
-                      /** @default 0 */
-                      bwIronCollected?: number
-                      /** @default 0 */
-                      bwKills?: number
-                      /** @default 0 */
-                      bwSoloBedsBroken?: number
-                      /** @default 0 */
-                      bwSoloDeaths?: number
-                      /** @default 0 */
-                      bwSoloFinalKills?: number
-                      /** @default 0 */
-                      bwSoloKills?: number
-                      /** @default 0 */
-                      bwSoloWins?: number
-                      /** @default 0 */
-                      bwSquadsBedsBroken?: number
-                      /** @default 0 */
-                      bwSquadsDeaths?: number
-                      /** @default 0 */
-                      bwSquadsFinalKills?: number
-                      /** @default 0 */
-                      bwSquadsKills?: number
-                      /** @default 0 */
-                      bwSquadsWins?: number
-                      /** @default 0 */
-                      bwStreak?: number
-                      /** @default 0 */
-                      bwTriosBedsBroken?: number
-                      /** @default 0 */
-                      bwTriosDeaths?: number
-                      /** @default 0 */
-                      bwTriosFinalKills?: number
-                      /** @default 0 */
-                      bwTriosKills?: number
-                      /** @default 0 */
-                      bwTriosWins?: number
-                      /** @default 0 */
-                      bwWins?: number
-                      /** @default 0 */
-                      cqDeaths?: number
-                      /** @default 0 */
-                      cqDiamondsCollected?: number
-                      /** @default 0 */
-                      cqEmeraldsCollected?: number
-                      /** @default 0 */
-                      cqFlagsCaptured?: number
-                      /** @default 0 */
-                      cqFlagsCollected?: number
-                      /** @default 0 */
-                      cqFlagsReturned?: number
-                      /** @default 0 */
-                      cqGoldCollected?: number
-                      /** @default 0 */
-                      cqIronCollected?: number
-                      /** @default 0 */
-                      cqKills?: number
-                      /** @default 0 */
-                      cqWins?: number
-                      /** @default 0 */
-                      duelsArrowsShot?: number
-                      /** @default 0 */
-                      duelsBestStreak?: number
-                      /** @default 0 */
-                      duelsDeaths?: number
-                      /** @default 0 */
-                      duelsKills?: number
-                      /** @default 0 */
-                      duelsLosses?: number
-                      /** @default 0 */
-                      duelsMeleeHits?: number
-                      /** @default 0 */
-                      duelsStreak?: number
-                      /** @default 0 */
-                      duelsWins?: number
-                      /** @default 0 */
-                      gxp?: number
-                      /** @default 0 */
-                      mmBowKills?: number
-                      /** @default 0 */
-                      mmClassicDeaths?: number
-                      /** @default 0 */
-                      mmClassicKills?: number
-                      /** @default 0 */
-                      mmClassicWins?: number
-                      /** @default 0 */
-                      mmDeaths?: number
-                      /** @default 0 */
-                      mmInfectionDeaths?: number
-                      /** @default 0 */
-                      mmInfectionKills?: number
-                      /** @default 0 */
-                      mmInfectionWins?: number
-                      /** @default 0 */
-                      mmKills?: number
-                      /** @default 0 */
-                      mmKnifeKills?: number
-                      /** @default 0 */
-                      mmThrowKnifeKills?: number
-                      /** @default 0 */
-                      mmWins?: number
-                      /** @default 0 */
-                      msFails?: number
-                      /** @default 0 */
-                      msSuccesses?: number
-                      /** @default 0 */
-                      msWins?: number
-                      /** @default 0 */
-                      onlineTime?: number
-                      /** @default 0 */
-                      scGoals?: number
-                      /** @default 0 */
-                      scWins?: number
-                      /** @default 0 */
-                      sgDeaths?: number
-                      /** @default 0 */
-                      sgKills?: number
-                      /** @default 0 */
-                      sgWins?: number
-                      /** @default 0 */
-                      swArrowsShot?: number
-                      /** @default 0 */
-                      swBlocksBroken?: number
-                      /** @default 0 */
-                      swBlocksPlaced?: number
-                      /** @default 0 */
-                      swCoins?: number
-                      /** @default 0 */
-                      swDeaths?: number
-                      /** @default 0 */
-                      swDoublesDeaths?: number
-                      /** @default 0 */
-                      swDoublesInsaneDeaths?: number
-                      /** @default 0 */
-                      swDoublesInsaneKills?: number
-                      /** @default 0 */
-                      swDoublesKills?: number
-                      /** @default 0 */
-                      swDoublesLosses?: number
-                      /** @default 0 */
-                      swDoublesNormalDeaths?: number
-                      /** @default 0 */
-                      swDoublesNormalKills?: number
-                      /** @default 0 */
-                      swDoublesWins?: number
-                      /** @default 0 */
-                      swEggsThrown?: number
-                      /** @default 0 */
-                      swEpearlsThrown?: number
-                      /** @default 0 */
-                      swKills?: number
-                      /** @default 0 */
-                      swLosses?: number
-                      /** @default 0 */
-                      swSoloDeaths?: number
-                      /** @default 0 */
-                      swSoloInsaneDeaths?: number
-                      /** @default 0 */
-                      swSoloInsaneKills?: number
-                      /** @default 0 */
-                      swSoloKills?: number
-                      /** @default 0 */
-                      swSoloLosses?: number
-                      /** @default 0 */
-                      swSoloNormalDeaths?: number
-                      /** @default 0 */
-                      swSoloNormalKills?: number
-                      /** @default 0 */
-                      swSoloWins?: number
-                      /** @default 0 */
-                      swWins?: number
-                      /** @default 0 */
-                      tbArrowsShot?: number
-                      /** @default 0 */
-                      tbBestStreak?: number
-                      /** @default 0 */
-                      tbDeaths?: number
-                      /** @default 0 */
-                      tbGoals?: number
-                      /** @default 0 */
-                      tbKills?: number
-                      /** @default 0 */
-                      tbLosses?: number
-                      /** @default 0 */
-                      tbMeleeHits?: number
-                      /** @default 0 */
-                      tbStreak?: number
-                      /** @default 0 */
-                      tbWins?: number
-                      /** @default 0 */
-                      trBestStreak?: number
-                      /** @default 0 */
-                      trBlocksDropped?: number
-                      /** @default 0 */
-                      trLosses?: number
-                      /** @default 0 */
-                      trStreak?: number
-                      /** @default 0 */
-                      trTimeRecord?: number
-                      /** @default 0 */
-                      trWins?: number
-                      /** @default 0 */
-                      uhcDeaths?: number
-                      /** @default 0 */
-                      uhcDiamondMined?: number
-                      /** @default 0 */
-                      uhcGoldMined?: number
-                      /** @default 0 */
-                      uhcIronMined?: number
-                      /** @default 0 */
-                      uhcKills?: number
-                      /** @default 0 */
-                      uhcLapisMined?: number
-                      /** @default 0 */
-                      uhcWins?: number
-                    }
-                    extraNested?: {
-                      bh: {
-                        wins: number
-                      }
-                      bw: {
-                        kills: number
-                        deaths: number
-                        solo: {
-                          kills: number
-                          deaths: number
-                          beds: {
-                            broken: number
-                          }
-                          final: {
-                            kills: number
-                          }
-                          wins: number
-                        }
-                        doubles: {
-                          kills: number
-                          deaths: number
-                          beds: {
-                            broken: number
-                          }
-                          final: {
-                            kills: number
-                          }
-                          wins: number
-                        }
-                        trios: {
-                          kills: number
-                          deaths: number
-                          beds: {
-                            broken: number
-                          }
-                          final: {
-                            kills: number
-                          }
-                          wins: number
-                        }
-                        squads: {
-                          kills: number
-                          deaths: number
-                          beds: {
-                            broken: number
-                          }
-                          final: {
-                            kills: number
-                          }
-                          wins: number
-                        }
-                        beds: {
-                          broken: number
-                        }
-                        diamonds: {
-                          collected: number
-                        }
-                        emeralds: {
-                          collected: number
-                        }
-                        gold: {
-                          collected: number
-                        }
-                        iron: {
-                          collected: number
-                        }
-                        final: {
-                          kills: number
-                        }
-                        streak: number
-                        best: {
-                          streak: number
-                        }
-                        wins: number
-                      }
-                      cq: {
-                        kills: number
-                        deaths: number
-                        wins: number
-                        flags: {
-                          collected: number
-                          captured: number
-                          returned: number
-                        }
-                        diamonds: {
-                          collected: number
-                        }
-                        emeralds: {
-                          collected: number
-                        }
-                        gold: {
-                          collected: number
-                        }
-                        iron: {
-                          collected: number
-                        }
-                      }
-                      duels: {
-                        kills: number
-                        deaths: number
-                        arrows: {
-                          shot: number
-                        }
-                        melee: {
-                          hits: number
-                        }
-                        streak: number
-                        best: {
-                          streak: number
-                        }
-                        wins: number
-                        losses: number
-                      }
-                      mm: {
-                        kills: number
-                        deaths: number
-                        classic: {
-                          kills: number
-                          deaths: number
-                          wins: number
-                        }
-                        infection: {
-                          kills: number
-                          deaths: number
-                          wins: number
-                        }
-                        bow: {
-                          kills: number
-                        }
-                        knife: {
-                          kills: number
-                        }
-                        throw: {
-                          knife: {
-                            kills: number
-                          }
-                        }
-                        wins: number
-                      }
-                      ms: {
-                        successes: number
-                        fails: number
-                        wins: number
-                      }
-                      sc: {
-                        wins: number
-                        goals: number
-                      }
-                      sg: {
-                        kills: number
-                        deaths: number
-                        wins: number
-                      }
-                      sw: {
-                        coins: number
-                        kills: number
-                        deaths: number
-                        solo: {
-                          kills: number
-                          deaths: number
-                          normal: {
-                            kills: number
-                            deaths: number
-                          }
-                          insane: {
-                            kills: number
-                            deaths: number
-                          }
-                          wins: number
-                          losses: number
-                        }
-                        doubles: {
-                          kills: number
-                          deaths: number
-                          normal: {
-                            kills: number
-                            deaths: number
-                          }
-                          insane: {
-                            kills: number
-                            deaths: number
-                          }
-                          wins: number
-                          losses: number
-                        }
-                        blocks: {
-                          broken: number
-                          placed: number
-                        }
-                        arrows: {
-                          shot: number
-                        }
-                        eggs: {
-                          thrown: number
-                        }
-                        epearls: {
-                          thrown: number
-                        }
-                        wins: number
-                        losses: number
-                      }
-                      tb: {
-                        kills: number
-                        deaths: number
-                        arrows: {
-                          shot: number
-                        }
-                        melee: {
-                          hits: number
-                        }
-                        goals: number
-                        streak: number
-                        best: {
-                          streak: number
-                        }
-                        wins: number
-                        losses: number
-                      }
-                      tr: {
-                        wins: number
-                        losses: number
-                        streak: number
-                        best: {
-                          streak: number
-                        }
-                        blocks: {
-                          dropped: number
-                        }
-                        time: {
-                          record: number
-                        }
-                      }
-                      uhc: {
-                        kills: number
-                        deaths: number
-                        wins: number
-                        iron: {
-                          mined: number
-                        }
-                        gold: {
-                          mined: number
-                        }
-                        lapis: {
-                          mined: number
-                        }
-                        diamond: {
-                          mined: number
-                        }
-                      }
-                      online: {
-                        time: number
-                      }
-                      gxp: number
-                    }
-                    leaderboard: boolean
-                    /** @deprecated use `credits` instead. */
-                    statusCredits: number
-                  }
-              )
-            | null
-        }[]
+          levelFormat: "§k" | "§l" | "§o" | "§r";
+          rankColors: (string)[];
+          skinVisibility: boolean;
+          tierColor: string;
+          youtubeChannelUrl: string;
+          killsUntilNextKdr?: number;
+          winsUntilNextWlr?: number;
+          xpToNextLevel: number;
+          discoveredTokens: (string)[];
+          discoveredZones: (string)[];
+          factionData?: ({
+            tags: number;
+            registerDate: string;
+            coins: number;
+            kills: number;
+            bounty: number;
+            faction: {
+              id: number;
+              name: string;
+              strength: number;
+              allies: (string)[];
+              leader?: Record<string, never>;
+              officers: (unknown)[];
+              members: (unknown)[];
+            } | null;
+          }) | null;
+          guildData?: (Record<string, never> | ({
+            id: number;
+            name: string;
+            maxSize: number;
+            memberCount: number;
+            motd: string;
+            position?: number;
+            rawTag: string;
+            tag: string;
+            /** @enum {string|null} */
+            tagColor: "#000000" | "#0000aa" | "#00aa00" | "#00aaaa" | "#aa0000" | "#aa00aa" | "#ffaa00" | "#aaaaaa" | "#555555" | "#5555ff" | "#55ff55" | "#55ffff" | "#ff5555" | "#ff55ff" | "#ffff55" | "#ffffff" | "#ddd605" | null;
+            xp: number;
+            xpToNextLevel: number;
+            level: number;
+            leader?: Record<string, never>;
+            officers: (unknown)[];
+            members: (unknown)[];
+            discordInvite: string;
+          })) | null;
+          lastServerParsed: {
+            region: string;
+            serverName: string;
+            serverNameLong: string;
+            serverType: string;
+            pretty: string;
+          };
+          punishmentsNew?: ({
+              id: string;
+              /** @description The punishment `reasonName` and `reasonCategory` joined together. */
+              reason: string;
+              reasonName: string;
+              reasonCategory: string;
+              /** @enum {string} */
+              type: "BAN" | "MUTE";
+              /** @description If true, the punishment does not expire. */
+              permanent: boolean;
+              /** @description For migration punishments, this value is 0. */
+              issuedAt: number;
+              /** @description If `permanent` is true, this value is -1. */
+              validUntil: number;
+              /** @description Whether this punishment is currently active. */
+              active: boolean;
+              /** @description The XUIDs affected by this punishment. */
+              affectedXuids: (string)[];
+              /** @description The corresponding player names to `affectedXuids`. */
+              affectedPlayers: (string)[];
+              alt: boolean;
+            })[];
+          skinData?: {
+            skin: boolean;
+            /** @enum {string} */
+            skinType: "steve" | "alex";
+            skinVisibility: boolean;
+            base64: string;
+            raw: string;
+          };
+          winsData?: {
+            /** @default 0 */
+            BH?: number;
+            /** @default 0 */
+            BW?: number;
+            /** @default 0 */
+            CQ?: number;
+            /** @default 0 */
+            Duels?: number;
+            /** @default 0 */
+            MM?: number;
+            /** @default 0 */
+            MS?: number;
+            /** @default 0 */
+            SC?: number;
+            /** @default 0 */
+            SG?: number;
+            /** @default 0 */
+            SW?: number;
+            /** @default 0 */
+            TB?: number;
+            /** @default 0 */
+            TR?: number;
+            /** @default 0 */
+            UHC?: number;
+          };
+          extra?: {
+            /** @default 0 */
+            bhWins?: number;
+            /** @default 0 */
+            bwBedsBroken?: number;
+            /** @default 0 */
+            bwBestStreak?: number;
+            /** @default 0 */
+            bwDeaths?: number;
+            /** @default 0 */
+            bwDiamondsCollected?: number;
+            /** @default 0 */
+            bwDoublesBedsBroken?: number;
+            /** @default 0 */
+            bwDoublesDeaths?: number;
+            /** @default 0 */
+            bwDoublesFinalKills?: number;
+            /** @default 0 */
+            bwDoublesKills?: number;
+            /** @default 0 */
+            bwDoublesWins?: number;
+            /** @default 0 */
+            bwEmeraldsCollected?: number;
+            /** @default 0 */
+            bwFinalKills?: number;
+            /** @default 0 */
+            bwGoldCollected?: number;
+            /** @default 0 */
+            bwIronCollected?: number;
+            /** @default 0 */
+            bwKills?: number;
+            /** @default 0 */
+            bwSoloBedsBroken?: number;
+            /** @default 0 */
+            bwSoloDeaths?: number;
+            /** @default 0 */
+            bwSoloFinalKills?: number;
+            /** @default 0 */
+            bwSoloKills?: number;
+            /** @default 0 */
+            bwSoloWins?: number;
+            /** @default 0 */
+            bwSquadsBedsBroken?: number;
+            /** @default 0 */
+            bwSquadsDeaths?: number;
+            /** @default 0 */
+            bwSquadsFinalKills?: number;
+            /** @default 0 */
+            bwSquadsKills?: number;
+            /** @default 0 */
+            bwSquadsWins?: number;
+            /** @default 0 */
+            bwStreak?: number;
+            /** @default 0 */
+            bwTriosBedsBroken?: number;
+            /** @default 0 */
+            bwTriosDeaths?: number;
+            /** @default 0 */
+            bwTriosFinalKills?: number;
+            /** @default 0 */
+            bwTriosKills?: number;
+            /** @default 0 */
+            bwTriosWins?: number;
+            /** @default 0 */
+            bwWins?: number;
+            /** @default 0 */
+            cqDeaths?: number;
+            /** @default 0 */
+            cqDiamondsCollected?: number;
+            /** @default 0 */
+            cqEmeraldsCollected?: number;
+            /** @default 0 */
+            cqFlagsCaptured?: number;
+            /** @default 0 */
+            cqFlagsCollected?: number;
+            /** @default 0 */
+            cqFlagsReturned?: number;
+            /** @default 0 */
+            cqGoldCollected?: number;
+            /** @default 0 */
+            cqIronCollected?: number;
+            /** @default 0 */
+            cqKills?: number;
+            /** @default 0 */
+            cqWins?: number;
+            /** @default 0 */
+            duelsArrowsShot?: number;
+            /** @default 0 */
+            duelsBestStreak?: number;
+            /** @default 0 */
+            duelsDeaths?: number;
+            /** @default 0 */
+            duelsKills?: number;
+            /** @default 0 */
+            duelsLosses?: number;
+            /** @default 0 */
+            duelsMeleeHits?: number;
+            /** @default 0 */
+            duelsStreak?: number;
+            /** @default 0 */
+            duelsWins?: number;
+            /** @default 0 */
+            gxp?: number;
+            /** @default 0 */
+            mmBowKills?: number;
+            /** @default 0 */
+            mmClassicDeaths?: number;
+            /** @default 0 */
+            mmClassicKills?: number;
+            /** @default 0 */
+            mmClassicWins?: number;
+            /** @default 0 */
+            mmDeaths?: number;
+            /** @default 0 */
+            mmInfectionDeaths?: number;
+            /** @default 0 */
+            mmInfectionKills?: number;
+            /** @default 0 */
+            mmInfectionWins?: number;
+            /** @default 0 */
+            mmKills?: number;
+            /** @default 0 */
+            mmKnifeKills?: number;
+            /** @default 0 */
+            mmThrowKnifeKills?: number;
+            /** @default 0 */
+            mmWins?: number;
+            /** @default 0 */
+            msFails?: number;
+            /** @default 0 */
+            msSuccesses?: number;
+            /** @default 0 */
+            msWins?: number;
+            /** @default 0 */
+            onlineTime?: number;
+            /** @default 0 */
+            scGoals?: number;
+            /** @default 0 */
+            scWins?: number;
+            /** @default 0 */
+            sgDeaths?: number;
+            /** @default 0 */
+            sgKills?: number;
+            /** @default 0 */
+            sgWins?: number;
+            /** @default 0 */
+            swArrowsShot?: number;
+            /** @default 0 */
+            swBlocksBroken?: number;
+            /** @default 0 */
+            swBlocksPlaced?: number;
+            /** @default 0 */
+            swCoins?: number;
+            /** @default 0 */
+            swDeaths?: number;
+            /** @default 0 */
+            swDoublesDeaths?: number;
+            /** @default 0 */
+            swDoublesInsaneDeaths?: number;
+            /** @default 0 */
+            swDoublesInsaneKills?: number;
+            /** @default 0 */
+            swDoublesKills?: number;
+            /** @default 0 */
+            swDoublesLosses?: number;
+            /** @default 0 */
+            swDoublesNormalDeaths?: number;
+            /** @default 0 */
+            swDoublesNormalKills?: number;
+            /** @default 0 */
+            swDoublesWins?: number;
+            /** @default 0 */
+            swEggsThrown?: number;
+            /** @default 0 */
+            swEpearlsThrown?: number;
+            /** @default 0 */
+            swKills?: number;
+            /** @default 0 */
+            swLosses?: number;
+            /** @default 0 */
+            swSoloDeaths?: number;
+            /** @default 0 */
+            swSoloInsaneDeaths?: number;
+            /** @default 0 */
+            swSoloInsaneKills?: number;
+            /** @default 0 */
+            swSoloKills?: number;
+            /** @default 0 */
+            swSoloLosses?: number;
+            /** @default 0 */
+            swSoloNormalDeaths?: number;
+            /** @default 0 */
+            swSoloNormalKills?: number;
+            /** @default 0 */
+            swSoloWins?: number;
+            /** @default 0 */
+            swWins?: number;
+            /** @default 0 */
+            tbArrowsShot?: number;
+            /** @default 0 */
+            tbBestStreak?: number;
+            /** @default 0 */
+            tbDeaths?: number;
+            /** @default 0 */
+            tbGoals?: number;
+            /** @default 0 */
+            tbKills?: number;
+            /** @default 0 */
+            tbLosses?: number;
+            /** @default 0 */
+            tbMeleeHits?: number;
+            /** @default 0 */
+            tbStreak?: number;
+            /** @default 0 */
+            tbWins?: number;
+            /** @default 0 */
+            trBestStreak?: number;
+            /** @default 0 */
+            trBlocksDropped?: number;
+            /** @default 0 */
+            trLosses?: number;
+            /** @default 0 */
+            trStreak?: number;
+            /** @default 0 */
+            trTimeRecord?: number;
+            /** @default 0 */
+            trWins?: number;
+            /** @default 0 */
+            uhcDeaths?: number;
+            /** @default 0 */
+            uhcDiamondMined?: number;
+            /** @default 0 */
+            uhcGoldMined?: number;
+            /** @default 0 */
+            uhcIronMined?: number;
+            /** @default 0 */
+            uhcKills?: number;
+            /** @default 0 */
+            uhcLapisMined?: number;
+            /** @default 0 */
+            uhcWins?: number;
+          };
+          extraNested?: {
+            bh: {
+              wins: number;
+            };
+            bw: {
+              kills: number;
+              deaths: number;
+              solo: {
+                kills: number;
+                deaths: number;
+                beds: {
+                  broken: number;
+                };
+                final: {
+                  kills: number;
+                };
+                wins: number;
+              };
+              doubles: {
+                kills: number;
+                deaths: number;
+                beds: {
+                  broken: number;
+                };
+                final: {
+                  kills: number;
+                };
+                wins: number;
+              };
+              trios: {
+                kills: number;
+                deaths: number;
+                beds: {
+                  broken: number;
+                };
+                final: {
+                  kills: number;
+                };
+                wins: number;
+              };
+              squads: {
+                kills: number;
+                deaths: number;
+                beds: {
+                  broken: number;
+                };
+                final: {
+                  kills: number;
+                };
+                wins: number;
+              };
+              beds: {
+                broken: number;
+              };
+              diamonds: {
+                collected: number;
+              };
+              emeralds: {
+                collected: number;
+              };
+              gold: {
+                collected: number;
+              };
+              iron: {
+                collected: number;
+              };
+              final: {
+                kills: number;
+              };
+              streak: number;
+              best: {
+                streak: number;
+              };
+              wins: number;
+            };
+            cq: {
+              kills: number;
+              deaths: number;
+              wins: number;
+              flags: {
+                collected: number;
+                captured: number;
+                returned: number;
+              };
+              diamonds: {
+                collected: number;
+              };
+              emeralds: {
+                collected: number;
+              };
+              gold: {
+                collected: number;
+              };
+              iron: {
+                collected: number;
+              };
+            };
+            duels: {
+              kills: number;
+              deaths: number;
+              arrows: {
+                shot: number;
+              };
+              melee: {
+                hits: number;
+              };
+              streak: number;
+              best: {
+                streak: number;
+              };
+              wins: number;
+              losses: number;
+            };
+            mm: {
+              kills: number;
+              deaths: number;
+              classic: {
+                kills: number;
+                deaths: number;
+                wins: number;
+              };
+              infection: {
+                kills: number;
+                deaths: number;
+                wins: number;
+              };
+              bow: {
+                kills: number;
+              };
+              knife: {
+                kills: number;
+              };
+              throw: {
+                knife: {
+                  kills: number;
+                };
+              };
+              wins: number;
+            };
+            ms: {
+              successes: number;
+              fails: number;
+              wins: number;
+            };
+            sc: {
+              wins: number;
+              goals: number;
+            };
+            sg: {
+              kills: number;
+              deaths: number;
+              wins: number;
+            };
+            sw: {
+              coins: number;
+              kills: number;
+              deaths: number;
+              solo: {
+                kills: number;
+                deaths: number;
+                normal: {
+                  kills: number;
+                  deaths: number;
+                };
+                insane: {
+                  kills: number;
+                  deaths: number;
+                };
+                wins: number;
+                losses: number;
+              };
+              doubles: {
+                kills: number;
+                deaths: number;
+                normal: {
+                  kills: number;
+                  deaths: number;
+                };
+                insane: {
+                  kills: number;
+                  deaths: number;
+                };
+                wins: number;
+                losses: number;
+              };
+              blocks: {
+                broken: number;
+                placed: number;
+              };
+              arrows: {
+                shot: number;
+              };
+              eggs: {
+                thrown: number;
+              };
+              epearls: {
+                thrown: number;
+              };
+              wins: number;
+              losses: number;
+            };
+            tb: {
+              kills: number;
+              deaths: number;
+              arrows: {
+                shot: number;
+              };
+              melee: {
+                hits: number;
+              };
+              goals: number;
+              streak: number;
+              best: {
+                streak: number;
+              };
+              wins: number;
+              losses: number;
+            };
+            tr: {
+              wins: number;
+              losses: number;
+              streak: number;
+              best: {
+                streak: number;
+              };
+              blocks: {
+                dropped: number;
+              };
+              time: {
+                record: number;
+              };
+            };
+            uhc: {
+              kills: number;
+              deaths: number;
+              wins: number;
+              iron: {
+                mined: number;
+              };
+              gold: {
+                mined: number;
+              };
+              lapis: {
+                mined: number;
+              };
+              diamond: {
+                mined: number;
+              };
+            };
+            online: {
+              time: number;
+            };
+            gxp: number;
+          };
+          leaderboard: boolean;
+          /** @deprecated use `credits` instead. */
+          statusCredits: number;
+        })) | null;
+      })[]);
     SearchFullTextQuery: {
       /** @default false */
-      expand?: boolean
+      expand?: boolean;
       /** @default true */
-      withFactionData?: boolean
+      withFactionData?: boolean;
       /** @default false */
-      withGuildData?: boolean
+      withGuildData?: boolean;
       /** @default true */
-      withOnline?: boolean
+      withOnline?: boolean;
       /** @default true */
-      withPunishments?: boolean
+      withPunishments?: boolean;
       /** @default false */
-      withSkinData?: boolean
+      withSkinData?: boolean;
       /** @default true */
-      withStats?: boolean
+      withStats?: boolean;
       /** @default true */
-      withVoteStatus?: boolean
+      withVoteStatus?: boolean;
       /** @default false */
-      withAvatarBlurhash?: boolean
+      withAvatarBlurhash?: boolean;
       /**
        * @default global
        * @enum {string}
        */
-      period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly'
+      period?: "global" | "daily" | "weekly" | "biweekly" | "monthly" | "yearly";
       /** @default 100 */
-      limit?: number
-      query: string
+      limit?: number;
+      query: string;
       /** @enum {string} */
-      type?: 'faction' | 'guild' | 'player'
-    }
+      type?: "faction" | "guild" | "player";
+    };
     RelayPaginationResponse: {
-      nodes: Record<string, never>[]
-      edges: {
-        cursor: string
-        node?: Record<string, never>
-      }[]
+      nodes: (Record<string, never>)[];
+      edges: ({
+          cursor: string;
+          node?: Record<string, never>;
+        })[];
       pageInfo: {
-        hasNextPage: boolean
-        hasPreviousPage: boolean
-        startCursor?: string
-        endCursor?: string
-      }
-      totalCount: number
-    }
+        hasNextPage: boolean;
+        hasPreviousPage: boolean;
+        startCursor?: string;
+        endCursor?: string;
+      };
+      totalCount: number;
+    };
     RelayPaginationQueryPlayer: {
       /** @default false */
-      withStats?: boolean
-      first?: number
-      after?: string
-      last?: number
-      before?: string
-    }
+      withStats?: boolean;
+      first?: number;
+      after?: string;
+      last?: number;
+      before?: string;
+    };
     RelayPaginationQueryGuild: {
       /** @default false */
-      expand?: boolean
+      expand?: boolean;
       /** @default false */
-      withStats?: boolean
-      first?: number
-      after?: string
-      last?: number
-      before?: string
-    }
+      withStats?: boolean;
+      first?: number;
+      after?: string;
+      last?: number;
+      before?: string;
+    };
     RelayPaginationQueryFaction: {
       /** @default false */
-      expand?: boolean
+      expand?: boolean;
       /** @default false */
-      withStats?: boolean
-      first?: number
-      after?: string
-      last?: number
-      before?: string
-    }
-    ProductPlansResponse: {
-      id: string
-      productId: string
-      name: string
-      description: string
-      /** @enum {number} */
-      type: 1 | 2
-      flags: number
-      /** @enum {number|null} */
-      interval: 1 | 2 | null
-      intervalCount: number
-      unitAmount: number
-    }[]
+      withStats?: boolean;
+      first?: number;
+      after?: string;
+      last?: number;
+      before?: string;
+    };
+    ProductPlansResponse: ({
+        id: string;
+        productId: string;
+        name: string;
+        description: string;
+        /** @enum {number} */
+        type: 1 | 2;
+        flags: number;
+        /** @enum {number|null} */
+        interval: 1 | 2 | null;
+        intervalCount: number;
+        unitAmount: number;
+      })[];
     ProductPlanResponse: {
-      id: string
-      productId: string
-      name: string
-      description: string
+      id: string;
+      productId: string;
+      name: string;
+      description: string;
       /** @enum {number} */
-      type: 1 | 2
-      flags: number
+      type: 1 | 2;
+      flags: number;
       /** @enum {number|null} */
-      interval: 1 | 2 | null
-      intervalCount: number
-      unitAmount: number
-    }
+      interval: 1 | 2 | null;
+      intervalCount: number;
+      unitAmount: number;
+    };
     PlayerWinsData: {
       /** @default 0 */
-      BH?: number
+      BH?: number;
       /** @default 0 */
-      BW?: number
+      BW?: number;
       /** @default 0 */
-      CQ?: number
+      CQ?: number;
       /** @default 0 */
-      Duels?: number
+      Duels?: number;
       /** @default 0 */
-      MM?: number
+      MM?: number;
       /** @default 0 */
-      MS?: number
+      MS?: number;
       /** @default 0 */
-      SC?: number
+      SC?: number;
       /** @default 0 */
-      SG?: number
+      SG?: number;
       /** @default 0 */
-      SW?: number
+      SW?: number;
       /** @default 0 */
-      TB?: number
+      TB?: number;
       /** @default 0 */
-      TR?: number
+      TR?: number;
       /** @default 0 */
-      UHC?: number
-    }
+      UHC?: number;
+    };
     PlayerStatusResponse: {
-      status: boolean
-    }
+      status: boolean;
+    };
     PlayerStatsResponseBulk: {
-      [key: string]:
-        | {
-            [key: string]:
-              | {
-                  credits: number
-                  deaths: number
-                  kills: number
-                  losses: number
-                  xp: number
-                  wins: {
-                    total: number
-                    bh: number
-                    cq: number
-                    duels: number
-                    ms: number
-                    sc: number
-                    sg: number
-                    tb: number
-                    tr: number
-                    uhc: number
-                    bw: number
-                    mm: number
-                    sw: number
-                  }
-                }
-              | undefined
-          }
-        | undefined
-    }
+      [key: string]: ({
+        [key: string]: {
+          credits: number;
+          deaths: number;
+          kills: number;
+          losses: number;
+          xp: number;
+          wins: {
+            total: number;
+            bh: number;
+            cq: number;
+            duels: number;
+            ms: number;
+            sc: number;
+            sg: number;
+            tb: number;
+            tr: number;
+            uhc: number;
+            bw: number;
+            mm: number;
+            sw: number;
+          };
+        } | undefined;
+      }) | undefined;
+    };
     PlayerStatsResponse: {
-      [key: string]:
-        | {
-            credits: number
-            deaths: number
-            kills: number
-            losses: number
-            xp: number
-            wins: {
-              total: number
-              bh: number
-              cq: number
-              duels: number
-              ms: number
-              sc: number
-              sg: number
-              tb: number
-              tr: number
-              uhc: number
-              bw: number
-              mm: number
-              sw: number
-            }
-          }
-        | undefined
-    }
+      [key: string]: {
+        credits: number;
+        deaths: number;
+        kills: number;
+        losses: number;
+        xp: number;
+        wins: {
+          total: number;
+          bh: number;
+          cq: number;
+          duels: number;
+          ms: number;
+          sc: number;
+          sg: number;
+          tb: number;
+          tr: number;
+          uhc: number;
+          bw: number;
+          mm: number;
+          sw: number;
+        };
+      } | undefined;
+    };
     PlayerStatsQuery: {
       /**
        * @default 1
        * @enum {number}
        */
-      version?: 1
-      periodStart: number
+      version?: 1;
+      periodStart: number;
       /** @default -1 */
-      periodEnd?: number | -1
-      hour?: number
-    }
+      periodEnd?: number | -1;
+      hour?: number;
+    };
     PlayerStatsInput: {
       /**
        * @default 1
        * @enum {number}
        */
-      version?: 1
-      periodStart: number
+      version?: 1;
+      periodStart: number;
       /** @default -1 */
-      periodEnd?: number | -1
-      hour?: number
-      names: string[]
-    }
+      periodEnd?: number | -1;
+      hour?: number;
+      names: (string)[];
+    };
     PlayerStatsByTypeResponse: {
-      xuid: string
-      name: string
+      xuid: string;
+      name: string;
       stats: {
-        kills: number
-        killsTotal: number
-        deaths: number
-        deathsTotal: number
-        kdr: number
-        kdrTotal: number
-        wins: number
+        kills: number;
+        killsTotal: number;
+        deaths: number;
+        deathsTotal: number;
+        kdr: number;
+        kdrTotal: number;
+        wins: number;
         winsData: {
           /** @default 0 */
-          BH?: number
+          BH?: number;
           /** @default 0 */
-          BW?: number
+          BW?: number;
           /** @default 0 */
-          CQ?: number
+          CQ?: number;
           /** @default 0 */
-          Duels?: number
+          Duels?: number;
           /** @default 0 */
-          MM?: number
+          MM?: number;
           /** @default 0 */
-          MS?: number
+          MS?: number;
           /** @default 0 */
-          SC?: number
+          SC?: number;
           /** @default 0 */
-          SG?: number
+          SG?: number;
           /** @default 0 */
-          SW?: number
+          SW?: number;
           /** @default 0 */
-          TB?: number
+          TB?: number;
           /** @default 0 */
-          TR?: number
+          TR?: number;
           /** @default 0 */
-          UHC?: number
-        }
-        losses: number
-        wlr: number
+          UHC?: number;
+        };
+        losses: number;
+        wlr: number;
         extra: {
           /** @default 0 */
-          bhWins?: number
+          bhWins?: number;
           /** @default 0 */
-          bwBedsBroken?: number
+          bwBedsBroken?: number;
           /** @default 0 */
-          bwBestStreak?: number
+          bwBestStreak?: number;
           /** @default 0 */
-          bwDeaths?: number
+          bwDeaths?: number;
           /** @default 0 */
-          bwDiamondsCollected?: number
+          bwDiamondsCollected?: number;
           /** @default 0 */
-          bwDoublesBedsBroken?: number
+          bwDoublesBedsBroken?: number;
           /** @default 0 */
-          bwDoublesDeaths?: number
+          bwDoublesDeaths?: number;
           /** @default 0 */
-          bwDoublesFinalKills?: number
+          bwDoublesFinalKills?: number;
           /** @default 0 */
-          bwDoublesKills?: number
+          bwDoublesKills?: number;
           /** @default 0 */
-          bwDoublesWins?: number
+          bwDoublesWins?: number;
           /** @default 0 */
-          bwEmeraldsCollected?: number
+          bwEmeraldsCollected?: number;
           /** @default 0 */
-          bwFinalKills?: number
+          bwFinalKills?: number;
           /** @default 0 */
-          bwGoldCollected?: number
+          bwGoldCollected?: number;
           /** @default 0 */
-          bwIronCollected?: number
+          bwIronCollected?: number;
           /** @default 0 */
-          bwKills?: number
+          bwKills?: number;
           /** @default 0 */
-          bwSoloBedsBroken?: number
+          bwSoloBedsBroken?: number;
           /** @default 0 */
-          bwSoloDeaths?: number
+          bwSoloDeaths?: number;
           /** @default 0 */
-          bwSoloFinalKills?: number
+          bwSoloFinalKills?: number;
           /** @default 0 */
-          bwSoloKills?: number
+          bwSoloKills?: number;
           /** @default 0 */
-          bwSoloWins?: number
+          bwSoloWins?: number;
           /** @default 0 */
-          bwSquadsBedsBroken?: number
+          bwSquadsBedsBroken?: number;
           /** @default 0 */
-          bwSquadsDeaths?: number
+          bwSquadsDeaths?: number;
           /** @default 0 */
-          bwSquadsFinalKills?: number
+          bwSquadsFinalKills?: number;
           /** @default 0 */
-          bwSquadsKills?: number
+          bwSquadsKills?: number;
           /** @default 0 */
-          bwSquadsWins?: number
+          bwSquadsWins?: number;
           /** @default 0 */
-          bwStreak?: number
+          bwStreak?: number;
           /** @default 0 */
-          bwTriosBedsBroken?: number
+          bwTriosBedsBroken?: number;
           /** @default 0 */
-          bwTriosDeaths?: number
+          bwTriosDeaths?: number;
           /** @default 0 */
-          bwTriosFinalKills?: number
+          bwTriosFinalKills?: number;
           /** @default 0 */
-          bwTriosKills?: number
+          bwTriosKills?: number;
           /** @default 0 */
-          bwTriosWins?: number
+          bwTriosWins?: number;
           /** @default 0 */
-          bwWins?: number
+          bwWins?: number;
           /** @default 0 */
-          cqDeaths?: number
+          cqDeaths?: number;
           /** @default 0 */
-          cqDiamondsCollected?: number
+          cqDiamondsCollected?: number;
           /** @default 0 */
-          cqEmeraldsCollected?: number
+          cqEmeraldsCollected?: number;
           /** @default 0 */
-          cqFlagsCaptured?: number
+          cqFlagsCaptured?: number;
           /** @default 0 */
-          cqFlagsCollected?: number
+          cqFlagsCollected?: number;
           /** @default 0 */
-          cqFlagsReturned?: number
+          cqFlagsReturned?: number;
           /** @default 0 */
-          cqGoldCollected?: number
+          cqGoldCollected?: number;
           /** @default 0 */
-          cqIronCollected?: number
+          cqIronCollected?: number;
           /** @default 0 */
-          cqKills?: number
+          cqKills?: number;
           /** @default 0 */
-          cqWins?: number
+          cqWins?: number;
           /** @default 0 */
-          duelsArrowsShot?: number
+          duelsArrowsShot?: number;
           /** @default 0 */
-          duelsBestStreak?: number
+          duelsBestStreak?: number;
           /** @default 0 */
-          duelsDeaths?: number
+          duelsDeaths?: number;
           /** @default 0 */
-          duelsKills?: number
+          duelsKills?: number;
           /** @default 0 */
-          duelsLosses?: number
+          duelsLosses?: number;
           /** @default 0 */
-          duelsMeleeHits?: number
+          duelsMeleeHits?: number;
           /** @default 0 */
-          duelsStreak?: number
+          duelsStreak?: number;
           /** @default 0 */
-          duelsWins?: number
+          duelsWins?: number;
           /** @default 0 */
-          gxp?: number
+          gxp?: number;
           /** @default 0 */
-          mmBowKills?: number
+          mmBowKills?: number;
           /** @default 0 */
-          mmClassicDeaths?: number
+          mmClassicDeaths?: number;
           /** @default 0 */
-          mmClassicKills?: number
+          mmClassicKills?: number;
           /** @default 0 */
-          mmClassicWins?: number
+          mmClassicWins?: number;
           /** @default 0 */
-          mmDeaths?: number
+          mmDeaths?: number;
           /** @default 0 */
-          mmInfectionDeaths?: number
+          mmInfectionDeaths?: number;
           /** @default 0 */
-          mmInfectionKills?: number
+          mmInfectionKills?: number;
           /** @default 0 */
-          mmInfectionWins?: number
+          mmInfectionWins?: number;
           /** @default 0 */
-          mmKills?: number
+          mmKills?: number;
           /** @default 0 */
-          mmKnifeKills?: number
+          mmKnifeKills?: number;
           /** @default 0 */
-          mmThrowKnifeKills?: number
+          mmThrowKnifeKills?: number;
           /** @default 0 */
-          mmWins?: number
+          mmWins?: number;
           /** @default 0 */
-          msFails?: number
+          msFails?: number;
           /** @default 0 */
-          msSuccesses?: number
+          msSuccesses?: number;
           /** @default 0 */
-          msWins?: number
+          msWins?: number;
           /** @default 0 */
-          onlineTime?: number
+          onlineTime?: number;
           /** @default 0 */
-          scGoals?: number
+          scGoals?: number;
           /** @default 0 */
-          scWins?: number
+          scWins?: number;
           /** @default 0 */
-          sgDeaths?: number
+          sgDeaths?: number;
           /** @default 0 */
-          sgKills?: number
+          sgKills?: number;
           /** @default 0 */
-          sgWins?: number
+          sgWins?: number;
           /** @default 0 */
-          swArrowsShot?: number
+          swArrowsShot?: number;
           /** @default 0 */
-          swBlocksBroken?: number
+          swBlocksBroken?: number;
           /** @default 0 */
-          swBlocksPlaced?: number
+          swBlocksPlaced?: number;
           /** @default 0 */
-          swCoins?: number
+          swCoins?: number;
           /** @default 0 */
-          swDeaths?: number
+          swDeaths?: number;
           /** @default 0 */
-          swDoublesDeaths?: number
+          swDoublesDeaths?: number;
           /** @default 0 */
-          swDoublesInsaneDeaths?: number
+          swDoublesInsaneDeaths?: number;
           /** @default 0 */
-          swDoublesInsaneKills?: number
+          swDoublesInsaneKills?: number;
           /** @default 0 */
-          swDoublesKills?: number
+          swDoublesKills?: number;
           /** @default 0 */
-          swDoublesLosses?: number
+          swDoublesLosses?: number;
           /** @default 0 */
-          swDoublesNormalDeaths?: number
+          swDoublesNormalDeaths?: number;
           /** @default 0 */
-          swDoublesNormalKills?: number
+          swDoublesNormalKills?: number;
           /** @default 0 */
-          swDoublesWins?: number
+          swDoublesWins?: number;
           /** @default 0 */
-          swEggsThrown?: number
+          swEggsThrown?: number;
           /** @default 0 */
-          swEpearlsThrown?: number
+          swEpearlsThrown?: number;
           /** @default 0 */
-          swKills?: number
+          swKills?: number;
           /** @default 0 */
-          swLosses?: number
+          swLosses?: number;
           /** @default 0 */
-          swSoloDeaths?: number
+          swSoloDeaths?: number;
           /** @default 0 */
-          swSoloInsaneDeaths?: number
+          swSoloInsaneDeaths?: number;
           /** @default 0 */
-          swSoloInsaneKills?: number
+          swSoloInsaneKills?: number;
           /** @default 0 */
-          swSoloKills?: number
+          swSoloKills?: number;
           /** @default 0 */
-          swSoloLosses?: number
+          swSoloLosses?: number;
           /** @default 0 */
-          swSoloNormalDeaths?: number
+          swSoloNormalDeaths?: number;
           /** @default 0 */
-          swSoloNormalKills?: number
+          swSoloNormalKills?: number;
           /** @default 0 */
-          swSoloWins?: number
+          swSoloWins?: number;
           /** @default 0 */
-          swWins?: number
+          swWins?: number;
           /** @default 0 */
-          tbArrowsShot?: number
+          tbArrowsShot?: number;
           /** @default 0 */
-          tbBestStreak?: number
+          tbBestStreak?: number;
           /** @default 0 */
-          tbDeaths?: number
+          tbDeaths?: number;
           /** @default 0 */
-          tbGoals?: number
+          tbGoals?: number;
           /** @default 0 */
-          tbKills?: number
+          tbKills?: number;
           /** @default 0 */
-          tbLosses?: number
+          tbLosses?: number;
           /** @default 0 */
-          tbMeleeHits?: number
+          tbMeleeHits?: number;
           /** @default 0 */
-          tbStreak?: number
+          tbStreak?: number;
           /** @default 0 */
-          tbWins?: number
+          tbWins?: number;
           /** @default 0 */
-          trBestStreak?: number
+          trBestStreak?: number;
           /** @default 0 */
-          trBlocksDropped?: number
+          trBlocksDropped?: number;
           /** @default 0 */
-          trLosses?: number
+          trLosses?: number;
           /** @default 0 */
-          trStreak?: number
+          trStreak?: number;
           /** @default 0 */
-          trTimeRecord?: number
+          trTimeRecord?: number;
           /** @default 0 */
-          trWins?: number
+          trWins?: number;
           /** @default 0 */
-          uhcDeaths?: number
+          uhcDeaths?: number;
           /** @default 0 */
-          uhcDiamondMined?: number
+          uhcDiamondMined?: number;
           /** @default 0 */
-          uhcGoldMined?: number
+          uhcGoldMined?: number;
           /** @default 0 */
-          uhcIronMined?: number
+          uhcIronMined?: number;
           /** @default 0 */
-          uhcKills?: number
+          uhcKills?: number;
           /** @default 0 */
-          uhcLapisMined?: number
+          uhcLapisMined?: number;
           /** @default 0 */
-          uhcWins?: number
-        }
+          uhcWins?: number;
+        };
         extraNested: {
           bh: {
-            wins: number
-          }
+            wins: number;
+          };
           bw: {
-            kills: number
-            deaths: number
+            kills: number;
+            deaths: number;
             solo: {
-              kills: number
-              deaths: number
+              kills: number;
+              deaths: number;
               beds: {
-                broken: number
-              }
+                broken: number;
+              };
               final: {
-                kills: number
-              }
-              wins: number
-            }
+                kills: number;
+              };
+              wins: number;
+            };
             doubles: {
-              kills: number
-              deaths: number
+              kills: number;
+              deaths: number;
               beds: {
-                broken: number
-              }
+                broken: number;
+              };
               final: {
-                kills: number
-              }
-              wins: number
-            }
+                kills: number;
+              };
+              wins: number;
+            };
             trios: {
-              kills: number
-              deaths: number
+              kills: number;
+              deaths: number;
               beds: {
-                broken: number
-              }
+                broken: number;
+              };
               final: {
-                kills: number
-              }
-              wins: number
-            }
+                kills: number;
+              };
+              wins: number;
+            };
             squads: {
-              kills: number
-              deaths: number
+              kills: number;
+              deaths: number;
               beds: {
-                broken: number
-              }
+                broken: number;
+              };
               final: {
-                kills: number
-              }
-              wins: number
-            }
+                kills: number;
+              };
+              wins: number;
+            };
             beds: {
-              broken: number
-            }
+              broken: number;
+            };
             diamonds: {
-              collected: number
-            }
+              collected: number;
+            };
             emeralds: {
-              collected: number
-            }
+              collected: number;
+            };
             gold: {
-              collected: number
-            }
+              collected: number;
+            };
             iron: {
-              collected: number
-            }
+              collected: number;
+            };
             final: {
-              kills: number
-            }
-            streak: number
+              kills: number;
+            };
+            streak: number;
             best: {
-              streak: number
-            }
-            wins: number
-          }
+              streak: number;
+            };
+            wins: number;
+          };
           cq: {
-            kills: number
-            deaths: number
-            wins: number
+            kills: number;
+            deaths: number;
+            wins: number;
             flags: {
-              collected: number
-              captured: number
-              returned: number
-            }
+              collected: number;
+              captured: number;
+              returned: number;
+            };
             diamonds: {
-              collected: number
-            }
+              collected: number;
+            };
             emeralds: {
-              collected: number
-            }
+              collected: number;
+            };
             gold: {
-              collected: number
-            }
+              collected: number;
+            };
             iron: {
-              collected: number
-            }
-          }
+              collected: number;
+            };
+          };
           duels: {
-            kills: number
-            deaths: number
+            kills: number;
+            deaths: number;
             arrows: {
-              shot: number
-            }
+              shot: number;
+            };
             melee: {
-              hits: number
-            }
-            streak: number
+              hits: number;
+            };
+            streak: number;
             best: {
-              streak: number
-            }
-            wins: number
-            losses: number
-          }
+              streak: number;
+            };
+            wins: number;
+            losses: number;
+          };
           mm: {
-            kills: number
-            deaths: number
+            kills: number;
+            deaths: number;
             classic: {
-              kills: number
-              deaths: number
-              wins: number
-            }
+              kills: number;
+              deaths: number;
+              wins: number;
+            };
             infection: {
-              kills: number
-              deaths: number
-              wins: number
-            }
+              kills: number;
+              deaths: number;
+              wins: number;
+            };
             bow: {
-              kills: number
-            }
+              kills: number;
+            };
             knife: {
-              kills: number
-            }
+              kills: number;
+            };
             throw: {
               knife: {
-                kills: number
-              }
-            }
-            wins: number
-          }
+                kills: number;
+              };
+            };
+            wins: number;
+          };
           ms: {
-            successes: number
-            fails: number
-            wins: number
-          }
+            successes: number;
+            fails: number;
+            wins: number;
+          };
           sc: {
-            wins: number
-            goals: number
-          }
+            wins: number;
+            goals: number;
+          };
           sg: {
-            kills: number
-            deaths: number
-            wins: number
-          }
+            kills: number;
+            deaths: number;
+            wins: number;
+          };
           sw: {
-            coins: number
-            kills: number
-            deaths: number
+            coins: number;
+            kills: number;
+            deaths: number;
             solo: {
-              kills: number
-              deaths: number
+              kills: number;
+              deaths: number;
               normal: {
-                kills: number
-                deaths: number
-              }
+                kills: number;
+                deaths: number;
+              };
               insane: {
-                kills: number
-                deaths: number
-              }
-              wins: number
-              losses: number
-            }
+                kills: number;
+                deaths: number;
+              };
+              wins: number;
+              losses: number;
+            };
             doubles: {
-              kills: number
-              deaths: number
+              kills: number;
+              deaths: number;
               normal: {
-                kills: number
-                deaths: number
-              }
+                kills: number;
+                deaths: number;
+              };
               insane: {
-                kills: number
-                deaths: number
-              }
-              wins: number
-              losses: number
-            }
+                kills: number;
+                deaths: number;
+              };
+              wins: number;
+              losses: number;
+            };
             blocks: {
-              broken: number
-              placed: number
-            }
+              broken: number;
+              placed: number;
+            };
             arrows: {
-              shot: number
-            }
+              shot: number;
+            };
             eggs: {
-              thrown: number
-            }
+              thrown: number;
+            };
             epearls: {
-              thrown: number
-            }
-            wins: number
-            losses: number
-          }
+              thrown: number;
+            };
+            wins: number;
+            losses: number;
+          };
           tb: {
-            kills: number
-            deaths: number
+            kills: number;
+            deaths: number;
             arrows: {
-              shot: number
-            }
+              shot: number;
+            };
             melee: {
-              hits: number
-            }
-            goals: number
-            streak: number
+              hits: number;
+            };
+            goals: number;
+            streak: number;
             best: {
-              streak: number
-            }
-            wins: number
-            losses: number
-          }
+              streak: number;
+            };
+            wins: number;
+            losses: number;
+          };
           tr: {
-            wins: number
-            losses: number
-            streak: number
+            wins: number;
+            losses: number;
+            streak: number;
             best: {
-              streak: number
-            }
+              streak: number;
+            };
             blocks: {
-              dropped: number
-            }
+              dropped: number;
+            };
             time: {
-              record: number
-            }
-          }
+              record: number;
+            };
+          };
           uhc: {
-            kills: number
-            deaths: number
-            wins: number
+            kills: number;
+            deaths: number;
+            wins: number;
             iron: {
-              mined: number
-            }
+              mined: number;
+            };
             gold: {
-              mined: number
-            }
+              mined: number;
+            };
             lapis: {
-              mined: number
-            }
+              mined: number;
+            };
             diamond: {
-              mined: number
-            }
-          }
+              mined: number;
+            };
+          };
           online: {
-            time: number
-          }
-          gxp: number
-        }
-      }
-    }
+            time: number;
+          };
+          gxp: number;
+        };
+      };
+    };
     PlayerSkinResponseData: {
-      skin: boolean
+      skin: boolean;
       /** @enum {string} */
-      skinType: 'steve' | 'alex'
-      skinVisibility: boolean
-      base64: string
-      raw: string
-    }
+      skinType: "steve" | "alex";
+      skinVisibility: boolean;
+      base64: string;
+      raw: string;
+    };
     PlayerSkinQuery: {
       /** @default false */
-      dataOnly?: boolean
-    }
+      dataOnly?: boolean;
+    };
     PlayerResponseStats: {
-      kills: number
-      killsTotal: number
-      deaths: number
-      deathsTotal: number
-      kdr: number
-      kdrTotal: number
-      wins: number
+      kills: number;
+      killsTotal: number;
+      deaths: number;
+      deathsTotal: number;
+      kdr: number;
+      kdrTotal: number;
+      wins: number;
       winsData: {
         /** @default 0 */
-        BH?: number
+        BH?: number;
         /** @default 0 */
-        BW?: number
+        BW?: number;
         /** @default 0 */
-        CQ?: number
+        CQ?: number;
         /** @default 0 */
-        Duels?: number
+        Duels?: number;
         /** @default 0 */
-        MM?: number
+        MM?: number;
         /** @default 0 */
-        MS?: number
+        MS?: number;
         /** @default 0 */
-        SC?: number
+        SC?: number;
         /** @default 0 */
-        SG?: number
+        SG?: number;
         /** @default 0 */
-        SW?: number
+        SW?: number;
         /** @default 0 */
-        TB?: number
+        TB?: number;
         /** @default 0 */
-        TR?: number
+        TR?: number;
         /** @default 0 */
-        UHC?: number
-      }
-      losses: number
-      wlr: number
+        UHC?: number;
+      };
+      losses: number;
+      wlr: number;
       extra: {
         /** @default 0 */
-        bhWins?: number
+        bhWins?: number;
         /** @default 0 */
-        bwBedsBroken?: number
+        bwBedsBroken?: number;
         /** @default 0 */
-        bwBestStreak?: number
+        bwBestStreak?: number;
         /** @default 0 */
-        bwDeaths?: number
+        bwDeaths?: number;
         /** @default 0 */
-        bwDiamondsCollected?: number
+        bwDiamondsCollected?: number;
         /** @default 0 */
-        bwDoublesBedsBroken?: number
+        bwDoublesBedsBroken?: number;
         /** @default 0 */
-        bwDoublesDeaths?: number
+        bwDoublesDeaths?: number;
         /** @default 0 */
-        bwDoublesFinalKills?: number
+        bwDoublesFinalKills?: number;
         /** @default 0 */
-        bwDoublesKills?: number
+        bwDoublesKills?: number;
         /** @default 0 */
-        bwDoublesWins?: number
+        bwDoublesWins?: number;
         /** @default 0 */
-        bwEmeraldsCollected?: number
+        bwEmeraldsCollected?: number;
         /** @default 0 */
-        bwFinalKills?: number
+        bwFinalKills?: number;
         /** @default 0 */
-        bwGoldCollected?: number
+        bwGoldCollected?: number;
         /** @default 0 */
-        bwIronCollected?: number
+        bwIronCollected?: number;
         /** @default 0 */
-        bwKills?: number
+        bwKills?: number;
         /** @default 0 */
-        bwSoloBedsBroken?: number
+        bwSoloBedsBroken?: number;
         /** @default 0 */
-        bwSoloDeaths?: number
+        bwSoloDeaths?: number;
         /** @default 0 */
-        bwSoloFinalKills?: number
+        bwSoloFinalKills?: number;
         /** @default 0 */
-        bwSoloKills?: number
+        bwSoloKills?: number;
         /** @default 0 */
-        bwSoloWins?: number
+        bwSoloWins?: number;
         /** @default 0 */
-        bwSquadsBedsBroken?: number
+        bwSquadsBedsBroken?: number;
         /** @default 0 */
-        bwSquadsDeaths?: number
+        bwSquadsDeaths?: number;
         /** @default 0 */
-        bwSquadsFinalKills?: number
+        bwSquadsFinalKills?: number;
         /** @default 0 */
-        bwSquadsKills?: number
+        bwSquadsKills?: number;
         /** @default 0 */
-        bwSquadsWins?: number
+        bwSquadsWins?: number;
         /** @default 0 */
-        bwStreak?: number
+        bwStreak?: number;
         /** @default 0 */
-        bwTriosBedsBroken?: number
+        bwTriosBedsBroken?: number;
         /** @default 0 */
-        bwTriosDeaths?: number
+        bwTriosDeaths?: number;
         /** @default 0 */
-        bwTriosFinalKills?: number
+        bwTriosFinalKills?: number;
         /** @default 0 */
-        bwTriosKills?: number
+        bwTriosKills?: number;
         /** @default 0 */
-        bwTriosWins?: number
+        bwTriosWins?: number;
         /** @default 0 */
-        bwWins?: number
+        bwWins?: number;
         /** @default 0 */
-        cqDeaths?: number
+        cqDeaths?: number;
         /** @default 0 */
-        cqDiamondsCollected?: number
+        cqDiamondsCollected?: number;
         /** @default 0 */
-        cqEmeraldsCollected?: number
+        cqEmeraldsCollected?: number;
         /** @default 0 */
-        cqFlagsCaptured?: number
+        cqFlagsCaptured?: number;
         /** @default 0 */
-        cqFlagsCollected?: number
+        cqFlagsCollected?: number;
         /** @default 0 */
-        cqFlagsReturned?: number
+        cqFlagsReturned?: number;
         /** @default 0 */
-        cqGoldCollected?: number
+        cqGoldCollected?: number;
         /** @default 0 */
-        cqIronCollected?: number
+        cqIronCollected?: number;
         /** @default 0 */
-        cqKills?: number
+        cqKills?: number;
         /** @default 0 */
-        cqWins?: number
+        cqWins?: number;
         /** @default 0 */
-        duelsArrowsShot?: number
+        duelsArrowsShot?: number;
         /** @default 0 */
-        duelsBestStreak?: number
+        duelsBestStreak?: number;
         /** @default 0 */
-        duelsDeaths?: number
+        duelsDeaths?: number;
         /** @default 0 */
-        duelsKills?: number
+        duelsKills?: number;
         /** @default 0 */
-        duelsLosses?: number
+        duelsLosses?: number;
         /** @default 0 */
-        duelsMeleeHits?: number
+        duelsMeleeHits?: number;
         /** @default 0 */
-        duelsStreak?: number
+        duelsStreak?: number;
         /** @default 0 */
-        duelsWins?: number
+        duelsWins?: number;
         /** @default 0 */
-        gxp?: number
+        gxp?: number;
         /** @default 0 */
-        mmBowKills?: number
+        mmBowKills?: number;
         /** @default 0 */
-        mmClassicDeaths?: number
+        mmClassicDeaths?: number;
         /** @default 0 */
-        mmClassicKills?: number
+        mmClassicKills?: number;
         /** @default 0 */
-        mmClassicWins?: number
+        mmClassicWins?: number;
         /** @default 0 */
-        mmDeaths?: number
+        mmDeaths?: number;
         /** @default 0 */
-        mmInfectionDeaths?: number
+        mmInfectionDeaths?: number;
         /** @default 0 */
-        mmInfectionKills?: number
+        mmInfectionKills?: number;
         /** @default 0 */
-        mmInfectionWins?: number
+        mmInfectionWins?: number;
         /** @default 0 */
-        mmKills?: number
+        mmKills?: number;
         /** @default 0 */
-        mmKnifeKills?: number
+        mmKnifeKills?: number;
         /** @default 0 */
-        mmThrowKnifeKills?: number
+        mmThrowKnifeKills?: number;
         /** @default 0 */
-        mmWins?: number
+        mmWins?: number;
         /** @default 0 */
-        msFails?: number
+        msFails?: number;
         /** @default 0 */
-        msSuccesses?: number
+        msSuccesses?: number;
         /** @default 0 */
-        msWins?: number
+        msWins?: number;
         /** @default 0 */
-        onlineTime?: number
+        onlineTime?: number;
         /** @default 0 */
-        scGoals?: number
+        scGoals?: number;
         /** @default 0 */
-        scWins?: number
+        scWins?: number;
         /** @default 0 */
-        sgDeaths?: number
+        sgDeaths?: number;
         /** @default 0 */
-        sgKills?: number
+        sgKills?: number;
         /** @default 0 */
-        sgWins?: number
+        sgWins?: number;
         /** @default 0 */
-        swArrowsShot?: number
+        swArrowsShot?: number;
         /** @default 0 */
-        swBlocksBroken?: number
+        swBlocksBroken?: number;
         /** @default 0 */
-        swBlocksPlaced?: number
+        swBlocksPlaced?: number;
         /** @default 0 */
-        swCoins?: number
+        swCoins?: number;
         /** @default 0 */
-        swDeaths?: number
+        swDeaths?: number;
         /** @default 0 */
-        swDoublesDeaths?: number
+        swDoublesDeaths?: number;
         /** @default 0 */
-        swDoublesInsaneDeaths?: number
+        swDoublesInsaneDeaths?: number;
         /** @default 0 */
-        swDoublesInsaneKills?: number
+        swDoublesInsaneKills?: number;
         /** @default 0 */
-        swDoublesKills?: number
+        swDoublesKills?: number;
         /** @default 0 */
-        swDoublesLosses?: number
+        swDoublesLosses?: number;
         /** @default 0 */
-        swDoublesNormalDeaths?: number
+        swDoublesNormalDeaths?: number;
         /** @default 0 */
-        swDoublesNormalKills?: number
+        swDoublesNormalKills?: number;
         /** @default 0 */
-        swDoublesWins?: number
+        swDoublesWins?: number;
         /** @default 0 */
-        swEggsThrown?: number
+        swEggsThrown?: number;
         /** @default 0 */
-        swEpearlsThrown?: number
+        swEpearlsThrown?: number;
         /** @default 0 */
-        swKills?: number
+        swKills?: number;
         /** @default 0 */
-        swLosses?: number
+        swLosses?: number;
         /** @default 0 */
-        swSoloDeaths?: number
+        swSoloDeaths?: number;
         /** @default 0 */
-        swSoloInsaneDeaths?: number
+        swSoloInsaneDeaths?: number;
         /** @default 0 */
-        swSoloInsaneKills?: number
+        swSoloInsaneKills?: number;
         /** @default 0 */
-        swSoloKills?: number
+        swSoloKills?: number;
         /** @default 0 */
-        swSoloLosses?: number
+        swSoloLosses?: number;
         /** @default 0 */
-        swSoloNormalDeaths?: number
+        swSoloNormalDeaths?: number;
         /** @default 0 */
-        swSoloNormalKills?: number
+        swSoloNormalKills?: number;
         /** @default 0 */
-        swSoloWins?: number
+        swSoloWins?: number;
         /** @default 0 */
-        swWins?: number
+        swWins?: number;
         /** @default 0 */
-        tbArrowsShot?: number
+        tbArrowsShot?: number;
         /** @default 0 */
-        tbBestStreak?: number
+        tbBestStreak?: number;
         /** @default 0 */
-        tbDeaths?: number
+        tbDeaths?: number;
         /** @default 0 */
-        tbGoals?: number
+        tbGoals?: number;
         /** @default 0 */
-        tbKills?: number
+        tbKills?: number;
         /** @default 0 */
-        tbLosses?: number
+        tbLosses?: number;
         /** @default 0 */
-        tbMeleeHits?: number
+        tbMeleeHits?: number;
         /** @default 0 */
-        tbStreak?: number
+        tbStreak?: number;
         /** @default 0 */
-        tbWins?: number
+        tbWins?: number;
         /** @default 0 */
-        trBestStreak?: number
+        trBestStreak?: number;
         /** @default 0 */
-        trBlocksDropped?: number
+        trBlocksDropped?: number;
         /** @default 0 */
-        trLosses?: number
+        trLosses?: number;
         /** @default 0 */
-        trStreak?: number
+        trStreak?: number;
         /** @default 0 */
-        trTimeRecord?: number
+        trTimeRecord?: number;
         /** @default 0 */
-        trWins?: number
+        trWins?: number;
         /** @default 0 */
-        uhcDeaths?: number
+        uhcDeaths?: number;
         /** @default 0 */
-        uhcDiamondMined?: number
+        uhcDiamondMined?: number;
         /** @default 0 */
-        uhcGoldMined?: number
+        uhcGoldMined?: number;
         /** @default 0 */
-        uhcIronMined?: number
+        uhcIronMined?: number;
         /** @default 0 */
-        uhcKills?: number
+        uhcKills?: number;
         /** @default 0 */
-        uhcLapisMined?: number
+        uhcLapisMined?: number;
         /** @default 0 */
-        uhcWins?: number
-      }
+        uhcWins?: number;
+      };
       extraNested: {
         bh: {
-          wins: number
-        }
+          wins: number;
+        };
         bw: {
-          kills: number
-          deaths: number
+          kills: number;
+          deaths: number;
           solo: {
-            kills: number
-            deaths: number
+            kills: number;
+            deaths: number;
             beds: {
-              broken: number
-            }
+              broken: number;
+            };
             final: {
-              kills: number
-            }
-            wins: number
-          }
+              kills: number;
+            };
+            wins: number;
+          };
           doubles: {
-            kills: number
-            deaths: number
+            kills: number;
+            deaths: number;
             beds: {
-              broken: number
-            }
+              broken: number;
+            };
             final: {
-              kills: number
-            }
-            wins: number
-          }
+              kills: number;
+            };
+            wins: number;
+          };
           trios: {
-            kills: number
-            deaths: number
+            kills: number;
+            deaths: number;
             beds: {
-              broken: number
-            }
+              broken: number;
+            };
             final: {
-              kills: number
-            }
-            wins: number
-          }
+              kills: number;
+            };
+            wins: number;
+          };
           squads: {
-            kills: number
-            deaths: number
+            kills: number;
+            deaths: number;
             beds: {
-              broken: number
-            }
+              broken: number;
+            };
             final: {
-              kills: number
-            }
-            wins: number
-          }
+              kills: number;
+            };
+            wins: number;
+          };
           beds: {
-            broken: number
-          }
+            broken: number;
+          };
           diamonds: {
-            collected: number
-          }
+            collected: number;
+          };
           emeralds: {
-            collected: number
-          }
+            collected: number;
+          };
           gold: {
-            collected: number
-          }
+            collected: number;
+          };
           iron: {
-            collected: number
-          }
+            collected: number;
+          };
           final: {
-            kills: number
-          }
-          streak: number
+            kills: number;
+          };
+          streak: number;
           best: {
-            streak: number
-          }
-          wins: number
-        }
+            streak: number;
+          };
+          wins: number;
+        };
         cq: {
-          kills: number
-          deaths: number
-          wins: number
+          kills: number;
+          deaths: number;
+          wins: number;
           flags: {
-            collected: number
-            captured: number
-            returned: number
-          }
+            collected: number;
+            captured: number;
+            returned: number;
+          };
           diamonds: {
-            collected: number
-          }
+            collected: number;
+          };
           emeralds: {
-            collected: number
-          }
+            collected: number;
+          };
           gold: {
-            collected: number
-          }
+            collected: number;
+          };
           iron: {
-            collected: number
-          }
-        }
+            collected: number;
+          };
+        };
         duels: {
-          kills: number
-          deaths: number
+          kills: number;
+          deaths: number;
           arrows: {
-            shot: number
-          }
+            shot: number;
+          };
           melee: {
-            hits: number
-          }
-          streak: number
+            hits: number;
+          };
+          streak: number;
           best: {
-            streak: number
-          }
-          wins: number
-          losses: number
-        }
+            streak: number;
+          };
+          wins: number;
+          losses: number;
+        };
         mm: {
-          kills: number
-          deaths: number
+          kills: number;
+          deaths: number;
           classic: {
-            kills: number
-            deaths: number
-            wins: number
-          }
+            kills: number;
+            deaths: number;
+            wins: number;
+          };
           infection: {
-            kills: number
-            deaths: number
-            wins: number
-          }
+            kills: number;
+            deaths: number;
+            wins: number;
+          };
           bow: {
-            kills: number
-          }
+            kills: number;
+          };
           knife: {
-            kills: number
-          }
+            kills: number;
+          };
           throw: {
             knife: {
-              kills: number
-            }
-          }
-          wins: number
-        }
+              kills: number;
+            };
+          };
+          wins: number;
+        };
         ms: {
-          successes: number
-          fails: number
-          wins: number
-        }
+          successes: number;
+          fails: number;
+          wins: number;
+        };
         sc: {
-          wins: number
-          goals: number
-        }
+          wins: number;
+          goals: number;
+        };
         sg: {
-          kills: number
-          deaths: number
-          wins: number
-        }
+          kills: number;
+          deaths: number;
+          wins: number;
+        };
         sw: {
-          coins: number
-          kills: number
-          deaths: number
+          coins: number;
+          kills: number;
+          deaths: number;
           solo: {
-            kills: number
-            deaths: number
+            kills: number;
+            deaths: number;
             normal: {
-              kills: number
-              deaths: number
-            }
+              kills: number;
+              deaths: number;
+            };
             insane: {
-              kills: number
-              deaths: number
-            }
-            wins: number
-            losses: number
-          }
+              kills: number;
+              deaths: number;
+            };
+            wins: number;
+            losses: number;
+          };
           doubles: {
-            kills: number
-            deaths: number
+            kills: number;
+            deaths: number;
             normal: {
-              kills: number
-              deaths: number
-            }
+              kills: number;
+              deaths: number;
+            };
             insane: {
-              kills: number
-              deaths: number
-            }
-            wins: number
-            losses: number
-          }
+              kills: number;
+              deaths: number;
+            };
+            wins: number;
+            losses: number;
+          };
           blocks: {
-            broken: number
-            placed: number
-          }
+            broken: number;
+            placed: number;
+          };
           arrows: {
-            shot: number
-          }
+            shot: number;
+          };
           eggs: {
-            thrown: number
-          }
+            thrown: number;
+          };
           epearls: {
-            thrown: number
-          }
-          wins: number
-          losses: number
-        }
+            thrown: number;
+          };
+          wins: number;
+          losses: number;
+        };
         tb: {
-          kills: number
-          deaths: number
+          kills: number;
+          deaths: number;
           arrows: {
-            shot: number
-          }
+            shot: number;
+          };
           melee: {
-            hits: number
-          }
-          goals: number
-          streak: number
+            hits: number;
+          };
+          goals: number;
+          streak: number;
           best: {
-            streak: number
-          }
-          wins: number
-          losses: number
-        }
+            streak: number;
+          };
+          wins: number;
+          losses: number;
+        };
         tr: {
-          wins: number
-          losses: number
-          streak: number
+          wins: number;
+          losses: number;
+          streak: number;
           best: {
-            streak: number
-          }
+            streak: number;
+          };
           blocks: {
-            dropped: number
-          }
+            dropped: number;
+          };
           time: {
-            record: number
-          }
-        }
+            record: number;
+          };
+        };
         uhc: {
-          kills: number
-          deaths: number
-          wins: number
+          kills: number;
+          deaths: number;
+          wins: number;
           iron: {
-            mined: number
-          }
+            mined: number;
+          };
           gold: {
-            mined: number
-          }
+            mined: number;
+          };
           lapis: {
-            mined: number
-          }
+            mined: number;
+          };
           diamond: {
-            mined: number
-          }
-        }
+            mined: number;
+          };
+        };
         online: {
-          time: number
-        }
-        gxp: number
-      }
-    }
+          time: number;
+        };
+        gxp: number;
+      };
+    };
     PlayerResponse: {
-      xuid: string
-      name: string
+      xuid: string;
+      name: string;
       /** Format: uri */
-      avatar: string
-      avatarBlurhash?: string
+      avatar: string;
+      avatarBlurhash?: string;
       /** Format: uri */
-      skin: string
-      online?: boolean
-      flags: number
+      skin: string;
+      online?: boolean;
+      flags: number;
       /** @enum {number} */
-      dmStatus: 0 | 1 | 2
-      bio: string
-      discordId: string
-      discordTag: string
-      guild: string
-      ranks: (
-        | 'Admin'
-        | 'Dev'
-        | 'Supervisor'
-        | 'Mod'
-        | 'Crew'
-        | 'Trainee'
-        | 'Builder'
-        | 'Designer'
-        | 'Game Designer'
-        | 'Media'
-        | 'Discord'
-        | 'Partner'
-        | 'Titan'
-        | 'Legend'
-        | 'Emerald'
-        | 'Ultra'
-        | 'Youtube'
-        | 'Tester'
-      )[]
+      dmStatus: 0 | 1 | 2;
+      bio: string;
+      discordId: string;
+      discordTag: string;
+      guild: string;
+      ranks: ("Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester")[];
       /** @enum {string|null} */
-      tier: 'Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite' | null
-      banned?: boolean
-      bannedUntil?: (Record<string, never> | number) | null
-      muted?: boolean
-      mutedUntil?: (Record<string, never> | number) | null
-      staff: boolean
-      titan: boolean
+      tier: "Silver" | "Gold" | "Guardian" | "Eagle" | "Elite" | null;
+      banned?: boolean;
+      bannedUntil?: (Record<string, never> | number) | null;
+      muted?: boolean;
+      mutedUntil?: (Record<string, never> | number) | null;
+      staff: boolean;
+      titan: boolean;
       /** Format: date-time */
-      titanUntil: string
+      titanUntil: string;
       /** Format: date-time */
-      lastRankTimestamp: string
+      lastRankTimestamp: string;
       /** @enum {number} */
-      voteStatus?: 0 | 1 | 2
-      firstJoin: string
-      firstJoined: number
-      lastJoin: string
-      lastJoined: number
-      lastQuit: number
-      lastSeen: string
-      lastServer: string
-      crateKeys: number
-      credits: number
-      deaths?: number
-      deathsTotal?: number
-      kdr?: number
-      kdrTotal?: number
-      kills?: number
-      killsTotal?: number
-      level: number
-      losses?: number
-      wins?: number
-      wlr?: number
-      xp: number
-      formattedLevel: string
-      levelColors: (
-        | '#000000'
-        | '#0000aa'
-        | '#00aa00'
-        | '#00aaaa'
-        | '#aa0000'
-        | '#aa00aa'
-        | '#ffaa00'
-        | '#aaaaaa'
-        | '#555555'
-        | '#5555ff'
-        | '#55ff55'
-        | '#55ffff'
-        | '#ff5555'
-        | '#ff55ff'
-        | '#ffff55'
-        | '#ffffff'
-        | '#ddd605'
-      )[]
+      voteStatus?: 0 | 1 | 2;
+      firstJoin: string;
+      firstJoined: number;
+      lastJoin: string;
+      lastJoined: number;
+      lastQuit: number;
+      lastSeen: string;
+      lastServer: string;
+      crateKeys: number;
+      credits: number;
+      deaths?: number;
+      deathsTotal?: number;
+      kdr?: number;
+      kdrTotal?: number;
+      kills?: number;
+      killsTotal?: number;
+      level: number;
+      losses?: number;
+      wins?: number;
+      wlr?: number;
+      xp: number;
+      formattedLevel: string;
+      levelColors: ("#000000" | "#0000aa" | "#00aa00" | "#00aaaa" | "#aa0000" | "#aa00aa" | "#ffaa00" | "#aaaaaa" | "#555555" | "#5555ff" | "#55ff55" | "#55ffff" | "#ff5555" | "#ff55ff" | "#ffff55" | "#ffffff" | "#ddd605")[];
       /** @enum {string} */
-      levelFormat: '§k' | '§l' | '§o' | '§r'
-      rankColors: string[]
-      skinVisibility: boolean
-      tierColor: string
-      youtubeChannelUrl: string
-      killsUntilNextKdr?: number
-      winsUntilNextWlr?: number
-      xpToNextLevel: number
-      discoveredTokens: string[]
-      discoveredZones: string[]
-      factionData?: {
-        tags: number
-        registerDate: string
-        coins: number
-        kills: number
-        bounty: number
+      levelFormat: "§k" | "§l" | "§o" | "§r";
+      rankColors: (string)[];
+      skinVisibility: boolean;
+      tierColor: string;
+      youtubeChannelUrl: string;
+      killsUntilNextKdr?: number;
+      winsUntilNextWlr?: number;
+      xpToNextLevel: number;
+      discoveredTokens: (string)[];
+      discoveredZones: (string)[];
+      factionData?: ({
+        tags: number;
+        registerDate: string;
+        coins: number;
+        kills: number;
+        bounty: number;
         faction: {
-          id: number
-          name: string
-          strength: number
-          allies: string[]
-          leader?: Record<string, never>
-          officers: Record<string, never>[]
-          members: Record<string, never>[]
-        } | null
-      } | null
-      guildData?:
-        | (
-            | Record<string, never>
-            | {
-                id: number
-                name: string
-                maxSize: number
-                memberCount: number
-                motd: string
-                position?: number
-                rawTag: string
-                tag: string
-                /** @enum {string|null} */
-                tagColor:
-                  | '#000000'
-                  | '#0000aa'
-                  | '#00aa00'
-                  | '#00aaaa'
-                  | '#aa0000'
-                  | '#aa00aa'
-                  | '#ffaa00'
-                  | '#aaaaaa'
-                  | '#555555'
-                  | '#5555ff'
-                  | '#55ff55'
-                  | '#55ffff'
-                  | '#ff5555'
-                  | '#ff55ff'
-                  | '#ffff55'
-                  | '#ffffff'
-                  | '#ddd605'
-                  | null
-                xp: number
-                xpToNextLevel: number
-                level: number
-                leader?: Record<string, never>
-                officers: unknown[]
-                members: unknown[]
-              }
-          )
-        | null
+          id: number;
+          name: string;
+          strength: number;
+          allies: (string)[];
+          leader?: Record<string, never>;
+          officers: (Record<string, never>)[];
+          members: (Record<string, never>)[];
+        } | null;
+      }) | null;
+      guildData?: (Record<string, never> | ({
+        id: number;
+        name: string;
+        maxSize: number;
+        memberCount: number;
+        motd: string;
+        position?: number;
+        rawTag: string;
+        tag: string;
+        /** @enum {string|null} */
+        tagColor: "#000000" | "#0000aa" | "#00aa00" | "#00aaaa" | "#aa0000" | "#aa00aa" | "#ffaa00" | "#aaaaaa" | "#555555" | "#5555ff" | "#55ff55" | "#55ffff" | "#ff5555" | "#ff55ff" | "#ffff55" | "#ffffff" | "#ddd605" | null;
+        xp: number;
+        xpToNextLevel: number;
+        level: number;
+        leader?: Record<string, never>;
+        officers: (unknown)[];
+        members: (unknown)[];
+        discordInvite: string;
+      })) | null;
       lastServerParsed: {
-        region: string
-        serverName: string
-        serverNameLong: string
-        serverType: string
-        pretty: string
-      }
-      punishmentsNew?: {
-        id: string
-        /** @description The punishment `reasonName` and `reasonCategory` joined together. */
-        reason: string
-        reasonName: string
-        reasonCategory: string
-        /** @enum {string} */
-        type: 'BAN' | 'MUTE'
-        /** @description If true, the punishment does not expire. */
-        permanent: boolean
-        /** @description For migration punishments, this value is 0. */
-        issuedAt: number
-        /** @description If `permanent` is true, this value is -1. */
-        validUntil: number
-        /** @description Whether this punishment is currently active. */
-        active: boolean
-        /** @description The XUIDs affected by this punishment. */
-        affectedXuids: string[]
-        /** @description The corresponding player names to `affectedXuids`. */
-        affectedPlayers: string[]
-        alt: boolean
-      }[]
+        region: string;
+        serverName: string;
+        serverNameLong: string;
+        serverType: string;
+        pretty: string;
+      };
+      punishmentsNew?: ({
+          id: string;
+          /** @description The punishment `reasonName` and `reasonCategory` joined together. */
+          reason: string;
+          reasonName: string;
+          reasonCategory: string;
+          /** @enum {string} */
+          type: "BAN" | "MUTE";
+          /** @description If true, the punishment does not expire. */
+          permanent: boolean;
+          /** @description For migration punishments, this value is 0. */
+          issuedAt: number;
+          /** @description If `permanent` is true, this value is -1. */
+          validUntil: number;
+          /** @description Whether this punishment is currently active. */
+          active: boolean;
+          /** @description The XUIDs affected by this punishment. */
+          affectedXuids: (string)[];
+          /** @description The corresponding player names to `affectedXuids`. */
+          affectedPlayers: (string)[];
+          alt: boolean;
+        })[];
       skinData?: {
-        skin: boolean
+        skin: boolean;
         /** @enum {string} */
-        skinType: 'steve' | 'alex'
-        skinVisibility: boolean
-        base64: string
-        raw: string
-      }
+        skinType: "steve" | "alex";
+        skinVisibility: boolean;
+        base64: string;
+        raw: string;
+      };
       winsData?: {
         /** @default 0 */
-        BH?: number
+        BH?: number;
         /** @default 0 */
-        BW?: number
+        BW?: number;
         /** @default 0 */
-        CQ?: number
+        CQ?: number;
         /** @default 0 */
-        Duels?: number
+        Duels?: number;
         /** @default 0 */
-        MM?: number
+        MM?: number;
         /** @default 0 */
-        MS?: number
+        MS?: number;
         /** @default 0 */
-        SC?: number
+        SC?: number;
         /** @default 0 */
-        SG?: number
+        SG?: number;
         /** @default 0 */
-        SW?: number
+        SW?: number;
         /** @default 0 */
-        TB?: number
+        TB?: number;
         /** @default 0 */
-        TR?: number
+        TR?: number;
         /** @default 0 */
-        UHC?: number
-      }
+        UHC?: number;
+      };
       extra?: {
         /** @default 0 */
-        bhWins?: number
+        bhWins?: number;
         /** @default 0 */
-        bwBedsBroken?: number
+        bwBedsBroken?: number;
         /** @default 0 */
-        bwBestStreak?: number
+        bwBestStreak?: number;
         /** @default 0 */
-        bwDeaths?: number
+        bwDeaths?: number;
         /** @default 0 */
-        bwDiamondsCollected?: number
+        bwDiamondsCollected?: number;
         /** @default 0 */
-        bwDoublesBedsBroken?: number
+        bwDoublesBedsBroken?: number;
         /** @default 0 */
-        bwDoublesDeaths?: number
+        bwDoublesDeaths?: number;
         /** @default 0 */
-        bwDoublesFinalKills?: number
+        bwDoublesFinalKills?: number;
         /** @default 0 */
-        bwDoublesKills?: number
+        bwDoublesKills?: number;
         /** @default 0 */
-        bwDoublesWins?: number
+        bwDoublesWins?: number;
         /** @default 0 */
-        bwEmeraldsCollected?: number
+        bwEmeraldsCollected?: number;
         /** @default 0 */
-        bwFinalKills?: number
+        bwFinalKills?: number;
         /** @default 0 */
-        bwGoldCollected?: number
+        bwGoldCollected?: number;
         /** @default 0 */
-        bwIronCollected?: number
+        bwIronCollected?: number;
         /** @default 0 */
-        bwKills?: number
+        bwKills?: number;
         /** @default 0 */
-        bwSoloBedsBroken?: number
+        bwSoloBedsBroken?: number;
         /** @default 0 */
-        bwSoloDeaths?: number
+        bwSoloDeaths?: number;
         /** @default 0 */
-        bwSoloFinalKills?: number
+        bwSoloFinalKills?: number;
         /** @default 0 */
-        bwSoloKills?: number
+        bwSoloKills?: number;
         /** @default 0 */
-        bwSoloWins?: number
+        bwSoloWins?: number;
         /** @default 0 */
-        bwSquadsBedsBroken?: number
+        bwSquadsBedsBroken?: number;
         /** @default 0 */
-        bwSquadsDeaths?: number
+        bwSquadsDeaths?: number;
         /** @default 0 */
-        bwSquadsFinalKills?: number
+        bwSquadsFinalKills?: number;
         /** @default 0 */
-        bwSquadsKills?: number
+        bwSquadsKills?: number;
         /** @default 0 */
-        bwSquadsWins?: number
+        bwSquadsWins?: number;
         /** @default 0 */
-        bwStreak?: number
+        bwStreak?: number;
         /** @default 0 */
-        bwTriosBedsBroken?: number
+        bwTriosBedsBroken?: number;
         /** @default 0 */
-        bwTriosDeaths?: number
+        bwTriosDeaths?: number;
         /** @default 0 */
-        bwTriosFinalKills?: number
+        bwTriosFinalKills?: number;
         /** @default 0 */
-        bwTriosKills?: number
+        bwTriosKills?: number;
         /** @default 0 */
-        bwTriosWins?: number
+        bwTriosWins?: number;
         /** @default 0 */
-        bwWins?: number
+        bwWins?: number;
         /** @default 0 */
-        cqDeaths?: number
+        cqDeaths?: number;
         /** @default 0 */
-        cqDiamondsCollected?: number
+        cqDiamondsCollected?: number;
         /** @default 0 */
-        cqEmeraldsCollected?: number
+        cqEmeraldsCollected?: number;
         /** @default 0 */
-        cqFlagsCaptured?: number
+        cqFlagsCaptured?: number;
         /** @default 0 */
-        cqFlagsCollected?: number
+        cqFlagsCollected?: number;
         /** @default 0 */
-        cqFlagsReturned?: number
+        cqFlagsReturned?: number;
         /** @default 0 */
-        cqGoldCollected?: number
+        cqGoldCollected?: number;
         /** @default 0 */
-        cqIronCollected?: number
+        cqIronCollected?: number;
         /** @default 0 */
-        cqKills?: number
+        cqKills?: number;
         /** @default 0 */
-        cqWins?: number
+        cqWins?: number;
         /** @default 0 */
-        duelsArrowsShot?: number
+        duelsArrowsShot?: number;
         /** @default 0 */
-        duelsBestStreak?: number
+        duelsBestStreak?: number;
         /** @default 0 */
-        duelsDeaths?: number
+        duelsDeaths?: number;
         /** @default 0 */
-        duelsKills?: number
+        duelsKills?: number;
         /** @default 0 */
-        duelsLosses?: number
+        duelsLosses?: number;
         /** @default 0 */
-        duelsMeleeHits?: number
+        duelsMeleeHits?: number;
         /** @default 0 */
-        duelsStreak?: number
+        duelsStreak?: number;
         /** @default 0 */
-        duelsWins?: number
+        duelsWins?: number;
         /** @default 0 */
-        gxp?: number
+        gxp?: number;
         /** @default 0 */
-        mmBowKills?: number
+        mmBowKills?: number;
         /** @default 0 */
-        mmClassicDeaths?: number
+        mmClassicDeaths?: number;
         /** @default 0 */
-        mmClassicKills?: number
+        mmClassicKills?: number;
         /** @default 0 */
-        mmClassicWins?: number
+        mmClassicWins?: number;
         /** @default 0 */
-        mmDeaths?: number
+        mmDeaths?: number;
         /** @default 0 */
-        mmInfectionDeaths?: number
+        mmInfectionDeaths?: number;
         /** @default 0 */
-        mmInfectionKills?: number
+        mmInfectionKills?: number;
         /** @default 0 */
-        mmInfectionWins?: number
+        mmInfectionWins?: number;
         /** @default 0 */
-        mmKills?: number
+        mmKills?: number;
         /** @default 0 */
-        mmKnifeKills?: number
+        mmKnifeKills?: number;
         /** @default 0 */
-        mmThrowKnifeKills?: number
+        mmThrowKnifeKills?: number;
         /** @default 0 */
-        mmWins?: number
+        mmWins?: number;
         /** @default 0 */
-        msFails?: number
+        msFails?: number;
         /** @default 0 */
-        msSuccesses?: number
+        msSuccesses?: number;
         /** @default 0 */
-        msWins?: number
+        msWins?: number;
         /** @default 0 */
-        onlineTime?: number
+        onlineTime?: number;
         /** @default 0 */
-        scGoals?: number
+        scGoals?: number;
         /** @default 0 */
-        scWins?: number
+        scWins?: number;
         /** @default 0 */
-        sgDeaths?: number
+        sgDeaths?: number;
         /** @default 0 */
-        sgKills?: number
+        sgKills?: number;
         /** @default 0 */
-        sgWins?: number
+        sgWins?: number;
         /** @default 0 */
-        swArrowsShot?: number
+        swArrowsShot?: number;
         /** @default 0 */
-        swBlocksBroken?: number
+        swBlocksBroken?: number;
         /** @default 0 */
-        swBlocksPlaced?: number
+        swBlocksPlaced?: number;
         /** @default 0 */
-        swCoins?: number
+        swCoins?: number;
         /** @default 0 */
-        swDeaths?: number
+        swDeaths?: number;
         /** @default 0 */
-        swDoublesDeaths?: number
+        swDoublesDeaths?: number;
         /** @default 0 */
-        swDoublesInsaneDeaths?: number
+        swDoublesInsaneDeaths?: number;
         /** @default 0 */
-        swDoublesInsaneKills?: number
+        swDoublesInsaneKills?: number;
         /** @default 0 */
-        swDoublesKills?: number
+        swDoublesKills?: number;
         /** @default 0 */
-        swDoublesLosses?: number
+        swDoublesLosses?: number;
         /** @default 0 */
-        swDoublesNormalDeaths?: number
+        swDoublesNormalDeaths?: number;
         /** @default 0 */
-        swDoublesNormalKills?: number
+        swDoublesNormalKills?: number;
         /** @default 0 */
-        swDoublesWins?: number
+        swDoublesWins?: number;
         /** @default 0 */
-        swEggsThrown?: number
+        swEggsThrown?: number;
         /** @default 0 */
-        swEpearlsThrown?: number
+        swEpearlsThrown?: number;
         /** @default 0 */
-        swKills?: number
+        swKills?: number;
         /** @default 0 */
-        swLosses?: number
+        swLosses?: number;
         /** @default 0 */
-        swSoloDeaths?: number
+        swSoloDeaths?: number;
         /** @default 0 */
-        swSoloInsaneDeaths?: number
+        swSoloInsaneDeaths?: number;
         /** @default 0 */
-        swSoloInsaneKills?: number
+        swSoloInsaneKills?: number;
         /** @default 0 */
-        swSoloKills?: number
+        swSoloKills?: number;
         /** @default 0 */
-        swSoloLosses?: number
+        swSoloLosses?: number;
         /** @default 0 */
-        swSoloNormalDeaths?: number
+        swSoloNormalDeaths?: number;
         /** @default 0 */
-        swSoloNormalKills?: number
+        swSoloNormalKills?: number;
         /** @default 0 */
-        swSoloWins?: number
+        swSoloWins?: number;
         /** @default 0 */
-        swWins?: number
+        swWins?: number;
         /** @default 0 */
-        tbArrowsShot?: number
+        tbArrowsShot?: number;
         /** @default 0 */
-        tbBestStreak?: number
+        tbBestStreak?: number;
         /** @default 0 */
-        tbDeaths?: number
+        tbDeaths?: number;
         /** @default 0 */
-        tbGoals?: number
+        tbGoals?: number;
         /** @default 0 */
-        tbKills?: number
+        tbKills?: number;
         /** @default 0 */
-        tbLosses?: number
+        tbLosses?: number;
         /** @default 0 */
-        tbMeleeHits?: number
+        tbMeleeHits?: number;
         /** @default 0 */
-        tbStreak?: number
+        tbStreak?: number;
         /** @default 0 */
-        tbWins?: number
+        tbWins?: number;
         /** @default 0 */
-        trBestStreak?: number
+        trBestStreak?: number;
         /** @default 0 */
-        trBlocksDropped?: number
+        trBlocksDropped?: number;
         /** @default 0 */
-        trLosses?: number
+        trLosses?: number;
         /** @default 0 */
-        trStreak?: number
+        trStreak?: number;
         /** @default 0 */
-        trTimeRecord?: number
+        trTimeRecord?: number;
         /** @default 0 */
-        trWins?: number
+        trWins?: number;
         /** @default 0 */
-        uhcDeaths?: number
+        uhcDeaths?: number;
         /** @default 0 */
-        uhcDiamondMined?: number
+        uhcDiamondMined?: number;
         /** @default 0 */
-        uhcGoldMined?: number
+        uhcGoldMined?: number;
         /** @default 0 */
-        uhcIronMined?: number
+        uhcIronMined?: number;
         /** @default 0 */
-        uhcKills?: number
+        uhcKills?: number;
         /** @default 0 */
-        uhcLapisMined?: number
+        uhcLapisMined?: number;
         /** @default 0 */
-        uhcWins?: number
-      }
+        uhcWins?: number;
+      };
       extraNested?: {
         bh: {
-          wins: number
-        }
+          wins: number;
+        };
         bw: {
-          kills: number
-          deaths: number
+          kills: number;
+          deaths: number;
           solo: {
-            kills: number
-            deaths: number
+            kills: number;
+            deaths: number;
             beds: {
-              broken: number
-            }
+              broken: number;
+            };
             final: {
-              kills: number
-            }
-            wins: number
-          }
+              kills: number;
+            };
+            wins: number;
+          };
           doubles: {
-            kills: number
-            deaths: number
+            kills: number;
+            deaths: number;
             beds: {
-              broken: number
-            }
+              broken: number;
+            };
             final: {
-              kills: number
-            }
-            wins: number
-          }
+              kills: number;
+            };
+            wins: number;
+          };
           trios: {
-            kills: number
-            deaths: number
+            kills: number;
+            deaths: number;
             beds: {
-              broken: number
-            }
+              broken: number;
+            };
             final: {
-              kills: number
-            }
-            wins: number
-          }
+              kills: number;
+            };
+            wins: number;
+          };
           squads: {
-            kills: number
-            deaths: number
+            kills: number;
+            deaths: number;
             beds: {
-              broken: number
-            }
+              broken: number;
+            };
             final: {
-              kills: number
-            }
-            wins: number
-          }
+              kills: number;
+            };
+            wins: number;
+          };
           beds: {
-            broken: number
-          }
+            broken: number;
+          };
           diamonds: {
-            collected: number
-          }
+            collected: number;
+          };
           emeralds: {
-            collected: number
-          }
+            collected: number;
+          };
           gold: {
-            collected: number
-          }
+            collected: number;
+          };
           iron: {
-            collected: number
-          }
+            collected: number;
+          };
           final: {
-            kills: number
-          }
-          streak: number
+            kills: number;
+          };
+          streak: number;
           best: {
-            streak: number
-          }
-          wins: number
-        }
+            streak: number;
+          };
+          wins: number;
+        };
         cq: {
-          kills: number
-          deaths: number
-          wins: number
+          kills: number;
+          deaths: number;
+          wins: number;
           flags: {
-            collected: number
-            captured: number
-            returned: number
-          }
+            collected: number;
+            captured: number;
+            returned: number;
+          };
           diamonds: {
-            collected: number
-          }
+            collected: number;
+          };
           emeralds: {
-            collected: number
-          }
+            collected: number;
+          };
           gold: {
-            collected: number
-          }
+            collected: number;
+          };
           iron: {
-            collected: number
-          }
-        }
+            collected: number;
+          };
+        };
         duels: {
-          kills: number
-          deaths: number
+          kills: number;
+          deaths: number;
           arrows: {
-            shot: number
-          }
+            shot: number;
+          };
           melee: {
-            hits: number
-          }
-          streak: number
+            hits: number;
+          };
+          streak: number;
           best: {
-            streak: number
-          }
-          wins: number
-          losses: number
-        }
+            streak: number;
+          };
+          wins: number;
+          losses: number;
+        };
         mm: {
-          kills: number
-          deaths: number
+          kills: number;
+          deaths: number;
           classic: {
-            kills: number
-            deaths: number
-            wins: number
-          }
+            kills: number;
+            deaths: number;
+            wins: number;
+          };
           infection: {
-            kills: number
-            deaths: number
-            wins: number
-          }
+            kills: number;
+            deaths: number;
+            wins: number;
+          };
           bow: {
-            kills: number
-          }
+            kills: number;
+          };
           knife: {
-            kills: number
-          }
+            kills: number;
+          };
           throw: {
             knife: {
-              kills: number
-            }
-          }
-          wins: number
-        }
+              kills: number;
+            };
+          };
+          wins: number;
+        };
         ms: {
-          successes: number
-          fails: number
-          wins: number
-        }
+          successes: number;
+          fails: number;
+          wins: number;
+        };
         sc: {
-          wins: number
-          goals: number
-        }
+          wins: number;
+          goals: number;
+        };
         sg: {
-          kills: number
-          deaths: number
-          wins: number
-        }
+          kills: number;
+          deaths: number;
+          wins: number;
+        };
         sw: {
-          coins: number
-          kills: number
-          deaths: number
+          coins: number;
+          kills: number;
+          deaths: number;
           solo: {
-            kills: number
-            deaths: number
+            kills: number;
+            deaths: number;
             normal: {
-              kills: number
-              deaths: number
-            }
+              kills: number;
+              deaths: number;
+            };
             insane: {
-              kills: number
-              deaths: number
-            }
-            wins: number
-            losses: number
-          }
+              kills: number;
+              deaths: number;
+            };
+            wins: number;
+            losses: number;
+          };
           doubles: {
-            kills: number
-            deaths: number
+            kills: number;
+            deaths: number;
             normal: {
-              kills: number
-              deaths: number
-            }
+              kills: number;
+              deaths: number;
+            };
             insane: {
-              kills: number
-              deaths: number
-            }
-            wins: number
-            losses: number
-          }
+              kills: number;
+              deaths: number;
+            };
+            wins: number;
+            losses: number;
+          };
           blocks: {
-            broken: number
-            placed: number
-          }
+            broken: number;
+            placed: number;
+          };
           arrows: {
-            shot: number
-          }
+            shot: number;
+          };
           eggs: {
-            thrown: number
-          }
+            thrown: number;
+          };
           epearls: {
-            thrown: number
-          }
-          wins: number
-          losses: number
-        }
+            thrown: number;
+          };
+          wins: number;
+          losses: number;
+        };
         tb: {
-          kills: number
-          deaths: number
+          kills: number;
+          deaths: number;
           arrows: {
-            shot: number
-          }
+            shot: number;
+          };
           melee: {
-            hits: number
-          }
-          goals: number
-          streak: number
+            hits: number;
+          };
+          goals: number;
+          streak: number;
           best: {
-            streak: number
-          }
-          wins: number
-          losses: number
-        }
+            streak: number;
+          };
+          wins: number;
+          losses: number;
+        };
         tr: {
-          wins: number
-          losses: number
-          streak: number
+          wins: number;
+          losses: number;
+          streak: number;
           best: {
-            streak: number
-          }
+            streak: number;
+          };
           blocks: {
-            dropped: number
-          }
+            dropped: number;
+          };
           time: {
-            record: number
-          }
-        }
+            record: number;
+          };
+        };
         uhc: {
-          kills: number
-          deaths: number
-          wins: number
+          kills: number;
+          deaths: number;
+          wins: number;
           iron: {
-            mined: number
-          }
+            mined: number;
+          };
           gold: {
-            mined: number
-          }
+            mined: number;
+          };
           lapis: {
-            mined: number
-          }
+            mined: number;
+          };
           diamond: {
-            mined: number
-          }
-        }
+            mined: number;
+          };
+        };
         online: {
-          time: number
-        }
-        gxp: number
-      }
-      leaderboard: boolean
+          time: number;
+        };
+        gxp: number;
+      };
+      leaderboard: boolean;
       /** @deprecated use `credits` instead. */
-      statusCredits: number
-    }
+      statusCredits: number;
+    };
     PlayerQuery: {
       /** @default false */
-      expand?: boolean
+      expand?: boolean;
       /** @default true */
-      withFactionData?: boolean
+      withFactionData?: boolean;
       /** @default false */
-      withGuildData?: boolean
+      withGuildData?: boolean;
       /** @default true */
-      withOnline?: boolean
+      withOnline?: boolean;
       /** @default true */
-      withPunishments?: boolean
+      withPunishments?: boolean;
       /** @default false */
-      withSkinData?: boolean
+      withSkinData?: boolean;
       /** @default true */
-      withStats?: boolean
+      withStats?: boolean;
       /** @default true */
-      withVoteStatus?: boolean
+      withVoteStatus?: boolean;
       /** @default false */
-      withAvatarBlurhash?: boolean
+      withAvatarBlurhash?: boolean;
       /**
        * @default global
        * @enum {string}
        */
-      period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly'
-    }
+      period?: "global" | "daily" | "weekly" | "biweekly" | "monthly" | "yearly";
+    };
     PlayerPunishmentsResponse: {
-      xuid: string
-      name: string
-      punishments: {
-        id: string
-        /** @description The punishment `reasonName` and `reasonCategory` joined together. */
-        reason: string
-        reasonName: string
-        reasonCategory: string
-        /** @enum {string} */
-        type: 'BAN' | 'MUTE'
-        /** @description If true, the punishment does not expire. */
-        permanent: boolean
-        /** @description For migration punishments, this value is 0. */
-        issuedAt: number
-        /** @description If `permanent` is true, this value is -1. */
-        validUntil: number
-        /** @description Whether this punishment is currently active. */
-        active: boolean
-        /** @description The XUIDs affected by this punishment. */
-        affectedXuids: string[]
-        /** @description The corresponding player names to `affectedXuids`. */
-        affectedPlayers: string[]
-        alt: boolean
-      }[]
-    }
+      xuid: string;
+      name: string;
+      punishments: ({
+          id: string;
+          /** @description The punishment `reasonName` and `reasonCategory` joined together. */
+          reason: string;
+          reasonName: string;
+          reasonCategory: string;
+          /** @enum {string} */
+          type: "BAN" | "MUTE";
+          /** @description If true, the punishment does not expire. */
+          permanent: boolean;
+          /** @description For migration punishments, this value is 0. */
+          issuedAt: number;
+          /** @description If `permanent` is true, this value is -1. */
+          validUntil: number;
+          /** @description Whether this punishment is currently active. */
+          active: boolean;
+          /** @description The XUIDs affected by this punishment. */
+          affectedXuids: (string)[];
+          /** @description The corresponding player names to `affectedXuids`. */
+          affectedPlayers: (string)[];
+          alt: boolean;
+        })[];
+    };
     PlayerPunishmentResponse: {
-      id: string
+      id: string;
       /** @description The punishment `reasonName` and `reasonCategory` joined together. */
-      reason: string
-      reasonName: string
-      reasonCategory: string
+      reason: string;
+      reasonName: string;
+      reasonCategory: string;
       /** @enum {string} */
-      type: 'BAN' | 'MUTE'
+      type: "BAN" | "MUTE";
       /** @description If true, the punishment does not expire. */
-      permanent: boolean
+      permanent: boolean;
       /** @description For migration punishments, this value is 0. */
-      issuedAt: number
+      issuedAt: number;
       /** @description If `permanent` is true, this value is -1. */
-      validUntil: number
+      validUntil: number;
       /** @description Whether this punishment is currently active. */
-      active: boolean
+      active: boolean;
       /** @description The XUIDs affected by this punishment. */
-      affectedXuids: string[]
+      affectedXuids: (string)[];
       /** @description The corresponding player names to `affectedXuids`. */
-      affectedPlayers: string[]
-      alt: boolean
-    }
+      affectedPlayers: (string)[];
+      alt: boolean;
+    };
     PlayerLeaderboardResponse: {
-      player: string
+      player: string;
       data: {
-        bhWins: number
-        bwBedsBroken: number
-        bwDoublesBedsBroken: number
-        bwDoublesFinalKills: number
-        bwDoublesKills: number
-        bwDoublesWins: number
-        bwFinalKills: number
-        bwKills: number
-        bwSoloBedsBroken: number
-        bwSoloFinalKills: number
-        bwSoloKills: number
-        bwSoloWins: number
-        bwSquadsBedsBroken: number
-        bwSquadsFinalKills: number
-        bwSquadsKills: number
-        bwSquadsWins: number
-        bwTriosBedsBroken: number
-        bwTriosFinalKills: number
-        bwTriosKills: number
-        bwTriosWins: number
-        bwWins: number
-        cqFlagsCaptured: number
-        cqKills: number
-        cqWins: number
-        duelsKills: number
-        duelsWins: number
-        kills: number
-        mmBowKills: number
-        mmClassicKills: number
-        mmClassicWins: number
-        mmInfectionKills: number
-        mmInfectionWins: number
-        mmKills: number
-        mmKnifeKills: number
-        mmThrowKnifeKills: number
-        mmWins: number
-        msWins: number
-        scWins: number
-        sgKills: number
-        sgWins: number
-        swDoublesInsaneKills: number
-        swDoublesKills: number
-        swDoublesNormalKills: number
-        swDoublesWins: number
-        swKills: number
-        swSoloInsaneKills: number
-        swSoloKills: number
-        swSoloNormalKills: number
-        swSoloWins: number
-        swWins: number
-        tbKills: number
-        tbWins: number
-        wins: number
-      }
+        bhWins: number;
+        bwBedsBroken: number;
+        bwDoublesBedsBroken: number;
+        bwDoublesFinalKills: number;
+        bwDoublesKills: number;
+        bwDoublesWins: number;
+        bwFinalKills: number;
+        bwKills: number;
+        bwSoloBedsBroken: number;
+        bwSoloFinalKills: number;
+        bwSoloKills: number;
+        bwSoloWins: number;
+        bwSquadsBedsBroken: number;
+        bwSquadsFinalKills: number;
+        bwSquadsKills: number;
+        bwSquadsWins: number;
+        bwTriosBedsBroken: number;
+        bwTriosFinalKills: number;
+        bwTriosKills: number;
+        bwTriosWins: number;
+        bwWins: number;
+        cqFlagsCaptured: number;
+        cqKills: number;
+        cqWins: number;
+        duelsKills: number;
+        duelsWins: number;
+        kills: number;
+        mmBowKills: number;
+        mmClassicKills: number;
+        mmClassicWins: number;
+        mmInfectionKills: number;
+        mmInfectionWins: number;
+        mmKills: number;
+        mmKnifeKills: number;
+        mmThrowKnifeKills: number;
+        mmWins: number;
+        msWins: number;
+        scWins: number;
+        sgKills: number;
+        sgWins: number;
+        swDoublesInsaneKills: number;
+        swDoublesKills: number;
+        swDoublesNormalKills: number;
+        swDoublesWins: number;
+        swKills: number;
+        swSoloInsaneKills: number;
+        swSoloKills: number;
+        swSoloNormalKills: number;
+        swSoloWins: number;
+        swWins: number;
+        tbKills: number;
+        tbWins: number;
+        wins: number;
+      };
       dataNested: {
         bh: {
-          wins: number
-        }
+          wins: number;
+        };
         bw: {
           beds: {
-            broken: number
-          }
+            broken: number;
+          };
           doubles: {
             beds: {
-              broken: number
-            }
+              broken: number;
+            };
             final: {
-              kills: number
-            }
-            kills: number
-            wins: number
-          }
+              kills: number;
+            };
+            kills: number;
+            wins: number;
+          };
           final: {
-            kills: number
-          }
-          kills: number
+            kills: number;
+          };
+          kills: number;
           solo: {
             beds: {
-              broken: number
-            }
+              broken: number;
+            };
             final: {
-              kills: number
-            }
-            kills: number
-            wins: number
-          }
+              kills: number;
+            };
+            kills: number;
+            wins: number;
+          };
           squads: {
             beds: {
-              broken: number
-            }
+              broken: number;
+            };
             final: {
-              kills: number
-            }
-            kills: number
-            wins: number
-          }
+              kills: number;
+            };
+            kills: number;
+            wins: number;
+          };
           trios: {
             beds: {
-              broken: number
-            }
+              broken: number;
+            };
             final: {
-              kills: number
-            }
-            kills: number
-            wins: number
-          }
-          wins: number
-        }
+              kills: number;
+            };
+            kills: number;
+            wins: number;
+          };
+          wins: number;
+        };
         cq: {
           flags: {
-            captured: number
-          }
-          kills: number
-          wins: number
-        }
+            captured: number;
+          };
+          kills: number;
+          wins: number;
+        };
         duels: {
-          kills: number
-          wins: number
-        }
-        kills: number
+          kills: number;
+          wins: number;
+        };
+        kills: number;
         mm: {
           bow: {
-            kills: number
-          }
+            kills: number;
+          };
           classic: {
-            kills: number
-            wins: number
-          }
+            kills: number;
+            wins: number;
+          };
           infection: {
-            kills: number
-            wins: number
-          }
-          kills: number
+            kills: number;
+            wins: number;
+          };
+          kills: number;
           knife: {
-            kills: number
-          }
+            kills: number;
+          };
           throw: {
             knife: {
-              kills: number
-            }
-          }
-          wins: number
-        }
+              kills: number;
+            };
+          };
+          wins: number;
+        };
         ms: {
-          wins: number
-        }
+          wins: number;
+        };
         sc: {
-          wins: number
-        }
+          wins: number;
+        };
         sg: {
-          kills: number
-          wins: number
-        }
+          kills: number;
+          wins: number;
+        };
         sw: {
           doubles: {
             insane: {
-              kills: number
-            }
-            kills: number
+              kills: number;
+            };
+            kills: number;
             normal: {
-              kills: number
-            }
-            wins: number
-          }
-          kills: number
+              kills: number;
+            };
+            wins: number;
+          };
+          kills: number;
           solo: {
             insane: {
-              kills: number
-            }
-            kills: number
+              kills: number;
+            };
+            kills: number;
             normal: {
-              kills: number
-            }
-            wins: number
-          }
-          wins: number
-        }
+              kills: number;
+            };
+            wins: number;
+          };
+          wins: number;
+        };
         tb: {
-          kills: number
-          wins: number
-        }
-        wins: number
-      }
-      timestamp: number
-    }
+          kills: number;
+          wins: number;
+        };
+        wins: number;
+      };
+      timestamp: number;
+    };
     PlayerLeaderboardQuery: {
       /**
        * @default global
        * @enum {string}
        */
-      period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly'
-    }
+      period?: "global" | "daily" | "weekly" | "biweekly" | "monthly" | "yearly";
+    };
     PlayerLeaderboardDataNested: {
       bh: {
-        wins: number
-      }
+        wins: number;
+      };
       bw: {
         beds: {
-          broken: number
-        }
+          broken: number;
+        };
         doubles: {
           beds: {
-            broken: number
-          }
+            broken: number;
+          };
           final: {
-            kills: number
-          }
-          kills: number
-          wins: number
-        }
+            kills: number;
+          };
+          kills: number;
+          wins: number;
+        };
         final: {
-          kills: number
-        }
-        kills: number
+          kills: number;
+        };
+        kills: number;
         solo: {
           beds: {
-            broken: number
-          }
+            broken: number;
+          };
           final: {
-            kills: number
-          }
-          kills: number
-          wins: number
-        }
+            kills: number;
+          };
+          kills: number;
+          wins: number;
+        };
         squads: {
           beds: {
-            broken: number
-          }
+            broken: number;
+          };
           final: {
-            kills: number
-          }
-          kills: number
-          wins: number
-        }
+            kills: number;
+          };
+          kills: number;
+          wins: number;
+        };
         trios: {
           beds: {
-            broken: number
-          }
+            broken: number;
+          };
           final: {
-            kills: number
-          }
-          kills: number
-          wins: number
-        }
-        wins: number
-      }
+            kills: number;
+          };
+          kills: number;
+          wins: number;
+        };
+        wins: number;
+      };
       cq: {
         flags: {
-          captured: number
-        }
-        kills: number
-        wins: number
-      }
+          captured: number;
+        };
+        kills: number;
+        wins: number;
+      };
       duels: {
-        kills: number
-        wins: number
-      }
-      kills: number
+        kills: number;
+        wins: number;
+      };
+      kills: number;
       mm: {
         bow: {
-          kills: number
-        }
+          kills: number;
+        };
         classic: {
-          kills: number
-          wins: number
-        }
+          kills: number;
+          wins: number;
+        };
         infection: {
-          kills: number
-          wins: number
-        }
-        kills: number
+          kills: number;
+          wins: number;
+        };
+        kills: number;
         knife: {
-          kills: number
-        }
+          kills: number;
+        };
         throw: {
           knife: {
-            kills: number
-          }
-        }
-        wins: number
-      }
+            kills: number;
+          };
+        };
+        wins: number;
+      };
       ms: {
-        wins: number
-      }
+        wins: number;
+      };
       sc: {
-        wins: number
-      }
+        wins: number;
+      };
       sg: {
-        kills: number
-        wins: number
-      }
+        kills: number;
+        wins: number;
+      };
       sw: {
         doubles: {
           insane: {
-            kills: number
-          }
-          kills: number
+            kills: number;
+          };
+          kills: number;
           normal: {
-            kills: number
-          }
-          wins: number
-        }
-        kills: number
+            kills: number;
+          };
+          wins: number;
+        };
+        kills: number;
         solo: {
           insane: {
-            kills: number
-          }
-          kills: number
+            kills: number;
+          };
+          kills: number;
           normal: {
-            kills: number
-          }
-          wins: number
-        }
-        wins: number
-      }
+            kills: number;
+          };
+          wins: number;
+        };
+        wins: number;
+      };
       tb: {
-        kills: number
-        wins: number
-      }
-      wins: number
-    }
+        kills: number;
+        wins: number;
+      };
+      wins: number;
+    };
     PlayerLeaderboardData: {
-      bhWins: number
-      bwBedsBroken: number
-      bwDoublesBedsBroken: number
-      bwDoublesFinalKills: number
-      bwDoublesKills: number
-      bwDoublesWins: number
-      bwFinalKills: number
-      bwKills: number
-      bwSoloBedsBroken: number
-      bwSoloFinalKills: number
-      bwSoloKills: number
-      bwSoloWins: number
-      bwSquadsBedsBroken: number
-      bwSquadsFinalKills: number
-      bwSquadsKills: number
-      bwSquadsWins: number
-      bwTriosBedsBroken: number
-      bwTriosFinalKills: number
-      bwTriosKills: number
-      bwTriosWins: number
-      bwWins: number
-      cqFlagsCaptured: number
-      cqKills: number
-      cqWins: number
-      duelsKills: number
-      duelsWins: number
-      kills: number
-      mmBowKills: number
-      mmClassicKills: number
-      mmClassicWins: number
-      mmInfectionKills: number
-      mmInfectionWins: number
-      mmKills: number
-      mmKnifeKills: number
-      mmThrowKnifeKills: number
-      mmWins: number
-      msWins: number
-      scWins: number
-      sgKills: number
-      sgWins: number
-      swDoublesInsaneKills: number
-      swDoublesKills: number
-      swDoublesNormalKills: number
-      swDoublesWins: number
-      swKills: number
-      swSoloInsaneKills: number
-      swSoloKills: number
-      swSoloNormalKills: number
-      swSoloWins: number
-      swWins: number
-      tbKills: number
-      tbWins: number
-      wins: number
-    }
-    PlayerLeaderboardBulkResponse: {
-      player: string
-      data: {
-        bhWins: number
-        bwBedsBroken: number
-        bwDoublesBedsBroken: number
-        bwDoublesFinalKills: number
-        bwDoublesKills: number
-        bwDoublesWins: number
-        bwFinalKills: number
-        bwKills: number
-        bwSoloBedsBroken: number
-        bwSoloFinalKills: number
-        bwSoloKills: number
-        bwSoloWins: number
-        bwSquadsBedsBroken: number
-        bwSquadsFinalKills: number
-        bwSquadsKills: number
-        bwSquadsWins: number
-        bwTriosBedsBroken: number
-        bwTriosFinalKills: number
-        bwTriosKills: number
-        bwTriosWins: number
-        bwWins: number
-        cqFlagsCaptured: number
-        cqKills: number
-        cqWins: number
-        duelsKills: number
-        duelsWins: number
-        kills: number
-        mmBowKills: number
-        mmClassicKills: number
-        mmClassicWins: number
-        mmInfectionKills: number
-        mmInfectionWins: number
-        mmKills: number
-        mmKnifeKills: number
-        mmThrowKnifeKills: number
-        mmWins: number
-        msWins: number
-        scWins: number
-        sgKills: number
-        sgWins: number
-        swDoublesInsaneKills: number
-        swDoublesKills: number
-        swDoublesNormalKills: number
-        swDoublesWins: number
-        swKills: number
-        swSoloInsaneKills: number
-        swSoloKills: number
-        swSoloNormalKills: number
-        swSoloWins: number
-        swWins: number
-        tbKills: number
-        tbWins: number
-        wins: number
-      }
-      dataNested: {
-        bh: {
-          wins: number
-        }
-        bw: {
-          beds: {
-            broken: number
-          }
-          doubles: {
+      bhWins: number;
+      bwBedsBroken: number;
+      bwDoublesBedsBroken: number;
+      bwDoublesFinalKills: number;
+      bwDoublesKills: number;
+      bwDoublesWins: number;
+      bwFinalKills: number;
+      bwKills: number;
+      bwSoloBedsBroken: number;
+      bwSoloFinalKills: number;
+      bwSoloKills: number;
+      bwSoloWins: number;
+      bwSquadsBedsBroken: number;
+      bwSquadsFinalKills: number;
+      bwSquadsKills: number;
+      bwSquadsWins: number;
+      bwTriosBedsBroken: number;
+      bwTriosFinalKills: number;
+      bwTriosKills: number;
+      bwTriosWins: number;
+      bwWins: number;
+      cqFlagsCaptured: number;
+      cqKills: number;
+      cqWins: number;
+      duelsKills: number;
+      duelsWins: number;
+      kills: number;
+      mmBowKills: number;
+      mmClassicKills: number;
+      mmClassicWins: number;
+      mmInfectionKills: number;
+      mmInfectionWins: number;
+      mmKills: number;
+      mmKnifeKills: number;
+      mmThrowKnifeKills: number;
+      mmWins: number;
+      msWins: number;
+      scWins: number;
+      sgKills: number;
+      sgWins: number;
+      swDoublesInsaneKills: number;
+      swDoublesKills: number;
+      swDoublesNormalKills: number;
+      swDoublesWins: number;
+      swKills: number;
+      swSoloInsaneKills: number;
+      swSoloKills: number;
+      swSoloNormalKills: number;
+      swSoloWins: number;
+      swWins: number;
+      tbKills: number;
+      tbWins: number;
+      wins: number;
+    };
+    PlayerLeaderboardBulkResponse: ({
+        player: string;
+        data: {
+          bhWins: number;
+          bwBedsBroken: number;
+          bwDoublesBedsBroken: number;
+          bwDoublesFinalKills: number;
+          bwDoublesKills: number;
+          bwDoublesWins: number;
+          bwFinalKills: number;
+          bwKills: number;
+          bwSoloBedsBroken: number;
+          bwSoloFinalKills: number;
+          bwSoloKills: number;
+          bwSoloWins: number;
+          bwSquadsBedsBroken: number;
+          bwSquadsFinalKills: number;
+          bwSquadsKills: number;
+          bwSquadsWins: number;
+          bwTriosBedsBroken: number;
+          bwTriosFinalKills: number;
+          bwTriosKills: number;
+          bwTriosWins: number;
+          bwWins: number;
+          cqFlagsCaptured: number;
+          cqKills: number;
+          cqWins: number;
+          duelsKills: number;
+          duelsWins: number;
+          kills: number;
+          mmBowKills: number;
+          mmClassicKills: number;
+          mmClassicWins: number;
+          mmInfectionKills: number;
+          mmInfectionWins: number;
+          mmKills: number;
+          mmKnifeKills: number;
+          mmThrowKnifeKills: number;
+          mmWins: number;
+          msWins: number;
+          scWins: number;
+          sgKills: number;
+          sgWins: number;
+          swDoublesInsaneKills: number;
+          swDoublesKills: number;
+          swDoublesNormalKills: number;
+          swDoublesWins: number;
+          swKills: number;
+          swSoloInsaneKills: number;
+          swSoloKills: number;
+          swSoloNormalKills: number;
+          swSoloWins: number;
+          swWins: number;
+          tbKills: number;
+          tbWins: number;
+          wins: number;
+        };
+        dataNested: {
+          bh: {
+            wins: number;
+          };
+          bw: {
             beds: {
-              broken: number
-            }
+              broken: number;
+            };
+            doubles: {
+              beds: {
+                broken: number;
+              };
+              final: {
+                kills: number;
+              };
+              kills: number;
+              wins: number;
+            };
             final: {
-              kills: number
-            }
-            kills: number
-            wins: number
-          }
-          final: {
-            kills: number
-          }
-          kills: number
-          solo: {
-            beds: {
-              broken: number
-            }
-            final: {
-              kills: number
-            }
-            kills: number
-            wins: number
-          }
-          squads: {
-            beds: {
-              broken: number
-            }
-            final: {
-              kills: number
-            }
-            kills: number
-            wins: number
-          }
-          trios: {
-            beds: {
-              broken: number
-            }
-            final: {
-              kills: number
-            }
-            kills: number
-            wins: number
-          }
-          wins: number
-        }
-        cq: {
-          flags: {
-            captured: number
-          }
-          kills: number
-          wins: number
-        }
-        duels: {
-          kills: number
-          wins: number
-        }
-        kills: number
-        mm: {
-          bow: {
-            kills: number
-          }
-          classic: {
-            kills: number
-            wins: number
-          }
-          infection: {
-            kills: number
-            wins: number
-          }
-          kills: number
-          knife: {
-            kills: number
-          }
-          throw: {
+              kills: number;
+            };
+            kills: number;
+            solo: {
+              beds: {
+                broken: number;
+              };
+              final: {
+                kills: number;
+              };
+              kills: number;
+              wins: number;
+            };
+            squads: {
+              beds: {
+                broken: number;
+              };
+              final: {
+                kills: number;
+              };
+              kills: number;
+              wins: number;
+            };
+            trios: {
+              beds: {
+                broken: number;
+              };
+              final: {
+                kills: number;
+              };
+              kills: number;
+              wins: number;
+            };
+            wins: number;
+          };
+          cq: {
+            flags: {
+              captured: number;
+            };
+            kills: number;
+            wins: number;
+          };
+          duels: {
+            kills: number;
+            wins: number;
+          };
+          kills: number;
+          mm: {
+            bow: {
+              kills: number;
+            };
+            classic: {
+              kills: number;
+              wins: number;
+            };
+            infection: {
+              kills: number;
+              wins: number;
+            };
+            kills: number;
             knife: {
-              kills: number
-            }
-          }
-          wins: number
-        }
-        ms: {
-          wins: number
-        }
-        sc: {
-          wins: number
-        }
-        sg: {
-          kills: number
-          wins: number
-        }
-        sw: {
-          doubles: {
-            insane: {
-              kills: number
-            }
-            kills: number
-            normal: {
-              kills: number
-            }
-            wins: number
-          }
-          kills: number
-          solo: {
-            insane: {
-              kills: number
-            }
-            kills: number
-            normal: {
-              kills: number
-            }
-            wins: number
-          }
-          wins: number
-        }
-        tb: {
-          kills: number
-          wins: number
-        }
-        wins: number
-      }
-      timestamp: number
-    }[]
+              kills: number;
+            };
+            throw: {
+              knife: {
+                kills: number;
+              };
+            };
+            wins: number;
+          };
+          ms: {
+            wins: number;
+          };
+          sc: {
+            wins: number;
+          };
+          sg: {
+            kills: number;
+            wins: number;
+          };
+          sw: {
+            doubles: {
+              insane: {
+                kills: number;
+              };
+              kills: number;
+              normal: {
+                kills: number;
+              };
+              wins: number;
+            };
+            kills: number;
+            solo: {
+              insane: {
+                kills: number;
+              };
+              kills: number;
+              normal: {
+                kills: number;
+              };
+              wins: number;
+            };
+            wins: number;
+          };
+          tb: {
+            kills: number;
+            wins: number;
+          };
+          wins: number;
+        };
+        timestamp: number;
+      })[];
     PlayerLeaderboardBulkInput: {
       /**
        * @default global
        * @enum {string}
        */
-      period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly'
-      names: string[]
-    }
+      period?: "global" | "daily" | "weekly" | "biweekly" | "monthly" | "yearly";
+      names: (string)[];
+    };
     PlayerLastServerParsed: {
-      region: string
-      serverName: string
-      serverNameLong: string
-      serverType: string
-      pretty: string
-    }
+      region: string;
+      serverName: string;
+      serverNameLong: string;
+      serverType: string;
+      pretty: string;
+    };
     PlayerFactionData: {
-      tags: number
-      registerDate: string
-      coins: number
-      kills: number
-      bounty: number
+      tags: number;
+      registerDate: string;
+      coins: number;
+      kills: number;
+      bounty: number;
       faction: {
-        id: number
-        name: string
-        strength: number
-        allies: string[]
-        leader?: Record<string, never>
-        officers: unknown[]
-        members: unknown[]
-      } | null
-    }
+        id: number;
+        name: string;
+        strength: number;
+        allies: (string)[];
+        leader?: Record<string, never>;
+        officers: (unknown)[];
+        members: (unknown)[];
+      } | null;
+    };
     PlayerExtraNested: {
       bh: {
-        wins: number
-      }
+        wins: number;
+      };
       bw: {
-        kills: number
-        deaths: number
+        kills: number;
+        deaths: number;
         solo: {
-          kills: number
-          deaths: number
+          kills: number;
+          deaths: number;
           beds: {
-            broken: number
-          }
+            broken: number;
+          };
           final: {
-            kills: number
-          }
-          wins: number
-        }
+            kills: number;
+          };
+          wins: number;
+        };
         doubles: {
-          kills: number
-          deaths: number
+          kills: number;
+          deaths: number;
           beds: {
-            broken: number
-          }
+            broken: number;
+          };
           final: {
-            kills: number
-          }
-          wins: number
-        }
+            kills: number;
+          };
+          wins: number;
+        };
         trios: {
-          kills: number
-          deaths: number
+          kills: number;
+          deaths: number;
           beds: {
-            broken: number
-          }
+            broken: number;
+          };
           final: {
-            kills: number
-          }
-          wins: number
-        }
+            kills: number;
+          };
+          wins: number;
+        };
         squads: {
-          kills: number
-          deaths: number
+          kills: number;
+          deaths: number;
           beds: {
-            broken: number
-          }
+            broken: number;
+          };
           final: {
-            kills: number
-          }
-          wins: number
-        }
+            kills: number;
+          };
+          wins: number;
+        };
         beds: {
-          broken: number
-        }
+          broken: number;
+        };
         diamonds: {
-          collected: number
-        }
+          collected: number;
+        };
         emeralds: {
-          collected: number
-        }
+          collected: number;
+        };
         gold: {
-          collected: number
-        }
+          collected: number;
+        };
         iron: {
-          collected: number
-        }
+          collected: number;
+        };
         final: {
-          kills: number
-        }
-        streak: number
+          kills: number;
+        };
+        streak: number;
         best: {
-          streak: number
-        }
-        wins: number
-      }
+          streak: number;
+        };
+        wins: number;
+      };
       cq: {
-        kills: number
-        deaths: number
-        wins: number
+        kills: number;
+        deaths: number;
+        wins: number;
         flags: {
-          collected: number
-          captured: number
-          returned: number
-        }
+          collected: number;
+          captured: number;
+          returned: number;
+        };
         diamonds: {
-          collected: number
-        }
+          collected: number;
+        };
         emeralds: {
-          collected: number
-        }
+          collected: number;
+        };
         gold: {
-          collected: number
-        }
+          collected: number;
+        };
         iron: {
-          collected: number
-        }
-      }
+          collected: number;
+        };
+      };
       duels: {
-        kills: number
-        deaths: number
+        kills: number;
+        deaths: number;
         arrows: {
-          shot: number
-        }
+          shot: number;
+        };
         melee: {
-          hits: number
-        }
-        streak: number
+          hits: number;
+        };
+        streak: number;
         best: {
-          streak: number
-        }
-        wins: number
-        losses: number
-      }
+          streak: number;
+        };
+        wins: number;
+        losses: number;
+      };
       mm: {
-        kills: number
-        deaths: number
+        kills: number;
+        deaths: number;
         classic: {
-          kills: number
-          deaths: number
-          wins: number
-        }
+          kills: number;
+          deaths: number;
+          wins: number;
+        };
         infection: {
-          kills: number
-          deaths: number
-          wins: number
-        }
+          kills: number;
+          deaths: number;
+          wins: number;
+        };
         bow: {
-          kills: number
-        }
+          kills: number;
+        };
         knife: {
-          kills: number
-        }
+          kills: number;
+        };
         throw: {
           knife: {
-            kills: number
-          }
-        }
-        wins: number
-      }
+            kills: number;
+          };
+        };
+        wins: number;
+      };
       ms: {
-        successes: number
-        fails: number
-        wins: number
-      }
+        successes: number;
+        fails: number;
+        wins: number;
+      };
       sc: {
-        wins: number
-        goals: number
-      }
+        wins: number;
+        goals: number;
+      };
       sg: {
-        kills: number
-        deaths: number
-        wins: number
-      }
+        kills: number;
+        deaths: number;
+        wins: number;
+      };
       sw: {
-        coins: number
-        kills: number
-        deaths: number
+        coins: number;
+        kills: number;
+        deaths: number;
         solo: {
-          kills: number
-          deaths: number
+          kills: number;
+          deaths: number;
           normal: {
-            kills: number
-            deaths: number
-          }
+            kills: number;
+            deaths: number;
+          };
           insane: {
-            kills: number
-            deaths: number
-          }
-          wins: number
-          losses: number
-        }
+            kills: number;
+            deaths: number;
+          };
+          wins: number;
+          losses: number;
+        };
         doubles: {
-          kills: number
-          deaths: number
+          kills: number;
+          deaths: number;
           normal: {
-            kills: number
-            deaths: number
-          }
+            kills: number;
+            deaths: number;
+          };
           insane: {
-            kills: number
-            deaths: number
-          }
-          wins: number
-          losses: number
-        }
+            kills: number;
+            deaths: number;
+          };
+          wins: number;
+          losses: number;
+        };
         blocks: {
-          broken: number
-          placed: number
-        }
+          broken: number;
+          placed: number;
+        };
         arrows: {
-          shot: number
-        }
+          shot: number;
+        };
         eggs: {
-          thrown: number
-        }
+          thrown: number;
+        };
         epearls: {
-          thrown: number
-        }
-        wins: number
-        losses: number
-      }
+          thrown: number;
+        };
+        wins: number;
+        losses: number;
+      };
       tb: {
-        kills: number
-        deaths: number
+        kills: number;
+        deaths: number;
         arrows: {
-          shot: number
-        }
+          shot: number;
+        };
         melee: {
-          hits: number
-        }
-        goals: number
-        streak: number
+          hits: number;
+        };
+        goals: number;
+        streak: number;
         best: {
-          streak: number
-        }
-        wins: number
-        losses: number
-      }
+          streak: number;
+        };
+        wins: number;
+        losses: number;
+      };
       tr: {
-        wins: number
-        losses: number
-        streak: number
+        wins: number;
+        losses: number;
+        streak: number;
         best: {
-          streak: number
-        }
+          streak: number;
+        };
         blocks: {
-          dropped: number
-        }
+          dropped: number;
+        };
         time: {
-          record: number
-        }
-      }
+          record: number;
+        };
+      };
       uhc: {
-        kills: number
-        deaths: number
-        wins: number
+        kills: number;
+        deaths: number;
+        wins: number;
         iron: {
-          mined: number
-        }
+          mined: number;
+        };
         gold: {
-          mined: number
-        }
+          mined: number;
+        };
         lapis: {
-          mined: number
-        }
+          mined: number;
+        };
         diamond: {
-          mined: number
-        }
-      }
+          mined: number;
+        };
+      };
       online: {
-        time: number
-      }
-      gxp: number
-    }
+        time: number;
+      };
+      gxp: number;
+    };
     PlayerExtra: {
       /** @default 0 */
-      bhWins?: number
+      bhWins?: number;
       /** @default 0 */
-      bwBedsBroken?: number
+      bwBedsBroken?: number;
       /** @default 0 */
-      bwBestStreak?: number
+      bwBestStreak?: number;
       /** @default 0 */
-      bwDeaths?: number
+      bwDeaths?: number;
       /** @default 0 */
-      bwDiamondsCollected?: number
+      bwDiamondsCollected?: number;
       /** @default 0 */
-      bwDoublesBedsBroken?: number
+      bwDoublesBedsBroken?: number;
       /** @default 0 */
-      bwDoublesDeaths?: number
+      bwDoublesDeaths?: number;
       /** @default 0 */
-      bwDoublesFinalKills?: number
+      bwDoublesFinalKills?: number;
       /** @default 0 */
-      bwDoublesKills?: number
+      bwDoublesKills?: number;
       /** @default 0 */
-      bwDoublesWins?: number
+      bwDoublesWins?: number;
       /** @default 0 */
-      bwEmeraldsCollected?: number
+      bwEmeraldsCollected?: number;
       /** @default 0 */
-      bwFinalKills?: number
+      bwFinalKills?: number;
       /** @default 0 */
-      bwGoldCollected?: number
+      bwGoldCollected?: number;
       /** @default 0 */
-      bwIronCollected?: number
+      bwIronCollected?: number;
       /** @default 0 */
-      bwKills?: number
+      bwKills?: number;
       /** @default 0 */
-      bwSoloBedsBroken?: number
+      bwSoloBedsBroken?: number;
       /** @default 0 */
-      bwSoloDeaths?: number
+      bwSoloDeaths?: number;
       /** @default 0 */
-      bwSoloFinalKills?: number
+      bwSoloFinalKills?: number;
       /** @default 0 */
-      bwSoloKills?: number
+      bwSoloKills?: number;
       /** @default 0 */
-      bwSoloWins?: number
+      bwSoloWins?: number;
       /** @default 0 */
-      bwSquadsBedsBroken?: number
+      bwSquadsBedsBroken?: number;
       /** @default 0 */
-      bwSquadsDeaths?: number
+      bwSquadsDeaths?: number;
       /** @default 0 */
-      bwSquadsFinalKills?: number
+      bwSquadsFinalKills?: number;
       /** @default 0 */
-      bwSquadsKills?: number
+      bwSquadsKills?: number;
       /** @default 0 */
-      bwSquadsWins?: number
+      bwSquadsWins?: number;
       /** @default 0 */
-      bwStreak?: number
+      bwStreak?: number;
       /** @default 0 */
-      bwTriosBedsBroken?: number
+      bwTriosBedsBroken?: number;
       /** @default 0 */
-      bwTriosDeaths?: number
+      bwTriosDeaths?: number;
       /** @default 0 */
-      bwTriosFinalKills?: number
+      bwTriosFinalKills?: number;
       /** @default 0 */
-      bwTriosKills?: number
+      bwTriosKills?: number;
       /** @default 0 */
-      bwTriosWins?: number
+      bwTriosWins?: number;
       /** @default 0 */
-      bwWins?: number
+      bwWins?: number;
       /** @default 0 */
-      cqDeaths?: number
+      cqDeaths?: number;
       /** @default 0 */
-      cqDiamondsCollected?: number
+      cqDiamondsCollected?: number;
       /** @default 0 */
-      cqEmeraldsCollected?: number
+      cqEmeraldsCollected?: number;
       /** @default 0 */
-      cqFlagsCaptured?: number
+      cqFlagsCaptured?: number;
       /** @default 0 */
-      cqFlagsCollected?: number
+      cqFlagsCollected?: number;
       /** @default 0 */
-      cqFlagsReturned?: number
+      cqFlagsReturned?: number;
       /** @default 0 */
-      cqGoldCollected?: number
+      cqGoldCollected?: number;
       /** @default 0 */
-      cqIronCollected?: number
+      cqIronCollected?: number;
       /** @default 0 */
-      cqKills?: number
+      cqKills?: number;
       /** @default 0 */
-      cqWins?: number
+      cqWins?: number;
       /** @default 0 */
-      duelsArrowsShot?: number
+      duelsArrowsShot?: number;
       /** @default 0 */
-      duelsBestStreak?: number
+      duelsBestStreak?: number;
       /** @default 0 */
-      duelsDeaths?: number
+      duelsDeaths?: number;
       /** @default 0 */
-      duelsKills?: number
+      duelsKills?: number;
       /** @default 0 */
-      duelsLosses?: number
+      duelsLosses?: number;
       /** @default 0 */
-      duelsMeleeHits?: number
+      duelsMeleeHits?: number;
       /** @default 0 */
-      duelsStreak?: number
+      duelsStreak?: number;
       /** @default 0 */
-      duelsWins?: number
+      duelsWins?: number;
       /** @default 0 */
-      gxp?: number
+      gxp?: number;
       /** @default 0 */
-      mmBowKills?: number
+      mmBowKills?: number;
       /** @default 0 */
-      mmClassicDeaths?: number
+      mmClassicDeaths?: number;
       /** @default 0 */
-      mmClassicKills?: number
+      mmClassicKills?: number;
       /** @default 0 */
-      mmClassicWins?: number
+      mmClassicWins?: number;
       /** @default 0 */
-      mmDeaths?: number
+      mmDeaths?: number;
       /** @default 0 */
-      mmInfectionDeaths?: number
+      mmInfectionDeaths?: number;
       /** @default 0 */
-      mmInfectionKills?: number
+      mmInfectionKills?: number;
       /** @default 0 */
-      mmInfectionWins?: number
+      mmInfectionWins?: number;
       /** @default 0 */
-      mmKills?: number
+      mmKills?: number;
       /** @default 0 */
-      mmKnifeKills?: number
+      mmKnifeKills?: number;
       /** @default 0 */
-      mmThrowKnifeKills?: number
+      mmThrowKnifeKills?: number;
       /** @default 0 */
-      mmWins?: number
+      mmWins?: number;
       /** @default 0 */
-      msFails?: number
+      msFails?: number;
       /** @default 0 */
-      msSuccesses?: number
+      msSuccesses?: number;
       /** @default 0 */
-      msWins?: number
+      msWins?: number;
       /** @default 0 */
-      onlineTime?: number
+      onlineTime?: number;
       /** @default 0 */
-      scGoals?: number
+      scGoals?: number;
       /** @default 0 */
-      scWins?: number
+      scWins?: number;
       /** @default 0 */
-      sgDeaths?: number
+      sgDeaths?: number;
       /** @default 0 */
-      sgKills?: number
+      sgKills?: number;
       /** @default 0 */
-      sgWins?: number
+      sgWins?: number;
       /** @default 0 */
-      swArrowsShot?: number
+      swArrowsShot?: number;
       /** @default 0 */
-      swBlocksBroken?: number
+      swBlocksBroken?: number;
       /** @default 0 */
-      swBlocksPlaced?: number
+      swBlocksPlaced?: number;
       /** @default 0 */
-      swCoins?: number
+      swCoins?: number;
       /** @default 0 */
-      swDeaths?: number
+      swDeaths?: number;
       /** @default 0 */
-      swDoublesDeaths?: number
+      swDoublesDeaths?: number;
       /** @default 0 */
-      swDoublesInsaneDeaths?: number
+      swDoublesInsaneDeaths?: number;
       /** @default 0 */
-      swDoublesInsaneKills?: number
+      swDoublesInsaneKills?: number;
       /** @default 0 */
-      swDoublesKills?: number
+      swDoublesKills?: number;
       /** @default 0 */
-      swDoublesLosses?: number
+      swDoublesLosses?: number;
       /** @default 0 */
-      swDoublesNormalDeaths?: number
+      swDoublesNormalDeaths?: number;
       /** @default 0 */
-      swDoublesNormalKills?: number
+      swDoublesNormalKills?: number;
       /** @default 0 */
-      swDoublesWins?: number
+      swDoublesWins?: number;
       /** @default 0 */
-      swEggsThrown?: number
+      swEggsThrown?: number;
       /** @default 0 */
-      swEpearlsThrown?: number
+      swEpearlsThrown?: number;
       /** @default 0 */
-      swKills?: number
+      swKills?: number;
       /** @default 0 */
-      swLosses?: number
+      swLosses?: number;
       /** @default 0 */
-      swSoloDeaths?: number
+      swSoloDeaths?: number;
       /** @default 0 */
-      swSoloInsaneDeaths?: number
+      swSoloInsaneDeaths?: number;
       /** @default 0 */
-      swSoloInsaneKills?: number
+      swSoloInsaneKills?: number;
       /** @default 0 */
-      swSoloKills?: number
+      swSoloKills?: number;
       /** @default 0 */
-      swSoloLosses?: number
+      swSoloLosses?: number;
       /** @default 0 */
-      swSoloNormalDeaths?: number
+      swSoloNormalDeaths?: number;
       /** @default 0 */
-      swSoloNormalKills?: number
+      swSoloNormalKills?: number;
       /** @default 0 */
-      swSoloWins?: number
+      swSoloWins?: number;
       /** @default 0 */
-      swWins?: number
+      swWins?: number;
       /** @default 0 */
-      tbArrowsShot?: number
+      tbArrowsShot?: number;
       /** @default 0 */
-      tbBestStreak?: number
+      tbBestStreak?: number;
       /** @default 0 */
-      tbDeaths?: number
+      tbDeaths?: number;
       /** @default 0 */
-      tbGoals?: number
+      tbGoals?: number;
       /** @default 0 */
-      tbKills?: number
+      tbKills?: number;
       /** @default 0 */
-      tbLosses?: number
+      tbLosses?: number;
       /** @default 0 */
-      tbMeleeHits?: number
+      tbMeleeHits?: number;
       /** @default 0 */
-      tbStreak?: number
+      tbStreak?: number;
       /** @default 0 */
-      tbWins?: number
+      tbWins?: number;
       /** @default 0 */
-      trBestStreak?: number
+      trBestStreak?: number;
       /** @default 0 */
-      trBlocksDropped?: number
+      trBlocksDropped?: number;
       /** @default 0 */
-      trLosses?: number
+      trLosses?: number;
       /** @default 0 */
-      trStreak?: number
+      trStreak?: number;
       /** @default 0 */
-      trTimeRecord?: number
+      trTimeRecord?: number;
       /** @default 0 */
-      trWins?: number
+      trWins?: number;
       /** @default 0 */
-      uhcDeaths?: number
+      uhcDeaths?: number;
       /** @default 0 */
-      uhcDiamondMined?: number
+      uhcDiamondMined?: number;
       /** @default 0 */
-      uhcGoldMined?: number
+      uhcGoldMined?: number;
       /** @default 0 */
-      uhcIronMined?: number
+      uhcIronMined?: number;
       /** @default 0 */
-      uhcKills?: number
+      uhcKills?: number;
       /** @default 0 */
-      uhcLapisMined?: number
+      uhcLapisMined?: number;
       /** @default 0 */
-      uhcWins?: number
-    }
+      uhcWins?: number;
+    };
     PlayerDiscordData: {
-      claim?: string
-      latest?: string
-    }
+      claim?: string;
+      latest?: string;
+    };
     PlayerCountResponse: {
-      count: number
-    }
-    PlayerBulkResponse: {
-      xuid: string
-      name: string
-      /** Format: uri */
-      avatar: string
-      avatarBlurhash?: string
-      /** Format: uri */
-      skin: string
-      online?: boolean
-      flags: number
-      /** @enum {number} */
-      dmStatus: 0 | 1 | 2
-      bio: string
-      discordId: string
-      discordTag: string
-      guild: string
-      ranks: (
-        | 'Admin'
-        | 'Dev'
-        | 'Supervisor'
-        | 'Mod'
-        | 'Crew'
-        | 'Trainee'
-        | 'Builder'
-        | 'Designer'
-        | 'Game Designer'
-        | 'Media'
-        | 'Discord'
-        | 'Partner'
-        | 'Titan'
-        | 'Legend'
-        | 'Emerald'
-        | 'Ultra'
-        | 'Youtube'
-        | 'Tester'
-      )[]
-      /** @enum {string|null} */
-      tier: 'Silver' | 'Gold' | 'Guardian' | 'Eagle' | 'Elite' | null
-      banned?: boolean
-      bannedUntil?: (Record<string, never> | number) | null
-      muted?: boolean
-      mutedUntil?: (Record<string, never> | number) | null
-      staff: boolean
-      titan: boolean
-      /** Format: date-time */
-      titanUntil: string
-      /** Format: date-time */
-      lastRankTimestamp: string
-      /** @enum {number} */
-      voteStatus?: 0 | 1 | 2
-      firstJoin: string
-      firstJoined: number
-      lastJoin: string
-      lastJoined: number
-      lastQuit: number
-      lastSeen: string
-      lastServer: string
-      crateKeys: number
-      credits: number
-      deaths?: number
-      deathsTotal?: number
-      kdr?: number
-      kdrTotal?: number
-      kills?: number
-      killsTotal?: number
-      level: number
-      losses?: number
-      wins?: number
-      wlr?: number
-      xp: number
-      formattedLevel: string
-      levelColors: (
-        | '#000000'
-        | '#0000aa'
-        | '#00aa00'
-        | '#00aaaa'
-        | '#aa0000'
-        | '#aa00aa'
-        | '#ffaa00'
-        | '#aaaaaa'
-        | '#555555'
-        | '#5555ff'
-        | '#55ff55'
-        | '#55ffff'
-        | '#ff5555'
-        | '#ff55ff'
-        | '#ffff55'
-        | '#ffffff'
-        | '#ddd605'
-      )[]
-      /** @enum {string} */
-      levelFormat: '§k' | '§l' | '§o' | '§r'
-      rankColors: string[]
-      skinVisibility: boolean
-      tierColor: string
-      youtubeChannelUrl: string
-      killsUntilNextKdr?: number
-      winsUntilNextWlr?: number
-      xpToNextLevel: number
-      discoveredTokens: string[]
-      discoveredZones: string[]
-      factionData?: {
-        tags: number
-        registerDate: string
-        coins: number
-        kills: number
-        bounty: number
-        faction: {
-          id: number
-          name: string
-          strength: number
-          allies: string[]
-          leader?: Record<string, never>
-          officers: Record<string, never>[]
-          members: Record<string, never>[]
-        } | null
-      } | null
-      guildData?:
-        | (
-            | Record<string, never>
-            | {
-                id: number
-                name: string
-                maxSize: number
-                memberCount: number
-                motd: string
-                position?: number
-                rawTag: string
-                tag: string
-                /** @enum {string|null} */
-                tagColor:
-                  | '#000000'
-                  | '#0000aa'
-                  | '#00aa00'
-                  | '#00aaaa'
-                  | '#aa0000'
-                  | '#aa00aa'
-                  | '#ffaa00'
-                  | '#aaaaaa'
-                  | '#555555'
-                  | '#5555ff'
-                  | '#55ff55'
-                  | '#55ffff'
-                  | '#ff5555'
-                  | '#ff55ff'
-                  | '#ffff55'
-                  | '#ffffff'
-                  | '#ddd605'
-                  | null
-                xp: number
-                xpToNextLevel: number
-                level: number
-                leader?: Record<string, never>
-                officers: unknown[]
-                members: unknown[]
-              }
-          )
-        | null
-      lastServerParsed: {
-        region: string
-        serverName: string
-        serverNameLong: string
-        serverType: string
-        pretty: string
-      }
-      punishmentsNew?: {
-        id: string
-        /** @description The punishment `reasonName` and `reasonCategory` joined together. */
-        reason: string
-        reasonName: string
-        reasonCategory: string
+      count: number;
+    };
+    PlayerBulkResponse: ({
+        xuid: string;
+        name: string;
+        /** Format: uri */
+        avatar: string;
+        avatarBlurhash?: string;
+        /** Format: uri */
+        skin: string;
+        online?: boolean;
+        flags: number;
+        /** @enum {number} */
+        dmStatus: 0 | 1 | 2;
+        bio: string;
+        discordId: string;
+        discordTag: string;
+        guild: string;
+        ranks: ("Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester")[];
+        /** @enum {string|null} */
+        tier: "Silver" | "Gold" | "Guardian" | "Eagle" | "Elite" | null;
+        banned?: boolean;
+        bannedUntil?: (Record<string, never> | number) | null;
+        muted?: boolean;
+        mutedUntil?: (Record<string, never> | number) | null;
+        staff: boolean;
+        titan: boolean;
+        /** Format: date-time */
+        titanUntil: string;
+        /** Format: date-time */
+        lastRankTimestamp: string;
+        /** @enum {number} */
+        voteStatus?: 0 | 1 | 2;
+        firstJoin: string;
+        firstJoined: number;
+        lastJoin: string;
+        lastJoined: number;
+        lastQuit: number;
+        lastSeen: string;
+        lastServer: string;
+        crateKeys: number;
+        credits: number;
+        deaths?: number;
+        deathsTotal?: number;
+        kdr?: number;
+        kdrTotal?: number;
+        kills?: number;
+        killsTotal?: number;
+        level: number;
+        losses?: number;
+        wins?: number;
+        wlr?: number;
+        xp: number;
+        formattedLevel: string;
+        levelColors: ("#000000" | "#0000aa" | "#00aa00" | "#00aaaa" | "#aa0000" | "#aa00aa" | "#ffaa00" | "#aaaaaa" | "#555555" | "#5555ff" | "#55ff55" | "#55ffff" | "#ff5555" | "#ff55ff" | "#ffff55" | "#ffffff" | "#ddd605")[];
         /** @enum {string} */
-        type: 'BAN' | 'MUTE'
-        /** @description If true, the punishment does not expire. */
-        permanent: boolean
-        /** @description For migration punishments, this value is 0. */
-        issuedAt: number
-        /** @description If `permanent` is true, this value is -1. */
-        validUntil: number
-        /** @description Whether this punishment is currently active. */
-        active: boolean
-        /** @description The XUIDs affected by this punishment. */
-        affectedXuids: string[]
-        /** @description The corresponding player names to `affectedXuids`. */
-        affectedPlayers: string[]
-        alt: boolean
-      }[]
-      skinData?: {
-        skin: boolean
-        /** @enum {string} */
-        skinType: 'steve' | 'alex'
-        skinVisibility: boolean
-        base64: string
-        raw: string
-      }
-      winsData?: {
-        /** @default 0 */
-        BH?: number
-        /** @default 0 */
-        BW?: number
-        /** @default 0 */
-        CQ?: number
-        /** @default 0 */
-        Duels?: number
-        /** @default 0 */
-        MM?: number
-        /** @default 0 */
-        MS?: number
-        /** @default 0 */
-        SC?: number
-        /** @default 0 */
-        SG?: number
-        /** @default 0 */
-        SW?: number
-        /** @default 0 */
-        TB?: number
-        /** @default 0 */
-        TR?: number
-        /** @default 0 */
-        UHC?: number
-      }
-      extra?: {
-        /** @default 0 */
-        bhWins?: number
-        /** @default 0 */
-        bwBedsBroken?: number
-        /** @default 0 */
-        bwBestStreak?: number
-        /** @default 0 */
-        bwDeaths?: number
-        /** @default 0 */
-        bwDiamondsCollected?: number
-        /** @default 0 */
-        bwDoublesBedsBroken?: number
-        /** @default 0 */
-        bwDoublesDeaths?: number
-        /** @default 0 */
-        bwDoublesFinalKills?: number
-        /** @default 0 */
-        bwDoublesKills?: number
-        /** @default 0 */
-        bwDoublesWins?: number
-        /** @default 0 */
-        bwEmeraldsCollected?: number
-        /** @default 0 */
-        bwFinalKills?: number
-        /** @default 0 */
-        bwGoldCollected?: number
-        /** @default 0 */
-        bwIronCollected?: number
-        /** @default 0 */
-        bwKills?: number
-        /** @default 0 */
-        bwSoloBedsBroken?: number
-        /** @default 0 */
-        bwSoloDeaths?: number
-        /** @default 0 */
-        bwSoloFinalKills?: number
-        /** @default 0 */
-        bwSoloKills?: number
-        /** @default 0 */
-        bwSoloWins?: number
-        /** @default 0 */
-        bwSquadsBedsBroken?: number
-        /** @default 0 */
-        bwSquadsDeaths?: number
-        /** @default 0 */
-        bwSquadsFinalKills?: number
-        /** @default 0 */
-        bwSquadsKills?: number
-        /** @default 0 */
-        bwSquadsWins?: number
-        /** @default 0 */
-        bwStreak?: number
-        /** @default 0 */
-        bwTriosBedsBroken?: number
-        /** @default 0 */
-        bwTriosDeaths?: number
-        /** @default 0 */
-        bwTriosFinalKills?: number
-        /** @default 0 */
-        bwTriosKills?: number
-        /** @default 0 */
-        bwTriosWins?: number
-        /** @default 0 */
-        bwWins?: number
-        /** @default 0 */
-        cqDeaths?: number
-        /** @default 0 */
-        cqDiamondsCollected?: number
-        /** @default 0 */
-        cqEmeraldsCollected?: number
-        /** @default 0 */
-        cqFlagsCaptured?: number
-        /** @default 0 */
-        cqFlagsCollected?: number
-        /** @default 0 */
-        cqFlagsReturned?: number
-        /** @default 0 */
-        cqGoldCollected?: number
-        /** @default 0 */
-        cqIronCollected?: number
-        /** @default 0 */
-        cqKills?: number
-        /** @default 0 */
-        cqWins?: number
-        /** @default 0 */
-        duelsArrowsShot?: number
-        /** @default 0 */
-        duelsBestStreak?: number
-        /** @default 0 */
-        duelsDeaths?: number
-        /** @default 0 */
-        duelsKills?: number
-        /** @default 0 */
-        duelsLosses?: number
-        /** @default 0 */
-        duelsMeleeHits?: number
-        /** @default 0 */
-        duelsStreak?: number
-        /** @default 0 */
-        duelsWins?: number
-        /** @default 0 */
-        gxp?: number
-        /** @default 0 */
-        mmBowKills?: number
-        /** @default 0 */
-        mmClassicDeaths?: number
-        /** @default 0 */
-        mmClassicKills?: number
-        /** @default 0 */
-        mmClassicWins?: number
-        /** @default 0 */
-        mmDeaths?: number
-        /** @default 0 */
-        mmInfectionDeaths?: number
-        /** @default 0 */
-        mmInfectionKills?: number
-        /** @default 0 */
-        mmInfectionWins?: number
-        /** @default 0 */
-        mmKills?: number
-        /** @default 0 */
-        mmKnifeKills?: number
-        /** @default 0 */
-        mmThrowKnifeKills?: number
-        /** @default 0 */
-        mmWins?: number
-        /** @default 0 */
-        msFails?: number
-        /** @default 0 */
-        msSuccesses?: number
-        /** @default 0 */
-        msWins?: number
-        /** @default 0 */
-        onlineTime?: number
-        /** @default 0 */
-        scGoals?: number
-        /** @default 0 */
-        scWins?: number
-        /** @default 0 */
-        sgDeaths?: number
-        /** @default 0 */
-        sgKills?: number
-        /** @default 0 */
-        sgWins?: number
-        /** @default 0 */
-        swArrowsShot?: number
-        /** @default 0 */
-        swBlocksBroken?: number
-        /** @default 0 */
-        swBlocksPlaced?: number
-        /** @default 0 */
-        swCoins?: number
-        /** @default 0 */
-        swDeaths?: number
-        /** @default 0 */
-        swDoublesDeaths?: number
-        /** @default 0 */
-        swDoublesInsaneDeaths?: number
-        /** @default 0 */
-        swDoublesInsaneKills?: number
-        /** @default 0 */
-        swDoublesKills?: number
-        /** @default 0 */
-        swDoublesLosses?: number
-        /** @default 0 */
-        swDoublesNormalDeaths?: number
-        /** @default 0 */
-        swDoublesNormalKills?: number
-        /** @default 0 */
-        swDoublesWins?: number
-        /** @default 0 */
-        swEggsThrown?: number
-        /** @default 0 */
-        swEpearlsThrown?: number
-        /** @default 0 */
-        swKills?: number
-        /** @default 0 */
-        swLosses?: number
-        /** @default 0 */
-        swSoloDeaths?: number
-        /** @default 0 */
-        swSoloInsaneDeaths?: number
-        /** @default 0 */
-        swSoloInsaneKills?: number
-        /** @default 0 */
-        swSoloKills?: number
-        /** @default 0 */
-        swSoloLosses?: number
-        /** @default 0 */
-        swSoloNormalDeaths?: number
-        /** @default 0 */
-        swSoloNormalKills?: number
-        /** @default 0 */
-        swSoloWins?: number
-        /** @default 0 */
-        swWins?: number
-        /** @default 0 */
-        tbArrowsShot?: number
-        /** @default 0 */
-        tbBestStreak?: number
-        /** @default 0 */
-        tbDeaths?: number
-        /** @default 0 */
-        tbGoals?: number
-        /** @default 0 */
-        tbKills?: number
-        /** @default 0 */
-        tbLosses?: number
-        /** @default 0 */
-        tbMeleeHits?: number
-        /** @default 0 */
-        tbStreak?: number
-        /** @default 0 */
-        tbWins?: number
-        /** @default 0 */
-        trBestStreak?: number
-        /** @default 0 */
-        trBlocksDropped?: number
-        /** @default 0 */
-        trLosses?: number
-        /** @default 0 */
-        trStreak?: number
-        /** @default 0 */
-        trTimeRecord?: number
-        /** @default 0 */
-        trWins?: number
-        /** @default 0 */
-        uhcDeaths?: number
-        /** @default 0 */
-        uhcDiamondMined?: number
-        /** @default 0 */
-        uhcGoldMined?: number
-        /** @default 0 */
-        uhcIronMined?: number
-        /** @default 0 */
-        uhcKills?: number
-        /** @default 0 */
-        uhcLapisMined?: number
-        /** @default 0 */
-        uhcWins?: number
-      }
-      extraNested?: {
-        bh: {
-          wins: number
-        }
-        bw: {
-          kills: number
-          deaths: number
-          solo: {
-            kills: number
-            deaths: number
+        levelFormat: "§k" | "§l" | "§o" | "§r";
+        rankColors: (string)[];
+        skinVisibility: boolean;
+        tierColor: string;
+        youtubeChannelUrl: string;
+        killsUntilNextKdr?: number;
+        winsUntilNextWlr?: number;
+        xpToNextLevel: number;
+        discoveredTokens: (string)[];
+        discoveredZones: (string)[];
+        factionData?: ({
+          tags: number;
+          registerDate: string;
+          coins: number;
+          kills: number;
+          bounty: number;
+          faction: {
+            id: number;
+            name: string;
+            strength: number;
+            allies: (string)[];
+            leader?: Record<string, never>;
+            officers: (Record<string, never>)[];
+            members: (Record<string, never>)[];
+          } | null;
+        }) | null;
+        guildData?: (Record<string, never> | ({
+          id: number;
+          name: string;
+          maxSize: number;
+          memberCount: number;
+          motd: string;
+          position?: number;
+          rawTag: string;
+          tag: string;
+          /** @enum {string|null} */
+          tagColor: "#000000" | "#0000aa" | "#00aa00" | "#00aaaa" | "#aa0000" | "#aa00aa" | "#ffaa00" | "#aaaaaa" | "#555555" | "#5555ff" | "#55ff55" | "#55ffff" | "#ff5555" | "#ff55ff" | "#ffff55" | "#ffffff" | "#ddd605" | null;
+          xp: number;
+          xpToNextLevel: number;
+          level: number;
+          leader?: Record<string, never>;
+          officers: (unknown)[];
+          members: (unknown)[];
+          discordInvite: string;
+        })) | null;
+        lastServerParsed: {
+          region: string;
+          serverName: string;
+          serverNameLong: string;
+          serverType: string;
+          pretty: string;
+        };
+        punishmentsNew?: ({
+            id: string;
+            /** @description The punishment `reasonName` and `reasonCategory` joined together. */
+            reason: string;
+            reasonName: string;
+            reasonCategory: string;
+            /** @enum {string} */
+            type: "BAN" | "MUTE";
+            /** @description If true, the punishment does not expire. */
+            permanent: boolean;
+            /** @description For migration punishments, this value is 0. */
+            issuedAt: number;
+            /** @description If `permanent` is true, this value is -1. */
+            validUntil: number;
+            /** @description Whether this punishment is currently active. */
+            active: boolean;
+            /** @description The XUIDs affected by this punishment. */
+            affectedXuids: (string)[];
+            /** @description The corresponding player names to `affectedXuids`. */
+            affectedPlayers: (string)[];
+            alt: boolean;
+          })[];
+        skinData?: {
+          skin: boolean;
+          /** @enum {string} */
+          skinType: "steve" | "alex";
+          skinVisibility: boolean;
+          base64: string;
+          raw: string;
+        };
+        winsData?: {
+          /** @default 0 */
+          BH?: number;
+          /** @default 0 */
+          BW?: number;
+          /** @default 0 */
+          CQ?: number;
+          /** @default 0 */
+          Duels?: number;
+          /** @default 0 */
+          MM?: number;
+          /** @default 0 */
+          MS?: number;
+          /** @default 0 */
+          SC?: number;
+          /** @default 0 */
+          SG?: number;
+          /** @default 0 */
+          SW?: number;
+          /** @default 0 */
+          TB?: number;
+          /** @default 0 */
+          TR?: number;
+          /** @default 0 */
+          UHC?: number;
+        };
+        extra?: {
+          /** @default 0 */
+          bhWins?: number;
+          /** @default 0 */
+          bwBedsBroken?: number;
+          /** @default 0 */
+          bwBestStreak?: number;
+          /** @default 0 */
+          bwDeaths?: number;
+          /** @default 0 */
+          bwDiamondsCollected?: number;
+          /** @default 0 */
+          bwDoublesBedsBroken?: number;
+          /** @default 0 */
+          bwDoublesDeaths?: number;
+          /** @default 0 */
+          bwDoublesFinalKills?: number;
+          /** @default 0 */
+          bwDoublesKills?: number;
+          /** @default 0 */
+          bwDoublesWins?: number;
+          /** @default 0 */
+          bwEmeraldsCollected?: number;
+          /** @default 0 */
+          bwFinalKills?: number;
+          /** @default 0 */
+          bwGoldCollected?: number;
+          /** @default 0 */
+          bwIronCollected?: number;
+          /** @default 0 */
+          bwKills?: number;
+          /** @default 0 */
+          bwSoloBedsBroken?: number;
+          /** @default 0 */
+          bwSoloDeaths?: number;
+          /** @default 0 */
+          bwSoloFinalKills?: number;
+          /** @default 0 */
+          bwSoloKills?: number;
+          /** @default 0 */
+          bwSoloWins?: number;
+          /** @default 0 */
+          bwSquadsBedsBroken?: number;
+          /** @default 0 */
+          bwSquadsDeaths?: number;
+          /** @default 0 */
+          bwSquadsFinalKills?: number;
+          /** @default 0 */
+          bwSquadsKills?: number;
+          /** @default 0 */
+          bwSquadsWins?: number;
+          /** @default 0 */
+          bwStreak?: number;
+          /** @default 0 */
+          bwTriosBedsBroken?: number;
+          /** @default 0 */
+          bwTriosDeaths?: number;
+          /** @default 0 */
+          bwTriosFinalKills?: number;
+          /** @default 0 */
+          bwTriosKills?: number;
+          /** @default 0 */
+          bwTriosWins?: number;
+          /** @default 0 */
+          bwWins?: number;
+          /** @default 0 */
+          cqDeaths?: number;
+          /** @default 0 */
+          cqDiamondsCollected?: number;
+          /** @default 0 */
+          cqEmeraldsCollected?: number;
+          /** @default 0 */
+          cqFlagsCaptured?: number;
+          /** @default 0 */
+          cqFlagsCollected?: number;
+          /** @default 0 */
+          cqFlagsReturned?: number;
+          /** @default 0 */
+          cqGoldCollected?: number;
+          /** @default 0 */
+          cqIronCollected?: number;
+          /** @default 0 */
+          cqKills?: number;
+          /** @default 0 */
+          cqWins?: number;
+          /** @default 0 */
+          duelsArrowsShot?: number;
+          /** @default 0 */
+          duelsBestStreak?: number;
+          /** @default 0 */
+          duelsDeaths?: number;
+          /** @default 0 */
+          duelsKills?: number;
+          /** @default 0 */
+          duelsLosses?: number;
+          /** @default 0 */
+          duelsMeleeHits?: number;
+          /** @default 0 */
+          duelsStreak?: number;
+          /** @default 0 */
+          duelsWins?: number;
+          /** @default 0 */
+          gxp?: number;
+          /** @default 0 */
+          mmBowKills?: number;
+          /** @default 0 */
+          mmClassicDeaths?: number;
+          /** @default 0 */
+          mmClassicKills?: number;
+          /** @default 0 */
+          mmClassicWins?: number;
+          /** @default 0 */
+          mmDeaths?: number;
+          /** @default 0 */
+          mmInfectionDeaths?: number;
+          /** @default 0 */
+          mmInfectionKills?: number;
+          /** @default 0 */
+          mmInfectionWins?: number;
+          /** @default 0 */
+          mmKills?: number;
+          /** @default 0 */
+          mmKnifeKills?: number;
+          /** @default 0 */
+          mmThrowKnifeKills?: number;
+          /** @default 0 */
+          mmWins?: number;
+          /** @default 0 */
+          msFails?: number;
+          /** @default 0 */
+          msSuccesses?: number;
+          /** @default 0 */
+          msWins?: number;
+          /** @default 0 */
+          onlineTime?: number;
+          /** @default 0 */
+          scGoals?: number;
+          /** @default 0 */
+          scWins?: number;
+          /** @default 0 */
+          sgDeaths?: number;
+          /** @default 0 */
+          sgKills?: number;
+          /** @default 0 */
+          sgWins?: number;
+          /** @default 0 */
+          swArrowsShot?: number;
+          /** @default 0 */
+          swBlocksBroken?: number;
+          /** @default 0 */
+          swBlocksPlaced?: number;
+          /** @default 0 */
+          swCoins?: number;
+          /** @default 0 */
+          swDeaths?: number;
+          /** @default 0 */
+          swDoublesDeaths?: number;
+          /** @default 0 */
+          swDoublesInsaneDeaths?: number;
+          /** @default 0 */
+          swDoublesInsaneKills?: number;
+          /** @default 0 */
+          swDoublesKills?: number;
+          /** @default 0 */
+          swDoublesLosses?: number;
+          /** @default 0 */
+          swDoublesNormalDeaths?: number;
+          /** @default 0 */
+          swDoublesNormalKills?: number;
+          /** @default 0 */
+          swDoublesWins?: number;
+          /** @default 0 */
+          swEggsThrown?: number;
+          /** @default 0 */
+          swEpearlsThrown?: number;
+          /** @default 0 */
+          swKills?: number;
+          /** @default 0 */
+          swLosses?: number;
+          /** @default 0 */
+          swSoloDeaths?: number;
+          /** @default 0 */
+          swSoloInsaneDeaths?: number;
+          /** @default 0 */
+          swSoloInsaneKills?: number;
+          /** @default 0 */
+          swSoloKills?: number;
+          /** @default 0 */
+          swSoloLosses?: number;
+          /** @default 0 */
+          swSoloNormalDeaths?: number;
+          /** @default 0 */
+          swSoloNormalKills?: number;
+          /** @default 0 */
+          swSoloWins?: number;
+          /** @default 0 */
+          swWins?: number;
+          /** @default 0 */
+          tbArrowsShot?: number;
+          /** @default 0 */
+          tbBestStreak?: number;
+          /** @default 0 */
+          tbDeaths?: number;
+          /** @default 0 */
+          tbGoals?: number;
+          /** @default 0 */
+          tbKills?: number;
+          /** @default 0 */
+          tbLosses?: number;
+          /** @default 0 */
+          tbMeleeHits?: number;
+          /** @default 0 */
+          tbStreak?: number;
+          /** @default 0 */
+          tbWins?: number;
+          /** @default 0 */
+          trBestStreak?: number;
+          /** @default 0 */
+          trBlocksDropped?: number;
+          /** @default 0 */
+          trLosses?: number;
+          /** @default 0 */
+          trStreak?: number;
+          /** @default 0 */
+          trTimeRecord?: number;
+          /** @default 0 */
+          trWins?: number;
+          /** @default 0 */
+          uhcDeaths?: number;
+          /** @default 0 */
+          uhcDiamondMined?: number;
+          /** @default 0 */
+          uhcGoldMined?: number;
+          /** @default 0 */
+          uhcIronMined?: number;
+          /** @default 0 */
+          uhcKills?: number;
+          /** @default 0 */
+          uhcLapisMined?: number;
+          /** @default 0 */
+          uhcWins?: number;
+        };
+        extraNested?: {
+          bh: {
+            wins: number;
+          };
+          bw: {
+            kills: number;
+            deaths: number;
+            solo: {
+              kills: number;
+              deaths: number;
+              beds: {
+                broken: number;
+              };
+              final: {
+                kills: number;
+              };
+              wins: number;
+            };
+            doubles: {
+              kills: number;
+              deaths: number;
+              beds: {
+                broken: number;
+              };
+              final: {
+                kills: number;
+              };
+              wins: number;
+            };
+            trios: {
+              kills: number;
+              deaths: number;
+              beds: {
+                broken: number;
+              };
+              final: {
+                kills: number;
+              };
+              wins: number;
+            };
+            squads: {
+              kills: number;
+              deaths: number;
+              beds: {
+                broken: number;
+              };
+              final: {
+                kills: number;
+              };
+              wins: number;
+            };
             beds: {
-              broken: number
-            }
+              broken: number;
+            };
+            diamonds: {
+              collected: number;
+            };
+            emeralds: {
+              collected: number;
+            };
+            gold: {
+              collected: number;
+            };
+            iron: {
+              collected: number;
+            };
             final: {
-              kills: number
-            }
-            wins: number
-          }
-          doubles: {
-            kills: number
-            deaths: number
-            beds: {
-              broken: number
-            }
-            final: {
-              kills: number
-            }
-            wins: number
-          }
-          trios: {
-            kills: number
-            deaths: number
-            beds: {
-              broken: number
-            }
-            final: {
-              kills: number
-            }
-            wins: number
-          }
-          squads: {
-            kills: number
-            deaths: number
-            beds: {
-              broken: number
-            }
-            final: {
-              kills: number
-            }
-            wins: number
-          }
-          beds: {
-            broken: number
-          }
-          diamonds: {
-            collected: number
-          }
-          emeralds: {
-            collected: number
-          }
-          gold: {
-            collected: number
-          }
-          iron: {
-            collected: number
-          }
-          final: {
-            kills: number
-          }
-          streak: number
-          best: {
-            streak: number
-          }
-          wins: number
-        }
-        cq: {
-          kills: number
-          deaths: number
-          wins: number
-          flags: {
-            collected: number
-            captured: number
-            returned: number
-          }
-          diamonds: {
-            collected: number
-          }
-          emeralds: {
-            collected: number
-          }
-          gold: {
-            collected: number
-          }
-          iron: {
-            collected: number
-          }
-        }
-        duels: {
-          kills: number
-          deaths: number
-          arrows: {
-            shot: number
-          }
-          melee: {
-            hits: number
-          }
-          streak: number
-          best: {
-            streak: number
-          }
-          wins: number
-          losses: number
-        }
-        mm: {
-          kills: number
-          deaths: number
-          classic: {
-            kills: number
-            deaths: number
-            wins: number
-          }
-          infection: {
-            kills: number
-            deaths: number
-            wins: number
-          }
-          bow: {
-            kills: number
-          }
-          knife: {
-            kills: number
-          }
-          throw: {
+              kills: number;
+            };
+            streak: number;
+            best: {
+              streak: number;
+            };
+            wins: number;
+          };
+          cq: {
+            kills: number;
+            deaths: number;
+            wins: number;
+            flags: {
+              collected: number;
+              captured: number;
+              returned: number;
+            };
+            diamonds: {
+              collected: number;
+            };
+            emeralds: {
+              collected: number;
+            };
+            gold: {
+              collected: number;
+            };
+            iron: {
+              collected: number;
+            };
+          };
+          duels: {
+            kills: number;
+            deaths: number;
+            arrows: {
+              shot: number;
+            };
+            melee: {
+              hits: number;
+            };
+            streak: number;
+            best: {
+              streak: number;
+            };
+            wins: number;
+            losses: number;
+          };
+          mm: {
+            kills: number;
+            deaths: number;
+            classic: {
+              kills: number;
+              deaths: number;
+              wins: number;
+            };
+            infection: {
+              kills: number;
+              deaths: number;
+              wins: number;
+            };
+            bow: {
+              kills: number;
+            };
             knife: {
-              kills: number
-            }
-          }
-          wins: number
-        }
-        ms: {
-          successes: number
-          fails: number
-          wins: number
-        }
-        sc: {
-          wins: number
-          goals: number
-        }
-        sg: {
-          kills: number
-          deaths: number
-          wins: number
-        }
-        sw: {
-          coins: number
-          kills: number
-          deaths: number
-          solo: {
-            kills: number
-            deaths: number
-            normal: {
-              kills: number
-              deaths: number
-            }
-            insane: {
-              kills: number
-              deaths: number
-            }
-            wins: number
-            losses: number
-          }
-          doubles: {
-            kills: number
-            deaths: number
-            normal: {
-              kills: number
-              deaths: number
-            }
-            insane: {
-              kills: number
-              deaths: number
-            }
-            wins: number
-            losses: number
-          }
-          blocks: {
-            broken: number
-            placed: number
-          }
-          arrows: {
-            shot: number
-          }
-          eggs: {
-            thrown: number
-          }
-          epearls: {
-            thrown: number
-          }
-          wins: number
-          losses: number
-        }
-        tb: {
-          kills: number
-          deaths: number
-          arrows: {
-            shot: number
-          }
-          melee: {
-            hits: number
-          }
-          goals: number
-          streak: number
-          best: {
-            streak: number
-          }
-          wins: number
-          losses: number
-        }
-        tr: {
-          wins: number
-          losses: number
-          streak: number
-          best: {
-            streak: number
-          }
-          blocks: {
-            dropped: number
-          }
-          time: {
-            record: number
-          }
-        }
-        uhc: {
-          kills: number
-          deaths: number
-          wins: number
-          iron: {
-            mined: number
-          }
-          gold: {
-            mined: number
-          }
-          lapis: {
-            mined: number
-          }
-          diamond: {
-            mined: number
-          }
-        }
-        online: {
-          time: number
-        }
-        gxp: number
-      }
-      leaderboard: boolean
-      /** @deprecated use `credits` instead. */
-      statusCredits: number
-    }[]
+              kills: number;
+            };
+            throw: {
+              knife: {
+                kills: number;
+              };
+            };
+            wins: number;
+          };
+          ms: {
+            successes: number;
+            fails: number;
+            wins: number;
+          };
+          sc: {
+            wins: number;
+            goals: number;
+          };
+          sg: {
+            kills: number;
+            deaths: number;
+            wins: number;
+          };
+          sw: {
+            coins: number;
+            kills: number;
+            deaths: number;
+            solo: {
+              kills: number;
+              deaths: number;
+              normal: {
+                kills: number;
+                deaths: number;
+              };
+              insane: {
+                kills: number;
+                deaths: number;
+              };
+              wins: number;
+              losses: number;
+            };
+            doubles: {
+              kills: number;
+              deaths: number;
+              normal: {
+                kills: number;
+                deaths: number;
+              };
+              insane: {
+                kills: number;
+                deaths: number;
+              };
+              wins: number;
+              losses: number;
+            };
+            blocks: {
+              broken: number;
+              placed: number;
+            };
+            arrows: {
+              shot: number;
+            };
+            eggs: {
+              thrown: number;
+            };
+            epearls: {
+              thrown: number;
+            };
+            wins: number;
+            losses: number;
+          };
+          tb: {
+            kills: number;
+            deaths: number;
+            arrows: {
+              shot: number;
+            };
+            melee: {
+              hits: number;
+            };
+            goals: number;
+            streak: number;
+            best: {
+              streak: number;
+            };
+            wins: number;
+            losses: number;
+          };
+          tr: {
+            wins: number;
+            losses: number;
+            streak: number;
+            best: {
+              streak: number;
+            };
+            blocks: {
+              dropped: number;
+            };
+            time: {
+              record: number;
+            };
+          };
+          uhc: {
+            kills: number;
+            deaths: number;
+            wins: number;
+            iron: {
+              mined: number;
+            };
+            gold: {
+              mined: number;
+            };
+            lapis: {
+              mined: number;
+            };
+            diamond: {
+              mined: number;
+            };
+          };
+          online: {
+            time: number;
+          };
+          gxp: number;
+        };
+        leaderboard: boolean;
+        /** @deprecated use `credits` instead. */
+        statusCredits: number;
+      })[];
     PlayerBulkInput: {
       /** @default false */
-      expand?: boolean
+      expand?: boolean;
       /** @default true */
-      withFactionData?: boolean
+      withFactionData?: boolean;
       /** @default false */
-      withGuildData?: boolean
+      withGuildData?: boolean;
       /** @default true */
-      withOnline?: boolean
+      withOnline?: boolean;
       /** @default true */
-      withPunishments?: boolean
+      withPunishments?: boolean;
       /** @default false */
-      withSkinData?: boolean
+      withSkinData?: boolean;
       /** @default true */
-      withStats?: boolean
+      withStats?: boolean;
       /** @default true */
-      withVoteStatus?: boolean
+      withVoteStatus?: boolean;
       /** @default false */
-      withAvatarBlurhash?: boolean
+      withAvatarBlurhash?: boolean;
       /**
        * @default global
        * @enum {string}
        */
-      period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly'
-      names: string[]
-    }
+      period?: "global" | "daily" | "weekly" | "biweekly" | "monthly" | "yearly";
+      names: (string)[];
+    };
     LeaderboardResponseXP: {
-      xuid: string
-      player: string
-      xp: number
-      xpToNextLevel: number
-      level: number
+      xuid: string;
+      player: string;
+      xp: number;
+      xpToNextLevel: number;
+      level: number;
       /** @enum {string|null} */
-      topRank:
-        | 'Admin'
-        | 'Dev'
-        | 'Supervisor'
-        | 'Mod'
-        | 'Crew'
-        | 'Trainee'
-        | 'Builder'
-        | 'Designer'
-        | 'Game Designer'
-        | 'Media'
-        | 'Discord'
-        | 'Partner'
-        | 'Titan'
-        | 'Legend'
-        | 'Emerald'
-        | 'Ultra'
-        | 'Youtube'
-        | 'Tester'
-        | null
-    }
+      topRank: "Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester" | null;
+    };
     LeaderboardResponseWLR: {
-      xuid: string
-      player: string
-      wlr: number
-      winsUntilNextWlr: number
+      xuid: string;
+      player: string;
+      wlr: number;
+      winsUntilNextWlr: number;
       /** @enum {string|null} */
-      topRank:
-        | 'Admin'
-        | 'Dev'
-        | 'Supervisor'
-        | 'Mod'
-        | 'Crew'
-        | 'Trainee'
-        | 'Builder'
-        | 'Designer'
-        | 'Game Designer'
-        | 'Media'
-        | 'Discord'
-        | 'Partner'
-        | 'Titan'
-        | 'Legend'
-        | 'Emerald'
-        | 'Ultra'
-        | 'Youtube'
-        | 'Tester'
-        | null
-    }
+      topRank: "Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester" | null;
+    };
     LeaderboardResponseWins: {
-      xuid: string
-      player: string
-      wins: number
+      xuid: string;
+      player: string;
+      wins: number;
       /** @enum {string|null} */
-      topRank:
-        | 'Admin'
-        | 'Dev'
-        | 'Supervisor'
-        | 'Mod'
-        | 'Crew'
-        | 'Trainee'
-        | 'Builder'
-        | 'Designer'
-        | 'Game Designer'
-        | 'Media'
-        | 'Discord'
-        | 'Partner'
-        | 'Titan'
-        | 'Legend'
-        | 'Emerald'
-        | 'Ultra'
-        | 'Youtube'
-        | 'Tester'
-        | null
-    }
+      topRank: "Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester" | null;
+    };
     LeaderboardResponseVoters: {
-      nickname: string
-      votes: number
-    }
+      nickname: string;
+      votes: number;
+    };
     LeaderboardResponsePlaytime: {
-      xuid: string
-      player: string
-      onlineTime: number
+      xuid: string;
+      player: string;
+      onlineTime: number;
       /** @enum {string|null} */
-      topRank:
-        | 'Admin'
-        | 'Dev'
-        | 'Supervisor'
-        | 'Mod'
-        | 'Crew'
-        | 'Trainee'
-        | 'Builder'
-        | 'Designer'
-        | 'Game Designer'
-        | 'Media'
-        | 'Discord'
-        | 'Partner'
-        | 'Titan'
-        | 'Legend'
-        | 'Emerald'
-        | 'Ultra'
-        | 'Youtube'
-        | 'Tester'
-        | null
-    }
+      topRank: "Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester" | null;
+    };
     LeaderboardResponseParkour: {
-      xuid: string
-      name: string
-      time: number
+      xuid: string;
+      name: string;
+      time: number;
       /** @enum {string|null} */
-      topRank:
-        | 'Admin'
-        | 'Dev'
-        | 'Supervisor'
-        | 'Mod'
-        | 'Crew'
-        | 'Trainee'
-        | 'Builder'
-        | 'Designer'
-        | 'Game Designer'
-        | 'Media'
-        | 'Discord'
-        | 'Partner'
-        | 'Titan'
-        | 'Legend'
-        | 'Emerald'
-        | 'Ultra'
-        | 'Youtube'
-        | 'Tester'
-        | null
-    }
+      topRank: "Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester" | null;
+    };
     LeaderboardResponseOldest: {
-      xuid: string
-      player: string
-      joinedAt: number
+      xuid: string;
+      player: string;
+      joinedAt: number;
       /** @enum {string|null} */
-      topRank:
-        | 'Admin'
-        | 'Dev'
-        | 'Supervisor'
-        | 'Mod'
-        | 'Crew'
-        | 'Trainee'
-        | 'Builder'
-        | 'Designer'
-        | 'Game Designer'
-        | 'Media'
-        | 'Discord'
-        | 'Partner'
-        | 'Titan'
-        | 'Legend'
-        | 'Emerald'
-        | 'Ultra'
-        | 'Youtube'
-        | 'Tester'
-        | null
-    }
+      topRank: "Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester" | null;
+    };
     LeaderboardResponseMapVotes: {
-      gameMode: string
-      mapName: string
-      votes: number
-      votesDailyAvg: number
-    }
+      gameMode: string;
+      mapName: string;
+      votes: number;
+      votesDailyAvg: number;
+    };
     LeaderboardResponseKills: {
-      xuid: string
-      player: string
-      kills: number
+      xuid: string;
+      player: string;
+      kills: number;
       /** @enum {string|null} */
-      topRank:
-        | 'Admin'
-        | 'Dev'
-        | 'Supervisor'
-        | 'Mod'
-        | 'Crew'
-        | 'Trainee'
-        | 'Builder'
-        | 'Designer'
-        | 'Game Designer'
-        | 'Media'
-        | 'Discord'
-        | 'Partner'
-        | 'Titan'
-        | 'Legend'
-        | 'Emerald'
-        | 'Ultra'
-        | 'Youtube'
-        | 'Tester'
-        | null
-    }
+      topRank: "Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester" | null;
+    };
     LeaderboardResponseKDR: {
-      xuid: string
-      player: string
-      kdr: number
-      killsUntilNextKdr: number
+      xuid: string;
+      player: string;
+      kdr: number;
+      killsUntilNextKdr: number;
       /** @enum {string|null} */
-      topRank:
-        | 'Admin'
-        | 'Dev'
-        | 'Supervisor'
-        | 'Mod'
-        | 'Crew'
-        | 'Trainee'
-        | 'Builder'
-        | 'Designer'
-        | 'Game Designer'
-        | 'Media'
-        | 'Discord'
-        | 'Partner'
-        | 'Titan'
-        | 'Legend'
-        | 'Emerald'
-        | 'Ultra'
-        | 'Youtube'
-        | 'Tester'
-        | null
-    }
+      topRank: "Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester" | null;
+    };
     LeaderboardResponseGuilds: {
-      name: string
-      leader: string
-      xp: number
-      xpToNextLevel: number
-      level: number
-      earnedXp?: number
-    }
+      name: string;
+      leader: string;
+      xp: number;
+      xpToNextLevel: number;
+      level: number;
+      earnedXp?: number;
+    };
     LeaderboardResponseGame: {
-      xuid: string
-      player: string
-      value: number
+      xuid: string;
+      player: string;
+      value: number;
       /** @enum {string|null} */
-      topRank:
-        | 'Admin'
-        | 'Dev'
-        | 'Supervisor'
-        | 'Mod'
-        | 'Crew'
-        | 'Trainee'
-        | 'Builder'
-        | 'Designer'
-        | 'Game Designer'
-        | 'Media'
-        | 'Discord'
-        | 'Partner'
-        | 'Titan'
-        | 'Legend'
-        | 'Emerald'
-        | 'Ultra'
-        | 'Youtube'
-        | 'Tester'
-        | null
-    }
-    LeaderboardResponseFactions:
-      | {
-          name: string
-          leader: string
-          strength: number
-        }
-      | {
-          xuid: string
-          player: string
-          kills: number
-          coins: number
-          bounty: number
-          streak: number
-          bestStreak: number
-          xp: number
-          xpToNextLevel: number
-          level: number
-        }
+      topRank: "Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester" | null;
+    };
+    LeaderboardResponseFactions: {
+      name: string;
+      leader: string;
+      strength: number;
+    } | {
+      xuid: string;
+      player: string;
+      kills: number;
+      coins: number;
+      bounty: number;
+      streak: number;
+      bestStreak: number;
+      xp: number;
+      xpToNextLevel: number;
+      level: number;
+    };
     LeaderboardResponseCredits: {
-      xuid: string
-      player: string
-      credits: number
+      xuid: string;
+      player: string;
+      credits: number;
       /** @enum {string|null} */
-      topRank:
-        | 'Admin'
-        | 'Dev'
-        | 'Supervisor'
-        | 'Mod'
-        | 'Crew'
-        | 'Trainee'
-        | 'Builder'
-        | 'Designer'
-        | 'Game Designer'
-        | 'Media'
-        | 'Discord'
-        | 'Partner'
-        | 'Titan'
-        | 'Legend'
-        | 'Emerald'
-        | 'Ultra'
-        | 'Youtube'
-        | 'Tester'
-        | null
-    }
+      topRank: "Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester" | null;
+    };
     LeaderboardResponseCrateKeys: {
-      xuid: string
-      player: string
-      crateKeys: number
+      xuid: string;
+      player: string;
+      crateKeys: number;
       /** @enum {string|null} */
-      topRank:
-        | 'Admin'
-        | 'Dev'
-        | 'Supervisor'
-        | 'Mod'
-        | 'Crew'
-        | 'Trainee'
-        | 'Builder'
-        | 'Designer'
-        | 'Game Designer'
-        | 'Media'
-        | 'Discord'
-        | 'Partner'
-        | 'Titan'
-        | 'Legend'
-        | 'Emerald'
-        | 'Ultra'
-        | 'Youtube'
-        | 'Tester'
-        | null
-    }
-    LeaderboardResponse:
-      | {
-          xuid: string
-          player: string
-          crateKeys: number
-          /** @enum {string|null} */
-          topRank:
-            | 'Admin'
-            | 'Dev'
-            | 'Supervisor'
-            | 'Mod'
-            | 'Crew'
-            | 'Trainee'
-            | 'Builder'
-            | 'Designer'
-            | 'Game Designer'
-            | 'Media'
-            | 'Discord'
-            | 'Partner'
-            | 'Titan'
-            | 'Legend'
-            | 'Emerald'
-            | 'Ultra'
-            | 'Youtube'
-            | 'Tester'
-            | null
-        }[]
-      | {
-          xuid: string
-          player: string
-          credits: number
-          /** @enum {string|null} */
-          topRank:
-            | 'Admin'
-            | 'Dev'
-            | 'Supervisor'
-            | 'Mod'
-            | 'Crew'
-            | 'Trainee'
-            | 'Builder'
-            | 'Designer'
-            | 'Game Designer'
-            | 'Media'
-            | 'Discord'
-            | 'Partner'
-            | 'Titan'
-            | 'Legend'
-            | 'Emerald'
-            | 'Ultra'
-            | 'Youtube'
-            | 'Tester'
-            | null
-        }[]
-      | (
-          | {
-              name: string
-              leader: string
-              strength: number
-            }
-          | {
-              xuid: string
-              player: string
-              kills: number
-              coins: number
-              bounty: number
-              streak: number
-              bestStreak: number
-              xp: number
-              xpToNextLevel: number
-              level: number
-            }
-        )[]
-      | {
-          xuid: string
-          player: string
-          value: number
-          /** @enum {string|null} */
-          topRank:
-            | 'Admin'
-            | 'Dev'
-            | 'Supervisor'
-            | 'Mod'
-            | 'Crew'
-            | 'Trainee'
-            | 'Builder'
-            | 'Designer'
-            | 'Game Designer'
-            | 'Media'
-            | 'Discord'
-            | 'Partner'
-            | 'Titan'
-            | 'Legend'
-            | 'Emerald'
-            | 'Ultra'
-            | 'Youtube'
-            | 'Tester'
-            | null
-        }[]
-      | {
-          name: string
-          leader: string
-          xp: number
-          xpToNextLevel: number
-          level: number
-          earnedXp?: number
-        }[]
-      | {
-          xuid: string
-          player: string
-          kdr: number
-          killsUntilNextKdr: number
-          /** @enum {string|null} */
-          topRank:
-            | 'Admin'
-            | 'Dev'
-            | 'Supervisor'
-            | 'Mod'
-            | 'Crew'
-            | 'Trainee'
-            | 'Builder'
-            | 'Designer'
-            | 'Game Designer'
-            | 'Media'
-            | 'Discord'
-            | 'Partner'
-            | 'Titan'
-            | 'Legend'
-            | 'Emerald'
-            | 'Ultra'
-            | 'Youtube'
-            | 'Tester'
-            | null
-        }[]
-      | {
-          xuid: string
-          player: string
-          kills: number
-          /** @enum {string|null} */
-          topRank:
-            | 'Admin'
-            | 'Dev'
-            | 'Supervisor'
-            | 'Mod'
-            | 'Crew'
-            | 'Trainee'
-            | 'Builder'
-            | 'Designer'
-            | 'Game Designer'
-            | 'Media'
-            | 'Discord'
-            | 'Partner'
-            | 'Titan'
-            | 'Legend'
-            | 'Emerald'
-            | 'Ultra'
-            | 'Youtube'
-            | 'Tester'
-            | null
-        }[]
-      | {
-          gameMode: string
-          mapName: string
-          votes: number
-          votesDailyAvg: number
-        }[]
-      | {
-          xuid: string
-          player: string
-          joinedAt: number
-          /** @enum {string|null} */
-          topRank:
-            | 'Admin'
-            | 'Dev'
-            | 'Supervisor'
-            | 'Mod'
-            | 'Crew'
-            | 'Trainee'
-            | 'Builder'
-            | 'Designer'
-            | 'Game Designer'
-            | 'Media'
-            | 'Discord'
-            | 'Partner'
-            | 'Titan'
-            | 'Legend'
-            | 'Emerald'
-            | 'Ultra'
-            | 'Youtube'
-            | 'Tester'
-            | null
-        }[]
-      | {
-          xuid: string
-          name: string
-          time: number
-          /** @enum {string|null} */
-          topRank:
-            | 'Admin'
-            | 'Dev'
-            | 'Supervisor'
-            | 'Mod'
-            | 'Crew'
-            | 'Trainee'
-            | 'Builder'
-            | 'Designer'
-            | 'Game Designer'
-            | 'Media'
-            | 'Discord'
-            | 'Partner'
-            | 'Titan'
-            | 'Legend'
-            | 'Emerald'
-            | 'Ultra'
-            | 'Youtube'
-            | 'Tester'
-            | null
-        }[]
-      | {
-          xuid: string
-          player: string
-          onlineTime: number
-          /** @enum {string|null} */
-          topRank:
-            | 'Admin'
-            | 'Dev'
-            | 'Supervisor'
-            | 'Mod'
-            | 'Crew'
-            | 'Trainee'
-            | 'Builder'
-            | 'Designer'
-            | 'Game Designer'
-            | 'Media'
-            | 'Discord'
-            | 'Partner'
-            | 'Titan'
-            | 'Legend'
-            | 'Emerald'
-            | 'Ultra'
-            | 'Youtube'
-            | 'Tester'
-            | null
-        }[]
-      | {
-          nickname: string
-          votes: number
-        }[]
-      | {
-          xuid: string
-          player: string
-          wins: number
-          /** @enum {string|null} */
-          topRank:
-            | 'Admin'
-            | 'Dev'
-            | 'Supervisor'
-            | 'Mod'
-            | 'Crew'
-            | 'Trainee'
-            | 'Builder'
-            | 'Designer'
-            | 'Game Designer'
-            | 'Media'
-            | 'Discord'
-            | 'Partner'
-            | 'Titan'
-            | 'Legend'
-            | 'Emerald'
-            | 'Ultra'
-            | 'Youtube'
-            | 'Tester'
-            | null
-        }[]
-      | {
-          xuid: string
-          player: string
-          wlr: number
-          winsUntilNextWlr: number
-          /** @enum {string|null} */
-          topRank:
-            | 'Admin'
-            | 'Dev'
-            | 'Supervisor'
-            | 'Mod'
-            | 'Crew'
-            | 'Trainee'
-            | 'Builder'
-            | 'Designer'
-            | 'Game Designer'
-            | 'Media'
-            | 'Discord'
-            | 'Partner'
-            | 'Titan'
-            | 'Legend'
-            | 'Emerald'
-            | 'Ultra'
-            | 'Youtube'
-            | 'Tester'
-            | null
-        }[]
-      | {
-          xuid: string
-          player: string
-          xp: number
-          xpToNextLevel: number
-          level: number
-          /** @enum {string|null} */
-          topRank:
-            | 'Admin'
-            | 'Dev'
-            | 'Supervisor'
-            | 'Mod'
-            | 'Crew'
-            | 'Trainee'
-            | 'Builder'
-            | 'Designer'
-            | 'Game Designer'
-            | 'Media'
-            | 'Discord'
-            | 'Partner'
-            | 'Titan'
-            | 'Legend'
-            | 'Emerald'
-            | 'Ultra'
-            | 'Youtube'
-            | 'Tester'
-            | null
-        }[]
+      topRank: "Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester" | null;
+    };
+    LeaderboardResponse: (({
+        xuid: string;
+        player: string;
+        crateKeys: number;
+        /** @enum {string|null} */
+        topRank: "Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester" | null;
+      })[]) | (({
+        xuid: string;
+        player: string;
+        credits: number;
+        /** @enum {string|null} */
+        topRank: "Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester" | null;
+      })[]) | (({
+        name: string;
+        leader: string;
+        strength: number;
+      } | {
+        xuid: string;
+        player: string;
+        kills: number;
+        coins: number;
+        bounty: number;
+        streak: number;
+        bestStreak: number;
+        xp: number;
+        xpToNextLevel: number;
+        level: number;
+      })[]) | (({
+        xuid: string;
+        player: string;
+        value: number;
+        /** @enum {string|null} */
+        topRank: "Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester" | null;
+      })[]) | ({
+        name: string;
+        leader: string;
+        xp: number;
+        xpToNextLevel: number;
+        level: number;
+        earnedXp?: number;
+      })[] | (({
+        xuid: string;
+        player: string;
+        kdr: number;
+        killsUntilNextKdr: number;
+        /** @enum {string|null} */
+        topRank: "Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester" | null;
+      })[]) | (({
+        xuid: string;
+        player: string;
+        kills: number;
+        /** @enum {string|null} */
+        topRank: "Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester" | null;
+      })[]) | ({
+        gameMode: string;
+        mapName: string;
+        votes: number;
+        votesDailyAvg: number;
+      })[] | (({
+        xuid: string;
+        player: string;
+        joinedAt: number;
+        /** @enum {string|null} */
+        topRank: "Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester" | null;
+      })[]) | (({
+        xuid: string;
+        name: string;
+        time: number;
+        /** @enum {string|null} */
+        topRank: "Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester" | null;
+      })[]) | (({
+        xuid: string;
+        player: string;
+        onlineTime: number;
+        /** @enum {string|null} */
+        topRank: "Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester" | null;
+      })[]) | ({
+        nickname: string;
+        votes: number;
+      })[] | (({
+        xuid: string;
+        player: string;
+        wins: number;
+        /** @enum {string|null} */
+        topRank: "Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester" | null;
+      })[]) | (({
+        xuid: string;
+        player: string;
+        wlr: number;
+        winsUntilNextWlr: number;
+        /** @enum {string|null} */
+        topRank: "Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester" | null;
+      })[]) | (({
+        xuid: string;
+        player: string;
+        xp: number;
+        xpToNextLevel: number;
+        level: number;
+        /** @enum {string|null} */
+        topRank: "Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester" | null;
+      })[]);
     LeaderboardQuery: {
       /** @default 100 */
-      limit?: number
+      limit?: number;
       /** @enum {string} */
-      type:
-        | 'crateKeys'
-        | 'credits'
-        | 'factions'
-        | 'game'
-        | 'guilds'
-        | 'kdr'
-        | 'kills'
-        | 'mapVotes'
-        | 'oldest'
-        | 'parkour'
-        | 'playtime'
-        | 'voters'
-        | 'wins'
-        | 'wlr'
-        | 'xp'
+      type: "crateKeys" | "credits" | "factions" | "game" | "guilds" | "kdr" | "kills" | "mapVotes" | "oldest" | "parkour" | "playtime" | "voters" | "wins" | "wlr" | "xp";
       /** @enum {string} */
-      column?:
-        | 'bh_wins'
-        | 'bw_beds_broken'
-        | 'bw_doubles_beds_broken'
-        | 'bw_doubles_final_kills'
-        | 'bw_doubles_kills'
-        | 'bw_doubles_wins'
-        | 'bw_final_kills'
-        | 'bw_kills'
-        | 'bw_solo_beds_broken'
-        | 'bw_solo_final_kills'
-        | 'bw_solo_kills'
-        | 'bw_solo_wins'
-        | 'bw_squads_beds_broken'
-        | 'bw_squads_final_kills'
-        | 'bw_squads_kills'
-        | 'bw_squads_wins'
-        | 'bw_trios_beds_broken'
-        | 'bw_trios_final_kills'
-        | 'bw_trios_kills'
-        | 'bw_trios_wins'
-        | 'bw_wins'
-        | 'cq_flags_captured'
-        | 'cq_kills'
-        | 'cq_wins'
-        | 'duels_kills'
-        | 'duels_wins'
-        | 'kills'
-        | 'mm_bow_kills'
-        | 'mm_classic_kills'
-        | 'mm_classic_wins'
-        | 'mm_infection_kills'
-        | 'mm_infection_wins'
-        | 'mm_kills'
-        | 'mm_knife_kills'
-        | 'mm_throw_knife_kills'
-        | 'mm_wins'
-        | 'ms_wins'
-        | 'sc_wins'
-        | 'sg_kills'
-        | 'sg_wins'
-        | 'sw_doubles_insane_kills'
-        | 'sw_doubles_kills'
-        | 'sw_doubles_normal_kills'
-        | 'sw_doubles_wins'
-        | 'sw_kills'
-        | 'sw_solo_insane_kills'
-        | 'sw_solo_kills'
-        | 'sw_solo_normal_kills'
-        | 'sw_solo_wins'
-        | 'sw_wins'
-        | 'tb_kills'
-        | 'tb_wins'
-        | 'uhc_kills'
-        | 'uhc_wins'
-        | 'wins'
+      column?: "bh_wins" | "bw_beds_broken" | "bw_doubles_beds_broken" | "bw_doubles_final_kills" | "bw_doubles_kills" | "bw_doubles_wins" | "bw_final_kills" | "bw_kills" | "bw_solo_beds_broken" | "bw_solo_final_kills" | "bw_solo_kills" | "bw_solo_wins" | "bw_squads_beds_broken" | "bw_squads_final_kills" | "bw_squads_kills" | "bw_squads_wins" | "bw_trios_beds_broken" | "bw_trios_final_kills" | "bw_trios_kills" | "bw_trios_wins" | "bw_wins" | "cq_flags_captured" | "cq_kills" | "cq_wins" | "duels_kills" | "duels_wins" | "kills" | "mm_bow_kills" | "mm_classic_kills" | "mm_classic_wins" | "mm_infection_kills" | "mm_infection_wins" | "mm_kills" | "mm_knife_kills" | "mm_throw_knife_kills" | "mm_wins" | "ms_wins" | "sc_wins" | "sg_kills" | "sg_wins" | "sw_doubles_insane_kills" | "sw_doubles_kills" | "sw_doubles_normal_kills" | "sw_doubles_wins" | "sw_kills" | "sw_solo_insane_kills" | "sw_solo_kills" | "sw_solo_normal_kills" | "sw_solo_wins" | "sw_wins" | "tb_kills" | "tb_wins" | "uhc_kills" | "uhc_wins" | "wins";
       /** @enum {string} */
-      scope?: 'bestStreak' | 'kills' | 'streak'
+      scope?: "bestStreak" | "kills" | "streak";
       /** @enum {string} */
-      kdrPrefix?:
-        | 'bw_doubles_final'
-        | 'bw_doubles'
-        | 'bw_final'
-        | 'bw'
-        | 'bw_solo_final'
-        | 'bw_solo'
-        | 'bw_squads_final'
-        | 'bw_squads'
-        | 'bw_trios_final'
-        | 'bw_trios'
-        | 'cq'
-        | 'duels'
-        | 'mm_bow'
-        | 'mm_classic'
-        | 'mm_infection'
-        | 'mm'
-        | 'mm_knife'
-        | 'mm_throw_knife'
-        | 'sg'
-        | 'sw_doubles_insane'
-        | 'sw_doubles'
-        | 'sw_doubles_normal'
-        | 'sw'
-        | 'sw_solo_insane'
-        | 'sw_solo'
-        | 'sw_solo_normal'
-        | 'tb'
-        | 'uhc'
+      kdrPrefix?: "bw_doubles_final" | "bw_doubles" | "bw_final" | "bw" | "bw_solo_final" | "bw_solo" | "bw_squads_final" | "bw_squads" | "bw_trios_final" | "bw_trios" | "cq" | "duels" | "mm_bow" | "mm_classic" | "mm_infection" | "mm" | "mm_knife" | "mm_throw_knife" | "sg" | "sw_doubles_insane" | "sw_doubles" | "sw_doubles_normal" | "sw" | "sw_solo_insane" | "sw_solo" | "sw_solo_normal" | "tb" | "uhc";
       /** @enum {string} */
-      wlrPrefix?: 'duels' | 'sw_doubles' | 'sw_solo' | 'sw' | 'tb'
+      wlrPrefix?: "duels" | "sw_doubles" | "sw_solo" | "sw" | "tb";
       /**
        * @default global
        * @enum {string}
        */
-      period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly'
+      period?: "global" | "daily" | "weekly" | "biweekly" | "monthly" | "yearly";
       /** @enum {string} */
-      gameMode?: 'bh' | 'bw' | 'cq' | 'duels' | 'mm' | 'ms' | 'sc' | 'sg' | 'sw' | 'tb' | 'uhc'
-    }
-    LeaderboardBulkResponse: Record<string, never>[]
-    LeaderboardBulkInput: {
-      /** @default 100 */
-      limit?: number
-      /** @enum {string} */
-      type:
-        | 'crateKeys'
-        | 'credits'
-        | 'factions'
-        | 'game'
-        | 'guilds'
-        | 'kdr'
-        | 'kills'
-        | 'mapVotes'
-        | 'oldest'
-        | 'parkour'
-        | 'playtime'
-        | 'voters'
-        | 'wins'
-        | 'wlr'
-        | 'xp'
-      /** @enum {string} */
-      column?:
-        | 'bh_wins'
-        | 'bw_beds_broken'
-        | 'bw_doubles_beds_broken'
-        | 'bw_doubles_final_kills'
-        | 'bw_doubles_kills'
-        | 'bw_doubles_wins'
-        | 'bw_final_kills'
-        | 'bw_kills'
-        | 'bw_solo_beds_broken'
-        | 'bw_solo_final_kills'
-        | 'bw_solo_kills'
-        | 'bw_solo_wins'
-        | 'bw_squads_beds_broken'
-        | 'bw_squads_final_kills'
-        | 'bw_squads_kills'
-        | 'bw_squads_wins'
-        | 'bw_trios_beds_broken'
-        | 'bw_trios_final_kills'
-        | 'bw_trios_kills'
-        | 'bw_trios_wins'
-        | 'bw_wins'
-        | 'cq_flags_captured'
-        | 'cq_kills'
-        | 'cq_wins'
-        | 'duels_kills'
-        | 'duels_wins'
-        | 'kills'
-        | 'mm_bow_kills'
-        | 'mm_classic_kills'
-        | 'mm_classic_wins'
-        | 'mm_infection_kills'
-        | 'mm_infection_wins'
-        | 'mm_kills'
-        | 'mm_knife_kills'
-        | 'mm_throw_knife_kills'
-        | 'mm_wins'
-        | 'ms_wins'
-        | 'sc_wins'
-        | 'sg_kills'
-        | 'sg_wins'
-        | 'sw_doubles_insane_kills'
-        | 'sw_doubles_kills'
-        | 'sw_doubles_normal_kills'
-        | 'sw_doubles_wins'
-        | 'sw_kills'
-        | 'sw_solo_insane_kills'
-        | 'sw_solo_kills'
-        | 'sw_solo_normal_kills'
-        | 'sw_solo_wins'
-        | 'sw_wins'
-        | 'tb_kills'
-        | 'tb_wins'
-        | 'uhc_kills'
-        | 'uhc_wins'
-        | 'wins'
-      /** @enum {string} */
-      scope?: 'bestStreak' | 'kills' | 'streak'
-      /** @enum {string} */
-      kdrPrefix?:
-        | 'bw_doubles_final'
-        | 'bw_doubles'
-        | 'bw_final'
-        | 'bw'
-        | 'bw_solo_final'
-        | 'bw_solo'
-        | 'bw_squads_final'
-        | 'bw_squads'
-        | 'bw_trios_final'
-        | 'bw_trios'
-        | 'cq'
-        | 'duels'
-        | 'mm_bow'
-        | 'mm_classic'
-        | 'mm_infection'
-        | 'mm'
-        | 'mm_knife'
-        | 'mm_throw_knife'
-        | 'sg'
-        | 'sw_doubles_insane'
-        | 'sw_doubles'
-        | 'sw_doubles_normal'
-        | 'sw'
-        | 'sw_solo_insane'
-        | 'sw_solo'
-        | 'sw_solo_normal'
-        | 'tb'
-        | 'uhc'
-      /** @enum {string} */
-      wlrPrefix?: 'duels' | 'sw_doubles' | 'sw_solo' | 'sw' | 'tb'
-      /**
-       * @default global
-       * @enum {string}
-       */
-      period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly'
-      /** @enum {string} */
-      gameMode?: 'bh' | 'bw' | 'cq' | 'duels' | 'mm' | 'ms' | 'sc' | 'sg' | 'sw' | 'tb' | 'uhc'
-    }[]
+      gameMode?: "bh" | "bw" | "cq" | "duels" | "mm" | "ms" | "sc" | "sg" | "sw" | "tb" | "uhc";
+    };
+    LeaderboardBulkResponse: (Record<string, never>)[];
+    LeaderboardBulkInput: ({
+        /** @default 100 */
+        limit?: number;
+        /** @enum {string} */
+        type: "crateKeys" | "credits" | "factions" | "game" | "guilds" | "kdr" | "kills" | "mapVotes" | "oldest" | "parkour" | "playtime" | "voters" | "wins" | "wlr" | "xp";
+        /** @enum {string} */
+        column?: "bh_wins" | "bw_beds_broken" | "bw_doubles_beds_broken" | "bw_doubles_final_kills" | "bw_doubles_kills" | "bw_doubles_wins" | "bw_final_kills" | "bw_kills" | "bw_solo_beds_broken" | "bw_solo_final_kills" | "bw_solo_kills" | "bw_solo_wins" | "bw_squads_beds_broken" | "bw_squads_final_kills" | "bw_squads_kills" | "bw_squads_wins" | "bw_trios_beds_broken" | "bw_trios_final_kills" | "bw_trios_kills" | "bw_trios_wins" | "bw_wins" | "cq_flags_captured" | "cq_kills" | "cq_wins" | "duels_kills" | "duels_wins" | "kills" | "mm_bow_kills" | "mm_classic_kills" | "mm_classic_wins" | "mm_infection_kills" | "mm_infection_wins" | "mm_kills" | "mm_knife_kills" | "mm_throw_knife_kills" | "mm_wins" | "ms_wins" | "sc_wins" | "sg_kills" | "sg_wins" | "sw_doubles_insane_kills" | "sw_doubles_kills" | "sw_doubles_normal_kills" | "sw_doubles_wins" | "sw_kills" | "sw_solo_insane_kills" | "sw_solo_kills" | "sw_solo_normal_kills" | "sw_solo_wins" | "sw_wins" | "tb_kills" | "tb_wins" | "uhc_kills" | "uhc_wins" | "wins";
+        /** @enum {string} */
+        scope?: "bestStreak" | "kills" | "streak";
+        /** @enum {string} */
+        kdrPrefix?: "bw_doubles_final" | "bw_doubles" | "bw_final" | "bw" | "bw_solo_final" | "bw_solo" | "bw_squads_final" | "bw_squads" | "bw_trios_final" | "bw_trios" | "cq" | "duels" | "mm_bow" | "mm_classic" | "mm_infection" | "mm" | "mm_knife" | "mm_throw_knife" | "sg" | "sw_doubles_insane" | "sw_doubles" | "sw_doubles_normal" | "sw" | "sw_solo_insane" | "sw_solo" | "sw_solo_normal" | "tb" | "uhc";
+        /** @enum {string} */
+        wlrPrefix?: "duels" | "sw_doubles" | "sw_solo" | "sw" | "tb";
+        /**
+         * @default global
+         * @enum {string}
+         */
+        period?: "global" | "daily" | "weekly" | "biweekly" | "monthly" | "yearly";
+        /** @enum {string} */
+        gameMode?: "bh" | "bw" | "cq" | "duels" | "mm" | "ms" | "sc" | "sg" | "sw" | "tb" | "uhc";
+      })[];
     GuildResponse: {
-      id: number
-      name: string
-      maxSize: number
-      memberCount: number
-      motd: string
-      position?: number
-      rawTag: string
-      tag: string
+      id: number;
+      name: string;
+      maxSize: number;
+      memberCount: number;
+      motd: string;
+      position?: number;
+      rawTag: string;
+      tag: string;
       /** @enum {string|null} */
-      tagColor:
-        | '#000000'
-        | '#0000aa'
-        | '#00aa00'
-        | '#00aaaa'
-        | '#aa0000'
-        | '#aa00aa'
-        | '#ffaa00'
-        | '#aaaaaa'
-        | '#555555'
-        | '#5555ff'
-        | '#55ff55'
-        | '#55ffff'
-        | '#ff5555'
-        | '#ff55ff'
-        | '#ffff55'
-        | '#ffffff'
-        | '#ddd605'
-        | null
-      xp: number
-      xpToNextLevel: number
-      level: number
-      leader?: Record<string, never>
-      officers: Record<string, never>[]
-      members: Record<string, never>[]
-    }
+      tagColor: "#000000" | "#0000aa" | "#00aa00" | "#00aaaa" | "#aa0000" | "#aa00aa" | "#ffaa00" | "#aaaaaa" | "#555555" | "#5555ff" | "#55ff55" | "#55ffff" | "#ff5555" | "#ff55ff" | "#ffff55" | "#ffffff" | "#ddd605" | null;
+      xp: number;
+      xpToNextLevel: number;
+      level: number;
+      leader?: Record<string, never>;
+      officers: (Record<string, never>)[];
+      members: (Record<string, never>)[];
+      discordInvite: string;
+    };
     GuildQuery: {
       /** @default false */
-      expand?: boolean
+      expand?: boolean;
       /** @default true */
-      withOnline?: boolean
+      withOnline?: boolean;
       /** @default false */
-      withSkinData?: boolean
+      withSkinData?: boolean;
       /** @default false */
-      withStats?: boolean
+      withStats?: boolean;
       /** @default false */
-      withVoteStatus?: boolean
-    }
-    GuildBulkResponse: {
-      id: number
-      name: string
-      maxSize: number
-      memberCount: number
-      motd: string
-      position?: number
-      rawTag: string
-      tag: string
-      /** @enum {string|null} */
-      tagColor:
-        | '#000000'
-        | '#0000aa'
-        | '#00aa00'
-        | '#00aaaa'
-        | '#aa0000'
-        | '#aa00aa'
-        | '#ffaa00'
-        | '#aaaaaa'
-        | '#555555'
-        | '#5555ff'
-        | '#55ff55'
-        | '#55ffff'
-        | '#ff5555'
-        | '#ff55ff'
-        | '#ffff55'
-        | '#ffffff'
-        | '#ddd605'
-        | null
-      xp: number
-      xpToNextLevel: number
-      level: number
-      leader?: Record<string, never>
-      officers: Record<string, never>[]
-      members: Record<string, never>[]
-    }[]
+      withVoteStatus?: boolean;
+    };
+    GuildBulkResponse: ({
+        id: number;
+        name: string;
+        maxSize: number;
+        memberCount: number;
+        motd: string;
+        position?: number;
+        rawTag: string;
+        tag: string;
+        /** @enum {string|null} */
+        tagColor: "#000000" | "#0000aa" | "#00aa00" | "#00aaaa" | "#aa0000" | "#aa00aa" | "#ffaa00" | "#aaaaaa" | "#555555" | "#5555ff" | "#55ff55" | "#55ffff" | "#ff5555" | "#ff55ff" | "#ffff55" | "#ffffff" | "#ddd605" | null;
+        xp: number;
+        xpToNextLevel: number;
+        level: number;
+        leader?: Record<string, never>;
+        officers: (Record<string, never>)[];
+        members: (Record<string, never>)[];
+        discordInvite: string;
+      })[];
     GuildBulkInput: {
       /** @default false */
-      expand?: boolean
+      expand?: boolean;
       /** @default true */
-      withOnline?: boolean
+      withOnline?: boolean;
       /** @default false */
-      withSkinData?: boolean
+      withSkinData?: boolean;
       /** @default false */
-      withStats?: boolean
+      withStats?: boolean;
       /** @default false */
-      withVoteStatus?: boolean
-      names: string[]
-    }
+      withVoteStatus?: boolean;
+      names: (string)[];
+    };
     FactionResponse: {
-      id: number
-      name: string
-      strength: number
-      allies: string[]
-      leader?: Record<string, never>
-      officers: Record<string, never>[]
-      members: Record<string, never>[]
-    }
-    FactionBulkResponse: {
-      id: number
-      name: string
-      strength: number
-      allies: string[]
-      leader?: Record<string, never>
-      officers: Record<string, never>[]
-      members: Record<string, never>[]
-    }[]
+      id: number;
+      name: string;
+      strength: number;
+      allies: (string)[];
+      leader?: Record<string, never>;
+      officers: (Record<string, never>)[];
+      members: (Record<string, never>)[];
+    };
+    FactionBulkResponse: ({
+        id: number;
+        name: string;
+        strength: number;
+        allies: (string)[];
+        leader?: Record<string, never>;
+        officers: (Record<string, never>)[];
+        members: (Record<string, never>)[];
+      })[];
     DiscordCountResponse: {
-      members: number
-    }
-    AnnouncementsResponse: Record<string, never>[]
+      members: number;
+    };
+    AnnouncementsResponse: (Record<string, never>)[];
     AnnouncementsQuery: {
       /** @default 100 */
-      limit?: number
+      limit?: number;
       /** @enum {string} */
-      type: 'board' | 'bossbar' | 'discord' | 'message' | 'title'
-    }
-  }
-  responses: never
-  parameters: never
-  requestBodies: never
-  headers: never
-  pathItems: never
+      type: "board" | "bossbar" | "discord" | "message" | "title";
+    };
+  };
+  responses: never;
+  parameters: never;
+  requestBodies: never;
+  headers: never;
+  pathItems: never;
 }
 
-export type external = Record<string, never>
+export type external = Record<string, never>;
 
 export interface operations {
-  'Get Announcements': {
+
+  "Get Announcements": {
     parameters: {
       query: {
-        limit?: number
-        type: 'board' | 'bossbar' | 'discord' | 'message' | 'title'
-      }
-    }
+        limit?: number;
+        type: "board" | "bossbar" | "discord" | "message" | "title";
+      };
+    };
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['AnnouncementsResponse']
-        }
-      }
-    }
-  }
-  'Get Discord Member Count': {
+          "application/json": components["schemas"]["AnnouncementsResponse"];
+        };
+      };
+    };
+  };
+  "Get Discord Member Count": {
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['DiscordCountResponse']
-        }
-      }
-    }
-  }
-  'Get Faction': {
+          "application/json": components["schemas"]["DiscordCountResponse"];
+        };
+      };
+    };
+  };
+  "Get Faction": {
     parameters?: {
       query?: {
-        expand?: boolean
-        withOnline?: boolean
-        withSkinData?: boolean
-        withStats?: boolean
-        withVoteStatus?: boolean
-      }
-    }
+        expand?: boolean;
+        withOnline?: boolean;
+        withSkinData?: boolean;
+        withStats?: boolean;
+        withVoteStatus?: boolean;
+      };
+    };
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['FactionResponse']
-        }
-      }
-    }
-  }
-  'Get Factions': {
+          "application/json": components["schemas"]["FactionResponse"];
+        };
+      };
+    };
+  };
+  "Get Factions": {
     parameters?: {
       query?: {
-        expand?: boolean
-        withStats?: boolean
-        first?: number
-        after?: string
-        last?: number
-        before?: string
-      }
-    }
+        expand?: boolean;
+        withStats?: boolean;
+        first?: number;
+        after?: string;
+        last?: number;
+        before?: string;
+      };
+    };
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['RelayPaginationResponse']
-        }
-      }
-    }
-  }
-  'Bulk Get Factions': {
+          "application/json": components["schemas"]["RelayPaginationResponse"];
+        };
+      };
+    };
+  };
+  "Bulk Get Factions": {
     requestBody?: {
       content: {
-        'application/json': components['schemas']['GuildBulkInput']
-      }
-    }
+        "application/json": components["schemas"]["GuildBulkInput"];
+      };
+    };
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['FactionBulkResponse']
-        }
-      }
-    }
-  }
-  'Get Faction Status': {
+          "application/json": components["schemas"]["FactionBulkResponse"];
+        };
+      };
+    };
+  };
+  "Get Faction Status": {
     /** @description Determine if given faction name or ID exists. */
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['PlayerStatusResponse']
-        }
-      }
-    }
-  }
-  'Get Guild': {
+          "application/json": components["schemas"]["PlayerStatusResponse"];
+        };
+      };
+    };
+  };
+  "Get Guild": {
     parameters?: {
       query?: {
-        expand?: boolean
-        withOnline?: boolean
-        withSkinData?: boolean
-        withStats?: boolean
-        withVoteStatus?: boolean
-      }
-    }
+        expand?: boolean;
+        withOnline?: boolean;
+        withSkinData?: boolean;
+        withStats?: boolean;
+        withVoteStatus?: boolean;
+      };
+    };
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['GuildResponse']
-        }
-      }
-    }
-  }
-  'Get Guilds': {
+          "application/json": components["schemas"]["GuildResponse"];
+        };
+      };
+    };
+  };
+  "Get Guilds": {
     parameters?: {
       query?: {
-        expand?: boolean
-        withStats?: boolean
-        first?: number
-        after?: string
-        last?: number
-        before?: string
-      }
-    }
+        expand?: boolean;
+        withStats?: boolean;
+        first?: number;
+        after?: string;
+        last?: number;
+        before?: string;
+      };
+    };
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['RelayPaginationResponse']
-        }
-      }
-    }
-  }
-  'Bulk Get Guilds': {
+          "application/json": components["schemas"]["RelayPaginationResponse"];
+        };
+      };
+    };
+  };
+  "Bulk Get Guilds": {
     requestBody?: {
       content: {
-        'application/json': components['schemas']['GuildBulkInput']
-      }
-    }
+        "application/json": components["schemas"]["GuildBulkInput"];
+      };
+    };
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['GuildBulkResponse']
-        }
-      }
-    }
-  }
-  'Get Guild Status': {
+          "application/json": components["schemas"]["GuildBulkResponse"];
+        };
+      };
+    };
+  };
+  "Get Guild Status": {
     /** @description Determine if given guild name or ID exists. */
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['PlayerStatusResponse']
-        }
-      }
-    }
-  }
-  'Get Leaderboard': {
+          "application/json": components["schemas"]["PlayerStatusResponse"];
+        };
+      };
+    };
+  };
+  "Get Leaderboard": {
     parameters: {
       query: {
-        limit?: number
-        type:
-          | 'crateKeys'
-          | 'credits'
-          | 'factions'
-          | 'game'
-          | 'guilds'
-          | 'kdr'
-          | 'kills'
-          | 'mapVotes'
-          | 'oldest'
-          | 'parkour'
-          | 'playtime'
-          | 'voters'
-          | 'wins'
-          | 'wlr'
-          | 'xp'
-        column?:
-          | 'bh_wins'
-          | 'bw_beds_broken'
-          | 'bw_doubles_beds_broken'
-          | 'bw_doubles_final_kills'
-          | 'bw_doubles_kills'
-          | 'bw_doubles_wins'
-          | 'bw_final_kills'
-          | 'bw_kills'
-          | 'bw_solo_beds_broken'
-          | 'bw_solo_final_kills'
-          | 'bw_solo_kills'
-          | 'bw_solo_wins'
-          | 'bw_squads_beds_broken'
-          | 'bw_squads_final_kills'
-          | 'bw_squads_kills'
-          | 'bw_squads_wins'
-          | 'bw_trios_beds_broken'
-          | 'bw_trios_final_kills'
-          | 'bw_trios_kills'
-          | 'bw_trios_wins'
-          | 'bw_wins'
-          | 'cq_flags_captured'
-          | 'cq_kills'
-          | 'cq_wins'
-          | 'duels_kills'
-          | 'duels_wins'
-          | 'kills'
-          | 'mm_bow_kills'
-          | 'mm_classic_kills'
-          | 'mm_classic_wins'
-          | 'mm_infection_kills'
-          | 'mm_infection_wins'
-          | 'mm_kills'
-          | 'mm_knife_kills'
-          | 'mm_throw_knife_kills'
-          | 'mm_wins'
-          | 'ms_wins'
-          | 'sc_wins'
-          | 'sg_kills'
-          | 'sg_wins'
-          | 'sw_doubles_insane_kills'
-          | 'sw_doubles_kills'
-          | 'sw_doubles_normal_kills'
-          | 'sw_doubles_wins'
-          | 'sw_kills'
-          | 'sw_solo_insane_kills'
-          | 'sw_solo_kills'
-          | 'sw_solo_normal_kills'
-          | 'sw_solo_wins'
-          | 'sw_wins'
-          | 'tb_kills'
-          | 'tb_wins'
-          | 'uhc_kills'
-          | 'uhc_wins'
-          | 'wins'
-        scope?: 'bestStreak' | 'kills' | 'streak'
-        kdrPrefix?:
-          | 'bw_doubles_final'
-          | 'bw_doubles'
-          | 'bw_final'
-          | 'bw'
-          | 'bw_solo_final'
-          | 'bw_solo'
-          | 'bw_squads_final'
-          | 'bw_squads'
-          | 'bw_trios_final'
-          | 'bw_trios'
-          | 'cq'
-          | 'duels'
-          | 'mm_bow'
-          | 'mm_classic'
-          | 'mm_infection'
-          | 'mm'
-          | 'mm_knife'
-          | 'mm_throw_knife'
-          | 'sg'
-          | 'sw_doubles_insane'
-          | 'sw_doubles'
-          | 'sw_doubles_normal'
-          | 'sw'
-          | 'sw_solo_insane'
-          | 'sw_solo'
-          | 'sw_solo_normal'
-          | 'tb'
-          | 'uhc'
-        wlrPrefix?: 'duels' | 'sw_doubles' | 'sw_solo' | 'sw' | 'tb'
-        period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly'
-        gameMode?: 'bh' | 'bw' | 'cq' | 'duels' | 'mm' | 'ms' | 'sc' | 'sg' | 'sw' | 'tb' | 'uhc'
-      }
-    }
+        limit?: number;
+        type: "crateKeys" | "credits" | "factions" | "game" | "guilds" | "kdr" | "kills" | "mapVotes" | "oldest" | "parkour" | "playtime" | "voters" | "wins" | "wlr" | "xp";
+        column?: "bh_wins" | "bw_beds_broken" | "bw_doubles_beds_broken" | "bw_doubles_final_kills" | "bw_doubles_kills" | "bw_doubles_wins" | "bw_final_kills" | "bw_kills" | "bw_solo_beds_broken" | "bw_solo_final_kills" | "bw_solo_kills" | "bw_solo_wins" | "bw_squads_beds_broken" | "bw_squads_final_kills" | "bw_squads_kills" | "bw_squads_wins" | "bw_trios_beds_broken" | "bw_trios_final_kills" | "bw_trios_kills" | "bw_trios_wins" | "bw_wins" | "cq_flags_captured" | "cq_kills" | "cq_wins" | "duels_kills" | "duels_wins" | "kills" | "mm_bow_kills" | "mm_classic_kills" | "mm_classic_wins" | "mm_infection_kills" | "mm_infection_wins" | "mm_kills" | "mm_knife_kills" | "mm_throw_knife_kills" | "mm_wins" | "ms_wins" | "sc_wins" | "sg_kills" | "sg_wins" | "sw_doubles_insane_kills" | "sw_doubles_kills" | "sw_doubles_normal_kills" | "sw_doubles_wins" | "sw_kills" | "sw_solo_insane_kills" | "sw_solo_kills" | "sw_solo_normal_kills" | "sw_solo_wins" | "sw_wins" | "tb_kills" | "tb_wins" | "uhc_kills" | "uhc_wins" | "wins";
+        scope?: "bestStreak" | "kills" | "streak";
+        kdrPrefix?: "bw_doubles_final" | "bw_doubles" | "bw_final" | "bw" | "bw_solo_final" | "bw_solo" | "bw_squads_final" | "bw_squads" | "bw_trios_final" | "bw_trios" | "cq" | "duels" | "mm_bow" | "mm_classic" | "mm_infection" | "mm" | "mm_knife" | "mm_throw_knife" | "sg" | "sw_doubles_insane" | "sw_doubles" | "sw_doubles_normal" | "sw" | "sw_solo_insane" | "sw_solo" | "sw_solo_normal" | "tb" | "uhc";
+        wlrPrefix?: "duels" | "sw_doubles" | "sw_solo" | "sw" | "tb";
+        period?: "global" | "daily" | "weekly" | "biweekly" | "monthly" | "yearly";
+        gameMode?: "bh" | "bw" | "cq" | "duels" | "mm" | "ms" | "sc" | "sg" | "sw" | "tb" | "uhc";
+      };
+    };
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['LeaderboardResponse']
-        }
-      }
-    }
-  }
-  'Bulk Get Leaderboards': {
+          "application/json": components["schemas"]["LeaderboardResponse"];
+        };
+      };
+    };
+  };
+  "Bulk Get Leaderboards": {
     requestBody?: {
       content: {
-        'application/json': components['schemas']['LeaderboardBulkInput']
-      }
-    }
+        "application/json": components["schemas"]["LeaderboardBulkInput"];
+      };
+    };
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['LeaderboardBulkResponse']
-        }
-      }
-    }
-  }
-  'Get Player': {
+          "application/json": components["schemas"]["LeaderboardBulkResponse"];
+        };
+      };
+    };
+  };
+  "Get Player": {
     parameters?: {
       query?: {
-        expand?: boolean
-        withFactionData?: boolean
-        withGuildData?: boolean
-        withOnline?: boolean
-        withPunishments?: boolean
-        withSkinData?: boolean
-        withStats?: boolean
-        withVoteStatus?: boolean
-        withAvatarBlurhash?: boolean
-        period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly'
-      }
-    }
+        expand?: boolean;
+        withFactionData?: boolean;
+        withGuildData?: boolean;
+        withOnline?: boolean;
+        withPunishments?: boolean;
+        withSkinData?: boolean;
+        withStats?: boolean;
+        withVoteStatus?: boolean;
+        withAvatarBlurhash?: boolean;
+        period?: "global" | "daily" | "weekly" | "biweekly" | "monthly" | "yearly";
+      };
+    };
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['PlayerResponse']
-        }
-      }
-    }
-  }
-  'Get Player Avatar': {
+          "application/json": components["schemas"]["PlayerResponse"];
+        };
+      };
+    };
+  };
+  "Get Player Avatar": {
     parameters?: {
       query?: {
-        dataOnly?: boolean
-      }
-    }
+        dataOnly?: boolean;
+      };
+    };
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['PlayerSkinResponseData']
-        }
-      }
-    }
-  }
-  'Get Player Count': {
+          "application/json": components["schemas"]["PlayerSkinResponseData"];
+        };
+      };
+    };
+  };
+  "Get Player Count": {
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['PlayerCountResponse']
-        }
-      }
-    }
-  }
-  'Get Player Leaderboard': {
+          "application/json": components["schemas"]["PlayerCountResponse"];
+        };
+      };
+    };
+  };
+  "Get Player Leaderboard": {
     parameters?: {
       query?: {
-        period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly'
-      }
-    }
+        period?: "global" | "daily" | "weekly" | "biweekly" | "monthly" | "yearly";
+      };
+    };
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['PlayerLeaderboardResponse']
-        }
-      }
-    }
-  }
-  'Bulk Get Player Leaderboards': {
+          "application/json": components["schemas"]["PlayerLeaderboardResponse"];
+        };
+      };
+    };
+  };
+  "Bulk Get Player Leaderboards": {
     requestBody?: {
       content: {
-        'application/json': components['schemas']['PlayerLeaderboardBulkInput']
-      }
-    }
+        "application/json": components["schemas"]["PlayerLeaderboardBulkInput"];
+      };
+    };
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['PlayerLeaderboardBulkResponse']
-        }
-      }
-    }
-  }
-  'Get Player Punishments': {
+          "application/json": components["schemas"]["PlayerLeaderboardBulkResponse"];
+        };
+      };
+    };
+  };
+  "Get Player Punishments": {
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['PlayerPunishmentsResponse']
-        }
-      }
-    }
-  }
-  'Get Players': {
+          "application/json": components["schemas"]["PlayerPunishmentsResponse"];
+        };
+      };
+    };
+  };
+  "Get Players": {
     parameters?: {
       query?: {
-        withStats?: boolean
-        first?: number
-        after?: string
-        last?: number
-        before?: string
-      }
-    }
+        withStats?: boolean;
+        first?: number;
+        after?: string;
+        last?: number;
+        before?: string;
+      };
+    };
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['RelayPaginationResponse']
-        }
-      }
-    }
-  }
-  'Bulk Get Players': {
+          "application/json": components["schemas"]["RelayPaginationResponse"];
+        };
+      };
+    };
+  };
+  "Bulk Get Players": {
     requestBody?: {
       content: {
-        'application/json': components['schemas']['PlayerBulkInput']
-      }
-    }
+        "application/json": components["schemas"]["PlayerBulkInput"];
+      };
+    };
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['PlayerBulkResponse']
-        }
-      }
-    }
-  }
-  'Get Player Skin': {
+          "application/json": components["schemas"]["PlayerBulkResponse"];
+        };
+      };
+    };
+  };
+  "Get Player Skin": {
     parameters?: {
       query?: {
-        dataOnly?: boolean
-      }
-    }
+        dataOnly?: boolean;
+      };
+    };
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['PlayerSkinResponseData']
-        }
-      }
-    }
-  }
-  'Get Player Stats History': {
+          "application/json": components["schemas"]["PlayerSkinResponseData"];
+        };
+      };
+    };
+  };
+  "Get Player Stats History": {
     /** @description Track hourly stats for a player (lazy-loaded). Max 100 new players every 24 hours for each API key. */
     parameters: {
       query: {
-        version?: 1
-        periodStart: number
-        periodEnd?: number | -1
-        hour?: number
-      }
-    }
+        version?: 1;
+        periodStart: number;
+        periodEnd?: number | -1;
+        hour?: number;
+      };
+    };
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['PlayerStatsResponse']
-        }
-      }
-    }
-  }
-  'Bulk Get Player Stats History': {
+          "application/json": components["schemas"]["PlayerStatsResponse"];
+        };
+      };
+    };
+  };
+  "Bulk Get Player Stats History": {
     /** @description Track hourly stats for a player (lazy-loaded). Max 100 new players every 24 hours for each API key. */
     requestBody?: {
       content: {
-        'application/json': components['schemas']['PlayerStatsInput']
-      }
-    }
+        "application/json": components["schemas"]["PlayerStatsInput"];
+      };
+    };
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['PlayerStatsResponseBulk']
-        }
-      }
-    }
-  }
-  'Get Player Stats by Type': {
+          "application/json": components["schemas"]["PlayerStatsResponseBulk"];
+        };
+      };
+    };
+  };
+  "Get Player Stats by Type": {
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['PlayerStatsByTypeResponse']
-        }
-      }
-    }
-  }
-  'Get Player Status': {
+          "application/json": components["schemas"]["PlayerStatsByTypeResponse"];
+        };
+      };
+    };
+  };
+  "Get Player Status": {
     /** @description Determine if given XUID or username exists. */
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['PlayerStatusResponse']
-        }
-      }
-    }
-  }
-  'Get Search Results': {
+          "application/json": components["schemas"]["PlayerStatusResponse"];
+        };
+      };
+    };
+  };
+  "Get Search Results": {
     parameters: {
       query: {
-        name: string
-      }
-    }
+        name: string;
+      };
+    };
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['SearchResponse']
-        }
-      }
-    }
-  }
-  'Get Full-Text Search Results': {
+          "application/json": components["schemas"]["SearchResponse"];
+        };
+      };
+    };
+  };
+  "Get Full-Text Search Results": {
     parameters: {
       query: {
-        expand?: boolean
-        withFactionData?: boolean
-        withGuildData?: boolean
-        withOnline?: boolean
-        withPunishments?: boolean
-        withSkinData?: boolean
-        withStats?: boolean
-        withVoteStatus?: boolean
-        withAvatarBlurhash?: boolean
-        period?: 'global' | 'daily' | 'weekly' | 'biweekly' | 'monthly' | 'yearly'
-        limit?: number
-        query: string
-        type?: 'faction' | 'guild' | 'player'
-      }
-    }
+        expand?: boolean;
+        withFactionData?: boolean;
+        withGuildData?: boolean;
+        withOnline?: boolean;
+        withPunishments?: boolean;
+        withSkinData?: boolean;
+        withStats?: boolean;
+        withVoteStatus?: boolean;
+        withAvatarBlurhash?: boolean;
+        period?: "global" | "daily" | "weekly" | "biweekly" | "monthly" | "yearly";
+        limit?: number;
+        query: string;
+        type?: "faction" | "guild" | "player";
+      };
+    };
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['SearchFullTextResponse']
-        }
-      }
-    }
-  }
-  'Get Server Metadata': {
+          "application/json": components["schemas"]["SearchFullTextResponse"];
+        };
+      };
+    };
+  };
+  "Get Server Metadata": {
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['ServerMetaResponse']
-        }
-      }
-    }
-  }
-  'Get Server MOTDs': {
+          "application/json": components["schemas"]["ServerMetaResponse"];
+        };
+      };
+    };
+  };
+  "Get Server MOTDs": {
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['ServerSettingsResponse']
-        }
-      }
-    }
-  }
-  'Get Server Ping': {
+          "application/json": components["schemas"]["ServerSettingsResponse"];
+        };
+      };
+    };
+  };
+  "Get Server Ping": {
     parameters?: {
       query?: {
-        ip?: string
-        port?: number
-      }
-    }
+        ip?: string;
+        port?: number;
+      };
+    };
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['ServerPingResponse']
-        }
-      }
-    }
-  }
-  'Get Servers': {
+          "application/json": components["schemas"]["ServerPingResponse"];
+        };
+      };
+    };
+  };
+  "Get Servers": {
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['ServerResponse']
-        }
-      }
-    }
-  }
-  'Get Stream Status': {
+          "application/json": components["schemas"]["ServerResponse"];
+        };
+      };
+    };
+  };
+  "Get Stream Status": {
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['StreamResponse']
-        }
-      }
-    }
-  }
-  'Get Updates': {
+          "application/json": components["schemas"]["StreamResponse"];
+        };
+      };
+    };
+  };
+  "Get Updates": {
     parameters?: {
       query?: {
-        before?: number
-        after?: number
-        limit?: number
-      }
-    }
+        before?: number;
+        after?: number;
+        limit?: number;
+      };
+    };
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['UpdatesResponse']
-        }
-      }
-    }
-  }
-  'Get XUID Mapping': {
+          "application/json": components["schemas"]["UpdatesResponse"];
+        };
+      };
+    };
+  };
+  "Get XUID Mapping": {
     requestBody?: {
       content: {
-        'application/json': components['schemas']['XuidMappingInput']
-      }
-    }
+        "application/json": components["schemas"]["XuidMappingInput"];
+      };
+    };
     responses: {
       /** @description Default Response */
       200: {
         content: {
-          'application/json': components['schemas']['XuidMappingResponse']
-        }
-      }
-    }
-  }
+          "application/json": components["schemas"]["XuidMappingResponse"];
+        };
+      };
+    };
+  };
 }

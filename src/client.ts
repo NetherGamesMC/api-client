@@ -67,7 +67,7 @@ export class NetherGamesClient {
     this.#apiKey = apiKey
     this.#baseUrl = options.baseUrl ?? 'https://api.ngmc.co'
     this.#cache = new QuickLRU({maxSize: options.cacheMaxSize ?? 1000})
-    this.#userAgent = options.userAgent ?? 'NetherGames-API-Client/2.6.0'
+    this.#userAgent = options.userAgent ?? 'NetherGames-API-Client/2.6.1'
     this.#emitter = createNanoEvents<Events>()
     if (options.userAgentAppendix != null) this.#userAgent += ` (${options.userAgentAppendix})`
 

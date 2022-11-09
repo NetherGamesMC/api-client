@@ -1,6 +1,6 @@
 {
   "name": "@nethergames/api",
-  "version": "2.6.0",
+  "version": "2.6.1",
   "description": "Fully typed client for the NetherGames API.",
   "keywords": [
     "nethergames",
@@ -18,7 +18,7 @@
   "scripts": {
     "build": "rm -rf dist && tsc",
     "format": "prettier --write .",
-    "generate": "openapi-typescript ../nethergames_api_docs/openapi.json -o src/openapi.ts --it true -c .prettierrc.yaml && sed -i '' 's/@description Deprecated,/@deprecated/g' src/openapi.ts",
+    "generate": "openapi-typescript https://docs.nethergames.org/openapi.json -o src/openapi.ts && sed -i '' 's/@description Deprecated,/@deprecated/g' src/openapi.ts",
     "lint": "eslint --fix . --ext .ts",
     "prepublishOnly": "npm run -s build",
     "test": "npm run -s build && ava"
