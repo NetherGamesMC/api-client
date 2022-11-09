@@ -13,7 +13,7 @@ specifiers:
   eslint-plugin-unicorn: 44.0.2
   nanoevents: ^7.0.1
   node-fetch: ^3.2.10
-  openapi-typescript: 5.4.1
+  openapi-typescript: 6.0.1
   prettier: 2.7.1
   quick-lru: ^6.1.1
   type-fest: ^3.2.0
@@ -36,7 +36,7 @@ devDependencies:
   eslint-plugin-import: 2.26.0_jnohwm7eexgw7uduhweedcbnpe
   eslint-plugin-simple-import-sort: 8.0.0_eslint@8.27.0
   eslint-plugin-unicorn: 44.0.2_eslint@8.27.0
-  openapi-typescript: 5.4.1
+  openapi-typescript: 6.0.1
   prettier: 2.7.1
   typescript: 4.8.4
 
@@ -313,6 +313,11 @@ packages:
       fast-json-stable-stringify: 2.1.0
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
+    dev: true
+
+  /ansi-colors/4.1.3:
+    resolution: {integrity: sha512-/6w/C21Pm1A7aZitlI5Ni/2J6FFQN8i1Cvz3kHABAAbw93v/NlvKdVOqz7CCWz/3iv/JplRSEEZ83XION15ovw==}
+    engines: {node: '>=6'}
     dev: true
 
   /ansi-regex/5.0.1:
@@ -1314,10 +1319,6 @@ packages:
       type-fest: 0.20.2
     dev: true
 
-  /globalyzer/0.1.0:
-    resolution: {integrity: sha512-40oNTM9UfG6aBmuKxk/giHn5nQ8RVz/SS4Ir6zgzOv9/qC3kKZ9v4etGTcJbEl/NyVQH7FGU7d+X1egr57Md2Q==}
-    dev: true
-
   /globby/11.1.0:
     resolution: {integrity: sha512-jhIXaOzy1sb8IyocaruWSn1TjmnBVs8Ayhcy83rmxNJ8q2uWKCAj3CnJY+KpGSXCueAPc0i05kVvVKtP1t9S3g==}
     engines: {node: '>=10'}
@@ -1339,10 +1340,6 @@ packages:
       ignore: 5.2.0
       merge2: 1.4.1
       slash: 4.0.0
-    dev: true
-
-  /globrex/0.1.2:
-    resolution: {integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==}
     dev: true
 
   /graceful-fs/4.2.10:
@@ -1770,12 +1767,6 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /mime/3.0.0:
-    resolution: {integrity: sha512-jSCU7/VB1loIWBZe14aEYHU/+1UMEHoaO7qxCOVJOw9GgH72VAWppxNcjU+x9a2k3GSIBXNKxXQFqRvvZ7vr3A==}
-    engines: {node: '>=10.0.0'}
-    hasBin: true
-    dev: true
-
   /mimic-fn/2.1.0:
     resolution: {integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==}
     engines: {node: '>=6'}
@@ -1907,15 +1898,14 @@ packages:
       mimic-fn: 2.1.0
     dev: true
 
-  /openapi-typescript/5.4.1:
-    resolution: {integrity: sha512-AGB2QiZPz4rE7zIwV3dRHtoUC/CWHhUjuzGXvtmMQN2AFV8xCTLKcZUHLcdPQmt/83i22nRE7+TxXOXkK+gf4Q==}
-    engines: {node: '>= 14.0.0'}
+  /openapi-typescript/6.0.1:
+    resolution: {integrity: sha512-VNHcK0b+xINEFAZxvFUNwa6HXsgC4/6U8oX3bzMlohCohaJsqFLxD6kpcqJpRgvNSltTBWw5Zogif9ccWoRVOA==}
     hasBin: true
     dependencies:
+      ansi-colors: 4.1.3
+      fast-glob: 3.2.12
       js-yaml: 4.1.0
-      mime: 3.0.0
-      prettier: 2.7.1
-      tiny-glob: 0.2.9
+      supports-color: 9.2.3
       undici: 5.12.0
       yargs-parser: 21.1.1
     dev: true
@@ -2413,6 +2403,11 @@ packages:
       has-flag: 4.0.0
     dev: true
 
+  /supports-color/9.2.3:
+    resolution: {integrity: sha512-aszYUX/DVK/ed5rFLb/dDinVJrQjG/vmU433wtqVSD800rYsJNWxh2R3USV90aLSU+UsyQkbNeffVLzc6B6foA==}
+    engines: {node: '>=12'}
+    dev: true
+
   /supports-preserve-symlinks-flag/1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
@@ -2430,13 +2425,6 @@ packages:
   /time-zone/1.0.0:
     resolution: {integrity: sha512-TIsDdtKo6+XrPtiTm1ssmMngN1sAhyKnTO2kunQWqNPWIVvCm15Wmw4SWInwTVgJ5u/Tr04+8Ei9TNcw4x4ONA==}
     engines: {node: '>=4'}
-    dev: true
-
-  /tiny-glob/0.2.9:
-    resolution: {integrity: sha512-g/55ssRPUjShh+xkfx9UPDXqhckHEsHr4Vd9zX55oSdGZc/MD0m3sferOkwWtp98bv+kcVfEHtRJgBVJzelrzg==}
-    dependencies:
-      globalyzer: 0.1.0
-      globrex: 0.1.2
     dev: true
 
   /to-regex-range/5.0.1:
