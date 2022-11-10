@@ -439,7 +439,7 @@ export interface components {
         motd: string;
         position?: number;
         rawTag: string;
-        tag: string;
+        tag: string | null;
         /** @enum {string|null} */
         tagColor: "#000000" | "#0000aa" | "#00aa00" | "#00aaaa" | "#aa0000" | "#aa00aa" | "#ffaa00" | "#aaaaaa" | "#555555" | "#5555ff" | "#55ff55" | "#55ffff" | "#ff5555" | "#ff55ff" | "#ffff55" | "#ffffff" | "#ddd605" | null;
         xp: number;
@@ -448,7 +448,7 @@ export interface components {
         leader?: Record<string, never>;
         officers: (unknown)[];
         members: (unknown)[];
-        discordInvite: string;
+        discordInvite: string | null;
       };
     }) | ({
       /** @enum {string} */
@@ -466,9 +466,9 @@ export interface components {
         /** @enum {number} */
         dmStatus: 0 | 1 | 2;
         bio: string;
-        discordId: string;
-        discordTag: string;
-        guild: string;
+        discordId: string | null;
+        discordTag: string | null;
+        guild: string | null;
         ranks: ("Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester")[];
         /** @enum {string|null} */
         tier: "Silver" | "Gold" | "Guardian" | "Eagle" | "Elite" | null;
@@ -479,17 +479,17 @@ export interface components {
         staff: boolean;
         titan: boolean;
         /** Format: date-time */
-        titanUntil: string;
+        titanUntil: string | null;
         /** Format: date-time */
-        lastRankTimestamp: string;
+        lastRankTimestamp: string | null;
         /** @enum {number} */
         voteStatus?: 0 | 1 | 2;
-        firstJoin: string;
+        firstJoin: string | null;
         firstJoined: number;
-        lastJoin: string;
+        lastJoin: string | null;
         lastJoined: number;
         lastQuit: number;
-        lastSeen: string;
+        lastSeen: string | null;
         lastServer: string;
         crateKeys: number;
         credits: number;
@@ -510,8 +510,8 @@ export interface components {
         levelFormat: "§k" | "§l" | "§o" | "§r";
         rankColors: (string)[];
         skinVisibility: boolean;
-        tierColor: string;
-        youtubeChannelUrl: string;
+        tierColor: string | null;
+        youtubeChannelUrl: string | null;
         killsUntilNextKdr?: number;
         winsUntilNextWlr?: number;
         xpToNextLevel: number;
@@ -541,7 +541,7 @@ export interface components {
           motd: string;
           position?: number;
           rawTag: string;
-          tag: string;
+          tag: string | null;
           /** @enum {string|null} */
           tagColor: "#000000" | "#0000aa" | "#00aa00" | "#00aaaa" | "#aa0000" | "#aa00aa" | "#ffaa00" | "#aaaaaa" | "#555555" | "#5555ff" | "#55ff55" | "#55ffff" | "#ff5555" | "#ff55ff" | "#ffff55" | "#ffffff" | "#ddd605" | null;
           xp: number;
@@ -550,13 +550,13 @@ export interface components {
           leader?: Record<string, never>;
           officers: (unknown)[];
           members: (unknown)[];
-          discordInvite: string;
+          discordInvite: string | null;
         })) | null;
         lastServerParsed: {
-          region: string;
-          serverName: string;
-          serverNameLong: string;
-          serverType: string;
+          region: string | null;
+          serverName: string | null;
+          serverNameLong: string | null;
+          serverType: string | null;
           pretty: string;
         };
         punishmentsNew?: ({
@@ -587,7 +587,7 @@ export interface components {
           skinType: "steve" | "alex";
           skinVisibility: boolean;
           base64: string;
-          raw: string;
+          raw: string | null;
         };
         winsData?: {
           /** @default 0 */
@@ -1144,7 +1144,7 @@ export interface components {
           motd: string;
           position?: number;
           rawTag: string;
-          tag: string;
+          tag: string | null;
           /** @enum {string|null} */
           tagColor: "#000000" | "#0000aa" | "#00aa00" | "#00aaaa" | "#aa0000" | "#aa00aa" | "#ffaa00" | "#aaaaaa" | "#555555" | "#5555ff" | "#55ff55" | "#55ffff" | "#ff5555" | "#ff55ff" | "#ffff55" | "#ffffff" | "#ddd605" | null;
           xp: number;
@@ -1153,7 +1153,7 @@ export interface components {
           leader?: Record<string, never>;
           officers: (unknown)[];
           members: (unknown)[];
-          discordInvite: string;
+          discordInvite: string | null;
         })) | null;
       })[]) | (({
         /** @enum {string} */
@@ -1173,9 +1173,9 @@ export interface components {
           /** @enum {number} */
           dmStatus: 0 | 1 | 2;
           bio: string;
-          discordId: string;
-          discordTag: string;
-          guild: string;
+          discordId: string | null;
+          discordTag: string | null;
+          guild: string | null;
           ranks: ("Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester")[];
           /** @enum {string|null} */
           tier: "Silver" | "Gold" | "Guardian" | "Eagle" | "Elite" | null;
@@ -1186,17 +1186,17 @@ export interface components {
           staff: boolean;
           titan: boolean;
           /** Format: date-time */
-          titanUntil: string;
+          titanUntil: string | null;
           /** Format: date-time */
-          lastRankTimestamp: string;
+          lastRankTimestamp: string | null;
           /** @enum {number} */
           voteStatus?: 0 | 1 | 2;
-          firstJoin: string;
+          firstJoin: string | null;
           firstJoined: number;
-          lastJoin: string;
+          lastJoin: string | null;
           lastJoined: number;
           lastQuit: number;
-          lastSeen: string;
+          lastSeen: string | null;
           lastServer: string;
           crateKeys: number;
           credits: number;
@@ -1217,8 +1217,8 @@ export interface components {
           levelFormat: "§k" | "§l" | "§o" | "§r";
           rankColors: (string)[];
           skinVisibility: boolean;
-          tierColor: string;
-          youtubeChannelUrl: string;
+          tierColor: string | null;
+          youtubeChannelUrl: string | null;
           killsUntilNextKdr?: number;
           winsUntilNextWlr?: number;
           xpToNextLevel: number;
@@ -1248,7 +1248,7 @@ export interface components {
             motd: string;
             position?: number;
             rawTag: string;
-            tag: string;
+            tag: string | null;
             /** @enum {string|null} */
             tagColor: "#000000" | "#0000aa" | "#00aa00" | "#00aaaa" | "#aa0000" | "#aa00aa" | "#ffaa00" | "#aaaaaa" | "#555555" | "#5555ff" | "#55ff55" | "#55ffff" | "#ff5555" | "#ff55ff" | "#ffff55" | "#ffffff" | "#ddd605" | null;
             xp: number;
@@ -1257,13 +1257,13 @@ export interface components {
             leader?: Record<string, never>;
             officers: (unknown)[];
             members: (unknown)[];
-            discordInvite: string;
+            discordInvite: string | null;
           })) | null;
           lastServerParsed: {
-            region: string;
-            serverName: string;
-            serverNameLong: string;
-            serverType: string;
+            region: string | null;
+            serverName: string | null;
+            serverNameLong: string | null;
+            serverType: string | null;
             pretty: string;
           };
           punishmentsNew?: ({
@@ -1294,7 +1294,7 @@ export interface components {
             skinType: "steve" | "alex";
             skinVisibility: boolean;
             base64: string;
-            raw: string;
+            raw: string | null;
           };
           winsData?: {
             /** @default 0 */
@@ -1905,7 +1905,7 @@ export interface components {
         flags: number;
         /** @enum {number|null} */
         interval: 1 | 2 | null;
-        intervalCount: number;
+        intervalCount: number | null;
         unitAmount: number;
       })[];
     ProductPlanResponse: {
@@ -1918,7 +1918,7 @@ export interface components {
       flags: number;
       /** @enum {number|null} */
       interval: 1 | 2 | null;
-      intervalCount: number;
+      intervalCount: number | null;
       unitAmount: number;
     };
     PlayerWinsData: {
@@ -2566,7 +2566,7 @@ export interface components {
       skinType: "steve" | "alex";
       skinVisibility: boolean;
       base64: string;
-      raw: string;
+      raw: string | null;
     };
     PlayerSkinQuery: {
       /** @default false */
@@ -3118,9 +3118,9 @@ export interface components {
       /** @enum {number} */
       dmStatus: 0 | 1 | 2;
       bio: string;
-      discordId: string;
-      discordTag: string;
-      guild: string;
+      discordId: string | null;
+      discordTag: string | null;
+      guild: string | null;
       ranks: ("Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester")[];
       /** @enum {string|null} */
       tier: "Silver" | "Gold" | "Guardian" | "Eagle" | "Elite" | null;
@@ -3131,17 +3131,17 @@ export interface components {
       staff: boolean;
       titan: boolean;
       /** Format: date-time */
-      titanUntil: string;
+      titanUntil: string | null;
       /** Format: date-time */
-      lastRankTimestamp: string;
+      lastRankTimestamp: string | null;
       /** @enum {number} */
       voteStatus?: 0 | 1 | 2;
-      firstJoin: string;
+      firstJoin: string | null;
       firstJoined: number;
-      lastJoin: string;
+      lastJoin: string | null;
       lastJoined: number;
       lastQuit: number;
-      lastSeen: string;
+      lastSeen: string | null;
       lastServer: string;
       crateKeys: number;
       credits: number;
@@ -3162,8 +3162,8 @@ export interface components {
       levelFormat: "§k" | "§l" | "§o" | "§r";
       rankColors: (string)[];
       skinVisibility: boolean;
-      tierColor: string;
-      youtubeChannelUrl: string;
+      tierColor: string | null;
+      youtubeChannelUrl: string | null;
       killsUntilNextKdr?: number;
       winsUntilNextWlr?: number;
       xpToNextLevel: number;
@@ -3193,7 +3193,7 @@ export interface components {
         motd: string;
         position?: number;
         rawTag: string;
-        tag: string;
+        tag: string | null;
         /** @enum {string|null} */
         tagColor: "#000000" | "#0000aa" | "#00aa00" | "#00aaaa" | "#aa0000" | "#aa00aa" | "#ffaa00" | "#aaaaaa" | "#555555" | "#5555ff" | "#55ff55" | "#55ffff" | "#ff5555" | "#ff55ff" | "#ffff55" | "#ffffff" | "#ddd605" | null;
         xp: number;
@@ -3202,13 +3202,13 @@ export interface components {
         leader?: Record<string, never>;
         officers: (unknown)[];
         members: (unknown)[];
-        discordInvite: string;
+        discordInvite: string | null;
       })) | null;
       lastServerParsed: {
-        region: string;
-        serverName: string;
-        serverNameLong: string;
-        serverType: string;
+        region: string | null;
+        serverName: string | null;
+        serverNameLong: string | null;
+        serverType: string | null;
         pretty: string;
       };
       punishmentsNew?: ({
@@ -3239,7 +3239,7 @@ export interface components {
         skinType: "steve" | "alex";
         skinVisibility: boolean;
         base64: string;
-        raw: string;
+        raw: string | null;
       };
       winsData?: {
         /** @default 0 */
@@ -4416,10 +4416,10 @@ export interface components {
       names: (string)[];
     };
     PlayerLastServerParsed: {
-      region: string;
-      serverName: string;
-      serverNameLong: string;
-      serverType: string;
+      region: string | null;
+      serverName: string | null;
+      serverNameLong: string | null;
+      serverType: string | null;
       pretty: string;
     };
     PlayerFactionData: {
@@ -4954,9 +4954,9 @@ export interface components {
         /** @enum {number} */
         dmStatus: 0 | 1 | 2;
         bio: string;
-        discordId: string;
-        discordTag: string;
-        guild: string;
+        discordId: string | null;
+        discordTag: string | null;
+        guild: string | null;
         ranks: ("Admin" | "Dev" | "Supervisor" | "Mod" | "Crew" | "Trainee" | "Builder" | "Designer" | "Game Designer" | "Media" | "Discord" | "Partner" | "Titan" | "Legend" | "Emerald" | "Ultra" | "Youtube" | "Tester")[];
         /** @enum {string|null} */
         tier: "Silver" | "Gold" | "Guardian" | "Eagle" | "Elite" | null;
@@ -4967,17 +4967,17 @@ export interface components {
         staff: boolean;
         titan: boolean;
         /** Format: date-time */
-        titanUntil: string;
+        titanUntil: string | null;
         /** Format: date-time */
-        lastRankTimestamp: string;
+        lastRankTimestamp: string | null;
         /** @enum {number} */
         voteStatus?: 0 | 1 | 2;
-        firstJoin: string;
+        firstJoin: string | null;
         firstJoined: number;
-        lastJoin: string;
+        lastJoin: string | null;
         lastJoined: number;
         lastQuit: number;
-        lastSeen: string;
+        lastSeen: string | null;
         lastServer: string;
         crateKeys: number;
         credits: number;
@@ -4998,8 +4998,8 @@ export interface components {
         levelFormat: "§k" | "§l" | "§o" | "§r";
         rankColors: (string)[];
         skinVisibility: boolean;
-        tierColor: string;
-        youtubeChannelUrl: string;
+        tierColor: string | null;
+        youtubeChannelUrl: string | null;
         killsUntilNextKdr?: number;
         winsUntilNextWlr?: number;
         xpToNextLevel: number;
@@ -5029,7 +5029,7 @@ export interface components {
           motd: string;
           position?: number;
           rawTag: string;
-          tag: string;
+          tag: string | null;
           /** @enum {string|null} */
           tagColor: "#000000" | "#0000aa" | "#00aa00" | "#00aaaa" | "#aa0000" | "#aa00aa" | "#ffaa00" | "#aaaaaa" | "#555555" | "#5555ff" | "#55ff55" | "#55ffff" | "#ff5555" | "#ff55ff" | "#ffff55" | "#ffffff" | "#ddd605" | null;
           xp: number;
@@ -5038,13 +5038,13 @@ export interface components {
           leader?: Record<string, never>;
           officers: (unknown)[];
           members: (unknown)[];
-          discordInvite: string;
+          discordInvite: string | null;
         })) | null;
         lastServerParsed: {
-          region: string;
-          serverName: string;
-          serverNameLong: string;
-          serverType: string;
+          region: string | null;
+          serverName: string | null;
+          serverNameLong: string | null;
+          serverType: string | null;
           pretty: string;
         };
         punishmentsNew?: ({
@@ -5075,7 +5075,7 @@ export interface components {
           skinType: "steve" | "alex";
           skinVisibility: boolean;
           base64: string;
-          raw: string;
+          raw: string | null;
         };
         winsData?: {
           /** @default 0 */
@@ -5896,7 +5896,7 @@ export interface components {
       motd: string;
       position?: number;
       rawTag: string;
-      tag: string;
+      tag: string | null;
       /** @enum {string|null} */
       tagColor: "#000000" | "#0000aa" | "#00aa00" | "#00aaaa" | "#aa0000" | "#aa00aa" | "#ffaa00" | "#aaaaaa" | "#555555" | "#5555ff" | "#55ff55" | "#55ffff" | "#ff5555" | "#ff55ff" | "#ffff55" | "#ffffff" | "#ddd605" | null;
       xp: number;
@@ -5905,7 +5905,7 @@ export interface components {
       leader?: Record<string, never>;
       officers: (Record<string, never>)[];
       members: (Record<string, never>)[];
-      discordInvite: string;
+      discordInvite: string | null;
     };
     GuildQuery: {
       /** @default false */
@@ -5927,7 +5927,7 @@ export interface components {
         motd: string;
         position?: number;
         rawTag: string;
-        tag: string;
+        tag: string | null;
         /** @enum {string|null} */
         tagColor: "#000000" | "#0000aa" | "#00aa00" | "#00aaaa" | "#aa0000" | "#aa00aa" | "#ffaa00" | "#aaaaaa" | "#555555" | "#5555ff" | "#55ff55" | "#55ffff" | "#ff5555" | "#ff55ff" | "#ffff55" | "#ffffff" | "#ddd605" | null;
         xp: number;
@@ -5936,7 +5936,7 @@ export interface components {
         leader?: Record<string, never>;
         officers: (Record<string, never>)[];
         members: (Record<string, never>)[];
-        discordInvite: string;
+        discordInvite: string | null;
       })[];
     GuildBulkInput: {
       /** @default false */
