@@ -13,7 +13,7 @@ specifiers:
   eslint-plugin-unicorn: 44.0.2
   nanoevents: ^7.0.1
   node-fetch: ^3.2.10
-  openapi-typescript: 6.0.2
+  openapi-typescript: 6.0.3
   prettier: 2.7.1
   quick-lru: ^6.1.1
   type-fest: ^3.2.0
@@ -36,7 +36,7 @@ devDependencies:
   eslint-plugin-import: 2.26.0_jnohwm7eexgw7uduhweedcbnpe
   eslint-plugin-simple-import-sort: 8.0.0_eslint@8.27.0
   eslint-plugin-unicorn: 44.0.2_eslint@8.27.0
-  openapi-typescript: 6.0.2
+  openapi-typescript: 6.0.3
   prettier: 2.7.1
   typescript: 4.8.4
 
@@ -1898,8 +1898,8 @@ packages:
       mimic-fn: 2.1.0
     dev: true
 
-  /openapi-typescript/6.0.2:
-    resolution: {integrity: sha512-nw2A8KYk2onW/DYmle90SkSAAKkOODvOlk+aXyDPbP6Q8Uylh4IESLuG7/37DRh35Ld/Pkc92exJ40urspQ73g==}
+  /openapi-typescript/6.0.3:
+    resolution: {integrity: sha512-zEIqeBdpLRNmfPJX6GG4ntnOesDPvzZ7VM+1P6/PzBUP6KVSgAaz32Ly1baMydVzyvBLVcJBHYDY8WRwasiIyg==}
     hasBin: true
     dependencies:
       ansi-colors: 4.1.3
