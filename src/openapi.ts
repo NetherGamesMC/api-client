@@ -5855,7 +5855,7 @@ export interface components {
       /** @enum {string} */
       scope?: "bestStreak" | "kills" | "streak";
       /** @enum {string} */
-      kdrPrefix?: "bw_doubles_final" | "bw_doubles" | "bw_final" | "bw" | "bw_solo_final" | "bw_solo" | "bw_squads_final" | "bw_squads" | "bw_trios_final" | "bw_trios" | "cq" | "duels" | "mm_bow" | "mm_classic" | "mm_infection" | "mm" | "mm_knife" | "mm_throw_knife" | "sg" | "sw_doubles_insane" | "sw_doubles" | "sw_doubles_normal" | "sw" | "sw_solo_insane" | "sw_solo" | "sw_solo_normal" | "tb" | "uhc";
+      kdrPrefix?: "bw_doubles" | "bw" | "bw_solo" | "bw_squads" | "bw_trios" | "cq" | "duels" | "mm_classic" | "mm_infection" | "mm" | "sg" | "sw_doubles_insane" | "sw_doubles" | "sw_doubles_normal" | "sw" | "sw_solo_insane" | "sw_solo" | "sw_solo_normal" | "tb" | "uhc";
       /** @enum {string} */
       wlrPrefix?: "duels" | "sw_doubles" | "sw_solo" | "sw" | "tb";
       /**
@@ -5877,7 +5877,7 @@ export interface components {
         /** @enum {string} */
         scope?: "bestStreak" | "kills" | "streak";
         /** @enum {string} */
-        kdrPrefix?: "bw_doubles_final" | "bw_doubles" | "bw_final" | "bw" | "bw_solo_final" | "bw_solo" | "bw_squads_final" | "bw_squads" | "bw_trios_final" | "bw_trios" | "cq" | "duels" | "mm_bow" | "mm_classic" | "mm_infection" | "mm" | "mm_knife" | "mm_throw_knife" | "sg" | "sw_doubles_insane" | "sw_doubles" | "sw_doubles_normal" | "sw" | "sw_solo_insane" | "sw_solo" | "sw_solo_normal" | "tb" | "uhc";
+        kdrPrefix?: "bw_doubles" | "bw" | "bw_solo" | "bw_squads" | "bw_trios" | "cq" | "duels" | "mm_classic" | "mm_infection" | "mm" | "sg" | "sw_doubles_insane" | "sw_doubles" | "sw_doubles_normal" | "sw" | "sw_solo_insane" | "sw_solo" | "sw_solo_normal" | "tb" | "uhc";
         /** @enum {string} */
         wlrPrefix?: "duels" | "sw_doubles" | "sw_solo" | "sw" | "tb";
         /**
@@ -6154,7 +6154,7 @@ export interface operations {
         type: "crateKeys" | "credits" | "factions" | "game" | "guilds" | "kdr" | "kills" | "mapVotes" | "oldest" | "parkour" | "playtime" | "voters" | "wins" | "wlr" | "xp";
         column?: "bh_wins" | "bw_beds_broken" | "bw_doubles_beds_broken" | "bw_doubles_final_kills" | "bw_doubles_kills" | "bw_doubles_wins" | "bw_final_kills" | "bw_kills" | "bw_solo_beds_broken" | "bw_solo_final_kills" | "bw_solo_kills" | "bw_solo_wins" | "bw_squads_beds_broken" | "bw_squads_final_kills" | "bw_squads_kills" | "bw_squads_wins" | "bw_trios_beds_broken" | "bw_trios_final_kills" | "bw_trios_kills" | "bw_trios_wins" | "bw_wins" | "cq_flags_captured" | "cq_kills" | "cq_wins" | "duels_kills" | "duels_wins" | "kills" | "mm_bow_kills" | "mm_classic_kills" | "mm_classic_wins" | "mm_infection_kills" | "mm_infection_wins" | "mm_kills" | "mm_knife_kills" | "mm_throw_knife_kills" | "mm_wins" | "ms_wins" | "sc_wins" | "sg_kills" | "sg_wins" | "sw_doubles_insane_kills" | "sw_doubles_kills" | "sw_doubles_normal_kills" | "sw_doubles_wins" | "sw_kills" | "sw_solo_insane_kills" | "sw_solo_kills" | "sw_solo_normal_kills" | "sw_solo_wins" | "sw_wins" | "tb_kills" | "tb_wins" | "uhc_kills" | "uhc_wins" | "wins";
         scope?: "bestStreak" | "kills" | "streak";
-        kdrPrefix?: "bw_doubles_final" | "bw_doubles" | "bw_final" | "bw" | "bw_solo_final" | "bw_solo" | "bw_squads_final" | "bw_squads" | "bw_trios_final" | "bw_trios" | "cq" | "duels" | "mm_bow" | "mm_classic" | "mm_infection" | "mm" | "mm_knife" | "mm_throw_knife" | "sg" | "sw_doubles_insane" | "sw_doubles" | "sw_doubles_normal" | "sw" | "sw_solo_insane" | "sw_solo" | "sw_solo_normal" | "tb" | "uhc";
+        kdrPrefix?: "bw_doubles" | "bw" | "bw_solo" | "bw_squads" | "bw_trios" | "cq" | "duels" | "mm_classic" | "mm_infection" | "mm" | "sg" | "sw_doubles_insane" | "sw_doubles" | "sw_doubles_normal" | "sw" | "sw_solo_insane" | "sw_solo" | "sw_solo_normal" | "tb" | "uhc";
         wlrPrefix?: "duels" | "sw_doubles" | "sw_solo" | "sw" | "tb";
         period?: "global" | "daily" | "weekly" | "biweekly" | "monthly" | "yearly";
         gameMode?: "bh" | "bw" | "cq" | "duels" | "mm" | "ms" | "sc" | "sg" | "sw" | "tb" | "uhc";
