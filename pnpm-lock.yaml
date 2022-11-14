@@ -5,7 +5,7 @@ specifiers:
   '@sindresorhus/tsconfig': 3.0.1
   '@typescript-eslint/eslint-plugin': 5.42.1
   '@typescript-eslint/parser': 5.42.1
-  ava: 5.0.1
+  ava: 5.1.0
   eslint: 8.27.0
   eslint-config-prettier: 8.5.0
   eslint-plugin-import: 2.26.0
@@ -30,7 +30,7 @@ devDependencies:
   '@sindresorhus/tsconfig': 3.0.1
   '@typescript-eslint/eslint-plugin': 5.42.1_2udltptbznfmezdozpdoa2aemq
   '@typescript-eslint/parser': 5.42.1_rmayb2veg2btbq6mbmnyivgasy
-  ava: 5.0.1_@ava+typescript@3.0.1
+  ava: 5.1.0_@ava+typescript@3.0.1
   eslint: 8.27.0
   eslint-config-prettier: 8.5.0_eslint@8.27.0
   eslint-plugin-import: 2.26.0_jnohwm7eexgw7uduhweedcbnpe
@@ -408,8 +408,8 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /ava/5.0.1_@ava+typescript@3.0.1:
-    resolution: {integrity: sha512-nS1eK3HhWaC+eGHtteF5j4yZMjaIE+q2o+oyqD75xsmS87R5sGlxADYWkFIGyB28jrDmAATZAAx+s3JhYsnhNw==}
+  /ava/5.1.0_@ava+typescript@3.0.1:
+    resolution: {integrity: sha512-e5VFrSQ0WBPyZJWRXVrO7RFOizFeNM0t2PORwrPvWtApgkORI6cvGnY3GX1G+lzpd0HjqNx5Jus22AhxVnUMNA==}
     engines: {node: '>=14.19 <15 || >=16.15 <17 || >=18'}
     hasBin: true
     peerDependencies:
@@ -461,8 +461,8 @@ packages:
       stack-utils: 2.0.6
       strip-ansi: 7.0.1
       supertap: 3.0.1
-      temp-dir: 2.0.0
-      write-file-atomic: 4.0.2
+      temp-dir: 3.0.0
+      write-file-atomic: 5.0.0
       yargs: 17.6.2
     transitivePeerDependencies:
       - supports-color
@@ -2414,9 +2414,9 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /temp-dir/2.0.0:
-    resolution: {integrity: sha512-aoBAniQmmwtcKp/7BzsH8Cxzv8OL736p7v1ihGb5e9DJ9kTwGWHrQrVB5+lfVDzfGrdRzXch+ig7LHaY1JTOrg==}
-    engines: {node: '>=8'}
+  /temp-dir/3.0.0:
+    resolution: {integrity: sha512-nHc6S/bwIilKHNRgK/3jlhDoIHcp45YgyiwcAk46Tr0LfEqGBVpmiAyuiuxeVE44m3mXnEeVhaipLOEWmH+Njw==}
+    engines: {node: '>=14.16'}
     dev: true
 
   /text-table/0.2.0:
@@ -2571,9 +2571,9 @@ packages:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
     dev: true
 
-  /write-file-atomic/4.0.2:
-    resolution: {integrity: sha512-7KxauUdBmSdWnmpaGFg+ppNjKF8uNLry8LyzjauQDOVONfFLNKrKvQOxZ/VuTIcS/gge/YNahf5RIIQWTSarlg==}
-    engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
+  /write-file-atomic/5.0.0:
+    resolution: {integrity: sha512-R7NYMnHSlV42K54lwY9lvW6MnSm1HSJqZL3xiSgi9E7//FYaI74r2G0rd+/X6VAMkHEdzxQaU5HUOXWUz5kA/w==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dependencies:
       imurmurhash: 0.1.4
       signal-exit: 3.0.7
