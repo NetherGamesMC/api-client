@@ -473,9 +473,9 @@ export interface components {
         /** @enum {string|null} */
         tier: "Silver" | "Gold" | "Guardian" | "Eagle" | "Elite" | null;
         banned?: boolean;
-        bannedUntil?: (Record<string, never> | number) | null;
+        bannedUntil?: number | null;
         muted?: boolean;
-        mutedUntil?: (Record<string, never> | number) | null;
+        mutedUntil?: number | null;
         staff: boolean;
         titan: boolean;
         /** Format: date-time */
@@ -533,7 +533,7 @@ export interface components {
             members: (unknown)[];
           } | null;
         }) | null;
-        guildData?: (Record<string, never> | ({
+        guildData?: ({
           id: number;
           name: string;
           maxSize: number;
@@ -551,7 +551,7 @@ export interface components {
           officers: (unknown)[];
           members: (unknown)[];
           discordInvite: string | null;
-        })) | null;
+        }) | null;
         lastServerParsed: {
           region: string | null;
           serverName: string | null;
@@ -1123,7 +1123,7 @@ export interface components {
         /** @enum {string} */
         type: "faction";
         name: string;
-        data?: (Record<string, never> | {
+        data?: {
           id: number;
           name: string;
           strength: number;
@@ -1131,12 +1131,12 @@ export interface components {
           leader?: Record<string, never>;
           officers: (unknown)[];
           members: (unknown)[];
-        }) | null;
+        } | null;
       })[]) | (({
         /** @enum {string} */
         type: "guild";
         name: string;
-        data?: (Record<string, never> | ({
+        data?: ({
           id: number;
           name: string;
           maxSize: number;
@@ -1154,13 +1154,13 @@ export interface components {
           officers: (unknown)[];
           members: (unknown)[];
           discordInvite: string | null;
-        })) | null;
+        }) | null;
       })[]) | (({
         /** @enum {string} */
         type: "player";
         name: string;
         rank: string;
-        data?: (Record<string, never> | ({
+        data?: ({
           xuid: string;
           name: string;
           /** Format: uri */
@@ -1180,9 +1180,9 @@ export interface components {
           /** @enum {string|null} */
           tier: "Silver" | "Gold" | "Guardian" | "Eagle" | "Elite" | null;
           banned?: boolean;
-          bannedUntil?: (Record<string, never> | number) | null;
+          bannedUntil?: number | null;
           muted?: boolean;
-          mutedUntil?: (Record<string, never> | number) | null;
+          mutedUntil?: number | null;
           staff: boolean;
           titan: boolean;
           /** Format: date-time */
@@ -1240,7 +1240,7 @@ export interface components {
               members: (unknown)[];
             } | null;
           }) | null;
-          guildData?: (Record<string, never> | ({
+          guildData?: ({
             id: number;
             name: string;
             maxSize: number;
@@ -1258,7 +1258,7 @@ export interface components {
             officers: (unknown)[];
             members: (unknown)[];
             discordInvite: string | null;
-          })) | null;
+          }) | null;
           lastServerParsed: {
             region: string | null;
             serverName: string | null;
@@ -1821,7 +1821,7 @@ export interface components {
           leaderboard: boolean;
           /** @deprecated use `credits` instead. */
           statusCredits: number;
-        })) | null;
+        }) | null;
       })[]);
     SearchFullTextQuery: {
       /** @default false */
@@ -3125,9 +3125,9 @@ export interface components {
       /** @enum {string|null} */
       tier: "Silver" | "Gold" | "Guardian" | "Eagle" | "Elite" | null;
       banned?: boolean;
-      bannedUntil?: (Record<string, never> | number) | null;
+      bannedUntil?: number | null;
       muted?: boolean;
-      mutedUntil?: (Record<string, never> | number) | null;
+      mutedUntil?: number | null;
       staff: boolean;
       titan: boolean;
       /** Format: date-time */
@@ -3185,7 +3185,7 @@ export interface components {
           members: (unknown)[];
         } | null;
       }) | null;
-      guildData?: (Record<string, never> | ({
+      guildData?: ({
         id: number;
         name: string;
         maxSize: number;
@@ -3203,7 +3203,7 @@ export interface components {
         officers: (unknown)[];
         members: (unknown)[];
         discordInvite: string | null;
-      })) | null;
+      }) | null;
       lastServerParsed: {
         region: string | null;
         serverName: string | null;
@@ -4961,9 +4961,9 @@ export interface components {
         /** @enum {string|null} */
         tier: "Silver" | "Gold" | "Guardian" | "Eagle" | "Elite" | null;
         banned?: boolean;
-        bannedUntil?: (Record<string, never> | number) | null;
+        bannedUntil?: number | null;
         muted?: boolean;
-        mutedUntil?: (Record<string, never> | number) | null;
+        mutedUntil?: number | null;
         staff: boolean;
         titan: boolean;
         /** Format: date-time */
@@ -5021,7 +5021,7 @@ export interface components {
             members: (unknown)[];
           } | null;
         }) | null;
-        guildData?: (Record<string, never> | ({
+        guildData?: ({
           id: number;
           name: string;
           maxSize: number;
@@ -5039,7 +5039,7 @@ export interface components {
           officers: (unknown)[];
           members: (unknown)[];
           discordInvite: string | null;
-        })) | null;
+        }) | null;
         lastServerParsed: {
           region: string | null;
           serverName: string | null;
