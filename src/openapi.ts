@@ -1854,7 +1854,7 @@ export interface components {
       type?: "faction" | "guild" | "player";
     };
     RelayPaginationResponse: {
-      nodes: (Record<string, never>)[];
+      nodes: (unknown)[];
       edges: ({
           cursor: string;
           node?: Record<string, never>;
@@ -3181,8 +3181,8 @@ export interface components {
           strength: number;
           allies: (string)[];
           leader?: Record<string, never>;
-          officers: (Record<string, never>)[];
-          members: (Record<string, never>)[];
+          officers: (unknown)[];
+          members: (unknown)[];
         } | null;
       }) | null;
       guildData?: (Record<string, never> | ({
@@ -5017,8 +5017,8 @@ export interface components {
             strength: number;
             allies: (string)[];
             leader?: Record<string, never>;
-            officers: (Record<string, never>)[];
-            members: (Record<string, never>)[];
+            officers: (unknown)[];
+            members: (unknown)[];
           } | null;
         }) | null;
         guildData?: (Record<string, never> | ({
@@ -5865,8 +5865,13 @@ export interface components {
       period?: "global" | "daily" | "weekly" | "biweekly" | "monthly" | "yearly";
       /** @enum {string} */
       gameMode?: "bh" | "bw" | "cq" | "duels" | "mm" | "ms" | "sc" | "sg" | "sw" | "tb" | "uhc";
+      /**
+       * @default current
+       * @enum {string}
+       */
+      month?: "current" | "previous";
     };
-    LeaderboardBulkResponse: (Record<string, never>)[];
+    LeaderboardBulkResponse: (unknown)[];
     LeaderboardBulkInput: ({
         /** @default 100 */
         limit?: number;
@@ -5887,6 +5892,11 @@ export interface components {
         period?: "global" | "daily" | "weekly" | "biweekly" | "monthly" | "yearly";
         /** @enum {string} */
         gameMode?: "bh" | "bw" | "cq" | "duels" | "mm" | "ms" | "sc" | "sg" | "sw" | "tb" | "uhc";
+        /**
+         * @default current
+         * @enum {string}
+         */
+        month?: "current" | "previous";
       })[];
     GuildResponse: {
       id: number;
@@ -5903,8 +5913,8 @@ export interface components {
       xpToNextLevel: number;
       level: number;
       leader?: Record<string, never>;
-      officers: (Record<string, never>)[];
-      members: (Record<string, never>)[];
+      officers: (unknown)[];
+      members: (unknown)[];
       discordInvite: string | null;
     };
     GuildQuery: {
@@ -5934,8 +5944,8 @@ export interface components {
         xpToNextLevel: number;
         level: number;
         leader?: Record<string, never>;
-        officers: (Record<string, never>)[];
-        members: (Record<string, never>)[];
+        officers: (unknown)[];
+        members: (unknown)[];
         discordInvite: string | null;
       })[];
     GuildBulkInput: {
@@ -5957,8 +5967,8 @@ export interface components {
       strength: number;
       allies: (string)[];
       leader?: Record<string, never>;
-      officers: (Record<string, never>)[];
-      members: (Record<string, never>)[];
+      officers: (unknown)[];
+      members: (unknown)[];
     };
     FactionBulkResponse: ({
         id: number;
@@ -5966,13 +5976,13 @@ export interface components {
         strength: number;
         allies: (string)[];
         leader?: Record<string, never>;
-        officers: (Record<string, never>)[];
-        members: (Record<string, never>)[];
+        officers: (unknown)[];
+        members: (unknown)[];
       })[];
     DiscordCountResponse: {
       members: number;
     };
-    AnnouncementsResponse: (Record<string, never>)[];
+    AnnouncementsResponse: (unknown)[];
     AnnouncementsQuery: {
       /** @default 100 */
       limit?: number;
@@ -6158,6 +6168,7 @@ export interface operations {
         wlrPrefix?: "duels" | "sw_doubles" | "sw_solo" | "sw" | "tb";
         period?: "global" | "daily" | "weekly" | "biweekly" | "monthly" | "yearly";
         gameMode?: "bh" | "bw" | "cq" | "duels" | "mm" | "ms" | "sc" | "sg" | "sw" | "tb" | "uhc";
+        month?: "current" | "previous";
       };
     };
     responses: {
