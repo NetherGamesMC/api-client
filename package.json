@@ -39,7 +39,7 @@
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-simple-import-sort": "8.0.0",
-    "eslint-plugin-unicorn": "44.0.2",
+    "eslint-plugin-unicorn": "45.0.0",
     "openapi-typescript": "6.0.3",
     "prettier": "2.7.1",
     "typescript": "4.9.3"
