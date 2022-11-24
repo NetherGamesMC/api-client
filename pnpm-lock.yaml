@@ -429,7 +429,7 @@ packages:
       chalk: 5.1.2
       chokidar: 3.5.3
       chunkd: 2.0.1
-      ci-info: 3.6.2
+      ci-info: 3.7.0
       ci-parallel-vars: 1.0.1
       clean-yaml-object: 0.1.0
       cli-truncate: 3.1.0
@@ -572,8 +572,8 @@ packages:
     resolution: {integrity: sha512-7d58XsFmOq0j6el67Ug9mHf9ELUXsQXYJBkyxhH/k+6Ke0qXRnv0kbemx+Twc6fRJ07C49lcbdgm9FL1Ei/6SQ==}
     dev: true
 
-  /ci-info/3.6.2:
-    resolution: {integrity: sha512-lVZdhvbEudris15CLytp2u6Y0p5EKfztae9Fqa189MfNmln9F33XuH69v5fvNfiRN5/0eAUz2yJL3mo+nhaRKg==}
+  /ci-info/3.7.0:
+    resolution: {integrity: sha512-2CpRNYmImPx+RXKLq6jko/L07phmS9I02TyqkcNU20GCF/GgaWvc58hPtjxDX8lPpkdwc9sNh72V9k00S7ezog==}
     engines: {node: '>=8'}
     dev: true
 
@@ -967,7 +967,7 @@ packages:
       eslint: '>=8.28.0'
     dependencies:
       '@babel/helper-validator-identifier': 7.19.1
-      ci-info: 3.6.2
+      ci-info: 3.7.0
       clean-regexp: 1.0.0
       eslint: 8.28.0
       eslint-utils: 3.0.0_eslint@8.28.0
