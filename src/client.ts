@@ -95,7 +95,7 @@ export class NetherGamesClient {
     for (const [key, value] of Object.entries(options.params ?? {}))
       if (value != null) url.searchParams.set(key, value.toString())
 
-    const body = options.body != null ? JSON.stringify(options.body) : undefined
+    const body = options.body == null ? undefined : JSON.stringify(options.body)
     const cacheKey = url.toString() + (body ?? '')
     const cached = this.#cache.get(cacheKey)
     if (cached != null) return cached as T
@@ -106,7 +106,7 @@ export class NetherGamesClient {
     const response = await fetch(url.toString(), {
       method: options.method,
       headers: {
-        ...(this.#apiKey != null ? {Authorization: this.#apiKey} : {}),
+        ...(this.#apiKey == null ? {} : {Authorization: this.#apiKey}),
         'Content-Type': 'application/json',
         'User-Agent': this.#userAgent,
       },
