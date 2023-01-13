@@ -449,6 +449,7 @@ export interface components {
         officers: (unknown)[];
         members: (unknown)[];
         discordInvite: string | null;
+        discordId: string | null;
       };
     }) | ({
       /** @enum {string} */
@@ -551,6 +552,7 @@ export interface components {
           officers: (unknown)[];
           members: (unknown)[];
           discordInvite: string | null;
+          discordId: string | null;
         }) | null;
         lastServerParsed: {
           region: string | null;
@@ -1154,6 +1156,7 @@ export interface components {
           officers: (unknown)[];
           members: (unknown)[];
           discordInvite: string | null;
+          discordId: string | null;
         }) | null;
       })[]) | (({
         /** @enum {string} */
@@ -1258,6 +1261,7 @@ export interface components {
             officers: (unknown)[];
             members: (unknown)[];
             discordInvite: string | null;
+            discordId: string | null;
           }) | null;
           lastServerParsed: {
             region: string | null;
@@ -3203,6 +3207,7 @@ export interface components {
         officers: (unknown)[];
         members: (unknown)[];
         discordInvite: string | null;
+        discordId: string | null;
       }) | null;
       lastServerParsed: {
         region: string | null;
@@ -5039,6 +5044,7 @@ export interface components {
           officers: (unknown)[];
           members: (unknown)[];
           discordInvite: string | null;
+          discordId: string | null;
         }) | null;
         lastServerParsed: {
           region: string | null;
@@ -5916,6 +5922,7 @@ export interface components {
       officers: (unknown)[];
       members: (unknown)[];
       discordInvite: string | null;
+      discordId: string | null;
     };
     GuildQuery: {
       /** @default false */
@@ -5947,6 +5954,7 @@ export interface components {
         officers: (unknown)[];
         members: (unknown)[];
         discordInvite: string | null;
+        discordId: string | null;
       })[];
     GuildBulkInput: {
       /** @default false */
