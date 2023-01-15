@@ -5,7 +5,7 @@ specifiers:
   '@sindresorhus/tsconfig': 3.0.1
   '@typescript-eslint/eslint-plugin': 5.48.1
   '@typescript-eslint/parser': 5.48.1
-  ava: 5.1.0
+  ava: 5.1.1
   eslint: 8.31.0
   eslint-config-prettier: 8.6.0
   eslint-plugin-import: 2.27.4
@@ -30,7 +30,7 @@ devDependencies:
   '@sindresorhus/tsconfig': 3.0.1
   '@typescript-eslint/eslint-plugin': 5.48.1_3jon24igvnqaqexgwtxk6nkpse
   '@typescript-eslint/parser': 5.48.1_iukboom6ndih5an6iafl45j2fe
-  ava: 5.1.0_@ava+typescript@3.0.1
+  ava: 5.1.1_@ava+typescript@3.0.1
   eslint: 8.31.0
   eslint-config-prettier: 8.6.0_eslint@8.31.0
   eslint-plugin-import: 2.27.4_qdjeohovcytra7xto5vgmxssaq
@@ -428,8 +428,8 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /ava/5.1.0_@ava+typescript@3.0.1:
-    resolution: {integrity: sha512-e5VFrSQ0WBPyZJWRXVrO7RFOizFeNM0t2PORwrPvWtApgkORI6cvGnY3GX1G+lzpd0HjqNx5Jus22AhxVnUMNA==}
+  /ava/5.1.1_@ava+typescript@3.0.1:
+    resolution: {integrity: sha512-od1CWgWVIKZSdEc1dhQWhbsd6KBs0EYjek7eqZNGPvy+NyC9Q1bXixcadlgOXwDG9aM0zLMQZwRXfe9gMb1LQQ==}
     engines: {node: '>=14.19 <15 || >=16.15 <17 || >=18'}
     hasBin: true
     peerDependencies:
