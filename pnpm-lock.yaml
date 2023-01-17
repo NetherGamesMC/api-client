@@ -8,7 +8,7 @@ specifiers:
   ava: 5.1.1
   eslint: 8.32.0
   eslint-config-prettier: 8.6.0
-  eslint-plugin-import: 2.27.4
+  eslint-plugin-import: 2.27.5
   eslint-plugin-simple-import-sort: 9.0.0
   eslint-plugin-unicorn: 45.0.2
   nanoevents: ^7.0.1
@@ -33,7 +33,7 @@ devDependencies:
   ava: 5.1.1_@ava+typescript@3.0.1
   eslint: 8.32.0
   eslint-config-prettier: 8.6.0_eslint@8.32.0
-  eslint-plugin-import: 2.27.4_2l6piu6guil2f63lj3qmhzbnn4
+  eslint-plugin-import: 2.27.5_2l6piu6guil2f63lj3qmhzbnn4
   eslint-plugin-simple-import-sort: 9.0.0_eslint@8.32.0
   eslint-plugin-unicorn: 45.0.2_eslint@8.32.0
   openapi-typescript: 6.1.0
@@ -954,8 +954,8 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-import/2.27.4_2l6piu6guil2f63lj3qmhzbnn4:
-    resolution: {integrity: sha512-Z1jVt1EGKia1X9CnBCkpAOhWy8FgQ7OmJ/IblEkT82yrFU/xJaxwujaTzLWqigewwynRQ9mmHfX9MtAfhxm0sA==}
+  /eslint-plugin-import/2.27.5_2l6piu6guil2f63lj3qmhzbnn4:
+    resolution: {integrity: sha512-LmEt3GVofgiGuiE+ORpnvP+kAm3h6MLZJ4Q5HCyHADofsb4VzXFsRiWj3c0OFiV+3DWFh0qg3v9gcPlfc3zRow==}
     engines: {node: '>=4'}
     peerDependencies:
       '@typescript-eslint/parser': '*'
