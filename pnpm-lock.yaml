@@ -9,7 +9,7 @@ specifiers:
   eslint: 8.32.0
   eslint-config-prettier: 8.6.0
   eslint-plugin-import: 2.27.5
-  eslint-plugin-simple-import-sort: 9.0.0
+  eslint-plugin-simple-import-sort: 10.0.0
   eslint-plugin-unicorn: 45.0.2
   nanoevents: ^7.0.1
   node-fetch: ^3.3.0
@@ -34,7 +34,7 @@ devDependencies:
   eslint: 8.32.0
   eslint-config-prettier: 8.6.0_eslint@8.32.0
   eslint-plugin-import: 2.27.5_6savw6y3b7jng6f64kgkyoij64
-  eslint-plugin-simple-import-sort: 9.0.0_eslint@8.32.0
+  eslint-plugin-simple-import-sort: 10.0.0_eslint@8.32.0
   eslint-plugin-unicorn: 45.0.2_eslint@8.32.0
   openapi-typescript: 6.1.0
   prettier: 2.8.3
@@ -987,8 +987,8 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-simple-import-sort/9.0.0_eslint@8.32.0:
-    resolution: {integrity: sha512-PtrLjyXP8kjRneWT1n0b99y/2Fyup37we7FVoWsI61/O7x4ztLohzhep/pxI/cYlECr/cQ2j6utckdvWpVwXNA==}
+  /eslint-plugin-simple-import-sort/10.0.0_eslint@8.32.0:
+    resolution: {integrity: sha512-AeTvO9UCMSNzIHRkg8S6c3RPy5YEwKWSQPx3DYghLedo2ZQxowPFLGDN1AZ2evfg6r6mjBSZSLxLFsWSu3acsw==}
     peerDependencies:
       eslint: '>=5.0.0'
     dependencies:
