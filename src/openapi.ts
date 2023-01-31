@@ -5876,6 +5876,7 @@ export interface components {
        * @enum {string}
        */
       month?: "current" | "previous";
+      after?: number;
     };
     LeaderboardBulkResponse: (unknown)[];
     LeaderboardBulkInput: ({

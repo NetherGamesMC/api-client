@@ -16,14 +16,14 @@ specifiers:
   openapi-typescript: 6.1.0
   prettier: 2.8.3
   quick-lru: ^6.1.1
-  type-fest: ^3.5.3
+  type-fest: ^3.5.4
   typescript: 4.9.5
 
 dependencies:
   nanoevents: 7.0.1
   node-fetch: 3.3.0
   quick-lru: 6.1.1
-  type-fest: 3.5.3
+  type-fest: 3.5.4
 
 devDependencies:
   '@ava/typescript': 3.0.1
@@ -1009,7 +1009,7 @@ packages:
       eslint: 8.33.0
       esquery: 1.4.0
       indent-string: 4.0.0
-      is-builtin-module: 3.2.0
+      is-builtin-module: 3.2.1
       jsesc: 3.0.2
       lodash: 4.17.21
       pluralize: 8.0.0
@@ -1552,8 +1552,8 @@ packages:
       has-tostringtag: 1.0.0
     dev: true
 
-  /is-builtin-module/3.2.0:
-    resolution: {integrity: sha512-phDA4oSGt7vl1n5tJvTWooWWAsXLY+2xCnxNqvKhGEzujg+A43wPlPOyDg3C8XQHN+6k/JTQWJ/j0dQh/qr+Hw==}
+  /is-builtin-module/3.2.1:
+    resolution: {integrity: sha512-BSLE3HnV2syZ0FK0iMA/yUGplUeMmNz4AW5fnTunbCIqZi4vG3WjJT9FHMy5D69xmAYBHXQhJdALdpwVxV501A==}
     engines: {node: '>=6'}
     dependencies:
       builtin-modules: 3.3.0
@@ -2585,8 +2585,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /type-fest/3.5.3:
-    resolution: {integrity: sha512-V2+og4j/rWReWvaFrse3s9g2xvUv/K9Azm/xo6CjIuq7oeGqsoimC7+9/A3tfvNcbQf8RPSVj/HV81fB4DJrjA==}
+  /type-fest/3.5.4:
+    resolution: {integrity: sha512-/Je22Er4LPoln256pcLzj73MUmPrTWg8u4WB1RlxaDl0idJOfD1r259VtKOinp4xLJqJ9zYVMuWOun6Ssp7boA==}
     engines: {node: '>=14.16'}
     dev: false
 
