@@ -16,14 +16,14 @@ specifiers:
   openapi-typescript: 6.1.0
   prettier: 2.8.3
   quick-lru: ^6.1.1
-  type-fest: ^3.5.4
+  type-fest: ^3.5.5
   typescript: 4.9.5
 
 dependencies:
   nanoevents: 7.0.1
   node-fetch: 3.3.0
   quick-lru: 6.1.1
-  type-fest: 3.5.4
+  type-fest: 3.5.5
 
 devDependencies:
   '@ava/typescript': 3.0.1
@@ -1995,7 +1995,7 @@ packages:
       fast-glob: 3.2.12
       js-yaml: 4.1.0
       supports-color: 9.3.1
-      undici: 5.16.0
+      undici: 5.18.0
       yargs-parser: 21.1.1
     dev: true
 
@@ -2585,8 +2585,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /type-fest/3.5.4:
-    resolution: {integrity: sha512-/Je22Er4LPoln256pcLzj73MUmPrTWg8u4WB1RlxaDl0idJOfD1r259VtKOinp4xLJqJ9zYVMuWOun6Ssp7boA==}
+  /type-fest/3.5.5:
+    resolution: {integrity: sha512-Nudle2CLcCaf9/1bVQunwzX1/ZH4Z6mvP8hkWWZCbKrxtnN52QwD5Xn/mo68aofQhGU4be1GlEC6LQCTKGXkRw==}
     engines: {node: '>=14.16'}
     dev: false
 
@@ -2613,8 +2613,8 @@ packages:
       which-boxed-primitive: 1.0.2
     dev: true
 
-  /undici/5.16.0:
-    resolution: {integrity: sha512-KWBOXNv6VX+oJQhchXieUznEmnJMqgXMbs0xxH2t8q/FUAWSJvOSr/rMaZKnX5RIVq7JDn0JbP4BOnKG2SGXLQ==}
+  /undici/5.18.0:
+    resolution: {integrity: sha512-1iVwbhonhFytNdg0P4PqyIAXbdlVZVebtPDvuM36m66mRw4OGrCm2MYynJv/UENFLdP13J1nPVQzVE2zTs1OeA==}
     engines: {node: '>=12.18'}
     dependencies:
       busboy: 1.6.0
