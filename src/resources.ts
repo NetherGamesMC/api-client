@@ -175,6 +175,7 @@ interface LeaderboardParams<T extends LeaderboardKey> {
   column?: LeaderboardQuery['column'] | LeaderboardQueryColumn<T>
   scope?: LeaderboardQuery['scope']
   period?: LeaderboardQuery['period']
+  after?: LeaderboardQuery['after']
 }
 
 export class LeaderboardResource extends NetherGamesResource {
