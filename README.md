@@ -21,7 +21,7 @@ const guild = await ng.guilds.retrieve(player.guild)
 
 ## API
 
-### new NetherGamesClient(apiKey?, options?)
+### new NetherGamesClient(token?, options?)
 
 Returns a new [instance](#instance).
 
@@ -36,17 +36,10 @@ Default: `https://api.ngmc.co`
 
 API host to use when sending requests.
 
-#### cacheMaxSize
-
-Type: `number`\
-Default: `1000`
-
-The maximum amount of LRU objects to hold in memory.
-
 #### userAgent
 
 Type: `string`\
-Default: `NetherGames-API-Client/2.6.8`
+Default: `NetherGames-API-Client/3.0.0`
 
 User-agent to use when sending requests.
 
@@ -57,7 +50,7 @@ Type: `string`
 
 Append an identifier to the user agent in parentheses.\
 A unique identifier allows us to identify requests in our error monitoring tools.\
-Example: `Casper's Discord Bot` => `NetherGames-API-Client/2.6.8 (Casper's Discord Bot)`
+Example: `Casper's Discord Bot` => `NetherGames-API-Client/3.0.0 (Casper's Discord Bot)`
 
 ### Instance
 

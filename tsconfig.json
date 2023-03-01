@@ -1,9 +1,9 @@
 {
+  "extends": "@tsconfig/node18-strictest-esm/tsconfig.json",
   "compilerOptions": {
-    "lib": ["es2020", "dom"],
+    "declaration": true,
     "outDir": "dist",
-    "target": "es2020"
+    "lib": ["es2022", "dom"]
   },
-  "extends": "@sindresorhus/tsconfig",
   "include": ["src"]
 }

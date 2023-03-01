@@ -1,6 +1,6 @@
 {
   "name": "@nethergames/api",
-  "version": "2.6.8",
+  "version": "3.0.0",
   "description": "Fully typed client for the NetherGames API.",
   "keywords": [
     "nethergames",
@@ -18,31 +18,32 @@
   "scripts": {
     "build": "rm -rf dist && tsc",
     "format": "prettier --write .",
-    "generate": "openapi-typescript https://docs.nethergames.org/openapi.json -o src/openapi.ts && sed -i '' 's/@description Deprecated,/@deprecated/g' src/openapi.ts",
     "lint": "eslint --fix . --ext .ts",
     "prepublishOnly": "npm run -s build",
     "test": "npm run -s build && ava"
   },
   "dependencies": {
-    "nanoevents": "^7.0.1",
-    "node-fetch": "^3.3.0",
-    "quick-lru": "^6.1.1",
-    "type-fest": "^3.6.1"
+    "type-fest": "^3.6.1",
+    "undici": "^5.20.0"
   },
   "devDependencies": {
     "@ava/typescript": "3.0.1",
-    "@sindresorhus/tsconfig": "3.0.1",
-    "@typescript-eslint/eslint-plugin": "5.54.0",
-    "@typescript-eslint/parser": "5.54.0",
+    "@tsconfig/node18-strictest-esm": "1.0.1",
+    "@types/node": "18.14.2",
     "ava": "5.2.0",
     "eslint": "8.35.0",
-    "eslint-config-prettier": "8.6.0",
-    "eslint-plugin-import": "2.27.5",
-    "eslint-plugin-simple-import-sort": "10.0.0",
-    "eslint-plugin-unicorn": "45.0.2",
-    "openapi-typescript": "6.1.1",
+    "eslint-config-neon": "0.1.40",
+    "ioredis": "5.3.1",
     "prettier": "2.8.4",
     "typescript": "4.9.5"
+  },
+  "peerDependencies": {
+    "ioredis": ">=5.2.4"
+  },
+  "peerDependenciesMeta": {
+    "ioredis": {
+      "optional": true
+    }
   },
   "engines": {
     "node": ">=14.16"
