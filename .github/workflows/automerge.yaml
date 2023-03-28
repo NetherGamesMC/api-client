@@ -3,7 +3,7 @@ on:
     types: [assigned, opened, synchronize, reopened]
 jobs:
   automerge:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     permissions: write-all
     steps:
       - id: automerge
