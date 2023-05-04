@@ -1,6 +1,6 @@
 import type {Headers} from 'node-fetch'
 
-import {LEADERBOARD_COLUMNS_NESTED, POSSIBLE_SUBTYPES} from './constants.js'
+import {CDN_HOST, DEFAULT_SKIN_HASH, LEADERBOARD_COLUMNS_NESTED, POSSIBLE_SUBTYPES} from './constants.js'
 
 export interface RateLimitHeaders {
   bucket: string
@@ -78,4 +78,12 @@ export function parseLeaderboardColumn(
   if (subtypeRef == null) return {success: false, values: getObjectKeys(gameRef)}
 
   return {success: true, column}
+}
+
+export function getSkinUrl(skinHash: string | null): string {
+  return `${CDN_HOST}/skins/${skinHash ?? DEFAULT_SKIN_HASH}/full.png`
+}
+
+export function getAvatarUrl(skinHash: string | null): string {
+  return `${CDN_HOST}/skins/${skinHash ?? DEFAULT_SKIN_HASH}/head.png`
 }

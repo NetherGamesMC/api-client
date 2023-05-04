@@ -45,9 +45,6 @@ export interface paths {
   "/v1/players/{player}": {
     get: operations["Get Player"];
   };
-  "/v1/players/{player}/avatar": {
-    get: operations["Get Player Avatar"];
-  };
   "/v1/servers/player-count": {
     get: operations["Get Player Count"];
   };
@@ -65,9 +62,6 @@ export interface paths {
   };
   "/v1/players/batch": {
     post: operations["Bulk Get Players"];
-  };
-  "/v1/players/{player}/skin": {
-    get: operations["Get Player Skin"];
   };
   "/v1/players/{player}/stats": {
     /** @description Track hourly stats for a player (lazy-loaded). Max 100 new players every 24 hours for each API key. */
@@ -462,6 +456,7 @@ export interface components {
         avatarBlurhash?: string;
         /** Format: uri */
         skin: string;
+        skinHash: string | null;
         online?: boolean;
         flags: number;
         /** @enum {number} */
@@ -583,14 +578,6 @@ export interface components {
             affectedPlayers: (string)[];
             alt: boolean;
           })[];
-        skinData?: {
-          skin: boolean;
-          /** @enum {string} */
-          skinType: "steve" | "alex";
-          skinVisibility: boolean;
-          base64: string;
-          raw: string | null;
-        };
         winsData?: {
           /** @default 0 */
           BH?: number;
@@ -1171,6 +1158,7 @@ export interface components {
           avatarBlurhash?: string;
           /** Format: uri */
           skin: string;
+          skinHash: string | null;
           online?: boolean;
           flags: number;
           /** @enum {number} */
@@ -1292,14 +1280,6 @@ export interface components {
               affectedPlayers: (string)[];
               alt: boolean;
             })[];
-          skinData?: {
-            skin: boolean;
-            /** @enum {string} */
-            skinType: "steve" | "alex";
-            skinVisibility: boolean;
-            base64: string;
-            raw: string | null;
-          };
           winsData?: {
             /** @default 0 */
             BH?: number;
@@ -1838,8 +1818,6 @@ export interface components {
       withOnline?: boolean;
       /** @default true */
       withPunishments?: boolean;
-      /** @default false */
-      withSkinData?: boolean;
       /** @default true */
       withStats?: boolean;
       /** @default true */
@@ -2564,18 +2542,6 @@ export interface components {
         };
       };
     };
-    PlayerSkinResponseData: {
-      skin: boolean;
-      /** @enum {string} */
-      skinType: "steve" | "alex";
-      skinVisibility: boolean;
-      base64: string;
-      raw: string | null;
-    };
-    PlayerSkinQuery: {
-      /** @default false */
-      dataOnly?: boolean;
-    };
     PlayerResponseStats: {
       kills: number;
       killsTotal: number;
@@ -3117,6 +3083,7 @@ export interface components {
       avatarBlurhash?: string;
       /** Format: uri */
       skin: string;
+      skinHash: string | null;
       online?: boolean;
       flags: number;
       /** @enum {number} */
@@ -3238,14 +3205,6 @@ export interface components {
           affectedPlayers: (string)[];
           alt: boolean;
         })[];
-      skinData?: {
-        skin: boolean;
-        /** @enum {string} */
-        skinType: "steve" | "alex";
-        skinVisibility: boolean;
-        base64: string;
-        raw: string | null;
-      };
       winsData?: {
         /** @default 0 */
         BH?: number;
@@ -3783,8 +3742,6 @@ export interface components {
       withOnline?: boolean;
       /** @default true */
       withPunishments?: boolean;
-      /** @default false */
-      withSkinData?: boolean;
       /** @default true */
       withStats?: boolean;
       /** @default true */
@@ -4954,6 +4911,7 @@ export interface components {
         avatarBlurhash?: string;
         /** Format: uri */
         skin: string;
+        skinHash: string | null;
         online?: boolean;
         flags: number;
         /** @enum {number} */
@@ -5075,14 +5033,6 @@ export interface components {
             affectedPlayers: (string)[];
             alt: boolean;
           })[];
-        skinData?: {
-          skin: boolean;
-          /** @enum {string} */
-          skinType: "steve" | "alex";
-          skinVisibility: boolean;
-          base64: string;
-          raw: string | null;
-        };
         winsData?: {
           /** @default 0 */
           BH?: number;
@@ -5620,8 +5570,6 @@ export interface components {
       withOnline?: boolean;
       /** @default true */
       withPunishments?: boolean;
-      /** @default false */
-      withSkinData?: boolean;
       /** @default true */
       withStats?: boolean;
       /** @default true */
@@ -5931,8 +5879,6 @@ export interface components {
       /** @default true */
       withOnline?: boolean;
       /** @default false */
-      withSkinData?: boolean;
-      /** @default false */
       withStats?: boolean;
       /** @default false */
       withVoteStatus?: boolean;
@@ -5962,8 +5908,6 @@ export interface components {
       expand?: boolean;
       /** @default true */
       withOnline?: boolean;
-      /** @default false */
-      withSkinData?: boolean;
       /** @default false */
       withStats?: boolean;
       /** @default false */
@@ -6041,7 +5985,6 @@ export interface operations {
       query?: {
         expand?: boolean;
         withOnline?: boolean;
-        withSkinData?: boolean;
         withStats?: boolean;
         withVoteStatus?: boolean;
       };
@@ -6106,7 +6049,6 @@ export interface operations {
       query?: {
         expand?: boolean;
         withOnline?: boolean;
-        withSkinData?: boolean;
         withStats?: boolean;
         withVoteStatus?: boolean;
       };
@@ -6212,7 +6154,6 @@ export interface operations {
         withGuildData?: boolean;
         withOnline?: boolean;
         withPunishments?: boolean;
-        withSkinData?: boolean;
         withStats?: boolean;
         withVoteStatus?: boolean;
         withAvatarBlurhash?: boolean;
@@ -6224,21 +6165,6 @@ export interface operations {
       200: {
         content: {
           "application/json": components["schemas"]["PlayerResponse"];
-        };
-      };
-    };
-  };
-  "Get Player Avatar": {
-    parameters?: {
-      query?: {
-        dataOnly?: boolean;
-      };
-    };
-    responses: {
-      /** @description Default Response */
-      200: {
-        content: {
-          "application/json": components["schemas"]["PlayerSkinResponseData"];
         };
       };
     };
@@ -6327,21 +6253,6 @@ export interface operations {
       };
     };
   };
-  "Get Player Skin": {
-    parameters?: {
-      query?: {
-        dataOnly?: boolean;
-      };
-    };
-    responses: {
-      /** @description Default Response */
-      200: {
-        content: {
-          "application/json": components["schemas"]["PlayerSkinResponseData"];
-        };
-      };
-    };
-  };
   "Get Player Stats History": {
     /** @description Track hourly stats for a player (lazy-loaded). Max 100 new players every 24 hours for each API key. */
     parameters: {
@@ -6421,7 +6332,6 @@ export interface operations {
         withGuildData?: boolean;
         withOnline?: boolean;
         withPunishments?: boolean;
-        withSkinData?: boolean;
         withStats?: boolean;
         withVoteStatus?: boolean;
         withAvatarBlurhash?: boolean;

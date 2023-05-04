@@ -30,7 +30,6 @@ import type {
   PlayerLeaderboardQuery,
   PlayerPunishment,
   PlayerQuery,
-  PlayerSkin,
   PlayerStats,
   PlayerStatsByTypeResponse,
   PlayerStatsQuery,
@@ -218,7 +217,7 @@ export class LeaderboardResource extends NetherGamesResource {
 
 interface PlayerParams {
   expand?: boolean
-  include?: Array<'faction' | 'guild' | 'online' | 'punishments' | 'skin' | 'stats' | 'voteStatus'>
+  include?: Array<'faction' | 'guild' | 'online' | 'punishments' | 'stats' | 'voteStatus'>
 }
 
 export class PlayersResource extends NetherGamesResource {
@@ -234,7 +233,6 @@ export class PlayersResource extends NetherGamesResource {
       withGuildData: params.include.includes('guild'),
       withOnline: params.include.includes('online'),
       withPunishments: params.include.includes('punishments'),
-      withSkinData: params.include.includes('skin'),
       withStats: params.include.includes('stats'),
       withVoteStatus: params.include.includes('voteStatus'),
     }
@@ -259,16 +257,6 @@ export class PlayersResource extends NetherGamesResource {
       method: 'POST',
       body: {names, ...params},
     })
-  }
-
-  async avatar(player: string): Promise<PlayerSkin> {
-    const skin = await this._client._getOne<PlayerSkin>(`/v1/players/${player}/avatar`, {dataOnly: true}, true)
-    return skin!
-  }
-
-  async skin(player: string): Promise<PlayerSkin> {
-    const skin = await this._client._getOne<PlayerSkin>(`/v1/players/${player}/skin`, {dataOnly: true}, true)
-    return skin!
   }
 
   async stats(

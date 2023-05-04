@@ -1,3 +1,13 @@
+/**
+ * The base URL for the CDN.
+ */
+export const CDN_HOST = 'https://cdn.nethergames.org'
+
+/**
+ * The MD5 hash of the default skin (Steve).
+ */
+export const DEFAULT_SKIN_HASH = 'def463341f256af9656a2eebea910968'
+
 export const LEADERBOARD_COLUMNS = [
   'bh_wins',
   'bw_beds_broken',

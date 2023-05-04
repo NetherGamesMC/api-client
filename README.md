@@ -46,7 +46,7 @@ The maximum amount of LRU objects to hold in memory.
 #### userAgent
 
 Type: `string`\
-Default: `NetherGames-API-Client/2.6.8`
+Default: `NetherGames-API-Client/2.7.0`
 
 User-agent to use when sending requests.
 
@@ -57,7 +57,7 @@ Type: `string`
 
 Append an identifier to the user agent in parentheses.\
 A unique identifier allows us to identify requests in our error monitoring tools.\
-Example: `Casper's Discord Bot` => `NetherGames-API-Client/2.6.8 (Casper's Discord Bot)`
+Example: `Casper's Discord Bot` => `NetherGames-API-Client/2.7.0 (Casper's Discord Bot)`
 
 ### Instance
 
@@ -201,14 +201,6 @@ Retrieve a player leaderboard, or null if not found.
 #### .leaderboardBulk(player[], params?) [Docs](https://docs.nethergames.org/#operation/Bulk%20Get%20Player%20Leaderboards)
 
 Find many (1-100) player leaderboards at once.
-
-#### .avatar(player) [Docs](https://docs.nethergames.org/#operation/Get%20Player%20Avatar)
-
-Retrieve a player avatar object.
-
-#### .skin(player) [Docs](https://docs.nethergames.org/#operation/Get%20Player%20Skin)
-
-Retrieve a player's skin object.
 
 #### .stats(player, type) [Docs](https://docs.nethergames.org/#operation/Get%20Player%20Stats%20by%20Type)
 
