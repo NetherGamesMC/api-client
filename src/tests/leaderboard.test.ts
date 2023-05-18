@@ -20,7 +20,7 @@ test('retrieving the game leaderboard without a column fails', async t => {
 })
 
 test('retrieving the game leaderboard with a column works', async t => {
-  const leaderboard = await client.leaderboard.list('game', {column: 'bh_wins'})
+  const leaderboard = await client.leaderboard.list('game', {column: 'bw_beds_broken'})
   t.is(leaderboard.length, 100)
 })
 

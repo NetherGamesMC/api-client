@@ -9,7 +9,6 @@ export const CDN_HOST = 'https://cdn.nethergames.org'
 export const DEFAULT_SKIN_HASH = 'def463341f256af9656a2eebea910968'
 
 export const LEADERBOARD_COLUMNS = [
-  'bh_wins',
   'bw_beds_broken',
   'bw_doubles_beds_broken',
   'bw_doubles_final_kills',
