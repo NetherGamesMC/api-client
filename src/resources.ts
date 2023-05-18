@@ -111,7 +111,6 @@ export class GuildsResource extends NetherGamesResource {
 }
 
 const LEADERBOARD_MAPPINGS = {
-  bh: ['wins'],
   bw: [
     'doubles_final_kills',
     'doubles_kills',
