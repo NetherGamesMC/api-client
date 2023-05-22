@@ -670,6 +670,7 @@ export interface components {
             };
             winStreaks?: {
               gameKey: string;
+              gameKeyFriendly: string;
               current: number;
               best: number;
             }[];
@@ -1419,6 +1420,7 @@ export interface components {
             };
             winStreaks?: {
               gameKey: string;
+              gameKeyFriendly: string;
               current: number;
               best: number;
             }[];
@@ -3298,6 +3300,7 @@ export interface components {
       };
       winStreaks?: {
         gameKey: string;
+        gameKeyFriendly: string;
         current: number;
         best: number;
       }[];
@@ -5111,6 +5114,7 @@ export interface components {
       };
       winStreaks?: {
         gameKey: string;
+        gameKeyFriendly: string;
         current: number;
         best: number;
       }[];
