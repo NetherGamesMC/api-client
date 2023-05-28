@@ -1,6 +1,6 @@
 {
   "name": "@nethergames/api",
-  "version": "2.8.1",
+  "version": "2.8.2",
   "description": "Fully typed client for the NetherGames API.",
   "keywords": [
     "nethergames",
@@ -25,9 +25,9 @@
   },
   "dependencies": {
     "nanoevents": "^7.0.1",
-    "node-fetch": "^3.3.0",
+    "node-fetch": "^3.3.1",
     "quick-lru": "^6.1.1",
-    "type-fest": "^3.6.1"
+    "type-fest": "^3.11.0"
   },
   "devDependencies": {
     "@ava/typescript": "4.0.0",

@@ -216,7 +216,9 @@ export class LeaderboardResource extends NetherGamesResource {
 
 interface PlayerParams {
   expand?: boolean
-  include?: Array<'faction' | 'guild' | 'online' | 'punishments' | 'stats' | 'voteStatus' | 'winStreaks'>
+  include?: Array<
+    'faction' | 'guild' | 'online' | 'punishments' | 'stats' | 'usernameHistory' | 'voteStatus' | 'winStreaks'
+  >
 }
 
 export class PlayersResource extends NetherGamesResource {
@@ -233,6 +235,7 @@ export class PlayersResource extends NetherGamesResource {
       withOnline: params.include.includes('online'),
       withPunishments: params.include.includes('punishments'),
       withStats: params.include.includes('stats'),
+      withUsernameHistory: params.include.includes('usernameHistory'),
       withVoteStatus: params.include.includes('voteStatus'),
       withWinStreaks: params.include.includes('winStreaks'),
     }
