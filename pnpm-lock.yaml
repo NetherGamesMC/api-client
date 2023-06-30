@@ -20,8 +20,8 @@ dependencies:
 
 devDependencies:
   '@ava/typescript':
-    specifier: 4.0.0
-    version: 4.0.0
+    specifier: 4.1.0
+    version: 4.1.0
   '@sindresorhus/tsconfig':
     specifier: 3.0.1
     version: 3.0.1
@@ -33,7 +33,7 @@ devDependencies:
     version: 5.60.1(eslint@8.43.0)(typescript@5.1.6)
   ava:
     specifier: 5.3.1
-    version: 5.3.1(@ava/typescript@4.0.0)
+    version: 5.3.1(@ava/typescript@4.1.0)
   eslint:
     specifier: 8.43.0
     version: 8.43.0
@@ -61,9 +61,9 @@ devDependencies:
 
 packages:
 
-  /@ava/typescript@4.0.0:
-    resolution: {integrity: sha512-QFIPeqkEbdvn7Pob0wVeYpeZD0eXd8nDYdCl+knJVaIJrHdF2fXa58vFaig26cmYwnsEN0KRNTYJKbqW1B0lfg==}
-    engines: {node: '>=14.19 <15 || >=16.15 <17 || >=18'}
+  /@ava/typescript@4.1.0:
+    resolution: {integrity: sha512-1iWZQ/nr9iflhLK9VN8H+1oDZqe93qxNnyYUz+jTzkYPAHc5fdZXBrqmNIgIfFhWYXK5OaQ5YtC7OmLeTNhVEg==}
+    engines: {node: ^14.19 || ^16.15 || ^18 || ^20}
     dependencies:
       escape-string-regexp: 5.0.0
       execa: 7.1.1
@@ -465,7 +465,7 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /ava@5.3.1(@ava/typescript@4.0.0):
+  /ava@5.3.1(@ava/typescript@4.1.0):
     resolution: {integrity: sha512-Scv9a4gMOXB6+ni4toLuhAm9KYWEjsgBglJl+kMGI5+IVDt120CCDZyB5HNU9DjmLI2t4I0GbnxGLmmRfGTJGg==}
     engines: {node: '>=14.19 <15 || >=16.15 <17 || >=18'}
     hasBin: true
@@ -475,7 +475,7 @@ packages:
       '@ava/typescript':
         optional: true
     dependencies:
-      '@ava/typescript': 4.0.0
+      '@ava/typescript': 4.1.0
       acorn: 8.8.2
       acorn-walk: 8.2.0
       ansi-styles: 6.2.1
