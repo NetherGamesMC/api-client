@@ -30,7 +30,7 @@
     "type-fest": "^3.11.0"
   },
   "devDependencies": {
-    "@ava/typescript": "4.0.0",
+    "@ava/typescript": "4.1.0",
     "@sindresorhus/tsconfig": "3.0.1",
     "@typescript-eslint/eslint-plugin": "5.60.1",
     "@typescript-eslint/parser": "5.60.1",
