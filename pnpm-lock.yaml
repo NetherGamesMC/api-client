@@ -50,8 +50,8 @@ devDependencies:
     specifier: 47.0.0
     version: 47.0.0(eslint@8.44.0)
   openapi-typescript:
-    specifier: 6.2.8
-    version: 6.2.8
+    specifier: 6.3.1
+    version: 6.3.1
   prettier:
     specifier: 3.0.0
     version: 3.0.0
@@ -1200,6 +1200,17 @@ packages:
       micromatch: 4.0.5
     dev: true
 
+  /fast-glob@3.3.0:
+    resolution: {integrity: sha512-ChDuvbOypPuNjO8yIDf36x7BlZX1smcUMTTcyoIjycexOxd6DFsKsg21qVBzEmr3G7fUKIRy2/psii+CIUt7FA==}
+    engines: {node: '>=8.6.0'}
+    dependencies:
+      '@nodelib/fs.stat': 2.0.5
+      '@nodelib/fs.walk': 1.2.8
+      glob-parent: 5.1.2
+      merge2: 1.4.1
+      micromatch: 4.0.5
+    dev: true
+
   /fast-json-stable-stringify@2.1.0:
     resolution: {integrity: sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw==}
     dev: true
@@ -1982,14 +1993,14 @@ packages:
       mimic-fn: 4.0.0
     dev: true
 
-  /openapi-typescript@6.2.8:
-    resolution: {integrity: sha512-yA+y5MHiu6cjmtsGfNLavzVuvGCKzjL3H+exgHDPK6bnp6ZVFibtAiafenNSRDWL0x+7Sw/VPv5SbaqiPLW46w==}
+  /openapi-typescript@6.3.1:
+    resolution: {integrity: sha512-CsKjTspBBSRCVlkvPQnsc/Dg0DvmA5iVslxNspEkvgv9SQGW2U4Zf6jqditp3IdWvcqfVylKuUrYfQqaFr6dQA==}
     hasBin: true
     dependencies:
       ansi-colors: 4.1.3
-      fast-glob: 3.2.12
+      fast-glob: 3.3.0
       js-yaml: 4.1.0
-      supports-color: 9.3.1
+      supports-color: 9.4.0
       undici: 5.22.1
       yargs-parser: 21.1.1
     dev: true
@@ -2513,8 +2524,8 @@ packages:
       has-flag: 4.0.0
     dev: true
 
-  /supports-color@9.3.1:
-    resolution: {integrity: sha512-knBY82pjmnIzK3NifMo3RxEIRD9E0kIzV4BKcyTZ9+9kWgLMxd4PrsTSMoFQUabgRBbF8KOLRDCyKgNV+iK44Q==}
+  /supports-color@9.4.0:
+    resolution: {integrity: sha512-VL+lNrEoIXww1coLPOmiEmK/0sGigko5COxI09KzHc2VJXJsQ37UaQ+8quuxjDeA7+KnLGTWRyOXSLLR2Wb4jw==}
     engines: {node: '>=12'}
     dev: true
 
