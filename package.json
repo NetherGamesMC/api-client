@@ -27,7 +27,7 @@
     "nanoevents": "^8.0.0",
     "node-fetch": "^3.3.1",
     "quick-lru": "^6.1.1",
-    "type-fest": "^3.11.0"
+    "type-fest": "^4.0.0"
   },
   "devDependencies": {
     "@ava/typescript": "4.1.0",
