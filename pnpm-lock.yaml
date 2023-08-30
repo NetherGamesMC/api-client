@@ -50,8 +50,8 @@ devDependencies:
     specifier: 48.0.1
     version: 48.0.1(eslint@8.48.0)
   openapi-typescript:
-    specifier: 6.5.3
-    version: 6.5.3
+    specifier: 6.5.4
+    version: 6.5.4
   prettier:
     specifier: 3.0.3
     version: 3.0.3
@@ -1994,8 +1994,8 @@ packages:
       mimic-fn: 4.0.0
     dev: true
 
-  /openapi-typescript@6.5.3:
-    resolution: {integrity: sha512-iVOgf1wf/6R73Cg9wcxMAD/P3+/TJ8HQruLyv3WRDu29Pwnmp7ZUJ897Kb401jW7Ao/L4JjisropHQJW62BXtA==}
+  /openapi-typescript@6.5.4:
+    resolution: {integrity: sha512-ndNgrYIGSWSMrcXC8bFdx/voXRINB3dcHIm2+Sg9Tn7LJPXc7ufuaSr9E2eVucSwNxPu8oBbJxmMnxEZgT1lzA==}
     hasBin: true
     dependencies:
       ansi-colors: 4.1.3
