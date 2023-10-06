@@ -23,8 +23,8 @@ devDependencies:
     specifier: 4.1.0
     version: 4.1.0
   '@sindresorhus/tsconfig':
-    specifier: 4.0.0
-    version: 4.0.0
+    specifier: 5.0.0
+    version: 5.0.0
   '@typescript-eslint/eslint-plugin':
     specifier: 6.7.4
     version: 6.7.4(@typescript-eslint/parser@6.7.4)(eslint@8.50.0)(typescript@5.2.2)
@@ -173,9 +173,9 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@sindresorhus/tsconfig@4.0.0:
-    resolution: {integrity: sha512-ZPfPpln4Yl07TE5ULbCkESdvfNq+zen9QPIEnvKSPYgHBhbLSGPGH/G4uF76RUijc/LA7PkVXljjxT4b+5/vpQ==}
-    engines: {node: '>=16'}
+  /@sindresorhus/tsconfig@5.0.0:
+    resolution: {integrity: sha512-LvvySslVPhAwo7dT+iovKXKCmJD82yYAsH/3D5BSyT3YP9Dvhdlhy0eQr0DBE0CxeFO6Wdbco3+nB+c2QYcAaA==}
+    engines: {node: '>=18'}
     dev: true
 
   /@types/json-schema@7.0.12:
