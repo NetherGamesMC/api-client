@@ -32,8 +32,8 @@ devDependencies:
     specifier: 6.13.2
     version: 6.13.2(eslint@8.55.0)(typescript@5.3.2)
   ava:
-    specifier: 6.0.0
-    version: 6.0.0(@ava/typescript@4.1.0)
+    specifier: 6.0.1
+    version: 6.0.1(@ava/typescript@4.1.0)
   eslint:
     specifier: 8.55.0
     version: 8.55.0
@@ -575,8 +575,8 @@ packages:
     resolution: {integrity: sha512-tLRNUXati5MFePdAk8dw7Qt7DpxPB60ofAgn8WRhW6a2rcimZnYBP9oxHiv0OHy+Wz7kPMG+t4LGdt31+4EmGg==}
     dev: true
 
-  /ava@6.0.0(@ava/typescript@4.1.0):
-    resolution: {integrity: sha512-sgruhDqX9QwW3iuivRgvHNZsE/3oc2yMpANUms2WIN3YGLmhng6aFoDDEFFtwKaaw2H7KteAOuNzv9ml1UO2QQ==}
+  /ava@6.0.1(@ava/typescript@4.1.0):
+    resolution: {integrity: sha512-9zR0wOwlcJdOWwHOKnpi0GrPRLTlxDFapGalP4rGD0oQRKxDVoucBBWvxVQ/2cPv10Hx1PkDXLJH5iUzhPn0/g==}
     engines: {node: ^18.18 || ^20.8 || ^21}
     hasBin: true
     peerDependencies:
@@ -1538,7 +1538,7 @@ packages:
     dependencies:
       array-union: 2.1.0
       dir-glob: 3.0.1
-      fast-glob: 3.3.1
+      fast-glob: 3.3.2
       ignore: 5.2.4
       merge2: 1.4.1
       slash: 3.0.0
