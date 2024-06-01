@@ -41,7 +41,7 @@
     "eslint-plugin-simple-import-sort": "12.1.0",
     "eslint-plugin-unicorn": "53.0.0",
     "openapi-typescript": "6.7.6",
-    "prettier": "3.2.5",
+    "prettier": "3.3.0",
     "typescript": "5.4.5"
   },
   "engines": {
