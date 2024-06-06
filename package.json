@@ -2,46 +2,34 @@
   "name": "@nethergames/api",
   "version": "2.8.2",
   "description": "Fully typed client for the NetherGames API.",
-  "keywords": [
-    "nethergames",
-    "api"
-  ],
+  "keywords": ["nethergames", "api"],
   "repository": "NetherGamesMC/api-client",
   "license": "MIT",
   "sideEffects": false,
   "type": "module",
   "exports": "./dist/index.js",
   "types": "./dist",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "build": "rm -rf dist && tsc",
-    "format": "prettier --write .",
+    "format": "npx @biomejs/biome format --write .",
     "generate": "openapi-typescript https://docs.nethergames.org/openapi.json -o src/openapi.ts && sed -i '' 's/@description Deprecated,/@deprecated/g' src/openapi.ts",
-    "lint": "eslint --fix . --ext .ts",
+    "lint": "npx @biomejs/biome lint --write --unsafe .",
     "prepublishOnly": "npm run -s build",
     "test": "npm run -s build && ava"
   },
   "dependencies": {
     "nanoevents": "^9.0.0",
-    "node-fetch": "^3.3.1",
+    "node-fetch": "^3.3.2",
     "quick-lru": "^7.0.0",
-    "type-fest": "^4.0.0"
+    "type-fest": "^4.19.0"
   },
   "devDependencies": {
     "@ava/typescript": "5.0.0",
+    "@biomejs/biome": "1.8.0",
     "@sindresorhus/tsconfig": "5.0.0",
-    "@typescript-eslint/eslint-plugin": "7.12.0",
-    "@typescript-eslint/parser": "7.12.0",
     "ava": "6.1.3",
-    "eslint": "9.4.0",
-    "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-import": "2.29.1",
-    "eslint-plugin-simple-import-sort": "12.1.0",
-    "eslint-plugin-unicorn": "53.0.0",
     "openapi-typescript": "6.7.6",
-    "prettier": "3.3.1",
     "typescript": "5.4.5"
   },
   "engines": {

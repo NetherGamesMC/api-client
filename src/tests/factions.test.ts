@@ -8,7 +8,7 @@ const client = new NetherGamesClient('testing')
 
 test('retrieving an existing faction works', async t => {
   const faction = await client.factions.retrieve('NetherGames')
-  t.is(faction!.name, 'NetherGames')
+  t.is(faction?.name, 'NetherGames')
 })
 
 test('retrieving multiple factions works', async t => {

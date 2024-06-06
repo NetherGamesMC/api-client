@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "lib": ["es2020", "dom"],
+    "noPropertyAccessFromIndexSignature": false,
     "outDir": "dist",
     "target": "es2020"
   },

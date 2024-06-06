@@ -8,7 +8,7 @@ const client = new NetherGamesClient('testing')
 
 test('retrieving an existing guild works', async t => {
   const guild = await client.guilds.retrieve('NetherGames')
-  t.is(guild!.name, 'NetherGames')
+  t.is(guild?.name, 'NetherGames')
 })
 
 test('retrieving multiple guilds works', async t => {

@@ -39,8 +39,8 @@ function getObjectKeys(obj: Record<string, any>): Record<string, string[]> {
   for (const [key, value] of Object.entries(obj))
     if (Object.keys(value).length > 0) result[key] = Object.keys(value)
     else {
-      result['total'] ??= []
-      result['total'].push(key)
+      result.total ??= []
+      result.total.push(key)
     }
   return result
 }
@@ -52,23 +52,27 @@ export function parseLeaderboardColumn(
   type?: string | null,
   subtype?: string | null,
 ): ParseResult {
-  if (game == null) game = 'total'
-  if (type == null) type = 'total'
+  const parsedGame = game ?? 'total'
+  const parsedType = type ?? 'total'
 
-  const column = [game, type, subtype].filter(v => v && v !== 'total').join('_')
+  const column = [parsedGame, parsedType, subtype].filter(v => v && v !== 'total').join('_')
   const isSubtypeValid = subtype != null && POSSIBLE_SUBTYPES.has(subtype)
 
   if (game == null && type == null && isSubtypeValid) return {success: true, column}
 
-  const gameRef = LEADERBOARD_COLUMNS_NESTED[game as keyof typeof LEADERBOARD_COLUMNS_NESTED]
+  const gameRef = LEADERBOARD_COLUMNS_NESTED[parsedGame as keyof typeof LEADERBOARD_COLUMNS_NESTED]
   if (gameRef == null) return {success: false, values: getObjectKeys(LEADERBOARD_COLUMNS_NESTED)}
 
-  if (Object.keys(gameRef).length === 0 && !type) return {success: true, column}
+  if (Object.keys(gameRef).length === 0 && !parsedType) return {success: true, column}
 
-  const typeRef = gameRef[type as keyof typeof gameRef]
+  const typeRef = gameRef[parsedType as keyof typeof gameRef]
   if (typeRef == null) {
     const gameKeys = getObjectKeys(gameRef)
-    if (subtype != null && isSubtypeValid) for (const subtype of POSSIBLE_SUBTYPES) delete gameKeys[subtype]
+    if (subtype != null && isSubtypeValid) {
+      for (const validSubtype of POSSIBLE_SUBTYPES) {
+        delete gameKeys[validSubtype]
+      }
+    }
     return {success: false, values: gameKeys}
   }
 

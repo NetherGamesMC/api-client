@@ -8,7 +8,7 @@ const client = new NetherGamesClient('testing')
 
 test('retrieving an existing player works', async t => {
   const player = await client.players.retrieve('NetherGamesMC')
-  t.is(player!.name, 'NetherGamesMC')
+  t.is(player?.name, 'NetherGamesMC')
 })
 
 test('retrieving multiple players works', async t => {
@@ -37,5 +37,5 @@ test('retrieving multiple player leaderboards works', async t => {
 
 test('retrieving xuid mapping works', async t => {
   const mapping = await client.players.xuidMapping(['2535418039503959', 'NetherGamesMC'])
-  t.deepEqual(mapping, {'2535418039503959': 'NetherGamesMC', 'NetherGamesMC': '2535418039503959'})
+  t.deepEqual(mapping, {'2535418039503959': 'NetherGamesMC', NetherGamesMC: '2535418039503959'})
 })

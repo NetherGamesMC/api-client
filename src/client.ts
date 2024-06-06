@@ -134,16 +134,16 @@ export class NetherGamesClient {
     }
 
     if (!options.rateLimitExempt && response.status === 429) {
-      const error = new NetherGamesRateLimitError(data['message'], this.lastRateLimit!)
+      const error = new NetherGamesRateLimitError(data.message, this.lastRateLimit!)
       this.#emitter.emit('error', url.toString(), response, error, end)
       throw error
     }
 
     const error = new NetherGamesRequestError({
-      code: data['code'],
-      message: data['message'],
+      code: data.code,
+      message: data.message,
       status: response.status,
-      errors: data['errors'],
+      errors: data.errors,
     })
     this.#emitter.emit('error', url.toString(), response, error, end)
     throw error
