@@ -5949,69 +5949,7 @@ export interface components {
         | 'Youtube'
         | null
     }
-    LeaderboardResponseCrateKeys: {
-      xuid: string
-      player: string
-      crateKeys: number
-      /** @enum {string|null} */
-      topRank:
-        | 'Admin'
-        | 'Advisor'
-        | 'Builder'
-        | 'Crew'
-        | 'Designer'
-        | 'Dev'
-        | 'Discord Mod'
-        | 'Emerald'
-        | 'Game Designer'
-        | 'Honoured'
-        | 'Legend'
-        | 'Media'
-        | 'Mod'
-        | 'Partner'
-        | 'Supervisor'
-        | 'Support'
-        | 'System'
-        | 'Tester'
-        | 'Titan'
-        | 'Trainee'
-        | 'Trainee Builder'
-        | 'Ultra'
-        | 'Youtube'
-        | null
-    }
     LeaderboardResponse:
-      | {
-          xuid: string
-          player: string
-          crateKeys: number
-          /** @enum {string|null} */
-          topRank:
-            | 'Admin'
-            | 'Advisor'
-            | 'Builder'
-            | 'Crew'
-            | 'Designer'
-            | 'Dev'
-            | 'Discord Mod'
-            | 'Emerald'
-            | 'Game Designer'
-            | 'Honoured'
-            | 'Legend'
-            | 'Media'
-            | 'Mod'
-            | 'Partner'
-            | 'Supervisor'
-            | 'Support'
-            | 'System'
-            | 'Tester'
-            | 'Titan'
-            | 'Trainee'
-            | 'Trainee Builder'
-            | 'Ultra'
-            | 'Youtube'
-            | null
-        }[]
       | {
           xuid: string
           player: string
@@ -6092,14 +6030,6 @@ export interface components {
             | 'Ultra'
             | 'Youtube'
             | null
-        }[]
-      | {
-          name: string
-          leader: string
-          xp: number
-          xpToNextLevel: number
-          level: number
-          earnedXp?: number
         }[]
       | {
           xuid: string
@@ -6368,7 +6298,6 @@ export interface components {
       limit?: number
       /** @enum {string} */
       type:
-        | 'crateKeys'
         | 'credits'
         | 'factions'
         | 'game'
@@ -6460,7 +6389,6 @@ export interface components {
       limit?: number
       /** @enum {string} */
       type:
-        | 'crateKeys'
         | 'credits'
         | 'factions'
         | 'game'
@@ -6841,7 +6769,6 @@ export interface operations {
       query: {
         limit?: number
         type:
-          | 'crateKeys'
           | 'credits'
           | 'factions'
           | 'game'

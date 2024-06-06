@@ -54,11 +54,6 @@ test('retrieving the wins leaderboard works', async t => {
   t.is(leaderboard.length, 100)
 })
 
-test('retrieving the xp leaderboard works', async t => {
-  const leaderboard = await client.leaderboard.list('xp')
-  t.is(leaderboard.length, 100)
-})
-
 test('retrieving multiple leaderboards works', async t => {
   const leaderboards = await client.leaderboard.bulk([
     {type: 'credits', limit: 10},
@@ -69,7 +64,6 @@ test('retrieving multiple leaderboards works', async t => {
     {type: 'parkour', limit: 10},
     {type: 'voters', limit: 10},
     {type: 'wins', limit: 10},
-    {type: 'xp', limit: 10},
   ])
   t.is(leaderboards.length, 9)
 })

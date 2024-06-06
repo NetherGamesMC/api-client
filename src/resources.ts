@@ -9,7 +9,6 @@ import type {
   GuildExpanded,
   GuildQuery,
   Leaderboard,
-  LeaderboardCrateKeys,
   LeaderboardCredits,
   LeaderboardFactions,
   LeaderboardGame,
@@ -22,9 +21,8 @@ import type {
   LeaderboardPlaytime,
   LeaderboardQuery,
   LeaderboardVoters,
-  LeaderboardWins,
   LeaderboardWLR,
-  LeaderboardXP,
+  LeaderboardWins,
   Player,
   PlayerLeaderboard,
   PlayerLeaderboardQuery,
@@ -177,10 +175,6 @@ interface LeaderboardParams<T extends LeaderboardKey> {
 }
 
 export class LeaderboardResource extends NetherGamesResource {
-  async list<T extends LeaderboardKey>(
-    type: 'crateKeys',
-    params?: LeaderboardParams<T>,
-  ): Promise<LeaderboardCrateKeys[]>
   async list<T extends LeaderboardKey>(type: 'credits', params?: LeaderboardParams<T>): Promise<LeaderboardCredits[]>
   async list<T extends LeaderboardKey>(type: 'factions', params?: LeaderboardParams<T>): Promise<LeaderboardFactions[]>
   async list<T extends LeaderboardKey>(type: 'game', params?: LeaderboardParams<T>): Promise<LeaderboardGame[]>
@@ -194,7 +188,6 @@ export class LeaderboardResource extends NetherGamesResource {
   async list<T extends LeaderboardKey>(type: 'voters', params?: LeaderboardParams<T>): Promise<LeaderboardVoters[]>
   async list<T extends LeaderboardKey>(type: 'wins', params?: LeaderboardParams<T>): Promise<LeaderboardWins[]>
   async list<T extends LeaderboardKey>(type: 'wlr', params?: LeaderboardParams<T>): Promise<LeaderboardWLR[]>
-  async list<T extends LeaderboardKey>(type: 'xp', params?: LeaderboardParams<T>): Promise<LeaderboardXP[]>
   async list<T extends LeaderboardKey>(
     type: LeaderboardQuery['type'],
     params?: LeaderboardParams<T>,

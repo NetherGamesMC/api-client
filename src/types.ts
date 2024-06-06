@@ -18,7 +18,6 @@ export type GuildDefault = components['schemas']['GuildResponse']
 export type GuildExpanded = Omit<GuildDefault, 'leader' | 'officers' | 'members'> & ExpandedMembers
 export type GuildQuery = components['schemas']['GuildQuery']
 
-export type LeaderboardCrateKeys = components['schemas']['LeaderboardResponseCrateKeys']
 export type LeaderboardCredits = components['schemas']['LeaderboardResponseCredits']
 export type LeaderboardFactions = components['schemas']['LeaderboardResponseFactions']
 export type LeaderboardGame = components['schemas']['LeaderboardResponseGame']
@@ -32,9 +31,7 @@ export type LeaderboardPlaytime = components['schemas']['LeaderboardResponsePlay
 export type LeaderboardVoters = components['schemas']['LeaderboardResponseVoters']
 export type LeaderboardWins = components['schemas']['LeaderboardResponseWins']
 export type LeaderboardWLR = components['schemas']['LeaderboardResponseWLR']
-export type LeaderboardXP = components['schemas']['LeaderboardResponseXP']
 export type Leaderboard =
-  | LeaderboardCrateKeys
   | LeaderboardCredits
   | LeaderboardFactions
   | LeaderboardGame
@@ -48,7 +45,6 @@ export type Leaderboard =
   | LeaderboardVoters
   | LeaderboardWins
   | LeaderboardWLR
-  | LeaderboardXP
 export type LeaderboardQuery = components['schemas']['LeaderboardQuery']
 
 export type Player = components['schemas']['PlayerResponse']
