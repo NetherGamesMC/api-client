@@ -35,10 +35,10 @@ importers:
         version: 6.1.3(@ava/typescript@5.0.0)
       openapi-typescript:
         specifier: 7.0.0
-        version: 7.0.0(typescript@5.4.5)
+        version: 7.0.0(typescript@5.5.2)
       typescript:
-        specifier: 5.4.5
-        version: 5.4.5
+        specifier: 5.5.2
+        version: 5.5.2
 
 packages:
 
@@ -942,8 +942,8 @@ packages:
     resolution: {integrity: sha512-R6wDsVsoS9xYOpy8vgeBlqpdOyzJ12HNfQhC/aAKWM3YoCV9TtunJzh/QpkMgeDhkoynDcw5f1y+qF9yc/HHyg==}
     engines: {node: '>=16'}
 
-  typescript@5.4.5:
-    resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
+  typescript@5.5.2:
+    resolution: {integrity: sha512-NcRtPEOsPFFWjobJEtfihkLCZCXZt/os3zf8nTxjVH3RvTSxjrCamJpbExGvYOF+tFHc3pA65qpdwPbzjohhew==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -1668,13 +1668,13 @@ snapshots:
     dependencies:
       mimic-fn: 4.0.0
 
-  openapi-typescript@7.0.0(typescript@5.4.5):
+  openapi-typescript@7.0.0(typescript@5.5.2):
     dependencies:
       '@redocly/openapi-core': 1.16.0(supports-color@9.4.0)
       ansi-colors: 4.1.3
       parse-json: 8.1.0
       supports-color: 9.4.0
-      typescript: 5.4.5
+      typescript: 5.5.2
       yargs-parser: 21.1.1
     transitivePeerDependencies:
       - encoding
@@ -1847,7 +1847,7 @@ snapshots:
 
   type-fest@4.20.1: {}
 
-  typescript@5.4.5: {}
+  typescript@5.5.2: {}
 
   unicorn-magic@0.1.0: {}
 
