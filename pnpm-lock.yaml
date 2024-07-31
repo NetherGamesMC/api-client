@@ -34,8 +34,8 @@ importers:
         specifier: 6.1.3
         version: 6.1.3(@ava/typescript@5.0.0)
       openapi-typescript:
-        specifier: 7.1.1
-        version: 7.1.1(typescript@5.5.4)
+        specifier: 7.1.2
+        version: 7.1.2(typescript@5.5.4)
       typescript:
         specifier: 5.5.4
         version: 5.5.4
@@ -727,8 +727,8 @@ packages:
     resolution: {integrity: sha512-1FlR+gjXK7X+AsAHso35MnyN5KqGwJRi/31ft6x0M194ht7S+rWAvd7PHss9xSKMzE0asv1pyIHaJYq+BbacAQ==}
     engines: {node: '>=12'}
 
-  openapi-typescript@7.1.1:
-    resolution: {integrity: sha512-ssIeBp3Y7cwA/481AzC/+/cMTFHmg+R8aRXJPSNV/sc+2qvfGkFueL3/LyvLZEYeDDCzl2IhxoFPzH+UEscGQw==}
+  openapi-typescript@7.1.2:
+    resolution: {integrity: sha512-G1orjznk3K1Nf/aPek3eJp0StxTC4pwQA/DTl/1eqBpp8u9jIGbP7hRWNQ9W3wY6fS9S2wTzykFTXvqisrAfRw==}
     hasBin: true
     peerDependencies:
       typescript: ^5.x
@@ -1668,7 +1668,7 @@ snapshots:
     dependencies:
       mimic-fn: 4.0.0
 
-  openapi-typescript@7.1.1(typescript@5.5.4):
+  openapi-typescript@7.1.2(typescript@5.5.4):
     dependencies:
       '@redocly/openapi-core': 1.16.0(supports-color@9.4.0)
       ansi-colors: 4.1.3
