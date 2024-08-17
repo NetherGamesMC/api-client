@@ -19,7 +19,7 @@ importers:
         version: 7.0.0
       type-fest:
         specifier: ^4.19.0
-        version: 4.24.0
+        version: 4.25.0
     devDependencies:
       '@ava/typescript':
         specifier: 5.0.0
@@ -938,8 +938,8 @@ packages:
     resolution: {integrity: sha512-34R7HTnG0XIJcBSn5XhDd7nNFPRcXYRZrBB2O2jdKqYODldSzBAqzsWoZYYvduky73toYS/ESqxPvkDf/F0XMg==}
     engines: {node: '>=10'}
 
-  type-fest@4.24.0:
-    resolution: {integrity: sha512-spAaHzc6qre0TlZQQ2aA/nGMe+2Z/wyGk5Z+Ru2VUfdNwT6kWO6TjevOlpebsATEG1EIQ2sOiDszud3lO5mt/Q==}
+  type-fest@4.25.0:
+    resolution: {integrity: sha512-bRkIGlXsnGBRBQRAY56UXBm//9qH4bmJfFvq83gSz41N282df+fjy8ofcEgc1sM8geNt5cl6mC2g9Fht1cs8Aw==}
     engines: {node: '>=16'}
 
   typescript@5.5.4:
@@ -1690,7 +1690,7 @@ snapshots:
     dependencies:
       '@babel/code-frame': 7.24.7
       index-to-position: 0.1.2
-      type-fest: 4.24.0
+      type-fest: 4.25.0
 
   parse-ms@4.0.0: {}
 
@@ -1845,7 +1845,7 @@ snapshots:
 
   type-fest@0.13.1: {}
 
-  type-fest@4.24.0: {}
+  type-fest@4.25.0: {}
 
   typescript@5.5.4: {}
 
