@@ -30,7 +30,7 @@
     "@sindresorhus/tsconfig": "7.0.0",
     "ava": "6.2.0",
     "openapi-typescript": "7.5.2",
-    "typescript": "5.7.2"
+    "typescript": "5.7.3"
   },
   "engines": {
     "node": ">=14.16"
