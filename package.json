@@ -29,7 +29,7 @@
     "@biomejs/biome": "1.9.4",
     "@sindresorhus/tsconfig": "7.0.0",
     "ava": "6.2.0",
-    "openapi-typescript": "7.5.1",
+    "openapi-typescript": "7.5.2",
     "typescript": "5.7.2"
   },
   "engines": {
