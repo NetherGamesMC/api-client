@@ -16,7 +16,7 @@ importers:
         version: 3.3.2
       quick-lru:
         specifier: ^7.0.0
-        version: 7.0.0
+        version: 7.0.1
       type-fest:
         specifier: ^4.19.0
         version: 4.39.1
@@ -792,8 +792,8 @@ packages:
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
-  quick-lru@7.0.0:
-    resolution: {integrity: sha512-MX8gB7cVYTrYcFfAnfLlhRd0+Toyl8yX8uBx1MrX7K0jegiz9TumwOK27ldXrgDlHRdVi+MqU9Ssw6dr4BNreg==}
+  quick-lru@7.0.1:
+    resolution: {integrity: sha512-kLjThirJMkWKutUKbZ8ViqFc09tDQhlbQo2MNuVeLWbRauqYP96Sm6nzlQ24F0HFjUNZ4i9+AgldJ9H6DZXi7g==}
     engines: {node: '>=18'}
 
   readable-stream@3.6.2:
@@ -1714,7 +1714,7 @@ snapshots:
 
   queue-microtask@1.2.3: {}
 
-  quick-lru@7.0.0: {}
+  quick-lru@7.0.1: {}
 
   readable-stream@3.6.2:
     dependencies:
