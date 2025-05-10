@@ -34,8 +34,8 @@ importers:
         specifier: 6.3.0
         version: 6.3.0(@ava/typescript@5.0.0)
       openapi-typescript:
-        specifier: 7.7.1
-        version: 7.7.1(typescript@5.8.3)
+        specifier: 7.7.3
+        version: 7.7.3(typescript@5.8.3)
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -673,8 +673,8 @@ packages:
     resolution: {integrity: sha512-1FlR+gjXK7X+AsAHso35MnyN5KqGwJRi/31ft6x0M194ht7S+rWAvd7PHss9xSKMzE0asv1pyIHaJYq+BbacAQ==}
     engines: {node: '>=12'}
 
-  openapi-typescript@7.7.1:
-    resolution: {integrity: sha512-apa45jEOxcVfYHTD9eHpW0cR8yQn7jQFTCnSWNdjKbWmyjha8CMj1LdGHdk0Z70kFSR6EfjdDuOCY7PFICrNSg==}
+  openapi-typescript@7.7.3:
+    resolution: {integrity: sha512-w8s82UbR5QSh8t56w0++pCva5rdRM3My8Jx/UM7BfDE1j2fzylJKSIe1cF+qM9cdjJc+5MVwdpJ7fqMc3mAPVg==}
     hasBin: true
     peerDependencies:
       typescript: ^5.x
@@ -831,9 +831,9 @@ packages:
     resolution: {integrity: sha512-u1ZpIBCawJnO+0QePsEiOknOfCRq0yERxiAchT0i4li0WHNUJbf0evXXSXOcCAR4M8iMDoajXYmstm/qO81Isw==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  supports-color@9.4.0:
-    resolution: {integrity: sha512-VL+lNrEoIXww1coLPOmiEmK/0sGigko5COxI09KzHc2VJXJsQ37UaQ+8quuxjDeA7+KnLGTWRyOXSLLR2Wb4jw==}
-    engines: {node: '>=12'}
+  supports-color@10.0.0:
+    resolution: {integrity: sha512-HRVVSbCCMbj7/kdWF9Q+bbckjBHLtHMEoJWlkmYzzdwhYMkjkOwubLM6t7NbWKjgKamGDrWL1++KrjUO1t9oAQ==}
+    engines: {node: '>=18'}
 
   tar@7.4.3:
     resolution: {integrity: sha512-5S7Va8hKfV7W5U6g3aYxXmlPoZVAwUMy9AOKyF2fVuZa2UD3qZjg578OrLRt8PcNN1PleVaL/5/yYATNL0ICUw==}
@@ -991,7 +991,7 @@ snapshots:
     dependencies:
       consola: 3.4.2
       detect-libc: 2.0.3
-      https-proxy-agent: 7.0.6(supports-color@9.4.0)
+      https-proxy-agent: 7.0.6(supports-color@10.0.0)
       node-fetch: 2.7.0
       nopt: 8.1.0
       semver: 7.6.2
@@ -1024,12 +1024,12 @@ snapshots:
 
   '@redocly/config@0.22.2': {}
 
-  '@redocly/openapi-core@1.34.2(supports-color@9.4.0)':
+  '@redocly/openapi-core@1.34.2(supports-color@10.0.0)':
     dependencies:
       '@redocly/ajv': 8.11.2
       '@redocly/config': 0.22.2
       colorette: 1.4.0
-      https-proxy-agent: 7.0.6(supports-color@9.4.0)
+      https-proxy-agent: 7.0.6(supports-color@10.0.0)
       js-levenshtein: 1.1.6
       js-yaml: 4.1.0
       minimatch: 5.1.6
@@ -1128,7 +1128,7 @@ snapshots:
       common-path-prefix: 3.0.0
       concordance: 5.0.4
       currently-unhandled: 0.4.1
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@10.0.0)
       emittery: 1.1.0
       figures: 6.1.0
       globby: 14.1.0
@@ -1254,11 +1254,11 @@ snapshots:
     dependencies:
       time-zone: 1.0.0
 
-  debug@4.4.0(supports-color@9.4.0):
+  debug@4.4.0(supports-color@10.0.0):
     dependencies:
       ms: 2.1.3
     optionalDependencies:
-      supports-color: 9.4.0
+      supports-color: 10.0.0
 
   detect-libc@2.0.3: {}
 
@@ -1368,10 +1368,10 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  https-proxy-agent@7.0.6(supports-color@9.4.0):
+  https-proxy-agent@7.0.6(supports-color@10.0.0):
     dependencies:
       agent-base: 7.1.3
-      debug: 4.4.0(supports-color@9.4.0)
+      debug: 4.4.0(supports-color@10.0.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -1513,13 +1513,13 @@ snapshots:
     dependencies:
       mimic-fn: 4.0.0
 
-  openapi-typescript@7.7.1(typescript@5.8.3):
+  openapi-typescript@7.7.3(typescript@5.8.3):
     dependencies:
-      '@redocly/openapi-core': 1.34.2(supports-color@9.4.0)
+      '@redocly/openapi-core': 1.34.2(supports-color@10.0.0)
       ansi-colors: 4.1.3
       change-case: 5.4.4
       parse-json: 8.3.0
-      supports-color: 9.4.0
+      supports-color: 10.0.0
       typescript: 5.8.3
       yargs-parser: 21.1.1
 
@@ -1649,7 +1649,7 @@ snapshots:
       serialize-error: 7.0.1
       strip-ansi: 7.1.0
 
-  supports-color@9.4.0: {}
+  supports-color@10.0.0: {}
 
   tar@7.4.3:
     dependencies:
