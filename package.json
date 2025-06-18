@@ -25,7 +25,7 @@
     "type-fest": "^4.19.0"
   },
   "devDependencies": {
-    "@ava/typescript": "5.0.0",
+    "@ava/typescript": "6.0.0",
     "@biomejs/biome": "2.0.0",
     "@sindresorhus/tsconfig": "7.0.0",
     "ava": "6.4.0",
