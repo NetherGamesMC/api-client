@@ -28,8 +28,8 @@ importers:
         specifier: 2.1.4
         version: 2.1.4
       '@sindresorhus/tsconfig':
-        specifier: 7.0.0
-        version: 7.0.0
+        specifier: 8.0.0
+        version: 8.0.0
       ava:
         specifier: 6.4.1
         version: 6.4.1(@ava/typescript@6.0.0)
@@ -166,9 +166,9 @@ packages:
     resolution: {integrity: sha512-tlqY9xq5ukxTUZBmoOp+m61cqwQD5pHJtFY3Mn8CA8ps6yghLH/Hw8UPdqg4OLmFW3IFlcXnQNmo/dh8HzXYIQ==}
     engines: {node: '>=18'}
 
-  '@sindresorhus/tsconfig@7.0.0':
-    resolution: {integrity: sha512-i5K04hLAP44Af16zmDjG07E1NHuDgCM07SJAT4gY0LZSRrWYzwt4qkLem6TIbIVh0k51RkN2bF+lP+lM5eC9fw==}
-    engines: {node: '>=18'}
+  '@sindresorhus/tsconfig@8.0.0':
+    resolution: {integrity: sha512-2aZELaNoJR/6sxueOsxJzb+oU6pdCEvERqSmytfklBTZ9Bzmae/xE5F61Czp0nWXDVVukyDkaDAWpV84MJEE3Q==}
+    engines: {node: '>=20'}
 
   '@types/estree@1.0.7':
     resolution: {integrity: sha512-w28IoSUCJpidD/TGviZwwMJckNESJZXFu7NBZ5YJ4mEUnNraUn9Pm8HSZm/jDF1pDWYKspWE7oVphigUPRakIQ==}
@@ -1050,7 +1050,7 @@ snapshots:
 
   '@sindresorhus/merge-streams@4.0.0': {}
 
-  '@sindresorhus/tsconfig@7.0.0': {}
+  '@sindresorhus/tsconfig@8.0.0': {}
 
   '@types/estree@1.0.7': {}
 
