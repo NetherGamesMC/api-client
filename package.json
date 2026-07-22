@@ -19,7 +19,7 @@
     "test": "npm run -s build && ava"
   },
   "dependencies": {
-    "nanoevents": "^9.0.0",
+    "nanoevents": "^10.0.0",
     "node-fetch": "^3.3.2",
     "quick-lru": "^7.0.0",
     "type-fest": "^5.0.0"
