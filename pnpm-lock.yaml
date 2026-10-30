@@ -31,8 +31,8 @@ importers:
         specifier: 8.1.0
         version: 8.1.0
       ava:
-        specifier: 8.1.2
-        version: 8.1.2(@ava/typescript@7.0.0)(supports-color@10.2.2)
+        specifier: 8.2.0
+        version: 8.2.0(@ava/typescript@7.0.0)(supports-color@10.2.2)
       openapi-typescript:
         specifier: 7.13.0
         version: 7.13.0(typescript@7.0.2)
@@ -365,8 +365,8 @@ packages:
   async-sema@3.1.1:
     resolution: {integrity: sha512-tLRNUXati5MFePdAk8dw7Qt7DpxPB60ofAgn8WRhW6a2rcimZnYBP9oxHiv0OHy+Wz7kPMG+t4LGdt31+4EmGg==}
 
-  ava@8.1.2:
-    resolution: {integrity: sha512-oJnF53liq0Sf5K0AzZ7GwkH6HxwgsqukGMIOb/hV9QnTKlzj3lV6EXLHJksvlBcHOop6cqdAWa00u8uzqwpxFg==}
+  ava@8.2.0:
+    resolution: {integrity: sha512-9THsZEBUhwvA3e1oVqyJx9o4cBaLSkxScfP0oPlA9I7TDga51UDLMQJRy6bMDqMl3eubFCqxlj12h5IHEsLO7g==}
     engines: {node: ^22.20 || ^24.12 || >=26}
     hasBin: true
     peerDependencies:
@@ -1265,7 +1265,7 @@ snapshots:
 
   async-sema@3.1.1: {}
 
-  ava@8.1.2(@ava/typescript@7.0.0)(supports-color@10.2.2):
+  ava@8.2.0(@ava/typescript@7.0.0)(supports-color@10.2.2):
     dependencies:
       '@vercel/nft': 1.11.0(supports-color@10.2.2)
       acorn: 8.19.0
