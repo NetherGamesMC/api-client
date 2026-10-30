@@ -27,7 +27,7 @@
   "devDependencies": {
     "@ava/typescript": "7.0.0",
     "@biomejs/biome": "2.6.4",
-    "@sindresorhus/tsconfig": "8.1.0",
+    "@sindresorhus/tsconfig": "9.0.0",
     "ava": "8.2.0",
     "openapi-typescript": "7.13.0",
     "typescript": "7.0.2"
