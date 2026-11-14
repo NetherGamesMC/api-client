@@ -21,7 +21,7 @@
   "dependencies": {
     "nanoevents": "^10.0.0",
     "node-fetch": "^3.3.2",
-    "quick-lru": "^7.0.0",
+    "quick-lru": "^8.0.0",
     "type-fest": "^5.0.0"
   },
   "devDependencies": {
